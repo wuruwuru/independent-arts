@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Inspector</title>
+
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  
+</head>
+<body ng-app="inspectorApp">
+
+	<div id="top" ng-controller="PagesController">
+		<div class="header">
+			<div class="logo">
+				<img src="img/logo.png" alt="Logo">
+			</div>
+			<ul class="menu">
+				<li class="animated fadeInDown"><a ng-class="{active: current == '/transactions'}" href="#transactions">Transactions</a></li>
+				<li class="animated fadeInDown"><a ng-class="{active: current == '/expenses'}" href="#expenses">Expenses</a></li>
+				<li class="animated fadeInDown"><a ng-class="{active: current == '/income'}" href="#income">Income</a></li>
+			</ul>
+			<div class="account">
+				<div class="details">
+					<span class="number">0123456789</span>
+					<span class="name">Aikomo Opemipo</span>
+				</div>
+				<div class="avatar">
+					<img src="img/avatar.png" alt="Avatar">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-view></div>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/underscore-min.js"></script>
+	<script src="js/angular/angular.js"></script>
+	<script src="js/angular/angular-route.min.js"></script>
+	<script src="js/angular/angular-resource.js"></script>
+	<script src="js/angular/count-to.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/factories.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/directives.js"></script>
+
+</body>
+</html>

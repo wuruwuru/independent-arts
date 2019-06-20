@@ -1,0 +1,89 @@
+[
+	{ 
+		"stats": {
+			"total": "345673.45",
+			"average": "456768.8",
+			"recurrent": [{
+				"name": "Chronos Limited",
+				"amount": "345440.23",
+				"transaction_count": "4"
+			}]
+		},
+
+		"data": [{
+
+			"time": "September 2014",
+			"opening_balance": "20000",
+			"total": "104266.56",
+			"types": [{
+				"name": "Transfer",
+				"transaction_count": "10",
+				"transaction_amount": "25266.56"
+			},{
+				"name": "Bank Deposit",
+				"transaction_count": "10",
+				"transaction_amount": "63950.25"
+			},{
+				"name": "Others",
+				"transaction_count": "10",
+				"transaction_amount": "64950.25"
+			}],
+			"income": [{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Transfer via GAPS from CHRONOS CAPITAL LIMITED"
+			},
+			{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "CASH DEPOSIT TUNDE"
+			},
+			{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge"
+			}],
+			"transactions": "POS, ATM, TRANSFER, AIRTIME"
+		},
+		{ 
+			"time": "August 2014",
+			"opening_balance": "20000",
+			"total": "204266.56",
+			"types": [{
+				"name": "Transfer",
+				"transaction_count": "10",
+				"transaction_amount": "25266.56"
+			},{
+				"name": "Bank Deposit",
+				"transaction_count": "10",
+				"transaction_amount": "63950.25"
+			},{
+				"name": "Others",
+				"transaction_count": "10",
+				"transaction_amount": "64950.25"
+			}],
+			"income": [{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Transfer via GAPS from CHRONOS CAPITAL LIMITED"
+			},
+			{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "CASH DEPOSIT TUNDE"
+			},
+			{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge"
+			}],
+			"transactions": "POS, ATM, TRANSFER, AIRTIME"
+		}]
+	}
+]

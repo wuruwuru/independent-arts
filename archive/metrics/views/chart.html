@@ -1,0 +1,7 @@
+<div class="chart">
+	<span class="bar" ng-repeat="bar in bars">
+		<span class="title">{{bar.time}}</span>
+		<span class="title spent">₦{{bar.total}}</span>
+		<span class='level animated fadeIn' ng-style="{'width': bar.width + '%'}"></span>
+	</span>
+</div>

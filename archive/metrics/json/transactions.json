@@ -1,0 +1,88 @@
+[
+	{ 
+		"time": "September 2014",
+		"opening_balance": "20000",
+		"expense_total": "240000", 
+		"income_total": "300000", 
+		"expenses": [{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "POINT OF SALE PURCHASE TRANSACTION AIRTV/07087212710/C/ 058/ LANG"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "Airtime Purchase airtime recharge via MBANKING-101C0000000000008311019_MBANKING"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "TRANSFER BETWEEN CUSTOMERS via Internet Banking from AIKOMO ONAOPEMIPO TEMITAYO to AIKOMO, OLUWANIFEMI TOLULOPE"
+		}],
+		"income": [{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "TRANSFER BETWEEN CUSTOMERS via GAPS from CHRONOS CAPITAL LIMITED"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "CASH DEPOSIT TUNDE"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge via MBANKING/101C0000000000008311019-9/1/2014"
+		}],
+		"transactions": "POS, ATM, TRANSFER, AIRTIME"
+	},
+	{ 
+		"time": "August 2014",
+		"opening_balance": "12000",
+		"expense_total": "153539.99", 
+		"income_total": "192223.68", 
+		"expenses": [{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "POINT OF SALE PURCHASE TRANSACTION YEM YEM PHARM N STORE LA LANG"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "TRANSFER BETWEEN CUSTOMERS via Internet Banking to OFILI,CHUKADIBIA ISIDORE"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "POINT OF SALE PURCHASE TRANSACTION AIRTV/07087212710/C/ 058/ LANG"
+		}],
+		"income": [{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "TRANSFER BETWEEN CUSTOMERS via Internet Banking Shope's Generator from OSAMILUYI ABAYOMI OLUWASEUN"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge via MBANKING/101C0000000000008311019-9/1/2014"
+		},
+		{ 
+			"date": "September 12 2014", 
+			"ref":"9999011097",
+			"amount": "6500",
+			"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge via MBANKING/101C0000000000008311160-9/1/2014"
+		}],
+		"transactions": "POS, ATM, TRANSFER, AIRTIME"
+	}
+]

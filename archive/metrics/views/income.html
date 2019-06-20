@@ -1,0 +1,75 @@
+<div class="sidebar animated slideInLeft">
+
+	<p>INCOME STREAM</p>
+	<chart values="income"></chart>
+
+	<p>ALL INCOME (₦)</p>
+	<h3>430,000</h3>
+
+	<p>AVERAGE MONTHLY INCOME (₦)</p>
+	<h3>34,500</h3>
+</div>
+
+<div class="sidebar two animated slideInLeft">
+
+	<p>RECURRENT(₦)</p>
+	<ul>
+		<li class="recurrent" ng-repeat="person in stats.recurrent">
+			<b>Total</b> - {{person.transaction_count}}
+			<h4>{{person.amount | number:0}}</h4>
+			<b>{{person.name}}</b>
+		</li>
+	</ul>
+</div>
+
+<div class="content pad animated slideInRight">
+	<div class="small-12 columns no-pad" ng-repeat="t in income">
+		<div class="card">
+			<div class="border large-4 columns">
+				<h3 class="time-frame">{{t.time}}</h3>
+				<p class="opening-balance">
+					<span>Total Income</span>
+					₦{{t.total}}
+				</p>
+			</div>
+
+			<div class="large-8 columns">
+				<div class="type" ng-repeat="type in t.types">
+					<span class="type_name">{{type.name}} (₦)</span>
+					<div class="transaction_count">
+						<span count-to="{{type.transaction_amount}}" duration="1"></span>
+						<small>20 Transactions</small>
+					</div>
+				</div>
+
+				<div class="medium-12 columns text-center">
+					<a ng-click="showIncome = !showIncome; showExpenses = false">
+						<span ng-hide="showIncome">VIEW ALL TRANSACTIONS</span>
+						<span ng-show="showIncome">HIDE TRANSACTIONS</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="medium-12 columns">
+				<table class="rwd-table animated flipInX" ng-show="showIncome">
+				  <tr>
+				  	<th><span class="icon"></span></th>
+				    <th>Date</th>
+				    <th>Ref</th>
+				    <th>Amount</th>
+				    <th>Remarks</th>
+				  </tr>
+				  <tr ng-repeat="income in t.income">
+				  	<td><span class="circle blue"></span></td>
+				    <td data-th="Date">{{income.date}}</td>
+				    <td data-th="Ref">{{income.ref}}</td>
+				    <td data-th="Amount">{{income.amount}}</td>
+				    <td data-th="Remarks">{{income.remarks}}</td>
+				  </tr>
+				</table>
+			</div>
+		</div>
+
+
+	</div>
+</div>

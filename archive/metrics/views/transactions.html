@@ -1,0 +1,96 @@
+<div class="sidebar animated slideInLeft">
+
+	<p>SORT BY</p>
+	<ul class="sort">
+		<li><a class="active" href="">Time</a></li>
+		<li><a href="">Lowest Spending</a></li>
+		<li><a href="">Lowest Income</a></li>
+		<li><a href="">Highest Spending</a></li>
+		<li><a href="">Highest Income</a></li>
+	</ul>
+
+	<p>TIME PERIOD</p>
+	<ul class="sort">
+		<li><a href="">Weekly</a></li>
+		<li><a class="active" href="">Monthly</a></li>
+	</ul>
+</div>
+
+<div class="content">
+	<div class="small-12 columns no-pad">
+		<div class="card animated fadeInUp" ng-repeat="t in transactions">
+			<div class="border medium-3 columns">
+				<h3 class="time-frame">{{t.time}}</h3>
+				<p class="opening-balance">
+					<span>Opening Balance</span>
+					{{t.opening_balance}}
+				</p>
+			</div>
+
+			<div class="border medium-3 columns">
+				<p class="title">Income (₦)</p>
+				<h3 class="amount gain animated fadeIn delay-4s">
+					<span count-to="{{t.income_total}}" duration="1" count-from="0"></span>
+				</h3>
+				<a ng-click="showIncome = !showIncome; showExpenses = false">
+					<span ng-hide="showIncome">VIEW ALL</span>
+					<span ng-show="showIncome">CLOSE</span>
+				</a>
+			</div>
+
+			<div class="border medium-3 columns">
+				<p class="title">Expenditure (₦)</p>
+				<h3 class="amount loss timer animated fadeIn delay-4s">
+					<span count-to="{{t.expense_total}}" duration="1" count-from="0"></span>
+				</h3>
+				<a ng-click="showExpenses = !showExpenses; showIncome = false">
+					<span ng-hide="showExpenses">VIEW ALL</span>
+					<span ng-show="showExpenses">CLOSE</span>
+				</a>
+			</div>
+
+			<div class="medium-3 columns">
+				<span class="titbit">Net Cash (N): <b>{{t.income_total - t.expense_total}}</b></span>
+				<span class="titbit">Transactions: <b>{{t.transactions}}</b></span>
+			</div>
+
+			<div class="medium-12 columns">
+				<table class="rwd-table animated flipInX" ng-show="showIncome">
+				  <tr>
+				  	<th width="20px"></th>
+				    <th>Date</th>
+				    <th>Ref</th>
+				    <th>Amount</th>
+				    <th>Remarks</th>
+				  </tr>
+				  <tr ng-repeat="income in t.income">
+				  	<td><span class="circle blue"></span></td>
+				    <td data-th="Date">{{income.date}}</td>
+				    <td data-th="Ref">{{income.ref}}</td>
+				    <td data-th="Amount">{{income.amount}}</td>
+				    <td data-th="Remarks">{{income.remarks}}</td>
+				  </tr>
+				</table>
+
+				<table class="rwd-table animated flipInX" ng-show="showExpenses">
+				  <tr>
+				  	<th><span class="icon"></span></th>
+				    <th>Date</th>
+				    <th>Ref</th>
+				    <th>Amount</th>
+				    <th>Remarks</th>
+				  </tr>
+				  <tr ng-repeat="expense in t.expenses">
+				  	<td><span class="circle orange"></span></td>
+				    <td data-th="Date">{{expense.date}}</td>
+				    <td data-th="Ref">{{expense.ref}}</td>
+				    <td data-th="Amount">{{expense.amount}}</td>
+				    <td data-th="Remarks">{{expense.remarks}}</td>
+				  </tr>
+				</table>
+			</div>
+		</div>
+
+
+	</div>
+</div>

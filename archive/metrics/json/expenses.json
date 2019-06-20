@@ -1,0 +1,141 @@
+[
+	{ 
+		"stats": {
+			"total": "345673.45",
+			"average_month": "45768.8",
+			"average_week": "9968.8",
+			"recurrent": [{
+				"name": "Chronos Limited",
+				"amount": "345440.23",
+				"transaction_count": "12"
+			}]
+		},
+
+		"data": [{
+			"time": "September 2014",
+			"opening_balance": "20000",
+			"total": "104266.56",
+			"types": [{
+				"name": "POS",
+				"transaction_count": "10",
+				"transaction_amount": "25266.56"
+			},{
+				"name": "Airtime",
+				"transaction_count": "10",
+				"transaction_amount": "63950.25"
+			},{
+				"name": "Transfer",
+				"transaction_count": "10",
+				"transaction_amount": "41926.57"
+			},{
+				"name": "Withdrawal",
+				"transaction_count": "10",
+				"transaction_amount": "63926.57"
+			},{
+				"name": "Others",
+				"transaction_count": "10",
+				"transaction_amount": "64950.25"
+			}],
+			"expenses": [{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "POINT OF SALE PURCHASE TRANSACTION AIRTV/07087212710/C/ 058/ LANG"
+			},
+			{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Airtime airtime recharge via MBANKING-101C0000000000008311019_MBANKING"
+			},
+			{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Transfer via Internet Banking to AIKOMO, OLUWANIFEMI TOLULOPE"
+			}],
+			"income": [{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Transfer via GAPS from CHRONOS CAPITAL LIMITED"
+			},
+			{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "CASH DEPOSIT TUNDE"
+			},
+			{ 
+				"date": "September 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge"
+			}],
+			"transactions": "POS, ATM, TRANSFER, AIRTIME"
+		},
+		{ 
+			"time": "August 2014",
+			"opening_balance": "20000",
+			"total": "204266.56",
+			"types": [{
+				"name": "POS",
+				"transaction_count": "10",
+				"transaction_amount": "25266.56"
+			},{
+				"name": "Airtime",
+				"transaction_count": "10",
+				"transaction_amount": "63950.25"
+			},{
+				"name": "Transfer",
+				"transaction_count": "10",
+				"transaction_amount": "41926.57"
+			},{
+				"name": "Withdrawal",
+				"transaction_count": "0",
+				"transaction_amount": "0"
+			},{
+				"name": "Others",
+				"transaction_count": "10",
+				"transaction_amount": "64950.25"
+			}],
+			"expenses": [{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "POINT OF SALE PURCHASE TRANSACTION AIRTV/07087212710/C/ 058/ LANG"
+			},
+			{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Airtime airtime recharge via MBANKING-101C0000000000008311019_MBANKING"
+			},
+			{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Transfer via Internet Banking to AIKOMO, OLUWANIFEMI TOLULOPE"
+			}],
+			"income": [{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "Transfer via GAPS from CHRONOS CAPITAL LIMITED"
+			},
+			{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "CASH DEPOSIT TUNDE"
+			},
+			{ 
+				"date": "August 12 2014", 
+				"ref":"9999011097",
+				"amount": "6500",
+				"remarks": "REVERSAL OF ENTRY trBP 214 RVSL/Airtime recharge"
+			}],
+			"transactions": "POS, ATM, TRANSFER, AIRTIME"
+		}]
+	}
+]
