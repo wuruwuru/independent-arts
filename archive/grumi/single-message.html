@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grumi Forums</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="style.css">
+  
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/grumiapp.js"></script>
+  <script src="js/jquery.leanModal.min.js"></script>
+
+</head>
+<body>
+
+	<header>
+		<div class="row">
+			<div class="small-6 large-3 columns left">
+				<div class="logo">
+					<a href="index.html"><img src="img/logo.png" alt="logo"></a>
+				</div>
+
+				<div class="nav">
+					<a class="reveal_menu"><span class="entypo-menu"></span></a>
+
+					<ul class="menu">
+						<li><a href="music.html">Newest Songs</a></li>
+						<li><a href="conversation.html">Conversations</a></li>
+						<li><a href="trending.html">Trending</a></li>
+						<li><a href="collection.html">Collections</a></li>
+						<li><a href="#">Radio Podcasts</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="radio" class="large-6 columns">
+				<div class="wrap">
+					<div id="controls">
+						<span class="control_btn disabled"><span class="entypo-fast-backward"></span></span>
+						<span class="control_btn"><span class="entypo-play"></span></span>
+						<span class="control_btn disabled"><span class="entypo-fast-forward"></span></span>
+					</div>
+
+					<div class="now-playing">
+						This Show is on. Press play to tune in.
+					</div>
+
+					<div class="playlist">
+						<span class="playlist_toggle entypo-list"></span>
+						<div class="grumi_playlist">
+							<div class="large-6 columns">
+								<div class="partition">
+									<span>Today's programmes</span>
+									<span class="right">Play Radio</span>
+									<ul class="radio_list">
+										<li><strong><span class="entypo-play"></span> House of Crap</strong> 12:15 Today</li>
+										<li><strong>House of Crap</strong> 12:15 Today</li>
+										<li><strong>House of Crap</strong> 12:15 Today</li>
+										<li><strong>House of Crap</strong> 12:15 Today</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="large-6 columns">
+								<div class="partition">
+									<span>Queued Songs</span>
+									<span class="right">Clear Playlist</span>
+									<ul class="radio_list">
+										<li><strong>Finish Work</strong> Naeto C</li>
+										<li><strong>Finish Work</strong> Naeto C</li>
+										<li><strong>Finish Work</strong> Naeto C</li>
+										<li><strong>Finish Work</strong> Naeto C</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="volume right">
+						<span class="volume_toggle entypo-sound"></span>
+						<span class="scrubber">
+							<span class="level"></span>
+							<span class="level limit"></span>
+							<span class="volume_rocker"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="small-6 large-2 columns right">
+				<div class="search_wrap">
+					<a class="search_toggle"><span class="entypo-search"></span></a>
+					<div class="search">
+						<input type="text" class="search_field" id="search" placeholder="Search">
+						<span class="close_search entypo-cancel-circled"></span>
+					</div>
+				</div>
+				<div class="logged-in intermediate"><img src="img/profile.jpg"><span class="entypo-down-dir"></span>
+					<ul class="user_options">
+						<li><a href="profile_uploads.html">Upload Song</a></li>
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="index.html">Sign Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+ 	</header>
+	<section id="content-wrap" class="row">
+
+		<section id="profile" class="large-4 columns left">
+
+			<div class="profile">
+				<img class="rookie" src="img/profile.jpg">				
+				<span class="level rookie">Rookie</span>
+				<span class="name">FatherMerry</span>
+				<a class="btn-primary" rel="leanModal" href="#NewConversation">Start Topic</a>
+				<p class="about"><small>ABOUT</small>Stupid, Silly and generally very biased</p>
+			</div>
+
+			<ul class="stats">
+				<li><a><span class="entypo-upload-cloud"></span>Your songs<span class="right">3</span></a></li>
+				<li><a href="connections.html"><span class="entypo-users"></span>Connections <span class="right">30</span></a></li>
+				<li><a href="topics.html"><span class="entypo-chat"></span>Topics<span class="right">45</span></a></li>
+				<li><a href="messages.html"><span class="entypo-comment"></span>Messages<span class="right">5</span></a></li>
+			</ul>
+
+		</section>
+
+		<section id="_details" class="large-8 columns left">
+
+			<h2 class="title">With Fathermerry <a href="messages.html" class="right"><span class="entypo-left-thin"></span> Back</a></h2>
+
+				<div class="new-thread">
+				<div class="inside">
+					<textarea name="comment" id="comment" maxlength="255" placeholder="Your message goes here you sly bastard"></textarea>					
+					<span class="right">
+						<span class="character-count left"> 400 </span>
+						<input type="submit" name="startconversation" value="Send message" class="btn-primary right">
+					</span>
+					</div>
+				</div>
+
+			<ul class="activity">
+				<li>
+					<a><img class="rookie" src="img/profile.jpg"></a>
+					<p class="person">FatherMerry <span class="timestamp right">1hr ago</span></p>
+					<p class="last_message">House is fine o. Accepted my fate of OAU Wasting my time. They dint mobilize my dept for service.</p>
+				</li>
+
+				<li class="self">
+					<a><img class="rookie" src="img/profile.jpg"></a>
+					<p class="person">You <span class="timestamp right">1hr ago</span></p>
+					<p class="last_message">House is fine o. Accepted my fate of OAU Wasting my time. They dint mobilize my dept for service.</p>
+				</li>
+
+
+				<li>
+					<a><img class="rookie" src="img/profile.jpg"></a>
+					<p class="person">FatherMerry <span class="timestamp right">1hr ago</span></p>
+					<p class="last_message">House is fine o. Accepted my fate of OAU Wasting my time. They dint mobilize my dept for service.</p>
+				</li>
+
+			</ul>
+
+		</div>
+
+		</section>
+
+</body>
+</html>

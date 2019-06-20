@@ -1,0 +1,167 @@
+/* ==========================================================================
+	 Author's custom styles
+	 ========================================================================== */
+html,body {
+	height: 100%;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.transition(@string: all 0.1s ease-in-out) {
+	-webkit-transition: @string;
+	-moz-transition:    @string;
+	-ms-transition:     @string;
+	-o-transition:      @string;
+	transition:         @string;
+}
+
+.transform(@string) {
+-webkit-transform: @string;
+-moz-transform:    @string;
+-ms-transform:     @string;
+-o-transform:      @string;
+transform:         @string;
+}
+
+.box-shadow(@x: 0, @y: 0, @blur: 3px, @red: rgba(0,0,0,0.3)) {
+	-webkit-box-shadow:  @arguments;
+	-moz-box-shadow:     @arguments;
+	-ms-box-shadow:      @arguments;
+	-o-box-shadow:       @arguments;
+	box-shadow:          @arguments;
+}
+
+.gradient(@red: #F5F5F5, @start: #EEE, @stop: #FFF) {  background: @red;
+
+	background: -webkit-gradient(linear,
+								 left bottom,
+								 left top,
+								 color-stop(0, @start),
+								 color-stop(1, @stop));
+	background: -ms-linear-gradient(bottom,
+									@start,
+									@stop);
+	background: -moz-linear-gradient(center bottom,
+									 @start 0%,
+									 @stop 100%);
+	background: -o-linear-gradient(@stop,
+								 @start);
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+@mobile:    ~"all and (min-width: 320px) and (max-width: 640px)";
+@tablet:    ~"all and (min-width: 320px) and (max-width: 959px)";
+@custom:    ~"all and (min-width: 320px) and (max-width: 1024px)";
+@desktop:   ~"all and (min-width: 960px) and (max-width: 1199px)";
+
+h3 {
+	margin: 30px 0;
+}
+
+.meta {
+	border: solid 1px #DDD;
+	height: 500px;
+	width: 70%;
+
+	.side {
+		width: 30%;
+		float: left;
+		height: 100%;
+		border-right: solid 1px #DDD;
+		padding: 20px;
+
+		.song-name {
+			font-size: 18px;
+			margin: 20px 0 10px;
+		}
+
+		.song-avatar {
+			width: 100%;
+			background: whitesmoke;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.song-details {
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					margin-top: 15px;
+
+					.label {
+						font-size: 13px;
+						font-weight: bold;
+						line-height: 1.4em;
+					}
+
+					p {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	.tags {
+		width: 70%;
+		float: left;
+		height: 100%;
+		background: url('../img/blur.png');
+		background-size: cover;
+		padding: 60px;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			color: white;
+
+			li {
+				padding-bottom: 10px;
+				
+				.label {
+					font-size: 14px;
+					text-transform: uppercase;
+					color: rgba(255, 255, 255, 0.6);
+					display: block;
+				}
+
+				@-webkit-keyframes fadeIn {
+				  0% {opacity: 0;}
+				  100% {opacity: 1;}
+				}
+
+				@keyframes fadeIn {
+				  0% {opacity: 0;}
+				  100% {opacity: 1;}
+				}
+
+				p {
+					font-size: 18px;
+					font-weight: bold;
+					animation: fadeIn 1s 1;
+					-webkit-animation: fadeIn 1s 1;
+					display: none;
+				}
+
+				&.active {
+					.label {
+						color: white;
+					}
+
+					p {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

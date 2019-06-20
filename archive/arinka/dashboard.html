@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Arinka</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/angular.min.js" ></script>
+  
+</head>
+<body ngApp="arinka">
+
+
+<div class="arinka-app">
+
+	<div id="app-sidebar" class="sidebar">
+		<div class="profile-wrap large-12 columns">
+			<div class="profile">
+				<img src="img/profile.jpg">
+			</div>
+
+			<a class="username">FatherMerry</a>
+		</div>
+
+		<ul class="app-menu large-12 columns">
+			<li><a href="dashboard.html"><i class="fa fa-home"></i> Home</a></li>
+			<li><a href="bucket-list.html"><i class="fa fa-unlock-alt"></i> Bucket List</a></li>
+			<li><a href="experiences.html"><i class="fa fa-check"></i> Experiences</a></li>
+			<li><a href="#"><i class="fa fa-plane"></i> Trips</a></li>
+			<li><a href="#"><i class="fa fa-bell"></i> Activity</a></li>
+			<li><a href="#"><i class="fa fa-gear"></i> Account</a></li>
+		</ul>
+
+		<div class="search large-12 columns">
+			<h3>Experience something new.<h3>
+
+			<select>
+				<option value="" disabled selected>How far can you go?</option>
+				<option>Vicinity</option>
+				<option>Same city</option>
+				<option>Same state</option>
+				<option>Country wide</option>
+			</select>
+
+			<button class="btn">Search</button>
+		</div>
+	</div>
+
+	<div id="app-content" class="content">
+		<div class="my-location"><i class="fa fa-map-marker"></i> Your base location is {{location}}. <a href="#">Change this</a> or <a href="#">Use current location this time</a></div>
+
+		<div class="major-suggestion food">
+			<div class="details">
+				<span>OUR SUGGESTION</span>
+				<h1>Eat food at the Chinese Restaurant in New Market</h1>
+				<h3 class="location"><i class="fa fa-map-marker"></i> Within your vicinity | Best with friendly company | Minimum cost: 1000</h3>
+				<a href="#" class="btn"><i class="fa fa-refresh"></i> Too expensive</a>
+				<a href="#" class="btn"><i class="fa fa-refresh"></i> Too far</a>
+				<a href="#" class="btn"><i class="fa fa-refresh"></i> Too close</a>
+			</div>
+		</div>
+
+		<div class="inner-wrap">
+			<div class="large-12 columns">
+				<h2 class="title">Experiences you may like</h2>
+			</div>
+
+			<ul>
+				<li class="large-3 columns left">
+					<div class="experience">
+						<span class="img-wrap"><img src="img/road-10-walk.jpg"></span>
+						<div class="details">
+							<h3 class="title">Climb the OAU Mountain</h3>
+							<p class="fine-print"><i class="fa fa-map-marker"></i> Within your vicinity | Best with a group of frieinds | No Cost</p>
+						</div>
+						<div class="actions">
+							<a href="#" title="Add to a trip"><i class="fa fa-plane"></i></a>
+							<a href="#" title="Add to bucket list"><i class="fa fa-unlock-alt"></i></a>
+							<a href="#" title="Save as done"><i class="fa fa-check"></i></a>
+						</div>
+					</div>
+				</li>
+
+				<li class="large-3 columns left">
+					<div class="experience">
+						<span class="img-wrap"><img src="img/pit-theatre.jpg"></span>
+						<div class="details">
+							<h3 class="title">Visit the Pit Theatre, Department of Arts.</h3>
+							<p class="fine-print"><i class="fa fa-map-marker"></i> Within your vicinity | Best with a group of frieinds | No Cost</p>
+						</div>
+						<div class="actions">
+							<a href="#" title="Add to a trip"><i class="fa fa-plane"></i></a>
+							<a href="#" title="Add to bucket list"><i class="fa fa-unlock-alt"></i></a>
+							<a href="#" title="Save as done"><i class="fa fa-check"></i></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+</div>
+
+</body>
+</html>

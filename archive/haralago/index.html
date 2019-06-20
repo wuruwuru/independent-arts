@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--320-->
+    <title>Haralago</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/vendor/onepage-scroll.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .loader {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        height: 5px;
+        width: 150px;
+        overflow: hidden;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    
+    .loader__bar {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background: #2DCDCB;
+        animation: loader 1.5s infinite;
+        -webkit-animation: loader 1.5s infinite;
+    }
+    
+    @keyframes loader {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    
+    @-webkit-keyframes loader {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader__bar"></div>
+    </div>
+    <div class="entrance-scene" style="display: none">
+        <div id="skip-entrance" class="entrance-scene__skip">
+            <a href="#">skip</a>
+        </div>
+        <div class="entrance-scene__wrap">
+            <div class="grid">
+                <div class="entrance-scene__divider"></div>
+                <div class="grid-column">
+                    <div class="entrance-slider entrance-slider--left">
+                        <ul class="entrance-slider__content">
+                            <li>flexible equipment financing</li>
+                            <li>better equipment uptime</li>
+                            <li>improved energy efficiency</li>
+                            <li>cleaner environment and tools</li>
+                            <li>happy
+                                <br> doctors</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-column">
+                    <div class="entrance-slider">
+                        <ul class="entrance-slider__content">
+                            <li>access to life
+                                <br> saving tools</li>
+                            <li>increased revenue</li>
+                            <li>reduced
+                                <br> costs</li>
+                            <li>fewer hospital acquired infections</li>
+                            <li>happy
+                                <br> patients</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header" id="header">
+        <a href="#" class="header-navigation-open"><img src="img/icons/hamburger.svg" alt="Open"></a>
+        <div id="logo" class="logo" style="opacity: 0">
+            <svg id="logo__svg" class="logo__svg" viewBox="0 0 380 60" width="120" height="45">
+                <path class="logo__path" d="M0 .5c1-.2 2-.3 3-.3 1-.1 2-.1 3-.1s2 0 3 .1 2.1.2 3.1.3v23.6c.4-.5.9-1.1 1.6-1.8.7-.7 1.5-1.4 2.4-2.1 1-.7 2.1-1.2 3.5-1.7s2.9-.7 4.7-.7c4.9 0 8.6 1.4 11.2 4.1 2.5 2.7 3.8 7 3.8 12.9v28.3c-1 .2-2.1.3-3.1.3-1 .1-2 .1-3 .1s-2 0-3-.1-2.1-.2-3.1-.3v-25c0-3.1-.5-5.5-1.5-7.1-1-1.7-2.6-2.5-5-2.5-1 0-2 .1-3 .4-1 .3-2 .8-2.8 1.7-.8.8-1.5 2-2.1 3.5-.5 1.5-.8 3.4-.8 5.8v23.3c-1 .2-2.1.3-3.1.3-1 .1-2 .1-3 .1s-2 0-3-.1l-3-.3V.5zM72 34c0-1.4-.2-2.5-.7-3.3-.5-.9-1.1-1.5-1.9-2-.8-.5-1.8-.8-3-1-1.2-.2-2.5-.3-3.9-.3-3.1 0-6.4.6-9.8 1.8-.8-1.5-1.4-2.9-1.8-4.2-.4-1.3-.6-2.9-.6-4.7 2.5-.9 5-1.5 7.5-1.9 2.5-.4 4.8-.6 7-.6 5.9 0 10.6 1.4 13.9 4.3 3.3 2.9 5 7.4 5 13.7v25.7c-2 .6-4.4 1.2-7.3 1.8-2.9.6-6.1.9-9.7.9-2.9 0-5.6-.3-8-.8-2.4-.5-4.5-1.4-6.2-2.6-1.7-1.2-3.1-2.7-4-4.6-.9-1.9-1.4-4.2-1.4-6.9s.6-5 1.8-6.9c1.2-1.9 2.7-3.3 4.5-4.5 1.8-1.1 3.9-1.9 6.2-2.4 2.3-.5 4.6-.7 6.8-.7 1.7 0 3.5.1 5.5.3V34zm0 8.8c-.7-.1-1.4-.2-2.2-.3-.8-.1-1.5-.1-2.1-.1-2.8 0-5 .5-6.6 1.5-1.6 1-2.4 2.6-2.4 4.8 0 1.5.3 2.6.9 3.4.6.8 1.4 1.4 2.3 1.8.9.4 1.8.6 2.8.7 1 .1 1.9.1 2.6.1.9 0 1.7-.1 2.6-.2.9-.1 1.6-.3 2.2-.4V42.8zm22.2-24c.9-.2 1.7-.3 2.4-.4.8-.1 1.6-.1 2.5-.1.9 0 1.7.1 2.5.2s1.6.3 2.4.4c.2.3.3.7.5 1.2.1.5.3 1.1.4 1.7l.3 1.8c.1.6.2 1.1.2 1.5 1.3-1.8 2.8-3.4 4.6-4.7 1.8-1.4 4.1-2.1 6.8-2.1.6 0 1.2 0 2 .1.7.1 1.3.1 1.6.3.1.6.2 1.2.3 2 .1.7.1 1.5.1 2.3 0 1 0 2-.1 3.2-.1 1.1-.2 2.2-.5 3.3-.6-.1-1.3-.2-2.1-.2h-1.4c-1 0-2.1.1-3.3.3-1.2.2-2.3.7-3.4 1.6-1.1.9-2 2.1-2.7 3.9-.7 1.7-1.1 4.1-1.1 7.2v21.1c-1 .2-2.1.3-3.1.3-1 .1-2 .1-3 .1s-2 0-3-.1-2-.2-3.1-.3V18.8zM149.4 34c0-1.4-.2-2.5-.7-3.3-.5-.9-1.1-1.5-1.9-2-.8-.5-1.8-.8-3-1s-2.5-.3-3.9-.3c-3.1 0-6.4.6-9.8 1.8-.8-1.5-1.4-2.9-1.8-4.2-.4-1.3-.6-2.9-.6-4.7 2.5-.9 5-1.5 7.5-1.9 2.5-.4 4.9-.6 7-.6 5.9 0 10.6 1.4 13.9 4.3 3.3 2.9 5 7.4 5 13.7v25.7c-2 .6-4.4 1.2-7.3 1.8-2.9.6-6.1.9-9.7.9-2.9 0-5.6-.3-8-.8-2.4-.5-4.5-1.4-6.2-2.6-1.7-1.2-3.1-2.7-4-4.6-.9-1.9-1.4-4.2-1.4-6.9s.6-5 1.8-6.9c1.2-1.9 2.7-3.3 4.5-4.5 1.9-1.1 3.9-1.9 6.2-2.4 2.3-.5 4.6-.7 6.8-.7 1.7 0 3.5.1 5.5.3V34zm0 8.8c-.7-.1-1.4-.2-2.2-.3-.8-.1-1.5-.1-2.1-.1-2.8 0-5 .5-6.6 1.5-1.6 1-2.4 2.6-2.4 4.8 0 1.5.3 2.6.9 3.4.6.8 1.4 1.4 2.3 1.8.9.4 1.8.6 2.8.7 1 .1 1.9.1 2.6.1.9 0 1.7-.1 2.6-.2.9-.1 1.6-.3 2.2-.4V42.8zM171.3.5c2.1-.3 4.1-.5 6.1-.5 1.9 0 3.9.2 6 .5v45c0 1.8.1 3.2.3 4.3.2 1.1.5 1.9.9 2.5.4.6 1 1 1.7 1.2.7.2 1.5.3 2.6.3.5 0 1 0 1.5-.1s1.1-.1 1.6-.3c.6 2.3.9 4.6.9 6.9v1.2s-.1.8-.2 1.2c-.9.3-2 .5-3.3.6-1.3.1-2.5.2-3.6.2-4.4 0-7.9-1.2-10.6-3.6-2.7-2.4-4-6.4-4-11.9V.5zM224.1 34c0-1.4-.2-2.5-.7-3.3-.5-.9-1.1-1.5-1.9-2-.8-.5-1.8-.8-3-1-1.2-.2-2.5-.3-3.9-.3-3.1 0-6.4.6-9.8 1.8-.8-1.5-1.4-2.9-1.8-4.2-.4-1.3-.6-2.9-.6-4.7 2.5-.9 5-1.5 7.5-1.9 2.5-.4 4.9-.6 7-.6 5.9 0 10.6 1.4 13.9 4.3 3.3 2.9 5 7.4 5 13.7v25.7c-2 .6-4.4 1.2-7.3 1.8-2.9.6-6.1.9-9.7.9-2.9 0-5.6-.3-8-.8-2.4-.5-4.5-1.4-6.2-2.6-1.7-1.2-3.1-2.7-4-4.6-.9-1.9-1.4-4.2-1.4-6.9s.6-5 1.8-6.9 2.7-3.3 4.5-4.5c1.9-1.1 3.9-1.9 6.2-2.4 2.3-.5 4.6-.7 6.8-.7 1.7 0 3.5.1 5.5.3V34zm0 8.8c-.7-.1-1.4-.2-2.2-.3-.8-.1-1.5-.1-2.1-.1-2.8 0-5 .5-6.6 1.5-1.6 1-2.4 2.6-2.4 4.8 0 1.5.3 2.6.9 3.4.6.8 1.4 1.4 2.3 1.8.9.4 1.8.6 2.8.7 1 .1 1.9.1 2.6.1.9 0 1.7-.1 2.6-.2.9-.1 1.6-.3 2.2-.4V42.8zm63.8-24.5c-2.7 0-4.9.4-6.5 1.1-1.1.5-2 1.2-2.8 1.9-.4.4-.9.8-1.2 1.2-1.4-1.2-3.1-2.2-5.2-3-.3-.1-.5-.2-.8-.3-2.4-.9-5-1.3-7.8-1.3-2.1 0-4 .3-5.8.7-.3 0-.6.1-.9.2l-1.2.3c-2.3.8-4.3 1.9-5.9 3.3-1.6 1.4-2.9 3-3.7 4.9-.8 1.9-1.3 4-1.3 6.2 0 2.5.5 4.8 1.6 6.8 1 1.9 2.5 3.6 4.3 5 .1.1.2.1.3.2 0 0 2.8 2.1 6 2.7 1.9.5 4.1.8 6.6.8 1.6 0 3.1-.1 4.6-.4 1.1-.2 2.2-.5 3.2-.8 2.3-.8 4.2-1.9 5.8-3.3 1.6-1.3 2.7-2.9 3.6-4.8 0 0 0-.1.1-.1.8-1.9 1.2-4 1.2-6.2 0-1.3-.1-2.4-.3-3.2 0-.1-.1-.1-.1-.2-.2-.7-.4-1.3-.7-1.8h6.9c.2-1 .3-1.9.3-2.8.1-.9.1-1.8.1-2.7 0-.8 0-1.5-.1-2.3-.1-.6-.2-1.3-.3-2.1zm-18.8 20.4c-.1.1-.2.3-.2.4-.3.4-.8.8-1.2 1.1-1 .6-2.3 1-3.9 1-2.4 0-4.2-.7-5.3-2-.4-.5-.7-1.1-.9-1.7-.4-1.1-.7-2.4-.7-3.9 0-1.4.2-2.6.6-3.7.3-.7.6-1.4 1-2 1.1-1.4 2.8-2.1 5.3-2.1 2.4 0 4.1.7 5.2 2.1.2.3.4.6.6 1 .2.4.3.7.5 1.1.3 1 .5 2.2.5 3.6-.2 2.1-.6 3.8-1.5 5.1zm16.1 25.5c-.3-.7-.6-1.3-1-1.9-.1-.1-.1-.2-.2-.2-4.4-6.1-14.4-5.5-14.4-5.5-17.3.3-19.8-3.5-19.8-3.5-.2.1-.8.5-.8.5-.2.1-.3.2-.4.4-.4.4-.7.8-1 1.2-.4.7-.7 1.4-1 2.1-.2.4-.3.9-.4 1.4-.3 1-.5 2-.6 3.2 1.5.7 3 1.2 4.5 1.7-2 1.2-3.6 2.7-4.8 4.3-1.2 1.6-1.8 3.7-1.8 6.3 0 1.7.3 3.3 1 4.7.7 1.4 1.7 2.6 3.2 3.6 1.5 1 3.4 1.7 5.8 2.3 2.4.5 5.3.8 8.7.8 3.4 0 6.6-.4 9.5-1.1 2.9-.7 5.5-1.8 7.7-3.1 2.2-1.4 3.9-3 5.1-5 1.2-2 1.9-4.1 1.9-6.5-.2-2.3-.5-4.1-1.2-5.7zm-13.8 10.9c-2.2 1.1-5.1 1.7-8.7 1.7-2.7 0-4.9-.4-6.5-1.1-1.6-.8-2.4-2.2-2.4-4.4 0-.6.1-1.3.3-1.9.2-.7.5-1.3 1-1.8s1.1-1 2-1.3c.8-.3 1.9-.5 3.1-.4l8.9.2c1.2 0 2.1.1 2.9.4.7.3 1.3.6 1.7 1.1.4.4.7.9.8 1.4.1.5.2 1.1.2 1.6 0 1.8-1.1 3.3-3.3 4.5zm40.8-11c-3.6 0-6.7-.6-9.4-1.8-2.7-1.2-4.8-2.8-6.6-4.9-1.7-2.1-3.1-4.5-3.9-7.3-.9-2.8-1.3-5.8-1.3-9.1s.4-6.3 1.3-9.2c.9-2.9 2.2-5.3 3.9-7.4 1.7-2.1 3.9-3.7 6.6-4.9 2.7-1.2 5.8-1.8 9.4-1.8 3.6 0 6.7.6 9.4 1.8 2.7 1.2 4.9 2.8 6.7 4.9 1.8 2.1 3.1 4.6 3.9 7.4.9 2.9 1.3 5.9 1.3 9.2s-.4 6.3-1.3 9.1-2.2 5.2-3.9 7.3c-1.8 2.1-4 3.7-6.7 4.9-2.6 1.2-5.8 1.8-9.4 1.8zm0-9.2c3.2 0 5.5-1.2 6.9-3.6 1.4-2.4 2.1-5.8 2.1-10.2 0-4.5-.7-7.9-2.1-10.2-1.4-2.4-3.7-3.6-6.9-3.6-3.1 0-5.4 1.2-6.8 3.6-1.4 2.4-2.1 5.8-2.1 10.2 0 4.5.7 7.9 2.1 10.2 1.4 2.4 3.7 3.6 6.8 3.6zm54.7-20.6c.3 1.7.5 3.5.5 5.2 0 1.8-.2 3.6-.5 5.3h-21.8c-.3-1.7-.5-3.5-.5-5.2 0-1.8.2-3.6.5-5.3h21.8z" id="Logomark" />
+            </svg>
+        </div>
+        <div id="navigation" class="navigation animated fadeIn" style="display: none">
+            <ul>
+                <li><a class="navigation__link" data-section="1" href="#about">about us</a></li>
+                <li><a class="navigation__link" data-section="2" href="#services">services</a></li>
+                <li><a class="navigation__link" data-section="4" href="#team">team</a></li>
+                <li><a class="navigation__link" data-section="5" href="#contact">contact</a></li>
+                <li><a class="navigation__link navigation__link--borderless" data-section="6" href="#careers">careers</a></li>
+            </ul>
+            <a href="#" class="navigation-close"><img src="img/icons/close.svg" alt="Close"></a>
+            <div class="navigation-social">
+                <div class="grid">
+                    <div class="grid-column grid-column__mobile">
+                        <a class="navigation-social__link"><img src="img/social/twitter.svg" alt="Twitter"></a>
+                    </div>
+                    <div class="grid-column grid-column__mobile">
+                        <a class="navigation-social__link"><img src="img/social/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                    <div class="grid-column grid-column__mobile">
+                        <a class="navigation-social__link"><img src="img/social/facebook.svg" alt="Facebook"></a>
+                    </div>
+                    <div class="grid-column grid-column__mobile">
+                        <a class="navigation-social__link"><img src="img/social/medium.svg" alt="Medium"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination hidden" id="pagination">
+        <div class="pagination__scrubber"></div>
+        <div class="pagination__dot"></div>
+        <div class="pagination__dot"></div>
+        <div class="pagination__dot"></div>
+        <div class="pagination__dot"></div>
+        <div class="pagination__dot"></div>
+    </div>
+    <div id="main" style="display: none">
+        <section id="about" class="section section--about">
+            <div class="section-label" style="display: none">
+                <span class="section-label__line line-animated"></span>
+                <span class="section-label__text">about <br> us</span>
+            </div>
+            <div class="section-title section-title--white">About Us</div>
+            <div id="intro" class="hero" style="display: none">
+                <div class="container container--padded">
+                    <h1 class="hero__header animated time-1s fadeInUp">haralago is a company that <br> provides non-clinical support services<br> to healthcare facilities</h1>
+                    <h3 class="hero__leading animated time-2s fadeInUp hidden-mobile">haralago's mission is to help our clients to deliver high quality care to their patients by relieving them of the burden of non-clinical operations</h3>
+                    <h3 class="hero__leading animated time-2s fadeInUp visible-mobile">Our mission is to take care of the needs of the clinical staff, so that the clinical staff can take care of the patient.</h3>
+                </div>
+            </div>
+            <div class="next-arrow" style="display: none">
+                <div class="next-arrow__head"></div>
+                <div class="next-arrow__tail"></div>
+                <div class="next-arrow__cover"></div>
+            </div>
+        </section>
+        <section id="services" class="section">
+            <div class="section-label">
+                <span class="section-label__line line-animated"></span>
+                <span class="section-label__text">services <br> we offer</span>
+            </div>
+            <div class="section-title">Services</div>
+            <div class="service-slider">
+                <div class="container container--padded">
+                    <div class="service-slider__count"><span>1</span>/5</div>
+                    <div class="service-slider__content">
+                        <div class="service-slide">
+                            <div class="service-slide__icon">
+                                <img class="animated time-1s fadeInUpFull" src="img/services/equipment_maintenance.svg" alt="Service Icon">
+                            </div>
+                            <div class="service-slide__title animated time-1s fadeInUp">Equipment Maintenance</div>
+                            <div class="service-slide__body animated time-1s fadeInUp">We help you maximize your equipment uptime [through our maintenance and repair services].</div>
+                        </div>
+                        <div class="service-slide">
+                            <div class="service-slide__icon">
+                                <img class="animated time-1s fadeInUpFull" src="img/services/energy_solutions.svg" alt="Service Icon">
+                            </div>
+                            <div class="service-slide__title animated time-1s fadeInUp">Energy Solutions</div>
+                            <div class="service-slide__body animated time-1s fadeInUp">We help you plug into energy efficiency.</div>
+                        </div>
+                        <div class="service-slide">
+                            <div class="service-slide__icon">
+                                <img class="animated time-1s fadeInUpFull" src="img/services/leasing.svg" alt="Service Icon">
+                            </div>
+                            <div class="service-slide__title animated time-1s fadeInUp">Leasing</div>
+                            <div class="service-slide__body animated time-1s fadeInUp">We help you flex your finances - adapting equipment payment plans to your business.</div>
+                        </div>
+                        <div class="service-slide">
+                            <div class="service-slide__icon service-slide__icon--smaller">
+                                <img class="animated time-1s fadeInUpFull" src="img/services/infection_control.svg" alt="Service Icon">
+                            </div>
+                            <div class="service-slide__title animated time-1s fadeInUp">Infection Control</div>
+                            <div class="service-slide__body animated time-1s fadeInUp">We help you stay in control - our cleaning, laundry and CSSD services keep hospital acquired infections at bay.</div>
+                        </div>
+                        <div class="service-slide">
+                            <div class="service-slide__icon">
+                                <img class="animated time-1s fadeInUpFull" src="img/services/oxygen_supply.svg" alt="Service Icon">
+                            </div>
+                            <div class="service-slide__title animated time-1s fadeInUp">Oxygen Supply</div>
+                            <div class="service-slide__body animated time-1s fadeInUp">We help you breathe easy by supplying Oxygen.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-slider__controls">
+                <button class="button-as-link service-slider__control"><img src="img/services/equipment_maintenance_lt.svg" alt="Equipment Maintencance Link"></button>
+                <button class="button-as-link service-slider__control"><img src="img/services/energy_solutions_lt.svg" alt="Energy Solutions Link"></button>
+                <button class="button-as-link service-slider__control"><img src="img/services/leasing_lt.svg" alt="Leasing Link"></button>
+                <button class="button-as-link service-slider__control service-slider__control--smaller"><img src="img/services/infection_control_lt.svg" alt="Infection Control Link"></button>
+                <button class="button-as-link service-slider__control"><img src="img/services/oxygen_supply_lt.svg" alt="Oxygen Supply Link"></button>
+            </div>
+        </section>
+        <section id="services-we-offer" class="section section--blue hidden-mobile">
+            <div class="section-label">
+                <span class="section-label__line line-animated"></span>
+                <span class="section-label__text">services <br> we offer</span>
+            </div>
+            <div id="services-message" class="hero" style="display: none;">
+                <div class="container container--padded">
+                    <h1 class="hero__white-text animated time-1s fadeInUp">
+                        <span>transform your non-clinical operations, improve the health of your business,</span>
+                        deliver better care to your patients.
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section id="team" class="section section--team">
+            <div class="section-label">
+                <span class="section-label__line line-animated"></span>
+                <span class="section-label__text">our team</span>
+            </div>
+            <div class="section-title">Team</div>
+            <div class="team" style="display: none">
+                <div class="team-member">
+                    <div class="grid">
+                        <div class="grid-column grid-column--padless">
+                            <div class="team-member__image">
+                                <img src="img/team/mambi.jpg" class="animated time-1s fadeInUp" alt="Dr. Mambidzeni Madvizire">
+                            </div>
+                        </div>
+                        <div class="grid-column grid-column--padless">
+                            <div class="team-member__bio animated fadeInUp">
+                                <h3 class="team-member__name">Dr. Mambidzeni Madvizire</h3>
+                                <h4 class="team-member__role hidden-mobile">Founder & managing director</h4>
+                                <h4 class="team-member__role visible-mobile">FOUNDER & MD</h4>
+                                <p class="team-member__essay">Experienced in healthcare strategy and operations, medical devices, global health and human centered design. MBA from Stanford University Graduate School of Business. Phd in Biomedical Engineering from Mayo Clinic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section section--green">
+            <div class="section-label">
+                <span class="section-label__line line-animated"></span>
+                <span class="section-label__text">contact</span>
+            </div>
+            <div class="section-title section-title--white">Contact</div>
+            <div id="contact-links" class="contact">
+                <div class="container container--padded">
+                    <div class="contact__intro">Call, send an email or contact us on social media. We’d love to hear from you.</div>
+                    <div class="contact__wrap contact__wrap--left">
+                        <a class="contact__link hidden-mobile" href="#">facebook</a>
+                        <a class="contact__link visible-mobile" href="https://twitter.com/HaralagoLtd"><img src="img/social/twitter.svg" alt="Twitter"></a>
+                    </div>
+                    <div class="contact__wrap">
+                        <a class="contact__link hidden-mobile" href="https://twitter.com/HaralagoLtd">twitter</a>
+                        <a class="contact__link visible-mobile" href="https://www.linkedin.com/company/haralago"><img src="img/social/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                    <div class="contact__wrap contact__wrap--left">
+                        <a class="contact__link hidden-mobile" href="https://www.linkedin.com/company/haralago">linkedin</a>
+                        <a class="contact__link visible-mobile" href="#"><img src="img/social/facebook.svg" alt="Facebook"></a>
+                    </div>
+                    <div class="contact__wrap">
+                        <span class="contact__tel hidden-mobile">+234 908 723 0836</span>
+                        <a class="contact__link visible-mobile" href="#"><img src="img/social/medium.svg" alt="Medium"></a>
+                    </div>
+                    <div class="contact__divider hidden-mobile"></div>
+                    <div class="clear visible-mobile">
+                        <span class="contact__tel">+234 908 723 0836</span>
+                    </div>
+                    <div class="clear">
+                        <a class="contact__link" href="#">services@haralago.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="careers" class="section section--careers">
+            <div class="section-label">
+                <span class="section-label__line line-animated"></span>
+                <span class="section-label__text">careers</span>
+            </div>
+            <div class="section-title">Careers</div>
+            <div id="recruitment" class="hero" style="display: none">
+                <div class="container container--padded">
+                    <div class="animated fadeInUp">
+                        <h3 class="hero__text">We are recruiting candidates who are passionate about healthcare service operations</h3>
+                        <h3 class="hero__text">Email your CV to <a href="#">careers@haralago.com</a> if you would like to be part of the team.</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="footer" class="section section--footer">
+            <div class="footer">
+                <div class="container container-padded">
+                    <div class="grid grid--full">
+                        <div class="grid-column grid-column--wider">
+                            <h3 class="footer__title">Contact</h3>
+                            <ul class="footer__list">
+                                <li>+234 908 723 0836</li>
+                                <li><a href="mailto:services@haralago.com">services@haralago.com</a></li>
+                                <li><a href="mailto:careers@haralago.com">careers@haralago.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="grid-column">
+                            <h3 class="footer__title">Services</h3>
+                            <ul class="footer__list">
+                                <li>Equipment Maintenance</li>
+                                <li>Energy Solutions</li>
+                                <li>Leasing</li>
+                                <li>Infection Control</li>
+                                <li>Oxygen</li>
+                            </ul>
+                        </div>
+                        <div class="grid-column grid-column--narrow">
+                            <h3 class="footer__title">Social</h3>
+                            <ul class="footer__list footer__list--social">
+                                <li><a href="https://twitter.com/HaralagoLtd">Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/company/haralago">Linkedin</a></li>
+                                <li><a href="">Facebook</a></li>
+                                <li><a href="">Medium</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__copyright">
+                        <div class="grid grid--full">
+                            <div class="grid-column">©2017 Haralago Ltd</div>
+                            <div class="grid-column grid-column--copyright hidden-mobile">
+                                <a href="">Terms</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="js/vendor/isMobile.min.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/jquery.easing.min.js"></script>
+<script src="js/vendor/jquery.onepage-scroll.js"></script>
+<script src="js/vendor/animate.min.js"></script>
+<script src="js/app.js"></script>
+
+</html>

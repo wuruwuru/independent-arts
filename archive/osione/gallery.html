@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--320-->
+    <title>Light Design</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/vendor/curtain.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="main">
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <ol class="curtains">
+            <li id="intro" class="section section__dark">
+                <div class="content content__centered">
+                    <h1 class="logo">
+                    Gallery
+                    <span class="logo-bar logo-bar__top animated longer slideInLeft"></span>
+                    <span class="logo-bar logo-bar__bottom animated longer slideInRight"></span>
+                </h1>
+                </div>
+                <div class="content content__bottom">
+                    <p>Light Design
+                        <br> February 2017</p>
+                </div>
+            </li>
+            <li id="about" class="section">
+                <div class="case">
+                    <div class="case__image" style="background-image: url('img/sample.jpg')"></div>
+                    <div class="case__image-mobile" style="background-image: url('img/sample-mobile.jpg')"></div>
+                    <div class="case__description">Work for ThisIsUs</div>
+                </div>
+            </li>
+        </ol>
+    </div>
+</body>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/curtain.js"></script>
+<script src="js/vendor/jquery.smoothState.min.js"></script>
+<script>
+$(function() {
+    var curtain = $('#main').find('.curtains').curtain();
+
+    var home = false,
+        exitClass,
+        entryClass;
+
+    var options = {
+            prefetch: true,
+            cacheLength: 2,
+            onStart: {
+                duration: 250,
+                render: function($container) {
+                    exitClass = home ? 'slideOutLeft' : 'slideOutRight';
+                    $container.addClass('animated longer ' + exitClass);
+                    smoothState.restartCSSAnimations();
+                }
+            },
+            onReady: {
+                duration: 0,
+                render: function($container, $newContent) {
+                    entryClass = home ? 'slideInRight' : 'slideInLeft';
+                    $container.removeClass(exitClass).addClass(entryClass);
+
+                    $container.html($newContent);
+                    curtain = $container.find('.curtains').curtain();
+                }
+            },
+            onAfter: function($container) {
+                home = !home;
+                setTimeout(function() {
+                    $container.removeClass();
+                }, 2000);
+            }
+        },
+        smoothState = $('#main').smoothState(options).data('smoothState');
+});
+</script>
+
+</html>

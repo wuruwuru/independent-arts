@@ -1,0 +1,321 @@
+
+/*================
+Aikomo Onaopemipo
+themerrykid.com
+===============*/
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  background: white;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default; }
+
+  html, body {
+    height: 100%;
+    position: relative;
+  }
+
+a {
+  text-decoration: none;
+}
+
+p { 
+  font-size: 14px;
+  color: #777; }
+
+ul, ol, li {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin: 15px 0px;
+}
+
+#nav {
+  width: 200px;
+  position: absolute;
+  left: 0px; top: 0px;
+  height: 100%;
+  background: #3B4A7B;
+  padding: 20px;
+}
+
+#nav .logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#nav .menu li a {
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 1px;
+  background: rgba(0,0,0,0.2);
+}
+
+#nav .menu li a:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.wrap {
+  position: relative;
+  width: auto;
+  height: 100%;
+  position: relative;
+  display: block;
+  margin-left: 200px;
+}
+
+
+.slider  {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  height: 100% !important;
+  top: 0; left: 0%;
+  overflow: auto;
+
+}
+
+.slider .controls {
+  position: absolute;
+  background: #222;
+  width: 320px;
+  height: 60px;
+  border-bottom: solid 1px #111;
+  z-index: 999;
+}
+
+.slider .controls small {  
+  float: left;
+  width: 200px;  
+  padding: 20px 12px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.slider .controls a {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-left: solid 1px #111;
+  background: url(../img/controls.png);
+  cursor: pointer;
+}
+
+.slider .controls a:hover {
+  background-color: #333;
+}
+
+.slider .controls a.prev {
+  background-position: -60px 0; 
+}
+
+.slide:nth-child(1) { background: url(../img/slides/slide1.jpg) fixed; background-size: cover; }
+.slide:nth-child(2) { background: url(../img/slides/slide2.jpg) fixed; background-size: cover; }
+.slide:nth-child(3) { background: url(../img/slides/slide3.jpg) fixed; background-size: cover; }
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 100%;
+  overflow: hidden; 
+  float: left;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+.slide .description {
+  position: absolute;
+  display: block;
+  left: -20px; top: 0;
+  width: 320px;
+  height: 100%;
+  padding: 60px 20px 30px 20px;
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+.slide.active .description {
+  left: 0px;
+  opacity: 1;
+}
+
+.slide .description:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.description .category, .description .link {
+  font-size: 13px;
+  padding: 6px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #3B4A7B;
+  color: white;
+}
+
+.description .link { 
+  display: inline-block;
+}
+
+.description .title {
+  font-size: 36px;
+  margin: 0px;
+  font-weight: 700;
+  color: white;
+}
+
+.description .date {
+  color: #777;
+  font-size: 18px;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.description .text {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #e8e8e8;
+}
+
+.extras {
+  position: absolute;
+  width: 270px;
+}
+
+.extras .content {
+  display: inline-block;    
+  height: 170px;
+  background: #222;
+  border: solid 5px #3B4A7B;
+  display: none;
+}
+
+.extras .content.clicked {
+  display: block;
+}
+
+.extras img, .extras p {
+  float: left;
+  width: 130px;
+  height: 160px;
+}
+
+.extras p {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  line-height: 1.2;
+}
+
+.extras a {
+  display: inline-block;
+  background: #333;
+  color: white;
+  margin-top: 10px;
+  padding: 4px 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.extras .pointer {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: url(../img/point.png);
+  cursor: pointer;
+}
+
+.extras .pointer.clicked {
+  background: url(../img/point_close.png);
+}
+
+/*
+==============================================
+pulse
+==============================================
+*/
+
+.pulse{
+  animation-name: pulse;
+  -webkit-animation-name: pulse;  
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;   
+  }
+  50% {
+    ransform: scale(1);
+    opacity: 1; 
+  } 
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7; 
+  }     
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+    opacity: 0.7;   
+  }
+  50% {
+    -webkit-transform: scale(1);
+    opacity: 1; 
+  } 
+  100% {
+    -webkit-transform: scale(0.95);
+    opacity: 0.7; 
+  }     
+}
+
+/*
+==============================================
+End pulse
+==============================================
+*/

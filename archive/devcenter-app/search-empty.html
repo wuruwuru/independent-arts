@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!--320-->
+    <title>Devcenter
+    </title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/hint.css">
+    <link rel="stylesheet" href="css/magicsuggest-min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="Devcenter">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="sm-bold" href="">PROJECTS</a></li>
+                    <li><a class="sm-bold" href="">JOBS</a></li>
+                    <li><a class="sm-bold" href="">BLOG</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="search-wrap">
+                    <i class="ion-ios-search-strong"></i>
+                    <input type="text" class="search" placeholder="Search Devcenter">
+                </div>
+                <div class="logged-in">
+                    <div class="username">
+                        <a class="btn btn-blue">Sign In</a>
+                        <a class="btn btn-green">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="sidebar md-3 cols hidden-xs">
+                <h2 class="thin">Devcenter</h2>
+                <div class="menu">
+                    <ul>
+                        <li class="new-post"><a data-open="new-project" class="btn btn-full btn-lg btn-blue open-overlay"> Post Project</a></li>
+                        <li class="new-post"><a data-open="new-job" class="btn btn-full btn-lg btn-green open-overlay"> Post Job</a></li>
+                    </ul>
+                </div>
+                <div class="jobs-menu">
+                    <h4 class="title">Recent Jobs</h4>
+                    <ul>
+                        <li><a href="">Backend Developer at Lost In Lagos <span class="new-job"></span></a></li>
+                        <li><a href="">Front End Developer at Lost In Lagos</a></li>
+                        <li><a href="">Web Designer / Developer at Oparison & Co</a></li>
+                        <li><a href="">Backend Developer at Lost In Lagos</a></li>
+                    </ul>
+                    <a class="more-link">View All Jobs <i class="ion-android-arrow-forward"></i></a>
+                </div>
+            </div>
+            <div class="sm-12 md-9 cols right">
+                <h3>Search results for <b>Something</b></h3>
+            </div>
+            <div class="post-feed pad-top sm-12 md-9 cols right">
+                <div class="feed-header">
+                    <a href="">Projects</a>
+                    <a href="">Jobs</a>
+                    <a class="active" href="">People - 2</a>
+                    <a id="toggle-advanced-search" class="hidden-xs right"><i class="ion-funnel"></i> Advanced Search</a>
+                    <div class="advanced-search animated fadeInDown">
+                        <div class="inputGroup">
+                            <label>Experience</label>
+                            <div class="check-group">
+                                <label for="1">
+                                    <input checked="checked" id="1" name="" type="checkbox" value="5">Visual Design</label>
+                                <label for="2">
+                                    <input id="2" name="" type="checkbox" value="5">User Experience Design</label>
+                                <label for="3">
+                                    <input id="3" name="" type="checkbox" value="5">Product Design</label>
+                                <label for="4">
+                                    <input id="4" name="" type="checkbox" value="5">Graphic Design</label>
+                                <label for="1">
+                                    <input checked="checked" id="1" name="" type="checkbox" value="5">Front-end Dev</label>
+                                <label for="2">
+                                    <input id="2" name="" type="checkbox" value="5">Back-end Dev</label>
+                                <label for="3">
+                                    <input id="3" name="" type="checkbox" value="5">Desktop App Dev</label>
+                                <label for="4">
+                                    <input id="4" name="" type="checkbox" value="5">Mobile App Dev</label>
+                            </div>
+                        </div>
+                        <div class="inputGroup">
+                            <label>Expertise </label>
+                            <input id="expertise" type="text" style="margin-top: 10px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="results">
+                    <div class="no-results">
+                        <i class="ion-sad-outline"></i>
+                        <span>No results found</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vendor/magicsuggest-min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    $(function() {
+        $('#toggle-advanced-search').click(function() {
+            $(this).toggleClass('active');
+            $('.advanced-search').toggle()
+        })
+        $('#expertise').magicSuggest({
+            placeholder: 'Start typing to select tags',
+            data: ['Javascript', 'Angularjs', 'JQuery', 'NodeJS', 'Python', 'Java']
+        });
+    })
+    </script>
+</body>
+
+</html>

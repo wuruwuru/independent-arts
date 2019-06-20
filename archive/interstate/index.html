@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Interstate</title>
+
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+  
+</head>
+<body>
+
+	<div class="header">
+		<div class="row">
+			<div class="name animated fadeInDown">Interstate Architects</div>
+
+			<ul class="menu">
+				<li><a href="">About Us</a></li>
+				<li><a href="">Practice</a></li>
+				<li><a href="">Projects</a></li>
+				<li><a href="">Clients</a></li>
+				<!-- <li><a href="">News</a></li> -->
+				<li><a href="">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="hero animateOpacity">
+		<div class="message animated fadeIn">
+			<div class="message_overlay"></div>
+			<p>Since our founding in 1952, we have established ourselves as the leading provider for the private and public sector in the built environment</p>
+		</div>
+		<div class="bg-lines"></div>
+	</div>
+
+	<div class="full-height">
+	</div>
+
+	<div id="samples" class="section dark">
+		<div class="large-4 columns">
+			<h1 class="section-title side">
+				Design forms the centre of our practice. <br> Innovation, knowledge, learning and research are the spirit of our firm. We've done outstanding work as shown
+			</h1>
+		</div>
+
+		<div class="large-8 columns">
+
+			<div class="samples">
+				<img src="img/blueprint.png" class="blueprint" alt="">
+
+				<div class="sample-projects">
+					<div class="slideOne">
+						<div class="slide">
+							<p class="title">Central Bank of Nigeria</p>
+							<p class="work-done">Rebuilding of Lagos Office</p>
+							<a href="">See Project</a>
+						</div>
+
+						<div class="slide">
+							<p class="title">2 Central Bank of Nigeria</p>
+							<p class="work-done">Rebuilding of Lagos Office</p>
+							<a href="">See Project</a>
+						</div>
+
+						<div class="slide">
+							<p class="title">3 Central Bank of Nigeria</p>
+							<p class="work-done">Rebuilding of Lagos Office</p>
+							<a href="">See Project</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="sample-preview">
+					<div class="slideTwo">
+						<div class="slide">
+							<img src="img/mock.jpg" alt="">
+						</div>
+
+						<div class="slide">
+							<img src="img/mock2.jpg" alt="">
+						</div>
+
+						<div class="slide">
+							<img src="img/mock3.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="about" class="section">
+		<div class="row">
+			<h3 class="title-small">Interstate Architects</h3>
+			<div class="text-lg">
+				<p>Professionally driven by the three E's; Excellence, Expertise and Efficiency, committed to improving our profession, ourselves plus our society as a whole through key principles.</p>
+
+				<p>Our work begins by understanding the client's business, and brand, with a clear understanding of their challenges and the context in which they exist, we combine the knowledge, expertise and the talents of our teams to exceed their goals, setting new standards</p>
+			</div>
+
+			<a class="link" href="#"><i class="fa fa-arrow-right"></i> Read More About Us </a>
+
+			<div class="border-top"></div>
+
+			<h3 class="title-small">We work across industries including</h3>
+			<div class="list">
+				<ul class="medium-4 columns no-pad">
+					<li><i class="fa fa-bank"></i> Banks</li>
+					<li><i class="fa fa-building"></i> Offices</li>
+					<li><i class="fa fa-institution"></i> Civic Buildings</li>
+					<li><i class="fa fa-building-o"></i> Education Sector</li>
+				</ul>
+
+				<ul class="medium-4 columns no-pad">
+					<li><i class="fa fa-hospital-o"></i> Healthcare Sector</li>
+					<li><i class="fa fa-institution"></i> Cultural</li>
+					<li><i class="fa fa-building-o"></i> Leisure/ Hospitality</li>
+					<li><i class="fa fa-building"></i> Industrial</li>
+				</ul>
+
+				<ul class="medium-4 columns no-pad">
+					<li><i class="fa fa-institution"></i> Religious</li>
+					<li><i class="fa fa-home"></i> Residential</li>
+					<li><i class="fa fa-building"></i> Mixed Use</li>
+					<li><i class="fa fa-sitemap"></i> Master Planning</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="row">
+			<span class="company">
+				<b>Interstate Architects</b>
+			</span>
+
+			<span class="credits right">
+				Copyright © 2014 All right reserved
+			</span>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/slick.js"></script>
+	<script src="js/app.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.slideOne').slick({
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				dots: true,
+				pauseOnHover: false
+			});
+
+			$('.slideTwo').slick({
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				dots: true,
+				fade: true,
+				pauseOnHover: false
+			});
+		});
+	</script>
+</body>
+</html>

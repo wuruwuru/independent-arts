@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Dev Centre</title>
+
+  
+	<link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+  
+</head>
+<body class="pattern">
+
+	<div class="content row">
+
+		<div class="setup-header md-4 cols">
+
+			<!-- Progress bar showing progress of the stages -->
+			<div class="progress">
+			  <div class="circle done">
+			    <span class="label">1</span>
+			  </div>
+			  <span class="bar done"></span>
+			  <div class="circle done">
+			    <span class="label">2</span>
+			  </div>
+			  <span class="bar done"></span>
+			  <div class="circle active">
+			    <span class="label">3</span>
+			  </div>
+			  <span class="bar"></span>
+			  <div class="circle">
+			    <span class="label">4</span>
+			  </div>
+			  <span class="bar"></span>
+			  <div class="circle">
+			    <span class="label">5</span>
+			  </div>
+			</div>
+
+			<h1>How do you whip up your pixels?</h1>
+			<h3>What programs do you use for your creation? This is good so everyone knows what you can work with.</h3>
+		</div>
+
+		<div class="setup md-8 cols no-pad">
+			<div class="white-wrap lg">
+
+				<div class="sm-12 cols no-pad-lg">
+					<label class="lg">
+						Visual Design
+						<small>Program(s) you use</small>
+					</label>
+
+					<div class="sm-12 md-8 cols no-pad">
+						<input id="visual-design" type="text" value="Photoshop, Fireworks" />
+					</div>
+
+					<div class="sm-12 md-4 cols text-right">
+						<label>
+							<small>Rate Yourself</small>
+						</label>
+
+						<div id="visual-design-rating" class="right"></div>
+					</div>
+				</div>
+
+				<div class="sm-12 cols no-pad-lg btop">
+					<label class="lg">
+						Front End Programming
+						<small>Language(s) you write</small>
+					</label>
+
+					<div class="sm-12 md-8 cols no-pad">
+						<input id="front-end" type="text" value="CSS, HTML" />
+					</div>
+
+					<div class="sm-12 md-4 cols text-right">
+						<label>
+							<small>Rate Yourself</small>
+							<div id="front-end-rating" class="right"></div>
+						</label>
+					</div>
+				</div>
+
+				<div class="next sm-8 cols">
+					<a class="btn right" href="profile-experience.html">
+				  		On to your Experience <i class="icon icon-in lg icon-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery and jQuery UI are required dependencies. -->
+    <script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vendor/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Rating and Tagging Plugins -->
+	<script src="js/jquery.raty.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/tag-it.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        $(function(){
+            var visualDesignTags = ['Photoshop', 'Sketch', 'Adobe Edge', 'Fireworks'];
+
+            var frontEndTags = ['CSS', 'LESS', 'SASS', 'Angular', 'jQuery', 'Javascript', 'HAML'];
+
+            $('#visual-design').tagit({
+                availableTags: visualDesignTags
+            });
+
+            $('#front-end').tagit({
+                availableTags: frontEndTags
+            });
+
+            $('#visual-design-rating').raty({ 
+            	numberMax: 5,
+            	path: 'js/img/',
+            	hints: ['I can design a few buttons', 'I can ....', 'I can ....', 'I can/have not made full design mockups with multiple states', 'I have made full design mockups with states']
+            });
+
+            $('#front-end-rating').raty({ 
+            	numberMax: 5,
+            	path: 'js/img/',
+            	hints: ['I can design a few buttons', 'I can ....', 'I can ....', 'I can/have not made full design mockups with multiple states', 'I have made full design mockups with states']
+            });
+        });
+    </script>
+</body>
+</html>

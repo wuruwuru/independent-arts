@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!--320-->
+    <title>Devcenter
+    </title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/hint.css">
+    <link rel="stylesheet" href="css/magicsuggest-min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="Devcenter">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="sm-bold" href="">PROJECTS</a></li>
+                    <li><a class="sm-bold" href="">JOBS</a></li>
+                    <li><a class="sm-bold" href="">BLOG</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="search-wrap">
+                    <i class="ion-ios-search-strong"></i>
+                    <input type="text" class="search" placeholder="Search Devcenter">
+                </div>
+                <div class="logged-in">
+                    <div class="username dropdown-trigger">
+                        Aikomo Opemipo <span><i class="icon ion-arrow-down-b"></i></span>
+                    </div>
+                    <div class="user-menu dropdown animated fadeInUp">
+                        <ul>
+                            <li><a href="">Profile</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li><a href="">Suggest</a></li>
+                            <li><a href="">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="sidebar md-3 cols">
+                <h2 class="thin">Profile Settings</h2>
+                <div class="menu side-menu">
+                    <ul>
+                        <li><a class="sm-bold active" href="edit-profile.html">Basic Info <i class="ion-ios-arrow-forward"></i></a></li>
+                        <li><a class="sm-bold" href="edit-profile-design.html">Profile Design <i class="ion-ios-arrow-forward"></i></a></li>
+                        <li><a class="sm-bold" href="edit-profile-work.html">Work & Experience <i class="ion-ios-arrow-forward"></i></a></li>
+                        <li><a class="sm-bold" href="">Notifications <i class="ion-ios-arrow-forward"></i></a></li>
+                        <li><a class="sm-bold" href="">Change Password <i class="ion-ios-arrow-forward"></i></a></li>
+                        <li class="new-post"><a class="btn btn-full btn-blue" href=""><i class="fa fa-plus"></i> Back to Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sm-12 md-9 cols">
+                <div class="lg-8 md-10 cols no-pad">
+                    <form class="customForm panel">
+                        <h3 class="title">Basic Info</h3>
+                        <!-- Uploaded profile image goes here -->
+                        <div class="profileImage">
+                            <img src="img/profile1.jpg" alt="">
+                            <span class="change-image">Change Image <input type="file"></span>
+                        </div>
+                        <div class="inputGroup">
+                            <label>Name</label>
+                            <input class="bio-element" type="text" placeholder="Aikomo Opemipo" value="Aikomo Opemipo" id="name" />
+                        </div>
+                        <div class="inputGroup">
+                            <label>Username</label>
+                            <input class="bio-element" type="text" placeholder="Your username" id="username" value="fathermerry" />
+                        </div>
+                        <div class="inputGroup">
+                            <label>Email Address</label>
+                            <input type="text" placeholder="Your email address" />
+                        </div>
+                        <div class="inputGroup">
+                            <label>Current Role</label>
+                            <input class="bio-element" type="text" placeholder="designer or developer" value="Designer and front end developer, co-founder of Devcenter." id="role" />
+                        </div>
+                        <div class="inputGroup muted">
+                            <label>This is how your bio will read:</label>
+                            <p style="font-size: 15px" id="transcript">I'm <span class="name"></span> (@<span class="username"></span>), <span class="role"></span></p>
+                        </div>
+                        <div class="inputGroup">
+                            <button class="btn btn-blue">Save</button>
+                            <a class="link-btn right" href="">Next: Profile Design <i class="ion-android-arrow-forward"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vendor/magicsuggest-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    $(function() {
+        $(".bio-element").keyup(function() {
+            updateBio();
+        });
+
+        var updateBio = function() {
+            $('#transcript .name').text($("#name").val())
+            $('#transcript .username').text($("#username").val())
+            $('#transcript .role').text($("#role").val() || "designer or developer")
+        };
+        updateBio();
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+body {
+    overflow: hidden;
+}
+
+
+.map-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    left: 0;
+    top: 0;
+    background: #111;
+    padding: 20px;
+    z-index: 1;
+    display: none;
+}
+
+#headcount {
+    position: absolute;
+    z-index: 299;
+    width: 100%;
+    height: 100%;
+    background: black;
+    background: rgba(0,0,0,.95);
+    display: none;
+    top: 0;
+    left: 0;
+    padding: 10%;
+}
+
+#dots {
+    padding: 20px;
+}
+
+.dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    margin: 3px;
+    float: left;
+}
+
+.dot:hover {
+    opacity: 0.5;
+}
+
+.maparea {
+    background: #222;
+    overflow: hidden;
+    height: 100%;
+}
+
+.map-container h2 {
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #FFF;
+}
+
+.map-container .title,.map-container .title_state {
+    position: absolute;
+    z-index: 99;
+    top: 40px;
+    left: 40px;
+}
+
+.map-container .title_state {
+    top: 40px;
+    font-size: 36px;
+    left: 0; right: 0;
+    margin: auto;
+    width: 200px;
+    text-align: center;
+}
+
+.dots h2 {
+    font-size: 20px;
+}
+
+.map {
+    position: relative;
+}
+
+#message {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    background: black;
+    background: rgba(0,0,0,0.6);
+    color: #FFF;
+    border: solid 4px rgba(0,0,0,0.1);
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+}
+
+#message .state-name {
+    text-transform: capitalize;
+}
+
+.headcount {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.states {
+    stroke-opacity: 0.4;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    cursor: pointer;
+}
+
+.states:hover {
+    fill-opacity: 0.5;
+}

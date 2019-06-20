@@ -1,0 +1,376 @@
+@import url('font/less/ionicons.less');
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    font-size: 20px;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    outline: 0 !important;
+    cursor: pointer;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.7em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.6em;
+}
+
+h4 {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.clear {
+    clear: both
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+@mobile: ~"all and (min-width: 320px) and (max-width: 767px)";
+@notmobile: ~"all and (min-width: 767px)";
+@tablet: ~"all and (min-width: 320px) and (max-width: 959px)";
+@custom: ~"all and (min-width: 320px) and (max-width: 1024px)";
+@desktop: ~"all and (min-width: 960px)";
+@bigscreen: ~"all and (min-width: 640px)";
+@black: #090900;
+@yellow: #F5D328;
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+
+    @media @mobile {
+        font-size: 16px;
+    }
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    &__inactive {
+        z-index: -1;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+.section {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    &__dark {
+        background: @black;
+        color: white;
+    }
+    &.current {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+    }
+    @media @mobile {
+        border-bottom: solid 1px whitesmoke;
+    }
+}
+
+.text {
+    &__muted {
+        color: #555;
+    }
+    &__yellow-bg {
+        background: @yellow;
+        -webkit-box-decoration-break: clone;
+        -ms-box-decoration-break: clone;
+        -o-box-decoration-break: clone;
+        box-decoration-break: clone;
+        font-weight: bold;
+        color: @black;
+        box-shadow: 0.5rem 0 0 @yellow, -0.5rem 0 0 @yellow;
+    }
+    &__large {
+        font-size: 3em;
+        font-weight: bold;
+    }
+}
+
+.h5-mobile {
+    @media @mobile {
+        font-size: 1.1em;
+    }
+}
+
+.content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    &__relative {
+        position: relative;
+        padding: 100px 0;
+        @media @mobile {
+            padding: 30px 0;
+        }
+    }
+    &__centered {
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 20px;
+    }
+    &__centered-mobile {
+        @media @mobile {
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            position: absolute;
+        }
+    }
+    &__bottom {
+        bottom: 15%;
+    }
+    &__padded {
+        max-width: 100px auto;
+    }
+    &-constrain {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.logo {
+    font-size: 5em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 20px 0;
+    overflow: hidden;
+    &-bar {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 20px;
+        background: @yellow;
+        left: 0;
+    }
+    &-bar__top {
+        top: 0;
+    }
+    &-bar__bottom {
+        bottom: 0;
+    }
+}
+
+.title-text {
+    margin-bottom: 100px;
+    @media @mobile {
+        margin-bottom: 30px;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90%;
+    width: 1280px;
+    margin: 0 auto;
+    text-align: left;
+    &__with-spacing {
+        margin: 100px auto;
+    }
+}
+
+.grid-column {
+    flex-basis: 100%;
+    padding: 20px;
+    @media screen and (min-width: 800px) {
+        flex: 1;
+    }
+    &__picture {
+        flex: 0.6;
+        @media @mobile {
+            flex: 1;
+        }
+    }
+}
+
+.big-letter {
+    color: #DEDEDE;
+    font-size: 6em;
+    font-weight: bold;
+    margin-top: 50px;
+    @media @mobile {
+        margin-top: 0;
+    }
+}
+
+.bullet {
+    position: relative;
+    &__number {
+        position: absolute;
+        top: 3px;
+        left: -20px;
+        font-weight: bold;
+    }
+}
+
+.contact {
+    p {
+        font-size: 1.2em;
+        margin: 5px 0;
+    }
+    a {
+        padding: 0 10px;
+        &:hover {
+            text-decoration: underline;
+        }
+        @media @mobile {
+            display: block;
+        }
+    }
+}
+
+.copyright {
+    position: absolute;
+    color: white;
+    left: 0;
+    bottom: 50px;
+    font-size: 0.6em;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+}
+
+.poster-picture {
+    padding: 0 20px 100px 0;
+    @media @mobile {
+        padding-bottom: 0;
+    }
+}
+
+.large-image {
+    padding: 50px;
+    @media @mobile {
+        padding: 0;
+    }
+}
+
+.logos {
+    margin-top: 100px;
+}
+
+.navigation {
+    position: absolute;
+    top: 50px;
+    color: #CCC;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    font-size: 0.8em;
+    margin: 0 auto;
+    width: 10em;
+    text-align: center;
+
+    li {
+        padding: 0 10px;
+        float: left;
+    }
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.case {
+    &__image, &__image-mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        -webkit-background-size: cover;
+    }
+
+    &__image {
+        @media @mobile {
+            display: none;
+        }
+    }
+
+    &__image-mobile {
+        display: none;
+        @media @mobile {
+            display: block;
+        }
+    }
+
+    &__description {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+}

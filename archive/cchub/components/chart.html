@@ -1,0 +1,22 @@
+<div class="chart">
+    <div class="animated fadeIn" ng-hide="filtered.length">
+        <h5 class="text-center wrapper">
+            <span class="w-full block m-b-md fa-5x"><i class="ion-sad-outline"></i></span>
+            No data available for this query
+        </h5>
+    </div>
+    <div class="bar" ng-repeat="bar in filtered = (bars | filter:filter)">
+        <div class="bar-key m-b-xs pull-left w-full">
+        	<span class="pull-left">{{$index + 1}}. {{bar.key || bar.name}}</span>
+        	<span class="pull-right"><b>{{bar.value | number:decimalPoints}}{{bar.metric}}</b></span>
+        </div>
+        <div class="bar-base">
+	        <div class="bar-level" ng-style="{'width': bar.width + '%', 'background': bar.color}">
+		        <!-- <div class="bar-value"></div> -->
+	        </div>
+        </div>
+    </div>
+    <hr>
+    <p ng-if="locationLog" class="text-center"><small class="text-muted">This data was collected from {{locationLog.totalLogs}} internet logs over {{locationLog.totalCities}} cities in {{locationLog.location}} between {{locationLog.firstLogDay | date : "MMMM dd yyyy"}} and {{locationLog.lastLogDay | date : "MMMM dd yyyy"}}</small></p>
+    <p ng-if="!locationLog" class="text-center" log><small class="text-muted">This data was collected from {{log.totalLogs}} internet logs over {{log.totalCities}} cities in {{log.location}} between {{log.firstLogDay | date : "MMMM dd yyyy"}} and {{log.lastLogDay | date : "MMMM dd yyyy"}}</small></p>
+</div>

@@ -1,0 +1,1 @@
+- (Profile Project) User should be able to tag other people on his projects. Tagging could select possible names from the user's network, and accept email addresses for people that are not in the network.

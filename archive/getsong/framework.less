@@ -1,0 +1,232 @@
+@blue: #49a9a5;
+@green: #639d48;
+@ash: #161616;
+       
+html { font-size: 62.5%; }
+    
+body { 
+    font-family: 'proxima_nova_rgregular';
+    .font-size(14px);
+    width: 100%; }
+    
+#wrap { .rel; .db; margin: 0 auto;
+    width: 100%;
+    max-width: 1600px; }
+  
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    outline: 0 !important;
+    &:hover { color: #0AF; }
+    &:visited { outline: 0 !important; } }
+    
+.transition(@string: all 0.3s ease-out) {
+    -webkit-transition: @string;
+    -moz-transition:    @string;
+    -ms-transition:     @string;
+    -o-transition:      @string;
+    transition:         @string;
+}
+    
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+.clearfix:after {
+    clear: both;
+}
+ 
+/* IE6/7 support */
+.clearfix {
+    *zoom: 1;
+}
+.ir {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.font-size(@pxValue) {
+    @remValue: (@pxValue/10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem"; }
+    
+.box-shadow(@x: 0, @y: 0px, @blur: 1px, @color: rgba(0,0,0,0.3)) {
+    -webkit-box-shadow:  @arguments;
+    -moz-box-shadow:     @arguments;
+    -ms-box-shadow:      @arguments;
+    -o-box-shadow:       @arguments;
+    box-shadow:          @arguments;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.square(@x) {
+    height: @x;
+    width: @x; }
+    
+.db() { display: block; }
+.absol() { position: absolute; }
+.fixed() {position: fixed; }
+.rel() { position: relative; }
+
+.fourcol { width: 25%; .db; 
+@media only screen and (max-width : 37.5em) { width: 50%; }
+}
+.bot(@size, @color, @x: solid) {
+    border-bottom: @size @color @x; }
+.btop(@size, @color, @x: solid) {
+    border-top: @size @color @x; }
+    
+.sidebar {
+    width: 15%;
+    .fixed;
+    height: 80rem;
+    background: darken(@ash, 10%);
+    a { .db; .rel; width: 100%;
+        height: 5rem;
+        text-align: left;
+        text-indent: 5rem;
+        line-height: 5rem;
+        color: lighten(@ash, 30%);
+        background: @ash;
+        .transition;
+        .bot(1px, darken(@ash, 10%));
+        .btop(1px, lighten(@ash, 10%));
+            &:hover { background: darken(@ash, 5%); color: @green; text-indent: 5.5rem; }
+            &:before { 
+                content:""; .db; .absol;
+                top: 1.7rem;
+                left: 2rem;
+                .square(1.6rem);
+                background:url(images/sidelist.png) no-repeat;}
+            } }
+
+      
+.content {
+    .db; width: 85%;
+    .absol; left: 15%; z-index: 2;
+    .box-shadow( -1px, -1px, 2px, rgba(0,0,0,0.5));
+    top: 0;
+     .threecol {
+    width: 33.33333333333333%; .db;
+    @media only screen and (max-width : 45em) { width: 100%; }
+}
+    
+@media only screen and (max-width : 61.5em){
+    width: 100%; left: 0%;
+}
+    }
+    
+.header {
+    height: 7.5rem;
+    width: 100%; .db;
+    background: @ash;
+    .bot(1px, lighten(@ash, 10%));
+    &.cat { background: darken(@ash, 10%); border: 0; line-height: 7.5rem; text-indent: 2rem; color: lighten(@ash,40%); } }
+
+.logo, .search_btn {
+    float: right;
+    margin: 2rem;.db;
+    height: 3.4rem;
+    width: 18rem; 
+    background:url(images/logo.png) no-repeat center; }
+    
+.search_btn { 
+    width: 3.4rem;
+    float: left;
+    background:url(images/search.png) no-repeat center top;
+    &:hover {
+        background-position: 0 -3.4rem; } }
+        
+.active {
+        background-position: 0 -3.4rem; }
+    
+#search {
+    .absol; top: 7.5rem; left: 0;
+    width: 100%;
+    height: 5rem;
+    display: none;
+    background: url(images/01.png) repeat rgba(0,0,0,0.85);
+    z-index: 2;
+    .bot(3px, @blue);
+    .searchbox{ width: 100%; .db; text-indent: 3rem; background: none; color: white; .font-size(16px); height: 3rem; margin-top: 1rem;
+                outline: 0px !important; border: 0px !important; }
+    }
+    
+.featured {
+    .rel;
+    overflow: hidden;
+    background: @ash;
+    cursor: pointer;
+     img { width: 100%; height: auto; background:url(images/loading.gif) center no-repeat;}
+     ul { margin: 0px; padding: 0px; 
+        li { float:left; } } }
+        
+.tab {
+    display: inline-block;
+    float: left;
+    background: lighten(@ash,80%);
+    .box-shadow( -1px, 0px, 1px );
+    .title { 
+        .db; height: 4rem;
+        color: white;
+        line-height: 4rem;
+        text-indent: 2rem;
+        background: @blue;
+        &.green { background: @green; } }
+}
+    
+.post {
+    height: 7rem; .rel;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    .bot(1px, lighten(@ash,70%));
+    .download { 
+        .db; .absol;
+        .square(2.4em);
+        padding: 0.2em;
+        right: 1rem; top: 1.3rem;
+        background: url(images/dl.png) no-repeat center @blue;
+        border-radius: 3px; 
+        .transition;
+        &:hover {background-color: lighten(@ash,10%);} }
+     .songtitle {  .font-size(18px); .db; margin: 10px 0 3px; color: @blue; font-family: 'proxima_novalight';
+     &:hover{ text-decoration: underline !important; } }
+    .artistes { text-transform: uppercase; .font-size(12px); }
+    &.green {
+        .songtitle { color: @green; .db; background: none !important; }
+        a {background-color: @green;&:hover {background-color: lighten(@ash,10%);}} }
+     img { width: 7rem; float: left; margin-right: 1em; opacity: 0.5; .transition; }
+     p { color: lighten(@ash, 20%); margin: 0; }
+    .download_count { .font-size(10px); margin-top: 3px; }
+    &:hover { img {opacity:1} }
+}
+
+.popularmusic {
+    .post {
+    height: 10.5rem; border: 0px; background: @blue; .artistes, .songtitle, .download_count {color: white; }
+    .tags{ height: 3rem;.db;
+    a{  .font-size(11px);
+        color: white; background: darken(@blue, 10%); 
+        display: inline-block; padding: 2px 6px; margin-top: 5px;
+        text-transform: uppercase;         &:hover { background: darken(@blue, 20%); } } }    
+    }
+    li:nth-child(even){ background: lighten(@blue, 5%) }}
+    
+.featuredvideo {
+    .db; width: 100%; height: 21rem; }

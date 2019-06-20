@@ -1,0 +1,104 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 padder-top m-b-md">
+                <a ui-sref="explore.home"><i class="icon ion-grid m-r-xs"></i> Back to all questions</a>
+            </div>
+            <div class="col-md-6 lines-wrap">
+                <ul class="lines">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <div class="panel box-shadow animated fadeIn">
+                    <div class="col-md-9 no-padder b-r">
+                        <div class="panel-body padder-b">
+                            <div class="row">
+                                <div class="col-md-6" ng-show="selected">
+                                    <h5 class="animated font-thin m-r-md">Viewing data for {{selected.name}}</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="btn-group" ng-class="{'pull-right': selected}" dropdown is-open="status.isopen">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                                        <span class="m-r-xs">Choose an ISP</span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li ng-repeat="isp in isps"><a href ng-click="changeQuery(isp.id)">{{isp.name}}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <hr class="m-t-sm">
+                                </div>
+                            </div>
+                            <div class="col-md-12 animated fadeInUp" ng-hide="loaded">
+                                <div class="text-center m-t-lg padder-v" ng-hide="loading">
+                                    <img src="/assets/img/location.png" alt="">
+                                    <h4 class="text-muted m-t-lg">Choose an ISP to explore</h4>
+                                </div>
+                                <div class="loader md-12 cols" ng-show="loading">
+                                    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="results" ng-if="loaded && isp">
+                                <div class="col-md-3">
+                                    <h4 class="font-thin m-t-xxl">Availability</h4>
+                                    <h5 class="text-muted">Best Cities for {{selected.name}} internet performance</h5>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="city m-b-md text-center col-md-3 col-xs-2 animated fadeIn {{'delay-'+$index}}" ng-repeat="city in isp.rank | limitTo: 4">
+                                            <i class="ion-earth"></i>
+                                            <div class="city-position">{{$index + 1}}</div>
+                                            <div class="city-name">{{city.name}}</div>
+                                            <div class="city-metrics text-muted">{{city.speed}}Mbps average speed</div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <hr>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="m-b-xs text-info">Average Speed</p>
+                                    <h5>Calculated over {{isp.stats.totalLogs}} internet logs, the average speed for {{selected.name}} is <b>{{isp.stats.avgSpeed}}Mbps</b></h5>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="m-b-xs text-info">Fastest Record</p>
+                                    <h5><b>{{isp.stats.fastestRecord.value}}Mbps</b> download speed was recorded for {{selected.name}} from {{isp.stats.fastestRecord.location}} at {{isp.stats.fastestRecord.date | date : "h:mm a on MMM d, y"}}</h5>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="m-b-xs text-info">Overall</p>
+                                    <h5>{{selected.name}} ranks <b>{{isp.stats.rank}}/{{isp.stats.totalIsps}}</b> best ISP in Lagos, with an index of <b>{{isp.stats.index}}</b> over 10.</h5>
+                                </div>
+                                <div class="col-md-12">
+                                    <hr>
+                                    <p class="text-center" log><small class="text-muted">This data was collected from {{log.totalLogs}} internet logs over {{log.totalCities}} cities in {{log.location}} between {{log.firstLogDay | date : "MMMM dd yyyy"}} and {{log.lastLogDay | date : "MMMM dd yyyy"}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 no-padder">
+                        <div  class="wrapper-lg m-b-md">
+                            <div class="text-info h2">
+                                <i class="icon ion-help-circled"></i>
+                            </div>
+                            <p class="m-b-lg"><a ui-sref="explore.question1">Start Again: What's the internet like in a chosen area? </a></p>
+                            <div class="animated fadeIn" ng-show="tip">
+                                <hr>
+                                <p class="m-b-xs text-danger"><b><small>SECURITY TIP</small></b></p>
+                                <p class="m-b-md">{{tip.title}}</p>
+                                <h5><a class="text-muted" href="{{tip.link}}">Visit the tips section to read more about this tip</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

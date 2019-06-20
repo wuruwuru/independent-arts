@@ -1,0 +1,667 @@
+@import url(animations.css);
+@import url(webfont/webfont.css);
+@import url(http://fonts.googleapis.com/css?family=Karla:400,700);
+
+
+html, body {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  background: #333;
+  width: 100%;
+  height: 100%; }
+
+p {
+  color: white;
+}
+
+a {
+  color: #5ac580;
+}
+
+h1, h2, h3, h4, h5 {
+   font-family: "Karla", Helvetica, Arial, sans-serif;
+   font-weight: bold;   
+  letter-spacing: -2px;
+}
+
+ul, li, ol { margin: 0; padding: 0px; list-style:none; list-style-image: none; }
+
+#header {
+  position: relative;
+  min-height: 55px;
+  background: #141414;
+  border-bottom: solid 5px black;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.reveal-menu, .reveal-jobs, .to-profiles {
+  line-height: 55px;
+}
+
+.reveal-menu {
+  position: absolute;
+  top: 0px;
+  width: 100px;
+  left: 0; right: 0;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 14px;
+}
+
+.reveal-menu:before, .to-profiles:before {
+  display: inline;
+  position: relative;
+  vertical-align: middle;
+  font-family: "dripicons";
+  content: "\e017";
+  margin-right: 5px;
+}
+
+.reveal-menu.retract:before {
+  content: "\e025";
+}
+
+.to-profiles:before {
+  content: "\e008";
+}
+
+#header .logo {
+  padding: 0 20px; }
+
+.reveal-jobs, .to-profiles {
+  padding: 0 20px;
+  font-size: 16px;
+  color: #777;
+  background: black;
+}
+
+.reveal-jobs:hover, .to-profiles:hover {
+  color: white;
+}
+
+.reveal-jobs:before {
+  display: inline-block;
+  position: relative;
+  line-height: 55px;
+  content: "";
+  margin-right: 5px;
+  width: 16px; height: 16px;
+  background: url(../img/suitcase.png);
+}
+
+.reveal-jobs:hover:before {
+  background-position: 0 -16px;
+}
+
+.menu {
+  display: block;
+  padding: 20px;
+  color: white;
+  display: none;
+  clear: both;
+}
+
+.menu {
+  padding: 0 0 20px 0;
+ text-align: center }
+
+ .menu h2 {
+  margin-top: 0px;
+ }
+
+ .menu li a {
+  color: white;
+ }
+
+ .menu li small {
+  vertical-align: top;
+  text-transform: uppercase;
+  font-size: 10px;
+  opacity: 0.8;
+ }
+
+.menu li.soon {  
+  pointer-events: none;
+}
+
+.menu li.soon:after {
+  content: 'soon';
+  display: inline;
+  font-size: 10px;
+  text-transform: uppercase;
+  vertical-align: top;
+  margin-left: 3px;
+}
+
+.menu .bg {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  top: -50%; left: 0; right: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.menu .bg.large  { width: 800px; height: 800px; margin-top: -100px; background: red; }
+.menu .bg.small { width: 600px; height: 600px; background: #5191fc; }
+.menu .bg.small.expand { width: 800px; height: 800px; margin-top: -100px; }
+.menu .bg.large.contract { width: 600px; height: 600px; margin-top: 0; }
+.menu .bg.small.transparent { opacity: 0.8; }
+
+#intro {
+  display: block;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  margin: auto;
+  left: 0; right: 0;
+  padding-top: 65px;
+  text-align: center;
+  z-index: 20;
+  background: rgba(0,0,0,0.95);
+}
+
+#intro .logo {
+  margin: 50px 0px 10px 0px;
+  visibility: hidden;
+}
+
+#intro h1 {
+  font-size: 4em;
+  line-height: 1;
+  margin: 0;
+  color: #5ac580;
+}
+
+#intro p {
+  width: 300px;
+  max-width: 80%;
+  margin: 20px auto;
+  color: white;
+  text-shadow: 0px 1px 1px black;
+}
+
+#intro .close-intro {
+  display: block;
+  color: #999;
+  margin-top: 60px;
+}
+
+#intro .close-intro:before {
+  display: inline;
+  position: relative;
+  vertical-align: middle;
+  font-family: "dripicons";
+  content: "\e025";
+  color: #999;
+  margin-right: 5px;
+}
+
+/*--------------------------
+FILTERING
+-------------------------*/
+
+.filter_profiles {
+  height: 0px;
+  padding: 0px;
+  background: #111;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+.filter_profiles .filtering {  
+  opacity: 0;
+}
+
+.filter_profiles:hover {
+  height: auto;  
+  padding: 20px 0;
+}
+
+.filter_profiles:hover .filtering {
+  opacity: 1;
+}
+
+.filtering {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filtering li {
+  width: 46%;
+  margin: 5px 2%;
+  border: solid 1px #CCC;
+  color: #CCC;
+  text-align: center;
+  padding: 10px 0;
+  float: left;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.filtering li:hover {
+  border: solid 1px #5191FC; 
+}
+
+.filtering li:after {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 100%;
+  position: absolute;
+  left: 0; right: 0;
+  margin: auto;
+  top: 0;
+  background: #5191fc;
+  z-index: -1;
+  transition: all 0.2s ease;
+}
+
+.filtering li:hover:after {
+  width: 100%;
+}
+
+.filter_profiles a.reveal {
+  position: absolute;
+  font-size: 13px;
+  left: 0; right: 0;
+  margin: auto;
+  width: 150px;
+  bottom: -40px;
+  height: 30px;
+  text-align: center;
+  line-height: 20px;
+  background: #111;
+  border-top: solid 1px #333;
+  border-bottom: solid 1px black;
+  color: #999;
+  z-index: 10;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+
+/*--------------------------
+VIEWING
+-------------------------*/
+
+.viewing {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  background: rgba(0,0,0,0.3);
+  display: none;
+}
+
+/*--------------------------
+PROFILE
+-------------------------*/
+
+#content {
+  z-index: 
+}
+
+.profile {
+  display: none;
+  overflow: hidden; 
+}
+
+.profile img, .profile .details, .featured {  
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+}
+
+.profile .details {
+  position: absolute;
+  top: 100%; left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  z-index: 4;
+}
+
+.profile:hover img {
+  opacity: 0.2;  
+}
+
+.profile:hover .details {
+  top: 0%;
+}
+
+.profile:hover .details.moved-up {
+  top: -100%;
+}
+
+.profile .details .name {
+  color: white;
+  margin: 10px 0;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 0.8;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+}
+
+.profile .details .bio {
+  border-top: dotted 1px white;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.profile .details .view-work {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  padding: 4px 6px;
+  border: solid 1px white;
+  color: white;
+  border-radius: 3px;
+}
+
+.profile .details .view-work:hover {
+  background: white;
+  color: inherit;
+}
+
+.featured {
+  position: absolute;
+  top: 100%; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 9;
+  overflow: hidden;
+}
+
+.featured.showing {
+  top: 0%;
+}
+
+.featured .slider {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.featured .slider.next {
+  left: -100%;
+}
+
+.featured .slider li {
+  width: 50%;
+  float: left;
+}
+
+.featured .slider li img {
+  width: 100%;
+  opacity: 1 !important;
+}
+
+.featured a.close-featured, .featured a.control-slide {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0; left: 0;
+   width: 50px;
+   height: 50px;
+   background: url(../img/back.png) rgba(0,0,0,0.8);
+}
+
+.featured a.control-slide {
+  right: 0; left: auto;
+  background: url(../img/next.png) rgba(0,0,0,0.8);
+}
+
+.featured a.control-slide.next {
+  background: url(../img/prev.png) rgba(0,0,0,0.8);
+}
+
+
+/*--------------------------
+JOBS
+-------------------------*/
+
+.jobs {
+  max-width: 90%;
+}
+
+.job_listing {
+  width: 100%;
+  clear: both;
+}
+
+.job {
+  background: #5ac580;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.job:first-child {
+    border-radius: 3px 3px 0 0;
+}
+
+.job:last-child {
+    border-radius: 0 0 3px 3px;
+}
+
+
+.job:nth-child(2n+1) {
+  background: #49a168;
+}
+
+.job:nth-child(3n+1) {
+  background: #379156;
+}
+
+.jobs h1 {
+  font-weight: normal;
+  color: #777;
+}
+
+.job p {
+  font-size: 24px;
+  margin: 10px 35px 3px 0;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+}
+
+.job p.details {
+  font-size: 16px;
+  margin: 10px 0;
+  display: none;
+}
+
+.job a.control {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.job a.control.clicked {
+  right: -15px;
+  top: 10px;
+  background: #222;
+  border-top: solid 1px #222;
+  width: 40px;
+  height: 40px;
+}
+
+.job a.control.clicked:after {  
+  font-family: "dripicons";
+  content: "\e016";
+  display: block;
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  left: 10px; top: 8px;
+}
+
+.job a.control.clicked:before {
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  content: '';
+  display: block;
+  height: 0px;
+  border-left: solid 15px #111;
+  border-bottom: solid 10px transparent;
+}
+
+.date{
+  display: block;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+div.post {
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;     
+  cursor: pointer; }
+
+
+div.post a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-bottom: solid 2px #4881E2;
+  border-radius: 3px;
+  background: #5191FC;
+}
+
+div.post:hover a {  
+  transform: perspective(100px) rotateX(15deg);
+   -webkit-transform: perspective(100px) rotateX(15deg);
+   -moz-transform: perspective(100px) rotateX(15deg);
+  box-shadow: 0px 3px 2px rgba(0,0,0,0.3);
+}
+
+div.post:active {
+  margin-top: 32px;
+}
+
+div.post:active a {
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+}
+
+.post_job h1 {
+  color: white;
+  font-weight: normal;
+  text-align: center;
+}
+
+.post_job .shout {
+  background: #5191fc;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.2);
+}
+
+#new_job, #new_profile {
+  max-width: 90%;
+}
+
+#new_job label {
+  display: block;
+  color: white;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  border-radius: 3px;
+  padding: 20px;
+  outline: none;
+  border: 0px;
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+  background: #DDDDDD;
+  font-size: 15px;
+}
+
+input:focus, textarea:focus {
+  background: white;
+}
+
+#new_profile {
+  position: relative;
+}
+
+#new_profile .add_image {
+  width: 100%;
+  background: #5171FC;
+  height: 0px;
+  padding-bottom: 100%;
+  display: block;
+}
+
+#new_profile .add_details {
+  display: block;
+  border: 0px;
+  padding: 0px;
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+#new_profile .add_details input[type="text"], #new_profile .add_details textarea {
+  background: none;
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+  outline: none;
+  color: white;
+  width: 100%;
+  resize: none;
+}
+
+#new_profile .add_details input[type="text"]:hover,#new_profile .add_details textarea:hover  {
+  background: rgba(0,0,0,0.3); 
+  width: 100%;
+}
+
+#new_profile .add_details input[type="text"]:focus, #new_profile .add_details textarea:focus {
+  background: rgba(0,0,0,0.7); 
+  width: 100%;
+}
+
+#new_profile .add_details .add_name {
+  font-size: 18px;
+  padding: 20px 0 0 20px;
+  font-weight: normal;
+}
+
+#new_profile .add_details .add_bio {
+  padding: 5px 0 10px 20px;
+}
+
+#new_profile .other {
+  padding: 20px;
+  color: white;
+}
+
+@media all and (max-width: 768px) {
+    #new_profile .other {
+      padding: 20px 0px;
+    }
+}

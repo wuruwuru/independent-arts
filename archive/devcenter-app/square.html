@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!--320-->
+    <title>Devcenter Square</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/hint.css">
+</head>
+
+<body>
+    <div id="header" class="header clear absol pad-top">
+        <div class="row">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="Devcenter">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="sm-bold" href="">BLOG</a></li>
+                    <li><a class="sm-bold" href="">FEEDBACK</a></li>
+                    <li><a class="sm-bold" href="">CONTACT US</a></li>
+                    <li><a id="shareDC" class="sm-bold blue">SHARE</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="search-wrap">
+                    <i class="ion-ios-search-strong"></i>
+                    <input type="text" class="search" placeholder="Search Devcenter">
+                </div>
+                <div class="logged-out">
+                    <a class="btn btn-blue dc_signin_btn">Sign In</a>
+                    <a class="btn btn-green dc_signup_btn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <figure class="square-intro">
+        <img class="hidden-xs" src="img/square-header.jpg" alt="" />
+        <img class="show-xs" src="img/square-header-mobile.jpg" alt="" />
+        <figcaption class="intro-caption">
+            <h1>Devcenter <br> Square</h1>
+        </figcaption>
+        <span class="intro-overlay hidden-xs">
+            <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve" PreserveAspectRatio="none">
+            <path fill="#f9f9f9" d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"
+                />
+            </svg>
+        </span>
+    </figure>
+    <div class="row">
+        <article class="square-copy">
+            <h3>Devcenter Square is a curation of designers and developers on Devcenter working together on projects. These projects could be open source; ideas that benefit the community or sponsored projects for companies/individuals. Square is the fastest place for you to learn, share knowledge and improve yourself.</h3>
+            <ul class="square-stats">
+                <li><span id="slack-members">-</span> <small>members</small></li>
+                <li><span id="github-repos">-</span> <small>Repos</small></li>
+                <li><span id="existence">-</span> <small>months</small></li>
+            </ul>
+            <a class="btn btn-green btn-xlg" href="https://devcenter-square-slack.herokuapp.com/"><span class="icon-slack"></span>Join the Slack Channel</a>
+        </article>
+    </div>
+    <div id="description" class="section">
+        <div class="row">
+            <div class="md-4 text-center cols md-push-2">
+                <div style="max-width: 200px; display: inline-block; margin-top: 20px"><img src="img/open-source.png" alt=""></div>
+                <div class="section-title">The Open Source Movement?</div>
+                <div class="section-subtitle">Really, why do Open Source?</div>
+            </div>
+            <div class="md-4 cols md-push-2">
+                <p>
+                    <h3>Contributing to Open source projects gives you the opportunity to do stuff with some really great people and make connections outside your normal circle of friends and co-workers. More importantly, you develop new skills and talent and gain invaluable experience. In addition to developing technical skills, you also experience how to function as part of a team. And, finally it is something that can help you land your next job or inspire your next big idea. You do not know where the Journey will take you.</h3>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="section">
+        <div class="row">
+            <div class="md-12 cols text-center">
+                <div class="section-title">SQUARE PROJECTS</div>
+                <div class="section-subtitle">Here's what we're working on</div>
+            </div>
+            <div class="square-projects">
+                <div class="md-4 cols">
+                    <div class="square-project">
+                        <div class="project-title">NgBankParser</div>
+                        <div class="project-summary">We created a parser that returns formatted data from Nigerian bank statements</div>
+                        <div class="project-collaborators">
+                            <div class="img-wrap gravatar hint--top" data-email="bendaniel20@gmail.com" data-hint="Ben Daniel">
+                                <a href="#"><img class="thumbnailUrl"></a>
+                            </div>
+                            <div class="img-wrap gravatar hint--top" data-email="frank.ugwun@gmail.com" data-hint="Frank Ugwu">
+                                <a href="http://devcenter.co/frankie/"><img class="thumbnailUrl"></a>
+                            </div>
+                            <div class="img-wrap gravatar hint--top" data-email="yetunde.sanni@andela.com" data-hint="Yetunde Sanni">
+                                <a href="http://devcenter.co/oluwayetty/"><img class="thumbnailUrl"></a>
+                            </div>
+                            <div class="img-wrap gravatar hint--top" data-email="olalekan.sogunle@andela.co" data-hint="Olalekan Sogunle">
+                                <a href="http://devcenter.co/lekan/"><img class="thumbnailUrl"></a>
+                            </div>
+                            <a href="https://github.com/orgs/devcenter-square/teams/bank-parser-team">See all collaborators (9)</a>
+                        </div>
+                        <a target="_blank" href="https://github.com/devcenter-square/ng-bank-parser" class="btn btn-green">View on Github</a>
+                    </div>
+                </div>
+                <div class="md-4 cols">
+                    <div class="square-project">
+                        <div class="project-title">States & Cities</div>
+                        <div class="project-summary">We’re creating a simple dump for states and cities in Nigeria. Get data as JSON, XML or via REST.</div>
+                        <div class="project-collaborators">
+                            <div class="img-wrap gravatar hint--top" data-email="trypio00@gmail.com" data-hint="Timi Ajiboye">
+                                <a href="http://devcenter.co/timigod/"><img class="thumbnailUrl"></a>
+                            </div>
+                            <div class="img-wrap gravatar hint--top" data-email="btemilolu@gmail.com" data-hint="Lolu Bodunwa">
+                                <a href="http://devcenter.co/lolu/"><img class="thumbnailUrl"></a>
+                            </div>
+                            <div class="img-wrap gravatar hint--top" data-email="osiokeitseuwa@gmail.com" data-hint="Osioke Itseuwa">
+                                <a href="http://devcenter.co/sprime/"><img class="thumbnailUrl"></a>
+                            </div>
+                            <div class="img-wrap gravatar hint--top" data-email="jubrylola@gmail.com" data-hint="Jubril Olambiwonu">
+                                <a href="#"><img class="thumbnailUrl"></a>
+                            </div>
+                            <a href="https://github.com/orgs/devcenter-square/teams/states-cities-team">See all collaborators (6)</a>
+                        </div>
+                        <a target="_blank" href="https://github.com/devcenter-square/states-cities" class="btn btn-green">View on Github</a>
+                    </div>
+                </div>
+                <div class="md-12 cols text-center m-t-md">
+                    <div class="btn btn-blue btn-xlg"><i class="ion-chatbubble"></i> Suggest A Project</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="md-6 cols">
+                <div class="logo">
+                    <img src="img/logo-footer.png" />
+                </div>
+                <ul>
+                    <li><a>About</a></li>
+                    <li><a>Blog</a></li>
+                    <li><a>Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="md-6 cols">
+                <p class="copyright">Copyright © 2014 Devcenter. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery is a required dependencies. -->
+    <script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vendor/md5.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    $(function() {
+        function apiCall(url, callback) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var response = JSON.parse(xhttp.responseText);
+                    callback(response);
+                }
+            }
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        apiCall("https://api.github.com/users/devcenter-square", function(response) {
+            $("#slack-members").text(21);
+            $("#github-repos").text(response.public_repos);
+            $("#existence").text(monthsBetween(new Date(response.created_at), new Date()));
+        });
+
+        function monthsBetween(date1, date2) {
+            var no_of_months;
+            no_of_months = (date2.getFullYear() - date1.getFullYear()) * 12;
+            no_of_months -= date1.getMonth() + 1;
+            no_of_months += date2.getMonth();
+            return no_of_months <= 0 ? 0 : no_of_months;
+        }
+
+        // Effect from this codepen http://codepen.io/Hornebom/pen/RNKMrL
+        function inViewport($el) {
+            var H = $(window).height(),
+                r = $el[0].getBoundingClientRect(),
+                t = r.top,
+                b = r.bottom;
+            return Math.max(0, t > 0 ? H - t : (b < H ? b : H));
+        }
+
+        $(window).on("scroll resize", function() {
+            var window_offset = inViewport($('.square-intro'));
+            $(".intro-overlay").height(window_offset);
+            // $(".intro-caption").css("bottom", (window_offset / 4));
+        });
+
+        $('.gravatar').each(function() {
+            var email = $(this).data('email');
+            $(this).find('img').attr('src', 'http://www.gravatar.com/avatar/' + md5(email) + '?d=mm');
+        });
+    })
+    </script>
+</body>
+
+</html>

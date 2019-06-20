@@ -1,0 +1,292 @@
+@import url('font/stylesheet.css');
+
+@custom-dark: #2b2b2b;
+@custom-blue: #2980b9;
+@custom-green: #1d9d74;
+@custom-red: #e74c3c;
+
+html, body {
+  font-family: "Whitney";
+}
+
+//Helpers
+.m-t {
+  margin-top: 30px;
+}
+
+.m-b {
+  margin-bottom: 30px;
+}
+
+.m-b-n {
+  margin-bottom: 0;
+}
+
+.m-t-sm {
+  margin-top: 10px;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.pad-top {
+  padding-top: 50px;
+}
+
+//resets
+.btn i {
+  margin-left: 30px;
+}
+
+.btn-lg {
+  padding: 12px 35px;
+  font-size: 18px;
+}
+
+.btn-rounded {
+  border-radius: 40px;
+}
+
+// HOMEPAGE
+
+body {
+  padding-top: 600px;
+}
+
+.logo-container {
+  img {
+    max-width: 100px;
+  }
+}
+
+.masthead-wrap {
+  background: @custom-blue url('../img/home-banner.jpg') no-repeat center;
+  background-size: cover;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.masthead {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  width: 500px;
+  max-width: 90%;
+  text-align: center;
+
+  .masthead-title, .masthead-subtitle {
+    color: white;
+    font-weight: 100;
+    font-size: 48px;
+  }
+
+  .masthead-subtitle {
+    opacity: .7;
+    font-size: 20px;
+  }
+}
+
+.main-content {
+  background: whitesmoke;
+  position: relative;
+  z-index: 10;
+}
+
+.features {
+  padding: 30px 0 100px;
+  background: white;
+}
+
+.featured-item {
+  margin: 30px 0;
+
+  h4 {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  img {
+    max-width: 40px;
+    margin-right: 20px;
+  }
+}
+
+.features-list {
+  list-style-type: none;
+  padding: 0 20px 0 0;
+  margin: 30px 0;
+
+  li {
+    padding: 10px 0;
+    position: relative;
+
+    h5 {
+      color: @custom-blue;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.divider {
+  height: 1px;
+  margin: 100px 0;
+  width: 100px;
+  border: dotted 2px rgb(216, 216, 216);
+  display: inline-block;
+}
+
+.pricing {
+  padding: 100px 0;
+}
+
+.pricing-tier {
+  margin: 30px 0;
+  background: white;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  padding: 40px;
+  border-radius: 2px;
+  float: left;
+  width: 100%;
+
+  .tier-name {
+    color: @custom-green;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 20px;
+  }
+
+  .tier-features {
+    font-size: 16px;
+
+    li {
+      margin-bottom: 5px;
+
+      i {
+        color: @custom-green;
+        margin-right: 10px;
+      }
+    }
+
+    .feature-unavailable {
+      opacity: .5;
+      text-decoration: line-through;
+
+      i {
+        color: @custom-red;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 20px 0;
+  background: @custom-blue;
+  color: lighten(@custom-blue, 40%);
+
+  .copyright {
+    float: right;
+
+    @media all and (max-width: 480px){
+      float: left;
+    }
+  }
+}
+
+.control-buttons {
+  a {
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.editable-hide {
+  display: none;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.home-page {
+
+  .navbar {
+    width: 100%;
+    background: none;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    z-index: 2;
+
+    a {
+      color: white;
+      font-weight: normal;
+      font-size: 15px;
+      color: white;
+      line-height: 1em;
+
+      &:hover { 
+        color: white;
+        background: none;
+      }
+
+      &.btn-login {
+        display: inline-block;
+        border: none;
+        color: #fff;
+        padding: 8px 20px;
+        border-radius: 40px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        margin: 5px;
+
+        &:hover {
+          background: white;
+          color: @custom-blue;
+        }
+      } 
+    }
+  }
+
+  // Media Queries
+  .logo-container {
+    @media all and (max-width: 480px){
+      display: block;
+      margin-bottom: 5px;
+      text-align: center;
+
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+  .navbar {
+    @media all and (max-width: 480px){
+      display: block;
+      text-align: center;
+
+      li {
+        display: inline-block;
+
+        a {
+          padding: 10px 5px;
+
+          &.btn-login {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}

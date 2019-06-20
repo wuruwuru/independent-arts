@@ -1,0 +1,14 @@
+Profile Completion
+
+Choose developer/designer
+
+Biodata > User Name, Name, Photo
+
+Expertise > Developer Kind, Choice of Languages, rating
+
+Experience > Fill Out or Import from LinkedIn
+	Place worked at, role.
+
+Projects > Fill Out Project Name, Link, Contributors.
+
+Invite others

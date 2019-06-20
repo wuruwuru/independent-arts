@@ -1,0 +1,24 @@
+<div class="body-wrap" load-flow>
+	<div class="row full-w collapse">
+
+		<div ng-repeat="v in videos" class="large-3 columns left">
+			<div class="square">
+				<div class="author">
+					{{v.user.full_name}} <br>
+					<span class="likes">
+						<i class="fa fa-heart"></i> {{v.likes.count}} likes
+					</span>
+				</div>
+				<div class="player is-splash" style="background-image: url({{v.images.standard_resolution.url}});">
+				   <video>
+				   <source type="video/mp4" src="{{v.videos.standard_resolution.url}}">
+				   </video>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+

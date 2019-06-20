@@ -1,0 +1,337 @@
+/*
+* Style by Aikomo Onaopemipo
+* Grid by the Dimanche Skeleton
+*/
+/* Table of Content
+==================================================
+    #Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+
+/* #Site Styles
+================================================== */
+
+@import url('datepicker.css');
+@import url('reset.css');
+@import url('base.css');
+@import url('skeleton.css');
+
+
+/** Global Styles **/
+
+
+    html, body {
+        height: 100%;
+    }
+	
+	a { 
+        transition: all 200ms linear;
+		-moz-transition: all 200ms linear;
+		-webkit-transition: all 200ms linear; }
+	
+	*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+    .header {
+    	position: fixed;
+    	height: 40px;
+    	width: 100%;
+    	background: #333333;
+    	z-index: 10;
+        color: white;
+    }
+
+    .header .container {
+    	padding: 0 20px;
+    }
+
+    .header:after {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	bottom: -3px;
+    	height: 3px;
+    	width: 100%;
+    	background: rgb(72,164,255); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(72,164,255,1) 0%, rgba(0,140,70,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(72,164,255,1)), color-stop(100%,rgba(0,140,70,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  rgba(72,164,255,1) 0%,rgba(0,140,70,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  rgba(72,164,255,1) 0%,rgba(0,140,70,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  rgba(72,164,255,1) 0%,rgba(0,140,70,1) 100%); /* IE10+ */
+		background: linear-gradient(to right,  rgba(72,164,255,1) 0%,rgba(0,140,70,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48a4ff', endColorstr='#008c46',GradientType=1 ); /* IE6-9 */
+    }
+
+    .logo {
+    	float: left;
+    }
+
+    .logo .name {
+    	display: inline-block;
+    	font-size: 15px;
+    	line-height: 40px;
+    	margin-right: 20px;
+    }
+
+    #uni-search {
+    	float: left;
+    	position: relative;
+    	width: 220px;
+    	height: 25px;
+    	margin: 7px 0;
+    }
+
+    .nav {
+        float: right;
+        color: white;
+        line-height: 40px;
+    }
+
+    .nav a {
+        cursor: pointer;
+        color: rgba(72,164,255,1);
+    }
+
+    .main-wrapper {
+        position: relative;
+        padding-top: 40px;
+        min-height: 100%;
+    	background: white;
+    	box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    }
+
+
+
+/**--------Dashboard Styles--------**/
+
+/*-----------Vertical tabs-----------*/
+
+#tabbed-container {
+    position: relative;
+}
+
+.resp-tabs-container {
+    padding: 0px;
+    clear: left;
+}
+
+h2.resp-accordion {
+    display: none;
+}
+
+.resp-tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.resp-content-active, .resp-accordion-active {
+    display: block;
+}
+
+.resp-vtabs ul.resp-tabs-list {
+    	list-style: none;    
+    	display: block;	
+    	position: fixed;
+    	background: #444;
+    	padding-top: 80px;
+    	height: 100%;
+}
+
+.resp-vtabs .resp-tabs-list li {
+ 	   margin: 0;
+       padding: 0;
+}
+
+.resp-vtabs .resp-tabs-list li a {
+		display: block;
+		color: white;
+		padding: 0px 15px;
+		line-height: 40px;
+		margin: 0;
+        font-weight: normal;
+}
+
+ 
+.resp-vtabs .resp-tabs-list li a:hover {
+	  	background: #333; 
+}
+
+.resp-vtabs li.resp-tab-active a {
+        position: relative;
+        background: rgb(72,164,255);
+        pointer-events: none;
+}
+
+.resp-vtabs li.resp-tab-active a:after {
+    	display: block;
+        content: '';
+    	position: absolute;
+    	top: 10px;
+    	right: 0px;
+    	width: 0;
+    	height: 0;
+    	border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-right: 10px solid white;
+    }
+
+.resp-vtabs .resp-tabs-container {
+   		padding-top: 20px;
+    	float: right !important;
+}
+
+.resp-content-active, .resp-accordion-active {
+    display: block;
+}
+
+/* Content styles */
+
+.resp-tab-content h4 {
+    font-weight: normal;
+    margin: 0px;
+    line-height: 16px;\
+}
+
+.subtitle {
+    padding-bottom: 10px;
+    color: #999;
+    border-bottom: solid 2px #666;
+    margin-bottom: 20px;
+}
+
+.reg_form li {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: solid 1px rgb(228, 228, 228);
+}
+
+.label-mdm {
+    float: left;
+    line-height: 30px;
+    color: #333;
+    font-weight: normal;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.input-mdm {
+    position: relative;
+    margin: 0 !important;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.input-mdm.big {
+    padding: 10px;
+    width: 400px;
+    resize: none;
+}
+
+
+/* Page Links */
+
+.page-options {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.page-link, .save-link, .add-new {
+    display: block;
+    font-size: 12px;
+    width: 100px;
+    color: white !important;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    background: #444;
+}
+
+.page-link:hover, .save-link:hover {
+    background: rgba(0,140,70,1);
+}
+
+.save-link.disabled {
+    background: rgba(233,233,233,1);
+    pointer-events: none;
+}
+
+/* Album content */
+
+.albums {
+    position: relative;
+    width: 100%;
+}
+
+.no-content-added {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: url(../images/nothing.png) center no-repeat;
+}
+
+.add-new {
+    background: rgba(0,140,70,1);
+    margin-bottom: 20px;
+}
+
+.albums li, .mixtapes li {
+    position: relative;
+    background: whitesmoke;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.albums p, .mixtapes p {
+    margin-bottom:  2px; }
+
+.albums li .edit, .mixtapes li .edit {
+    position: absolute;
+    visibility: hidden;
+    left: 20px;
+    top: 30px;
+    font-size: 13px;
+    margin-left:  10px;
+    background: white;
+    padding: 4px 7px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.albums li .edit.single {
+    top: 15px;
+    left: 5px;
+}
+
+.albums li:hover .edit, .mixtapes li:hover .edit {
+    visibility: visible;
+}
+
+.album-image {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.album-title, .song-title {
+    font-family: 'Crete Round', serif;
+    font-size: 18px;
+}
+
+.purchase-link {
+    font-size: 12px;
+    color: rgba(0,140,70,1) !important;
+    text-transform: uppercase;
+}

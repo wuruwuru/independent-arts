@@ -1,0 +1,31 @@
+{
+    "rank": [{
+        "position": 1,
+        "name": "Ikeja",
+        "speed": 5
+    },{
+        "position": 2,
+        "name": "Yaba",
+        "speed": 4.6
+    },{
+        "position": 3,
+        "name": "Lekki",
+        "speed": 4.5
+    },{
+        "position": 4,
+        "name": "Ikoyi",
+        "speed": 3.2
+    }],
+    "stats":{
+        "totalLogs": 200,
+        "avgSpeed": "2.5mbps",
+        "fastestRecord": {
+            "value": "12mbps",
+            "location": "3, Anuoluwapo Street",
+            "date": "July 4, 2014"
+        },
+        "rank": 3,
+        "totalIsps": 8,
+        "index": 6.1
+    }
+}

@@ -1,0 +1,49 @@
+/* Webfont: files/maison/MaisonNeue-Book */
+
+@font-face {
+    font-family: 'MaisonNeue';
+    src: url('files/maison/MaisonNeue-Book.eot');
+    /* IE9 Compat Modes */
+    src: url('files/maison/MaisonNeue-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('files/maison/MaisonNeue-Book.woff') format('woff'), /* Modern Browsers */
+    url('files/maison/MaisonNeue-Book.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('files/maison/MaisonNeue-Book.svg#MaisonNeue-Book') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* Webfont: files/maison/MaisonNeue-BookItalic */
+
+@font-face {
+    font-family: 'MaisonNeue';
+    src: url('files/maison/MaisonNeue-BookItalic.eot');
+    /* IE9 Compat Modes */
+    src: url('files/maison/MaisonNeue-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('files/maison/MaisonNeue-BookItalic.woff') format('woff'), /* Modern Browsers */
+    url('files/maison/MaisonNeue-BookItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('files/maison/MaisonNeue-BookItalic.svg#MaisonNeue-BookItalic') format('svg');
+    /* Legacy iOS */
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* Webfont: files/maison/MaisonNeue-Bold */
+
+@font-face {
+    font-family: 'MaisonNeue';
+    src: url('files/maison/MaisonNeue-Bold.eot');
+    /* IE9 Compat Modes */
+    src: url('files/maison/MaisonNeue-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('files/maison/MaisonNeue-Bold.woff') format('woff'), /* Modern Browsers */
+    url('files/maison/MaisonNeue-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('files/maison/MaisonNeue-Bold.svg#MaisonNeue-Bold') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+}

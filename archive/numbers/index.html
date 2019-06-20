@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Since</title>
+
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+
+</head>
+<body>
+
+	<div id="container" class="container">
+
+		<ul id="scene" class="scene one">
+
+			<ul class="text_wrap">
+			<li class="text">Its been</li>
+			<li class="text">
+				<span class="shortCount"><span class="countDay"></span> days</span>
+				<span class="fullCount"><span class="countDay"></span> days, <span class="countHours"></span> hours, <span class="countMinutes"></span> minutes, <span class="countSeconds"></span> seconds </span>
+			</li>
+			<li class="text">since Coza</li>
+			<li class="text">hasn't issued</li>
+			<li class="text">out a reply</li>
+			</ul>
+			
+		</ul>
+
+
+		<ul id="scene2" class="scene two">
+
+			<ul class="text_wrap">
+			<li class="text">Its been</li>
+			<li class="text">
+				<span class="shortCount"><span class="countDay"></span> days</span>
+				<span class="fullCount"><span class="countDay"></span> days, <span class="countHours"></span> hours, <span class="countMinutes"></span> minutes, <span class="countSeconds"></span> seconds </span>
+			</li>
+			<li class="text">since Boko Haram</li>
+			<li class="text">last bombed</li>
+			<li class="text">Nigeria</li>
+			<li><a class="view" href="bokoharam/">See the data</a></li>
+			</ul>
+
+		</ul>
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/linkify.js"></script>
+	<script src="countup.js"></script>
+	<script>
+		$(function(){
+				setcountup(2013,10,14);
+			});
+
+	</script>
+
+</body>
+</html>

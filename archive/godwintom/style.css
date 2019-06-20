@@ -1,0 +1,287 @@
+@import url(http://fonts.googleapis.com/css?family=Satisfy|Rambla);
+@import url('font-face/font-awesome.min.css');
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Rambla',Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #111;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  outline: 0 !important;
+  cursor: pointer;
+  color: #00aced;
+}
+a:hover {
+  color: #4183c4;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+/* IE6/7 support */
+
+.clearfix {
+  *zoom: 1;
+}
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.underlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+@media all and (max-width: 600px) {
+  .underlay {
+    opacity: 0.25;
+  }
+}
+
+.underlay:after {
+background: -webkit-linear-gradient(rgba(0,0,0,1) 0%,rgba(0,0,0,0.52) 50%,rgba(0,0,0,0.012) 100%);
+background: -moz-linear-gradient(rgba(0,0,0,1) 0%,rgba(0,0,0,0.52) 50%,rgba(0,0,0,0.102) 100%);
+background: -o-linear-gradient(rgba(0,0,0,1) 0%,rgba(0,0,0,0.52) 50%,rgba(0,0,0,0.012) 100%);
+background: linear-gradient(rgba(0,0,0,1) 0%,rgba(0,0,0,0.52) 50%,rgba(0,0,0,0.012) 100%);
+content: "";
+width: 100%;
+height: 100%;
+position: absolute;
+display: block;
+top: 0;
+left: 0;
+transition: opacity 0.2s linear;
+-webkit-transition: opacity 0.2s linear;
+}
+
+.slide {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #333;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: translateX(0);
+}
+
+@media all and (max-width: 768px) {
+  .slide { 
+    width: 100%;
+  height: 50%; }
+}
+
+.slide.shift.one {  
+  -webkit-transform: translateX(-80%);
+}
+
+.slide.shift.two {  
+  -webkit-transform: translateX(80%);
+}
+
+.slide.one {
+  background: url(img/bg1.jpg) no-repeat;
+  background-size: cover;
+}
+
+.slide.two {
+  background: url(img/bg.jpg) no-repeat;
+  background-size: cover;
+}
+
+
+.overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.next {
+  color: white;
+  position: absolute;
+  left: 0; right: 0;
+  margin: auto;
+  display: block;
+  width: 250px;
+  text-align: center;
+  bottom: 20px;
+}
+
+@media all and (max-width: 600px) {
+  .next { 
+    display: none;}
+}
+
+.content {
+  width: 400px;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.content.about {
+  width: 800px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: 'Satisfy', cursive;
+  font-style: italic;
+}
+
+.content p {
+  font-size: 18px;
+}
+
+.content.about p {
+  padding-bottom: 30px;
+} 
+
+@media all and (max-width: 480px) {
+  .title {
+    font-size: 42px;
+    line-height: 0.5;
+  }
+  .content p {
+  font-size: 16px;
+}
+}
+
+
+.icons {
+  margin: 60px 0 20px 0;
+}
+
+.icons i {
+  display: block;
+  font-size: 24px;
+  line-height: 50px; width: 50px;
+  text-align: center;
+}
+
+.icons a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 12px;
+  position: relative;
+  border: solid 3px transparent;
+  transition: all 0.2s linear;
+  transform: scale(1);
+}
+
+.icons a:hover {
+  transform: scale(1.2);
+  border: solid 3px rgba(0,0,0,0.5);
+}
+
+
+/*Now we will create fish-eye shapes using pseudo elements and clip them to add a curve to the sides of the icons*/
+.icons a:before, .icons a:after {
+  content: '';
+  position: absolute; left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: inherit;
+  border-radius: 100%; /*circle*/
+  /*time to transform the circle into fish-eye shape. iOS7 style now.*/
+  transform: scaleX(2) scaleY(1.05);
+  /*clipping the left and right sides - 17px from the left and right*/
+  clip: rect(0, 33px, 50px, 17px);
+  /*pushing it behind the icon*/
+  z-index: -1;
+}
+/*duplicating the :before element and rotating it 90deg and swapping the X/Y transforms*/
+.icons a:after {
+  transform: scaleY(2) scaleX(1.05) rotate(90deg);
+}
+/*colors*/
+.tw {background: #00ACF0;}
+.fb {background: #3B5997;}
+.gp {background: #DB4F48;}
+.ig {background: #447397;}
+.li {background: #007DB8;}
+.yt {background: #D12E2E;}
+
+.animated {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes ibounce {
+  0%, 100% { -webkit-transform: translateY(0); }
+  50% { -webkit-transform: translateY(-10px); }
+}
+
+@-moz-keyframes ibounce {
+  0%, 100% { -moz-transform: translateY(0); }
+  50% { -moz-transform: translateY(-10px); }
+}
+
+@-o-keyframes ibounce {
+  0%, 100% { -o-transform: translateY(0); }
+  50% { -o-transform: translateY(-10px); }
+}
+@keyframes ibounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animated.ibounce {
+  -webkit-animation-name: ibounce;
+  -moz-animation-name: ibounce;
+  -o-animation-name: ibounce;
+  animation-name: ibounce;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}

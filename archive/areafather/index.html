@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Areafather</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+
+	<!-- Header -->
+
+	<div class="header">
+		<div class="row">
+
+			<!-- Logo -->
+			<div class="logo">
+				<a href="#"><img src="img/logo.png" alt="Areafather" /></a>
+			</div>
+
+			<!-- Menu -->
+			<ul class="menu">
+				<li><a href="#">News</a></li>
+				<li><a href="#">Amebo</a></li>
+				<li><a href="#">Comedy</a></li>
+				<li><a href="#">Politics</a></li>
+				<li><a href="#">Events</a></li>
+				<li><a href="#">NSFW</a></li>
+			</ul>
+
+			<div class="icons right">
+				<div class="round-btn toggleMenu">
+					<i class="fa fa-bars"></i>
+				</div>
+
+				<div class="round-btn toggleSearch">
+					<i class="fa fa-search"></i>
+				</div>
+
+				<div class="search-box">
+					<input type="text" placeholder="Search Areafather" />
+					<button><i class="fa fa-search"></i></button>
+
+					<span class="toggleSearch close"><i class="fa fa-times"></i></span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="subscribe">
+		<div class="row">
+			<p>The Papa of news, gists and everything in between</p>
+			<input type="text" placeholder="you@email.address.com" />
+			<button><i class="fa fa-check"></i> SUBSCRIBE</button>
+		</div>
+	</div>
+
+
+	<!-- Main Feed -->
+	<div class="content row">
+		<div class="large-12 columns">
+			<h2 class="title">Editor's Picks</h2>
+		</div>
+
+		<div id="editors-picks">
+			
+			<!-- Editor's Picks Loop -->
+
+			<div class="large-4 columns">
+				<div class="post featured">
+					<div class="img-wrap">
+						<img src="img/placeholder.png" />
+					</div>
+
+					<div class="details">
+						<p class="meta">
+							<span class="_timestamp">April 14</span> in random
+						</p>
+
+						<p class="_title">Nowadays, Everyone Cheats!</p>
+						<p class="_summary">The rate of Infidelity has never been higher than is presently found.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="large-4 columns">
+				<div class="post featured">
+					<div class="img-wrap">
+						<img src="img/placeholder.png" />
+					</div>
+
+					<div class="details">
+						<p class="meta">
+							<span class="_timestamp">April 14</span> in random
+						</p>
+
+						<p class="_title">Nowadays, Everyone Cheats!</p>
+						<p class="_summary">The rate of Infidelity has never been higher than is presently found.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="large-4 columns">
+				<div class="post featured">
+					<div class="img-wrap">
+						<img src="img/placeholder.png" />
+					</div>
+
+					<div class="details">
+						<p class="meta">
+							<span class="_timestamp">April 14</span> in random
+						</p>
+
+						<p class="_title">Nowadays, Everyone Cheats!</p>
+						<p class="_summary">The rate of Infidelity has never been higher than is presently found.</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- End Section -->
+
+
+		<div class="large-12 columns">
+			<h2 class="title">Latest Posts</h2>
+		</div>
+
+		<div class="medium-8 columns">
+
+			<!-- All Posts Loop -->
+			<div class="post">
+				<div class="details">
+					<p class="meta">
+						<span class="_timestamp">April 14</span> in <a href="#">random</a>
+					</p>
+
+					<p class="_title"><a href="#">Nowadays, Everyone Cheats!</a></p>
+				</div>
+
+				<div class="img-wrap">
+					<a href="#"><img src="img/placeholder.png" /></a>
+				</div>
+
+				<div class="details">
+					<p class="_summary"><a href="#">The rate of Infidelity has never been higher than is presently found.</a></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- SIDEBAR -->
+		<div class="medium-4 columns">
+
+			<!-- Social Media Liking -->
+			<h2 class="title">We are social</h2>
+
+			<div class="social facebook">
+				<i class="fa fa-facebook"></i> Like us on Facebook
+
+				<!-- Put the script to show the button here -->
+				<span class="hidden">
+				</span>
+			</div>
+
+			<div class="social twitter">
+				<i class="fa fa-facebook"></i> Follow Us on Twitter
+
+				<!-- Put the script to show the button here -->
+				<span class="hidden">
+				</span>
+			</div>
+
+
+			<!-- Repeat Category Listing -->
+			<div class="cat">
+				<h5 class="title">Amebo</h5>
+
+				<div class="_post">
+					<div class="img-wrap">
+						<a href="#"><img src="img/placeholder.png" /></a>
+					</div>
+
+					<div class="details">
+						<p class="_title">Nowadays, Everyone Cheats!</p>
+					</div>
+				</div>
+
+				<div class="_post">
+					<div class="img-wrap">
+						<a href="#"><img src="img/placeholder.png" /></a>
+					</div>
+
+					<div class="details">
+						<p class="_title">Nowadays, Everyone Cheats!</p>
+					</div>
+				</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- Scripts -->
+	<script src="js/vendor/jquery.js"></script>
+	<script>
+	$(window).scroll(function() {    
+	    var scroll = $(window).scrollTop();
+
+	     //>=, not <=
+	    if (scroll >= 120) {
+	        //clearHeader, not clearheader - caps H
+	        $(".subscribe").addClass("fixed");
+	    }
+
+	    else if (scroll <= 120) {
+	        //clearHeader, not clearheader - caps H
+	        $(".subscribe").removeClass("fixed");
+	    }
+	});
+	</script>
+	<script>
+	$(function(){
+		// Toggle Menu for mobile
+		$('.toggleMenu').on("click", function(){
+			$('.menu').toggleClass('show');
+		});
+
+		// Toggle Search for all sreen sizes
+		$('.toggleSearch').on("click", function(){
+			$('.icons').toggleClass('show-search');
+			$('.menu').toggleClass('fade');
+		});
+	});
+	</script>
+
+</body>
+</html>

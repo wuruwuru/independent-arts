@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grumi Forums</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="style.css">
+  
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/jquery.leanModal.min.js"></script>
+  <script src="js/grumiapp.js"></script>
+</head>
+<body>
+
+	<header>
+		<div class="row">
+			<div class="small-6 large-3 columns left">
+				<div class="logo">
+					<a href="index.html"><img src="img/logo.png" alt="logo"></a>
+				</div>
+
+				<div class="nav">
+					<a class="reveal_menu"><span class="entypo-menu"></span></a>
+
+					<ul class="menu">
+						<li><a href="music.html">Newest Songs</a></li>
+						<li><a href="conversation.html">Conversations</a></li>
+						<li><a href="trending.html">Trending</a></li>
+						<li><a href="collection.html">Collections</a></li>
+						<li><a href="#">Radio Podcasts</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="radio" class="large-6 columns">
+				<div class="wrap">
+					<div id="controls">
+						<span class="control_btn disabled"><span class="entypo-fast-backward"></span></span>
+						<span class="control_btn"><span class="entypo-play"></span></span>
+						<span class="control_btn disabled"><span class="entypo-fast-forward"></span></span>
+					</div>
+
+					<div class="now-playing">
+						This Show is on. Press play to tune in.
+					</div>
+
+					<div class="playlist">
+						<span class="playlist_toggle entypo-list"></span>
+						<div class="grumi_playlist">
+							<div class="large-6 columns">
+								<div class="partition">
+									<span>Today's programmes</span>
+									<span class="right">Play Radio</span>
+									<ul class="radio_list">
+										<li><strong><span class="entypo-play"></span> House of Crap</strong> 12:15 Today</li>
+										<li><strong>House of Crap</strong> 12:15 Today</li>
+										<li><strong>House of Crap</strong> 12:15 Today</li>
+										<li><strong>House of Crap</strong> 12:15 Today</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="large-6 columns">
+								<div class="partition">
+									<span>Queued Songs</span>
+									<span class="right">Clear Playlist</span>
+									<ul class="radio_list">
+										<li><strong>Finish Work</strong> Naeto C</li>
+										<li><strong>Finish Work</strong> Naeto C</li>
+										<li><strong>Finish Work</strong> Naeto C</li>
+										<li><strong>Finish Work</strong> Naeto C</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="volume right">
+						<span class="volume_toggle entypo-sound"></span>
+						<span class="scrubber">
+							<span class="level"></span>
+							<span class="level limit"></span>
+							<span class="volume_rocker"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="small-6 large-2 columns right">
+				<div class="search_wrap">
+					<a class="search_toggle"><span class="entypo-search"></span></a>
+					<div class="search">
+						<input type="text" class="search_field" id="search" placeholder="Search">
+						<span class="close_search entypo-cancel-circled"></span>
+					</div>
+				</div>
+				<div class="logged-in intermediate"><img src="img/profile.jpg"><span class="entypo-down-dir"></span>
+					<ul class="user_options">
+						<li><a href="profile_uploads.html">Upload Song</a></li>
+						<li><a href="profile.html">My Profile</a></li>
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="index.html">Sign Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+ 	</header>
+
+	<div id="content-wrap" class="row">
+
+		<section id="conversations" class="content-housing">
+
+			<div class="tabs">
+				<a href="music.html" class="one-fifth"><span class="entypo-note-beamed"></span>Newest Music</a>
+				<a href="trending.html" class="one-fifth"><span class="entypo-note-beamed"></span>Trending</a>
+				<a href="collection.html" class="one-fifth"><span class="entypo-archive"></span>Collections</a>
+				<a href="music.html" class="one-fifth"><span class="entypo-mic"></span>Radio Podcasts</a>
+				<a class="one-fifth conversation active"><span class="entypo-chat"></span>Conversations</a>
+			</div>
+
+			<div class="conversation-grid">
+
+				<div class="sorting row">
+					
+					<div id="dd" class="wrapper-dropdown-2 left" tabindex="1">View Category
+						<ul class="dropdown">
+							<li><a>All Topics</a></li>
+							<li><a>Entertainment</a></li>
+							<li><a>Music</a></li>
+							<li><a>Happening</a></li>
+							<li><a>Nothing else</a></li>
+							<li><a>Finito</a></li>
+						</ul>
+					</div>
+
+					<!--
+					<div class="sort_by left">
+						<h3 class="title active">Popular</h3>
+						<h3 class="title">Recent</h3>
+					</div> -->
+				</div>
+
+
+				<article id="conversation0" class="single_conversation has_image small-12 large-4 columns left">
+					<div class="wrap">
+						<img src="img/cover6.jpg">
+
+						<div class="details">
+							<a href="profile.html" class="starter">By FatherMerry</a>
+							<a href="single-conversation.html" class="topic">This is the last comment made by someone regarding this matter we speak of</a>
+							<a href="single-conversation.html" class="starter">In "Drake Sampled Olamide's Turn Up. Do you think Jonathan should be suing?"</a>
+							<div class="stats">
+								<span class="viewers"><span class="entypo-eye"></span>30</span>
+								<span class="commenters"><span class="entypo-users"></span>4
+									<span class="summary_text"><a href="#">FatherMerry</a>, <a href="#">FatherMerry</a>, <a href="#">FatherMerry</a> and three more </span></span>
+								<span class="comments"><a rel="leanModal" href="#NewComment"></a><span class="entypo-chat"></span>29</span>
+								<span class="sharethis toggle_share"><span class="entypo-share"></span>Share</span>
+							</div>
+						</div>
+
+						<div class="share">
+							<a class="close toggle_share"><span class="entypo-cancel"></span></a>
+							<p>Share to</p>
+							<a class="social"><span class="entypo-twitter"></span></a>
+							<a class="social"><span class="entypo-facebook"></span></a>
+							<a class="social"><span class="entypo-gplus"></span></a>
+						</div>
+					</div>
+				</article>
+
+			</div>
+
+
+		</section>
+
+		<section id="footer">
+			<ul>
+				<li><a>About Grumi</a></li>
+				<li><a>Help</a></li>
+				<li><a>Privacy</a></li>
+				<li><a>Terms</a></li>
+				<li><a>Contact</a></li>
+			</ul>
+
+			<ul class="right">
+				<li><a><span class="entypo-twitter"></span></a></li>
+				<li><a><span class="entypo-facebook"></span></a></li>
+				<li><a><span class="entypo-gplus"></span></a></li>
+			</ul>
+		</section>
+
+	</div>
+
+	<div id="NewComment" class="small-pop new-comment">
+		<h2>New Comment</h2>
+		<div class="inside">
+			<textarea name="comment" id="comment" maxlength="255"></textarea>
+			<span class="check-anonymous left">
+				<input type="checkbox" id="anonymous" name="anonymous"><label for="anonymous">Post as anonymous</label>	
+			</span>
+			<span class="right">
+				<span class="account"><img src="img/profile.jpg" title="Fathermerry"></span>
+				<input type="submit" name="sendcomment" value="Send" class="btn-primary large right">
+			</span>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* ==========================================================================
+	 Author's custom styles
+	 ========================================================================== */
+html,
+body {
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  margin: 30px 0;
+}
+.meta {
+  border: solid 1px #DDD;
+  height: 500px;
+  width: 70%;
+}
+.meta .side {
+  width: 30%;
+  float: left;
+  height: 100%;
+  border-right: solid 1px #DDD;
+  padding: 20px;
+}
+.meta .side .song-name {
+  font-size: 18px;
+  margin: 20px 0 10px;
+}
+.meta .side .song-avatar {
+  width: 100%;
+  background: whitesmoke;
+}
+.meta .side .song-avatar img {
+  width: 100%;
+}
+.meta .side .song-details ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.meta .side .song-details ul li {
+  margin-top: 15px;
+}
+.meta .side .song-details ul li .label {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+.meta .side .song-details ul li p {
+  font-size: 18px;
+}
+.meta .tags {
+  width: 70%;
+  float: left;
+  height: 100%;
+  background: url('../img/blur.png');
+  background-size: cover;
+  padding: 60px;
+}
+.meta .tags ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.meta .tags ul li {
+  padding-bottom: 10px;
+}
+.meta .tags ul li .label {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.meta .tags ul li p {
+  font-size: 18px;
+  font-weight: bold;
+  animation: fadeIn 1s 1;
+  -webkit-animation: fadeIn 1s 1;
+  display: none;
+}
+.meta .tags ul li.active .label {
+  color: white;
+}
+.meta .tags ul li.active p {
+  display: block;
+}

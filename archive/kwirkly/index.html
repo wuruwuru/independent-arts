@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="style.css" rel="stylesheet" />
+<link href="layout.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+<script src="jquery-1.8.3.min_2.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<title>redesign</title>
+
+</head>
+
+<body>
+
+<div class="blind"></div>
+
+<div class="header">
+<div class="title"> <a href="#"><img src="logo.png" /></a> </div>
+<div class="menu"><a href="#">About</a> <a href="blog.html">Blog</a> <a href="#">Contact</a> </div>
+</div>
+
+
+<!-- container for the body -->
+
+<div class="container">
+
+<!-- header -->
+
+<div class="content">
+<h1> We are here for the little man </h1>
+
+<!-- Hidden message -->
+<div id="hidden"><h2> Here to help them grow - small businesses with well-conceived products that need
+ equally killer communication & business ideas. </h2></div>
+<div class="control"><a class="next" href="#illustration"><img src="next.png" alt="proceed" /></a><a class="show" href="#hidden"><img src="next.png" alt="proceed" /></a></div>
+
+<!-- illustrations -->
+<div id="illustration">
+<ul>
+<li><img src="img1.png" />
+<span class="message"><p>When small fights hard and smart... well, you know the rest.</p></span> 
+</li> 
+<li><img src="img2.png" />
+<span class="message"><p>Before getting big, everything starts small.</p></span> 
+<li><img src="img3.png" />
+<span class="message"><p>The constraints of size don’t matter when small has set its mind on winning.</p></span> 
+<li><img src="img4.png" />
+<span class="message"><p>It’s not about size. It’s how you work it. With us, it will be a worthwhile affair.</p></span> 
+</li></ul>
+</div>
+
+<div class="control"><a class="talk" href="#"><img src="next.png" alt="proceed" /></a></div>
+
+<!-- Script to toggle divs -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".next").hide();
+$(".talk").hide();
+$("#hidden").hide();
+$("#illustration").hide();
+
+$(".show").click(function(){
+$(".next").fadeToggle();
+$(".show").fadeToggle();
+$("#hidden").fadeToggle();
+});
+
+$(".next").click(function(){
+$(".next").fadeToggle();
+$(".talk").fadeToggle();
+$("#illustration").fadeToggle(2000);
+});
+
+$(".talk").click(function(){
+$(".talk").fadeToggle();
+$(".blind").slideToggle(100);
+$(".contact").slideToggle("fast");
+$(".contact h3").slideToggle(500);
+$(".contact h4").slideToggle(1000);
+});
+
+$(".toMain").click(function(){
+$(".talk").fadeToggle();
+$(".blind").slideToggle(100);
+$(".contact").slideToggle(500);
+$(".contact h3").slideToggle(500);
+$(".contact h4").slideToggle(1000);
+});
+
+});
+</script>
+
+</div>
+</div>
+
+<!-- Contact div is 100% so defies container housing -->
+<div class="contact">
+<ul class="container up">
+<li>
+<span><a class="toMain">x Close this</a></span> 
+<h3> Does our motive define your business?  </h3>
+<h4> Then we can transform your business and create opportunites for you. Say hi. </h4></li>
+
+<!-- Contact form -->
+<li>
+<form id="contactForm"  method="post"  action="#">
+<input type="text" name="name" id="name" placeholder="Hi, what's the name?" required="required"/>
+<input type="email" name="email" id="email" placeholder="Your valid email please" required="required" />
+<input type="tel" name="tel" id="tel"  placeholder="We need a number to call" required="required"  />
+<textarea name="message" id="message" placeholder="Drop Us a line and we will get back to you " required="required" ></textarea>		
+<input type="submit" name="submit" value="Send" />		
+</form></li>
+</ul>
+
+</div>
+
+</body>
+</html>

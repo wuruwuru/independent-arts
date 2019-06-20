@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>[SUBJECT]</title>
+  <style type="text/css">
+    body {
+     padding-top: 0 !important;
+     padding-bottom: 0 !important;
+     padding-top: 0 !important;
+     padding-bottom: 0 !important;
+     margin:0 !important;
+     width: 100% !important;
+     -webkit-text-size-adjust: 100% !important;
+     -ms-text-size-adjust: 100% !important;
+     -webkit-font-smoothing: antialiased !important;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+   }
+    .tableContent img {
+      border: 0 !important;
+      display: block !important;
+      outline: none !important;
+    }
+    
+    a{
+      color:#382F2E;
+      font-size: 15px;
+    }
+
+    p, h1{
+      margin:0;
+    }
+
+    div,p,ul,h1{
+      margin:0;
+    }
+
+    .bigger{
+      font-size: 24px;
+    }
+    .bgBody{
+      background: #333333;
+    }
+    .bgItem{
+      background: #ffffff;
+    }
+    h2{
+      color:#444444;
+      font-size:18px;
+      font-weight:normal;
+      margin:0;
+    }
+    p{
+      color:#777;
+      font-size:15px;
+      line-height:19px;
+      font-weight:normal;
+    }
+    a.link2{
+      padding:10px 20px;
+      border-radius:3px;
+      -moz-border-radius:3px;
+      -webkit-border-radius:3px;
+      color:#ffffff;
+      font-size:13px;
+      background:#C3CAA9;
+      text-decoration:none;
+    }
+
+    a.link1{
+      font-weight:bold;
+      color:#7E8564;
+      font-size:13px;
+    }
+    
+  @media only screen and (max-width:480px)
+        
+  {
+        
+  table[class="MainContainer"], td[class="cell"] 
+    {
+        width: 100% !important;
+        height:auto !important; 
+    }
+  td[class="specbundle"] 
+    {
+        width: 100% !important;
+        float:left !important;
+        font-size:13px !important;
+        line-height:17px !important;
+        display:block !important;
+        padding-bottom:15px !important;
+    }
+    
+    td[class="specbundle_img"] 
+    {
+        width: 100% !important;
+        float:left !important;
+        display:block !important;
+        font-size:13px !important;
+        line-height:17px !important;
+    }   
+    
+  td[class="specbundle2"] 
+    {
+        width:90% !important;
+        float:left !important;
+        font-size:13px !important;
+        line-height:17px !important;
+        display:block !important;
+        padding-bottom:10px !important;
+        padding-left:5% !important;
+        padding-right:5% !important;
+        text-align:center !important;
+    }
+    
+    td[class="specbundle3"] 
+    {
+        width:70% !important;
+        float:left !important;
+        display:block !important;
+        padding-bottom:10px !important;
+        padding-left:15% !important;
+        padding-right:15% !important;
+    }
+        
+  td[class="spechide"] 
+    {
+        display:none !important;
+    }
+        img[class="banner"] 
+    {
+              width: 100% !important;
+              height: auto !important;
+    }
+    img[class="banner1"] 
+    {
+              width: 95% !important;
+              height: auto !important;
+    }
+        td[class="left_pad"] 
+    {
+            padding-left:15px !important;
+            padding-right:15px !important;
+    }
+         
+  }
+    
+  @media only screen and (max-width:540px) 
+
+  {
+        
+  table[class="MainContainer"], td[class="cell"] 
+    {
+        width: 100% !important;
+        height:auto !important; 
+    }
+  td[class="specbundle"] 
+    {
+        width: 100% !important;
+        float:left !important;
+        font-size:13px !important;
+        line-height:17px !important;
+        display:block !important;
+        padding-bottom:15px !important;
+    }   
+  td[class="specbundle2"] 
+    {
+        width:90% !important;
+        float:left !important;
+        font-size:13px !important;
+        line-height:17px !important;
+        display:block !important;
+        padding-bottom:10px !important;
+        padding-left:5% !important;
+        padding-right:5% !important;
+        text-align:center !important;
+    }
+    
+    td[class="specbundle_img"] 
+    {
+        width: 100% !important;
+        float:left !important;
+        display:block !important;
+        font-size:13px !important;
+        line-height:17px !important;
+    }
+    
+    td[class="specbundle3"] 
+    {
+        width:70% !important;
+        float:left !important;
+        display:block !important;
+        padding-bottom:10px !important;
+        padding-left:15% !important;
+        padding-right:15% !important;
+    }
+        
+  td[class="spechide"] 
+    {
+        display:none !important;
+    }
+        img[class="banner"] 
+    {
+              width: 100% !important;
+              height: auto !important;
+    }
+    img[class="banner1"] 
+    {
+              width: 95% !important;
+              height: auto !important;
+    }
+        td[class="left_pad"] 
+    {
+            padding-left:15px !important;
+            padding-right:15px !important;
+    }
+        
+  }
+
+  </style>
+  <script class="swatch active" type="colorScheme">
+  {
+    "name":"Default",
+    "bgBody":"333333",
+    "link":"7E8564",
+    "color":"AAAAAA",
+    "bgItem":"ffffff",
+    "title":"444444"
+  }
+  </script>
+</head>
+<body leftpadding="0" offset="0" paddingheight="0" paddingwidth="0" style="padding-top: 0; padding-bottom: 0; padding-top: 0; padding-bottom: 0; background-repeat: repeat; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased;" toppadding="0">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" class="tableContent bgBody" style='font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;' width="100%">
+    <tbody>
+      <tr>
+        <td>
+          <table align="center" bgcolor="#333333" border="0" cellpadding="0" cellspacing="0" class="MainContainer" width="600">
+            <tbody>
+              <tr>
+                <!-- =============================== Header ====================================== --><!-- =============================== Body ====================================== -->
+                <td class='movableContentContainer'>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table align="center" bgcolor='#121738' border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td colspan='4' height='28'></td>
+                      </tr>
+                      <tr>
+                        <td width='28'></td>
+                        <td align='left' valign='middle'>
+                          <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
+                            <div class="contentEditable">
+                              <p style='color:#ffffff;font-size:13px;text-decoration:none;'>Back to the past like Samurai Jack?</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td align='right' valign='top'>
+                          <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
+                            <div class="contentEditable">
+                              <a href="[SHOWEMAIL]" style='color:#b9bbcc;font-size:13px;' target='_blank'>Open in your browser</a>
+                            </div>
+                          </div>
+                        </td>
+                        <td width='28'></td>
+                      </tr>
+                      <tr>
+                        <td colspan='4' height='28'></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td height="30"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td valign="top" width="28">&nbsp;</td>
+                                  <td>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tbody>
+                                        <tr>
+                                          <td valign="top">
+                                            <div class="contentEditableContainer contentImageEditable">
+                                              <div class="contentEditable"><img alt='Devcenter' border="0" data-default="placeholder" data-max-width="300" height='80' src="images/logo.png" width='80'></div>
+                                            </div>
+                                          </td>
+                                          <td class="spechide" valign="top" width="200">&nbsp;</td>
+                                          <td align="right" valign="middle" width="200">
+                                            <div>
+                                              <div class="contentEditable" valign='middle'>
+                                                <span style='font-size:14px;'><b>Core</b> from Devcenter</span>
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                  <td valign="top" width="28">&nbsp;</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="30"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td valign="top" width="600">
+                            <div class="contentEditableContainer contentImageEditable">
+                              <div class="contentEditable"><img alt="Illustration" class="banner" src="images/illustration.jpg" width="600"></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table align="center" bgcolor='#FFFFFF' border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td colspan='3' height='25'></td>
+                      </tr>
+                      <tr>
+                        <td width='25'></td>
+                        <td>
+                          <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <h1 style='font-size:18px;font-weight:bold;margin:0 0 10px 0;'>The Community is growing</h1>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='10'></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <p style='font-size:15px;color:#777777;margin: 0 0 10px 0;'>Over 800 Nigerian developers and designers are in Devcenter Square. Square is our community platform for Nigerian devs to interact, share ideas and build open source projects together.</p>
+                                    <p style='font-size:15px;color:#777777;margin: 0 0 10px 0;'>Wondering if you'll fit in? Square has several channels. We've got Machine Learning, UI/UX, Android, Devops, you name it!</p>
+                                    <p style='font-size:15px;color:#777777;margin: 0 0 10px 0;'>Starting this week, we will highlight tools, products and applications that members of Square create in a special "From Square" section. If you're not a member of Square, please stop dulling yourself. Signup Here.</p>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width='25'></td>
+                      </tr>
+                      <tr>
+                        <td colspan='3' height='25'></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td style="height: 100px; text-align: center;">
+                              <div class="contentEditableContainer contentTextEditable">
+                                <div class="contentEditable">
+                                  <h2 style="color: #b3b3b3; font-size: 18px; font-weight: bold;">Developer News From Around The World</h2>
+                                </div>
+                              </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">                    
+                    <table bgcolor="#FFFFFF" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0; border-bottom: solid 1px;">
+                      <tr>
+                        <td colspan='3' height='25'></td>
+                      </tr>
+                      <tr>
+                        <td width='25'></td>
+                        <td valign='top'>
+                          <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align='left'>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <h2><b>Fetching Data from a Third Party API with Vue.js and Axios</b></h2>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='10'></td>
+                            </tr>
+                            <tr>
+                              <td align='left'>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <p>If you're just getting started with Vue.js, here's a great tutorial on how to fetch data from APIs.</p>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='10px'></td>
+                            </tr>
+                            <tr>
+                              <td align='left'>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <a href='#' target='_blank'>Get it now</a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width='25'></td>
+                      </tr>
+                      <tr>
+                        <td colspan='3' height='35'></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">                    
+                    <table bgcolor="#FFFFFF" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0; border-bottom: solid 1px">
+                      <tr>
+                        <td colspan='3' height='25'></td>
+                      </tr>
+                      <tr>
+                        <td width='25'></td>
+                        <td valign='top'>
+                          <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align='left'>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <h2><b>The 100% Coding Style Guide</b></h2>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='10'></td>
+                            </tr>
+                            <tr>
+                              <td align='left'>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <p>How exactly should you style code? Curly braces on a new line? How long should your character width be? Find out in this guide from Free code camp.</p>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='10px'></td>
+                            </tr>
+                            <tr>
+                              <td align='left'>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <a href='#' target='_blank'>Get it now</a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width='25'></td>
+                      </tr>
+                      <tr>
+                        <td colspan='3' height='35'></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td class="specbundle_img" valign="top" width="300">
+                                    <div class="contentEditableContainer contentImageEditable">
+                                      <div class="contentEditable"><img alt='product image' class="banner" data-default="placeholder" data-max-width="300" height='240' src="images/medImg.jpg" width='300'></div>
+                                    </div>
+                                  </td>
+                                  <td bgcolor="#FFFFFF" class="specbundle" valign="top">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tr>
+                                        <td colspan='3' height='25'></td>
+                                      </tr>
+                                      <tr>
+                                        <td width='25'></td>
+                                        <td valign='top'>
+                                          <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                              <td align='left'>
+                                                <div class="contentEditableContainer contentTextEditable">
+                                                  <div class="contentEditable">
+                                                    <h2 style="font-weight: bold">The rebranding of NTA</h2>
+                                                  </div>
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td height='15'></td>
+                                            </tr>
+                                            <tr>
+                                              <td align='left'>
+                                                <div class="contentEditableContainer contentTextEditable">
+                                                  <div class="contentEditable">
+                                                    <p>NTA recently ran a logo redesign competition. Rebranding is more than a logo design though. Here are the best picks according to Laryz.</p>
+                                                  </div>
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td height='10px'></td>
+                                            </tr>
+                                            <tr>
+                                              <td align='left'>
+                                                <div class="contentEditableContainer contentTextEditable">
+                                                  <div class="contentEditable">
+                                                    <a href='#' target='_blank'>Check it out</a>
+                                                  </div>
+                                                </div>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                        <td width='25'></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">                      
+                      <tr>
+                        <td height="40" valign="top"></td>
+                      </tr>
+                      <tr>
+                        <td width='25'></td>
+                        <td>
+                          <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td style='padding:0 10px;' width='200'>
+                                      <div class="contentEditableContainer contentTextEditable">
+                                        <div class="contentEditable" style='color:#6d6d6d;font-size:26px;font-weight:normal;text-align:center;'>
+                                          <img alt='twitter icon' data-default="placeholder" src="images/twitter2.png" width='52' style="display: inline !important;"></a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='25'></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable">
+                                    <p style='color:#d4d4d4;font-size:15px;line-height:19px;font-weight:normal;text-align:center;'>If you enjoyed reading this newsletter, please click below to post a tweet:</p>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height='10'></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div align='center' class="contentEditable" style="font-size:18px;line-height:23px;font-weight:normal;text-align:center;">
+                                    <a href="#" style="color: white; font-size: 18px; line-height: 23px; font-weight: bold;">Just read @devcenterco's newsletter for developers. Nigerians are building awesome chatbots.</a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width='25'></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="movableContent" style="border: 0px; padding-top: 0px; position: relative;">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td height='50'></td>
+                      </tr>
+                      <tr>
+                        <td style='border-bottom:1px solid #999999;'></td>
+                      </tr>
+                      <tr>
+                        <td height='25'></td>
+                      </tr>
+                      <tr>
+                        <td align='center' valign='top'>
+                          <div class="contentEditableContainer contentTextEditable">
+                            <div class="contentEditable">
+                              <p style='color:#A8B0B6; font-size:13px;line-height: 16px;'>This email was sent to&nbsp;<a href='#' style='color:#A8B0B6;font-size:13px;' target='_blank'>opemipoaikomo@gmail.com</a><br><a href='[UNSUBSCRIBE]' style='color:#A8B0B6;font-size:13px;' target='_blank'>why did I get this?</a>&nbsp;&nbsp;<a href='[UNSUBSCRIBE]' style='color:#A8B0B6;font-size:13px;' target='_blank'>unsubscribe from this list</a>&nbsp;&nbsp;<a href='#' style='color:#A8B0B6;font-size:13px;' target='_blank'>update subscription preferences</a></p>
+                              <p style='color:#A8B0B6; font-size:13px;line-height: 16px;margin-top: 20px;'>Devcenter · Lagos · Lagos 234 · Nigeria</p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <!-- =============================== footer ====================================== -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height='55'></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="animated fadeIn">
+    <div class="col-sm-6">
+        <div id="tester" class="tester"></div>
+    </div>
+    <div class="col-sm-6">
+        <div class="m-t-md">
+            <b ng-class="{'text-primary': current == 'latency'}">Latency <i class="ion-checkmark-circled text-success m-l-xs" ng-show="checked.latency"></i></b>
+            <span class="h3 clear m-t-xs">{{speeds.latency || "-"}}</span>
+        </div>
+        <div>
+            <b ng-class="{'text-primary': current == 'download'}">Download <i class="ion-checkmark-circled text-success m-l-xs" ng-show="checked.download"></i></b>
+            <span class="h3 clear m-t-xs">{{speeds.download || "-"}}</span>
+        </div>
+        <div>
+            <b ng-class="{'text-primary': current == 'upload'}">Upload <i class="ion-checkmark-circled text-success m-l-xs" ng-show="checked.upload"></i></b>
+            <span class="h3 clear m-t-xs">{{speeds.upload || "-"}}</span>
+        </div>
+    </div>
+</div>

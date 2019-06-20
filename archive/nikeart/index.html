@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Nike Art</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  
+
+  <script src="js/vendor/jquery-1.8.3.min.js"></script>
+  <script src="js/vendor/unslider.js"></script>
+  <script>
+	$(document).ready(function() {
+
+    $('.pointer').click(function(){
+    	$(this).toggleClass('clicked');
+    	$(this).toggleClass('pulse');
+    	$(this).siblings('.content').toggleClass('clicked');
+    });
+
+
+    $('.slider').unslider({
+		speed: 400,               //  The speed to animate each slide (in milliseconds)
+		delay: 5000,              //  The delay between slide animations (in milliseconds)
+		keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+		dots: false,               //  Display dot navigation
+		fluid: true             //  Support responsive design. May break non-responsive designs
+	});
+
+	var unslider = $('.slider').unslider();
+
+	$('.arrow').click(function() {
+        var fn = this.className.split(' ')[1];
+        
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+	});
+	</script>
+</head>
+<body>
+
+<div id="nav">
+	<div class="logo">
+		<img src="img/logo.png" alt="logo">
+	</div>
+
+	<ul class="menu">
+		<li><a href="#">Tours</a></li>
+		<li><a href="#">Arts</a></li>
+		<li><a href="#">Shop</a></li>
+		<li><a href="#">Press</a></li>
+		<li><a href="#">Contact Us</a></li>
+		<li><a href="#">Links</a></li>
+	</ul>
+</div>
+
+<div class="wrap">
+
+<div class="slider">
+	<span class="controls">
+		<small>You can also use your left and right buttons to navigate</small>
+		<a class="arrow prev"></a>
+		<a class="arrow next"></a>
+	</span>
+	<ul>
+
+	<li class="slide">
+		<div class="description">
+			<p class="category"><a>Exhibition</a></p>
+			<p class="title"><a>Visit Nigeria with Nike</a></p>
+			<p class="date">A tradition of traditional arts and crafts</p>
+			<p class="text">Artist and Designer Nike Davies Okundaye invites you to visit her Nigeria, an ancient culture that thrives in modern cities, a world that moves easily between talking drums and the internet. <br><br>
+			Nike has given workshops on traditional Nigerian textiles to audiences in the US and Europe during the past 20 years. While she is known for her colorful batik and paintings that offers a modernist gloss on traditional themes</p>
+			<a href="#" class="link">Read More</a>
+		</div>
+	</li>
+
+	<li class="slide">
+		<div class="description">
+			<p class="category"><a>Tours</a></p>
+			<p class="title"><a>Take a tour of the Nike Centre for Art and Culture</a></p>
+			<p class="date">Available on schedule</p>
+			<p class="text">From the moment you arrive until you walk into the departure lounge at one of the airports, you are a guest. Spacious, comfortable rooms await you in the guest houses attached to her homes and art centers. Meals are offered at all of the guest houses to suit your schedule.</p>
+			<a href="#" class="link">Plan a tour</a>
+		</div>
+
+		<span class="extras" style="left: 40%; top: 180px;">
+			<span class="content">
+			<img src="img/extra.png" alt="extra">
+			<p>This painting was made by the artist to appreciate the african female form.<a>View Gallery</a></p>
+			</span>
+			<a class="pointer pulse"></a>
+		</span>
+
+		<span class="extras" style="left: 60%; top: 150px;">
+			<span class="content">
+			<img src="img/extra.png" alt="extra">
+			<p>This painting was made by the artist to appreciate the african female form.<a>View Gallery</a></p>
+			</span>
+			<a class="pointer pulse"></a>
+		</span>
+
+		<span class="extras" style="left: 45%; top: 400px;">
+			<span class="content">
+			<img src="img/extra.png" alt="extra">
+			<p>This painting was made by the artist to appreciate the african female form.<a>View Gallery</a></p>
+			</span>
+			<a class="pointer pulse"></a>
+		</span>
+
+	</li>
+
+	<li class="slide">
+		<div class="description">
+			<p class="category"><a>The Arts</a></p>
+			<p class="title"><a>New Great Oil Painting by New Artist</a></p>
+			<p class="date">Unvieled September 24</p>
+			<p class="text">This exhibition offers a critical assessment of photography’s influential role in contemporary art through a selection of recent major acquisitions, comprised primarily of multipart and serial works by 19 artists.</p>
+			<a href="#" class="link">View Gallery</a>
+		</div>
+	</li>
+
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

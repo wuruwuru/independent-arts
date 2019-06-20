@@ -1,0 +1,69 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 padder-top">
+                <h3 class="font-thin">Explore the data by choosing any of the questions below</h3>
+            </div>
+            <div class="col-md-6 lines-wrap">
+                <ul class="lines">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row m-t-md">
+            <div class="col-md-9" ng-class="{subtle: selected}">
+                <div class="wrapper padder-lg bg-white card clickable animated fadeIn m-b-xs" ng-click="goTo('question1')" ng-class="{selected: question1}">
+                    <!-- <div class="list-image image-1"></div> -->
+                    <div class="list-count">1</div>
+                    <h4 class="text-info clear-xs">
+                    What's the internet like in a chosen area? <br>
+                    <small>Find any area in Lagos to see all information gathered about that location so far</small>
+                    </h4>
+                </div>
+                <div class="wrapper padder-lg bg-white card clickable animated fadeIn m-b-xs delay-1" ng-click="goTo('question2')" ng-class="{selected: question2}">
+                    <!-- <div class="list-image image-2"></div> -->
+                    <div class="list-count">2</div>
+                    <h4 class="text-info clear-xs">
+                    What internet provider do people use the most?<br>
+                    <small>Find the most popular ISPs for mobile, tablet and desktop</small>
+                    </h4>
+                </div>
+                <div class="wrapper padder-lg bg-white card clickable animated fadeIn m-b-xs delay-2" ng-click="goTo('question3')" ng-class="{selected: question3}">
+                    <!-- <div class="list-image image-3"></div> -->
+                    <div class="list-count">3</div>
+                    <h4 class="text-info clear-xs">
+                    What is the best internet provider value for cost? <br>
+                    <small>Using an approximated index of speed to cost, discover the best ISPs</small>
+                    </h4>
+                </div>
+                <div class="wrapper padder-lg bg-white card clickable animated fadeIn m-b-xs delay-3" ng-click="goTo('question4')" ng-class="{selected: question4}">
+                    <!-- <div class="list-image image-4"></div> -->
+                    <div class="list-count">4</div>
+                    <h4 class="text-info clear-xs">
+                    Where are the best places for internet in Lagos?<br>
+                    <small>Looking for somewhere with zippy internet?</small>
+                    </h4>
+                </div>
+                <div class="wrapper padder-lg bg-white card clickable animated fadeIn m-b-xs delay-4" ng-click="goTo('question5')" ng-class="{selected: question5}">
+                    <!-- <div class="list-image image-5"></div> -->
+                    <div class="list-count">5</div>
+                    <h4 class="text-info clear-xs">
+                    See the data for your selected ISP<br>
+                    <small>Find the best locations, time of day for your ISP</small>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel test-banner">
+                    <img src="/assets/img/speedometer.png" alt="">
+                    Test your internet and add to the collective
+                    <a class="btn btn-block" ui-sref="explore.test">TEST NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

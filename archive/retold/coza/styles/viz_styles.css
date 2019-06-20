@@ -1,0 +1,291 @@
+/** VIZUALIZATION STYLES **/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Vollkorn:400italic);
+
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+.scene {
+  background: #3A536B;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px;
+  padding-top: 70px;
+  list-style: none;
+}
+
+.scene .layer {
+  float: left;
+  margin: 0 10px;
+  display: block;
+}
+
+.scene .layer img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: border .1s linear;
+  border: solid 4px transparent;
+}
+
+.scene:hover .layer img {
+  border: solid 4px rgba(0, 0, 0, 0.4);
+}
+
+.scene .layer img:hover {
+  border: solid 4px rgba(0, 0, 0, 0.7);
+}
+
+.scene .layer .description {
+  position: absolute;
+  left: 0;
+  top: 110%;
+  width: 500px;
+  color: white;
+}
+
+.scene .text_wrap {
+  list-style: none;
+  float: left;
+  padding: 0;
+  margin-top: 40px;
+  clear: both;
+  font-family: "gandhi_sansbold", "Quattrocento Sans";
+  font-size: 62px;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: white;
+  display: block;
+}
+
+.scene .text {
+  position: relative;
+}
+
+.scene .text:nth-child(1) {
+  opacity: 0.5;
+}
+
+.scene .text:nth-child(2) {
+  opacity: 1;
+}
+
+.scene .text:nth-child(3) {
+  opacity: 0.7;
+}
+
+.scene .text:nth-child(4) {
+  opacity: 0.60;
+}
+
+.scene .text:nth-child(5) {
+  opacity: 0.75;
+}
+
+.scene .text:hover .fullCount {
+  display: block;
+}
+
+.scene .text:hover .shortCount {
+  opacity: 0;
+}
+
+.share {
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+.share a {
+  display: inline-block;
+  font-size: 15px;
+  color: white;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.share a:hover {
+  opacity: 1;
+}
+
+.fullCount {
+  position: absolute;
+  width: 500px;
+  left: 0;
+  top: 0;
+  color: white;
+  height: 70px;
+  padding: 0px 10px;
+  display: none;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 70px;
+}
+
+.view {
+  color: white;
+  font-size: 30px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.scene .the_story {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  padding-bottom: 0px;
+  background: #eaeaea;
+  font-family: "Vollkorn", serif;
+  font-style: italic;
+  transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  z-index: 10;
+  overflow: auto;
+}
+
+.comments {  
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;  
+  padding: 40px;  
+  background: white;
+  font-family: inherit;
+  overflow: auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+.btn_primary {
+  padding: 5px 12px;
+  background: white;
+  color: #777777;
+  border-radius: 20px;
+}
+
+.scene .the_story p {
+  font-size: 18px;
+}
+
+.close_story {
+  display: inline-block;
+}
+
+.timeline {
+  padding: 20px;
+  list-style: none;
+  border-left: solid 1px #5191fc;
+}
+
+.timeline li {
+  padding-left: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #5191fc;
+  position: relative;
+}
+
+.timeline li p {
+  transition: all .1s linear;
+  color: #454545;
+}
+
+.timeline li a {
+  color: #5191fc;
+}
+
+.timeline li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #eaeaea;
+  border: solid 3px #5191fc;
+}
+
+.timeline li:hover:before {
+  border-color: red;
+}
+
+.timeline li:hover p {
+  /*font-size: 24px;*/
+}
+
+.timeline .date {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Quattrocento Sans";
+}
+
+.timeline li:hover .date {
+  color: red;
+}
+
+
+/** Responsiveness Hacks **/
+
+@media all and (max-width: 768px) {
+  .scene {
+    position: static;
+    height: auto;
+  }
+
+  .scene .layer {
+    display: inline-block;
+    width: 31%;
+    margin: 0 1%;
+  }
+
+  .scene .layer img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .scene .text_wrap {
+  margin-top: 40px;
+  font-size: 3em;
+}
+
+  .scene .the_story {
+    width: 100%;
+    height: auto;
+  }
+
+  .comments {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}

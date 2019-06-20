@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>anibrendan</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/jquery-1.8.3.min_2.js"></script>
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+<script src="js/jquery.prettyPhoto.js" ></script>
+<script type="text/javascript">
+$(document).ready(function () {
+     $("a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'dark_rounded'
+    });
+});
+</script>
+</head>
+
+<body>
+
+<!-- Script to toggle divs -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".opentop").hide();
+$(".hidetop").click(function(){
+$('.container').animate({'top': '-200px'}, 1000);
+$(".opentop").fadeToggle();
+$(".hidetop").fadeToggle();
+});
+
+$(".opentop").click(function(){
+$('.container').animate({'top': '0px'}, 1000);
+$(".opentop").fadeToggle();
+$(".hidetop").fadeToggle();
+});
+});
+</script>
+
+
+<div class="container">
+
+<div class="hidetop"></div>
+<div class="opentop"></div>
+<div class="lineshor"></div>
+<div class="lineshor2"></div>
+<div class="linesvert"></div>
+
+<div class="left">
+<div class="contact">
+<h1>Contact Me</h1> 
+<a href="mailto:someone@example.com?Subject=Hello%20again">mailme@anibrendan.com</a>
+<a href="#">www.anibrendan.com</a>
+<a href="#" class="resume">Download my resume</a>
+</div>
+
+<div class="logo"> 
+<a href="index.html"><img src="css/A_Logo.png" alt="logo" /></a>
+
+<div class="name">
+Anietie Brendan <p class="sub">Digital Artist</p> </div>
+
+</div>
+
+<nav>
+<ul id="nav">
+<li><a href="graphics.html">Graphic Design</a></li>
+<li><a href="#">Photography</a></li>
+<li><a href="#">CG Artwork</a></li>
+<li><a href="#">Life Drawing</a></li>
+</ul>
+</nav>
+
+<div class="disclaimer">
+<p>By viewing this website you agree to its terms and conditions</p>
+<p>All contents of this website are the intellectual and creative property of Anietie Brendan</p>
+<p>Copyright © 2012 All Rights Reserved</p>
+<p>Trust me, i'll sue you. </p>
+</p>
+</div>
+</div>
+
+
+
+<div class="right">
+<div class="about">
+
+<div class="content">
+<h1>About Me</h1>
+<p>I'm a CG Artist and Graphic Designer in London <br />I'm always sketching, always thinking and I love my Job
+<br />I'm currenly studying 3d Animation at the University of Hertfordshire</p>
+<div class="img gallery">
+<ul id="gallery">
+<li><a href="images/graphics/image-1.jpg" rel="prettyPhoto[graphics]" title="1" ><img src="images/graphics/thumb-1.jpg" alt="1" /></a></li>
+<li><a href="images/graphics/image-2.jpg" rel="prettyPhoto[graphics]" title="2" ><img src="images/graphics/thumb-2.jpg" alt="2" /></a></li>
+<li><a href="images/graphics/image-3.jpg" rel="prettyPhoto[graphics]" title="3" ><img src="images/graphics/thumb-3.jpg" alt="3" /></a></li>
+<li><a href="images/graphics/image-4.jpg" rel="prettyPhoto[graphics]" title="4" ><img src="images/graphics/thumb-4.jpg" alt="4" /></a></li>
+<li><a href="images/graphics/image-5.jpg" rel="prettyPhoto[graphics]" title="5" ><img src="images/graphics/thumb-5.jpg" alt="5" /></a></li>
+<li><a href="images/graphics/image-6.jpg" rel="prettyPhoto[graphics]" title="6" ><img src="images/graphics/thumb-6.jpg" alt="6" /></a></li>
+<li><a href="images/graphics/image-7.jpg" rel="prettyPhoto[graphics]" title="7" ><img src="images/graphics/thumb-7.jpg" alt="7" /></a></li>
+<li><a href="images/graphics/image-8.jpg" rel="prettyPhoto[graphics]" title="8" ><img src="images/graphics/thumb-8.jpg" alt="8" /></a></li>
+<li><a href="images/graphics/image-9.jpg" rel="prettyPhoto[graphics]" title="9" ><img src="images/graphics/thumb-9.jpg" alt="9" /></a></li>
+<li><a href="images/graphics/image-10.jpg" rel="prettyPhoto[graphics]" title="10" ><img src="images/graphics/thumb-10.jpg" alt="10" /></a></li>
+<li><a href="images/graphics/image-11.jpg" rel="prettyPhoto[graphics]" title="11" ><img src="images/graphics/thumb-11.jpg" alt="11" /></a></li>
+<li><a href="images/graphics/image-12.jpg" rel="prettyPhoto[graphics]" title="12" ><img src="images/graphics/thumb-12.jpg" alt="12" /></a></li>
+<li><a href="images/graphics/image-13.jpg" rel="prettyPhoto[graphics]" title="13" ><img src="images/graphics/thumb-13.jpg" alt="13" /></a></li>
+<li><a href="images/graphics/image-14.jpg" rel="prettyPhoto[graphics]" title="14" ><img src="images/graphics/thumb-14.jpg" alt="14" /></a></li>
+<li><a href="images/graphics/image-15.jpg" rel="prettyPhoto[graphics]" title="15" ><img src="images/graphics/thumb-15.jpg" alt="15" /></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

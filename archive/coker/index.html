@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Gozie Coker</title>
+
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/slick.css">
+  
+</head>
+<body>
+
+	<div class="header">
+		<div class="logo">
+			<img src="img/logo.png" alt="">
+		</div>
+
+		<div class="menu">
+			<ul>
+				<li><a href="">About</a></li>
+				<li><a href="">Team</a></li>
+				<li><a href="">Press</a></li>
+				<li><a href="">Experiences</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="bg-overlay vignette"></div>
+
+	<div class="slider">
+		<div class="slide" style="background-image: url('img/project1.jpg')"></div>
+		<div class="slide" style="background-image: url('img/project2.jpg')"></div>
+		<div class="slide" style="background-image: url('img/project3.jpg')"></div>
+	</div>
+
+	<div class="tag">
+		<p>Coker Creative</p>
+		We create experiences
+		<a href=""><i class="fa fa-envelope-o"></i> Email Us</a>
+	</div>
+
+	<div class="box">
+		<div class="slider-details">
+			<div>
+				<p>Gozie's 25th</p>
+				<a href=""><i class="fa fa-angle-right"></i> EXPLORE</a>
+			</div>
+
+			<div>
+				<p>Dipo's 25th</p>
+				<a href=""><i class="fa fa-angle-right"></i> EXPLORE</a>
+			</div>
+
+			<div>
+				<p>Nere's Wedding</p>
+				<a href=""><i class="fa fa-angle-right"></i> EXPLORE</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery.js"></script>=
+	<script src="js/vendor/slick.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$('.slider').slick({
+				arrows: false,
+				dots: false,
+				pauseOnHover: false,
+				autoplay: true,
+				fade: true,
+				asNavFor: '.slider-details'
+			});
+
+			$('.slider-details').slick({
+				arrows: false,
+				dots: true,
+				pauseOnHover: false,
+				autoplay: true,
+				asNavFor: '.slider'
+			});
+		});
+	</script>
+
+</body>
+</html>
