@@ -16652,12 +16652,12 @@ var htmlAnchorDirective = valueFn({
  *
  * The buggy way to write it:
  * ```html
- * <img src="http://www.gravatar.com/avatar/{{hash}}"/>
+ * <img src="https://www.gravatar.com/avatar/{{hash}}"/>
  * ```
  *
  * The correct way to write it:
  * ```html
- * <img ng-src="http://www.gravatar.com/avatar/{{hash}}"/>
+ * <img ng-src="https://www.gravatar.com/avatar/{{hash}}"/>
  * ```
  *
  * @element IMG
