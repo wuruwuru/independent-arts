@@ -1,2 +1,2 @@
 # wuruwuru
-Repo for my design journal wuruwuru.com
+A collection of web projects
