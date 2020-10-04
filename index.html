@@ -20,8 +20,6 @@
 		<meta property="twitter:description" content="Adult playground">
 		<meta property="twitter:image" content="https://wuruwuru.com/assets/images/thumbnail.png">
 
-		<!-- https://bansal.io/pattern-css#installation -->
-		<link href="https://unpkg.com/pattern.css" rel="stylesheet">
 		<style>
 			@font-face {
 				font-family: 'Soehne';
@@ -61,13 +59,11 @@
 				display: flex;
 				flex-direction: column;
 			}
-			.background {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				color: #e5e5e5;
+			/* https://bansal.io/pattern-css#installation */
+			.checkered {
+				background-image: repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
+				background-position: 0 0,10px 10px;
+				background-size: calc(2 * 10px) calc(2 * 10px);
 			}
 			a {
 				color: black;
@@ -169,8 +165,7 @@
 			}
 		</style>
 	</head>
-	<body>
-		<div class="background pattern-checks-sm"></div>
+	<body class="checkered">
 		<header>
 			<div class="wordmark">Wuruwuru</div>
 			<nav>
