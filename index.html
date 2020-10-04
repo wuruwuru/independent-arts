@@ -1,29 +1,200 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 	<head>
-		<meta http-equiv="refresh" content="0; url=https://www.notion.so/Wuruwuru-09cf4ae816b74fcdb5d067a21383126a" />
-		<link rel="canonical" href="https://www.notion.so/Wuruwuru-09cf4ae816b74fcdb5d067a21383126a" />
-		
+		<title>Wuruwuru</title>
 		<meta name="title" content="Wuruwuru">
-		<meta name="description" content="Opemipo Aikomo's Design Journal">
+		<meta name="description" content="Adult playground">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://wuruwuru.com/">
 		<meta property="og:title" content="Wuruwuru">
-		<meta property="og:description" content="Opemipo Aikomo's Design Journal">
-		<meta property="og:image" content="https://wuruwuru.com/thumbnail.png">
+		<meta property="og:description" content="Adult playground">
+		<meta property="og:image" content="https://wuruwuru.com/assets/images/thumbnail.png">
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:url" content="https://wuruwuru.com/">
 		<meta property="twitter:title" content="Wuruwuru">
-		<meta property="twitter:description" content="Opemipo Aikomo's Design Journal">
-		<meta property="twitter:image" content="https://wuruwuru.com/thumbnail.png">
+		<meta property="twitter:description" content="Adult playground">
+		<meta property="twitter:image" content="https://wuruwuru.com/assets/images/thumbnail.png">
+
+		<!-- https://bansal.io/pattern-css#installation -->
+		<link href="https://unpkg.com/pattern.css" rel="stylesheet">
+		<style>
+			@font-face {
+				font-family: 'Soehne';
+				font-weight: normal;
+				src: url('assets/fonts/soehne-web-buch.woff');
+			}
+			@font-face {
+				font-family: 'Soehne';
+				font-weight: normal;
+				font-style: italic;
+				src: url('assets/fonts/soehne-web-buch-kursiv.woff');
+			}
+			@font-face {
+				font-family: 'Soehne';
+				font-weight: bold;
+				src: url('assets/fonts/soehne-web-halbfett.woff');
+			}
+			@font-face {
+				font-family: 'Soehne';
+				font-weight: bold;
+				font-style: italic;
+				src: url('assets/fonts/soehne-web-halbfett-kursiv.woff');
+			}
+			@font-face {
+				font-family: 'Soehne Schmal';
+				font-weight: bold;
+				src: url('assets/fonts/soehne-schmal-web-dreiviertelfett.woff');
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				position: relative;
+				font-family: 'Soehne', sans-serif;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+			.background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				color: #e5e5e5;
+			}
+			a {
+				color: black;
+				font-size: 1.6rem;
+				font-family: serif;
+				font-style: italic;
+			}
+			a:hover {
+				animation: link-flash .5s infinite;
+			}
+			@keyframes link-flash {
+				0%, 100% { 
+					text-decoration: none;
+				}
+				80% {
+					text-decoration: underline;
+				}
+			}
+			header, main, footer {
+				position: relative;
+			}
+			header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+				justify-content: space-between;
+				z-index: 2;
+			}
+			nav {
+				text-align: right;
+				padding: 20px;
+			}
+			nav a {
+				display: block;
+				margin-top: 5px;
+			}
+			@media screen and (max-width: 600px) {
+				nav a {
+					margin-top: 20px;
+				}
+			}
+			.globe {
+				font-size: 2rem;
+			}
+			main {
+				position: relative;
+				flex: 1;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0 20px;
+			}
+			main h1 {
+				font-size: 1.6rem;
+				max-width: 500px;
+			}
+			@media screen and (max-width: 600px) {
+				main {
+					align-items: flex-end;
+				}
+			}
+			.wordmark {
+				font-family: 'Soehne Schmal';
+				font-weight: bold;
+				font-size: 3.6rem;
+				text-transform: uppercase;
+				height: 80px;
+				line-height: 80px;
+				background: black;
+				color: white;
+				padding: 0 20px;
+			}
+			footer {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 20px;
+			}
+			.next {
+				display: flex;
+				text-align: right;
+				align-items: center;
+			}
+			@media screen and (max-width: 600px) {
+				footer {
+					display: block;
+				}
+				.social {
+					text-align: right;
+				}
+				.next {
+					justify-content: flex-end;
+					flex-direction: row-reverse;
+					text-align: left;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<script>
-			window.location.href = 'https://www.notion.so/Wuruwuru-09cf4ae816b74fcdb5d067a21383126a';
-		</script>
+		<div class="background pattern-checks-sm"></div>
+		<header>
+			<div class="wordmark">Wuruwuru</div>
+			<nav>
+				<div class="globe">&#127757;</div>
+				<div>
+					<a href="https://medium.com/wuruwuru" target="_blank">Journal</a>
+					<a href="https://www.notion.so/wuruwuru/Public-303d959d7d6e4ad2b7762fce9a64a402" target="_blank">Public</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<h1>
+				Wuruwuru is <span class="strike" data-before="an adult playground">an internet publication</span>.
+				We're making multimedia stories about design and popular culture in Nigeria to eventually publish and sell a magazine.
+			</h1>
+		</main>
+		<footer>
+			<div class="social">
+				<a href="https://twitter.com/wuruwurumag" target="_blank">@wuruwurumag</a>
+			</div>
+			<div class="next">
+				<p>Up Next <br> <b>Bros J's Guide</b></p>
+				<img src="assets/images/logo.png" width="60px" height="60px" alt="Logo">
+			</div>
+		</footer>
 	</body>
 </html>
