@@ -59,6 +59,13 @@
 				display: flex;
 				flex-direction: column;
 			}
+			.dots {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
 			/* https://bansal.io/pattern-css#installation */
 			.checkered {
 				background-image: repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
@@ -82,12 +89,8 @@
 					text-decoration: underline;
 				}
 			}
-			header, main, footer {
-				position: relative;
-			}
 			header {
-				position: fixed;
-				top: 0;
+				position: absolute;
 				left: 0;
 				right: 0;
 				display: flex;
@@ -121,6 +124,7 @@
 			}
 			main h1 {
 				font-size: 1.6rem;
+				line-height: 2rem;
 				max-width: 500px;
 			}
 			@media screen and (max-width: 600px) {
@@ -140,6 +144,7 @@
 				padding: 0 20px;
 			}
 			footer {
+				position: relative;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -176,10 +181,9 @@
 				</div>
 			</nav>
 		</header>
-		<main>
+		<main id="stage">
 			<h1>
-				Wuruwuru is <span class="strike" data-before="an adult playground">an internet publication</span>.
-				We're making multimedia stories about design and popular culture in Nigeria to eventually publish and sell a magazine.
+				Wuruwuru is a publishing experiment. We make multimedia stories about design and popular culture in Nigeria with the goal of eventually compiling them into a magazine.
 			</h1>
 		</main>
 		<footer>
@@ -191,5 +195,60 @@
 				<img src="assets/images/logo.png" width="60px" height="60px" alt="Logo">
 			</div>
 		</footer>
+		<script>
+			// Inspired by https://codepen.io/falldowngoboone/pen/PwzPYv
+			var stage = document.getElementById('stage');
+			var dots = [];
+			var mouse = {
+				x: 0,
+				y: 0,
+			};
+			var Dot = function(x, y) {
+				this.x = 0;
+				this.y = 0;
+				const node = document.createElement('div');
+				node.style.width = '10px';
+				node.style.height = '10px';
+				node.style.background = 'black';
+				node.style.position = 'absolute';
+				this.node = node;
+				stage.appendChild(node);
+			};
+			Dot.prototype.draw = function() {
+				var x = Math.round(this.x / 10) * 10;
+				var y = Math.round(this.y / 10) * 10;
+				this.node.style.left = x + 'px';
+				this.node.style.top = y + 'px';
+			};
+			for (var i = 0; i < 12; i++) {
+				dots.push(new Dot());
+			}
+			function render() {
+				var x = mouse.x;
+				var y = mouse.y;
+				dots.forEach(function(dot, index, dots) {
+					dot.x = x;
+					dot.y = y;
+					dot.draw();
+					var nextDot = dots[index + 1] || dots[0];
+					x += (nextDot.x - dot.x) * .6;
+					y += (nextDot.y - dot.y) * .6;
+				});
+			}
+			var hotspots = ['MAIN', 'HEADER', 'FOOTER'];
+			function moveDots(event) {
+				if (hotspots.includes(event.target.tagName)) {
+					mouse.x = event.pageX;
+					mouse.y = event.pageY;
+				}
+			}
+			window.addEventListener('mousemove', moveDots);
+			window.addEventListener('touchmove', moveDots);
+			function animate() {
+				render();
+				requestAnimationFrame(animate);
+			}
+			animate();
+		</script>
 	</body>
 </html>
