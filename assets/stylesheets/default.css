@@ -33,6 +33,7 @@ body {
   position: relative;
   font-family: 'Soehne', sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-size: 1.4rem;
 }
 .dots {
   position: absolute;
@@ -49,6 +50,7 @@ body {
 }
 a {
   color: black;
+  text-decoration: none;
 }
 a:hover {
   animation: link-flash .5s infinite;
@@ -63,4 +65,18 @@ a:hover {
 }
 .globe {
   font-size: 2rem;
+}
+ul {
+  list-style: none;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  padding: 0 20px;
+}
+nav > ul > li {
+  display: inline-block;
+  padding: 0 5px;
 }
