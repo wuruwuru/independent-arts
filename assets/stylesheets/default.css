@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Soehne';
+  font-weight: normal;
+  src: url('../fonts/soehne-web-buch.woff');
+}
+@font-face {
+  font-family: 'Soehne';
+  font-weight: normal;
+  font-style: italic;
+  src: url('../fonts/soehne-web-buch-kursiv.woff');
+}
+@font-face {
+  font-family: 'Soehne';
+  font-weight: bold;
+  src: url('../fonts/soehne-web-halbfett.woff');
+}
+@font-face {
+  font-family: 'Soehne';
+  font-weight: bold;
+  font-style: italic;
+  src: url('../fonts/soehne-web-halbfett-kursiv.woff');
+}
+@font-face {
+  font-family: 'Soehne Schmal';
+  font-weight: bold;
+  src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  position: relative;
+  font-family: 'Soehne', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/* https://bansal.io/pattern-css#installation */
+.checkered {
+  background-image: repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
+  background-position: 0 0,10px 10px;
+  background-size: calc(2 * 10px) calc(2 * 10px);
+}
+a {
+  color: black;
+}
+a:hover {
+  animation: link-flash .5s infinite;
+}
+@keyframes link-flash {
+  0%, 100% { 
+    text-decoration: none;
+  }
+  80% {
+    text-decoration: underline;
+  }
+}
+.globe {
+  font-size: 2rem;
+}
