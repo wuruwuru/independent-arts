@@ -37,15 +37,12 @@ function render() {
     y += (nextDot.y - dot.y) * .6;
   });
 }
-var hotspots = ['NAV', 'A'];
 function moveDots(event) {
-  if (!hotspots.includes(event.target.tagName)) {
-    mouse.x = event.pageX;
-    mouse.y = event.pageY;
-  }
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
 }
-window.addEventListener('mousemove', moveDots);
-window.addEventListener('touchmove', moveDots);
+stage.addEventListener('mousemove', moveDots);
+stage.addEventListener('touchmove', moveDots);
 function animate() {
   render();
   requestAnimationFrame(animate);

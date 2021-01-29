@@ -20,11 +20,6 @@
   font-style: italic;
   src: url('../fonts/soehne-web-halbfett-kursiv.woff');
 }
-@font-face {
-  font-family: 'Soehne Schmal';
-  font-weight: bold;
-  src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
-}
 * {
   box-sizing: border-box;
 }
@@ -45,17 +40,15 @@ body {
 /* https://bansal.io/pattern-css#installation */
 .checkered {
   background-image: repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
-  background-position: 0 0,10px 10px;
+  background-position: 0 0, 10px 10px;
+  background-attachment: fixed;
   background-size: calc(2 * 10px) calc(2 * 10px);
 }
 a {
   color: black;
   text-decoration: none;
 }
-a:hover {
-  animation: link-flash .5s infinite;
-}
-@keyframes link-flash {
+@keyframes underline-flash {
   0%, 100% { 
     text-decoration: none;
   }
@@ -68,15 +61,32 @@ a:hover {
 }
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0;
 }
 nav {
   display: flex;
   justify-content: space-between;
   height: 75px;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
+  position: sticky;
+  top: 0;
 }
 nav > ul > li {
   display: inline-block;
   padding: 0 5px;
+}
+nav > div {
+  width: 60px;
+  text-align: center;
+}
+nav a:hover {
+  animation: underline-flash .5s infinite;
 }

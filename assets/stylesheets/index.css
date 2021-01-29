@@ -1,3 +1,123 @@
-.index {
-  
+@font-face {
+  font-family: 'Soehne Schmal';
+  font-weight: 600;
+  src: url('../fonts/soehne-schmal-web-halbfett.woff');
+}
+@font-face {
+  font-family: 'Soehne Schmal';
+  font-weight: 700;
+  src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
+}
+@keyframes link-flash {
+  0%, 100% { 
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+h1, h2, h3 {
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+h1 {
+  font-weight: 700;
+}
+h3 {
+  font-weight: 600;
+}
+.stage {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 75px;
+}
+.stage h1 {
+  font-size: 10rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto;
+  margin: 0 60px;
+}
+main > section {
+  position: relative;
+}
+main > section:first-child {
+  z-index: 2;
+}
+main > section:nth-child(3) {
+  grid-column: 1 / span 2;
+}
+figure > a {
+  display: block;
+  width: 100%;
+}
+article > footer {
+  font-size: .8rem;
+  letter-spacing: 1.05px;
+  text-transform: uppercase;
+}
+article > footer > ul > li {
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
+}
+article > footer > ul > li:last-child {
+  border-bottom: none;
+}
+article > footer a:hover {
+  animation: link-flash .5s infinite;
+}
+/* The J Guide */
+.jguide {
+  width: 90%;
+  background: #FACACA;
+  padding: 20px;
+}
+.jguide header h3 {
+  font-size: 7rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.jguide header a > div {
+  display: flex;
+  justify-content: space-between;
+}
+.jguide header:hover svg {
+  animation: link-flash .5s infinite;
+}
+.jguide figure {
+	background:
+		linear-gradient(90deg, #FACACA 8px, transparent 1%) center,
+		linear-gradient(#FACACA 8px, transparent 1%) center,
+		#000;
+  background-size: 10px 10px;
+  text-align: center;
+}
+/* A Retrospective of Album Cover Art */
+.albumcovers {
+  width: 120%;
+  transform: translateX(-20%) translateY(10%);
+  background: #8DEDDC;
+  padding: 10% 20px 20px 20%;
+}
+.albumcovers header h3 {
+  font-size: 7rem;
+  line-height: 0.8;
+}
+.albumcovers figure a {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+/* Hanky Panky */
+.hankypanky {
+  width: 80%;
+  transform: translateX(20%);
+  padding: 20px;
+  background: #FFFFFF;
 }
