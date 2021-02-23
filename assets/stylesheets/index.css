@@ -1,44 +1,12 @@
-@font-face {
-  font-family: 'Soehne Schmal';
-  font-weight: 600;
-  src: url('../fonts/soehne-schmal-web-halbfett.woff');
-}
+/*Header */
 @font-face {
   font-family: 'Soehne Schmal';
   font-weight: 700;
   src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
 }
-@keyframes link-flash {
-  0%, 100% { 
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
-}
 
-::-webkit-scrollbar-button {
-  width: 1px;
-  height: 1px;
-}
-
-h1, h2, h3 {
-  font-family: 'Soehne Schmal', sans-serif;
-  text-transform: uppercase;
-  margin: 0;
-}
-h1 {
-  font-weight: 700;
-}
-h3 {
-  font-weight: 600;
-}
 header {
-  height: 80vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,30 +16,47 @@ header {
 @media all and (min-width: 700px) {
   header {
     position: relative;
+    height: 80vh;
     top: 0;
   }
 }
-main {
-  position: relative;
-  width: 100%;
+h1, h2, h3 {
+  margin: 0;
 }
 h1 {
   font-size: 5rem;
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+}
+h3 {
+  font-weight: normal;
+  font-size: 2.4rem;
 }
 @media all and (min-width: 700px) {
   h1 {
     font-size: 10rem;
   }
 }
-.card {
-  border-radius: 30px;
-  background: gray;
+/* Carousel */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+}
+main {
+  position: relative;
+  width: 100%;
 }
 .carousel li {
   padding: 20px;
+  position: relative;
 }
-.card {
+.carousel li article {
   height: 60vh;
+  perspective: 1600px;
 }
 @media all and (min-width: 700px) {
   main {
@@ -83,7 +68,7 @@ h1 {
     height: 100vw;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 20px 30px;
+    padding: 30px;
     transform-origin: right top;
     transform: rotate(-90deg) translate3d(0,calc(-100vh + 75px),0);
   }
@@ -91,21 +76,58 @@ h1 {
     overflow: hidden;
   }
   .carousel li {
-    height: 400px;
-    position: relative;
-    overflow: hidden;
+    height: 500px;
     padding: 0;
   }
   .carousel li:not(:first-child) {
-    margin-top: 20px;
+    margin-top: 30px;
   }
-  .card {
+  .carousel li article {
     position: absolute;
-    width: 400px;
+    width: 500px;
     height: 40vw;
     transform-origin: left top;
     transform: rotate(90deg) translate3d(0,calc(-100vh + 150px),0);
   }
+}
+/* Flipping Card */
+.card,
+.card__front,
+.card__back {
+  border-radius: 30px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.05);
+  cursor: pointer;
+}
+.card > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card__front {
+  background: gray;
+}
+.card__back {
+  padding: 30px;
+  transform: rotateY(180deg);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+.card a:hover {
+  animation: underline-flash .5s infinite;
 }
 /* The J Guide */
 .jguide {

@@ -43,16 +43,65 @@
 		<main>
 			<ul class="carousel" id="carousel">
 				<li>
-					<article class="card">a</article>
+					<article>
+						<div class="card">
+							<div class="card__front">The J Guide</div>
+							<div class="card__back">
+								<div>
+									<h3>An illustrated guide for teaching friends how to roll a joint.</h3>
+								</div>
+								<div>
+									<a href="#">instagram.com/thejguide</a>
+								</div>
+							</div>
+						</div>
+					</article>
 				</li>
 				<li>
-					<article class="card">a</article>
+					<article>
+						<div class="card">
+							<div class="card__front">A Retrospective of Album Covers</div>
+							<div class="card__back">
+								<div>
+									<h3>Interviews with Niyi Okeowo, Funto Coker & Duks.</h3>
+								</div>
+								<div>
+									Essay. March 2020
+								</div>
+							</div>
+						</div>
+					</article>
 				</li>
 				<li>
-					<article class="card">a</article>
+					<article>
+						<div class="card">
+							<div class="card__front">Album Cover Database</div>
+							<div class="card__back">
+								<div>
+									<h3>A curation of 600 Nigerian album covers and designers.</h3>
+								</div>
+								<div>
+									<a href="#">wuruwuru.com/covers</a>
+								</div>
+							</div>
+						</div>
+					</article>
 				</li>
 				<li>
-					<article class="card">a</article>
+					<article>
+						<div class="card">
+							<div class="card__front">Hanky Panky</div>
+							<div class="card__back">
+								<div>
+									<h3>Aunty Yuwa is worried that Osas is gay.</h3>
+								</div>
+								<div>
+								</div>
+								<div>
+									Animation. July 2020
+								</div>
+						</div>
+					</article>
 				</li>
 			</ul>
 		</main>
@@ -70,6 +119,28 @@
 					carousel.classList.add('is-locked');
 				}
 			});
+		</script>
+		<script>
+			// Flip card on click
+			var cards = document.getElementsByClassName('card');
+			function resetCards() {
+				for(var i = 0; i < cards.length; i++){
+					cards[i].classList.remove('is-flipped');
+				}
+			}
+			function addCardFlipEventListener(div) {
+				div.addEventListener('click', function() {
+					if (div.classList.contains('is-flipped')) {
+						div.classList.remove('is-flipped');
+					} else {
+						resetCards();
+						div.classList.add('is-flipped');
+					}
+				});
+			}
+			for(var j = 0; j < cards.length; j++){
+				addCardFlipEventListener(cards[j]);
+			}
 		</script>
 	</body>
 </html>

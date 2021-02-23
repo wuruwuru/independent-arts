@@ -37,7 +37,7 @@ function render() {
     y += (nextDot.y - dot.y) * .6;
   });
 }
-var tagsToAvoid = ['ARTICLE', 'A', 'H1', 'UL'];
+var tagsToAvoid = ['ARTICLE', 'A', 'H1', 'UL', 'DIV', 'IMG'];
 function moveDots(event) {
   if (!tagsToAvoid.includes(event.target.tagName)) {
     mouse.x = event.pageX;
