@@ -1,5 +1,5 @@
 // Inspired by https://codepen.io/falldowngoboone/pen/PwzPYv
-var stage = document.getElementById('stage');
+var stage = document.getElementsByTagName('BODY')[0];
 var dots = [];
 var mouse = {
   x: 0,
@@ -37,9 +37,12 @@ function render() {
     y += (nextDot.y - dot.y) * .6;
   });
 }
+var tagsToAvoid = ['ARTICLE', 'A', 'H1', 'UL'];
 function moveDots(event) {
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
+  if (!tagsToAvoid.includes(event.target.tagName)) {
+    mouse.x = event.pageX;
+    mouse.y = event.pageY;
+  }
 }
 stage.addEventListener('mousemove', moveDots);
 stage.addEventListener('touchmove', moveDots);

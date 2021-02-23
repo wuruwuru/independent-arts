@@ -37,98 +37,39 @@
       </ul>
       <div class="globe">&#127757;</div>
 		</nav>
-		<header class="stage" id="stage">
+		<header>
 			<h1 class="wordmark">Wuruwuru</h1>
 		</header>
 		<main>
-			<section>
-				<article class="jguide">
-					<header>
-						<a href="#">
-							<div>
-								<h3>The J Guide</h3>
-								<svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17.5 42.5l25-25M17.5 17.5h25v25" stroke="#000" stroke-width="5"/>
-								</svg>
-							</div>
-							<figure>
-								<a href="#">
-									<img src="assets/images/jguide/blunt.png" alt="J Guide Blunt">
-								</a>
-							</figure>
-						</a>
-					</header>
-					<p>The J Guide is an illustrated, step-by-step guide for teaching friends how to roll a joint.</p>
-					<footer>
-						<ul>
-							<li>Format: Instagram Comic</li>
-							<li>With: <a href="#">Jubril</a>, <a href="#">Vanny</a>, <a href="#">Tomiwa</a></li>
-							<li>Published: December 2020</li>
-						</ul>
-					</footer>
-				</article>
-			</section>
-			<section>
-				<article class="albumcovers">
-					<header>
-						<a href="#">
-							<h3>A Retrospective of Album Cover Art</h3>
-							<span>⏳</span>
-						</a>
-					</header>
-					<figure>
-						<a href="#">
-							<img src="assets/images/albumcovers/01.png" alt="Oliver De Coque: Oghene Super Sound">
-							<img src="assets/images/albumcovers/02.png" alt="Falz: Stories That Touch">
-							<img src="assets/images/albumcovers/03.png" alt="Fireboy DML: Eli">
-						</a>
-					</figure>
-					<p>Lots of beautiful images, commentary on the evolution of graphic design and stories of the people who put a face to our music. In this multi-essay project, we explore album cover production in Nigeria.</p>
-					<aside>
-						<p>Browse the database</p>
-						<svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M17.5 42.5l25-25M17.5 17.5h25v25" stroke="#000" stroke-width="5"/>
-						</svg>
-					</aside>
-					<footer>
-						<ul>
-							<li>Format: Database, Microsite</li>
-							<li>With: <a href="#">Wale</a>, <a href="#">Eseosa</a></li>
-							<li>ETA: February 2020</li>
-						</ul>
-					</footer>
-				</article>
-			</section>
-			<section>
-				<article class="hankypanky">
-					<aside>Loading</aside>
-					<figure>
-						<a href="#">
-							<img src="assets/images/hankypanky/characters.png" alt="Hanky Panky Characters">
-						</a>
-					</figure>
-					<header>
-						<a href="#">
-							<h3>Hanky Panky</h3>
-						</a>
-					</header>
-					<p>Aunty Yuwa is worried that Osas, her niece, is gay. The birthday videos are much too raunchy and her Jezebel of a girlfriend looks awfully touchy. So, she makes a phone call. This Hanky Panky must come to an end.</p>
-					<aside>
-						<p>Browse the database</p>
-						<svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M17.5 42.5l25-25M17.5 17.5h25v25" stroke="#000" stroke-width="5"/>
-						</svg>
-					</aside>
-					<footer>
-						<ul>
-							<li>Format: Animation</li>
-							<li>With: <a href="#">Yanmo</a>, <a href="#">Jessica</a>, <a href="#">Daniel</a>, <a href="#">Chuks</a>, <a href="#">Oshuwa</a>, <a href="#">VSonics</a></li>
-							<li>ETA: 2020</li>
-						</ul>
-					</footer>
-				</article>
-			</section>
+			<ul class="carousel" id="carousel">
+				<li>
+					<article class="card">a</article>
+				</li>
+				<li>
+					<article class="card">a</article>
+				</li>
+				<li>
+					<article class="card">a</article>
+				</li>
+				<li>
+					<article class="card">a</article>
+				</li>
+			</ul>
 		</main>
     <script src="assets/scripts/dots.js"></script>
+		<script>
+			// Lock carousel scroll until page is scrolled to bottom
+			var carousel = document.getElementById('carousel');
+			carousel.classList.add('is-locked');
+			window.addEventListener('scroll', function() {
+				var pageScrolledToBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+				var isLocked = carousel.classList.contains('is-locked');
+				if (pageScrolledToBottom && isLocked) {
+					carousel.classList.remove('is-locked');
+				} else if (!pageScrolledToBottom && !isLocked) {
+					carousel.classList.add('is-locked');
+				}
+			});
+		</script>
 	</body>
 </html>
