@@ -38,7 +38,7 @@
       <div class="globe">&#127757;</div>
 		</nav>
 		<header>
-			<h1 class="wordmark">Wuruwuru</h1>
+			<h1 class="wordmark" id="wordmark">Wuruwuru</h1>
 		</header>
 		<main>
 			<ul class="carousel" id="carousel">
@@ -51,7 +51,7 @@
 									<h3>An illustrated guide for teaching friends how to roll a joint.</h3>
 								</div>
 								<div>
-									<a href="#">instagram.com/thejguide</a>
+									<a href="#">wuruwuru.com/jguide</a>
 								</div>
 							</div>
 						</div>
@@ -105,7 +105,6 @@
 				</li>
 			</ul>
 		</main>
-    <script src="assets/scripts/dots.js"></script>
 		<script>
 			// Lock carousel scroll until page is scrolled to bottom
 			var carousel = document.getElementById('carousel');
@@ -141,6 +140,23 @@
 			for(var j = 0; j < cards.length; j++){
 				addCardFlipEventListener(cards[j]);
 			}
+		</script>
+		<script>
+			// Fade wordmark on scroll
+			var wordmark = document.getElementById('wordmark');
+			var isVisible = true;
+			var offset = 100;
+			window.addEventListener('scroll', function() {
+				if (isVisible & (window.scrollY > offset)) {
+					wordmark.style.opacity = 0;
+					wordmark.style.transform = 'scale(0.8)';
+					isVisible = false;
+				} else if (window.scrollY < offset) {
+					wordmark.style.opacity = 1;
+					wordmark.style.transform = 'scale(1)';
+					isVisible = true;
+				}
+			});
 		</script>
 	</body>
 </html>
