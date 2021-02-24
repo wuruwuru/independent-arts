@@ -83,7 +83,7 @@ main {
   .carousel li article {
     position: absolute;
     width: 500px;
-    height: 40vw;
+    height: 75vh;
     transform-origin: left top;
     transform: rotate(90deg) translate3d(0,calc(-100vh + 150px),0);
   }
@@ -101,7 +101,7 @@ main {
   left: 0;
   top: 0;
   transform-style: preserve-3d;
-  transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.05);
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.05);
   cursor: pointer;
 }
 .card > div {
@@ -112,6 +112,11 @@ main {
 }
 .card__front {
   background: gray;
+  z-index: 2;
+  transition: transform 0.1s;
+}
+.card__front > * {
+  pointer-events: none;
 }
 .card__back {
   padding: 30px;
@@ -124,55 +129,83 @@ main {
 .card.is-flipped {
   transform: rotateY(180deg);
 }
+.card.is-flipped .card__front {
+  z-index: 1;
+}
+.card.is-flipped .card__back {
+  z-index: 2;
+}
 .card a:hover {
   animation: underline-flash .5s infinite;
 }
 /* The J Guide */
-.jguide {
-  width: 90%;
+.card--jguide .card__front {
   background: #FACACA;
-  padding: 20px;
-}
-.jguide header h3 {
-  font-size: 7rem;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-.jguide header a > div {
+  padding: 30px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
-.jguide header:hover svg {
-  animation: link-flash .5s infinite;
-}
-.jguide figure {
+.card--jguide figure {
+  flex: 1;
 	background:
 		linear-gradient(90deg, #FACACA 8px, transparent 1%) center,
 		linear-gradient(#FACACA 8px, transparent 1%) center,
-		#000;
+		#6C4E4E;
   background-size: 10px 10px;
+  position: relative;
+}
+.card--jguide figure img {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.card--jguide h2 {
+  display: block;
+  height: 80px;
+  line-height: 80px;
   text-align: center;
 }
 /* A Retrospective of Album Cover Art */
-.albumcovers {
-  width: 120%;
-  transform: translateX(-20%) translateY(10%);
-  background: #8DEDDC;
-  padding: 10% 20px 20px 20%;
-}
-.albumcovers header h3 {
-  font-size: 7rem;
-  line-height: 0.8;
-}
-.albumcovers figure a {
+.card--retrospective .card__front {
+  background: #F8F6E7;
   display: flex;
-  width: 100%;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card__loupe {
+  display: block;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #FDF29E;
+  z-index: -1;
+}
+/* Album Cover Database */
+.card--covers .card__front {
+  background: #59C3FF;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card--covers .card__front figure {
+  margin-bottom: 20px;
 }
 /* Hanky Panky */
-.hankypanky {
-  width: 80%;
-  transform: translateX(20%);
-  padding: 20px;
+.card--hankypanky .card__front {
   background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card--hankypanky .card__front figure {
+  margin-bottom: 20px;
 }
