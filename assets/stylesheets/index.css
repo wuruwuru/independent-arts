@@ -1,9 +1,4 @@
 /*Header */
-@font-face {
-  font-family: 'Soehne Schmal';
-  font-weight: 700;
-  src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
-}
 header {
   height: 70vh;
   display: flex;
@@ -20,20 +15,9 @@ header {
 h1, h2, h3 {
   margin: 0;
 }
-h1 {
-  font-size: 5rem;
-  font-family: 'Soehne Schmal', sans-serif;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-}
 h3 {
   font-weight: normal;
   font-size: 2.4rem;
-}
-@media all and (min-width: 700px) {
-  h1 {
-    font-size: 10rem;
-  }
 }
 /* Carousel */
 ::-webkit-scrollbar {

@@ -37,9 +37,9 @@ function render() {
     y += (nextDot.y - dot.y) * .6;
   });
 }
-var tagsToAvoid = ['ARTICLE', 'A', 'H1', 'UL', 'DIV', 'IMG'];
+var freeZones = ['BODY', 'NAV', 'MAIN', 'SECTION'];
 function moveDots(event) {
-  if (!tagsToAvoid.includes(event.target.tagName)) {
+  if (freeZones.includes(event.target.tagName)) {
     mouse.x = event.pageX;
     mouse.y = event.pageY;
   }

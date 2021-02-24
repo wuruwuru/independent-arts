@@ -1,3 +1,16 @@
-.about {
-  
+main {
+  margin-top: 30vh;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,1) 50%);
+}
+main h1 {
+  text-align: center;
+}
+main section {
+  max-width: 500px;
+}
+main footer {
+  margin: 50px 0;
 }

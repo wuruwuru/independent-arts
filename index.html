@@ -23,7 +23,7 @@
 		<link rel="preload" as="style" href="assets/stylesheets/default.css">
 		<link rel="preload" as="style" href="assets/stylesheets/index.css">
 
-		<link rel="stylesheet" href="assets/stylesheets/default.css">
+		<link rel="stylesheet" href="assets/stylesheets/global.css">
 		<link rel="stylesheet" href="assets/stylesheets/index.css">
 	</head>
 	<body class="checkered">
@@ -115,41 +115,8 @@
 						</div>
 					</article>
 				</li>
-				<li>
-					<article>
-						<div class="card card--hankypanky">
-							<div class="card__front">
-								<figure>
-									<img src="assets/images/hankypanky/girls.png" alt="Girls">
-								</figure>
-								<h2>
-									<img src="assets/images/hankypanky/title.svg" alt="Hanky Panky">
-								<h2>
-							</div>
-							<div class="card__back">
-								<div>
-									<h3>Aunty Yuwa is worried that Osas is gay.</h3>
-								</div>
-								<div>
-								</div>
-								<div>
-									ETA July 2020
-								</div>
-							</div>
-						</div>
-					</article>
-				</li>
 			</ul>
 		</main>
-		<aside id="about">
-			<p>Wuruwuru is an independent publication about design and internet culture in Nigeria.</p>
-			<p>The name comes from the phrase "wuruwuru to the answer", a term used to describe an unclear solution to a problem.</p>
-			<p>I'm fascinated by a lot of the content I read and watch e.g. Aeon stories, The Pudding essays, Adult Swim shorts, Vimeo staff picks, magazines like Offscreen and Apartamento, to name a few and Wuruwuru is my hook-or-crook attempt to make high quality media like they do.</p>
-			<p>The stories will be made in collaboration with independent writers, designers, illustrators, animators e.t.c. For me, this is an opportunity to make fun things with peers, an adult playground of sorts.</p>
-			<p>Each one will explore an obscure but fascinating topic in different ways e.g. interactive essays, animated videos, posters, magazines e.t.c.</p>
-			<p>There's no pressure to make a lot of stories and there's no established cadence for publishing. This is slow, random press.</p>
-			<p><i>Opemipo</i></p>
-		</aside>
 		<script>
 			// Lock carousel scroll until carousel is in view
 			var parent = document.getElementById('carousel-parent');
@@ -158,7 +125,7 @@
 				var observer = new IntersectionObserver(handleIntersect, {
 					threshold: [0, 1]
 				});
-				observer.observe(parent);
+				// observer.observe(parent);
 			}, false);
 			function handleIntersect(entries) {
 				entries.forEach(function(entry) {
