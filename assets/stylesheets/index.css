@@ -28,7 +28,7 @@ h3 {
   width: 1px;
   height: 1px;
 }
-main {
+.carousel ul {
   position: relative;
   width: 100%;
 }
@@ -41,11 +41,11 @@ main {
   perspective: 1600px;
 }
 @media all and (min-width: 700px) {
-  main {
+  .carousel {
     height: calc(100vh - 75px);
     overflow: hidden;
   }
-  .carousel {
+  .carousel ul {
     width: calc(100vh - 75px);
     height: 100vw;
     overflow-y: auto;
@@ -54,7 +54,7 @@ main {
     transform-origin: right top;
     transform: rotate(-90deg) translate3d(0,calc(-100vh + 75px),0);
   }
-  .carousel.is-locked {
+  .carousel.is-locked ul {
     overflow: hidden;
   }
   .carousel li {
