@@ -4,8 +4,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  top: 75px;
 }
 @media all and (min-width: 700px) {
   header {
@@ -192,4 +190,68 @@ h3 {
 }
 .card--hankypanky .card__front figure {
   margin-bottom: 20px;
+}
+/* List */
+.list {
+  padding: 0 100px;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 70%);
+  background-attachment: fixed;
+}
+.list__toolbar {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 30px 0;
+}
+.list__toolbar ul {
+  display: flex;
+}
+.list__toolbar li {
+  margin-right: 20px;
+}
+/* Story */
+/* Toggle from https://codepen.io/knyttneve/pen/LamBMP */
+.story {
+  border-bottom: 2px solid #EEEEEE;
+  padding: 50px 0;
+}
+.story:last-child {
+  border-bottom: none;
+}
+.story summary {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+  outline: none;
+  color: #595959;
+}
+.story summary::-webkit-details-marker {
+  display: none;
+}
+.story summary {
+  cursor: pointer;
+}
+.story summary:hover .story__title,
+.story details[open] .story__title {
+  color: black;
+}
+.story__category {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.story__eta {
+  color: #595959;
+}
+.story__description {
+  max-width: 500px;
+  margin: 50px 0 100px;
+}
+/* Author */
+.author {
+  font-size: 1.2rem;
+}
+.author__role {
+  color: #595959;
 }

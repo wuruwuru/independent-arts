@@ -40,9 +40,11 @@ body {
 }
 /* https://bansal.io/pattern-css#installation */
 .checkered {
-  background-image: repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
+  background-image: 
+    repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),
+    repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
   background-position: 0 0, 10px 10px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-size: calc(2 * 10px) calc(2 * 10px);
 }
 a {
@@ -78,11 +80,14 @@ figure {
 nav {
   display: flex;
   justify-content: space-between;
-  height: 75px;
   align-items: center;
+  height: 75px;
   padding: 0 10px;
   position: sticky;
   top: 0;
+}
+nav ul {
+  transition: opacity 0.3s ease;
 }
 nav > ul > li {
   display: inline-block;
