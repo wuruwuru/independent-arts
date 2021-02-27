@@ -37,7 +37,7 @@ function render() {
     y += (nextDot.y - dot.y) * .6;
   });
 }
-var freeZones = ['BODY', 'NAV', 'MAIN', 'SECTION'];
+var freeZones = ['BODY', 'HEADER', 'NAV', 'MAIN', 'SECTION', 'SUMMARY', 'DETAILS'];
 function moveDots(event) {
   if (freeZones.includes(event.target.tagName)) {
     mouse.x = event.pageX;

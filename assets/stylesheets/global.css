@@ -65,6 +65,9 @@ a:hover {
 .globe {
   font-size: 2rem;
 }
+.globe:hover {
+  animation: none;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -85,6 +88,7 @@ nav {
   padding: 0 10px;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 nav ul {
   transition: opacity 0.3s ease;
@@ -111,7 +115,7 @@ nav a {
   100% { opacity: 1; }
 }
 .wordmark {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: 'Soehne Schmal', sans-serif;
   text-transform: uppercase;
   transition: 0.3s ease;

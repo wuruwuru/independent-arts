@@ -20,7 +20,7 @@
 		<meta property="twitter:description" content="Publishing experiment">
 		<meta property="twitter:image" content="https://wuruwuru.com/assets/images/thumbnail.png">
 
-		<link rel="preload" as="style" href="assets/stylesheets/default.css">
+		<link rel="preload" as="style" href="assets/stylesheets/global.css">
 		<link rel="preload" as="style" href="assets/stylesheets/index.css">
 
 		<link rel="stylesheet" href="assets/stylesheets/global.css">
@@ -38,7 +38,7 @@
 				<li><a href="https://medium.com/wuruwuru" target="_blank">Journal</a></li>
 				<li><a href="https://www.notion.so/wuruwuru/ea1fbc332f444fc0b057d101a32321f1?v=86392b375ba34e03aa43dc6ffa4c9af0" target="_blank">Costs</a></li>
 			</ul>
-			<div class="globe">&#127757;</div>
+			<a class="globe" href="https://goo.gl/maps/przQcNmiEzvENsCj8" target="_blank">&#127757;</a>
 		</nav>
 		<header>
 			<h1 class="wordmark" id="wordmark">Wuruwuru</h1>
@@ -47,9 +47,9 @@
 			<div class="carousel" id="carousel">	
 				<ul>
 					<li>
-						<article>
-							<div class="card card--jguide">
-								<div class="card__front">
+						<div class="card card--jguide">
+							<div class="card__body">
+								<div class="card__face">
 									<figure>
 										<img src="assets/images/jguide/blunt.png" alt="Illustration of a Blunt">
 									</figure>
@@ -65,16 +65,16 @@
 										<h3>An illustrated guide for teaching friends how to roll a joint.</h3>
 									</div>
 									<div>
-										<a href="https://wuruwuru.com/jguide" target="_blank">wuruwuru.com/jguide</a>
+										<span>wuruwuru.com/jguide</span>
 									</div>
 								</div>
 							</div>
-						</article>
+						</div>
 					</li>
 					<li>
-						<article>
-							<div class="card card--covers">
-								<div class="card__front">
+						<div class="card card--covers">
+							<div class="card__body">
+								<div class="card__face">
 									<figure>
 										<img src="assets/images/covers/airtable.png" alt="Airtable Logo">
 									</figure>
@@ -90,16 +90,16 @@
 										<h3>A database of 600 Nigerian album covers and designers.</h3>
 									</div>
 									<div>
-										<a href="https://wuruwuru.com/covers" target="_blank">wuruwuru.com/covers</a>
+										<span>wuruwuru.com/covers</span>
 									</div>
 								</div>
 							</div>
-						</article>
+						</div>
 					</li>
 					<li>
-						<article>
-							<div class="card card--retrospective">
-								<div class="card__front">
+						<div class="card card--retrospective">
+							<div class="card__body">
+								<div class="card__face">
 									<span class="card__loupe"></span>
 									<figure>
 										<img src="assets/images/covers/title.svg" alt="A Retrospective of Album Covers">
@@ -110,15 +110,15 @@
 										<h3>Interviews with Niyi Okeowo, Funto Coker & Duks.</h3>
 									</div>
 									<div>
-										ETA March 2021
+										<span>ETA March 2021</span>
 									</div>
 								</div>
 							</div>
-						</article>
+						</div>
 					</li>
 				</ul>
 			</div>
-			<div class="list">
+			<div class="list" id="list">
 				<section class="list__toolbar">
 					<div class="toolbar">
 						All Stories
@@ -126,7 +126,7 @@
 				</section>
 				<section class="list__items">
 					<article class="story">
-						<details open>
+						<details>
 							<summary>
 								<h3 class="story__title">The J Guide</h3>
 								<span class="story__category">Comic</span>
@@ -138,15 +138,15 @@
 								</div>
 								<footer>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Jubril</a>
+										<span class="author__name">Jubril</span>
 										<span class="author__role">Story</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Tomiwa</a>
+										<a class="author__name" href="" target="_blank">Tomiwa</a>
 										<span class="author__role">Story</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Vanny</a>
+										<a class="author__name" href="https://www.artstation.com/dannyvanny" target="_blank">Vanny</a>
 										<span class="author__role">Illustrator</span>
 									</div>
 								</footer>
@@ -166,7 +166,7 @@
 								</div>
 								<footer>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Eseosa</a>
+										<a class="author__name" href="https://www.instagram.com/ese.illustrates/" target="_blank">Eseosa</a>
 										<span class="author__role">Curator</span>
 									</div>
 								</footer>
@@ -186,11 +186,11 @@
 								</div>
 								<footer>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Eseosa</a>
+										<a class="author__name" href="https://www.instagram.com/ese.illustrates/" target="_blank">Eseosa</a>
 										<span class="author__role">Story</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Wale</a>
+										<span class="author__name">Wale</span>
 										<span class="author__role">Writer</span>
 									</div>
 								</footer>
@@ -208,19 +208,19 @@
 								<div class="story__description">A charades app with Nigerian words.</div>
 								<footer>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Seyi</a>
+										<a class="author__name" href="https://dadesign.studio/" target="_blank">Seyi</a>
 										<span class="author__role">Brand</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Aylor</a>
+										<span>Aylor</span>
 										<span class="author__role">Game</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Otas</a>
+										<span>Otas</span>
 										<span class="author__role">Game</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Toke</a>
+										<a class="author__name" href="https://toketemu.com/" target="_blank">Toke</a>
 										<span class="author__role">Game</span>
 									</div>
 								</footer>
@@ -240,23 +240,23 @@
 								</div>
 								<footer>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Yanmo</a>
+										<span class="author__name">Yanmo</span>
 										<span class="author__role">Story</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Daniel</a>
+										<span class="author__name">Daniel</span>
 										<span class="author__role">Editor</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Chuks</a>
+										<span class="author__name">Chuks</span>
 										<span class="author__role">Animator</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Oshuwa</a>
+										<span class="author__name">Oshuwa</span>
 										<span class="author__role">Voice Actor</span>
 									</div>
 									<div class="author">
-										<a class="author__name" href="#" target="_blank">Kolade</a>
+										<a class="author__name" href="https://www.vsonicarts.com/" target="_blank">Kolade</a>
 										<span class="author__role">Sound Designer</span>
 									</div>
 								</footer>
@@ -266,33 +266,6 @@
 				</section>
 			</div>
 		</main>
-		<script>
-			// Lock carousel scroll until carousel is in view
-			var carousel = document.getElementById('carousel');
-			window.addEventListener('load', function() {
-				var observer = new IntersectionObserver(handleIntersect, {
-					threshold: [0, 1.5]
-				});
-				observer.observe(carousel);
-			}, false);
-			function handleIntersect(entries) {
-				entries.forEach(function(entry) {
-					var isLocked = carousel.classList.contains('is-locked');
-					if (entry.intersectionRatio >= 1.5 && isLocked) {
-						setLockState(false);
-					} else if (entry.intersectionRatio < 1.5 && !isLocked) {
-						setLockState(true);
-					}
-				});
-			}
-			function setLockState(state) {
-				if (state === true) {
-					carousel.classList.add('is-locked');
-				} else {
-					carousel.classList.remove('is-locked');
-				}
-			}
-		</script>
 		<script>
 			// Card 3D effect adapted from https://codepen.io/technokami/pen/abojmZa
 			function setup3DListener(el) {
@@ -305,11 +278,11 @@
 					var yVal = e.offsetY;
 					var yRotation = scale * ((xVal - width / 2) / width);
 					var xRotation = -1 * scale * ((yVal - height / 2) / height);
-					var string = 'perspective(500px) scale(1.01) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
-					el.style.transform = string;
+					var cssString = 'perspective(500px) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
+					el.style.transform = cssString;
 				}
 				el.addEventListener('mouseout', function() {
-					el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
+					el.style.transform = 'perspective(500px) rotateX(0) rotateY(0)';
 				});
 			}
 			var cards = document.getElementsByClassName('card');
@@ -320,23 +293,16 @@
 		<script>
 			// Card flip effect
 			var cards = document.getElementsByClassName('card');
-			function resetCards() {
-				for(var i = 0; i < cards.length; i++){
-					cards[i].classList.remove('is-flipped');
-				}
-			}
 			function addCardFlipEventListener(el) {
-				var isFlipped = el.classList.contains('is-flipped');
+				var defaultTransform;
 				el.addEventListener('mousedown', function() {
-					isFlipped = !isFlipped;
-					var xDeg = isFlipped ? 180 : 0;
-					el.style.transform = `perspective(500px) scale(0.99) rotateX(${xDeg}) rotateY(0)`;
+					defaultTransform = el.style.transform;
+					el.style.transform = `${defaultTransform} scale(0.98)`;
 				});
 				el.addEventListener('mouseup', function() {
-					var xDeg = isFlipped ? 180 : 0;
-					el.style.transform = `perspective(500px) scale(1.01) rotateX(${xDeg}) rotateY(0)`;
-					if (isFlipped) {
-						resetCards();
+					el.style.transform = defaultTransform;
+					var isFlipped = el.classList.contains('is-flipped');
+					if (!isFlipped) {
 						el.classList.add('is-flipped');
 					} else {
 						el.classList.remove('is-flipped');
@@ -347,6 +313,20 @@
 				addCardFlipEventListener(cards[j]);
 			}
 		</script>
+		<script>
+			// Fix list gradient background at the top
+			var list = document.getElementById('list');
+			window.addEventListener('scroll', function() {
+				var fromTop = list.offsetTop - window.scrollY;
+				var isFixed = list.classList.contains('list--fixed-background');
+				if ((fromTop <= 0) && !isFixed) {
+					list.classList.add('list--fixed-background');
+				} else if ((fromTop > 0) && isFixed) {
+					list.classList.remove('list--fixed-background');
+				}
+			});
+		</script>
+		<script src="assets/scripts/dots.js"></script>
     <script src="assets/scripts/fade-menu.js"></script>
 	</body>
 </html>
