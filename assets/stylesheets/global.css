@@ -20,6 +20,11 @@
   font-style: italic;
   src: url('../fonts/soehne-web-halbfett-kursiv.woff');
 }
+@font-face {
+  font-family: 'Soehne Schmal';
+  font-weight: 700;
+  src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
+}
 * {
   box-sizing: border-box;
 }
@@ -103,29 +108,6 @@ nav > div {
 }
 nav a {
   text-decoration: none;
-}
-/* Wordmark */
-@font-face {
-  font-family: 'Soehne Schmal';
-  font-weight: 700;
-  src: url('../fonts/soehne-schmal-web-dreiviertelfett.woff');
-}
-@keyframes fadeInWordmark {
-  0%, 50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-.wordmark {
-  font-size: 4rem;
-  font-family: 'Soehne Schmal', sans-serif;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-  letter-spacing: 0.2em;
-  animation: fadeInWordmark 1s;
-}
-@media all and (min-width: 700px) {
-  .wordmark {
-    font-size: 10rem;
-  }
 }
 .wordmark-text {
   font-size: 0.8em;
