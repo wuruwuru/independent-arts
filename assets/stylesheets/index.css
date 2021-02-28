@@ -34,6 +34,7 @@ h3 {
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   display: flex;
+  padding: 20px;
 }
 .carousel ul::-webkit-scrollbar {
   width: 0 !important;
@@ -42,97 +43,65 @@ h3 {
 .carousel li {
   flex: 1 0 auto;
   position: relative;
-  padding: 20px;
+  padding-right: 20px;
   width: 100%;
   max-width: 550px;
 }
-/* Flipping Card */
-.card,
-.card__body {
-  transform-style: preserve-3d;
-  transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.05);
-}
+/* Cards */
 .card {
   width: 100%;
   height: 400px;
+  transform-style: preserve-3d;
   transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.05);
-}
-.card__body {
-  width: 100%;
-  height: 100%;
   position: relative;
-}
-@media all and (min-width: 700px) {
-  .card__body {
-    transition: none;
-  }
-}
-.card__body > div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-.card__face,
-.card__back {
   border-radius: 30px;
+  display: block;
+  background: #e5e5e5;
+}
+.card > * {
   pointer-events: none;
 }
-.card__face {
-  background: gray;
-  z-index: 2;
-}
-.card__back {
-  padding: 30px;
-  transform: rotateY(180deg);
-  background: white;
+.card__text {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.card.is-flipped .card__body {
-  transform: rotateY(180deg);
-}
-.card.is-flipped .card__face {
-  z-index: 1;
-}
-.card.is-flipped .card__back {
-  z-index: 2;
-}
-.card a:hover {
-  animation: underline-flash .5s infinite;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
 }
 /* The J Guide */
-.card--jguide .card__face {
+.card--jguide {
   background: #FACACA;
   padding: 30px;
-  display: flex;
-  flex-direction: column;
 }
 .card--jguide figure {
-  flex: 1;
-	background:
-		linear-gradient(90deg, #FACACA 8px, transparent 1%) center,
-		linear-gradient(#FACACA 8px, transparent 1%) center,
-		#6C4E4E;
-  background-size: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-}
-.card--jguide figure img {
-  position: absolute;
   height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
 }
-.card--jguide h2 {
-  display: block;
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
+.card--jguide .card__dots {
+    display: block;
+    background:
+      linear-gradient(90deg, #FACACA 4px, transparent 1%) center,
+      linear-gradient(#FACACA 4px, transparent 1%) center, #6C4E4E;
+    background-size: 5px 5px;
+    flex: 1;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+.card--jguide .card__dots img {
+  position: absolute;
+  height: 120%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 /* A Retrospective of Album Cover Art */
-.card--retrospective .card__face {
+.card--retrospective {
   background: #F8F6E7;
   display: flex;
   flex-direction: column;
@@ -151,26 +120,29 @@ h3 {
   z-index: -1;
 }
 /* Album Cover Database */
-.card--covers .card__face {
+.card--covers {
   background: #59C3FF;
   padding: 30px 0;
+}
+.card--covers figure {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.card--covers .card__face figure {
+.card--covers figure img {
   margin-bottom: 20px;
 }
 /* Hanky Panky */
-.card--hankypanky .card__face {
+.card--hankypanky {
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.card--hankypanky .card__face figure {
+.card--hankypanky figure {
   margin-bottom: 20px;
 }
 /* List */
