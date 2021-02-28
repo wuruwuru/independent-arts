@@ -224,6 +224,9 @@ h3 {
     justify-content: space-between;
   }
 }
+.story--muted summary {
+  color: #595959;
+}
 .story summary::-webkit-details-marker {
   display: none;
 }
