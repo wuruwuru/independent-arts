@@ -225,7 +225,7 @@ h3 {
   }
 }
 .story--muted summary {
-  color: #595959;
+  color: #9a9a9a;
 }
 .story summary::-webkit-details-marker {
   display: none;
