@@ -12,7 +12,7 @@ main section {
   max-width: 500px;
   cursor: text;
 }
-@media all and (max-width: 1052px) {
+@media all and (min-width: 1052px) {
   main section {
     transform: translateX(154px);
   }
