@@ -12,6 +12,11 @@ main section {
   max-width: 500px;
   cursor: text;
 }
+@media all and (max-width: 1052px) {
+  main section {
+    transform: translateX(154px);
+  }
+}
 main footer {
   margin: 50px 0;
 }
