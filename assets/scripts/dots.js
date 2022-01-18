@@ -1,5 +1,5 @@
 // Inspired by https://codepen.io/falldowngoboone/pen/PwzPYv
-var stage = document.getElementsByTagName('BODY')[0];
+var stage = document.getElementById('hero');
 var dots = [];
 var mouse = {
   x: 0,

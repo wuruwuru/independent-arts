@@ -34,7 +34,6 @@ body {
   font-family: 'Soehne', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 1.4rem;
-  cursor: url('../images/cursors/black.svg'), auto;
 }
 .dots {
   position: absolute;
@@ -114,4 +113,59 @@ nav a {
   font-family: 'Soehne Schmal', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+}
+/*Header */
+header {
+  height: calc(100vh - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: url('../images/cursors/black.svg'), auto;
+}
+header > * {
+  transform: translate3d(0,-37.5px,0);
+}
+/* Wordmark */
+@keyframes fadeInWordmark {
+  0%, 50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.wordmark {
+  font-size: 2rem;
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  animation: fadeInWordmark 1s;
+}
+@media all and (min-width: 700px) {
+  .wordmark {
+    font-size: 4rem;
+  }
+}
+/* Main */
+main {
+  background: black;
+  color: #938888;
+  text-transform: uppercase;
+}
+/* Banner */
+@keyframes scrollText {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-100%,0,0); }
+}
+.banner {
+  height: 75px;
+  line-height: 75px;
+  overflow: hidden;
+  padding: 0 20px;
+  display: flex;
+}
+.banner > span {
+  animation: scrollText 20s linear infinite;
+  animation-delay: 2s;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+.banner > span:nth-of-type(even) {
+  font-style: italic;
 }
