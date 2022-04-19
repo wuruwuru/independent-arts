@@ -11,7 +11,6 @@ const updateState = (entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       state.currentStory = entry.target;
-      console.log('observing: ', state.currentStory)
     }
   })
 }
@@ -19,7 +18,7 @@ const updateState = (entries) => {
 const storyObserver = new IntersectionObserver(updateState, {
   root: storiesWrapper,
   rootMargin: '0px',
-  threshold: 0.1
+  threshold: 0.9
 });
 
 storiesWrapper.querySelectorAll('[data-page]').forEach(story => {
@@ -27,26 +26,26 @@ storiesWrapper.querySelectorAll('[data-page]').forEach(story => {
 });
 
 
-
+const goToSlide = slide => {
+  slide.scrollIntoView({
+    behavior: 'smooth'
+  })
+}
 
 const navigateStories = (direction) => { 
   const story = state.currentStory;
 
   if (direction === 'prev') { 
-    const previousStory = story.previousElementSibling;
-    if (previousStory) {
-      previousStory.scrollIntoView({
-        behavior: 'smooth'
-      })
+    const previousSlide = story.previousElementSibling;
+    if (!!previousSlide) {
+      goToSlide(previousSlide);
     } else {
       console.log('no previous story')
     }
   } else if (direction === 'next') {
-    const nextStory = story.nextElementSibling;
-    if (!!nextStory) {
-      nextStory.scrollIntoView({
-        behavior: 'smooth'
-      })
+    const nextSlide = story.nextElementSibling;
+    if (!!nextSlide) {
+      goToSlide(nextSlide);
     } else {
       console.log('no next story')
     }
