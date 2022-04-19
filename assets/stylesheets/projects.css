@@ -1,0 +1,80 @@
+ /* Macro Layout */
+ :root {
+   --color-bg-dark: #000;
+   --color-bg-light: #EEE;
+   --color-whitesmoke: hsl(200 15% 93%);
+   --color-text-primary: #fff;
+   --border-raduis-default: 3ch;
+ }
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+}
+
+
+.stories-container {
+  min-block-size: 100vh;
+  min-inline-size: 100vw; /* set accessible page height and width */
+  place-items: center;
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.stories {
+  display: grid;
+  grid: 1fr / auto-flow 100%;
+  gap: 1ch;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 0px 3px 1px rgb(0 0 0 / 2%);
+}
+
+.page {
+  display: grid;
+  grid: [ story-row ] 1fr / [ story-column ] 1fr;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.story {
+  --bg: var(--color-whitesmoke);
+  grid-area: story-row / story-column;
+  border: .1ch solid var(--bg);
+  border-radius: var(--border-raduis-default);
+  background-color: var(--bg);
+  user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+
+/* Media queries */
+@media (hover:hover) {
+  .stories-container > .stories {
+    border-radius: var(--border-raduis-default);
+  }
+}
+
+/* desktop constraint */
+@media (hover: hover) and (min-width: 480px) {
+  .stories-container > .stories {
+    max-inline-size: 480px;
+    max-block-size: 848px;
+  }
+}
+
+/* smaller desktop constraint */
+@media (hover: hover) and (max-height: 880px) and (min-width: 720px) {
+  .stories-container > .stories {
+    max-inline-size: 320px;
+    max-block-size: 568px;
+  }
+}
