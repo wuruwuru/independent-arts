@@ -46,7 +46,7 @@ body {
 .story {
   --bg: var(--color-whitesmoke);
   grid-area: story-row / story-column;
-  border: .1ch solid var(--bg);
+  border: .1ch solid var(--bg); /* development indicators, to remove later */
   border-radius: var(--border-raduis-default);
   background-color: var(--bg);
   user-select: none;
