@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Soehne';
+  font-weight: normal;
+  src: url('../../assets/fonts/soehne-web-buch.woff');
+}
+@font-face {
+  font-family: 'Soehne';
+  font-weight: normal;
+  font-style: italic;
+  src: url('../../assets/fonts/soehne-web-buch-kursiv.woff');
+}
+@font-face {
+  font-family: 'Soehne';
+  font-weight: bold;
+  src: url('../../assets/fonts/soehne-web-halbfett.woff');
+}
+@font-face {
+  font-family: 'Soehne';
+  font-weight: bold;
+  font-style: italic;
+  src: url('../../assets/fonts/soehne-web-halbfett-kursiv.woff');
+}
+@font-face {
+  font-family: 'Soehne Schmal';
+  font-weight: 700;
+  src: url('../../assets/fonts/soehne-schmal-web-dreiviertelfett.woff');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  position: relative;
+  font-family: 'Soehne', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.4rem;
+  cursor: url('../../assets/images/cursors/black.svg'), auto;
+}
+.dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/* https://bansal.io/pattern-css#installation */
+.checkered {
+  background-image:
+    repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5),
+    repeating-linear-gradient(45deg, #e5e5e5 25%, transparent 25%, transparent 75%, #e5e5e5 75%, #e5e5e5);
+  background-position: 0 0, 10px 10px;
+  /* background-attachment: fixed; */
+  background-size: calc(2 * 10px) calc(2 * 10px);
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  animation: underline-flash .5s infinite;
+}
+@keyframes underline-flash {
+  0%, 100% {
+    text-decoration: none;
+  }
+  80% {
+    text-decoration: underline;
+  }
+}
+.globe {
+  font-size: 2rem;
+}
+.globe:hover {
+  animation: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0;
+}
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  padding: 0 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav ul {
+  transition: opacity 0.3s ease;
+}
+nav > ul > li {
+  display: inline-block;
+  padding: 0 5px;
+}
+nav > div {
+  width: 60px;
+  text-align: center;
+}
+nav a {
+  text-decoration: none;
+}
+.wordmark-text {
+  font-size: 0.8em;
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}

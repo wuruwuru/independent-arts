@@ -1,0 +1,39 @@
+---
+import "@styles/site.css"
+
+export interface Props {
+	pageUrl: string,
+	pageImage: string,
+	bodyClassName?: string
+}
+
+const { pageUrl, pageImage, bodyClassName = "" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Wuruwuru</title>
+		<meta name="title" content="Wuruwuru">
+		<meta name="description" content="A collection of publishing experiments">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content={pageUrl}>
+		<meta property="og:title" content="Wuruwuru">
+		<meta property="og:description" content="A collection of publishing experiments">
+		<meta property="og:image" content={pageImage}>
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content={pageUrl}>
+		<meta property="twitter:title" content="Wuruwuru">
+		<meta property="twitter:description" content="A collection of publishing experiments">
+		<meta property="twitter:image" content={pageImage}>
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+    <body class={bodyClassName}>
+        <slot/>
+    </body>
+</html>
