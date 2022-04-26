@@ -10,6 +10,7 @@ export interface Props {
 	pageTitle: string,
 	pageUrl: string,
 	pageImage: string,
+	seoTitle?: string,
 	pageDescription?: string,
 	bodyClassName?: string,
 	hideNav?: boolean
@@ -17,6 +18,7 @@ export interface Props {
 
 const {
 		pageTitle,
+		seoTitle = pageTitle, // This prop is used for when the title tag title is different from what is displayed for SEO titles
 		pageUrl,
 		pageImage,
 		pageDescription = "A collection of publishing experiments",
@@ -30,21 +32,21 @@ const {
 		<title>{pageTitle}</title>
 
 		<slot name="header-content"/>
-		<meta name="title" content={pageTitle}>
+		<meta name="title" content={seoTitle}>
 		<meta name="description" content={pageDescription}>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website">
 		<meta property="og:url" content={pageUrl}>
-		<meta property="og:title" content={pageTitle}>
+		<meta property="og:title" content={seoTitle}>
 		<meta property="og:description" content={pageDescription}>
 		<meta property="og:image" content={pageImage}>
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:url" content={pageUrl}>
-		<meta property="twitter:title" content={pageTitle}>
+		<meta property="twitter:title" content={seoTitle}>
 		<meta property="twitter:description" content={pageDescription}>
 		<meta property="twitter:image" content={pageImage}>
 
