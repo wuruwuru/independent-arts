@@ -1,6 +1,10 @@
 ---
+//Styles
 import "@styles/reset.css"
 import "@styles/site.css"
+
+//Assets
+import logo from "@images/logo.png"
 
 export interface Props {
 	pageTitle: string,
@@ -22,20 +26,33 @@ const { pageTitle, pageUrl, pageImage, bodyClassName = "" } = Astro.props;
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website">
 		<meta property="og:url" content={pageUrl}>
-		<meta property="og:title" content="Wuruwuru">
+		<meta property="og:title" content={pageTitle}>
 		<meta property="og:description" content="A collection of publishing experiments">
 		<meta property="og:image" content={pageImage}>
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:url" content={pageUrl}>
-		<meta property="twitter:title" content="Wuruwuru">
+		<meta property="twitter:title" content={pageTitle}>
 		<meta property="twitter:description" content="A collection of publishing experiments">
 		<meta property="twitter:image" content={pageImage}>
 
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 	</head>
     <body class={bodyClassName}>
+	 <nav>
+      	<div class="logo">
+			<a href="/">
+			<img src={logo} width="60px" height="60px" alt="Logo">
+			</a>
+		</div>
+      	<ul id="menu">
+			<li><a href="/about">About</a></li>
+			<li><a href="https://medium.com/wuruwuru" target="_blank">Journal</a></li>
+			<li><a href="https://wuruwuru.notion.site/Costs-07678076eb1342298550b1f713b37f7a" target="_blank">Costs</a></li>
+      	</ul>
+      	<a class="globe" href="https://twitter.com/wuruwurumag" title="@wuruwurumag" target="_blank">&#127757;</a>
+		</nav>
         <slot/>
     </body>
 </html>
