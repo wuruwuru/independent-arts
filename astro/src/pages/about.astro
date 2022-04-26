@@ -1,0 +1,50 @@
+---
+//Layout
+import Layout from "@layout/Layout.astro"
+
+//Styling
+import "@styles/about.css"
+
+//Scripts
+import Dots from "@scripts/dots.astro"
+import FadeMenu from "@scripts/fade-menu.astro"
+
+//Assets
+import logo from "@images/logo.png"
+---
+
+<Layout
+    bodyClassName="checkered"
+    pageTitle="About Wuruwuru"
+    pageUrl="https://wuruwuru.com/about"
+    pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+>
+    <nav>
+      <div class="logo">
+				<a href="/">
+          <img src={logo} width="60px" height="60px" alt="Logo">
+        </a>
+			</div>
+      <ul id="menu">
+				<li><a href="about.html">About</a></li>
+				<li><a href="https://medium.com/wuruwuru" target="_blank">Journal</a></li>
+				<li><a href="https://wuruwuru.notion.site/Costs-07678076eb1342298550b1f713b37f7a" target="_blank">Costs</a></li>
+      </ul>
+      <a class="globe" href="https://twitter.com/wuruwurumag" title="@wuruwurumag" target="_blank">&#127757;</a>
+		</nav>
+    <main>
+        <section>
+            <p>Wuruwuru is a collection of random publishing experiments, each one made with a different set of friends and freelancers.</p>
+            <p>I'm doing this for three reasons:</p>
+            <p>First, to produce high quality content like the ones I consume e.g. <a href="https://pudding.cool" target="_blank">The Pudding</a>, <a href="https://psyche.co/" target="_blank">Psyche</a> and <a href="https://www.adultswim.com" target="_blank">Adult Swim</a>. I've followed them for many years and they do such good work.</p>
+            <p>Secondly, to work with freelancers and document my experience of the Nigerian creative industry.</p>
+            <p>Finally, I get to both participate in and support independent creation, which I really believe in.</p>
+            <p>I called it Wuruwuru because it's a trial and error approach to publishing, but hopefully we make some great stories. Enjoy!</p>
+            <footer>
+                <p>👍🏾<br><a href="https://opemipo.com" target="_blank">Opemipo</a><br></p>
+            </footer>
+        </section>
+    </main>
+    <Dots/>
+    <FadeMenu/>
+</Layout>
