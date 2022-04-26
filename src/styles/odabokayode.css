@@ -23,7 +23,6 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'system-ui', sans-serif;
-    font-size: unset;
     cursor: auto;
     font-size: 13.5px;
 }
