@@ -1,0 +1,136 @@
+---
+//Layout
+import Layout from "@layout/Layout.astro"
+
+//Styling
+import "@styles/index.css"
+
+//Scripts
+import Dots from "@scripts/dots.astro"
+import FadeMenu from "@scripts/fade-menu.astro"
+
+//Assets
+import logo from "@images/logo.png"
+---
+<Layout
+	bodyClassName="checkered"
+	pageTitle="Wuruwuru"
+	pageUrl="https://wuruwuru.com"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+>
+		<header>
+			<h1 class="wordmark" id="wordmark">Wuruwuru</h1>
+		</header>
+		<main>
+			<div class="list" id="list">
+				<section class="list__items">
+					<article class="story">
+						<details open>
+							<summary>
+								<h3 class="story__title">J Guide</h3>
+								<span class="story__category">Comic</span>
+							</summary>
+							<div class="story__body">
+								<a class="story__link" href="/jguide" target="_blank" rel="noopener">wuruwuru.com/jguide</a>
+								<div class="story__description">
+									<p>An Instagram comic about weed.</p>
+								</div>
+								<footer>
+									<div class="author">
+										<span class="author__name">Jubril</span>
+										<span class="author__role">Story</span>
+									</div>
+									<div class="author">
+										<span class="author__name">Tomiwa</span>
+										<span class="author__role">Story</span>
+									</div>
+									<div class="author">
+										<span class="author__name">Khadijah</span>
+										<span class="author__role">Story</span>
+									</div>
+									<div class="author">
+										<a class="author__name" href="https://www.artstation.com/dannyvanny" target="_blank" rel="noopener">Vanny</a>
+										<span class="author__role">Illustrator</span>
+									</div>
+									<div class="author">
+										<a class="author__name" href="https://www.instagram.com/bolusowoolu" target="_blank" rel="noopener">Bolu</a>
+										<span class="author__role">Illustrator</span>
+									</div>
+								</footer>
+							</div>
+						</details>
+					</article>
+					<article class="story">
+						<details open>
+							<summary>
+								<h3 class="story__title">Cover Bank</h3>
+								<span class="story__category">Dataset</span>
+							</summary>
+							<div class="story__body">
+								<a class="story__link" href="/covers" target="_blank" rel="noopener">wuruwuru.com/covers</a>
+								<div class="story__description">
+									<p>1000+ Nigerian album covers from 1960 to date organized by artist, year, genre and designer.</p>
+								</div>
+								<footer>
+									<div class="author">
+										<a class="author__name" href="https://www.instagram.com/ese.illustrates/" target="_blank" rel="noopener">Eseosa</a>
+										<span class="author__role">Curator</span>
+									</div>
+								</footer>
+							</div>
+						</details>
+					</article>
+					<article class="story">
+						<details open>
+							<summary>
+								<h3 class="story__title">Hanky Panky</h3>
+								<span class="story__category">September 2021</span>
+							</summary>
+							<div class="story__body">
+								<div class="story__eta">Animation</div>
+								<div class="story__description">
+									<p>On a nice afternoon drive, Osas receives a call from Aunty Yuwa about raunchy Instagram videos.</p>
+								</div>
+								<footer>
+									<div class="author">
+										<span class="author__name">Yanmo</span>
+										<span class="author__role">Story</span>
+									</div>
+									<div class="author">
+										<span class="author__name">Daniel</span>
+										<span class="author__role">Editor</span>
+									</div>
+									<div class="author">
+										<a class="author__name" href="https://chukx007.artstation.com/" target="_blank" rel="noopener">Chuks</a>
+										<span class="author__role">Animator</span>
+									</div>
+									<div class="author">
+										<span class="author__name">Oshuwa</span>
+										<span class="author__role">Voice Actor</span>
+									</div>
+									<div class="author">
+										<a class="author__name" href="https://www.vsonicarts.com/" target="_blank" rel="noopener">Kolade</a>
+										<span class="author__role">Sound Designer</span>
+									</div>
+								</footer>
+							</div>
+						</details>
+					</article>
+				</section>
+			</div>
+		</main>
+		<script is:inline>
+			var list = window.document.getElementById('list');
+			window.addEventListener('scroll', function() {
+				var fromTop = list.offsetTop - window.scrollY;
+				var isFixed = list.classList.contains('list--fixed-background');
+				if ((fromTop <= 0) && !isFixed) {
+					list.classList.add('list--fixed-background');
+				} else if ((fromTop > 0) && isFixed) {
+					list.classList.remove('list--fixed-background');
+				}
+			});
+		</script>
+		<Dots/>
+		<FadeMenu/>
+</Layout>

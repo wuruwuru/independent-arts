@@ -1,0 +1,15 @@
+---
+import Layout from "@layout/Layout.astro"
+---
+
+<Layout
+	pageTitle="Wuruwuru"
+	pageUrl="https://wuruwuru.com"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+    hideNav
+>
+    <meta http-equiv="refresh" content="0; url=/" slot="header-content"/>
+    <script is:inline>
+        window.location.href = '/';
+    </script>
+</Layout>
