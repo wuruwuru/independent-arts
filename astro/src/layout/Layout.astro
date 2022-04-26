@@ -3,18 +3,19 @@ import "@styles/reset.css"
 import "@styles/site.css"
 
 export interface Props {
+	pageTitle: string,
 	pageUrl: string,
 	pageImage: string,
 	bodyClassName?: string
 }
 
-const { pageUrl, pageImage, bodyClassName = "" } = Astro.props;
+const { pageTitle, pageUrl, pageImage, bodyClassName = "" } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Wuruwuru</title>
-		<meta name="title" content="Wuruwuru">
+		<meta name="title" content={pageTitle}>
 		<meta name="description" content="A collection of publishing experiments">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 		
