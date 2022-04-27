@@ -34,8 +34,6 @@ Dot.prototype.draw = function() {
   var x = Math.round(this.x / 10) * 10;
   var y = Math.round(this.y / 10) * 10;
   this.node.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-  // this.node.style.left = x + 'px';
-  // this.node.style.top = y + 'px';
 };
 for (var i = 0; i < 12; i++) {
   dots.push(new Dot());
