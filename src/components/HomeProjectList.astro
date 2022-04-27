@@ -1,82 +1,146 @@
-
 ---
-  ### Todo: 
-  1. Make this into an Astro component using the schema ishe below
-  2. Move the list specific styles Headers
-  3. Import this component in the index.astro file
-
-
-const ishe = {
-  title: "J Guide",
-  category: "Comic",
-  description: "An Instagram comic about weed."
-  link: {
-    href: '/jguide',
-    urlTitle: 'wuruwuru.com/jguide'
-  },
-  contributors: [
-    {
-      name: 'Jubril',
-      role: 'Story',
-      contactUrl: null,
-    },
-    {
-      name: 'Tomiwa',
-      role: 'Story',
-      contactUrl: null,
-    },
-    {
-      name: 'Khadijah',
-      role: 'Story',
-      contactUrl: null,
-    },
-    {
-      name: 'Vanny',
-      role: 'Illustrator',
-      contactUrl: "https://www.artstation.com/dannyvanny",
-    },
-    {
-      name: 'Bolu',
-      role: 'Illustrator',
-      contactUrl: "https://www.artstation.com/bolusowoolu",
-    },
-  ]
+export interface Props {
+  title: string;
+  category: string;
+  description: string;
+  subtitle: {
+    href?: string;
+    text: string
+  };
+  contributors: {
+    name: string,
+    role: string,
+    contactUrl?: string 
+  }[];
 }
 
+const { title, category, description, subtitle, contributors } = Astro.props
 ---
 <article class="story">
   <details open>
     <summary>
-      <h3 class="story__title">{ ishe.title }</h3>
-      <span class="story__category">{ ishe.category }</span>
+      <h3 class="story__title">{ title }</h3>
+      <span class="story__category">{ category }</span>
     </summary>
-    <div class="story__body">
-      <a class="story__link" href="/jguide" target="_blank" rel="noopener">wuruwuru.com/jguide</a>
+    <div class="story__body"> 
+      {subtitle.href ? (
+          <a class="story__link" href={subtitle.href} target="_blank" rel="noopener">{subtitle.text}</a>
+        ) : (
+            <div class="story__eta">{subtitle.text}</div>
+        )
+      }
       <div class="story__description">
-        <p>An Instagram comic about weed.</p>
+        <p>{description}</p>
       </div>
       <footer>
-        <div class="author">
-          <span class="author__name">Jubril</span>
-          <span class="author__role">Story</span>
-        </div>
-        <div class="author">
-          <span class="author__name">Tomiwa</span>
-          <span class="author__role">Story</span>
-        </div>
-        <div class="author">
-          <span class="author__name">Khadijah</span>
-          <span class="author__role">Story</span>
-        </div>
-        <div class="author">
-          <a class="author__name" href="https://www.artstation.com/dannyvanny" target="_blank" rel="noopener">Vanny</a>
-          <span class="author__role">Illustrator</span>
-        </div>
-        <div class="author">
-          <a class="author__name" href="https://www.instagram.com/bolusowoolu" target="_blank" rel="noopener">Bolu</a>
-          <span class="author__role">Illustrator</span>
-        </div>
+        {
+          contributors.map(contributor => (
+          <div class="author">
+            {
+              !!contributor.contactUrl ? (
+                <a class="author__name" href={contributor.contactUrl} target="_blank" rel="noopener">{contributor.name}</a>
+              ) : (
+                <span class="author__name">{contributor.name}</span>
+              )
+            }
+            <span class="author__role">{contributor.role}</span>
+          </div>
+          ))
+        }
       </footer>
     </div>
   </details>
 </article>
+
+<style>
+  /* Story */
+  /* Toggle from https://codepen.io/knyttneve/pen/LamBMP */
+  .story {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 20px 0;
+  }
+  @media all and (min-width: 700px) {
+    .story {
+      padding: 50px 0;
+    }
+  }
+  .story:last-child {
+    border-bottom: none;
+  }
+  .story summary {
+    padding: 10px 0;
+    list-style: none;
+    user-select: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+  }
+  @media all and (min-width: 700px) {
+    .story summary {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  .story--muted summary {
+    color: #9a9a9a;
+  }
+  .story summary::-webkit-details-marker {
+    display: none;
+  }
+  .story summary {
+    cursor: pointer;
+  }
+  .story__title {
+    font-size: 1.8rem;
+  }
+  .story__category {
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+  @media all and (min-width: 700px) {
+    .story__title {
+      font-size: 2.4rem;
+      margin-top: 0;
+    }
+  }
+  @media all and (max-width: 700px) {
+    .story details[open] .story__category {
+      display: none;
+    }
+  }
+  .story summary:hover .story__title,
+  .story details[open] .story__title,
+  .story summary:hover .story__category,
+  .story details[open] .story__category {
+    color: black;
+  }
+  .story__eta {
+    color: #595959;
+    font-size: 1.2rem;
+  }
+  .story__description {
+    max-width: 500px;
+    margin: 50px 0 100px;
+  }
+  .story__body {
+    transition: ease-in-out;
+    animation: fadeInUp .3s;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Author */
+  .author {
+    font-size: 1.2rem;
+  }
+  .author__role {
+    color: #595959;
+  }
+</style>

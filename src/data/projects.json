@@ -1,0 +1,83 @@
+[
+  {
+    "title": "J Guide",
+    "category": "Comic",
+    "description": "An Instagram comic about weed.",
+    "subtitle": { 
+      "href": "/jguide",
+      "text": "wuruwuru.com/jguide"
+    },
+    "contributors": [
+      {
+        "name": "Jubril",
+        "role": "Story"
+      },
+      {
+        "name": "Tomiwa",
+        "role": "Story"
+      },
+      {
+        "name": "Khadijah",
+        "role": "Story"
+      },
+      {
+        "name": "Vanny",
+        "role": "Illustrator",
+        "contactUrl": "https://www.artstation.com/dannyvanny"
+      },
+      {
+        "name": "Bolu",
+        "role": "Illustrator",
+        "contactUrl": "https://www.artstation.com/bolusowoolu"
+      }
+    ]
+  },
+  {
+    "title": "Cover Bank",
+    "category": "Dataset",
+    "description": "1000+ Nigerian album covers from 1960 to date organized by artist, year, genre and designer.",
+    "subtitle": {
+      "href": "/covers",
+      "text": "wuruwuru.com/covers"
+    },
+    "contributors": [
+      {
+        "name": "Eseosa",
+        "role": "Curator",
+        "contactUrl": "https://www.instagram.com/ese.illustrates/"
+      }
+    ]
+  },
+  {
+    "title":  "Hanky Panky",
+    "category":  "September 2021",
+    "description":  "On a nice afternoon drive, Osas receives a call from Aunty Yuwa about raunchy Instagram videos.",
+    "subtitle": {
+      "text": "Animation"
+    },
+    "contributors": [
+      {
+        "name": "Yanmo",
+        "role": "Story"
+      },
+      {
+        "name":  "Daniel",
+        "role":  "Editor"
+      },
+      {
+        "name":  "Chuks",
+        "role":  "Animator",
+        "contactUrl": "https://chukx007.artstation.com"
+      },
+      {
+        "name":  "Oshuwa",
+        "role":  "Voice Actor"
+      },
+      {
+        "name":  "Kolade",
+        "role":  "Sound Designer",
+        "contactUrl": "https://www.vsonicarts.com"
+      }
+    ]
+  }
+]
