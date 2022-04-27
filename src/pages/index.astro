@@ -6,11 +6,8 @@ import Layout from "@layout/Default.astro"
 import "@styles/index.css"
 
 //Scripts
-import Dots from "@scripts/dots.astro"
-import FadeMenu from "@scripts/fade-menu.astro"
+import Dots from "@components/DotsCursor.astro";
 
-//Assets
-import logo from "@images/logo.png"
 ---
 <Layout
 	bodyClassName="checkered"
@@ -131,6 +128,14 @@ import logo from "@images/logo.png"
 				}
 			});
 		</script>
-		<Dots/>
-		<FadeMenu/>
+		<Dots client:idle/>
 </Layout>
+
+<style>
+.wordmark-text {
+  font-size: 0.8em;
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+</style>
