@@ -7,6 +7,7 @@ import "@styles/index.css"
 
 //Scripts
 import Dots from "@components/DotsCursor.astro";
+// Todo: import HomeProjectList here
 
 ---
 <Layout
@@ -22,6 +23,7 @@ import Dots from "@components/DotsCursor.astro";
 			<div class="list" id="list">
 				<section class="list__items">
 					<article class="story">
+						// Replace this line with the HomeProjectList components. You can even abstract the project information into a JSON of it's own
 						<details open>
 							<summary>
 								<h3 class="story__title">J Guide</h3>
@@ -116,7 +118,8 @@ import Dots from "@components/DotsCursor.astro";
 				</section>
 			</div>
 		</main>
-		<script is:inline>
+
+		<script>
 			var list = window.document.getElementById('list');
 			window.addEventListener('scroll', function() {
 				var fromTop = list.offsetTop - window.scrollY;

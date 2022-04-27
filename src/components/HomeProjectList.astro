@@ -1,0 +1,82 @@
+
+---
+  ### Todo: 
+  1. Make this into an Astro component using the schema ishe below
+  2. Move the list specific styles Headers
+  3. Import this component in the index.astro file
+
+
+const ishe = {
+  title: "J Guide",
+  category: "Comic",
+  description: "An Instagram comic about weed."
+  link: {
+    href: '/jguide',
+    urlTitle: 'wuruwuru.com/jguide'
+  },
+  contributors: [
+    {
+      name: 'Jubril',
+      role: 'Story',
+      contactUrl: null,
+    },
+    {
+      name: 'Tomiwa',
+      role: 'Story',
+      contactUrl: null,
+    },
+    {
+      name: 'Khadijah',
+      role: 'Story',
+      contactUrl: null,
+    },
+    {
+      name: 'Vanny',
+      role: 'Illustrator',
+      contactUrl: "https://www.artstation.com/dannyvanny",
+    },
+    {
+      name: 'Bolu',
+      role: 'Illustrator',
+      contactUrl: "https://www.artstation.com/bolusowoolu",
+    },
+  ]
+}
+
+---
+<article class="story">
+  <details open>
+    <summary>
+      <h3 class="story__title">{ ishe.title }</h3>
+      <span class="story__category">{ ishe.category }</span>
+    </summary>
+    <div class="story__body">
+      <a class="story__link" href="/jguide" target="_blank" rel="noopener">wuruwuru.com/jguide</a>
+      <div class="story__description">
+        <p>An Instagram comic about weed.</p>
+      </div>
+      <footer>
+        <div class="author">
+          <span class="author__name">Jubril</span>
+          <span class="author__role">Story</span>
+        </div>
+        <div class="author">
+          <span class="author__name">Tomiwa</span>
+          <span class="author__role">Story</span>
+        </div>
+        <div class="author">
+          <span class="author__name">Khadijah</span>
+          <span class="author__role">Story</span>
+        </div>
+        <div class="author">
+          <a class="author__name" href="https://www.artstation.com/dannyvanny" target="_blank" rel="noopener">Vanny</a>
+          <span class="author__role">Illustrator</span>
+        </div>
+        <div class="author">
+          <a class="author__name" href="https://www.instagram.com/bolusowoolu" target="_blank" rel="noopener">Bolu</a>
+          <span class="author__role">Illustrator</span>
+        </div>
+      </footer>
+    </div>
+  </details>
+</article>
