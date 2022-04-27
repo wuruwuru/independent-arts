@@ -1,0 +1,46 @@
+---
+//Styles
+import resetStyles from "@styles/site.css";
+
+// Components
+import SEO from '@components/SEO.astro';
+import NavDefault from '@components/NavDefault.astro';
+
+export interface Props {
+	pageTitle: string,
+	pageUrl: string,
+	pageImage: string,
+	seoTitle?: string,
+	pageDescription?: string,
+	bodyClassName?: string,
+	hideNav?: boolean
+}
+
+const {
+		pageTitle,
+		bodyClassName = "",
+		hideNav = false
+	} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{pageTitle}</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		<SEO { ...Astro.props }></SEO>
+
+		<style is:inline set:html={resetStyles}></style>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+		<slot name="header-content"/>
+	</head>
+
+	<body class={bodyClassName}>
+		{ 
+			!hideNav && <NavDefault />
+		}
+		<slot/>
+    </body>
+</html>

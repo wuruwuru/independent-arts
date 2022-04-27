@@ -1,16 +1,14 @@
 ---
 //Layout
-import Layout from "@layout/Layout.astro"
+import Layout from "@layout/Default.astro"
 
 //Styling
 import "@styles/index.css"
 
 //Scripts
-import Dots from "@scripts/dots.astro"
-import FadeMenu from "@scripts/fade-menu.astro"
+import Dots from "@components/DotsCursor.astro";
+// Todo: import HomeProjectList here
 
-//Assets
-import logo from "@images/logo.png"
 ---
 <Layout
 	bodyClassName="checkered"
@@ -25,6 +23,7 @@ import logo from "@images/logo.png"
 			<div class="list" id="list">
 				<section class="list__items">
 					<article class="story">
+						// Replace this line with the HomeProjectList components. You can even abstract the project information into a JSON of it's own
 						<details open>
 							<summary>
 								<h3 class="story__title">J Guide</h3>
@@ -119,7 +118,8 @@ import logo from "@images/logo.png"
 				</section>
 			</div>
 		</main>
-		<script is:inline>
+
+		<script>
 			var list = window.document.getElementById('list');
 			window.addEventListener('scroll', function() {
 				var fromTop = list.offsetTop - window.scrollY;
@@ -131,6 +131,14 @@ import logo from "@images/logo.png"
 				}
 			});
 		</script>
-		<Dots/>
-		<FadeMenu/>
+		<Dots client:idle/>
 </Layout>
+
+<style>
+.wordmark-text {
+  font-size: 0.8em;
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+</style>
