@@ -1,0 +1,35 @@
+---
+//Layout
+import Layout from "@layout/Default.astro"
+
+//Scripts
+import Dots from "@components/DotsCursor.astro"
+
+const pageMeta = {
+	bodyClassName: "checkered",
+	pageTitle: "Wuruwuru | About",
+	seoTitle: "About Wuruwuru",
+	pageUrl: "/about",
+	pageImage: "/assets/images/thumbnail.png",
+}
+---
+<Layout {...pageMeta}>
+  <Dots client:idle/>
+	<main>
+		<section>
+			<p>Wuruwuru is a collection of random publishing experiments, each one made with a different set of friends and freelancers.</p>
+			<p>I'm doing this for three reasons:</p>
+			<p>First, to produce high quality content like the ones I consume e.g. <a href="https://pudding.cool" target="_blank" rel="noopener">The Pudding</a>, <a href="https://psyche.co/" target="_blank" rel="noopener">Psyche</a> and <a href="https://www.adultswim.com" target="_blank" rel="noopener">Adult Swim</a>. I've followed them for many years and they do such good work.</p>
+			<p>Secondly, to work with freelancers and document my experience of the Nigerian creative industry.</p>
+			<p>Finally, I get to both participate in and support independent creation, which I really believe in.</p>
+			<p>I called it Wuruwuru because it's a trial and error approach to publishing, but hopefully we make some great stories. Enjoy!</p>
+			<footer>
+				<p>👍🏾<br><a href="https://opemipo.com" target="_blank" rel="noopener">Opemipo</a><br></p>
+			</footer>
+		</section>
+	</main>
+</Layout>
+
+<style lang="scss">
+	@import '../styles/about.css';
+</style>

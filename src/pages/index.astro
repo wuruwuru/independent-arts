@@ -1,0 +1,64 @@
+---
+//Layout
+import Layout from "@layout/Default.astro"
+
+//Styling
+import "@styles/index.css"
+
+//Scripts
+import Dots from "@components/DotsCursor.astro";
+import HomeProjectList from "@components/HomeProjectList.astro";
+
+//Data
+import projects from "@data/projects.json"
+---
+<Layout
+	bodyClassName="checkered"
+	pageTitle="Wuruwuru"
+	pageUrl="https://wuruwuru.com"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+>
+		<header>
+			<h1 class="wordmark" id="wordmark">Wuruwuru</h1>
+		</header>
+		<main>
+			<div class="list" id="list">
+				<section class="list__items">
+					{
+						projects.map(project => (
+							<HomeProjectList
+								title={project.title}
+								category={project.category}
+								subtitle={project.subtitle}
+								description={project.description}
+								contributors={project.contributors}
+							/>
+						))
+					}
+				</section>
+			</div>
+		</main>
+
+		<script>
+			var list = window.document.getElementById('list');
+			window.addEventListener('scroll', function() {
+				var fromTop = list.offsetTop - window.scrollY;
+				var isFixed = list.classList.contains('list--fixed-background');
+				if ((fromTop <= 0) && !isFixed) {
+					list.classList.add('list--fixed-background');
+				} else if ((fromTop > 0) && isFixed) {
+					list.classList.remove('list--fixed-background');
+				}
+			});
+		</script>
+		<Dots client:idle/>
+</Layout>
+
+<style>
+.wordmark-text {
+  font-size: 0.8em;
+  font-family: 'Soehne Schmal', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+</style>

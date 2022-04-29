@@ -1,0 +1,20 @@
+{
+  "name": "wuruwuru.com",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "dev": "astro dev",
+    "dev:clean": "npm run clean && npm run dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^1.0.0-beta.18",
+    "autoprefixer": "^10.4.5",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.4.4",
+    "sass": "^1.51.0"
+  }
+}
