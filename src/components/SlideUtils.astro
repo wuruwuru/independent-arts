@@ -16,4 +16,23 @@
 
         return slidesObject
     }
+
+    const getActiveSlide = ({query, elementsObject }) => {
+        const elements = [...document.querySelectorAll(query)];
+
+        const hash = window.location.hash
+
+        let activeSlide = hash.slice(1);
+
+        if(!hash){
+            //If no hash default to slide 1
+            activeSlide = elements[0].dataset.id;
+        }
+
+        if(!elementsObject[activeSlide]){
+            return null
+        }
+
+        return activeSlide
+    }
 </script>
