@@ -1,0 +1,101 @@
+---
+//Styles
+import resetStyles from "@styles/site.css";
+
+// Components
+import SEO from '@components/SEO.astro';
+import ProjectNav from "@components/ProjectNav.astro";
+
+//Assets
+import logo from "@images/logo-white.png";
+
+export interface Props {
+	pageTitle: string,
+	pageUrl: string,
+	pageImage: string,
+	pageDescription?: string,
+  	slides: {id: string}[]
+}
+
+const {
+    pageTitle,
+    slides
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{pageTitle}</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<SEO { ...Astro.props }></SEO>
+
+		<style is:inline set:html={resetStyles}></style>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+
+	<body>
+        <ProjectNav slides={slides}/>
+		<section class="slides">
+			{
+				slides.map(({id, component: Component}) => (
+					<article class="slides__slide">
+						<Component/>
+					</article>
+				))
+			}
+		</section>
+		<img src={logo} alt="Logo" class="logo"/>
+    </body>
+    <style>
+        body{
+            background-color: black;
+			position: relative;
+        }
+
+		.slides{
+			display: flex;
+			gap: 1ch;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+  			overscroll-behavior-x: contain;
+			touch-action: pan-x;
+			inline-size: 100%;
+			block-size: 100%;
+			height: 100vh;
+			width: 100vw;
+			 scrollbar-width: none;
+    		-ms-overflow-style: none;
+		}
+
+		.slides::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+
+		.slides__slide{
+			scroll-snap-align: start;
+			scroll-snap-stop: always;
+			overflow-y: auto;
+			width: 100vw;
+			min-height: 100%;
+			flex-shrink: 0;
+			background-color: blue;
+		}
+
+		.logo{
+			position: absolute;
+			bottom: 16px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: none;
+		}
+
+		@media (max-width: 600px){
+			.logo{
+				display: block;
+			}
+		}
+    </style>
+</html>
