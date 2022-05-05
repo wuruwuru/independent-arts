@@ -80,20 +80,20 @@ const { slides } = Astro.props
 </style>
 <script is:inline>
     //Get all slide elements
-    const slideElements = [...document.querySelectorAll(".slides__item")];
+    const slideIndicatorElements = [...document.querySelectorAll(".slides__item")];
 
     //Object to map slide ids to their index in order to make retrieval faster
     const slidesToIndex = {};
 
-    slideElements.forEach((slide, index) => {
+    slideIndicatorElements.forEach((slide, index) => {
         //Map slide id to index
         slidesToIndex[slide.dataset.id] = index
     })
 
-    const renderActiveSlide = () => {
+    const renderActiveSlideIndicator = () => {
         const hash = window.location.hash
 
-        let activeSlide = slideElements[0].dataset.id;
+        let activeSlide = slideIndicatorElements[0].dataset.id;
 
         if(!!hash){
             activeSlide = hash.slice(1);
@@ -109,7 +109,7 @@ const { slides } = Astro.props
         }
 
         //Loop through elements and add active class where appropriate
-        slideElements.forEach((element, index) => {
+        slideIndicatorElements.forEach((element, index) => {
             if(index <= activeSlideIndex){
                 element.classList.add("is-active")
             }else{
@@ -118,6 +118,6 @@ const { slides } = Astro.props
         })
     }
 
-    window.addEventListener("DOMContentLoaded", renderActiveSlide)
-    window.addEventListener("hashchange", renderActiveSlide)
+    window.addEventListener("DOMContentLoaded", renderActiveSlideIndicator)
+    window.addEventListener("hashchange", renderActiveSlideIndicator)
 </script>
