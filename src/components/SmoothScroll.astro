@@ -54,7 +54,8 @@
         position,
         callback,
         id,
-        easing = 'linear'
+        easing = 'linear',
+        handleStopScroll
     }) => {
         //If the current element is being animated by another instance cancel the animation frame
         if(animationStore[id]){
@@ -67,7 +68,7 @@
             y: element.scrollTop
         };
 
-        const distanceToTravel = {
+        const distanceToScroll = {
             x: position.x - initialPosition.x,
             y: position.y - initialPosition.y
         }
@@ -75,6 +76,23 @@
         let startTime;
 
         element.classList.add('is-scrolling')
+
+        const stopScroll = () => {
+            startTime = undefined
+            cancelAnimationFrame(animationStore[id])
+            animationStore[id] = null
+
+            element.classList.remove('is-scrolling')
+
+            callback()
+            handleStopScroll && handleStopScroll()
+        }
+
+        //If the user tries to interact with the scrolling element then give them control
+        element.addEventListener("wheel", stopScroll)
+        element.addEventListener("mousedown", stopScroll)
+        element.addEventListener("touchstart", stopScroll)
+
 
         const scroll = (currentTime) => {
             if(startTime === undefined){
@@ -91,8 +109,8 @@
 
             //Calculate final position based on time function and distance to travel
             const finalPosition = {
-                x: (elapsedTimeFunction * distanceToTravel.x) + initialPosition.x,
-                y: (elapsedTimeFunction * distanceToTravel.y) + initialPosition.y,
+                x: (elapsedTimeFunction * distanceToScroll.x) + initialPosition.x,
+                y: (elapsedTimeFunction * distanceToScroll.y) + initialPosition.y,
             }
             element.scrollTo(finalPosition.x, finalPosition.y)
 
@@ -101,6 +119,11 @@
                 callback()
                 startTime = undefined
                 element.classList.remove('is-scrolling')
+
+                element.removeEventListener("wheel", stopScroll)
+                element.removeEventListener("mousedown", stopScroll)
+                element.removeEventListener("touchstart", stopScroll)
+
                 return
             }
 
