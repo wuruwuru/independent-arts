@@ -1,0 +1,19 @@
+<script is:inline>
+    const getSlidesObject = (query) => {
+        //Get all elements
+        const elements = [...document.querySelectorAll(query)];
+
+        //Object to map slide ids to their index in order to make retrieval faster
+        const slidesObject = {};
+
+        elements.forEach((slide, index) => {
+            //Map slide id to index
+            slidesObject[slide.dataset.id] = {
+                index,
+                element: slide
+            }
+        })
+
+        return slidesObject
+    }
+</script>

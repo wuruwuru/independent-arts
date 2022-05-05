@@ -79,16 +79,8 @@ const { slides } = Astro.props
     }
 </style>
 <script is:inline>
-    //Get all slide elements
     const slideIndicatorElements = [...document.querySelectorAll(".slides__item")];
-
-    //Object to map slide ids to their index in order to make retrieval faster
-    const slidesToIndex = {};
-
-    slideIndicatorElements.forEach((slide, index) => {
-        //Map slide id to index
-        slidesToIndex[slide.dataset.id] = index
-    })
+    const indicatorsObject = getSlidesObject(".slides__item")
 
     const renderActiveSlideIndicator = () => {
         const hash = window.location.hash
@@ -100,7 +92,7 @@ const { slides } = Astro.props
         }
 
         //Get the active slide's index
-        let activeSlideIndex = slidesToIndex[activeSlide];
+        let activeSlideIndex = indicatorsObject[activeSlide].index;
 
         //If hash is invalid then redirect to base page
         if(activeSlideIndex === undefined){
