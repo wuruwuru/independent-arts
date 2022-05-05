@@ -196,17 +196,13 @@ const {
 				//Update scrolling
 				state.isScrolling = true;
 
-				/*
-					Distance in index between previous element and current elements helps us scale the duration based on slides to scroll
-					If 1 slide then we'll scroll 1 DURATION_PER_SLIDE
-					If 3 slides then we'll scroll 3 DURATION_PER_SLIDEs
-				*/
-				const previousElementIndex = slidesObject[state.currentElement].index;
-				const currentElementIndex = slidesObject[activeSlide].index;
+				//Calculate the number of slides to scroll by and then scale up duration of scroll animation by that
+                const distanceToScroll = Math.abs(slidesWrapper.scrollLeft - activeSlideEl.offsetLeft);
+                const numberOfSlides = distanceToScroll / window.innerWidth
+                const DURATION_PER_SLIDE = 0.5
 
-				const DURATION_PER_SLIDE = 1
+                const duration = numberOfSlides * DURATION_PER_SLIDE
 
-				const duration = Math.abs(currentElementIndex - previousElementIndex) * DURATION_PER_SLIDE
 
 				smoothScroll({
 					element: slidesWrapper,
@@ -218,6 +214,23 @@ const {
 					callback: () => {
 						state.isScrolling = false
 						state.currentElement = activeSlide
+					},
+					handleStopScroll: () => {
+						/*
+							When the user stops the scroll the URL sometimes does not match the active slide. 
+							You can increase DURATION_PER_SLIDE to test properly. 
+							Toggle to a far away slide using the nav then interrupt the scroll. 
+
+							Because of this issue I'm checking the element positions against the wrapper scroll to verify which of the elements is active
+							If the active element does not match the hash in the url then update the hash in the url
+						*/
+						const activeElement = slides.find(slide => {
+							return Math.abs(slide.offsetLeft - slidesWrapper.scrollLeft) < 50
+						});
+
+						if(activeElement.dataset.id !== window.location.hash.slice(1)){
+							window.location.hash = activeElement.dataset.id
+						}
 					},
 					id: "slides",
 					easing: "easeOutQuad"
