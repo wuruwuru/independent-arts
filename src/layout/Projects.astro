@@ -40,7 +40,7 @@ const {
 		<section class="slides">
 			{
 				slides.map(({id, component: Component}) => (
-					<article class="slides__slide">
+					<article class="slides__slide" data-id={id}>
 						<Component/>
 					</article>
 				))
@@ -98,4 +98,25 @@ const {
 			}
 		}
     </style>
+	<script>
+		const slideElements = [...document.querySelectorAll(".slides__slide")];
+
+        const observeIntersection = (entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    const id = entry.target.dataset.id;
+                    window.location.hash = id;
+                }
+            })
+        }
+
+        const slideObserver = new IntersectionObserver(observeIntersection, {
+            rootMargin: "0px",
+            threshold: 0.9
+        });
+
+        slideElements.forEach(element => {
+            slideObserver.observe(element)
+        });
+	</script>
 </html>
