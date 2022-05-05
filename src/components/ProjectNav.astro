@@ -59,6 +59,7 @@ const { slides } = Astro.props
     @media (max-width: 600px){
         .slides{
             width: 100%;
+            padding-top: 32px
         }
     }
 
@@ -81,7 +82,7 @@ const { slides } = Astro.props
 <script>
     const slideIndicatorElements = [...document.querySelectorAll(".slides__item")];
     const indicatorsObject = getSlidesObject(".slides__item")
-    
+
     const renderSlideIndicators = () => {
         const activeSlide = getActiveSlide({
             query: ".slides__item",
