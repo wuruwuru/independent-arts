@@ -34,7 +34,6 @@ body {
   font-family: 'Soehne', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 1.4rem;
-  cursor: url('../../assets/images/cursors/black.svg'), auto;
 }
 
 a {
