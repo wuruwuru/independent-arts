@@ -12,7 +12,7 @@ const { slides } = Astro.props
     <ul class="slides">
         {
             slides.map((slide) => (
-                <li class="slides__item">
+                <li class="slides__item" data-id={slide.id}>
                     <a class="slides__item__link" href={"#" + slide.id}/>
                 </li>
             ))
@@ -73,3 +73,46 @@ const { slides } = Astro.props
         background-color: white;
     }
 </style>
+<script is:inline>
+    //Get all slide elements
+    const slideElements = [...document.querySelectorAll(".slides__item")];
+
+    //Object to map slide ids to their index in order to make retrieval faster
+    const slidesToIndex = {};
+
+    slideElements.forEach((slide, index) => {
+        //Map slide id to index
+        slidesToIndex[slide.dataset.id] = index
+    })
+
+    const renderActiveSlide = () => {
+        const hash = window.location.hash
+
+        let activeSlide = slideElements[0].dataset.id;
+
+        if(!!hash){
+            activeSlide = hash.slice(1);
+        }
+
+        //Get the active slide's index
+        let activeSlideIndex = slidesToIndex[activeSlide];
+
+        //If hash is invalid then redirect to base page
+        if(activeSlideIndex === undefined){
+            window.location.hash = ''
+            return
+        }
+
+        //Loop through elements and add active class where appropriate
+        slideElements.forEach((element, index) => {
+            if(index <= activeSlideIndex){
+                element.classList.add("is-active")
+            }else{
+                element.classList.remove("is-active")
+            }
+        })
+    }
+
+    window.addEventListener("DOMContentLoaded", renderActiveSlide)
+    window.addEventListener("hashchange", renderActiveSlide)
+</script>
