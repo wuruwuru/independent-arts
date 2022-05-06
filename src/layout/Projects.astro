@@ -7,6 +7,7 @@ import SEO from '@components/SEO.astro';
 import ProjectNav from "@components/ProjectNav.astro";
 import SmoothScroll from "@components/SmoothScroll.astro";
 import SlideUtils from "@components/SlideUtils.astro";
+import Debounce from "@components/Debounce.astro";
 
 //Assets
 import logo from "@images/logo-white.png";
@@ -36,6 +37,7 @@ const {
 		<style is:inline set:html={resetStyles}></style>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<SlideUtils/>
+		<Debounce/>
 	</head>
 
 	<body>
@@ -106,6 +108,7 @@ const {
 		//Set DOM elements
 		const slidesWrapper = document.querySelector('section.slides');
 		const slides = [...document.querySelectorAll(".slides__slide")];
+		const DURATION_PER_SLIDE = 0.5
 
 		//Generate object that maps slide ids to their index and dom element
 		const slidesObject = getSlidesObject(".slides__slide")
@@ -199,7 +202,6 @@ const {
 				//Calculate the number of slides to scroll by and then scale up duration of scroll animation by that
                 const distanceToScroll = Math.abs(slidesWrapper.scrollLeft - activeSlideEl.offsetLeft);
                 const numberOfSlides = distanceToScroll / window.innerWidth
-                const DURATION_PER_SLIDE = 0.5
 
                 const duration = numberOfSlides * DURATION_PER_SLIDE
 
@@ -240,6 +242,49 @@ const {
 
         window.addEventListener("hashchange", handleHashChange)
 
+		const moveLeft = (currentIndex) => {
+			if(currentIndex <= 0) return
+			state.isScrolling = true;
+
+			const previousElement = slides[currentIndex - 1].dataset.id;
+			state.currentElement = previousElement
+			window.location.hash = previousElement
+		}
+
+		const moveRight = (currentIndex) => {
+			state.isScrolling = true;
+
+			if(currentIndex >= slides.length - 1) return
+
+			const nextElement = slides[currentIndex + 1].dataset.id;
+			state.currentElement = nextElement
+			window.location.hash = nextElement
+		}
+		
+		const handleClickWrapper = ({clientX}) => {
+			const middlePoint = slidesWrapper.offsetWidth / 2;
+			const currentIndex = slidesObject[window.location.hash.slice(1)].index;
+
+			//If mobile move left if click right else move right
+			if(window.innerWidth <= 600){
+				if(clientX < middlePoint){
+					moveLeft(currentIndex)
+				}else{
+					moveRight(currentIndex)
+				}
+			}else{
+				//If desktop scroll left if within 0 - 200 and scroll right if within width to width - 200
+				if(clientX < 200){
+					moveLeft(currentIndex)
+				}
+
+				if(clientX > slidesWrapper.offsetWidth - 200){
+					moveRight(currentIndex)
+				}
+			}
+		}
+
+		slidesWrapper.addEventListener("click", debounce(handleClickWrapper), DURATION_PER_SLIDE * 1000)
 		setupBasePage()
 		setupObserver()
 	</script>
