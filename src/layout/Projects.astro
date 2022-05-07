@@ -5,6 +5,8 @@ import resetStyles from "@styles/site.css";
 // Components
 import SEO from '@components/SEO.astro';
 import ProjectNav from "@components/ProjectNav.astro";
+import SmoothScroll from "@components/SmoothScroll.astro";
+import SlideUtils from "@components/SlideUtils.astro";
 
 //Assets
 import logo from "@images/logo-white.png";
@@ -33,6 +35,7 @@ const {
 
 		<style is:inline set:html={resetStyles}></style>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<SlideUtils/>
 	</head>
 
 	<body>
@@ -98,25 +101,146 @@ const {
 			}
 		}
     </style>
-	<script>
-		const slideElements = [...document.querySelectorAll(".slides__slide")];
+	<SmoothScroll/>
+	<script is:inline>
+		//Set DOM elements
+		const slidesWrapper = document.querySelector('section.slides');
+		const slides = [...document.querySelectorAll(".slides__slide")];
 
-        const observeIntersection = (entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    const id = entry.target.dataset.id;
-                    window.location.hash = id;
-                }
-            })
+		//Generate object that maps slide ids to their index and dom element
+		const slidesObject = getSlidesObject(".slides__slide")
+
+		//Setup base state
+		let state = {
+			isScrolling: false,
+			currentElement: slides[0].dataset.id
+		};
+
+		const setupBasePage = () => {
+			//Get active slide from url
+			const activeSlide = getActiveSlide({
+				query: ".slides__slide",
+				elementsObject: slidesObject
+			})
+
+			//If no active slide redirect user to first slide
+			if(!activeSlide){
+				window.location.hash = slides[0].id;
+			}else{
+				//If active slide is not first slide then scroll active slide into view
+				if(activeSlide !== state.currentElement){
+					slidesObject[activeSlide].element.scrollIntoView();
+				}
+			}
+		}
+
+		const setupObserver = () => {
+			//Function to trigger on intersection change
+			const handleIntersection = (entries) => {
+				entries.forEach(entry => {
+					if(entry.isIntersecting){
+						//If the smooth scroll is currently active then don't change the hash
+						if(state.isScrolling) return
+
+						//Else change the hash and the current element because the scroll was triggered by the user's mouse events
+						const id = entry.target.dataset.id;
+						state.currentElement = id;
+						window.location.hash = id;
+					}
+				})
+			}
+
+			//Create intersection observer
+			const slideObserver = new IntersectionObserver(handleIntersection, {
+				rootMargin: "0px",
+				threshold: 0.9
+			});
+
+			//Observe all slides
+			slides.forEach(element => {
+				slideObserver.observe(element)
+			});
+		}
+
+		const handleHashChange = () => {
+			//Get current active slide
+            const activeSlide = getActiveSlide({
+				query: ".slides__slide",
+				elementsObject: slidesObject
+			})
+
+			//If invalid slide redirect to first slide
+			if(!activeSlide){
+				window.location.hash = slides[0].dataset.id;
+				return
+			}
+
+            const activeSlideEl = slidesObject[activeSlide].element;
+
+			//Get slide width and active slide position
+			const slideWidth = window.innerWidth;
+			const activeSlideOffset = activeSlideEl.offsetLeft;
+
+			/*
+				The percentage here is used as such
+				If percentage is <= 0.1 then the hash change was triggered by the intersection observer
+				and therefore the user already used a normal scroll event and the scroll snap will align the page correctly
+
+				If percentage > 0.1 then the hash change was triggered by clicking on the slides in the navbar
+				and therefore we should scroll to the correct slide using the smooth scroll algorithm
+
+			*/
+			const percentage = Math.abs(activeSlideOffset - slidesWrapper.scrollLeft)/slideWidth
+
+			if(percentage > 0.1){
+				//Update scrolling
+				state.isScrolling = true;
+
+				//Calculate the number of slides to scroll by and then scale up duration of scroll animation by that
+                const distanceToScroll = Math.abs(slidesWrapper.scrollLeft - activeSlideEl.offsetLeft);
+                const numberOfSlides = distanceToScroll / window.innerWidth
+                const DURATION_PER_SLIDE = 0.5
+
+                const duration = numberOfSlides * DURATION_PER_SLIDE
+
+
+				smoothScroll({
+					element: slidesWrapper,
+					position: {
+						x: activeSlideEl.offsetLeft,
+						y: 0
+					},
+					duration,
+					callback: () => {
+						state.isScrolling = false
+						state.currentElement = activeSlide
+					},
+					handleStopScroll: () => {
+						/*
+							When the user stops the scroll the URL sometimes does not match the active slide. 
+							You can increase DURATION_PER_SLIDE to test properly. 
+							Toggle to a far away slide using the nav then interrupt the scroll. 
+
+							Because of this issue I'm checking the element positions against the wrapper scroll to verify which of the elements is active
+							If the active element does not match the hash in the url then update the hash in the url
+						*/
+						const activeElement = slides.find(slide => {
+							return Math.abs(slide.offsetLeft - slidesWrapper.scrollLeft) < 50
+						});
+
+						if(activeElement.dataset.id !== window.location.hash.slice(1)){
+							window.location.hash = activeElement.dataset.id
+						}
+					},
+					id: "slides",
+					easing: "easeOutQuad"
+				})
+			}
         }
 
-        const slideObserver = new IntersectionObserver(observeIntersection, {
-            rootMargin: "0px",
-            threshold: 0.9
-        });
+        window.addEventListener("hashchange", handleHashChange)
 
-        slideElements.forEach(element => {
-            slideObserver.observe(element)
-        });
+		setupBasePage()
+		setupObserver()
 	</script>
 </html>
