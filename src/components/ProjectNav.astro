@@ -78,38 +78,22 @@ const { slides } = Astro.props
         background-color: white;
     }
 </style>
-<script is:inline>
-    //Get all slide elements
-    const slideElements = [...document.querySelectorAll(".slides__item")];
+<script>
+    const slideIndicatorElements = [...document.querySelectorAll(".slides__item")];
+    const indicatorsObject = getSlidesObject(".slides__item")
+    
+    const renderSlideIndicators = () => {
+        const activeSlide = getActiveSlide({
+            query: ".slides__item",
+            elementsObject: indicatorsObject
+        })
 
-    //Object to map slide ids to their index in order to make retrieval faster
-    const slidesToIndex = {};
+        if(!activeSlide) return
 
-    slideElements.forEach((slide, index) => {
-        //Map slide id to index
-        slidesToIndex[slide.dataset.id] = index
-    })
-
-    const renderActiveSlide = () => {
-        const hash = window.location.hash
-
-        let activeSlide = slideElements[0].dataset.id;
-
-        if(!!hash){
-            activeSlide = hash.slice(1);
-        }
-
-        //Get the active slide's index
-        let activeSlideIndex = slidesToIndex[activeSlide];
-
-        //If hash is invalid then redirect to base page
-        if(activeSlideIndex === undefined){
-            window.location.hash = ''
-            return
-        }
+        let activeSlideIndex = indicatorsObject[activeSlide].index;
 
         //Loop through elements and add active class where appropriate
-        slideElements.forEach((element, index) => {
+        slideIndicatorElements.forEach((element, index) => {
             if(index <= activeSlideIndex){
                 element.classList.add("is-active")
             }else{
@@ -118,6 +102,6 @@ const { slides } = Astro.props
         })
     }
 
-    window.addEventListener("DOMContentLoaded", renderActiveSlide)
-    window.addEventListener("hashchange", renderActiveSlide)
+    window.addEventListener("DOMContentLoaded", renderSlideIndicators)
+    window.addEventListener("hashchange", renderSlideIndicators)
 </script>
