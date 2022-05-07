@@ -45,9 +45,7 @@ const {
 		<section class="slides">
 			{
 				slides.map(({id, component: Component}) => (
-					<article class="slides__slide" data-id={id}>
-						<Component/>
-					</article>
+					<Component id={id}/>
 				))
 			}
 		</section>
@@ -77,16 +75,6 @@ const {
 		.slides::-webkit-scrollbar {
 			width: 0;
 			height: 0;
-		}
-
-		.slides__slide{
-			scroll-snap-align: start;
-			scroll-snap-stop: always;
-			overflow-y: auto;
-			width: 100vw;
-			max-block-size: 100%;
-			flex-shrink: 0;
-			background-color: blue;
 		}
 
 		.logo{
