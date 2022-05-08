@@ -32,10 +32,10 @@ const { id } = Astro.props
                 </a>
             </li>
         </ul>
-        <button class="browse-section__button" href="#details">
+        <a target="_blank" href="https://airtable.com/shrwU5NWobT8feUw5/tbll8IZyCmNUUd266" class="browse-section__button" href="#details">
             BROWSE THE DATABASE
-        </button>
-        <button class="browse-section__details" href="#details">
+        </a>
+        <button class="browse-section__details" id="view-details-button" href="#details">
             <span>Details</span>
             <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.10742 13.1418L7.99981 19.0342L13.8922 13.1418" stroke="white" stroke-width="2.35695" stroke-linecap="round" stroke-linejoin="round"/>
@@ -214,6 +214,7 @@ const { id } = Astro.props
     }
 
     .browse-section__details{
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -571,3 +572,10 @@ const { id } = Astro.props
         column-gap: 20px;
     }
 </style>
+<script>
+    const detailsSection = document.querySelector(".details");
+
+    document.getElementById("view-details-button").addEventListener("click", () => {
+        detailsSection.scrollIntoView()
+    })
+</script>
