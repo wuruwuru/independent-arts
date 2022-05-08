@@ -268,7 +268,12 @@ const {
 			window.location.hash = nextElement
 		}
 		
-		const handleClickWrapper = ({clientX}) => {
+		const handleClickWrapper = ({clientX, path}) => {
+			//This is to allow disabling toggle if an element has the attribute data-ignore-click
+			const hasIgnore = path.find(el => "ignoreClick" in (el.dataset || {}))
+
+			if(hasIgnore) return
+
 			const middlePoint = slidesWrapper.offsetWidth / 2;
 			const currentIndex = slidesObject[window.location.hash.slice(1)].index;
 
