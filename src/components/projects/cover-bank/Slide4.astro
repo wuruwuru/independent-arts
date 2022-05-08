@@ -111,15 +111,15 @@ const { id } = Astro.props
      <footer class="footer">
         <h3 class="footer__header">Other Projects</h3>
         <div class="footer__projects">
-            <div class="footer__project">
+            <a href="/jguide" class="footer__project">
                 THE J GUIDE
-            </div>
-            <div class="footer__project">
+            </a>
+            <a href="/feel-good" class="footer__project">
                 FEEL GOOD
-            </div>
-            <div class="footer__project">
+            </a>
+            <a href="/hanky-panky" class="footer__project">
                 HANKY PANKY
-            </div>
+            </a>
         </div>
         <div class="footer__bottom">
             <div class="footer__links">
@@ -477,6 +477,22 @@ const { id } = Astro.props
         text-transform: uppercase;
         color: #FFFFFF;
         background-color: #000000;
+        transition-duration: 200ms;
+        text-decoration: none;
+    }
+
+    .footer__project:hover{
+        color: #000000;
+        background-color: white;
+        animation: none;
+    }
+
+    @media(max-width: 600px){
+        .footer__project{
+            height: 200px;
+            font-size: 50px;
+            line-height: 60px;
+        }
     }
 
     .footer__bottom{
