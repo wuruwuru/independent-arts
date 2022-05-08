@@ -68,7 +68,9 @@ const { id } = Astro.props
                     <img src={twitter} alt="Share to twitter"/>
                 </a>
                 <img src={instagram} alt="Share to instagram"/>
-                <img src={link} alt="Copy link"/>
+                <button class="details__copy-link">
+                    <img src={link} alt="Copy link"/>
+                </button>
             </div>
         </header>
         <p class="details__description">
@@ -307,6 +309,10 @@ const { id } = Astro.props
         display: none;
     }
 
+    .details__share > *{
+        height: 30px;
+    }
+
     @media(max-width: 600px){
         .details__share.is-desktop{
             display: none;
@@ -332,6 +338,13 @@ const { id } = Astro.props
             font-size: 18px;
             line-height: 22px;
         }
+    }
+
+    .details__copy-link{
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
     }
 
     .details__description{
@@ -581,9 +594,16 @@ const { id } = Astro.props
     }
 </style>
 <script>
+    import copyToClipboard from "../../../utils/copyToClipboard.js"
+
     const detailsSection = document.querySelector(".details");
 
     document.getElementById("view-details-button").addEventListener("click", () => {
         detailsSection.scrollIntoView()
+    })
+
+    document.querySelector('.details__copy-link').addEventListener('click', async () => {
+        await copyToClipboard(window.location.href)
+        alert("Successfully copied page link to your clipboard!")
     })
 </script>
