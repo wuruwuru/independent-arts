@@ -49,7 +49,7 @@ const {
 				))
 			}
 		</section>
-		<img src={logo} alt="Logo" class="logo"/>
+		<img src={logo} alt="Logo" class="logo projects"/>
     </body>
     <style>
         body{
@@ -85,6 +85,10 @@ const {
 			display: none;
 		}
 
+		.logo.is-hidden{
+			display: none;
+		}
+
 		@media (max-width: 600px){
 			.logo{
 				display: block;
@@ -95,6 +99,7 @@ const {
 	<script is:inline>
 		//Set DOM elements
 		const slidesWrapper = document.querySelector('section.slides');
+		const logoElement = document.querySelector('.projects.logo');
 		const slides = [...document.querySelectorAll(".slides__slide")];
 		const DURATION_PER_SLIDE = 0.5
 
@@ -118,6 +123,13 @@ const {
 			if(!activeSlide){
 				window.location.hash = slides[0].id;
 			}else{
+				//Hide logo element on last page
+				if(activeSlide === slides[slides.length - 1].dataset.id){
+					logoElement.classList.add("is-hidden")
+				}else{
+					logoElement.classList.remove("is-hidden")
+				}
+
 				//If active slide is not first slide then scroll active slide into view
 				if(activeSlide !== state.currentElement){
 					slidesObject[activeSlide].element.scrollIntoView();
@@ -164,6 +176,13 @@ const {
 			if(!activeSlide){
 				window.location.hash = slides[0].dataset.id;
 				return
+			}
+
+			//Hide logo element on last page
+			if(activeSlide === slides[slides.length - 1].dataset.id){
+				logoElement.classList.add("is-hidden")
+			}else{
+				logoElement.classList.remove("is-hidden")
 			}
 
             const activeSlideEl = slidesObject[activeSlide].element;
