@@ -1,0 +1,108 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+const { id } = Astro.props
+---
+<ProjectSlide id={id} className="slide">
+    <section class="browse-section">
+        <ul class="sidebar">
+            <li>
+                <a href="" class="sidebar__link">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="" class="sidebar__link">
+                    Journal
+                </a>
+            </li>
+            <li>
+                <a href="" class="sidebar__link">
+                    People
+                </a>
+            </li>
+        </ul>
+        <button class="browse-section__button" href="#details">
+            BROWSE THE DATABASE
+        </button>
+        <button class="browse-section__details" href="#details">
+            <span>Details</span>
+            <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.10742 13.1418L7.99981 19.0342L13.8922 13.1418" stroke="white" stroke-width="2.35695" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 18.1005V2" stroke="white" stroke-width="2.68342" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </section>
+</ProjectSlide>
+<style>
+    .slide{
+        scroll-behavior: smooth;
+    }
+
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 114px;
+        left: 16px;
+        row-gap: 20px;
+    }
+
+    .sidebar__link{
+        font-size: 18px;
+        line-height: 23px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    @media(max-width: 600px){
+        .sidebar{
+            display: none;
+        }
+    }
+
+    .browse-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+
+    .browse-section__button{
+        width: 200px;
+        height: 200px;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+        padding: 55px 35px;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 45px;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: 'Soehne Schmal';
+        text-decoration: none;
+        background: transparent;
+    }
+
+    .browse-section__details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 14px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 58px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-decoration: none;
+        background: transparent;
+        border: none;
+    }
+</style>
