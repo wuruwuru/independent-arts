@@ -7,6 +7,8 @@ import instagram from "@images/icons/instagram.svg"
 import link from "@images/icons/link.svg"
 import twitter from "@images/icons/twitter.svg"
 import coverImage from "@project-images/cover-bank/cover-bank.png"
+import coverImageMobile from "@project-images/cover-bank/cover-bank-mobile.png"
+import logo from "@images/logo.png"
 
 const { id } = Astro.props
 ---
@@ -41,6 +43,13 @@ const { id } = Astro.props
         </button>
     </section>
     <section class="details">
+        <nav class="details__mobile-nav">
+            <img src={logo} alt="Wuruwuru" class="details__mobile-nav-logo">
+            <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.304688" y1="1.5" x2="20.3047" y2="1.5" stroke="black" stroke-width="3"/>
+                <line x1="0.304688" y1="11.5" x2="20.3047" y2="11.5" stroke="black" stroke-width="3"/>
+            </svg>
+        </nav>
         <header class="details__header">
             <div>
                 <h1 class="details__title">
@@ -50,7 +59,7 @@ const { id } = Astro.props
                     Database
                 </h4>
             </div>
-            <div class="details__share">
+            <div class="details__share is-desktop">
                 <p class="details__share-text">
                     Share:
                 </p>
@@ -71,12 +80,26 @@ const { id } = Astro.props
             <br/>
             We see the opportunity to open the database up for contributions and reviews. For now, we only tag each album cover by artist, year, format and genre. We hope to build a model that tags the images by colour, and subject and find a way to scrape the internet for more
         </p>
-        <figure class="details__image_wraper">
+        <figure class="details__image_wrapper is-desktop">
             <img src={coverImage} alt="Cover Bank Airtable" class="details__image"/>
             <figcaption class="details__image-cta">
                 View larger version
             </figcaption>
         </figure>
+        <figure class="details__image_wrapper is-mobile">
+            <img src={coverImageMobile} alt="Cover Bank Airtable" class="details__image"/>
+            <figcaption class="details__image-cta">
+                View larger version
+            </figcaption>
+        </figure>
+        <div class="details__share is-mobile">
+            <p class="details__share-text">
+                Share:
+            </p>
+            <img src={twitter} alt="Share to twitter"/>
+            <img src={instagram} alt="Share to instagram"/>
+            <img src={link} alt="Copy link"/>
+        </div>
     </section>
 </ProjectSlide>
 <style>
@@ -155,6 +178,12 @@ const { id } = Astro.props
         background-color: white;
     }
 
+    @media (max-width: 600px){
+        .details{
+            padding: 45px 18px 60px 15px;
+        }
+    }
+
     .details__header{
         display: flex;
         align-items: flex-start;
@@ -162,12 +191,27 @@ const { id } = Astro.props
         margin-bottom: 60px;
     }
 
+    @media(max-width: 600px){
+        .details__header{
+            margin-bottom: 30px;
+        }
+    }
+    
+
     .details__title{
         font-weight: 400;
         font-size: 34px;
         line-height: 40px;
         color: #000000;
         margin: 0 0 8px;
+    }
+
+    @media(max-width: 600px){
+        .details__title{
+            font-size: 28px;
+            line-height: 33px;
+            margin-bottom: 5px;
+        }
     }
 
     .details__category{
@@ -178,10 +222,31 @@ const { id } = Astro.props
         margin: 0;
     }
 
+    @media(max-width: 600px){
+        .details__category{
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
     .details__share{
         display: flex;
         align-items: center;
         column-gap: 20px;
+    }
+
+    .details__share.is-mobile{
+        display: none;
+    }
+
+    @media(max-width: 600px){
+        .details__share.is-desktop{
+            display: none;
+        }
+
+        .details__share.is-mobile{
+            display: flex;
+        }
     }
 
     .details__share-text{
@@ -191,6 +256,14 @@ const { id } = Astro.props
         font-size: 20px;
         line-height: 24px;
         color: #000000;
+        margin: 0;
+    }
+
+    @media(max-width: 600px){
+        .details__share-text{
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 
     .details__description{
@@ -204,9 +277,36 @@ const { id } = Astro.props
         margin: 0 0 60px;
     }
 
-    .details__image_wraper{
+    @media(max-width: 600px){
+        .details__description{
+            width: 100%;
+            max-width: unset;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    .details__image_wrapper{
         width: 55%;
         max-width: 838px;
+    }
+
+    .details__image_wrapper.is-mobile{
+        display: none;
+        width: 100%;
+        max-width: unset;
+        margin-bottom: 60px;
+        padding: 0 8px;
+    }
+
+    @media(max-width: 600px){
+        .details__image_wrapper.is-desktop{
+            display: none;
+        }
+
+        .details__image_wrapper.is-mobile{
+            display: block;
+        }
     }
 
     .details__image{
@@ -220,5 +320,29 @@ const { id } = Astro.props
         margin: 20px 0 0;
         color: #938888;
         text-align: center;
+    }
+
+    @media (max-width: 600px){
+        .details__image-cta{
+            margin-top: 15px;
+        }
+    }
+
+    .details__mobile-nav{
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+        padding-right: 20px;
+    }
+
+    .details__mobile-nav-logo{
+        width: 50px;
+    }
+
+    @media (max-width: 600px){
+        .details__mobile-nav{
+            display: flex;
+        }
     }
 </style>
