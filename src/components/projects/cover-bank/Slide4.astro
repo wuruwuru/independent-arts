@@ -17,12 +17,12 @@ const { id } = Astro.props
     <section class="browse-section">
         <ul class="sidebar">
             <li>
-                <a href="" class="sidebar__link">
+                <a href="/about" class="sidebar__link">
                     About
                 </a>
             </li>
             <li>
-                <a href="" class="sidebar__link">
+                <a href="https://medium.com/wuruwuru" target="_blank" class="sidebar__link">
                     Journal
                 </a>
             </li>
@@ -64,7 +64,9 @@ const { id } = Astro.props
                 <p class="details__share-text">
                     Share:
                 </p>
-                <img src={twitter} alt="Share to twitter"/>
+                <a href="https://twitter.com/wuruwurumag" target="_blank">
+                    <img src={twitter} alt="Share to twitter"/>
+                </a>
                 <img src={instagram} alt="Share to instagram"/>
                 <img src={link} alt="Copy link"/>
             </div>
@@ -97,7 +99,9 @@ const { id } = Astro.props
             <p class="details__share-text">
                 Share:
             </p>
-            <img src={twitter} alt="Share to twitter"/>
+            <a href="https://twitter.com/wuruwurumag" target="_blank">
+                <img src={twitter} alt="Share to twitter"/>
+            </a>
             <img src={instagram} alt="Share to instagram"/>
             <img src={link} alt="Copy link"/>
         </div>
@@ -118,10 +122,10 @@ const { id } = Astro.props
         <div class="footer__bottom">
             <div class="footer__links">
                 <img src={logo} alt="Wuruwuru" class="footer__links-logo is-desktop"/>
-                <a href="" class="footer__links__link">
+                <a href="/about" class="footer__links__link">
                     About
                 </a>
-                <a href="" class="footer__links__link">
+                <a href="https://medium.com/wuruwuru" target="_blank" class="footer__links__link">
                     Journal
                 </a>
                 <a href="" class="footer__links__link   ">
@@ -142,10 +146,10 @@ const { id } = Astro.props
             <div class="footer__links-mobile">
                 <img src={logo} alt="Wuruwuru" class="footer__links-logo is-mobile"/>
                 <div class="footer_links__grid">
-                    <a href="" class="footer__links__link">
+                    <a href="/about" class="footer__links__link">
                         About
                     </a>
-                    <a href="" class="footer__links__link">
+                    <a href="https://medium.com/wuruwuru" target="_blank" class="footer__links__link">
                         Journal
                     </a>
                     <a href="" class="footer__links__link   ">
@@ -154,9 +158,13 @@ const { id } = Astro.props
                 </div>
             </div>
             <div class="footer__social-media">
-                <img src={twitter} alt="Share to twitter"/>
+                <a href="https://twitter.com/wuruwurumag" target="_blank">
+                    <img src={twitter} alt="Share to twitter"/>
+                </a>
                 <img src={instagram} alt="Share to instagram"/>
-                <img src={medium} alt="Wuruwuru medium"/>
+                <a href="https://medium.com/wuruwuru" target="_blank">
+                    <img src={medium} alt="Wuruwuru medium"/>
+                </a>
             </div>
         </div> 
     </footer>
