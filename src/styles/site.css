@@ -30,6 +30,10 @@
   font-weight: 700;
   src: url('../../assets/fonts/soehne-schmal-web-dreiviertelfett.woff');
 }
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/Inter-Regular.woff');
+}
 * {
   box-sizing: border-box;
 }
