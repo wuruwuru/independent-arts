@@ -1,0 +1,32 @@
+---
+//Layout
+import Projects from "@layout/Projects.astro";
+import Slide1 from "@components/projects/cover-bank/Slide1.astro";
+import Slide2 from "@components/projects/cover-bank/Slide2.astro";
+import Slide3 from "@components/projects/cover-bank/Slide3.astro";
+import Slide4 from "@components/projects/cover-bank/Slide4.astro";
+
+const slides = [
+    {
+        id: "1",
+        component: Slide1
+    },
+    {
+        id: "2",
+        component: Slide2
+    },
+    {
+        id: "3",
+        component: Slide3
+    },
+    {
+        id: "4",
+        component: Slide4
+    },
+]
+---
+<Projects
+    pageTitle="Cover Bank"
+    pageUrl="https://wuruwuru.com//cover-bank"
+    slides={slides}
+/>
