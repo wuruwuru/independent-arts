@@ -6,7 +6,6 @@ import resetStyles from "@styles/site.css";
 import SEO from '@components/SEO.astro';
 import ProjectNav from "@components/ProjectNav.astro";
 import SmoothScroll from "@components/SmoothScroll.astro";
-import Debounce from "@components/Debounce.astro";
 
 //Assets
 import logo from "@images/logo-white.png";
@@ -35,7 +34,6 @@ const {
 
 		<style is:inline set:html={resetStyles}></style>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<Debounce/>
 	</head>
 
 	<body>
@@ -96,7 +94,8 @@ const {
 	<SmoothScroll/>
 	<script>
 		import { getSlidesObject, getActiveSlide } from "../utils/projectSlideUtils"
-		
+		import debounce from "../utils/debounce"
+
 		//Set DOM elements
 		const slidesWrapper = document.querySelector('section.slides');
 		const logoElement = document.querySelector('.projects.logo');
