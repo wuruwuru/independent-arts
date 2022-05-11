@@ -1,6 +1,7 @@
 ---
 //Components
 import ProjectSlide from "@components/ProjectSlide.astro";
+import MobileNav from "@components/MobileNav.astro";
 
 //Assets
 import instagram from "@images/icons/instagram.svg"
@@ -44,38 +45,7 @@ const { id } = Astro.props
         </button>
     </section>
     <section class="details" data-ignore-click>
-        <nav class="details__mobile-nav">
-            <img src={logo} alt="Wuruwuru" class="details__mobile-nav-logo">
-            <button class="details__mobile-nav__open">
-                <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0.304688" y1="1.5" x2="20.3047" y2="1.5" stroke="black" stroke-width="3"/>
-                    <line x1="0.304688" y1="11.5" x2="20.3047" y2="11.5" stroke="black" stroke-width="3"/>
-                </svg>
-            </button>
-        </nav>
-        <aside class="details__mobile-popup">
-            <div class="details__mobile-popup__header">
-                <img src={logo} alt="Wuruwuru" class="details__mobile-popup__logo">
-                <button class="details__mobile-popup__close">
-                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="2.01179" y1="1.51506" x2="17.5681" y2="17.0714" stroke="black" stroke-width="2"/>
-                        <line x1="1.59758" y1="17.0707" x2="17.1539" y2="1.51438" stroke="black" stroke-width="2"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="details__mobile-popup__links">
-                <a href="/about" class="details__mobile-popup__link">
-                    About
-                </a>
-                <a href="https://medium.com/wuruwuru" target="_blank" class="details__mobile-popup__link">
-                    Journal
-                </a>
-                <a href="/team" class="details__mobile-popup__link   ">
-                    Team
-                </a>
-            </div>
-        </aside>
+        <MobileNav className="mobile-nav"/>
         <header class="details__header">
             <div>
                 <h1 class="details__title">
@@ -433,83 +403,8 @@ const { id } = Astro.props
         }
     }
 
-    .details__mobile-nav{
-        display: none;
-        align-items: center;
-        justify-content: space-between;
+    .mobile-nav{
         margin-bottom: 60px;
-        padding-right: 20px;
-    }
-
-     @media (max-width: 600px){
-        .details__mobile-nav{
-            display: flex;
-        }
-    }
-
-    .details__mobile-nav-logo{
-        width: 50px;
-    }
-
-    .details__mobile-nav__open{
-        background-color: transparent;
-        border: none;
-        padding: 0;
-    }
-
-    .details__mobile-popup{
-        padding: 45px 38px 34px 15px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: #FFFFFF;
-        box-shadow: 0px 8px 48px #C5C5C5;
-        opacity: 0;
-        transition-duration: 0.3s;
-        pointer-events: none;
-        display: none;
-    }
-
-    @media (max-width: 600px){
-        .details__mobile-popup{
-            display: block;
-        }
-    }
-
-    .details__mobile-popup.is-visible{
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-
-    .details__mobile-popup__header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-
-    .details__mobile-popup__logo{
-        width: 50px;
-    }
-
-    .details__mobile-popup__links{
-        display: grid;
-        row-gap: 20px;
-    }
-
-    .details__mobile-popup__link{
-        font-size: 20px;
-        line-height: 23px;
-        color: #000000;
-        text-decoration: none;
-    }
-
-    .details__mobile-popup__close{
-        background-color: transparent;
-        border: none;
-        padding: 0;
     }
 
     .footer{
