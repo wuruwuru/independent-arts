@@ -1,0 +1,137 @@
+---
+//Styles
+import resetStyles from "@styles/site.css";
+
+// Components
+import SEO from '@components/SEO.astro';
+
+//Assets
+import logo from "@images/logo.png";
+
+export interface Props {
+	pageTitle: string,
+	pageUrl: string,
+	pageImage: string,
+	pageDescription?: string,
+    header: string,
+    activeLink: string
+}
+
+const {
+    pageTitle,
+    header,
+    activeLink
+} = Astro.props;
+
+const menuLinks = [
+    {
+        text: "About",
+        href: "/about",
+        id: "about"
+    },
+    {
+        text: "Journal",
+        href: "https://medium.com/wuruwuru",
+        id: "journal",
+        external: true
+    },
+    {
+        text: "Team",
+        href: "/team",
+        id: "team"
+    },
+]
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{pageTitle}</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		<SEO { ...Astro.props }></SEO>
+
+		<style is:inline set:html={resetStyles}></style>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+		<slot name="header-content"/>
+	</head>
+    <body class="main">
+        <aside class="sidebar">
+            <img src={logo} alt="Wuruwuru logo" class="sidebar__logo">
+            <ul class="sidebar__links">
+                {
+                    menuLinks.map(link => (
+                         <li>
+                            <a 
+                                href={link.href} 
+                                class={`sidebar__link ${activeLink === link.id ? "is-active" : ""}`}
+                                target={link.external ? "_blank" : "_self"}
+                            >
+                                {link.text}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h1 class="heading">
+                {header}
+            </h1>
+            <slot/>
+        </main>
+    </body>
+</html>
+
+<style>
+    body{
+        display: flex;
+        column-gap: 234px;
+        padding-top: 34px;
+        padding-left: 40px;
+    }
+
+    .sidebar{
+        height: fit-content;
+        position: sticky;
+        top: 34px
+    }
+
+    .sidebar__logo{
+        width: 50px;
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .sidebar__links{
+        display: grid;
+        list-style-type: none;
+        row-gap: 20px;
+        padding: 0;
+    }
+
+    .sidebar__link{
+        font-size: 18px;
+        line-height: 21px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .sidebar__link.is-active{
+        color: #938888;
+    }
+
+    .main-content{
+        padding-top: 81px;
+    }
+    
+    .heading{
+        font-size: 96px;
+        line-height: 112px;
+        font-weight: normal;
+        font-family: 'Soehne Schmal';
+        color: black;
+        text-transform: uppercase;
+        margin: 0;
+    }
+</style>
