@@ -4,6 +4,7 @@ import resetStyles from "@styles/site.css";
 
 // Components
 import SEO from '@components/SEO.astro';
+import MobileNav from "@components/MobileNav.astro";
 
 //Assets
 import logo from "@images/logo.png";
@@ -74,6 +75,7 @@ const menuLinks = [
                 }
             </ul>
         </aside>
+        <MobileNav className="mobile-nav"/>
         <main class="main-content">
             <h1 class="heading">
                 {header}
@@ -91,10 +93,24 @@ const menuLinks = [
         padding-left: 40px;
     }
 
+    @media (max-width: 600px){
+        body{
+            flex-direction: column;
+            row-gap: 38px;
+            padding: 0 15px;
+        }
+    }
+
     .sidebar{
         height: fit-content;
         position: sticky;
-        top: 34px
+        top: 34px;
+    }
+
+    @media (max-width: 600px){
+        .sidebar{
+            display: none;
+        }   
     }
 
     .sidebar__logo{
@@ -121,10 +137,20 @@ const menuLinks = [
         color: #938888;
     }
 
+    .mobile-nav{
+        margin-top: 45px;
+    }
+
     .main-content{
         padding-top: 81px;
     }
     
+    @media (max-width: 600px){
+        .main-content{
+            padding-top: 0;
+        }
+    }
+
     .heading{
         font-size: 96px;
         line-height: 112px;
@@ -133,5 +159,12 @@ const menuLinks = [
         color: black;
         text-transform: uppercase;
         margin: 0;
+    }
+
+    @media (max-width: 600px){
+        .heading{
+            font-size: 64px;
+            line-height: 75px;
+        }
     }
 </style>
