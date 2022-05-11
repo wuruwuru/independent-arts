@@ -107,7 +107,7 @@ const { slides } = Astro.props
     }
 </style>
 <script>
-    import { getSlidesObject, getActiveSlide } from "../utils/projectSlideUtils"
+    import { getSlidesObject, getActiveSlide } from "../utils/projectSlideUtils.js"
 
     const slideIndicatorElements = [...document.querySelectorAll(".slides__item")];
     const indicatorsObject = getSlidesObject(".slides__item")
