@@ -13,7 +13,7 @@ import logo from "@images/logo.png"
 
 const { id } = Astro.props
 ---
-<ProjectSlide id={id} className="slide">
+<ProjectSlide id={id} className="slide" data-add-contrast="1">
     <section class="browse-section">
         <ul class="sidebar">
             <li>
@@ -27,8 +27,8 @@ const { id } = Astro.props
                 </a>
             </li>
             <li>
-                <a href="" class="sidebar__link" data-ignore-click>
-                    People
+                <a href="/team" class="sidebar__link" data-ignore-click>
+                    Team
                 </a>
             </li>
         </ul>
@@ -71,8 +71,8 @@ const { id } = Astro.props
                 <a href="https://medium.com/wuruwuru" target="_blank" class="details__mobile-popup__link">
                     Journal
                 </a>
-                <a href="" class="details__mobile-popup__link   ">
-                    People
+                <a href="/team" class="details__mobile-popup__link   ">
+                    Team
                 </a>
             </div>
         </aside>
@@ -92,7 +92,6 @@ const { id } = Astro.props
                 <a href="https://twitter.com/wuruwurumag" target="_blank">
                     <img src={twitter} alt="Share to twitter"/>
                 </a>
-                <img src={instagram} alt="Share to instagram"/>
                 <button class="details__copy-link">
                     <img src={link} alt="Copy link"/>
                 </button>
@@ -129,7 +128,6 @@ const { id } = Astro.props
             <a href="https://twitter.com/wuruwurumag" target="_blank">
                 <img src={twitter} alt="Share to twitter"/>
             </a>
-            <img src={instagram} alt="Share to instagram"/>
             <img src={link} alt="Copy link"/>
         </div>
     </section>
@@ -155,8 +153,8 @@ const { id } = Astro.props
                 <a href="https://medium.com/wuruwuru" target="_blank" class="footer__links__link">
                     Journal
                 </a>
-                <a href="" class="footer__links__link   ">
-                    People
+                <a href="/team" class="footer__links__link   ">
+                    Team
                 </a>
             </div>
             <form class="footer__form">
@@ -179,16 +177,16 @@ const { id } = Astro.props
                     <a href="https://medium.com/wuruwuru" target="_blank" class="footer__links__link">
                         Journal
                     </a>
-                    <a href="" class="footer__links__link   ">
-                        People
+                    <a href="/team" class="footer__links__link   ">
+                        Team
                     </a>
                 </div>
             </div>
             <div class="footer__social-media">
                 <a href="https://twitter.com/wuruwurumag" target="_blank">
-                    <img src={twitter} alt="Share to twitter"/>
+                    <img src={twitter} alt="Wuruwuru Twitter"/>
                 </a>
-                <img src={instagram} alt="Share to instagram"/>
+                <img src={instagram} alt="Wuruwuru Instagram"/>
                 <a href="https://medium.com/wuruwuru" target="_blank">
                     <img src={medium} alt="Wuruwuru medium"/>
                 </a>
@@ -713,7 +711,6 @@ const { id } = Astro.props
     const mobileNav = document.querySelector('.details__mobile-popup');
 
     document.querySelector('.details__mobile-nav__open').addEventListener('click', () => {
-        console.log('ss')
         mobileNav.classList.add('is-visible')
     })
 

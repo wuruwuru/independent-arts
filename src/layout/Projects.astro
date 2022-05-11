@@ -6,8 +6,6 @@ import resetStyles from "@styles/site.css";
 import SEO from '@components/SEO.astro';
 import ProjectNav from "@components/ProjectNav.astro";
 import SmoothScroll from "@components/SmoothScroll.astro";
-import SlideUtils from "@components/SlideUtils.astro";
-import Debounce from "@components/Debounce.astro";
 
 //Assets
 import logo from "@images/logo-white.png";
@@ -36,8 +34,6 @@ const {
 
 		<style is:inline set:html={resetStyles}></style>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<SlideUtils/>
-		<Debounce/>
 	</head>
 
 	<body>
@@ -96,11 +92,17 @@ const {
 		}
     </style>
 	<SmoothScroll/>
-	<script is:inline>
+	<script>
+		import { getSlidesObject, getActiveSlide } from "../utils/projectSlideUtils"
+		import debounce from "../utils/debounce"
+    	import throttle from "../utils/throttle"
+
 		//Set DOM elements
 		const slidesWrapper = document.querySelector('section.slides');
 		const logoElement = document.querySelector('.projects.logo');
 		const slides = [...document.querySelectorAll(".slides__slide")];
+		const navbar = document.querySelector('.navbar');
+
 		const DURATION_PER_SLIDE = 0.5
 
 		//Generate object that maps slide ids to their index and dom element
@@ -186,6 +188,13 @@ const {
 			}
 
             const activeSlideEl = slidesObject[activeSlide].element;
+
+			//On change slide. Reset contrast based on scroll position
+			if(activeSlideEl.scrollTop > activeSlideEl.offsetHeight){
+				navbar.classList.add('has-contrast')
+			}else{
+				navbar.classList.remove('has-contrast')
+			}
 
 			//Get slide width and active slide position
 			const slideWidth = window.innerWidth;
@@ -296,8 +305,31 @@ const {
 			}
 		}
 
-		slidesWrapper.addEventListener("click", debounce(handleClickWrapper), DURATION_PER_SLIDE * 1000)
+		slidesWrapper.addEventListener("click", debounce(handleClickWrapper, DURATION_PER_SLIDE * 1000))
 		setupBasePage()
 		setupObserver()
+
+		const handleScrollEvent = (slide) => {
+			const activeSlide = getActiveSlide({
+				query: ".slides__slide",
+				elementsObject: slidesObject
+			})
+
+			//If the slide is not active then no need to check it's scroll parameters
+			if(activeSlide !== slide.dataset.id) return
+
+        	if(slide.scrollTop > slide.offsetHeight){
+				navbar.classList.add('has-contrast')
+			}else{
+				navbar.classList.remove('has-contrast')
+			}
+    	}
+
+		slides.forEach(slide => {
+			if(slide.dataset.addContrast){
+				slide.addEventListener('scroll', throttle(() => handleScrollEvent(slide), 100))
+			}
+		})
+		
 	</script>
 </html>

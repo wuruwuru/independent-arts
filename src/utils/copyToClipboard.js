@@ -1,3 +1,4 @@
+//Inspired by https://stackoverflow.com/a/30810322
 function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
     textArea.value = text;

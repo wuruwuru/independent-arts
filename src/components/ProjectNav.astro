@@ -1,6 +1,7 @@
 ---
 //Assets
 import logo from "@images/logo-white.png";
+import logoDark from "@images/logo.png"
 
 export interface Props {
     slides: {id: string}[]
@@ -10,6 +11,7 @@ const { slides } = Astro.props
 ---
 <nav class="navbar">
     <img src={logo} alt="logo" class="navbar__logo"/>
+    <img src={logoDark} alt="logo" class="navbar__logo is-dark"/>
     <ul class="slides">
         {
             slides.map((slide) => (
@@ -20,6 +22,7 @@ const { slides } = Astro.props
         }
     </ul>
     <img src={logo} alt="logo" class="navbar__logo"/>
+    <img src={logoDark} alt="logo" class="navbar__logo is-dark"/>
 </nav>
 
 <style>
@@ -35,13 +38,31 @@ const { slides } = Astro.props
         z-index: 2;
     }
 
+    .navbar__logo{
+        width: 50px;
+    }
+
+    .navbar__logo.is-dark {
+        display: none;
+    }
+    
+    .navbar.has-contrast .navbar__logo:not(.is-dark){
+        display: none;
+    }
+
+    .navbar.has-contrast .navbar__logo.is-dark{
+        display: block;
+    }
+
+
     @media (max-width: 600px){
         .navbar{
             margin-bottom: 16px;
             padding: 0 16px;
         }
 
-        .navbar__logo{
+        .navbar__logo,
+        .navbar.has-contrast .navbar__logo.is-dark{
             display: none;
         }
     }
@@ -78,9 +99,16 @@ const { slides } = Astro.props
 
     .slides__item.is-active{
         background-color: white;
+        transition: 300ms;
+    }
+
+    .navbar.has-contrast .slides__item.is-active{
+        background-color: black;
     }
 </style>
 <script>
+    import { getSlidesObject, getActiveSlide } from "../utils/projectSlideUtils"
+
     const slideIndicatorElements = [...document.querySelectorAll(".slides__item")];
     const indicatorsObject = getSlidesObject(".slides__item")
 
