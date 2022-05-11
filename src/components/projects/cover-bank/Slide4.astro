@@ -13,7 +13,7 @@ import logo from "@images/logo.png"
 
 const { id } = Astro.props
 ---
-<ProjectSlide id={id} className="slide">
+<ProjectSlide id={id} className="slide" data-add-contrast="1">
     <section class="browse-section">
         <ul class="sidebar">
             <li>
@@ -711,7 +711,6 @@ const { id } = Astro.props
     const mobileNav = document.querySelector('.details__mobile-popup');
 
     document.querySelector('.details__mobile-nav__open').addEventListener('click', () => {
-        console.log('ss')
         mobileNav.classList.add('is-visible')
     })
 

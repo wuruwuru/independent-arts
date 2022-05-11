@@ -4,9 +4,9 @@ export interface Props {
     className?: string
 }
 
-const { id, className = "" } = Astro.props;
+const { id, className = "", ...props } = Astro.props;
 ---
-<article data-id={id} class={`${className} slides__slide`}>
+<article data-id={id} class={`${className} slides__slide`} {...props}>
     <slot/>
 </article>
 
