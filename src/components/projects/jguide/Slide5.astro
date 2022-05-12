@@ -1,0 +1,39 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+//Assets
+import slideImage from "@project-images/jguide/slide-5.png"
+
+const { id } = Astro.props
+---
+<ProjectSlide className="slide" id={id}>
+    <img src={slideImage} alt="J Guide Comic" class="comic">
+</ProjectSlide>
+<style>
+.slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comic{
+    display: flex;
+    justify-content: center;
+    width: 22%;
+    max-width: 450px;
+}
+
+@media (max-width: 1000px){
+    .comic{
+        width: 30%
+    }
+}
+@media (max-width: 600px){
+    .comic{
+        min-width: unset;
+        width: 100%;
+        justify-content: unset;
+    }
+}
+</style>
