@@ -11,6 +11,11 @@
 }
 @font-face {
   font-family: 'Soehne';
+  font-weight: 500;
+  src: url('../../assets/fonts/soehne-schmal-web-kraftig.woff');
+}
+@font-face {
+  font-family: 'Soehne';
   font-weight: bold;
   src: url('../../assets/fonts/soehne-web-halbfett.woff');
 }
