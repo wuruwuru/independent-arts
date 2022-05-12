@@ -1,46 +1,7 @@
 ---
 //Components
-import ProjectSlide from "@components/ProjectSlide.astro";
+import TitleSlide from "../general/TitleSlide.astro";
 
 const { id } = Astro.props;
 ---
-<ProjectSlide id={id} className="slide">
-    <h1 class="slide__header">
-        COVER BANK
-    </h1>
-    <p class="slide__subtext">2021</p>
-</ProjectSlide>
-
-<style>
-    .slide{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .slide__header{
-        font-family: 'Soehne Schmal';
-        font-weight: 400;
-        font-size: 192px;
-        line-height: 225px;
-        color: white;
-        margin: 0 0 20px;
-    }
-
-    @media (max-width: 600px){
-        .slide__header{
-            font-size: 96px;
-            line-height: 122px;
-            margin-bottom: 8px;
-        }
-    }
-    
-    .slide__subtext{
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 23px;
-        color: white;
-        margin: 0;
-    }
-</style>
+<TitleSlide id={id} title="Cover Bank" year="2021"/>
