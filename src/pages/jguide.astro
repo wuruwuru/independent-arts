@@ -1,16 +1,21 @@
 ---
-import Layout from "@layout/Default.astro"
----
+//Components
+import Slide1 from "@components/projects/jguide/Slide1.astro";
 
-<Layout
-	pageTitle="J Guide"
-	pageUrl="https://wuruwuru.com"
+//Layout
+import Projects from "@layout/Projects.astro";
+
+const slides = [
+    {
+        id: "1",
+        component: Slide1
+    },
+]
+---
+<Projects
+    pageTitle="J Guide"
+	pageUrl="https://wuruwuru.com/jguide"
 	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
     pageDescription="A comic about weed"
-    hideNav
->
-    <meta http-equiv="refresh" content="0; url=https://instagram.com/thejguide" slot="header-content"/>
-    <script is:inline>
-        window.location.href = 'https://instagram.com/thejguide';
-    </script>
-</Layout>
+    slides={slides}
+/>
