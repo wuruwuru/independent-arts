@@ -1,0 +1,68 @@
+---
+
+const { className = '' } = Astro.props
+---
+<form class={`footer__form ${className}`}>
+    <p class="footer__form__label">
+        EMAIL UPDATES?
+    </p>
+    <label for="email" class="footer__form__input-wrapper">
+        <input placeholder="your@email.com" class="footer__form__input"/>
+        <button class="footer__form__button">
+            Subscribe
+        </button>
+    </label>
+</form>
+<style>
+     .footer__form{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .footer__form__label{
+        font-size: 18px;
+        line-height: 21px;
+        margin: 0;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .footer__form__input-wrapper{
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+        background: #FFFFFF;
+        border: 0.2px solid #000000;
+        height: 53px;
+        width: 100%;
+        column-gap: 8px;
+    }
+
+    .footer__form__input{
+        flex-grow: 1;
+        font-size: 16px;
+        line-height: 20px;
+        color: black;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .footer__form__input::placeholder{
+        color: #938888;
+    }
+
+    .footer__form__button{
+        font-size: 16px;
+        line-height: 20px;
+        background: transparent;
+        border: none;
+        color: #000000;
+        font-weight: 500;
+        font-family: 'Soehne', sans-serif;
+    }
+</style>
