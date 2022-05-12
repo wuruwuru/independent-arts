@@ -12,6 +12,7 @@ import medium from "@images/icons/medium.svg"
 import coverImage from "@project-images/cover-bank/cover-bank.png"
 import coverImageMobile from "@project-images/cover-bank/cover-bank-mobile.png"
 import logo from "@images/logo.png"
+import ProjectCard from "@components/ProjectCard.astro";
 
 const { id } = Astro.props
 ---
@@ -105,15 +106,9 @@ const { id } = Astro.props
      <footer class="footer">
         <h3 class="footer__header">Other Projects</h3>
         <div class="footer__projects">
-            <a href="/jguide" class="footer__project">
-                THE J GUIDE
-            </a>
-            <a href="/feel-good" class="footer__project">
-                FEEL GOOD
-            </a>
-            <a href="/hanky-panky" class="footer__project">
-                HANKY PANKY
-            </a>
+            <ProjectCard href="/jguide" text="The J Guide"/>
+            <ProjectCard href="/feel-good" text="Feel Good"/>
+            <ProjectCard href="/hanky-panky" text="Hanky Panky"/>
         </div>
         <div class="footer__bottom">
             <div class="footer__links">
@@ -435,36 +430,6 @@ const { id } = Astro.props
         }
     }
 
-    .footer__project{
-        height: 240px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Soehne Schmal';
-        font-weight: 400;
-        font-size: 60px;
-        line-height: 70px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background-color: #000000;
-        transition-duration: 200ms;
-        text-decoration: none;
-    }
-
-    .footer__project:hover{
-        color: #000000;
-        background-color: white;
-        animation: none;
-    }
-
-    @media(max-width: 600px){
-        .footer__project{
-            height: 200px;
-            font-size: 50px;
-            line-height: 60px;
-        }
-    }
 
     .footer__bottom{
         display: flex;
