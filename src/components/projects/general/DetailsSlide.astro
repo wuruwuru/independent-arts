@@ -12,7 +12,18 @@ import logo from "@images/logo.png"
 import MobileNav from "@components/MobileNav.astro";
 import link from "@images/icons/link.svg"
 
-const { id, browseText, header, category } = Astro.props
+export interface Props {
+    id: string;
+    browseText: string;
+    header: string;
+    category: string;
+    projects: {
+        href: string,
+        text: string
+    }[]
+}
+
+const { id, browseText, header, category, projects } = Astro.props
 ---
 <ProjectSlide id={id} className="slide" data-add-contrast="1">
     <section class="browse-section">
@@ -81,9 +92,11 @@ const { id, browseText, header, category } = Astro.props
     <footer class="footer">
         <h3 class="footer__header">Other Projects</h3>
         <div class="footer__projects">
-            <ProjectCard href="/jguide" text="The J Guide"/>
-            <ProjectCard href="/feel-good" text="Feel Good"/>
-            <ProjectCard href="/hanky-panky" text="Hanky Panky"/>
+            {
+                projects.map(project => (
+                    <ProjectCard href={project.href} text={project.text}/>
+                ))
+            }
         </div>
         <div class="footer__bottom">
             <div class="footer__links">
