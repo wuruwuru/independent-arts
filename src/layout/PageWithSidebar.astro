@@ -5,9 +5,13 @@ import resetStyles from "@styles/site.css";
 // Components
 import SEO from '@components/SEO.astro';
 import MobileNav from "@components/MobileNav.astro";
+import SubscribeForm from "@components/SubscribeForm.astro";
 
 //Assets
 import logo from "@images/logo.png";
+import instagram from "@images/icons/instagram.svg"
+import twitter from "@images/icons/twitter.svg"
+import medium from "@images/icons/medium.svg"
 
 export interface Props {
 	pageTitle: string,
@@ -56,37 +60,49 @@ const menuLinks = [
 
 		<slot name="header-content"/>
 	</head>
-    <body class="main">
-        <aside class="sidebar">
-            <img src={logo} alt="Wuruwuru logo" class="sidebar__logo">
-            <ul class="sidebar__links">
-                {
-                    menuLinks.map(link => (
-                         <li>
-                            <a 
-                                href={link.href} 
-                                class={`sidebar__link ${activeLink === link.id ? "is-active" : ""}`}
-                                target={link.external ? "_blank" : "_self"}
-                            >
-                                {link.text}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </aside>
-        <MobileNav className="mobile-nav"/>
-        <main class="main-content">
-            <h1 class="heading">
-                {header}
-            </h1>
-            <slot/>
+    <body>
+        <main class="main">
+            <aside class="sidebar">
+                <img src={logo} alt="Wuruwuru logo" class="sidebar__logo">
+                <ul class="sidebar__links">
+                    {menuLinks.map(link => (
+                            <li>
+                                <a 
+                                    href={link.href} 
+                                    class={`sidebar__link ${activeLink === link.id ? "is-active" : ""}`}
+                                    target={link.external ? "_blank" : "_self"}
+                                >
+                                    {link.text}
+                                </a>
+                            </li>
+                    ))}
+                </ul>
+            </aside>
+            <MobileNav className="mobile-nav"/>
+            <div class="main-content">
+                <h1 class="heading">
+                    {header}
+                </h1>
+                <slot/>
+            </div>
         </main>
+        <footer class="footer">
+            <SubscribeForm/>
+            <div class="footer__social-links">
+                <a href="https://twitter.com/wuruwurumag" target="_blank">
+                    <img src={twitter} alt="Wuruwuru Twitter"/>
+                </a>
+                <img src={instagram} alt="Wuruwuru Instagram"/>
+                <a href="https://medium.com/wuruwuru" target="_blank">
+                    <img src={medium} alt="Wuruwuru medium"/>
+                </a>
+            </div>
+        </footer>
     </body>
 </html>
 
 <style>
-    body{
+    .main{
         display: flex;
         column-gap: 234px;
         padding-top: 34px;
@@ -94,7 +110,7 @@ const menuLinks = [
     }
 
     @media (max-width: 600px){
-        body{
+        .main{
             flex-direction: column;
             row-gap: 38px;
             padding: 0 15px;
@@ -166,5 +182,25 @@ const menuLinks = [
             font-size: 64px;
             line-height: 75px;
         }
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        row-gap: 100px;
+        align-items: center;
+        padding-bottom: 126px;
+    }
+
+    @media (max-width: 600px){
+        .footer{
+            padding-bottom: 77px;
+        }
+    }
+    
+    .footer__social-links{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
     }
 </style>
