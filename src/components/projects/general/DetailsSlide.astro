@@ -1,0 +1,428 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+import SubscribeForm from "@components/SubscribeForm.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+
+//Assets
+import instagram from "@images/icons/instagram.svg"
+import twitter from "@images/icons/twitter.svg"
+import medium from "@images/icons/medium.svg"
+import logo from "@images/logo.png"
+import MobileNav from "@components/MobileNav.astro";
+import link from "@images/icons/link.svg"
+
+const { id, browseText, header, category } = Astro.props
+---
+<ProjectSlide id={id} className="slide" data-add-contrast="1">
+    <section class="browse-section">
+        <ul class="sidebar">
+            <li>
+                <a href="/about" class="sidebar__link" data-ignore-click>
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="https://medium.com/wuruwuru" target="_blank" class="sidebar__link" data-ignore-click>
+                    Journal
+                </a>
+            </li>
+            <li>
+                <a href="/team" class="sidebar__link" data-ignore-click>
+                    Team
+                </a>
+            </li>
+        </ul>
+        <a target="_blank" href="https://airtable.com/shrwU5NWobT8feUw5/tbll8IZyCmNUUd266" class="browse-section__button" href="#details">
+            {browseText}
+        </a>
+        <button class="browse-section__details" id="view-details-button" href="#details">
+            <span>Details</span>
+            <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.10742 13.1418L7.99981 19.0342L13.8922 13.1418" stroke="white" stroke-width="2.35695" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 18.1005V2" stroke="white" stroke-width="2.68342" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </section>
+    <section class="details" data-ignore-click>
+        <MobileNav className="mobile-nav"/>
+        <header class="details__header">
+            <div>
+                <h1 class="details__title">
+                    {header}
+                </h1>
+                <h4 class="details__category">
+                    {category}
+                </h4>
+            </div>
+            <div class="details__share is-desktop">
+                <p class="details__share-text">
+                    Share:
+                </p>
+                <a href="https://twitter.com/wuruwurumag" target="_blank">
+                    <img src={twitter} alt="Share to twitter"/>
+                </a>
+                <button class="details__copy-link">
+                    <img src={link} alt="Copy link"/>
+                </button>
+            </div>
+        </header>
+        <slot/>
+         <div class="details__share is-mobile">
+            <p class="details__share-text">
+                Share:
+            </p>
+            <a href="https://twitter.com/wuruwurumag" target="_blank">
+                <img src={twitter} alt="Share to twitter"/>
+            </a>
+            <img src={link} alt="Copy link"/>
+        </div>
+    </section>
+    <footer class="footer">
+        <h3 class="footer__header">Other Projects</h3>
+        <div class="footer__projects">
+            <ProjectCard href="/jguide" text="The J Guide"/>
+            <ProjectCard href="/feel-good" text="Feel Good"/>
+            <ProjectCard href="/hanky-panky" text="Hanky Panky"/>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__links">
+                <img src={logo} alt="Wuruwuru" class="footer__links-logo is-desktop"/>
+                <a href="/about" class="footer__links__link">
+                    About
+                </a>
+                <a href="https://medium.com/wuruwuru" target="_blank" class="footer__links__link">
+                    Journal
+                </a>
+                <a href="/team" class="footer__links__link   ">
+                    Team
+                </a>
+            </div>
+            <SubscribeForm/>
+            <div class="footer__links-mobile">
+                <img src={logo} alt="Wuruwuru" class="footer__links-logo is-mobile"/>
+                <div class="footer_links__grid">
+                    <a href="/about" class="footer__links__link">
+                        About
+                    </a>
+                    <a href="https://medium.com/wuruwuru" target="_blank" class="footer__links__link">
+                        Journal
+                    </a>
+                    <a href="/team" class="footer__links__link   ">
+                        Team
+                    </a>
+                </div>
+            </div>
+            <div class="footer__social-media">
+                <a href="https://twitter.com/wuruwurumag" target="_blank">
+                    <img src={twitter} alt="Wuruwuru Twitter"/>
+                </a>
+                <img src={instagram} alt="Wuruwuru Instagram"/>
+                <a href="https://medium.com/wuruwuru" target="_blank">
+                    <img src={medium} alt="Wuruwuru medium"/>
+                </a>
+            </div>
+        </div>
+    </footer>
+</ProjectSlide>
+<style>
+    .slide{
+        scroll-behavior: smooth;
+    }
+
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 114px;
+        left: 16px;
+        row-gap: 20px;
+    }
+
+    .sidebar__link{
+        font-size: 18px;
+        line-height: 23px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    @media(max-width: 600px){
+        .sidebar{
+            display: none;
+        }
+    }
+
+    .browse-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+
+    .browse-section__button{
+        width: 200px;
+        height: 200px;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+        padding: 55px 35px;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 45px;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: 'Soehne Schmal';
+        text-decoration: none;
+        background: transparent;
+    }
+
+    .browse-section__details{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 14px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 58px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-decoration: none;
+        background: transparent;
+        border: none;
+    }
+
+    .mobile-nav{
+        margin-bottom: 60px;
+    }
+
+    .details{
+        padding: 100px 107px 80px 141px;
+        background-color: white;
+        position: relative;
+    }
+
+    @media (max-width: 600px){
+        .details{
+            padding: 45px 18px 60px 15px;
+        }
+    }
+
+    .details__header{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    @media(max-width: 600px){
+        .details__header{
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .details__title{
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 40px;
+        color: #000000;
+        margin: 0 0 8px;
+    }
+
+    @media(max-width: 600px){
+        .details__title{
+            font-size: 28px;
+            line-height: 33px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .details__category{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        color: #938888;
+        margin: 0;
+    }
+
+    @media(max-width: 600px){
+        .details__category{
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    .details__share{
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    .details__share.is-mobile{
+        display: none;
+    }
+
+    .details__share > *{
+        height: 30px;
+    }
+
+    @media(max-width: 600px){
+        .details__share.is-desktop{
+            display: none;
+        }
+
+        .details__share.is-mobile{
+            display: flex;
+        }
+    }
+
+    .details__share-text{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        margin: 0;
+    }
+
+    @media(max-width: 600px){
+        .details__share-text{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .details__copy-link{
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .footer{
+        padding: 50px 112px 60px;
+        background: #F6F6F6;
+    }
+
+    @media (max-width: 600px){
+        .footer{
+            padding: 50px 18px 42px;
+        }
+    }
+
+    .footer__header{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .footer__projects{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 40px;
+        row-gap: 30px;
+        max-width: 1360px;
+        margin: 0 auto 107px;
+    }
+
+    @media (max-width: 800px){
+        .footer__projects{
+            grid-template-columns: 1fr;
+            margin-bottom: 80px;
+        }
+    }
+
+
+    .footer__bottom{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+
+    @media (max-width: 1000px){
+        .footer__bottom{
+            flex-direction: column;
+            row-gap: 60px;
+            align-items: center;
+        }
+    }
+
+    .footer__links{
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+    }
+
+    .footer__links-mobile{
+        display: none;
+    }
+
+    @media (max-width: 800px){
+        .footer__links{
+            display: none;
+        }
+
+        .footer__links-mobile{
+            display: block;
+        }
+    }
+
+    .footer_links__grid{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 25px;
+    }
+
+    .footer__links-logo{
+        width: 50px;
+    }
+
+    .footer__links-logo.is-desktop{
+        margin-right: 14px;
+    }
+
+    .footer__links-logo.is-mobile{
+        margin: 0 auto 25px;
+        display: block;
+    }
+
+    .footer__links__link{
+        font-size: 18px;
+        line-height: 23px;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .footer__social-media{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+    }
+</style>
+<script>
+    import copyToClipboard from "../../../utils/copyToClipboard.js"
+
+    const detailsSection = document.querySelector(".details");
+
+    document.getElementById("view-details-button").addEventListener("click", () => {
+        detailsSection.scrollIntoView()
+    })
+
+    document.querySelector('.details__copy-link').addEventListener('click', async () => {
+        await copyToClipboard(window.location.href)
+        alert("Successfully copied page link to your clipboard!")
+    })
+</script>
