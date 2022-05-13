@@ -1,0 +1,35 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+const { id } = Astro.props
+---
+<ProjectSlide id={id} className="slide">
+    <h1 class="slide__header">
+        The motivation for the film is to produce an independent animation project from Nigeria and publish over the internet.
+    </h1>
+</ProjectSlide>
+
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 40px;
+    }
+
+    .slide__header{
+        font-size: 20px;
+        line-height: 24px;
+        color: white;
+        text-align: center;
+        max-width: 452px;
+        font-weight: 400;
+    }
+
+    @media (max-width: 600px){
+        .slide__header{
+            max-width: 375px
+        }
+    }
+</style>
