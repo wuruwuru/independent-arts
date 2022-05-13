@@ -1,5 +1,6 @@
 ---
 import feed from "@project-images/jguide/feed.png"
+import TabDetails from "./TabDetails.astro";
 ---
 <p class="intro-text">
     Struggling to give your joint a perfect mould ? <br/>
@@ -9,14 +10,7 @@ import feed from "@project-images/jguide/feed.png"
     <img class="feed-image" src={feed} alt="Screenshot of the feed">
     <figcaption class="feed-image-caption">Screenshot of the feed</figcaption>
 </figure>
-<p class="detail has-margin">
-    <span class="inter">Artist:</span>
-    <a href="www.vanny.com">Vanny</a>
-</p>
-<p class="detail">
-    <span class="inter">Published:</span>
-    <span>31st December, 2020</span>
-</p>
+<TabDetails artistLink="https://www.artstation.com/dannyvanny" artist="Vanny" published="31st December, 2020"/>
 
 <style>
     .intro-text{
@@ -63,42 +57,5 @@ import feed from "@project-images/jguide/feed.png"
         font-size: 16px;
         line-height: 19px;
         color: #938888;
-    }
-
-    .detail{
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
-        color: #000000;
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
-        margin: 0;
-    }
-
-    @media (max-width: 600px){
-        .detail{
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }
-
-    .detail.has-margin{
-        margin-bottom: 30px;
-    }
-
-    @media (max-width: 600px){
-        .detail.has-margin{
-            margin-bottom: 20px;
-        }
-    }
-
-    .detail a{
-        text-decoration: underline;
-    }
-
-    .detail .inter{
-        font-family: 'Inter';
     }
 </style>

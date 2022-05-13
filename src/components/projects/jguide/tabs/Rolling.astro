@@ -1,4 +1,8 @@
 ---
+//Components
+import TabDetails from "./TabDetails.astro";
+
+//Assets
 import comic1 from "@project-images/jguide/rolling/comic-1.png"
 import comic2 from "@project-images/jguide/rolling/comic-2.png"
 import storyboarding from "@project-images/jguide/rolling/storyboarding.png"
@@ -17,14 +21,7 @@ import storyboarding from "@project-images/jguide/rolling/storyboarding.png"
         Storyboarding
     </figcaption>
 </figure>
-<p class="detail has-margin">
-    <span class="inter">Artist:</span>
-    <a href="www.vanny.com">Vanny</a>
-</p>
-<p class="detail">
-    <span class="inter">Published:</span>
-    <span>31st December, 2020</span>
-</p>
+<TabDetails artistLink="https://www.artstation.com/dannyvanny" artist="Vanny" published="31st December, 2020"/>
 
 <style>
     .intro-text{
@@ -81,42 +78,5 @@ import storyboarding from "@project-images/jguide/rolling/storyboarding.png"
         font-size: 16px;
         line-height: 19px;
         color: #938888;
-    }
-
-    .detail{
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
-        color: #000000;
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
-        margin: 0;
-    }
-
-    @media (max-width: 600px){
-        .detail{
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }
-
-    .detail.has-margin{
-        margin-bottom: 30px;
-    }
-
-    @media (max-width: 600px){
-        .detail.has-margin{
-            margin-bottom: 20px;
-        }
-    }
-
-    .detail a{
-        text-decoration: underline;
-    }
-
-    .detail .inter{
-        font-family: 'Inter';
     }
 </style>

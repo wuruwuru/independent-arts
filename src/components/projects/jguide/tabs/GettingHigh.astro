@@ -1,5 +1,6 @@
 ---
 import gettingHigh from "@project-images/jguide/getting-high.png"
+import TabDetails from "./TabDetails.astro";
 ---
 <p class="intro-text">
     “Getting High”, is about the biology of how we get high. 
@@ -11,14 +12,7 @@ import gettingHigh from "@project-images/jguide/getting-high.png"
     <img class="profile-image" src={gettingHigh} alt="Character Profile">
     <figcaption class="profile-image-caption">Character Profile</figcaption>
 </figure>
-<p class="detail has-margin">
-    <span class="inter">Artist:</span>
-    <a href="www.vanny.com">Vanny</a>
-</p>
-<p class="detail">
-    <span class="inter">Published:</span>
-    <span>31st December, 2020</span>
-</p>
+<TabDetails artistLink="https://www.artstation.com/bolusowoolu" artist="Bolu Sowoolu" published="20th April, 2021"/>
 
 <style>
     .intro-text{
@@ -61,42 +55,5 @@ import gettingHigh from "@project-images/jguide/getting-high.png"
         font-size: 16px;
         line-height: 19px;
         color: #938888;
-    }
-
-    .detail{
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
-        color: #000000;
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
-        margin: 0;
-    }
-
-    @media (max-width: 600px){
-        .detail{
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }
-
-    .detail.has-margin{
-        margin-bottom: 30px;
-    }
-
-    @media (max-width: 600px){
-        .detail.has-margin{
-            margin-bottom: 20px;
-        }
-    }
-
-    .detail a{
-        text-decoration: underline;
-    }
-
-    .detail .inter{
-        font-family: 'Inter';
     }
 </style>
