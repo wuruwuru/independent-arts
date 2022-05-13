@@ -1,0 +1,45 @@
+---
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+import comic from "@project-images/feel-good/slide-6.png"
+import comicMobile from "@project-images/feel-good/slide-6-mobile.png"
+
+const { id } = Astro.props
+---
+<ProjectSlide id={id} className="slide">
+    <img src={comic} class="image" alt="Comic Page">
+    <img src={comicMobile} class="mobile-image" alt="Comic Page">
+</ProjectSlide>
+
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image{
+        width: 80%;
+        object-fit: cover;
+        max-height: 77%;
+    }
+
+    @media (max-width: 600px){
+        .image{
+            display: none;
+        }
+    }
+
+    .mobile-image{
+        display: none;
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 600px){
+        .mobile-image{
+            display: block;
+        }
+    }
+</style>
