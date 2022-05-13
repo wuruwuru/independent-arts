@@ -1,0 +1,32 @@
+---
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+const { id } = Astro.props;
+---
+<ProjectSlide className="slide" id={id}>
+    <p class="slide__text">
+        Our goal is to inspire creators all over the world to tell more joyful queer stories.
+    </p>
+</ProjectSlide>
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 24px;
+    }
+
+    .slide__text{
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        color: #FFFFFF;
+        max-width: 406px;
+    }
+
+    @media (max-width: 600px){
+        .slide__text{
+            max-width: 327px;
+        }
+    }
+</style>
