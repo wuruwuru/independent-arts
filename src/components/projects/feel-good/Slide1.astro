@@ -1,0 +1,44 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+import feelGood from "@project-images/feel-good/slide-1.png"
+
+const { id } = Astro.props;
+---
+<ProjectSlide id={id} className="slide">
+    <figure class="slide__image-wrapper">
+        <img src={feelGood} class="slide__image" alt="Characters">
+    </figure>
+</ProjectSlide>
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide__image-wrapper{
+        width: 70%;
+        max-width: 1010px;
+    }
+
+    @media (max-width: 600px){
+        .slide__image-wrapper{
+            width: 100%;
+            overflow: scroll;
+        }
+    }
+
+    .slide__image{
+        width: 100%;
+    }
+
+    @media (max-width: 600px){
+        .slide__image{
+            width: unset;
+            height: 460px;
+            max-width: unset;
+        }
+    }
+</style>
