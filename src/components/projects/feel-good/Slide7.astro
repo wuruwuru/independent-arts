@@ -1,0 +1,23 @@
+---
+import DetailsSlide from "../general/DetailsSlide.astro";
+
+const { id } = Astro.props
+
+const footerProjects = [
+    {
+        href: "/cover-bank",
+        text: "Cover bank"
+    },
+    {
+        href: "/jguide",
+        text: "The J Guide"
+    },
+    {
+        href: "/feel-good",
+        text: "Feel good"
+    },
+]
+---
+<DetailsSlide browseText="WATCH THE FILM" header="HANKY PANKY" category="Animation" id={id} projects={footerProjects}>
+
+</DetailsSlide>
