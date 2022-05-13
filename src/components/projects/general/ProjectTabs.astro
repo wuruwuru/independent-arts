@@ -1,7 +1,7 @@
 ---
 const { tabs } = Astro.props;
 ---
-<div>
+<div class="tabs-wrapper">
     <nav class="tabs">
         {
             tabs.map((tab, index) => (
@@ -19,6 +19,12 @@ const { tabs } = Astro.props;
 </div>
 
 <style>
+    @media (max-width: 600px){
+        .tabs-wrapper{
+            margin-bottom: 60px;
+        }
+    }
+
     .tabs{
         display: flex;
         padding: 20px 27px;
@@ -27,6 +33,13 @@ const { tabs } = Astro.props;
         border-bottom: 1px solid black;
         column-gap: 50px;
         width: fit-content;
+    }
+
+    @media (max-width: 1000px){
+        .tabs{
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
     }
     
     .tab__button{

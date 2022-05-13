@@ -29,6 +29,13 @@ import gettingHigh from "@project-images/jguide/getting-high.png"
         max-width: 670px;
     }
 
+    @media (max-width: 600px){
+        .intro-text{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
     .profile-image-wrapper{
         width: 90%;
         max-width: 720px;
@@ -39,6 +46,13 @@ import gettingHigh from "@project-images/jguide/getting-high.png"
         row-gap: 20px;
     }
 
+    @media (max-width: 600px){
+        .profile-image-wrapper{
+            width: 100%;
+            padding: 0 25px
+        }
+    }
+    
     .profile-image{
         width: 100%;
     }
@@ -60,8 +74,22 @@ import gettingHigh from "@project-images/jguide/getting-high.png"
         margin: 0;
     }
 
+    @media (max-width: 600px){
+        .detail{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
     .detail.has-margin{
         margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px){
+        .detail.has-margin{
+            margin-bottom: 20px;
+        }
     }
 
     .detail a{

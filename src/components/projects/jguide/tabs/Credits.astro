@@ -80,6 +80,12 @@
         align-items: flex-start;
     }
 
+    @media (max-width: 600px){
+        .section-grid{
+            column-gap: 50px;
+        }
+    }
+
     .column{
         display: grid;
         row-gap: 10px;
@@ -97,5 +103,12 @@
         line-height: 23px;
         color: #938888;
         margin: 0;
+    }
+
+    @media (max-width: 600px){
+        .label, .value{
+            font-size: 16px;
+            line-height: 19px;
+        }
     }
 </style>

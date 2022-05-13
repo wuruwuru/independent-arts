@@ -26,6 +26,13 @@ import feed from "@project-images/jguide/feed.png"
         margin: 0 0 60px;
     }
 
+    @media (max-width: 600px){
+        .intro-text{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
     .feed-image-wrapper{
         width: 65%;
         display: flex;
@@ -35,8 +42,21 @@ import feed from "@project-images/jguide/feed.png"
         row-gap: 20px;
     }
 
+    @media (max-width: 600px){
+        .feed-image-wrapper{
+            width: 100%;
+            padding: 0 33px;
+        }
+    }
+
     .feed-image{
         width: 333px;
+    }
+
+    @media (max-width: 600px){
+        .feed-image{
+            width: 100%;
+        }
     }
 
     .feed-image-caption{
@@ -56,8 +76,22 @@ import feed from "@project-images/jguide/feed.png"
         margin: 0;
     }
 
+    @media (max-width: 600px){
+        .detail{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
     .detail.has-margin{
         margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px){
+        .detail.has-margin{
+            margin-bottom: 20px;
+        }
     }
 
     .detail a{
