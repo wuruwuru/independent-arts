@@ -1,0 +1,21 @@
+---
+//Components
+import Slide1 from "@components/projects/feel-good/Slide1.astro";
+
+//Layout
+import Projects from "@layout/Projects.astro";
+
+const slides = [
+    {
+        id: "1",
+        component: Slide1
+    },
+]
+---
+<Projects
+    pageTitle="Feel Good"
+	pageUrl="https://wuruwuru.com/feel-good"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+    pageDescription="A compilation of queer love stories"
+    slides={slides}
+/>
