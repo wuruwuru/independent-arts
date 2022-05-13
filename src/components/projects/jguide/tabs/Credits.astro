@@ -1,114 +1,45 @@
 ---
+import ProjectCredits from "@components/projects/general/ProjectCredits.astro";
+
+const credits = [
+    {
+        title: "ART",
+        authors: [
+            {
+                name: "Vanny",
+                role: "Author"
+            },
+            {
+                name: "Bolu Sowoolu",
+                role: "Author"
+            },
+        ]
+    },
+    {
+        title: "Story",
+        authors: [
+            {
+                name: "Opemipo Aikomo",
+                role: "Director"
+            },
+            {
+                name: "Tomiwa Ajiboye",
+                role: "Assistant Director"
+            },
+            {
+                name: "Khadijah",
+                role: "Story"
+            },
+            {
+                name: "Jubril O.",
+                role: "Story"
+            },
+            {
+                name: "Timi Ajiboye",
+                role: "Story"
+            },
+        ]
+    },
+]
 ---
-<section class="section-with-margin">
-    <h3 class="section-header">ART</h3>
-    <div class="section-grid">
-        <div class="column">
-            <p class="label">
-                Vanny
-            </p>
-             <p class="label">
-                Bolu Sowoolu
-            </p>
-        </div>
-        <div class="column">
-            <p class="value">
-                Artist
-            </p>
-            <p class="value">
-                Artist
-            </p>
-        </div>
-    </div>
-</section>
-<section>
-    <h3 class="section-header">STORY</h3>
-    <div class="section-grid">
-        <div class="column">
-            <p class="label">
-                Opemipo Aikomo
-            </p>
-             <p class="label">
-                Tomiwa Ajiboye
-            </p>
-             <p class="label">
-                Khadijah
-            </p>
-             <p class="label">
-                Jubril O.
-            </p>
-             <p class="label">
-                Timi Ajiboye
-            </p>
-        </div>
-        <div class="column">
-            <p class="value">
-                Director
-            </p>
-            <p class="value">
-                Assistant Director
-            </p>
-            <p class="value">
-                Story
-            </p>
-            <p class="value">
-                Story
-            </p>
-            <p class="value">
-                Story
-            </p>
-        </div>
-    </div>
-</section>
-
-<style>
-    .section-with-margin{
-        margin-bottom: 44px;
-    }
-
-    .section-header{
-        margin: 0 0 15px;
-        font-size: 20px;
-        line-height: 23px;
-        text-transform: uppercase;
-        color: #000000
-    }
-
-    .section-grid{
-        display: flex;
-        column-gap: 70px;
-        align-items: flex-start;
-    }
-
-    @media (max-width: 600px){
-        .section-grid{
-            column-gap: 50px;
-        }
-    }
-
-    .column{
-        display: grid;
-        row-gap: 10px;
-    }
-
-    .label{
-        font-size: 20px;
-        line-height: 23px;
-        color: #000000;
-        margin: 0;
-    }
-
-    .value{
-        font-size: 20px;
-        line-height: 23px;
-        color: #938888;
-        margin: 0;
-    }
-
-    @media (max-width: 600px){
-        .label, .value{
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }
-</style>
+<ProjectCredits credits={credits}/>
