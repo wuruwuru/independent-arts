@@ -1,0 +1,74 @@
+---
+const { tabs } = Astro.props;
+---
+<div>
+    <nav class="tabs">
+        {
+            tabs.map((tab, index) => (
+                <button class={`tab__button ${index === 0 ? "is-active" : ""}`} data-id={tab.id}>{tab.title}</button>
+            ))
+        }
+    </nav>
+    {
+        tabs.map(({id, component: Component}, index) => (
+            <section id={id} class={`tab ${index === 0 ? "is-active" : ""}`}>
+                <Component/>
+            </section>
+        ))
+    }
+</div>
+
+<style>
+    .tabs{
+        display: flex;
+        padding: 20px 27px;
+        margin-bottom: 30px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        column-gap: 50px;
+        width: fit-content;
+    }
+    
+    .tab__button{
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #938888;
+        border: none;
+        background-color: transparent;
+        transition: 300ms;
+        cursor: pointer;
+    }
+
+    .tab__button.is-active{
+        color: black;
+        font-size: 18px;
+    }
+
+    .tab{
+        display: none;
+    }
+
+    .tab.is-active{
+        display: block;
+    }
+</style>
+
+<script is:inline>
+    const tabs = [...document.querySelectorAll('.tab')];
+    const tabButtons = [...document.querySelectorAll('.tab__button')];
+    let activeTab = tabs[0].id;
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector(`[data-id="${activeTab}"]`).classList.remove("is-active")
+            document.getElementById(activeTab).classList.remove("is-active")
+            
+            activeTab = button.dataset.id;
+            
+            document.querySelector(`[data-id="${activeTab}"]`).classList.add("is-active")
+            document.getElementById(activeTab).classList.add("is-active")
+        })
+    })
+
+
+</script>
