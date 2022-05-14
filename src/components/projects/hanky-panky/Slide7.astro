@@ -1,7 +1,18 @@
 ---
+//Components
 import DetailsSlide from "../general/DetailsSlide.astro";
+import ProjectTabs from "../general/ProjectTabs.astro";
+import CharacterProfiles from "./tabs/CharacterProfiles.astro";
 
 const { id } = Astro.props
+
+const tabs = [
+    {
+        id: "profiles",
+        title: "Character Profiles",
+        component: CharacterProfiles
+    }
+]
 
 const footerProjects = [
     {
@@ -19,5 +30,25 @@ const footerProjects = [
 ]
 ---
 <DetailsSlide browseText="WATCH THE FILM" header="HANKY PANKY" category="Animation" id={id} projects={footerProjects}>
-
+    <p class="description">
+        Hanky Panky is an animated short film about a phone call between 27-year old Osas and her favourite aunty, Yuwa.
+        <br/>
+        In this three-minute slice of life, Aunty Yuwa calls her niece to complain about flirty birthday pictures recently posted to Instagram.
+        <br/>
+        Osas is on a drive with friends when the call comes in. The conversation starts out jovial but gets increasingly heated as Aunty Yuwa insists something fishy is going on.
+        <br/>
+        This is the first film in Go Slow, an upcoming animated series about the vastly different lives that converge in Lagos traffic.
+    </p>
+    <ProjectTabs
+        tabs={tabs}
+    />
 </DetailsSlide>
+
+<style>
+    .description{
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+        margin-bottom: 45px;
+    }
+</style>
