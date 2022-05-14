@@ -1,0 +1,172 @@
+---
+import down from "@images/down.svg"
+
+const { tabs } = Astro.props;
+---
+<section class="project-tabs">
+    <nav class="tabs">
+        {
+            tabs.map((tab, index) => (
+                <button class={`tab__button ${index === 0 ? "is-active" : ""}`} data-id={tab.id}>{tab.title}</button>
+            ))
+        }
+    </nav>
+    <div class="tabs-wrapper">
+        {
+            tabs.map(({id, title, component: Component}, index) => (
+                <article id={id} class={`tab ${index === 0 ? "is-active" : ""}`}>
+                    <h2 class="tab__header">
+                        <span>{title}</span>
+                        <img src={down} alt="Toggle Section"/>
+                    </h2>
+                    <div class="tab__content">
+                        <Component/>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    @media (max-width: 600px){
+        .project-tabs{
+            margin-bottom: 60px;
+        }
+    }
+
+    .tabs{
+        display: flex;
+        padding: 20px 27px;
+        margin-bottom: 30px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        column-gap: 50px;
+        width: fit-content;
+    }
+
+    @media (max-width: 1000px){
+        .tabs{
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .tabs{
+            display: none;
+        }
+    }
+    
+    .tab__button{
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #938888;
+        border: none;
+        background-color: transparent;
+        transition: 300ms;
+        cursor: pointer;
+    }
+
+    .tab__button.is-active{
+        color: black;
+        font-size: 18px;
+    }
+
+    @media (max-width: 600px){
+        .tabs-wrapper{
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+        }
+    }
+
+    .tab{
+        display: none;
+    }
+
+    @media (max-width: 600px){
+        .tab{
+            display: block;
+        }
+    }
+
+    .tab__header{
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+        color: #000000;
+        display: none;
+        align-items: center;
+        column-gap: 10px;
+        position: sticky;
+        top: 60px;
+        margin: 0;
+    }
+
+    .tab__header.is-active{
+        margin-bottom: 15px;
+    }
+
+    .tab__header.is-active img{
+        transform: rotate(180deg);
+    }
+
+    @media (max-width: 600px){
+        .tab__header{
+            display: flex;
+        }
+
+        .tab__content{
+            display: none;
+        }
+
+        .tab__content.is-visible{
+            display: block;
+        }
+    }
+
+    .tab.is-active{
+        display: block;
+    }
+</style>
+
+<script is:inline>
+    const tabs = [...document.querySelectorAll('.tab')];
+    const tabButtons = [...document.querySelectorAll('.tab__button')];
+    let activeTab = tabs[0].id;
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector(`[data-id="${activeTab}"]`).classList.remove("is-active")
+            document.getElementById(activeTab).classList.remove("is-active")
+            
+            activeTab = button.dataset.id;
+            
+            document.querySelector(`[data-id="${activeTab}"]`).classList.add("is-active")
+            document.getElementById(activeTab).classList.add("is-active")
+        })
+    })
+
+
+    const tabHeaders = [...document.querySelectorAll('.tab__header')]
+
+    tabHeaders.forEach(header => {
+        const parent = header.parentElement;
+        const contentElement = parent.querySelector('.tab__content');
+
+        header.addEventListener('click', () => {
+            const visibleClass = 'is-visible'
+
+            if(contentElement.classList.contains(visibleClass)){
+                contentElement.classList.remove(visibleClass)
+                header.classList.remove('is-active')
+            }else{
+                contentElement.classList.add(visibleClass)
+                header.classList.add('is-active')
+            }
+        })
+    })
+
+
+</script>

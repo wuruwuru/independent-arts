@@ -1,0 +1,45 @@
+---
+import ProjectCredits from "@components/projects/general/ProjectCredits.astro";
+
+const credits = [
+    {
+        title: "ART",
+        authors: [
+            {
+                name: "Vanny",
+                role: "Author"
+            },
+            {
+                name: "Bolu Sowoolu",
+                role: "Author"
+            },
+        ]
+    },
+    {
+        title: "Story",
+        authors: [
+            {
+                name: "Opemipo Aikomo",
+                role: "Director"
+            },
+            {
+                name: "Tomiwa Ajiboye",
+                role: "Assistant Director"
+            },
+            {
+                name: "Khadijah",
+                role: "Story"
+            },
+            {
+                name: "Jubril O.",
+                role: "Story"
+            },
+            {
+                name: "Timi Ajiboye",
+                role: "Story"
+            },
+        ]
+    },
+]
+---
+<ProjectCredits credits={credits}/>

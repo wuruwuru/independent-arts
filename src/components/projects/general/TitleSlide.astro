@@ -1,0 +1,53 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+export interface Props {
+    title: string,
+    year: string,
+    id: string
+}
+
+const { id, title, year } = Astro.props;
+---
+<ProjectSlide id={id} className="slide">
+    <h1 class="slide__header">
+        {title}
+    </h1>
+    <p class="slide__subtext">{year}</p>
+</ProjectSlide>
+
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .slide__header{
+        font-family: 'Soehne Schmal';
+        font-weight: 400;
+        font-size: 192px;
+        line-height: 225px;
+        color: white;
+        margin: 0 0 20px;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: 600px){
+        .slide__header{
+            font-size: 96px;
+            line-height: 122px;
+            margin-bottom: 8px;
+        }
+    }
+    
+    .slide__subtext{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        color: white;
+        margin: 0;
+    }
+</style>

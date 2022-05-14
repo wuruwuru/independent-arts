@@ -1,0 +1,83 @@
+---
+//Components
+import DetailsSlide from "../general/DetailsSlide.astro";
+import ProjectTabs from "../general/ProjectTabs.astro";
+import Feed from "./tabs/Feed.astro";
+import Rolling from "./tabs/Rolling.astro";
+import GettingHigh from "./tabs/GettingHigh.astro";
+import CBD from "./tabs/CBD.astro";
+import Credits from "./tabs/Credits.astro";
+
+const { id } = Astro.props
+
+const tabs = [
+    {
+        id: "tabs",
+        title: "Feed",
+        component: Feed
+    },
+    {
+        id: "rolling",
+        title: "#1 - Rolling",
+        component: Rolling
+    },
+    {
+        id: "getting-high",
+        title: "#2 - Getting High",
+        component: GettingHigh
+    },
+    {
+        id: "cbd",
+        title: "#3 - CBD",
+        component: CBD
+    },
+    {
+        id: "credits",
+        title: "CREDITS",
+        component: Credits
+    }
+] 
+
+const footerProjects = [
+    {
+        href: "/cover-bank",
+        text: "Cover bank"
+    },
+    {
+        href: "/feel-good",
+        text: "Feel good"
+    },
+    {
+        href: "/hanky-panky",
+        text: "Hanky Panky"
+    },
+]
+---
+<DetailsSlide browseText="READ THE COMIC" header="The J Guide" category="Comic, Instagram" id={id} projects={footerProjects}>
+    <p class="description">
+        The J Guide is an illustrated guide for teaching people how to roll. It explains the basic steps involved in the process so you can practice on your own, or with friends.
+    </p>
+    <ProjectTabs
+        tabs={tabs}
+    />
+</DetailsSlide>
+<style>
+    .description{
+        width: 670px;
+        max-width: 80%;
+        margin-bottom: 45px;
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+    }
+
+    @media (max-width: 600px){
+        .description{
+            font-size: 16px;
+            line-height: 19px;
+            width: 100%;
+            max-width: unset;
+            padding-right: 34px;
+        }
+    }
+</style>

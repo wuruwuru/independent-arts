@@ -1,0 +1,61 @@
+---
+import feed from "@project-images/jguide/feed.png"
+import TabDetails from "./TabDetails.astro";
+---
+<p class="intro-text">
+    Struggling to give your joint a perfect mould ? <br/>
+    The feed is an instruction guide created to teach people how to roll a joint. 
+</p> 
+<figure class="feed-image-wrapper">
+    <img class="feed-image" src={feed} alt="Screenshot of the feed">
+    <figcaption class="feed-image-caption">Screenshot of the feed</figcaption>
+</figure>
+<TabDetails artistLink="https://www.artstation.com/dannyvanny" artist="Vanny" published="31st December, 2020"/>
+
+<style>
+    .intro-text{
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+        margin: 0 0 60px;
+    }
+
+    @media (max-width: 600px){
+        .intro-text{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    .feed-image-wrapper{
+        width: 65%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 60px;
+        row-gap: 20px;
+    }
+
+    @media (max-width: 600px){
+        .feed-image-wrapper{
+            width: 100%;
+            padding: 0 33px;
+        }
+    }
+
+    .feed-image{
+        width: 333px;
+    }
+
+    @media (max-width: 600px){
+        .feed-image{
+            width: 100%;
+        }
+    }
+
+    .feed-image-caption{
+        font-size: 16px;
+        line-height: 19px;
+        color: #938888;
+    }
+</style>
