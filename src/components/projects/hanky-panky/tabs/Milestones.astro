@@ -1,0 +1,170 @@
+---
+import recording from "@project-images/hanky-panky/slide-7/tab-2/voice-recording.png"
+import storyboard1 from "@project-images/hanky-panky/slide-7/tab-2/storyboard-1.png"
+import storyboard2 from "@project-images/hanky-panky/slide-7/tab-2/storyboard-2.png"
+import storyboard3 from "@project-images/hanky-panky/slide-7/tab-2/storyboard-3.png"
+import storyboard4 from "@project-images/hanky-panky/slide-7/tab-2/storyboard-4.png"
+import storyboard5 from "@project-images/hanky-panky/slide-7/tab-2/storyboard-5.png"
+import storyboard6 from "@project-images/hanky-panky/slide-7/tab-2/storyboard-6.png"
+import animatics from "@project-images/hanky-panky/slide-7/animatics.png"
+import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
+---
+<section class="section">
+    <h3 class="header">
+        Voice Recording
+    </h3>
+    <p class="text">
+        The voice recording happened at VSonics Studio, Omole Pahse 1. The sound production process for the film was—Voice Recording, Dialogue Editing, Background, Walla (realistic background conversations), Foley (micro-sounds like footsteps and clothes), SFX (sound effects), Score (a musical composition for the film) and Mixing.
+        <br/>
+        <br/>
+        Three hours of studio time cost N193,500, Voice Acting N150,000, and post-production N559,000.
+    </p>
+</section>
+<section class="section">
+    <img src={recording} alt="Recording Studio" class="recording__image">
+</section>
+<section class="section">
+    <h3 class="header">
+        Storyboarding
+    </h3>
+    <p class="text">
+        The storyboard is essentially a comic for the film
+    </p>
+    <div class="storyboarding_grid">
+        <img src={storyboard1} alt="Storyboard 1">
+        <img src={storyboard2} alt="Storyboard 2">
+        <img src={storyboard3} alt="Storyboard 3">
+        <img src={storyboard4} alt="Storyboard 4">
+        <img src={storyboard5} alt="Storyboard 5">
+        <img src={storyboard6} alt="Storyboard 6">
+    </div>
+</section>
+<section>
+    <h3 class="header animatics__header">
+        animatics
+    </h3>
+    <div class="animatics__grid">
+        <figure class="animatics__figure">
+            <img src={animatics} alt="Hanky Panky Animatic">
+            <figcaption class="animatics__figure-caption">Hanky Panky Animatic</figcaption>
+        </figure>
+        <figure class="animatics__figure">
+            <img src={cleanup} alt="Animatic Clean Up">
+            <figcaption class="animatics__figure-caption">Animatic Clean Up</figcaption>
+        </figure>
+    </div>
+</section>
+<style>
+    .section{
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 600px){
+        .section{
+            margin-bottom: 30px;
+        }
+    }
+
+    .header{
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #000000;
+        margin: 0 0 15px;
+    }
+
+    @media (max-width: 600px){
+        .header{
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    .text{
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+        margin: 0;
+        max-width: 660px;
+    }
+
+    @media (max-width: 600px){
+        .text{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .recording__image{
+            width: 100%;
+            padding-bottom: 10px;
+        }
+    }
+
+    .storyboarding_grid{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 400px 400px;
+        margin-top: 30px;
+    }
+
+    @media (max-width: 1000px){
+        .storyboarding_grid{
+            grid-template-columns: 1fr;
+        }   
+    }
+
+    @media (max-width: 600px){
+        .storyboarding_grid{
+            padding-bottom: 30px;
+        }
+        
+        .storyboarding_grid img{
+            width: 100%;
+        }
+    }
+
+    .animatics__header{
+        margin-bottom: 30px;
+    }
+
+    .animatics__grid{
+        display: flex;
+        align-items: center;
+        row-gap: 30px;
+        column-gap: 40px;
+    }
+
+    @media (max-width: 1000px){
+        .animatics__grid{
+            flex-direction: column;
+            align-items: flex-start;
+        }   
+    }
+
+    @media (max-width: 600px){
+        .animatics__grid{
+            align-items: center;
+        }   
+    }
+
+    .animatics__figure{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    @media (max-width: 600px){
+        .animatics__figure img{
+            width: 100%;
+        }
+    }
+
+    .animatics__figure-caption{
+        font-size: 16px;
+        line-height: 19px;
+        color: #938888;
+    }
+</style>

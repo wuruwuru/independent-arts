@@ -1,0 +1,90 @@
+---
+
+//Assets
+import osas1 from "@project-images/hanky-panky/slide-7/osas-1.png"
+import osas2 from "@project-images/hanky-panky/slide-7/osas-2.png"
+import girlfriend1 from "@project-images/hanky-panky/slide-7/girlfriend-1.png"
+import girlfriend2 from "@project-images/hanky-panky/slide-7/girlfriend-2.png"
+import boy1first from "@project-images/hanky-panky/slide-7/boy1-1.png"
+import boy1second from "@project-images/hanky-panky/slide-7/boy1-2.png"
+import boy2first from "@project-images/hanky-panky/slide-7/boy2-1.png"
+import boy2second from "@project-images/hanky-panky/slide-7/boy2-2.png"
+
+---
+<article class="article">
+    <h3 class="article__header">
+        OSAS
+    </h3>
+    <div class="article__images">
+        <img src={osas1} alt="Osas 1">
+        <img src={osas2} alt="Osas 2">
+    </div>
+</article>
+<article class="article">
+    <h3 class="article__header">
+        GIRLFRIEND
+    </h3>
+    <div class="article__images">
+        <img src={girlfriend1} alt="Osas 1">
+        <img src={girlfriend2} alt="Osas 2">
+    </div>
+</article>
+<article class="article">
+    <h3 class="article__header">
+        BOY 1
+    </h3>
+    <div class="article__images">
+        <img src={boy1first} alt="Osas 1">
+        <img src={boy1second} alt="Osas 2">
+    </div>
+</article>
+<article>
+    <h3 class="article__header">
+        BOY 2
+    </h3>
+    <div class="article__images">
+        <img src={boy2first} alt="Osas 1">
+        <img src={boy2second} alt="Osas 2">
+    </div>
+</article>
+
+<style>
+    .article{
+        margin-bottom: 60px;
+    }
+
+    .article__header{
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #000000;
+        margin: 0 0 15px;
+    }
+
+    @media (max-width: 600px){
+        .article__header{
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    .article__images{
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        row-gap: 20px;
+    }
+
+    @media (max-width: 1000px){
+        .article__images{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width: 1000px){
+        .article__images{
+            align-items: center;
+        }
+    }
+</style>

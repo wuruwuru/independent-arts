@@ -1,0 +1,76 @@
+---
+//Components
+import DetailsSlide from "../general/DetailsSlide.astro";
+import ProjectTabs from "../general/ProjectTabs.astro";
+import CharacterProfiles from "./tabs/CharacterProfiles.astro";
+import Milestones from "./tabs/Milestones.astro";
+import EnvironmentDesign from "./tabs/EnvironmentDesign.astro";
+import Credits from "./tabs/Credits.astro";
+
+const { id } = Astro.props
+
+const tabs = [
+    {
+        id: "profiles",
+        title: "Character Profiles",
+        component: CharacterProfiles
+    },
+    {
+        id: "milestones",
+        title: "Milestones",
+        component: Milestones
+    },
+    {
+        id: "environment-design",
+        title: "Environment design",
+        component: EnvironmentDesign
+    },
+    {
+        id: "credits",
+        title: "Credits",
+        component: Credits
+    },
+]
+
+const footerProjects = [
+    {
+        href: "/cover-bank",
+        text: "Cover bank"
+    },
+    {
+        href: "/jguide",
+        text: "The J Guide"
+    },
+    {
+        href: "/feel-good",
+        text: "Feel good"
+    },
+]
+---
+<DetailsSlide browseText="WATCH THE FILM" header="HANKY PANKY" category="Animation" id={id} projects={footerProjects}>
+    <p class="description">
+        Hanky Panky is an animated short film about a phone call between 27-year old Osas and her favourite aunty, Yuwa.
+        <br/>
+        <br/>
+        In this three-minute slice of life, Aunty Yuwa calls her niece to complain about flirty birthday pictures recently posted to Instagram.
+        <br/>
+        <br/>
+        Osas is on a drive with friends when the call comes in. The conversation starts out jovial but gets increasingly heated as Aunty Yuwa insists something fishy is going on.
+        <br/>
+        <br/>
+        This is the first film in Go Slow, an upcoming animated series about the vastly different lives that converge in Lagos traffic.
+    </p>
+    <ProjectTabs
+        tabs={tabs}
+    />
+</DetailsSlide>
+
+<style>
+    .description{
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+        margin-bottom: 45px;
+        max-width: 660px;
+    }
+</style>

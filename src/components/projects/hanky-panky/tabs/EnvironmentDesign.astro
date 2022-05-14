@@ -1,0 +1,98 @@
+---
+import sketch1 from "@project-images/hanky-panky/slide-7/tab-3/sketch-1.png"
+import sketch2 from "@project-images/hanky-panky/slide-7/tab-3/sketch-2.png"
+import screenshot1 from "@project-images/hanky-panky/slide-7/tab-3/screenshot-1.png"
+import screenshot2 from "@project-images/hanky-panky/slide-7/tab-3/screenshot-2.png"
+
+---
+<p class="text">
+    Although the actual event happened around Centro Mall, Lekki, we wanted to use a more identifiable Lagos Landmark, so we chose Falomo Junction.
+</p>
+<div class="sketches">
+    <div class="sketches__grid">
+        <img src={sketch1} alt="Sketch 1">
+        <img src={sketch2} alt="Sketch 2">
+    </div>
+    <p class="image__label">
+        Sketches of Environment Design
+    </p>
+</div>
+<div class="screenshots">
+    <img src={screenshot1} alt="Screenshot 1">
+    <img src={screenshot2} alt="Screenshot 2">
+    <p class="image__label">
+        Screenshots  from Google Maps
+    </p>
+</div>
+<style>
+    .text{
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+        margin: 0 0 60px;
+        max-width: 660px;
+    }
+
+    .sketches{
+        display: flex;
+        row-gap: 25px;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 60px;
+        width: fit-content;
+    }
+
+    @media (max-width: 1000px){
+        .sketches{
+           width: unset;
+           margin-bottom: 30px;
+        }
+    }
+
+    .sketches__grid{
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    @media (max-width: 1000px){
+        .sketches__grid{
+            flex-direction: column-reverse;
+            row-gap: 10px;
+            margin: 0 auto;
+        }
+
+        .sketches__grid img{
+            width: 100%;
+        }
+    }
+
+    .mobile-image{
+        display: none;
+    }
+
+    @media (max-width: 1000px){
+        .desktop-image{
+            display: none;
+        }
+
+        .mobile-image{
+            display: block
+        }
+    }
+
+    .screenshots{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        max-width: 650px;
+        align-items: center;
+    }
+
+    .image__label{
+        font-size: 16px;
+        line-height: 19px;
+        color: #938888;
+        margin: 0;
+    }
+</style>

@@ -1,0 +1,35 @@
+---
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+const { id } = Astro.props
+---
+<ProjectSlide id={id} className="slide">
+    <h1 class="slide__header">
+        Hanky Panky is an animated short film about a conversation with a Nigerian auntie.
+    </h1>
+</ProjectSlide>
+
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 40px;
+    }
+
+    .slide__header{
+        font-size: 20px;
+        line-height: 24px;
+        color: white;
+        text-align: center;
+        max-width: 400px;
+        font-weight: 400;
+    }
+
+    @media (max-width: 600px){
+        .slide__header{
+            max-width: 327px
+        }
+    }
+</style>
