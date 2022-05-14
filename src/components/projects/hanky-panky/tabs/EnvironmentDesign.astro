@@ -42,10 +42,43 @@ import screenshot2 from "@project-images/hanky-panky/slide-7/tab-3/screenshot-2.
         width: fit-content;
     }
 
+    @media (max-width: 1000px){
+        .sketches{
+           width: unset;
+           margin-bottom: 30px;
+        }
+    }
+
     .sketches__grid{
         display: flex;
         align-items: center;
         column-gap: 20px;
+    }
+
+    @media (max-width: 1000px){
+        .sketches__grid{
+            flex-direction: column-reverse;
+            row-gap: 10px;
+            margin: 0 auto;
+        }
+
+        .sketches__grid img{
+            width: 100%;
+        }
+    }
+
+    .mobile-image{
+        display: none;
+    }
+
+    @media (max-width: 1000px){
+        .desktop-image{
+            display: none;
+        }
+
+        .mobile-image{
+            display: block
+        }
     }
 
     .screenshots{

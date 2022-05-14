@@ -61,9 +61,30 @@ import boy2second from "@project-images/hanky-panky/slide-7/boy2-2.png"
         margin: 0 0 15px;
     }
 
+    @media (max-width: 600px){
+        .article__header{
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
     .article__images{
         display: flex;
         align-items: center;
         column-gap: 40px;
+        row-gap: 20px;
+    }
+
+    @media (max-width: 1000px){
+        .article__images{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width: 1000px){
+        .article__images{
+            align-items: center;
+        }
     }
 </style>

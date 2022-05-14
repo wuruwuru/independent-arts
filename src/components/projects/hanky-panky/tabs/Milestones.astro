@@ -21,7 +21,7 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
     </p>
 </section>
 <section class="section">
-    <img src={recording} alt="Recording Studio">
+    <img src={recording} alt="Recording Studio" class="recording__image">
 </section>
 <section class="section">
     <h3 class="header">
@@ -59,12 +59,25 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
         margin-bottom: 60px;
     }
 
+    @media (max-width: 600px){
+        .section{
+            margin-bottom: 30px;
+        }
+    }
+
     .header{
         font-size: 20px;
         line-height: 23px;
         text-transform: uppercase;
         color: #000000;
         margin: 0 0 15px;
+    }
+
+    @media (max-width: 600px){
+        .header{
+            font-size: 18px;
+            line-height: 21px;
+        }
     }
 
     .text{
@@ -75,11 +88,41 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
         max-width: 660px;
     }
 
+    @media (max-width: 600px){
+        .text{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .recording__image{
+            width: 100%;
+            padding-bottom: 10px;
+        }
+    }
+
     .storyboarding_grid{
         display: grid;
         gap: 20px;
         grid-template-columns: 400px 400px;
         margin-top: 30px;
+    }
+
+    @media (max-width: 1000px){
+        .storyboarding_grid{
+            grid-template-columns: 1fr;
+        }   
+    }
+
+    @media (max-width: 600px){
+        .storyboarding_grid{
+            padding-bottom: 30px;
+        }
+        
+        .storyboarding_grid img{
+            width: 100%;
+        }
     }
 
     .animatics__header{
@@ -89,6 +132,21 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
     .animatics__grid{
         display: flex;
         align-items: center;
+        row-gap: 30px;
+        column-gap: 40px;
+    }
+
+    @media (max-width: 1000px){
+        .animatics__grid{
+            flex-direction: column;
+            align-items: flex-start;
+        }   
+    }
+
+    @media (max-width: 600px){
+        .animatics__grid{
+            align-items: center;
+        }   
     }
 
     .animatics__figure{
@@ -96,6 +154,12 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
         flex-direction: column;
         align-items: center;
         row-gap: 20px;
+    }
+
+    @media (max-width: 600px){
+        .animatics__figure img{
+            width: 100%;
+        }
     }
 
     .animatics__figure-caption{
