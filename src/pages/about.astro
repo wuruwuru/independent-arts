@@ -1,9 +1,7 @@
 ---
-//Layout
-import Layout from "@layout/Default.astro"
-
-//Scripts
-import Dots from "@components/DotsCursor.astro"
+//Components
+import PageWithSidebar from "@layout/PageWithSidebar.astro";
+import ProjectCard from "@components/ProjectCard.astro";
 
 const pageMeta = {
 	bodyClassName: "checkered",
@@ -13,23 +11,133 @@ const pageMeta = {
 	pageImage: "/assets/images/thumbnail.png",
 }
 ---
-<Layout {...pageMeta}>
-  <Dots client:idle/>
-	<main>
-		<section>
-			<p>Wuruwuru is a collection of random publishing experiments, each one made with a different set of friends and freelancers.</p>
-			<p>I'm doing this for three reasons:</p>
-			<p>First, to produce high quality content like the ones I consume e.g. <a href="https://pudding.cool" target="_blank" rel="noopener">The Pudding</a>, <a href="https://psyche.co/" target="_blank" rel="noopener">Psyche</a> and <a href="https://www.adultswim.com" target="_blank" rel="noopener">Adult Swim</a>. I've followed them for many years and they do such good work.</p>
-			<p>Secondly, to work with freelancers and document my experience of the Nigerian creative industry.</p>
-			<p>Finally, I get to both participate in and support independent creation, which I really believe in.</p>
-			<p>I called it Wuruwuru because it's a trial and error approach to publishing, but hopefully we make some great stories. Enjoy!</p>
-			<footer>
-				<p>👍🏾<br><a href="https://opemipo.com" target="_blank" rel="noopener">Opemipo</a><br></p>
-			</footer>
-		</section>
-	</main>
-</Layout>
+<PageWithSidebar
+	{...pageMeta}
+	header="About"
+	activeLink="about"
+>
+	<section class="section">
+		<h3 class="section__paragraph has-margin">
+			<b><i>wuruwuru</i></b> is an independent publishing studio. 
+		</h3>
+		<p class="section__paragraph">
+			We work with creatives and collaborators to produce and publish quality projects that promote our cultural experience. We are building a community that is documenting, preserving and shaping the narrative of Nigerian experiences.
+		</p>
+	</section>
+	<section class="section">
+		<h3 class="section__header">
+			Why <b><i>wuruwuru?</i></b>
+		</h3>
+		<p class="section__paragraph">
+			It’s called <b><i>wuruwuru</i></b> because it’s a trial and error approach to publishing. We make sure to be transparent about our processes because we don’t have a particular method for producing. That’s why we openly journal our learning experiences and the cost of production.
+		</p>
+	</section>
+	<section class="section">
+		<h3 class="section__header">
+			How is this valuable?
+		</h3>
+		<p class="section__paragraph">
+			It’s an opportunity to document the experience in the Nigerian Creative Industry. We also get to work with freelancers and participate in and support independent creation in Nigeria.
+		</p>
+	</section>
+	<section class="section">
+		<h3 class="projects__header">
+			We currently have four projects:
+		</h3>
+		<div class="projects__grid">
+			<ProjectCard href="/cover-bank" text="Cover Bank"/>
+			<ProjectCard href="/jguide" text="The J Guide"/>
+            <ProjectCard href="/feel-good" text="Feel Good"/>
+            <ProjectCard href="/hanky-panky" text="Hanky Panky"/>
+		</div>
+	</section>
+
+
+</PageWithSidebar>
 
 <style lang="scss">
-	@import '../styles/about.css';
+	.section{
+		padding-top: 40px;
+	}
+
+	@media (max-width: 600px){
+		.section:first-of-type{
+			padding-top: 20px;
+		}
+	}
+
+	.section__header{
+		font-size: 24px;
+		line-height: 28px;
+		margin: 0 0 18px;
+		color: #000000;
+		font-weight: normal;
+	}
+
+	@media (max-width: 600px){
+		.section__header{
+			margin-bottom: 20px;
+			font-size: 22px;
+			line-height: 26px;
+		}
+	}
+
+	.section__paragraph{
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: normal;
+		color: #000000;
+		max-width: 66%;
+		margin: 0;
+	}
+	
+	.section__paragraph.has-margin{
+		margin-bottom: 18px;
+	}
+
+	@media (max-width: 600px){
+		.section__paragraph{
+			max-width: unset;
+			font-size: 18px;
+			line-height: 21px;
+		}
+	}
+
+	.projects__header{
+		font-size: 20px;
+		line-height: 23px;
+		font-weight: 400;
+		color: #000000;
+		margin: 0 0 40px;
+	}
+
+	@media (max-width: 600px){
+		.projects__header{
+			font-size: 18px;
+			line-height: 21px;
+		}
+	}
+
+	.projects__grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		width: 72%;
+		margin-bottom: 100px;
+	}
+
+	@media (max-width: 1000px){
+		.projects__grid{
+			grid-template-columns: 1fr;
+			row-gap: 20px;
+		}
+	}
+
+	@media (max-width: 600px){
+		.projects__grid{
+			width: 100%;
+			padding: 0 13px;
+			margin-bottom: 80px;
+		}
+	}
 </style>
