@@ -5,6 +5,7 @@ import ProjectTabs from "../general/ProjectTabs.astro";
 import CharacterProfiles from "./tabs/CharacterProfiles.astro";
 import Milestones from "./tabs/Milestones.astro";
 import EnvironmentDesign from "./tabs/EnvironmentDesign.astro";
+import Credits from "./tabs/Credits.astro";
 
 const { id } = Astro.props
 
@@ -23,6 +24,11 @@ const tabs = [
         id: "environment-design",
         title: "Environment design",
         component: EnvironmentDesign
+    },
+    {
+        id: "credits",
+        title: "Credits",
+        component: Credits
     },
 ]
 

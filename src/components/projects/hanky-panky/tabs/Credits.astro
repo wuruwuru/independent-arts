@@ -1,0 +1,67 @@
+---
+import ProjectCredits from "@components/projects/general/ProjectCredits.astro";
+
+const credits = [
+    {
+        title: "Story",
+        authors: [
+            {
+                name: "Daniel Orubo",
+                role: "Director"
+            },
+            {
+                name: "Jessica A.",
+                role: "Scriptwriter"
+            },
+            {
+                name: "Yanmo Omorogbe",
+                role: "Story"
+            },
+        ]
+    },
+    {
+        title: "Animation",
+        authors: [
+            {
+                name: "Chuks Emeibiam",
+                role: "Animator"
+            },
+            {
+                name: "Joshua Adeoye",
+                role: "Animator"
+            },
+        ]
+    },
+    {
+        title: "Sound",
+        authors: [
+            {
+                name: "LMBSKN",
+                role: "Soundtrack Director"
+            },
+            {
+                name: "Remy Baggins",
+                role: "Soundtrack Producer"
+            },
+            {
+                name: "Kolade",
+                role: "Sound Producer"
+            },
+        ]
+    },
+    {
+        title: "Production",
+        authors: [
+            {
+                name: "Opemipo Aikomo",
+                role: "Design Director"
+            },
+            {
+                name: "Saratu Dan-Habu",
+                role: "Lawyer"
+            },
+        ]
+    },
+]
+---
+<ProjectCredits credits={credits}/>
