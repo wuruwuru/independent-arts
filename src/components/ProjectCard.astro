@@ -1,0 +1,44 @@
+---
+export interface Props {
+    href: string,
+    text: string
+}
+
+const { href, text } = Astro.props
+---
+<a href={href} class="project">
+    {text}
+</a>
+
+<style>
+    .project{
+        height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Soehne Schmal';
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 70px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background-color: #000000;
+        transition-duration: 200ms;
+        text-decoration: none;
+    }
+
+    .project:hover{
+        color: #000000;
+        background-color: white;
+        animation: none;
+    }
+
+    @media(max-width: 600px){
+        .project{
+            height: 200px;
+            font-size: 50px;
+            line-height: 60px;
+        }
+    }
+</style>
