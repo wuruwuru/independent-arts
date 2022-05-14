@@ -14,7 +14,7 @@ import link from "@images/icons/link.svg"
 
 export interface Props {
     id: string;
-    browseText: string;
+    browseText?: string;
     header: string;
     category: string;
     projects: {
@@ -44,9 +44,14 @@ const { id, browseText, header, category, projects } = Astro.props
                 </a>
             </li>
         </ul>
-        <a target="_blank" href="https://airtable.com/shrwU5NWobT8feUw5/tbll8IZyCmNUUd266" class="browse-section__button" href="#details">
-            {browseText}
-        </a>
+        {
+            browseText && (
+                <a target="_blank" href="https://airtable.com/shrwU5NWobT8feUw5/tbll8IZyCmNUUd266" class="browse-section__button" href="#details">
+                    {browseText}
+                </a>
+            )
+        }
+        <slot name="custom-body"/>
         <button class="browse-section__details" id="view-details-button" href="#details">
             <span>Details</span>
             <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">

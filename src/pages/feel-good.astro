@@ -1,0 +1,46 @@
+---
+//Components
+import Slide1 from "@components/projects/feel-good/Slide1.astro";
+import Slide2 from "@components/projects/feel-good/Slide2.astro";
+import Slide3 from "@components/projects/feel-good/Slide3.astro";
+import Slide4 from "@components/projects/feel-good/Slide4.astro";
+import Slide5 from "@components/projects/feel-good/Slide5.astro";
+import Slide6 from "@components/projects/feel-good/Slide6.astro";
+
+//Layout
+import Projects from "@layout/Projects.astro";
+
+const slides = [
+    {
+        id: "1",
+        component: Slide1
+    },
+    {
+        id: "2",
+        component: Slide2
+    },
+    {
+        id: "3",
+        component: Slide3
+    },
+    {
+        id: "4",
+        component: Slide4
+    },
+    {
+        id: "5",
+        component: Slide5
+    },
+    {
+        id: "6",
+        component: Slide6
+    },
+]
+---
+<Projects
+    pageTitle="Feel Good"
+	pageUrl="https://wuruwuru.com/feel-good"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+    pageDescription="A compilation of queer love stories"
+    slides={slides}
+/>

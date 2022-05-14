@@ -1,0 +1,51 @@
+---
+import ProjectSlide from "@components/ProjectSlide.astro";
+
+const { id } = Astro.props;
+---
+<ProjectSlide id={id} className="slide">
+    <div class="authors">
+        <p class="author">
+            Ope Adedeji
+        </p>
+        <p class="author">
+            Alithnayn Abdulkareem
+        </p>
+        <p class="author">
+            Ani Kayode Somtochukwu
+        </p>
+        <p class="author">
+            Arinze Ifeakandu
+        </p>
+        <p class="author">
+            Mariam Sule-Izuagbe
+        </p>
+        <p class="author">
+            Eloghosa Osunde
+        </p>
+    </div>
+</ProjectSlide>
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #CD2D59 0%, #D4532F 50%, #CD2D59 100%);
+    }
+
+    .author{
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    .author{
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0;
+    }
+</style>
