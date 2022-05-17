@@ -1,0 +1,88 @@
+---
+//Assets
+import ajebutter from "@project-images/cover-bank/slide-4/ajebutter.png"
+import eedris from "@project-images/cover-bank/slide-4/eedris.png"
+import funkees from "@project-images/cover-bank/slide-4/funkees.png"
+import lagbaja from "@project-images/cover-bank/slide-4/lagbaja.png"
+import majek from "@project-images/cover-bank/slide-4/majek.png"
+import oby from "@project-images/cover-bank/slide-4/oby.png"
+import odunsi from "@project-images/cover-bank/slide-4/odunsi.png"
+import where from "@project-images/cover-bank/slide-4/where.png"
+import wildfire from "@project-images/cover-bank/slide-4/wildfire.png"
+import yemi from "@project-images/cover-bank/slide-4/yemi.png"
+
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro"
+
+const images = [
+    funkees,
+    yemi,
+    oby,
+    odunsi,
+    eedris,
+    wildfire,
+    where,
+    ajebutter,
+    majek,
+    lagbaja
+];
+
+const { id } = Astro.props;
+---
+<ProjectSlide id={id} className="slide">
+    <div class="album-covers">
+        {images.map(image => (
+           <img src={image} alt="Album art" class="album-covers__cover">
+        ))}
+    </div>
+</ProjectSlide>
+
+<style>
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (max-width: 1200px){
+        .slide{
+            padding: 100px;
+            align-items: unset;
+            display: block;
+        }
+    }
+
+    @media (max-width: 600px){
+        .slide{
+            padding: 118px 16px 80px;
+        }
+    }
+
+    .album-covers{
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-gap: 52px 16px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1200px){
+        .album-covers{
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            justify-items: center;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 600px){
+        .album-covers{
+            grid-template-columns: repeat(2, auto);
+            row-gap: 32px;
+            width: fit-content;
+        }
+    }
+
+    .album-covers__cover{
+        object-fit: cover;
+    }
+</style>
