@@ -36,6 +36,11 @@
   src: url('../../assets/fonts/soehne-schmal-web-dreiviertelfett.woff');
 }
 @font-face {
+  font-family: 'Soehne Breit';
+  font-family: 400;
+  src: url('../../assets/fonts/soehne-breit-buch.woff2');
+}
+@font-face {
   font-family: 'Inter';
   src: url('../../assets/fonts/Inter-Regular.woff');
 }
