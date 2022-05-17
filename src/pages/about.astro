@@ -2,6 +2,7 @@
 //Components
 import PageWithSidebar from "@layout/PageWithSidebar.astro";
 import ProjectCard from "@components/ProjectCard.astro";
+import projects from "@data/projects.json"
 
 const pageMeta = {
 	bodyClassName: "checkered",
@@ -10,6 +11,7 @@ const pageMeta = {
 	pageUrl: "/about",
 	pageImage: "/assets/images/thumbnail.png",
 }
+
 ---
 <PageWithSidebar
 	{...pageMeta}
@@ -47,8 +49,8 @@ const pageMeta = {
 		<div class="projects__grid">
 			<ProjectCard href="/cover-bank" text="Cover Bank"/>
 			<ProjectCard href="/jguide" text="The J Guide"/>
-            <ProjectCard href="/feel-good" text="Feel Good"/>
-            <ProjectCard href="/hanky-panky" text="Hanky Panky"/>
+			<ProjectCard href="/feel-good" text="Feel Good"/>
+			<ProjectCard href="/hanky-panky" text="Hanky Panky"/>
 		</div>
 	</section>
 

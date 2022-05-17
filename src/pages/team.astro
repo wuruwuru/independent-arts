@@ -10,35 +10,35 @@ const team = [
     {
         name: "Opemipo Aikomo",
         description: `Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Many years later, he's still obsessed. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.`,
-        link: "opemipo.com",
+        link: "https://opemipo.com",
         linkText: "opemipo.com",
         image: opemipo
     },
     {
         name: "Nneoma Kenure",
         description: `Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She is partial to the first-person narrative and is editing her debut– a memoir. She’s an assistant editor on the Feel Good project.`,
-        link: "twitter.com/nfkenure",
+        link: "https://twitter.com/nfkenure",
         linkText: "nfkenure",
         image: nneoma
     },
     {
         name: "Williams Ogah",
         description: `Will worked as a project manager for three years before finally transitioning into a product manager with wuruwuru. He is especially curious about how collaborators make successful projects, and how the right management process brings creative ideas to life. When he is not busy taking naps, Williams also runs Adroit Consulting which helps businesses and individuals execute projects more efficiently.`,
-        link: "twitter.com/wllxms",
+        link: "https://twitter.com/wllxms",
         linkText: "wllxms",
         image: williams
     },
     {
         name: "Agnes Ekanem",
         description: `Ekanem is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat using sign language.`,
-        link: "twitter.com/eccentric_sky",
+        link: "https://twitter.com/eccentric_sky",
         linkText: "eccentric_sky",
         image: agnes
     },
     {
         name: "Tomiwa Ajiboye",
         description: `Tomiwa is a product designer and music buff that creates experiences in the creative tech industry. He’s building Comicrunes; a comic reading platform that connects graphic novel creators to the readers. He enjoys taking it slow by relaxing at the park or living on the edge by driving really fast–no in-betweens.`,
-        link: "twitter.com/D_zyn__gawd",
+        link: "https://twitter.com/D_zyn__gawd",
         linkText: "D_zyn__gawd",
         image: tomiwa
     }
@@ -51,23 +51,23 @@ const team = [
     pageTitle="Wuruwuru Team"
     pageUrl="https://wuruwuru.com/team"
 >
-    <section class="team">
-        {
-            team.map(teammate => (
-                <article class="team__member">
-                    <img src={teammate.image} alt={teammate.name}/>
-                    <div>
-                        <h3 class="team__member-name">{teammate.name}</h3>
-                        <p class="team__member-description">
-                            {teammate.description}
-                        </p>
-                        <a href={teammate.link} class="team__member-link">{teammate.linkText}</a>
-                    </div>
-                </article>
-            ))
-        }
-    </section>
+	<section class="team">
+		{
+			team.map(teammate => (
+				<article class="team__member">
+					<img src={teammate.image} alt={teammate.name}/>
+					<div>
+							<h3 class="team__member-name">{teammate.name}</h3>
+							<p class="team__member-description">{teammate.description}</p>
+							<a href={teammate.link} class="team__member-link">{teammate.linkText}</a>
+					</div>
+				</article>
+			))
+		}
+	</section>
 </PageWithSidebar>
+
+
 <style>
     .team{
         display: flex;
