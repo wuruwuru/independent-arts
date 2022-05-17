@@ -1,121 +1,88 @@
 ---
-//Components
-import MobileNav from "@components/MobileNav.astro";
-import DetailsSlide from "@components/projects/general/DetailsSlide.astro";
-
 //Assets
-import coverImage from "@project-images/cover-bank/cover-bank.png"
-import coverImageMobile from "@project-images/cover-bank/cover-bank-mobile.png"
+import ajebutter from "@project-images/cover-bank/slide-4/ajebutter.png"
+import eedris from "@project-images/cover-bank/slide-4/eedris.png"
+import funkees from "@project-images/cover-bank/slide-4/funkees.png"
+import lagbaja from "@project-images/cover-bank/slide-4/lagbaja.png"
+import majek from "@project-images/cover-bank/slide-4/majek.png"
+import oby from "@project-images/cover-bank/slide-4/oby.png"
+import odunsi from "@project-images/cover-bank/slide-4/odunsi.png"
+import where from "@project-images/cover-bank/slide-4/where.png"
+import wildfire from "@project-images/cover-bank/slide-4/wildfire.png"
+import yemi from "@project-images/cover-bank/slide-4/yemi.png"
 
-const { id } = Astro.props
+//Components
+import ProjectSlide from "@components/ProjectSlide.astro"
 
-const footerProjects = [
-    {
-        href: "/jguide",
-        text: "The J Guide"
-    },
-    {
-        href: "/feel-good",
-        text: "Feel good"
-    },
-    {
-        href: "/hanky-panky",
-        text: "Hanky Panky"
-    },
-]
+const images = [
+    funkees,
+    yemi,
+    oby,
+    odunsi,
+    eedris,
+    wildfire,
+    where,
+    ajebutter,
+    majek,
+    lagbaja
+];
+
+const { id } = Astro.props;
 ---
-<DetailsSlide
-    id={id}
-    browseText="BROWSE THE DATABASE"
-    header="COVER BANK"
-    category="Database"
-    projects={footerProjects}
->
-    <p class="details__description">
-        Cover Bank is a retrospective of Nigerian Album Art. It is a documentation of how the production process of album cover art in Nigeria has evolved over time.
-        <br/>
-        <br/>
-        The album covers go back as far as 40 years ago, and the database currently holds a total of 5000 covers. Out of those 5000 covers, we identified 577 designers for 2704 covers.
-        <br/>
-        <br/>
-        This database aims to document the history of album covers and spotlight the designers since a majority of Artists don’t cite them as part of their projects.
-        <br/>
-        <br/>
-        We see the opportunity to open the database up for contributions and reviews. For now, we only tag each album cover by artist, year, format and genre. We hope to build a model that tags the images by colour, and subject and find a way to scrape the internet for more
-    </p>
-    <figure class="details__image_wrapper is-desktop">
-        <img src={coverImage} alt="Cover Bank Airtable" class="details__image"/>
-        <figcaption class="details__image-cta">
-            View larger version
-        </figcaption>
-    </figure>
-    <figure class="details__image_wrapper is-mobile">
-        <img src={coverImageMobile} alt="Cover Bank Airtable" class="details__image"/>
-        <figcaption class="details__image-cta">
-            View larger version
-        </figcaption>
-    </figure>
-</DetailsSlide>
+<ProjectSlide id={id} className="slide">
+    <div class="album-covers">
+        {images.map(image => (
+           <img src={image} alt="Album art" class="album-covers__cover">
+        ))}
+    </div>
+</ProjectSlide>
+
 <style>
-    .details__description{
-        width: 703px;
-        max-width: 80%;
-        margin-bottom: 60px;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 23px;
-        color: #000000;
-        margin: 0 0 60px;
+    .slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    @media(max-width: 600px){
-        .details__description{
-            width: 100%;
-            max-width: unset;
-            font-size: 16px;
-            line-height: 19px;
-        }
-    }
-
-    .details__image_wrapper{
-        width: 55%;
-        max-width: 838px;
-    }
-
-    .details__image_wrapper.is-mobile{
-        display: none;
-        width: 100%;
-        max-width: unset;
-        margin-bottom: 60px;
-        padding: 0 8px;
-    }
-
-    @media(max-width: 600px){
-        .details__image_wrapper.is-desktop{
-            display: none;
-        }
-
-        .details__image_wrapper.is-mobile{
+    @media (max-width: 1200px){
+        .slide{
+            padding: 100px;
+            align-items: unset;
             display: block;
         }
     }
 
-    .details__image{
-        width: 100%;
+    @media (max-width: 600px){
+        .slide{
+            padding: 118px 16px 80px;
+        }
     }
 
-    .details__image-cta{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        margin: 20px 0 0;
-        color: #938888;
-        text-align: center;
+    .album-covers{
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-gap: 52px 16px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1200px){
+        .album-covers{
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            justify-items: center;
+            width: 100%;
+        }
     }
 
     @media (max-width: 600px){
-        .details__image-cta{
-            margin-top: 15px;
+        .album-covers{
+            grid-template-columns: repeat(2, auto);
+            row-gap: 32px;
+            width: fit-content;
         }
+    }
+
+    .album-covers__cover{
+        object-fit: cover;
     }
 </style>
