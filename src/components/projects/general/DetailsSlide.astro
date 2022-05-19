@@ -130,7 +130,7 @@ const { id, browseText, header, category, projects } = Astro.props
                     </a>
                 </div>
             </div>
-            <SocialLinks/>
+            <SocialLinks className="footer__social"/>
         </div>
     </footer>
 </ProjectSlide>
@@ -356,9 +356,9 @@ const { id, browseText, header, category, projects } = Astro.props
 
 
     .footer__bottom{
-        display: flex;
+        display: grid;
         align-items: flex-end;
-        justify-content: space-between;
+        grid-template-columns: 1fr 360px 1fr;
     }
 
 
@@ -378,6 +378,11 @@ const { id, browseText, header, category, projects } = Astro.props
 
     .footer__links-mobile{
         display: none;
+    }
+
+    .footer__social{
+        width: fit-content;
+        margin-left: auto;
     }
 
     @media (max-width: 800px){
