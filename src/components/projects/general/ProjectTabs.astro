@@ -15,11 +15,11 @@ const { tabs } = Astro.props;
         {
             tabs.map(({id, title, component: Component}, index) => (
                 <article id={id} class={`tab ${index === 0 ? "is-active" : ""}`}>
-                    <h2 class="tab__header">
+                    <h2 class={`tab__header ${index === 0 ? "is-active" : ""}`}>
                         <span>{title}</span>
                         <img src={down} alt="Toggle Section"/>
                     </h2>
-                    <div class="tab__content">
+                    <div class={`tab__content ${index === 0 ? "is-visible" : ""}`}>
                         <Component/>
                     </div>
                 </article>
