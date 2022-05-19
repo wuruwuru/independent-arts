@@ -24,7 +24,7 @@ const { title, category, description, subtitle, contributors } = Astro.props
     </summary>
     <div class="story__body"> 
       {subtitle.href ? (
-          <a class="story__link" href={subtitle.href} target="_blank" rel="noopener">{subtitle.text}</a>
+          <a class="story__link" href={subtitle.href} rel="noopener">{subtitle.text}</a>
         ) : (
             <div class="story__eta">{subtitle.text}</div>
         )
