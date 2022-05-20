@@ -22,26 +22,44 @@ export interface Props {
     }[]
 }
 
+const sidebarLinks = [
+    {
+        href: "/about",
+        text: "About",
+        target: "_self"
+    },
+    {
+        href: "https://medium.com/wuruwuru",
+        text: "Journal",
+        target: "_blank"
+    },
+    {
+        href: "/team",
+        text: "Team",
+        target: "_self"
+    },
+]
+
 const { id, browseText, header, category, projects } = Astro.props
 ---
-<ProjectSlide id={id} className="slide" data-add-contrast="1">
+<ProjectSlide id={id} className="slide details-slide" data-add-contrast="1">
     <section class="browse-section">
         <ul class="sidebar">
-            <li>
-                <a href="/about" class="sidebar__link" data-ignore-click>
-                    About
-                </a>
-            </li>
-            <li>
-                <a href="https://medium.com/wuruwuru" target="_blank" class="sidebar__link" data-ignore-click>
-                    Journal
-                </a>
-            </li>
-            <li>
-                <a href="/team" class="sidebar__link" data-ignore-click>
-                    Team
-                </a>
-            </li>
+            {
+                sidebarLinks.map((link, index) => (
+                     <li>
+                        <a 
+                            href={link.href} 
+                            target={link.target} 
+                            class="sidebar__link"
+                            data-ignore-click
+                            style={`transition-delay: ${index * 100}ms`}
+                        >
+                            {link.text}
+                        </a>
+                    </li>
+                ))
+            }
         </ul>
         {
             browseText && (
@@ -153,6 +171,15 @@ const { id, browseText, header, category, projects } = Astro.props
         line-height: 23px;
         color: #FFFFFF;
         text-decoration: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: 300ms;
+        display: block;
+    }
+
+    .sidebar.is-visible .sidebar__link{
+        opacity: 1;
+        transform: translateY(0px);
     }
 
     @media(max-width: 600px){
@@ -204,6 +231,27 @@ const { id, browseText, header, category, projects } = Astro.props
         text-decoration: none;
         background: transparent;
         border: none;
+        opacity: 0;
+        transition: 300ms;
+    }
+
+    .browse-section__details.is-visible{
+        opacity: 1;
+        animation: bounce 1s ease-out infinite;
+    }
+
+    @keyframes bounce {
+        0%{
+            transform: translateX(-50%) translateY(0px);
+        }
+
+        50% {
+            transform: translateX(-50%) translateY(15px);
+        }
+
+        100%{
+            transform: translateX(-50%) translateY(0px);
+        }
     }
 
     .mobile-nav{
@@ -441,4 +489,24 @@ const { id, browseText, header, category, projects } = Astro.props
         await copyToClipboard(window.location.href)
         alert("Successfully copied page link to your clipboard!")
     })
+
+    const sidebar = document.querySelector('.sidebar');
+    const detailsButton = document.querySelector('.browse-section__details');
+
+    const observer = new IntersectionObserver((entries) => {
+        const isIntersecting = entries.some(entry => entry.isIntersecting);
+
+        if(isIntersecting){
+            sidebar.classList.add('is-visible')
+            detailsButton.classList.add('is-visible')
+        }  else{
+            sidebar.classList.remove('is-visible')
+            detailsButton.classList.remove('is-visible')
+        }
+    }, { threshold: 0.8 })
+    
+    const slide = document.querySelector('.details-slide');
+    console.log(slide)
+
+    observer.observe(slide)
 </script>
