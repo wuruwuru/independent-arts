@@ -221,7 +221,8 @@ const {
 
                 const duration = numberOfSlides * DURATION_PER_SLIDE
 
-
+				setAnimationPlayState('paused')
+				
 				smoothScroll({
 					element: slidesWrapper,
 					position: {
@@ -232,6 +233,7 @@ const {
 					callback: () => {
 						state.isScrolling = false
 						state.currentElement = activeSlide
+						setAnimationPlayState('running')
 					},
 					handleStopScroll: () => {
 						/*
