@@ -1,0 +1,26 @@
+---
+//Assets
+import instagram from "@images/icons/instagram.svg"
+import twitter from "@images/icons/twitter.svg"
+import medium from "@images/icons/medium.svg"
+import vimeo from "@images/icons/vimeo.svg"
+
+const { className = '' } = Astro.props
+---
+<div class={`links ${className}`}>
+    <a href="https://twitter.com/wuruwurumag" target="_blank">
+        <img src={twitter} alt="Wuruwuru Twitter"/>
+    </a>
+    <img src={instagram} alt="Wuruwuru Instagram"/>
+    <a href="https://medium.com/wuruwuru" target="_blank">
+        <img src={medium} alt="Wuruwuru medium"/>
+    </a>
+    <img src={vimeo} alt="Wuruwuru Videos"/>
+</div>
+<style>
+    .links{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+    }
+</style>

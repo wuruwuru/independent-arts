@@ -10,8 +10,12 @@ export interface Props {
 const { slides } = Astro.props
 ---
 <nav class="navbar">
-    <img src={logo} alt="logo" class="navbar__logo"/>
-    <img src={logoDark} alt="logo" class="navbar__logo is-dark"/>
+    <a href="/" class="navbar__logo">
+        <img src={logo} alt="logo"/>
+    </a>
+    <a href="/" class="navbar__logo is-dark">
+        <img src={logoDark} alt="logo"/>
+    </a>
     <ul class="slides">
         {
             slides.map((slide) => (
@@ -21,8 +25,12 @@ const { slides } = Astro.props
             ))
         }
     </ul>
-    <img src={logo} alt="logo" class="navbar__logo"/>
-    <img src={logoDark} alt="logo" class="navbar__logo is-dark"/>
+    <a href="/" class="navbar__logo">
+        <img src={logo} alt="logo"/>
+    </a>
+    <a href="/" class="navbar__logo is-dark">
+        <img src={logoDark} alt="logo"/>
+    </a>
 </nav>
 
 <style>
@@ -40,6 +48,10 @@ const { slides } = Astro.props
 
     .navbar__logo{
         width: 50px;
+    }
+
+    .navbar__logo img{
+        width: 100%;
     }
 
     .navbar__logo.is-dark {
@@ -102,8 +114,8 @@ const { slides } = Astro.props
         transition: 300ms;
     }
 
-    .navbar.has-contrast .slides__item.is-active{
-        background-color: black;
+    .navbar.has-contrast .slides__item{
+        display: none;
     }
 </style>
 <script>

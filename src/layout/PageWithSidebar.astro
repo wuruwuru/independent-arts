@@ -6,12 +6,10 @@ import resetStyles from "@styles/site.css";
 import SEO from '@components/SEO.astro';
 import MobileNav from "@components/MobileNav.astro";
 import SubscribeForm from "@components/SubscribeForm.astro";
+import SocialLinks from "@components/SocialLinks.astro";
 
 //Assets
 import logo from "@images/logo.png";
-import instagram from "@images/icons/instagram.svg"
-import twitter from "@images/icons/twitter.svg"
-import medium from "@images/icons/medium.svg"
 
 export interface Props {
 	pageTitle: string,
@@ -63,7 +61,9 @@ const menuLinks = [
     <body>
         <main class="main">
             <aside class="sidebar">
-                <img src={logo} alt="Wuruwuru logo" class="sidebar__logo">
+                <a href="/" class="sidebar__logo">
+                    <img src={logo} alt="Wuruwuru logo">
+                </a>
                 <ul class="sidebar__links">
                     {menuLinks.map(link => (
                             <li>
@@ -88,15 +88,7 @@ const menuLinks = [
         </main>
         <footer class="footer">
             <SubscribeForm/>
-            <div class="footer__social-links">
-                <a href="https://twitter.com/wuruwurumag" target="_blank">
-                    <img src={twitter} alt="Wuruwuru Twitter"/>
-                </a>
-                <img src={instagram} alt="Wuruwuru Instagram"/>
-                <a href="https://medium.com/wuruwuru" target="_blank">
-                    <img src={medium} alt="Wuruwuru medium"/>
-                </a>
-            </div>
+            <SocialLinks/>
         </footer>
     </body>
 </html>
@@ -133,6 +125,10 @@ const menuLinks = [
         width: 50px;
         display: block;
         margin-bottom: 30px;
+    }
+
+    .sidebar__logo img{
+        width: 100%;
     }
 
     .sidebar__links{
@@ -196,11 +192,5 @@ const menuLinks = [
         .footer{
             padding-bottom: 77px;
         }
-    }
-    
-    .footer__social-links{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 20px;
     }
 </style>

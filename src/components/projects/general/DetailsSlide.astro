@@ -5,12 +5,11 @@ import SubscribeForm from "@components/SubscribeForm.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 
 //Assets
-import instagram from "@images/icons/instagram.svg"
 import twitter from "@images/icons/twitter.svg"
-import medium from "@images/icons/medium.svg"
 import logo from "@images/logo.png"
 import MobileNav from "@components/MobileNav.astro";
 import link from "@images/icons/link.svg"
+import SocialLinks from "@components/SocialLinks.astro";
 
 export interface Props {
     id: string;
@@ -131,15 +130,7 @@ const { id, browseText, header, category, projects } = Astro.props
                     </a>
                 </div>
             </div>
-            <div class="footer__social-media">
-                <a href="https://twitter.com/wuruwurumag" target="_blank">
-                    <img src={twitter} alt="Wuruwuru Twitter"/>
-                </a>
-                <img src={instagram} alt="Wuruwuru Instagram"/>
-                <a href="https://medium.com/wuruwuru" target="_blank">
-                    <img src={medium} alt="Wuruwuru medium"/>
-                </a>
-            </div>
+            <SocialLinks className="footer__social"/>
         </div>
     </footer>
 </ProjectSlide>
@@ -287,7 +278,9 @@ const { id, browseText, header, category, projects } = Astro.props
     }
 
     .details__share > *{
-        height: 30px;
+        height: 32px;
+        display: flex;
+        align-items: center;
     }
 
     @media(max-width: 600px){
@@ -363,9 +356,9 @@ const { id, browseText, header, category, projects } = Astro.props
 
 
     .footer__bottom{
-        display: flex;
+        display: grid;
         align-items: flex-end;
-        justify-content: space-between;
+        grid-template-columns: 1fr 360px 1fr;
     }
 
 
@@ -385,6 +378,11 @@ const { id, browseText, header, category, projects } = Astro.props
 
     .footer__links-mobile{
         display: none;
+    }
+
+    .footer__social{
+        width: fit-content;
+        margin-left: auto;
     }
 
     @media (max-width: 800px){
