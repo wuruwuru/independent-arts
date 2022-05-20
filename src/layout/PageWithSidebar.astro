@@ -17,13 +17,15 @@ export interface Props {
 	pageImage?: string,
 	pageDescription?: string,
     header: string,
-    activeLink: string
+    activeLink: string,
+    centerHeaderOnMobile?: boolean
 }
 
 const {
     pageTitle,
     header,
-    activeLink
+    activeLink,
+    centerHeaderOnMobile
 } = Astro.props;
 
 const menuLinks = [
@@ -80,7 +82,7 @@ const menuLinks = [
             </aside>
             <MobileNav className="mobile-nav"/>
             <div class="main-content">
-                <h1 class="heading">
+                <h1 class={`heading ${centerHeaderOnMobile ? "is-centered" : ""}`}>
                     {header}
                 </h1>
                 <slot/>
@@ -177,6 +179,10 @@ const menuLinks = [
         .heading{
             font-size: 64px;
             line-height: 75px;
+        }
+
+        .heading.is-centered{
+            text-align: center;
         }
     }
 

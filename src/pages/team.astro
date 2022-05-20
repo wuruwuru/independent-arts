@@ -5,44 +5,23 @@ import nneoma from "@images/team/nneoma.png"
 import williams from "@images/team/williams.png"
 import agnes from "@images/team/agnes.png"
 import tomiwa from "@images/team/tomiwa.png"
+import teamJson from "@data/team.json"
+import TeamMemberModal from "@components/TeamMemberModal.astro";
 
-const team = [
-    {
-        name: "Opemipo Aikomo",
-        description: `Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Many years later, he's still obsessed. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.`,
-        link: "https://opemipo.com",
-        linkText: "opemipo.com",
-        image: opemipo
-    },
-    {
-        name: "Nneoma Kenure",
-        description: `Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She is partial to the first-person narrative and is editing her debut– a memoir. She’s an assistant editor on the Feel Good project.`,
-        link: "https://twitter.com/nfkenure",
-        linkText: "nfkenure",
-        image: nneoma
-    },
-    {
-        name: "Williams Ogah",
-        description: `Will worked as a project manager for three years before finally transitioning into a product manager with wuruwuru. He is especially curious about how collaborators make successful projects, and how the right management process brings creative ideas to life. When he is not busy taking naps, Williams also runs Adroit Consulting which helps businesses and individuals execute projects more efficiently.`,
-        link: "https://twitter.com/wllxms",
-        linkText: "wllxms",
-        image: williams
-    },
-    {
-        name: "Agnes Ekanem",
-        description: `Ekanem is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat using sign language.`,
-        link: "https://twitter.com/eccentric_sky",
-        linkText: "eccentric_sky",
-        image: agnes
-    },
-    {
-        name: "Tomiwa Ajiboye",
-        description: `Tomiwa is a product designer and music buff that creates experiences in the creative tech industry. He’s building Comicrunes; a comic reading platform that connects graphic novel creators to the readers. He enjoys taking it slow by relaxing at the park or living on the edge by driving really fast–no in-betweens.`,
-        link: "https://twitter.com/D_zyn__gawd",
-        linkText: "D_zyn__gawd",
-        image: tomiwa
+const images = {
+    "opemipo": opemipo,
+    "nneoma": nneoma,
+    "williams": williams,
+    "agnes": agnes,
+    "tomiwa": tomiwa,
+}
+
+const team = teamJson.map(teammate => {
+    return {
+        ...teammate,
+        image: images[teammate.id]
     }
-]
+})
 ---
 
 <PageWithSidebar 
@@ -50,17 +29,29 @@ const team = [
     activeLink="team"
     pageTitle="Wuruwuru Team"
     pageUrl="https://wuruwuru.com/team"
+    centerHeaderOnMobile
 >
 	<section class="team">
 		{
-			team.map(teammate => (
-				<article class="team__member">
-					<img src={teammate.image} alt={teammate.name}/>
-					<div>
-							<h3 class="team__member-name">{teammate.name}</h3>
-							<p class="team__member-description">{teammate.description}</p>
-							<a href={teammate.link} class="team__member-link">{teammate.linkText}</a>
-					</div>
+			team.map((teammate) => (
+				<article class="team__member-wrapper">
+					<div class="team__member">
+                        <img src={teammate.image} class="team__member-image" alt={teammate.name}/>
+                        <div>
+                                <h3 class="team__member-name">{teammate.name}</h3>
+                                <p class="team__member-description">{teammate.description}</p>
+                                <a href={teammate.link} class="team__member-link" target="_blank">
+                                    <span>
+                                        {teammate.linkText}
+                                    </span>
+                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.5 9L8.5 4" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3.5 4H8.5V9" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                        </div>
+                    </div>
+                    <TeamMemberModal teammate={teammate}/>
 				</article>
 			))
 		}
@@ -68,13 +59,32 @@ const team = [
 </PageWithSidebar>
 
 
-<style>
+<style is:global>
     .team{
         display: flex;
         flex-direction: column;
         row-gap: 60px;
         margin: 60px 0 153px;
     }
+
+    @media (max-width: 1000px){
+        .team{
+            padding-right: 100px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .team{
+            margin-top: 40px;
+            padding-right: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 30px;
+            justify-content: center;
+        }
+    }
+
 
     .team__member{
         display: grid;
@@ -84,11 +94,57 @@ const team = [
         max-width: 807px;
     }
 
+    @media (max-width: 1000px){
+        .team__member{
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .team__member-wrapper{
+            row-gap: 0;
+        }
+
+        .team__member{
+            min-width: 152px;
+            width: fit-content;
+            row-gap: 0;
+            padding: 15px 13px;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 1px rgba(66, 71, 76, 0.32), 0px 4px 8px rgba(66, 71, 76, 0.06), 0px 8px 48px #EEEEEE;
+            border-radius: 4px;
+        }
+        
+        .team__member-wrapper:nth-of-type(odd) .team__member{
+            margin-left: auto;
+        }
+
+
+        .team__member-wrapper:last-child{
+            grid-column: 1/-1;
+        }
+
+        .team__member-wrapper:last-child .team__member{
+            margin: 0 auto;
+        }
+    }
+
     .team__member-name{
         font-size: 24px;
         line-height: 28px;
         color: #000000;
         margin: 0 0 18px;
+    }
+    
+    @media (max-width: 600px){
+        .team__member-name{
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
     }
 
     .team__member-description{
@@ -99,10 +155,30 @@ const team = [
     }
 
     .team__member-link{
-        font-size: 18px;
-        line-height: 21px;
-        text-decoration-line: underline;
+        font-size: 16px;
+        line-height: 19px;
         color: #000000;
-        font-style: italic;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+
+    .team__member-link span{
+        text-decoration-line: underline;
+    }
+
+    @media (max-width: 600px){
+        .team__member-image{
+            width: 100px;
+            height: 100px;
+        }
+
+        .team__member-description, .team__member-link{
+            display: none;
+        }
+
+        .team__member-modal .team__member-link{
+            display: block;
+        }
     }
 </style>
