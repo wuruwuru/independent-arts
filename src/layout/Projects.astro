@@ -304,8 +304,38 @@ const {
 				}
 			}
 		}
+		
+		const slideIndicators = [...document.querySelectorAll('.slides__item-indicator')];
 
-		slidesWrapper.addEventListener("click", debounce(handleClickWrapper, DURATION_PER_SLIDE * 1000))
+		const setAnimationPlayState = (state) => {
+			slideIndicators.forEach(indicator => {
+				indicator.style.animationPlayState = state
+			})
+		}
+
+
+		let startTouch;
+
+		const handleMouseDown = () => {
+			startTouch = new Date().getTime()
+			setAnimationPlayState('paused')
+		}
+
+		const handleMouseUp = (event) => {
+			const duration = new Date().getTime() - startTouch;
+			startTouch = undefined;
+
+			setAnimationPlayState('running')
+
+			if(duration < 300){
+				handleClickWrapper(event)
+			}
+		}
+		slidesWrapper.addEventListener('mousedown', handleMouseDown)
+		slidesWrapper.addEventListener('touchstart', handleMouseDown)
+		slidesWrapper.addEventListener('mouseup', handleMouseUp)
+		slidesWrapper.addEventListener('touchend', handleMouseUp)
+
 		setupBasePage()
 		setupObserver()
 
