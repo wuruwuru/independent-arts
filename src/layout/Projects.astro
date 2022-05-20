@@ -270,9 +270,9 @@ const {
 		}
 
 		const moveRight = (currentIndex) => {
-			state.isScrolling = true;
-
 			if(currentIndex >= slides.length - 1) return
+
+			state.isScrolling = true;
 
 			const nextElement = slides[currentIndex + 1].dataset.id;
 			state.currentElement = nextElement
@@ -337,6 +337,7 @@ const {
 		slidesWrapper.addEventListener('touchstart', handleMouseDown)
 		slidesWrapper.addEventListener('mouseup', handleMouseUp)
 		slidesWrapper.addEventListener('touchend', handleMouseUp)
+		slidesWrapper.addEventListener('touchcancel', handleMouseUp)
 
 		setupBasePage()
 		setupObserver()
