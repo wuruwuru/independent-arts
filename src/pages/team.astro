@@ -50,17 +50,20 @@ const team = [
     activeLink="team"
     pageTitle="Wuruwuru Team"
     pageUrl="https://wuruwuru.com/team"
+    centerHeaderOnMobile
 >
 	<section class="team">
 		{
 			team.map(teammate => (
-				<article class="team__member">
-					<img src={teammate.image} alt={teammate.name}/>
-					<div>
-							<h3 class="team__member-name">{teammate.name}</h3>
-							<p class="team__member-description">{teammate.description}</p>
-							<a href={teammate.link} class="team__member-link">{teammate.linkText}</a>
-					</div>
+				<article class="team__member-wrapper">
+					<div class="team__member">
+                        <img src={teammate.image} class="team__member-image" alt={teammate.name}/>
+                        <div>
+                                <h3 class="team__member-name">{teammate.name}</h3>
+                                <p class="team__member-description">{teammate.description}</p>
+                                <a href={teammate.link} class="team__member-link">{teammate.linkText}</a>
+                        </div>
+                    </div>
 				</article>
 			))
 		}
@@ -76,6 +79,25 @@ const team = [
         margin: 60px 0 153px;
     }
 
+    @media (max-width: 1000px){
+        .team{
+            padding-right: 100px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .team{
+            margin-top: 40px;
+            padding-right: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 30px;
+            justify-content: center;
+        }
+    }
+
+
     .team__member{
         display: grid;
         grid-template-columns: 243px 1fr;
@@ -84,11 +106,57 @@ const team = [
         max-width: 807px;
     }
 
+    @media (max-width: 1000px){
+        .team__member{
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .team__member-wrapper{
+            row-gap: 0;
+        }
+
+        .team__member{
+            min-width: 152px;
+            width: fit-content;
+            row-gap: 0;
+            padding: 15px 13px;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 1px rgba(66, 71, 76, 0.32), 0px 4px 8px rgba(66, 71, 76, 0.06), 0px 8px 48px #EEEEEE;
+            border-radius: 4px;
+        }
+        
+        .team__member-wrapper:nth-of-type(odd) .team__member{
+            margin-left: auto;
+        }
+
+
+        .team__member-wrapper:last-child{
+            grid-column: 1/-1;
+        }
+
+        .team__member-wrapper:last-child .team__member{
+            margin: 0 auto;
+        }
+    }
+
     .team__member-name{
         font-size: 24px;
         line-height: 28px;
         color: #000000;
         margin: 0 0 18px;
+    }
+    
+    @media (max-width: 600px){
+        .team__member-name{
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
     }
 
     .team__member-description{
@@ -104,5 +172,16 @@ const team = [
         text-decoration-line: underline;
         color: #000000;
         font-style: italic;
+    }
+
+    @media (max-width: 600px){
+        .team__member-image{
+            width: 100px;
+            height: 100px;
+        }
+
+        .team__member-description, .team__member-link{
+            display: none;
+        }
     }
 </style>

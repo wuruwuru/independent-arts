@@ -23,6 +23,13 @@ const { className = '' } = Astro.props
         max-width: 360px;
     }
 
+    @media (max-width: 600px){
+        .footer__form{
+            width: 80%;
+            max-width: unset;
+        }
+    }
+
     .footer__form__label{
         font-size: 18px;
         line-height: 21px;
