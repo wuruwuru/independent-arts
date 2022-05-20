@@ -6,6 +6,7 @@ import williams from "@images/team/williams.png"
 import agnes from "@images/team/agnes.png"
 import tomiwa from "@images/team/tomiwa.png"
 import teamJson from "@data/team.json"
+import TeamMemberModal from "@components/TeamMemberModal.astro";
 
 const images = {
     "opemipo": opemipo,
@@ -32,7 +33,7 @@ const team = teamJson.map(teammate => {
 >
 	<section class="team">
 		{
-			team.map((teammate, index) => (
+			team.map((teammate) => (
 				<article class="team__member-wrapper">
 					<div class="team__member">
                         <img src={teammate.image} class="team__member-image" alt={teammate.name}/>
@@ -50,40 +51,7 @@ const team = teamJson.map(teammate => {
                                 </a>
                         </div>
                     </div>
-                    <div 
-                        class="team__member-modal" 
-                        role="dialog" 
-                        aria-labelledby={`dialog${index}title`}
-                        aria-describedby={`dialog${index}description`}
-                        id={`modal-${teammate.id}`}
-                    >
-                        <div class="team__member-modal-content">
-                            <button class="team__member-modal-close" data-target={teammate.id}>
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="1.70711" y1="1.29387" x2="17.2635" y2="16.8502" stroke="black" stroke-width="2"/>
-                                    <line x1="1.29289" y1="16.8495" x2="16.8492" y2="1.29318" stroke="black" stroke-width="2"/>
-                                </svg>
-                            </button>
-                            <img src={teammate.image} class="team__member-image" alt={teammate.name}/>
-                            <h3 class="team__member-name" id={`dialog${index}title`}>{teammate.name}</h3>
-                            <div class="team__member-modal-description" id={`dialog${index}description`}>
-                                {
-                                    teammate.mobileDescription.map(section => (
-                                        <p set:html={section}/>
-                                    ))
-                                }
-                            </div>
-                            <a href={teammate.link} class="team__member-link" target="_blank">
-                                <span>
-                                    {teammate.linkText}
-                                </span>
-                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 9L8.5 4" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M3.5 4H8.5V9" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                    <TeamMemberModal teammate={teammate}/>
 				</article>
 			))
 		}
@@ -91,7 +59,7 @@ const team = teamJson.map(teammate => {
 </PageWithSidebar>
 
 
-<style>
+<style is:global>
     .team{
         display: flex;
         flex-direction: column;
@@ -213,104 +181,4 @@ const team = teamJson.map(teammate => {
             display: block;
         }
     }
-
-    .team__member-modal{
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        backdrop-filter: blur(2px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: 150ms;
-    }
-
-    .team__member-modal.is-visible{
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    @media (min-width: 600px){
-        .team__member-modal{
-            display: none;
-        }
-    }
-
-    .team__member-modal-content{
-        width: 320px;
-        padding: 30px 13px 47px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-height: 80%;
-        height: fit-content;
-        background-color: white;
-        box-shadow: 0px 0px 1px rgba(66, 71, 76, 0.32), 0px 4px 8px rgba(66, 71, 76, 0.06), 0px 8px 48px #EEEEEE;
-        overflow: auto;
-        transform: translateY(20px);
-        opacity: 0;
-        transition-duration: 300ms;
-    }
-
-    .team__member-modal.is-visible .team__member-modal-content{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-    .team__member-modal-close{
-        background-color: transparent;
-        border: none;
-        align-self: flex-end;
-        margin-bottom: 36px;
-    }
-
-    .team__member-modal-description{
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        text-align: center;
-        color: #000000;
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-        margin-top: 30px;
-    }
-
-    .team__member-modal-description p{
-        margin: 0;
-    }
-
-    .team__member-modal .team__member-link{
-        margin-top: 30px;
-    }
 </style>
-<script is:inline>
-    document.querySelectorAll('.team__member').forEach(member => {
-        member.addEventListener('click', () => {
-            member.nextElementSibling.classList.add('is-visible')
-        })
-    })
-
-    document.querySelectorAll('.team__member-modal').forEach(modal => {
-        modal.addEventListener('click', (event) => {
-            console.log({event, modal})
-            if(event.target === modal){
-                modal.classList.remove('is-visible')
-            }
-        })
-    })
-
-    document.querySelectorAll('.team__member-modal-close').forEach(button => {
-        button.addEventListener('click', () => {
-            const target = button.dataset.target;
-
-            document.getElementById(`modal-${target}`).classList.remove('is-visible')
-        })
-    })
-</script>
