@@ -15,10 +15,10 @@ const images = {
     "tomiwa": tomiwa,
 }
 
-const team = teamJson.map(teamMember => {
+const team = teamJson.map(teammate => {
     return {
-        ...teamMember,
-        image: images[teamMember.imageId]
+        ...teammate,
+        image: images[teammate.id]
     }
 })
 ---
@@ -39,7 +39,7 @@ const team = teamJson.map(teamMember => {
                         <div>
                                 <h3 class="team__member-name">{teammate.name}</h3>
                                 <p class="team__member-description">{teammate.description}</p>
-                                <a href={teammate.link} class="team__member-link">
+                                <a href={teammate.link} class="team__member-link" target="_blank">
                                     <span>
                                         {teammate.linkText}
                                     </span>
@@ -55,9 +55,10 @@ const team = teamJson.map(teamMember => {
                         role="dialog" 
                         aria-labelledby={`dialog${index}title`}
                         aria-describedby={`dialog${index}description`}
+                        id={`modal-${teammate.id}`}
                     >
                         <div class="team__member-modal-content">
-                            <button class="team__member-modal-close">
+                            <button class="team__member-modal-close" data-target={teammate.id}>
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <line x1="1.70711" y1="1.29387" x2="17.2635" y2="16.8502" stroke="black" stroke-width="2"/>
                                     <line x1="1.29289" y1="16.8495" x2="16.8492" y2="1.29318" stroke="black" stroke-width="2"/>
@@ -72,7 +73,7 @@ const team = teamJson.map(teamMember => {
                                     ))
                                 }
                             </div>
-                            <a href={teammate.link} class="team__member-link">
+                            <a href={teammate.link} class="team__member-link" target="_blank">
                                 <span>
                                     {teammate.linkText}
                                 </span>
@@ -289,3 +290,27 @@ const team = teamJson.map(teamMember => {
         margin-top: 30px;
     }
 </style>
+<script is:inline>
+    document.querySelectorAll('.team__member').forEach(member => {
+        member.addEventListener('click', () => {
+            member.nextElementSibling.classList.add('is-visible')
+        })
+    })
+
+    document.querySelectorAll('.team__member-modal').forEach(modal => {
+        modal.addEventListener('click', (event) => {
+            console.log({event, modal})
+            if(event.target === modal){
+                modal.classList.remove('is-visible')
+            }
+        })
+    })
+
+    document.querySelectorAll('.team__member-modal-close').forEach(button => {
+        button.addEventListener('click', () => {
+            const target = button.dataset.target;
+
+            document.getElementById(`modal-${target}`).classList.remove('is-visible')
+        })
+    })
+</script>

@@ -7,7 +7,7 @@
         ],
         "link": "https://twitter.com/eccentric_sky",
         "linkText": "Website",
-        "imageId": "agnes"
+        "id": "agnes"
     },
     {
         "name": "Nneoma Kenure",
@@ -17,7 +17,7 @@
         ],
         "link": "https://twitter.com/nfkenure",
         "linkText": "Twitter",
-        "imageId": "nneoma"
+        "id": "nneoma"
     },
     {
         "name": "Opemipo Aikomo",
@@ -29,7 +29,7 @@
         ],
         "link": "https://opemipo.com",
         "linkText": "Website",
-        "imageId": "opemipo"
+        "id": "opemipo"
     },
     {
         "name": "Tomiwa Ajiboye",
@@ -41,7 +41,7 @@
         ],
         "link": "https://twitter.com/D_zyn__gawd",
         "linkText": "Twitter",
-        "imageId": "tomiwa"
+        "id": "tomiwa"
     },
     {
         "name": "Williams Ogah",
@@ -51,6 +51,6 @@
         ],
         "link": "https://twitter.com/wllxms",
         "linkText": "Twitter",
-        "imageId": "williams"
+        "id": "williams"
     }
 ]
