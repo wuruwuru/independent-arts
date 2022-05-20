@@ -158,7 +158,8 @@ const {
 			//Create intersection observer
 			const slideObserver = new IntersectionObserver(handleIntersection, {
 				rootMargin: "0px",
-				threshold: 0.9
+				threshold: 0.9,
+				root: document.body
 			});
 
 			//Observe all slides
