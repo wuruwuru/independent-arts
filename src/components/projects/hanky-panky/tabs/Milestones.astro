@@ -44,14 +44,14 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
         animatics
     </h3>
     <div class="animatics__grid">
-        <figure class="animatics__figure">
-            <img src={animatics} alt="Hanky Panky Animatic">
-            <figcaption class="animatics__figure-caption">Hanky Panky Animatic</figcaption>
-        </figure>
-        <figure class="animatics__figure">
-            <img src={cleanup} alt="Animatic Clean Up">
-            <figcaption class="animatics__figure-caption">Animatic Clean Up</figcaption>
-        </figure>
+        <div class="animatics__iframe-wrapper">
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/658940389?h=f3983965e0" class="animatics-iframe" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            <p class="animatics__iframe-caption">Hanky Panky Animatic</p>
+        </div>
+        <div class="animatics__iframe-wrapper">
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/672891337?h=c037208eab" class="animatics-iframe" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            <p class="animatics__iframe-caption">Animatic Clean Up</p>
+        </div>
     </div>
 </section>
 <style>
@@ -149,7 +149,7 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
         }   
     }
 
-    .animatics__figure{
+    .animatics__iframe-wrapper{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -157,14 +157,27 @@ import cleanup from "@project-images/hanky-panky/slide-7/cleanup.png"
     }
 
     @media (max-width: 600px){
-        .animatics__figure img{
+        .animatics__iframe-wrapper{
             width: 100%;
         }
     }
 
-    .animatics__figure-caption{
+    .animatics-iframe{
+        width: 400px;
+        height: 233px;
+    }
+
+    @media (max-width: 600px){
+        .animatics-iframe{
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    .animatics__iframe-caption{
         font-size: 16px;
         line-height: 19px;
         color: #938888;
+        margin: 0;
     }
 </style>
