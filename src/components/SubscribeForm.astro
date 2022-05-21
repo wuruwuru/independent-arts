@@ -2,19 +2,19 @@
 
 const { className = '' } = Astro.props
 ---
-<form class={`footer__form ${className}`}>
-    <p class="footer__form__label">
+<form class={`form ${className}`}>
+    <p class="form__label">
         EMAIL UPDATES?
     </p>
-    <label for="email" class="footer__form__input-wrapper">
-        <input placeholder="your@email.com" class="footer__form__input"/>
-        <button class="footer__form__button">
+    <label for="email" class="form__input-wrapper">
+        <input placeholder="your@email.com" class="form__input"/>
+        <button class="form__button">
             Subscribe
         </button>
     </label>
 </form>
 <style>
-     .footer__form{
+     .form{
         display: flex;
         flex-direction: column;
         row-gap: 20px;
@@ -24,13 +24,13 @@ const { className = '' } = Astro.props
     }
 
     @media (max-width: 600px){
-        .footer__form{
+        .form{
             width: 80%;
             max-width: unset;
         }
     }
 
-    .footer__form__label{
+    .form__label{
         font-size: 18px;
         line-height: 21px;
         margin: 0;
@@ -38,7 +38,7 @@ const { className = '' } = Astro.props
         width: fit-content;
     }
 
-    .footer__form__input-wrapper{
+    .form__input-wrapper{
         display: flex;
         align-items: center;
         padding: 0 14px;
@@ -49,7 +49,13 @@ const { className = '' } = Astro.props
         column-gap: 8px;
     }
 
-    .footer__form__input{
+    @media (max-width: 600px){
+        .form__input-wrapper{
+            padding: 0 6px;
+        }
+    }
+
+    .form__input{
         flex-grow: 1;
         font-size: 16px;
         line-height: 20px;
@@ -59,11 +65,18 @@ const { className = '' } = Astro.props
         outline: none;
     }
 
-    .footer__form__input::placeholder{
+    @media (max-width: 600px){
+        .form__input{
+            width: 80%;
+            flex-shrink: 1;
+        }
+    }
+
+    .form__input::placeholder{
         color: #938888;
     }
 
-    .footer__form__button{
+    .form__button{
         font-size: 16px;
         line-height: 20px;
         background: transparent;
