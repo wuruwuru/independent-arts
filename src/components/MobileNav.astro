@@ -8,7 +8,9 @@ export interface Props {
 const { className = '' } = Astro.props
 ---
 <nav class={`mobile-nav ${className}`}>
-    <img src={logo} alt="Wuruwuru" class="mobile-nav__logo">
+    <a href="/">
+        <img src={logo} alt="Wuruwuru" class="mobile-nav__logo">
+    </a>
     <button class="mobile-nav__open-button">
         <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0.304688" y1="1.5" x2="20.3047" y2="1.5" stroke="black" stroke-width="3"/>
@@ -18,7 +20,9 @@ const { className = '' } = Astro.props
 </nav>
 <div class="popup">
     <div class="popup__header">
-        <img src={logo} alt="Wuruwuru" class="popup__logo">
+        <a href="/">
+            <img src={logo} alt="Wuruwuru" class="popup__logo">
+        </a>
         <button class="popup__close-button">
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="2.01179" y1="1.51506" x2="17.5681" y2="17.0714" stroke="black" stroke-width="2"/>
