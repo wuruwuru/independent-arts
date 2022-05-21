@@ -503,10 +503,9 @@ const { id, browseText, header, category, projects } = Astro.props
             sidebar.classList.remove('is-visible')
             detailsButton.classList.remove('is-visible')
         }
-    }, { threshold: 0.8 })
+    }, { threshold: 0.8, root: document.body })
     
     const slide = document.querySelector('.details-slide');
-    console.log(slide)
 
     observer.observe(slide)
 </script>

@@ -158,7 +158,8 @@ const {
 			//Create intersection observer
 			const slideObserver = new IntersectionObserver(handleIntersection, {
 				rootMargin: "0px",
-				threshold: 0.9
+				threshold: 0.9,
+				root: document.body
 			});
 
 			//Observe all slides
@@ -221,7 +222,8 @@ const {
 
                 const duration = numberOfSlides * DURATION_PER_SLIDE
 
-
+				setAnimationPlayState('paused')
+				
 				smoothScroll({
 					element: slidesWrapper,
 					position: {
@@ -232,6 +234,7 @@ const {
 					callback: () => {
 						state.isScrolling = false
 						state.currentElement = activeSlide
+						setAnimationPlayState('running')
 					},
 					handleStopScroll: () => {
 						/*
@@ -268,9 +271,9 @@ const {
 		}
 
 		const moveRight = (currentIndex) => {
-			state.isScrolling = true;
-
 			if(currentIndex >= slides.length - 1) return
+
+			state.isScrolling = true;
 
 			const nextElement = slides[currentIndex + 1].dataset.id;
 			state.currentElement = nextElement
@@ -304,8 +307,39 @@ const {
 				}
 			}
 		}
+		
+		const slideIndicators = [...document.querySelectorAll('.slides__item-indicator')];
 
-		slidesWrapper.addEventListener("click", debounce(handleClickWrapper, DURATION_PER_SLIDE * 1000))
+		const setAnimationPlayState = (state) => {
+			slideIndicators.forEach(indicator => {
+				indicator.style.animationPlayState = state
+			})
+		}
+
+
+		let startTouch;
+
+		const handleMouseDown = () => {
+			startTouch = new Date().getTime()
+			setAnimationPlayState('paused')
+		}
+
+		const handleMouseUp = (event) => {
+			const duration = new Date().getTime() - startTouch;
+			startTouch = undefined;
+
+			setAnimationPlayState('running')
+
+			if(duration < 300){
+				handleClickWrapper(event)
+			}
+		}
+		slidesWrapper.addEventListener('mousedown', handleMouseDown)
+		slidesWrapper.addEventListener('touchstart', handleMouseDown)
+		slidesWrapper.addEventListener('mouseup', handleMouseUp)
+		slidesWrapper.addEventListener('touchend', handleMouseUp)
+		slidesWrapper.addEventListener('touchcancel', handleMouseUp)
+
 		setupBasePage()
 		setupObserver()
 

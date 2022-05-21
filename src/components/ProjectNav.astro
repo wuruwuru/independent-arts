@@ -20,6 +20,7 @@ const { slides } = Astro.props
         {
             slides.map((slide) => (
                 <li class="slides__item" data-id={slide.id}>
+                    <span class="slides__item-indicator"/>
                     <a class="slides__item__link" href={"#" + slide.id}/>
                 </li>
             ))
@@ -101,17 +102,39 @@ const { slides } = Astro.props
         height: 4px;
         background-color: rgba(255, 255, 255, 0.2);
         flex: 1 0 0;
+        position: relative;
+    }
+
+    .slides__item.is-active{
+        background-color: white;
+    }
+
+    .slides__item-indicator{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: top left;
+        content: '';
+    }
+
+    .slides__item.is-animating .slides__item-indicator{
+        animation: loading 2s forwards;
+    }
+
+    @keyframes loading{
+        to{
+            transform: scaleX(100%);
+        }
     }
 
     .slides__item__link{
         width: 100%;
         height: 100%;
         display: block;
-    }
-
-    .slides__item.is-active{
-        background-color: white;
-        transition: 300ms;
     }
 
     .navbar.has-contrast .slides__item{
@@ -136,13 +159,29 @@ const { slides } = Astro.props
 
         //Loop through elements and add active class where appropriate
         slideIndicatorElements.forEach((element, index) => {
-            if(index <= activeSlideIndex){
+            if(index < activeSlideIndex){
                 element.classList.add("is-active")
+                element.classList.remove("is-animating")
+            }else if(index === activeSlideIndex){
+                element.classList.remove("is-active")
+                element.classList.add("is-animating")
             }else{
+                element.classList.remove("is-animating")
                 element.classList.remove("is-active")
             }
         })
     }
+
+    slideIndicatorElements.forEach((element, index) => {
+        const indicator = element.querySelector('.slides__item-indicator')
+        indicator.addEventListener('animationend', () => {
+            const nextElement = slideIndicatorElements[index + 1];
+
+            if(nextElement){
+                window.location.hash = nextElement.dataset.id
+            }
+        })
+    })
 
     window.addEventListener("DOMContentLoaded", renderSlideIndicators)
     window.addEventListener("hashchange", renderSlideIndicators)
