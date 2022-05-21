@@ -43,18 +43,18 @@ const footerProjects = [
         <br/>
         We see the opportunity to open the database up for contributions and reviews. For now, we only tag each album cover by artist, year, format and genre. We hope to build a model that tags the images by colour, and subject and find a way to scrape the internet for more
     </p>
-    <figure class="details__image_wrapper is-desktop">
-        <img src={coverImage} alt="Cover Bank Airtable" class="details__image"/>
-        <figcaption class="details__image-cta">
-            View larger version
-        </figcaption>
-    </figure>
-    <figure class="details__image_wrapper is-mobile">
-        <img src={coverImageMobile} alt="Cover Bank Airtable" class="details__image"/>
-        <figcaption class="details__image-cta">
-            View larger version
-        </figcaption>
-    </figure>
+    <div class="details__iframe_wrapper">
+        <iframe class="details__iframe" src="https://airtable.com/embed/shrwU5NWobT8feUw5/tbll8IZyCmNUUd266?backgroundColor=#1283da" style="background: #1283da; border: none"/>
+         <a href="https://airtable.com/shrwU5NWobT8feUw5/tbll8IZyCmNUUd266" target="_blank" class="details__image-cta">
+            <span>
+                View larger version
+            </span>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.07224L9 4.07224" stroke="#938888" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.07224H9V9.07224" stroke="#938888" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
 </DetailsSlide>
 <style>
     .details__description{
@@ -77,31 +77,27 @@ const footerProjects = [
         }
     }
 
-    .details__image_wrapper{
+    .details__iframe_wrapper{
         width: 55%;
         max-width: 838px;
     }
 
-    .details__image_wrapper.is-mobile{
-        display: none;
-        width: 100%;
-        max-width: unset;
-        margin-bottom: 60px;
-        padding: 0 8px;
-    }
-
-    @media(max-width: 600px){
-        .details__image_wrapper.is-desktop{
-            display: none;
-        }
-
-        .details__image_wrapper.is-mobile{
-            display: block;
+    @media (max-width: 600px){
+        .details__iframe_wrapper{
+            width: 100%;
+            margin-bottom: 60px;
         }
     }
 
-    .details__image{
+    .details__iframe{
         width: 100%;
+        height: 360px;
+    }
+
+    @media (max-width: 600px){
+        .details__iframe{
+            height: 330px;
+        }
     }
 
     .details__image-cta{
@@ -111,6 +107,11 @@ const footerProjects = [
         margin: 20px 0 0;
         color: #938888;
         text-align: center;
+        display: flex;
+        column-gap: 5px;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
     }
 
     @media (max-width: 600px){
