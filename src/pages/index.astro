@@ -24,8 +24,7 @@ import projects from "@data/projects.json"
 		<main>
 			<div class="list" id="list">
 				<section class="list__items">
-					{
-						projects.map(project => (
+					{projects.map(project => (
 							<HomeProjectList
 								title={project.title}
 								category={project.category}
@@ -40,7 +39,7 @@ import projects from "@data/projects.json"
 		</main>
 
 		<script>
-			var list = window.document.getElementById('list');
+			const list = window.document.getElementById('list');
 			window.addEventListener('scroll', function() {
 				var fromTop = list.offsetTop - window.scrollY;
 				var isFixed = list.classList.contains('list--fixed-background');

@@ -1,5 +1,6 @@
 ---
 const { teammate } = Astro.props
+
 ---
 
 <div 
@@ -9,33 +10,27 @@ const { teammate } = Astro.props
     aria-describedby={`dialog${teammate.id}description`}
     id={`modal-${teammate.id}`}
 >
-    <div class="team__member-modal-content">
-        <button class="team__member-modal-close" data-target={teammate.id}>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="1.70711" y1="1.29387" x2="17.2635" y2="16.8502" stroke="black" stroke-width="2"/>
-                <line x1="1.29289" y1="16.8495" x2="16.8492" y2="1.29318" stroke="black" stroke-width="2"/>
-            </svg>
-        </button>
-        <img src={teammate.image} class="team__member-image" alt={teammate.name}/>
-        <h3 class="team__member-name" id={`dialog${teammate.id}title`}>{teammate.name}</h3>
-        <div class="team__member-modal-description" id={`dialog${teammate.id}description`}>
-            {
-                teammate.mobileDescription.map(section => (
-                    <p set:html={section}/>
-                ))
-            }
-        </div>
-        <a href={teammate.link} class="team__member-link" target="_blank">
-            <span>
-                {teammate.linkText}
-            </span>
-            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 9L8.5 4" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3.5 4H8.5V9" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
-    </div>
+	<div class="team__member-modal-content">
+		<button class="team__member-modal-close" data-target={teammate.id}>
+				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<line x1="1.70711" y1="1.29387" x2="17.2635" y2="16.8502" stroke="black" stroke-width="2"/>
+						<line x1="1.29289" y1="16.8495" x2="16.8492" y2="1.29318" stroke="black" stroke-width="2"/>
+				</svg>
+		</button>
+		<img src={teammate.image} class="team__member-image" alt={teammate.name}/>
+		<h3 class="team__member-name" id={`dialog${teammate.id}title`}>{teammate.name}</h3>
+		<div class="team__member-modal-description" id={`dialog${teammate.id}description`}>
+			{teammate.mobileDescription.map(section => (<p set:html={section}/>))}
+		</div>
+		<a href={teammate.link} class="team__member-link" target="_blank">
+			<span>{teammate.linkText}</span>
+				<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M3.5 9L8.5 4" stroke="black" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 4H8.5V9" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+		</a>
+	</div>
 </div>
+
 <style>
     .team__member-modal{
         position: fixed;

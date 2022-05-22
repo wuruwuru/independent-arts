@@ -1,9 +1,8 @@
 ---
 //Styles
-import resetStyles from "@styles/site.css";
 
 // Components
-import SEO from '@components/SEO.astro';
+import BaseHead from '@components/BaseHead.astro'
 import ProjectNav from "@components/ProjectNav.astro";
 import SmoothScroll from "@components/SmoothScroll.astro";
 
@@ -15,7 +14,7 @@ export interface Props {
 	pageUrl: string,
 	pageImage: string,
 	pageDescription?: string,
-  	slides: {id: string}[]
+	slides: {id: string, component: AstroComponent}[]
 }
 
 const {
@@ -26,48 +25,36 @@ const {
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>{pageTitle}</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-		<SEO { ...Astro.props }></SEO>
-
-		<style is:inline set:html={resetStyles}></style>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-	</head>
-
+	<BaseHead { ...Astro.props }></BaseHead>
 	<body>
-        <ProjectNav slides={slides}/>
+		<ProjectNav slides={slides}/>
 		<section class="slides">
-			{
-				slides.map(({id, component: Component}) => (
+			{slides.map(({id, component: Component}) => (
 					<Component id={id}/>
 				))
 			}
 		</section>
-		<a href="/">
-			<img src={logo} alt="Logo" class="logo projects"/>
-		</a>
-    </body>
-    <style>
-        body{
-            background-color: black;
+		<img src={logo} alt="Logo" class="logo projects"/>
+	</body>
+	<style>
+		body{
+			background-color: black;
 			position: relative;
-        }
+		}
 
 		.slides{
 			display: flex;
 			gap: 1ch;
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
-  			overscroll-behavior-x: contain;
+			overscroll-behavior-x: contain;
 			touch-action: pan-x;
 			inline-size: 100%;
 			block-size: 100%;
 			height: 100vh;
 			width: 100vw;
-			 scrollbar-width: none;
-    		-ms-overflow-style: none;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
 		}
 
 		.slides::-webkit-scrollbar {
@@ -96,8 +83,7 @@ const {
 	<SmoothScroll/>
 	<script>
 		import { getSlidesObject, getActiveSlide } from "../utils/projectSlideUtils.js"
-		import debounce from "../utils/debounce.js"
-    	import throttle from "../utils/throttle.js"
+		import throttle from "../utils/throttle.js"
 
 		//Set DOM elements
 		const slidesWrapper = document.querySelector('section.slides');
@@ -105,7 +91,7 @@ const {
 		const slides = [...document.querySelectorAll(".slides__slide")];
 		const navbar = document.querySelector('.navbar');
 
-		const DURATION_PER_SLIDE = 0.5
+		const DURATION_PER_SLIDE = 10
 
 		//Generate object that maps slide ids to their index and dom element
 		const slidesObject = getSlidesObject(".slides__slide")
