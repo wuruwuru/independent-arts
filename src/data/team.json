@@ -1,56 +1,56 @@
 [
-    {
-        "name": "Agnes Ekanem",
-        "description": "Ekanem is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat using sign language.",
-        "mobileDescription": [
-            "Ekanem is a writer and storyboard <br/> artist. When she's not building with<br/> friends at wuruwuru, she's learning<br/> french and training her cat using<br/> sign language."
-        ],
-        "link": "https://twitter.com/eccentric_sky",
-        "linkText": "Website",
-        "id": "agnes"
-    },
-    {
-        "name": "Nneoma Kenure",
-        "description": "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She is partial to the first-person narrative and is editing her debut– a memoir. She’s an assistant editor on the Feel Good project.",
-        "mobileDescription": [
-            "Nneoma is a culture critic and a <br/> feminist writer exploring how culture <br/> influences the stories we tell. <br/> She is partial to the first-person <br/> narrative and is editing her debut– a <br/> memoir. She’s an assistant editor on <br/> the Feel Good project."
-        ],
-        "link": "https://twitter.com/nfkenure",
-        "linkText": "Twitter",
-        "id": "nneoma"
-    },
-    {
-        "name": "Opemipo Aikomo",
-        "description": "Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Many years later, he's still obsessed. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
-        "mobileDescription": [
-            "Opemipo is a multidisciplinary <br/> designer who loves stories.",
-            "He discovered the supreme <br/> powers of the internet in 2008 <br/> and quickly stumbled into a <br/> career; making graphic design, <br/> websites and apps for clients.",
-            "Many years later, he's still <br/> obsessed. Ope directs the <br/> team at wuruwuru. In his spare <br/> time, he also leads the design <br/> team at Paystack."
-        ],
-        "link": "https://opemipo.com",
-        "linkText": "Website",
-        "id": "opemipo"
-    },
-    {
-        "name": "Tomiwa Ajiboye",
-        "description": "Tomiwa is a product designer and <br/> music buff that creates experiences <br/> in the creative tech industry. He’s building Comicrunes; a comic reading platform that connects graphic novel creators to the readers. He enjoys taking it slow by relaxing at the park or living on the edge by driving really fast–no in-betweens.",
-        "mobileDescription": [
-            "Tomiwa is a product designer and music buff that creates experiences in the creative tech industry.",
-            "He’s building Comicrunes; a comic <br/> reading platform that connects <br/> graphic novel creators to the readers." ,
-            "He enjoys taking it slow by relaxing <br/> at the park or living on the edge by <br/> driving really fast–no in-betweens."
-        ],
-        "link": "https://twitter.com/D_zyn__gawd",
-        "linkText": "Twitter",
-        "id": "tomiwa"
-    },
-    {
-        "name": "Williams Ogah",
-        "description": "Will worked as a project manager for three years before finally transitioning into a product manager with wuruwuru. He is especially curious about how collaborators make successful projects, and how the right management process brings creative ideas to life. When he is not busy taking naps, Williams also runs Adroit Consulting which helps businesses and individuals execute projects more efficiently.",
-        "mobileDescription": [
-            "Will worked as a project manager for <br/> three years before finally transitioning <br/> into a product manager with <br/> wuruwuru. He is especially curious <br/> about how collaborators make <br/> successful projects, and how the <br/> right management process brings <br/> creative ideas to life. When he is not <br/> busy taking naps, Williams also runs <br/> Adroit Consulting which helps <br/> businesses and individuals execute <br/> projects more efficiently."
-        ],
-        "link": "https://twitter.com/wllxms",
-        "linkText": "Twitter",
-        "id": "williams"
-    }
+	{
+		"name": "Agnes Ekanem",
+		"description": "Ekanem is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat using sign language.",
+		"mobileDescription": [
+			"Ekanem is a writer and storyboard <br/> artist. When she's not building with<br/> friends at wuruwuru, she's learning<br/> french and training her cat using<br/> sign language."
+		],
+		"link": "https://twitter.com/eccentric_sky",
+		"linkText": "Website",
+		"id": "agnes"
+	},
+	{
+		"name": "Nneoma Kenure",
+		"description": "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She is partial to the first-person narrative and is editing her debut– a memoir. She’s an assistant editor on the Feel Good project.",
+		"mobileDescription": [
+			"Nneoma is a culture critic and a <br/> feminist writer exploring how culture <br/> influences the stories we tell. <br/> She is partial to the first-person <br/> narrative and is editing her debut– a <br/> memoir. She’s an assistant editor on <br/> the Feel Good project."
+		],
+		"link": "https://twitter.com/nfkenure",
+		"linkText": "Twitter",
+		"id": "nneoma"
+	},
+	{
+		"name": "Opemipo Aikomo",
+		"description": "Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Many years later, he's still obsessed. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
+		"mobileDescription": [
+			"Opemipo is a multidisciplinary <br/> designer who loves stories.",
+			"He discovered the supreme <br/> powers of the internet in 2008 <br/> and quickly stumbled into a <br/> career; making graphic design, <br/> websites and apps for clients.",
+			"Many years later, he's still <br/> obsessed. Ope directs the <br/> team at wuruwuru. In his spare <br/> time, he also leads the design <br/> team at Paystack."
+		],
+		"link": "https://opemipo.com",
+		"linkText": "Website",
+		"id": "opemipo"
+	},
+	{
+		"name": "Tomiwa Ajiboye",
+		"description": "Tomiwa is a product designer and <br/> music buff that creates experiences <br/> in the creative tech industry. He’s building Comicrunes; a comic reading platform that connects graphic novel creators to the readers. He enjoys taking it slow by relaxing at the park or living on the edge by driving really fast–no in-betweens.",
+		"mobileDescription": [
+			"Tomiwa is a product designer and music buff that creates experiences in the creative tech industry.",
+			"He’s building Comicrunes; a comic <br/> reading platform that connects <br/> graphic novel creators to the readers.",
+			"He enjoys taking it slow by relaxing <br/> at the park or living on the edge by <br/> driving really fast–no in-betweens."
+		],
+		"link": "https://twitter.com/D_zyn__gawd",
+		"linkText": "Twitter",
+		"id": "tomiwa"
+	},
+	{
+		"name": "Williams Ogah",
+		"description": "Will worked as a project manager for three years before finally transitioning into a product manager with wuruwuru. He is especially curious about how collaborators make successful projects, and how the right management process brings creative ideas to life. When he is not busy taking naps, Williams also runs Adroit Consulting which helps businesses and individuals execute projects more efficiently.",
+		"mobileDescription": [
+			"Will worked as a project manager for <br/> three years before finally transitioning <br/> into a product manager with <br/> wuruwuru. He is especially curious <br/> about how collaborators make <br/> successful projects, and how the <br/> right management process brings <br/> creative ideas to life. When he is not <br/> busy taking naps, Williams also runs <br/> Adroit Consulting which helps <br/> businesses and individuals execute <br/> projects more efficiently."
+		],
+		"link": "https://twitter.com/wllxms",
+		"linkText": "Twitter",
+		"id": "williams"
+	}
 ]
