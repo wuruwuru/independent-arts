@@ -8,6 +8,8 @@ import tomiwa from "@images/team/tomiwa.png"
 import teamJson from "@data/team.json"
 import TeamMemberModal from "@components/TeamMemberModal.astro";
 
+import linkArrowUp from "@images/link-arrow-up.svg?raw";
+
 const images = {
     "opemipo": opemipo,
     "nneoma": nneoma,
@@ -16,12 +18,10 @@ const images = {
     "tomiwa": tomiwa,
 }
 
-const team = teamJson.map(teammate => {
-    return {
-        ...teammate,
-        image: images[teammate.id]
-    }
-})
+const team = teamJson.map(teammate => ({
+		...teammate,
+		image: images[teammate.id]
+}))
 ---
 
 <PageWithSidebar 
@@ -32,26 +32,20 @@ const team = teamJson.map(teammate => {
     centerHeaderOnMobile
 >
 	<section class="team">
-		{
-			team.map((teammate) => (
+		{team.map((teammate: { image: string; description: string; name: unknown; link: string | URL; linkText: string; }) => (
 				<article class="team__member-wrapper">
 					<div class="team__member">
-                        <img src={teammate.image} class="team__member-image" alt={teammate.name}/>
-                        <div>
-                                <h3 class="team__member-name">{teammate.name}</h3>
-                                <p class="team__member-description">{teammate.description}</p>
-                                <a href={teammate.link} class="team__member-link" target="_blank">
-                                    <span>
-                                        {teammate.linkText}
-                                    </span>
-                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3.5 9L8.5 4" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M3.5 4H8.5V9" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                        </div>
-                    </div>
-                    <TeamMemberModal teammate={teammate}/>
+						<img src={teammate.image} class="team__member-image" alt={teammate.name}/>
+						<div>
+							<h3 class="team__member-name">{teammate.name}</h3>
+							<p class="team__member-description">{teammate.description}</p>
+							<a href={teammate.link} class="team__member-link" target="_blank">
+									<span>{teammate.linkText}</span>
+									<Fragment set:html={linkArrowUp}></Fragment>
+							</a>
+						</div>
+				</div>
+				<TeamMemberModal teammate={teammate} />
 				</article>
 			))
 		}

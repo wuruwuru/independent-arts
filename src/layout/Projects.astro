@@ -15,7 +15,7 @@ export interface Props {
 	pageUrl: string,
 	pageImage: string,
 	pageDescription?: string,
-  	slides: {id: string}[]
+	slides: {id: string}[]
 }
 
 const {
@@ -37,10 +37,9 @@ const {
 	</head>
 
 	<body>
-        <ProjectNav slides={slides}/>
+		<ProjectNav slides={slides}/>
 		<section class="slides">
-			{
-				slides.map(({id, component: Component}) => (
+			{slides.map(({id, component: Component}) => (
 					<Component id={id}/>
 				))
 			}
