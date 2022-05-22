@@ -1,0 +1,65 @@
+/* MEDIA QUERIES ----------- */
+
+$breakpoint-small: 600px;
+$breakpoint-med-small: 750px;
+$breakpoint-med: 980px;
+
+/* MIXINS FOR MEDIA QUERIES ----------- */
+
+@mixin screen($size, $type: max, $pixels: 600) {
+    @if $size=='tiny' {
+        @media screen and (max-width: 400px) {
+            @content;
+        }
+    }
+    @if $size=='small' {
+        @media screen and (max-width: $breakpoint-small) {
+            @content;
+        }
+    }
+    @if $size=='med-small' {
+        @media screen and (max-width: $breakpoint-med-small) {
+            @content;
+        }
+    }
+    @else if $size=='med' {
+        @media screen and (max-width: $breakpoint-med) {
+            @content;
+        }
+    }
+    @else if $size=='mid' {
+        @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-med) {
+            @content;
+        }
+    }
+    @else if $size=='large' {
+        @media screen and (min-width: $breakpoint-med) {
+            @content;
+        }
+    }
+    @else if $size=='custom' {
+        @media screen and ($type + -width: $pixels + px) {
+            @content;
+        }
+    }
+}
+
+
+// Function, converts px values to rem
+@function to-rem($value) {
+	@if $value == 0 or $value == auto {
+		@return $value;
+	}
+	@else {
+		$unit: unit($value);
+		$val: parseInt($value);
+
+		@if $unit == 'px' {
+			@return $val / 10 + rem;
+		}
+
+		@if $unit == 'rem' {
+			@return $value;
+		}
+	}
+}
