@@ -2,7 +2,6 @@
 //Components
 import PageWithSidebar from "@layout/PageWithSidebar.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import projects from "@data/projects.json"
 
 const pageMeta = {
 	bodyClassName: "checkered",
@@ -20,41 +19,30 @@ const pageMeta = {
 >
 	<section class="section">
 		<h3 class="section__paragraph has-margin">
-			<b><i>wuruwuru</i></b> is an independent publishing studio. 
-		</h3>
-		<p class="section__paragraph">
-			We work with creatives and collaborators to produce and publish quality projects that promote our cultural experience. We are building a community that is documenting, preserving and shaping the narrative of Nigerian experiences.
-		</p>
+			<b><i>wuruwuru</i></b> is an independent publishing studio. </h3><p class="section__paragraph">
+			We work with creatives and collaborators to produce and publish quality projects that promote our cultural experience. We are building a community that is documenting, preserving and shaping the narrative of Nigerian experiences.</p>
 	</section>
 	<section class="section">
 		<h3 class="section__header">
 			Why <b><i>wuruwuru?</i></b>
 		</h3>
 		<p class="section__paragraph">
-			It’s called <b><i>wuruwuru</i></b> because it’s a trial and error approach to publishing. We make sure to be transparent about our processes because we don’t have a particular method for producing. That’s why we openly journal our learning experiences and the cost of production.
-		</p>
+			It’s called <b><i>wuruwuru</i></b> because it’s a trial and error approach to publishing. We make sure to be transparent about our processes because we don’t have a particular method for producing. That’s why we openly journal our learning experiences and the cost of production.</p>
 	</section>
 	<section class="section">
-		<h3 class="section__header">
-			How is this valuable?
-		</h3>
+		<h3 class="section__header">How is this valuable?</h3>
 		<p class="section__paragraph">
-			It’s an opportunity to document the experience in the Nigerian Creative Industry. We also get to work with freelancers and participate in and support independent creation in Nigeria.
-		</p>
+			It’s an opportunity to document the experience in the Nigerian Creative Industry. We also get to work with freelancers and participate in and support independent creation in Nigeria.</p>
 	</section>
 	<section class="section">
-		<h3 class="projects__header">
-			We currently have four projects:
-		</h3>
+		<h3 class="projects__header">We currently have four projects:</h3>
 		<div class="projects__grid">
-			<ProjectCard href="/cover-bank" text="Cover Bank"/>
-			<ProjectCard href="/jguide" text="The J Guide"/>
-			<ProjectCard href="/feel-good" text="Feel Good"/>
-			<ProjectCard href="/hanky-panky" text="Hanky Panky"/>
+			<ProjectCard client:visible href="/cover-bank" text="Cover Bank"/>
+			<ProjectCard client:visible href="/jguide" text="The J Guide"/>
+			<ProjectCard client:visible href="/feel-good" text="Feel Good"/>
+			<ProjectCard client:visible href="/hanky-panky" text="Hanky Panky"/>
 		</div>
 	</section>
-
-
 </PageWithSidebar>
 
 <style lang="scss">
