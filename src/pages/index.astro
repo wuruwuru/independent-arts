@@ -6,8 +6,7 @@ import Layout from "@layout/Default.astro"
 import "@styles/index.css"
 
 //Scripts
-import Dots from "@components/DotsCursor.astro";
-import HomeProjectList from "@components/HomeProjectList.astro";
+// import Dots from "@components/DotsCursor.astro";
 
 //Data
 import projects from "@data/projects.json"
@@ -23,34 +22,8 @@ import projects from "@data/projects.json"
 		</header>
 		<main>
 			<div class="list" id="list">
-				<section class="list__items">
-					{projects.map(project => (
-							<HomeProjectList
-								title={project.title}
-								category={project.category}
-								subtitle={project.subtitle}
-								description={project.description}
-								contributors={project.contributors}
-							/>
-						))
-					}
-				</section>
 			</div>
 		</main>
-
-		<script>
-			const list = window.document.getElementById('list');
-			window.addEventListener('scroll', function() {
-				var fromTop = list.offsetTop - window.scrollY;
-				var isFixed = list.classList.contains('list--fixed-background');
-				if ((fromTop <= 0) && !isFixed) {
-					list.classList.add('list--fixed-background');
-				} else if ((fromTop > 0) && isFixed) {
-					list.classList.remove('list--fixed-background');
-				}
-			});
-		</script>
-		<Dots client:idle/>
 </Layout>
 
 <style>
