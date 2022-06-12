@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: var(--font-serif, 'GT Alpina');
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-size: 2rem;
+  color: var(--color-black);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  animation: underline-flash .5s infinite;
+}
+
+@keyframes underline-flash {
+  0%, 100% {
+    text-decoration: none;
+  }
+  80% {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0;
+}
