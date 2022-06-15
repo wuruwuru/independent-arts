@@ -21,10 +21,10 @@ const {
 
 <div class="preview">
   <div class="head">
-    <h3>{month}</h3>
+    <h5>{month}</h5>
   </div>
   <ul class="body">
-    {posts.map(({href, noAndTitle  }) => (
+    {posts.map(({ href, noAndTitle }) => (
       <li><a href={href} target="_blank" rel="noopener noreferrer"></a>{noAndTitle}</li>
     ))}
   </ul>
@@ -32,18 +32,18 @@ const {
 
 <style lang="scss">
   .preview {
-    .head h3 {
+    .head h5 {
       color: var(--color-dark-gray);
       font-size: 1.8rem;
       font-family: var(--font-sans);
+      margin: 0;
       margin-block-end: 24px;
+      font-weight: 400;
     }
   }
 
-  .body {
-    > * + * {
-      margin-top: 12px;
-    }
+  .body > * + * {
+    margin-top: 16px;
   }
 
 </style>

@@ -54,45 +54,46 @@ const projects = [
 						))}
 					</ul>
 				</div>
-				<div class="c-section__right l-grid__column-start--8 l-grid__column--2">
+				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
 					<h4 class="c-section-title">Data</h4>
-					<ul class="stats">
+					<ul class="aside-list">
 						<li><ProfileCard/></li>
 						<li><ProfileCard/></li>
 						<li><ProfileCard/></li>
 					</ul>
 					<h4 class="c-section-title">Newsletter</h4>
-					<ul class="stats">
+					<ul class="aside-list">
 						<li><NewsletterPreview/></li>
 					</ul>
 					<h4 class="c-section-title">Journal</h4>
-					<ul class="stats">
+					<ul class="aside-list aside-list--md">
 						<li><JournalPreview/></li>
 						<li><JournalPreview/></li>
 						<li><JournalPreview/></li>
 					</ul>
-				</div>
+				</aside>
 			</div>
 		</section>
 	</main>
 </Layout>
 
 <style lang="scss">
-	.c-project-list {
-		padding: 24px 0;
-		&__item {
-			& + & {
-				margin-top: 72px;
-				margin-block-start: 72px;
-			}
+	.c-project-list,
+	.aside-list {
+		padding: 64px 0;
+	}
+	.c-project-list__item {
+		& + & {
+			margin-top: 64px;
+			margin-block-start: 64px;
 		}
 	}
 
-	.stats {
-		padding: 24px 0;
-		> * + * {
-			margin-top: 24px;
-
-		}
+	.aside-list	> * + * {
+		margin-top: 16px;
 	}
+	.aside-list--md	> * + * {
+		margin-top: 32px;
+	}
+
 </style>
