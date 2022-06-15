@@ -1,36 +1,98 @@
 ---
-//Layout
-import Layout from "@layout/Default.astro"
+//Components
+import Layout from "@layout/Default.astro";
+import PageHeader from "@components/PageHeader.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import ProfileCard from "@components/ProfileCard.astro";
+import NewsletterPreview from "@components/NewsletterPreview.astro";
+import JournalPreview from "@components/JournalPreview.astro";
 
 //Styling
-import "@styles/index.css"
+
 
 //Scripts
 // import Dots from "@components/DotsCursor.astro";
 
 //Data
-import projects from "@data/projects.json"
+// import projects from "@data/projects.json"
+const projects = [
+	{ 
+		href: 'https://google.com', 
+		title: 'Feel Good', 
+		description: 'A collection of joyful queer stories from ten of the best writers of our time.', 
+		hrefText: 'afeelgoodbook.com' 
+	},
+	{ 
+		href: 'https://google.com', 
+		title: 'Hanky Panky', 
+		description: 'A short film inspired by a real phone call between a Nigerian aunty and her niece.', 
+		hrefText: 'hankypankyfilm.com' 
+	},
+	{ 
+		href: 'https://google.com', 
+		title: 'The J Guide', 
+		description: 'An instruction manual for rolling your first joint.', 
+		hrefText: 'instagram/thejguide' 
+	},
+]
+
 ---
 <Layout
-	bodyClassName="checkered"
 	pageTitle="Wuruwuru"
 	pageUrl="https://wuruwuru.com"
 	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
 >
-		<header>
-			<h1 class="wordmark" id="wordmark">Wuruwuru</h1>
-		</header>
-		<main>
-			<div class="list" id="list">
+	<main>
+		<PageHeader/>
+		<section class="l-section">
+			<div class="l-container l-grid">
+				<div class="c-section__left l-grid__column--6">
+					<h4 class="c-section-title">Stories</h4>
+					<ul class="c-project-list">
+						{projects.map(proj => (
+							<li class="c-project-list__item"><ProjectCard {...proj}/></li>
+						))}
+					</ul>
+				</div>
+				<div class="c-section__right l-grid__column-start--8 l-grid__column--2">
+					<h4 class="c-section-title">Data</h4>
+					<ul class="stats">
+						<li><ProfileCard/></li>
+						<li><ProfileCard/></li>
+						<li><ProfileCard/></li>
+					</ul>
+					<h4 class="c-section-title">Newsletter</h4>
+					<ul class="stats">
+						<li><NewsletterPreview/></li>
+					</ul>
+					<h4 class="c-section-title">Journal</h4>
+					<ul class="stats">
+						<li><JournalPreview/></li>
+						<li><JournalPreview/></li>
+						<li><JournalPreview/></li>
+					</ul>
+				</div>
 			</div>
-		</main>
+		</section>
+	</main>
 </Layout>
 
-<style>
-.wordmark-text {
-  font-size: 0.8em;
-  font-family: 'Soehne Schmal', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
+<style lang="scss">
+	.c-project-list {
+		padding: 24px 0;
+		&__item {
+			& + & {
+				margin-top: 72px;
+				margin-block-start: 72px;
+			}
+		}
+	}
+
+	.stats {
+		padding: 24px 0;
+		> * + * {
+			margin-top: 24px;
+
+		}
+	}
 </style>

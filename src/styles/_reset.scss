@@ -13,25 +13,8 @@ body {
   position: relative;
   font-family: var(--font-serif, 'GT Alpina');
   font-feature-settings: "kern", "liga", "clig", "calt";
-  font-size: 2rem;
   color: var(--color-black);
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-}
-a:hover {
-  animation: underline-flash .5s infinite;
-}
-
-@keyframes underline-flash {
-  0%, 100% {
-    text-decoration: none;
-  }
-  80% {
-    text-decoration: underline;
-  }
+  font-size: 2rem;
 }
 
 ul {
@@ -44,4 +27,13 @@ img {
 }
 figure {
   margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-light-gray);
 }

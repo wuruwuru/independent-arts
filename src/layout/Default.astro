@@ -2,6 +2,7 @@
 // Components
 import BaseHead from '@components/BaseHead.astro';
 import NavDefault from '@components/NavDefault.astro';
+import Footer from '@components/FooterDefault.astro';
 
 export interface Props {
 	pageTitle: string,
@@ -9,12 +10,10 @@ export interface Props {
 	pageImage: string,
 	seoTitle?: string,
 	pageDescription?: string,
-	bodyClassName?: string,
 }
 
 const {
 		pageTitle,
-		bodyClassName = "",
 		hideNav = false
 	} = Astro.props;
 ---
@@ -23,54 +22,9 @@ const {
 <html lang="en">
 	<BaseHead { ...Astro.props }></BaseHead>
 
-	<body class={bodyClassName}>
-		{!hideNav && <NavDefault />}
+	<body>
+		<NavDefault />
 		<slot/>
-    <footer/>
+    <Footer/>
 	</body>
 </html>
-
-<style lang="scss">
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    position: relative;
-    font-family: 'Soehne', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-feature-settings: "kern", "liga", "clig", "calt";
-    font-size: 1.4rem;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  img {
-    max-width: 100%;
-  }
-  figure {
-    margin: 0;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: underline;
-    &:hover {
-      animation: underline-flash .5s infinite;
-    }
-  }
-
-  @keyframes underline-flash {
-    0%, 100% {
-      text-decoration: none;
-    }
-    80% {
-      text-decoration: underline;
-    }
-  }
-
-</style>

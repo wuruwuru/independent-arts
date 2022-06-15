@@ -1,0 +1,37 @@
+---
+
+---
+<header>
+  <div class="l-container">
+		<span>
+			<slot tag="h1" name="title"/>
+			<slot name="description"/>
+			<slot>
+				<h1><span class="emphasize">wuruwuru</span> is a publishing studio. </h1>
+				<p>We work with friends and other independent creators to produce niche stories and experiments that promote modern African culture on the internet.</p>
+			</slot>
+		</span>
+  </div>
+</header>
+
+
+<style lang="scss">
+	header {
+		padding: 40px 0;
+		font-size: 2.4rem;
+		line-height: 1.13;
+		.l-container span {
+			display: inline-block;
+			max-width: 60ch;
+		  > * {
+			 display: inline;
+			 font: inherit;
+		 }
+		}
+
+		h1 .emphasize {
+			font-weight: 500;
+			font-style: italic;
+		}
+	}
+</style>

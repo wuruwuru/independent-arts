@@ -4,41 +4,79 @@ export interface Props {
     text: string
 }
 
-const { href, text } = Astro.props
+const { 
+	href = 'https://google.com', 
+	title = 'Feel Good', 
+	description = 'A collection of joyful queer stories from ten of the best writers of our time.', 
+	hrefText = 'afeelgoodbook.com' } = Astro.props
 ---
-<a href={href} class="project">
-    {text}
-</a>
+<div class="project">
+	<div class="project-cover"></div>
+	<div class="project-text">
+		<div class="body">
+			<h2>{title}</h2>
+			<p>{ description }</p>
+		</div>
+		<div class="footer">
+			<a href="https://google.com" target="_blank">{ hrefText }</a>
+		</div>
+	</div>
+</div>
 
-<style>
-    .project{
-        min-height: 240px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Soehne Schmal';
-        font-weight: 400;
-        font-size: 60px;
-        line-height: 70px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background-color: #000000;
-        transition-duration: 200ms;
-        text-decoration: none;
-    }
+<style lang="scss">
+.project {
+	display: grid;
+	gap: 24px;
+	text-decoration: none;
+	grid-template-columns: 1fr minmax(30%, 300px);
+	&:hover {
+		text-decoration: none;
+	}
 
-    .project:hover{
-        color: #000000;
-        background-color: white;
-        animation: none;
-    }
-
-    @media(max-width: 600px){
-        .project{
-            height: 200px;
-            font-size: 50px;
-            line-height: 60px;
-        }
-    }
+	&-cover {
+		background-color: #CD2D59;
+		background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);
+		width: 100%;
+		min-width: 300px;
+		height: 100%;
+		aspect-ratio: 616 / 400;
+	}
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		h5 {
+			font-size: 3.2rem;
+			font-weight: normal;
+		}
+		p {
+			font-size:var(--font-size-base);
+		}
+		
+		.footer {
+			font-style: italic;
+			padding-block-end: 28px;
+			margin-block-end: 0;
+			position: relative;
+			&::after {
+				--divider-height: 16px;
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: var(--divider-height);
+				background: linear-gradient(90deg, var(--color-light-gray) 50%, transparent 50%, transparent 100%), 
+										linear-gradient(90deg, transparent 50%, var(--color-light-gray) 50%,  var(--color-light-gray) 100%);
+				background-position: 0 0, 0 calc(var(--divider-height) / 2);
+				background-size: var(--divider-height) 50%;
+				background-repeat: repeat no-repeat;
+			}
+			p {
+				position: relative;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
 </style>

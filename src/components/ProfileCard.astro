@@ -1,0 +1,48 @@
+---
+export interface Props {
+  title: string;
+  description: string | number;
+  imageLink?: URL
+}
+
+const {
+  title = 'Album Covers',
+  description = 5000
+} = Astro.props;
+---
+
+<div class="profile">
+  <div class="avatar"></div>
+  <div class="text">
+    <div class="inner">
+      <div>{ title }</div>
+      <p class="-is-integer">{ description }</p>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .profile {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(auto, 72px) 1fr;
+    align-items: center;
+    .avatar {
+      background: whitesmoke;
+      aspect-ratio: 1;
+    }
+    .text .inner {
+      display: flex;
+      flex-direction: column;
+        > p {
+        margin-block-start: 4px;
+        margin-block-end: 4px;
+        color: var(--color-dark-gray);
+        font-family: var(--font-sans);
+        &.-is-integer {
+          font-family: var(--font-sans-mono);
+        }
+      }
+    }
+  }
+</style>

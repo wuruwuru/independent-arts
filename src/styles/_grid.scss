@@ -1,0 +1,22 @@
+
+.l-grid {
+  display: grid; 
+  grid-template-columns: repeat($grid-columns, 1fr); 
+  grid-template-rows: auto;
+  gap: 0px $grid-gutter; 
+  > * {
+    grid-column: auto / span $grid-columns;
+  }
+
+  &__column {
+    @for $value from 1 to $grid-columns {
+      &-start--#{$value} {
+        grid-column-start: #{$value};
+      }
+
+      &--#{$value} {
+        grid-column: auto / span #{$value};
+      }
+    }
+  }
+}

@@ -1,24 +1,6 @@
 @font-face {
-  font-family: 'GT Alpina Rg';
-  src: local('GT Alpina Rg It'), local('GTAlpina-RgIt'),
-      url('../../assets/fonts/GTAlpina-RgIt.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT America Rg';
-  src: local('GT America Rg'), local('GTAmerica-Rg'),
-      url('../../assets/fonts/GTAmerica-Rg.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Alpina Rg';
-  src: local('GT Alpina Rg'), local('GTAlpina-Rg'),
+  font-family: 'GT Alpina';
+  src: local('GT Alpina Rg'), local('GTAlpina-Rg'), local('GTAlpina'),
       url('../../assets/fonts/GTAlpina-Rg.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
@@ -26,7 +8,34 @@
 }
 
 @font-face {
-  font-family: 'GT America Mono Rg';
+  font-family: 'GT Alpina';
+  src: local('GT Alpina Rg It'), local('GTAlpina-RgIt'), local('GT Alpina'),
+      url('../../assets/fonts/GTAlpina-RgIt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Alpina';
+  src: local('GT Alpina Md It'), local('GTAlpina-MdIt'), local('GT Alpina'),
+      url('../../assets/fonts/GT-Alpina-Md-Italic-Trial.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT America';
+  src: local('GT America Rg'), local('GTAmerica-Rg'), local('GT America'),
+      url('../../assets/fonts/GTAmerica-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT America Mono';
   src: local('GT America Mono Rg'), local('GTAmericaMono-Rg'),
       url('../../assets/fonts/GTAmericaMono-Rg.woff2') format('woff2');
   font-weight: normal;
