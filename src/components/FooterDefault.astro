@@ -41,10 +41,11 @@ const currentYear = new Date().getFullYear();
 </footer>
 
 <style lang="scss">
+  @import "../styles/_mixins.scss";
   .l-section {
-    padding: 48px 0;
+    padding: calc(var(--spacer-base) * 0.75) 0;
     .l-container > * + * {
-      margin-top: 80px;
+      margin-top: calc(var(--spacer-base) * 1.25);
     }
   }
 
@@ -53,6 +54,9 @@ const currentYear = new Date().getFullYear();
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    @include screen('small') {
+      display: block;
+    }
   }
 
   .left {
@@ -82,13 +86,16 @@ const currentYear = new Date().getFullYear();
     flex-direction: row;
     justify-content: flex-end;
     text-align: right;
-    gap: 120px;
+    gap: 12rem;
+    @include screen('small') {
+      text-align: left;
+    }
     a {
       font-style: normal;
     }
     .group h6 {
       font-family: var(--font-sans-mono);
-      margin-block-end: 24px;
+      margin-block-end: 2.4rem;
       font-weight: 400;
       font-size: 1.8rem;
       color: var(--color-dark-gray);
@@ -96,7 +103,7 @@ const currentYear = new Date().getFullYear();
     }
     .footer-links {
       > * + * {
-        margin-top: 8px;
+        margin-top: .8rem;
         line-height: 1.4;
       }
     }

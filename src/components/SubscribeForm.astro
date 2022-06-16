@@ -10,13 +10,14 @@
 </form>
 
 <style lang="scss">
+	@import "../styles/_mixins.scss";
 	.form {
 		display: flex;
 		flex-direction: column;
 		row-gap: 16px;
 
 		&__label {
-			font-size: 2rem;
+			font-size:var(--font-size-base);
 			margin: 0;
 		}
 		&__input-wrapper {
@@ -60,13 +61,6 @@
 				color: var(--color-black);
 				border-inline-start: none;
 			}
-		}
-}
-
-@media (max-width: 600px){
-		.form{
-				width: 80%;
-				max-width: unset;
 		}
 }
 

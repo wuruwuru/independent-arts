@@ -4,8 +4,15 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px
   -webkit-text-size-adjust: 100%;
+  @include screen('med-small') {
+    // font-size: 56.25%; // 1rem = 8px
+    font-size: 50%; // 1rem = 8px
+  }
+  // @include screen('small') {
+  //   font-size: 37.5%; // 1rem = 6px
+  // }
 }
 
 body {
@@ -14,7 +21,7 @@ body {
   font-family: var(--font-serif, 'GT Alpina');
   font-feature-settings: "kern", "liga", "clig", "calt";
   color: var(--color-black);
-  font-size: 2rem;
+  font-size:var(--font-size-base);
 }
 
 ul {

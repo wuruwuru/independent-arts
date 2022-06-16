@@ -1,14 +1,17 @@
 ---
 export interface Props {
-    href: string,
-    text: string
+    title: string,
+    description: string,
+		subtitle: {
+			href: string,
+			text: string
+		}
 }
 
 const { 
-	href = 'https://google.com', 
 	title = 'Feel Good', 
 	description = 'A collection of joyful queer stories from ten of the best writers of our time.', 
-	hrefText = 'afeelgoodbook.com' } = Astro.props
+	subtitle } = Astro.props
 ---
 <div class="project">
 	<div class="project-cover"></div>
@@ -18,17 +21,21 @@ const {
 			<p>{ description }</p>
 		</div>
 		<div class="footer">
-			<a href="https://google.com" target="_blank">{ hrefText }</a>
+			<a href={ subtitle?.href || '#' } target="_blank">{ subtitle.text }</a>
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
+	@import "../styles/mixins.scss";
 .project {
 	display: grid;
 	gap: 24px;
 	text-decoration: none;
-	grid-template-columns: 1fr minmax(30%, 300px);
+	grid-template-columns: 1fr minmax(auto, 320px);
+	@include screen('small') {
+		grid-template-columns: 1fr;
+	}
 	&:hover {
 		text-decoration: none;
 	}
@@ -45,6 +52,7 @@ const {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		gap: 32px;
 		h5 {
 			font-size: 3.2rem;
 			font-weight: normal;

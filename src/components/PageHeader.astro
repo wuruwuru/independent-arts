@@ -16,13 +16,18 @@
 
 
 <style lang="scss">
+	@import "../styles/_mixins.scss";
+
 	header {
-		padding: 32px 0 72px;
+		padding: calc(var(--spacer-base) * 0.75) 0 calc(var(--spacer-base) * 1.125);
 		font-size: 2.4rem;
 		line-height: 1.2;
 		.l-container span {
 			display: inline-block;
 			max-width: 60ch;
+			@include screen('small') {
+				max-width: unset;
+			}
 		  > * {
 			 display: inline;
 			 font: inherit;
