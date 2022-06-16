@@ -1,11 +1,28 @@
 ---
 import logo from "@images/logo.png";
+
+const links = [
+  {
+    name: 'Projects',
+    route: '/'
+  },
+  {
+    name: 'Creators',
+    route: '/creators/'
+  },
+  {
+    name: 'About',
+    route: '/about/'
+  },
+];
+
+const path = Astro.canonicalURL.pathname;
 ---
 <nav>
   <ul id="menu">
-    <li><a href="/">Projects</a></li>
-    <li><a href="/creators">Creators</a></li>
-    <li><a href="/about">About</a></li>
+    {links.map(({ name, route }) => (
+      <li class={path === route ? 'is-active' : ''}><a href={route}>{name}</a></li>
+    ))}
   </ul>
   <div class="logo">
     <a href="/">
@@ -44,7 +61,12 @@ import logo from "@images/logo.png";
     & > ul > li {
       display: inline-block;
       padding: 0 5px;
+      color: var(--color-dark-gray);
+      &.is-active {
+        color: var(--color-black);
+      }
       a {
+        color: inherit;
         font-style: normal;
       }
       &:first-of-type {
