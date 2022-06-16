@@ -2,23 +2,26 @@
 export interface Props {
   title: string;
   description: string | number;
-  imageLink?: URL
+  imageLink?: URL,
+  isLarge: boolean
 }
 
 const {
   title = 'Album Covers',
   description = 5000,
   imageLink,
+  isLarge = false
 } = Astro.props;
 
 // node check type of description
 const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
+const avatarSizeClass = isLarge ? '-is-large' : '';
 ---
 
-<div class="profile">
+<div class={`profile ${avatarSizeClass}`}>
   <div class="avatar">
     {imageLink && (
-      <img src={imageLink} alt="" />
+      <img src={imageLink} alt={`${title} image`} />
     )}
   </div>
   <div class="text">
@@ -27,7 +30,6 @@ const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
       <p class={descriptionClass}>{ description }</p>
     </div>
   </div>
-  
 </div>
 
 <style lang="scss">
@@ -36,9 +38,13 @@ const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
     gap: 24px;
     grid-template-columns: minmax(auto, 72px) 1fr;
     align-items: center;
+    &.-is-large {
+      grid-template-columns: minmax(auto, 92px) 1fr;
+    }
     .avatar {
       background: whitesmoke;
       aspect-ratio: 1;
+      display: flex;
     }
     .text .inner {
       display: flex;

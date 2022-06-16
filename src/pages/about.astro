@@ -5,7 +5,13 @@ import PageHeader from "@components/PageHeader.astro";
 import ProfileCard from "@components/ProfileCard.astro";
 
 //Data
+import opemipo from "@images/team/opemipo.png"
+import nneoma from "@images/team/nneoma.png"
+import williams from "@images/team/williams.png"
+import agnes from "@images/team/agnes.png"
+import tomiwa from "@images/team/tomiwa.png"
 import team from "@data/team.json";
+
 const experiments = [
 	{
 		question: 'Can we establish scrum on the team?',
@@ -46,6 +52,14 @@ const header = {
 	description: 'Right now, we’re making publishing experiments. Long term, we’re trying to become a community-funded, community-run support system for independent publishers.'
 }
 
+const teamImages = {
+    "opemipo": opemipo,
+    "nneoma": nneoma,
+    "williams": williams,
+    "agnes": agnes,
+    "tomiwa": tomiwa,
+}
+
 ---
 <Layout
 	pageTitle="Wuruwuru"
@@ -61,7 +75,7 @@ const header = {
 					<ul class="c-team">
 						{team.map(({name, role, description, id }) => (
 							<li class="c-team__member">
-								<div class="image"><ProfileCard title={name} description={role}/></div>
+								<div class="image"><ProfileCard title={name} description={role} imageLink={teamImages[id]} isLarge/></div>
 								<p>{ description }</p>
 							</li>
 						))}
