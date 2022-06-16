@@ -5,16 +5,24 @@ export interface Props {
 		subtitle: {
 			href: string,
 			text: string
-		}
+		},
+		imageLink: URL
 }
 
 const { 
 	title = 'Feel Good', 
 	description = 'A collection of joyful queer stories from ten of the best writers of our time.', 
-	subtitle } = Astro.props
+	subtitle,
+	imageLink = null
+ } = Astro.props
+ 
 ---
 <div class="project">
-	<div class="project-cover"></div>
+	<div class={`project-cover ${imageLink === null ? '-default-cover' : ''}`}>
+		{imageLink && (
+      <img src={imageLink} alt={`${title} cover image`} />
+    )}
+	</div>
 	<div class="project-text">
 		<div class="body">
 			<h2>{title}</h2>
@@ -41,12 +49,15 @@ const {
 	}
 
 	&-cover {
-		background-color: #CD2D59;
-		background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);
+	
 		width: 100%;
 		min-width: 300px;
 		height: 100%;
 		aspect-ratio: 616 / 400;
+		&.-default-cover{
+			background-color: #CD2D59;
+			background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);
+		}
 	}
 	&-text {
 		display: flex;

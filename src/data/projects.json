@@ -1,5 +1,6 @@
 [
   {
+    "id": "j-guide",
     "title": "J Guide",
     "category": "Comic",
     "shortDescription": "An Instagram comic about weed.",
@@ -34,6 +35,7 @@
     ]
   },
   {
+    "id": "hanky",
     "title":  "Hanky Panky",
     "category":  "Animation",
     "shortDescription":  "On a nice afternoon drive, Osas receives a call from Aunty Yuwa about raunchy Instagram videos.",
