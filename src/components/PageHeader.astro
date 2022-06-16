@@ -1,15 +1,19 @@
 ---
+export interface Props {
+  title: string;
+  description: string
+}
 
+const { 
+	title = 'is a publishing studio.', 
+	description = 'We work with friends and other independent creators to produce niche stories and experiments that promote modern African culture on the internet.'
+ } = Astro.props;
 ---
 <header>
   <div class="l-container">
 		<span>
-			<slot tag="h1" name="title"/>
-			<slot name="description"/>
-			<slot>
-				<h1><span class="emphasize">wuruwuru</span> is a publishing studio. </h1>
-				<p>We work with friends and other independent creators to produce niche stories and experiments that promote modern African culture on the internet.</p>
-			</slot>
+				<h1><span class="emphasize">wuruwuru</span> {title} </h1>
+				<p>{description}</p>
 		</span>
   </div>
 </header>
