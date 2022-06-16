@@ -1,0 +1,49 @@
+---
+
+const {
+  month = 'March',
+  posts = [
+    {
+      issueNumber: 40,
+      href: 'https://google.com',
+      title: 'Cherry 🍒 Sprint',
+      noAndTitle: '40: Cherry 🍒 Sprint'
+    },
+    {
+      issueNumber: 39,
+      href: 'https://google.com',
+      title: 'Email Deliverability',
+      noAndTitle: '39: Email Deliverability'
+    }
+  ]
+} = Astro.props;
+---
+
+<div class="preview">
+  <div class="head">
+    <h5>{month}</h5>
+  </div>
+  <ul class="body">
+    {posts.map(({ href, noAndTitle }) => (
+      <li><a href={href} target="_blank" rel="noopener noreferrer"></a>{noAndTitle}</li>
+    ))}
+  </ul>
+</div>
+
+<style lang="scss">
+  .preview {
+    .head h5 {
+      color: var(--color-dark-gray);
+      font-size: 1.8rem;
+      font-family: var(--font-sans);
+      margin: 0;
+      margin-block-end: 24px;
+      font-weight: 400;
+    }
+  }
+
+  .body > * + * {
+    margin-top: 16px;
+  }
+
+</style>

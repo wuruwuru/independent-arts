@@ -1,144 +1,155 @@
 ---
 //Components
-import PageWithSidebar from "@layout/PageWithSidebar.astro";
-import ProjectCard from "@components/ProjectCard.astro";
-import projects from "@data/projects.json"
+import Layout from "@layout/Default.astro";
+import PageHeader from "@components/PageHeader.astro";
+import ProfileCard from "@components/ProfileCard.astro";
 
-const pageMeta = {
-	bodyClassName: "checkered",
-	pageTitle: "Wuruwuru | About",
-	seoTitle: "About Wuruwuru",
-	pageUrl: "/about",
-	pageImage: "/assets/images/thumbnail.png",
+//Data
+import opemipo from "@images/team/opemipo.png"
+import nneoma from "@images/team/nneoma.png"
+import williams from "@images/team/williams.png"
+import agnes from "@images/team/agnes.png"
+import tomiwa from "@images/team/tomiwa.png"
+import team from "@data/team.json";
+
+const experiments = [
+	{
+		question: 'Can we establish scrum on the team?',
+		answer: 'https://google.com',
+	},
+	{
+		question: 'Can we manage teams of directors and creators remotely to make a Really Cool book, animated short film, comics, etc?',
+		answer: 'https://google.com',
+	},
+	{
+		question: 'Can we document the process of making these stories for other independent publishers?',
+		answer: 'https://google.com',
+	},
+	{
+		question: 'Can we use social media to build a global audience for these Really Cool stories?',
+		answer: null,
+	},
+	{
+		question: 'Can we create spaces for the team, directors and creators to meet and share with each other?',
+		answer: null,
+	},
+	{
+		question: 'Can we run a successful Kickstarter campaign for an animated series?',
+		answer: null,
+	},
+	{
+		question: 'Can we design a meaningful membership program to run the studio?',
+		answer: null,
+	},
+	{
+		question: 'Can we help other people raise money for their Really Cool ideas?',
+		answer: null,
+	}
+]
+
+const header = {
+	title: 'is a non-profit studio.',
+	description: 'Right now, we’re making publishing experiments. Long term, we’re trying to become a community-funded, community-run support system for independent publishers.'
+}
+
+const teamImages = {
+    "opemipo": opemipo,
+    "nneoma": nneoma,
+    "williams": williams,
+    "agnes": agnes,
+    "tomiwa": tomiwa,
 }
 
 ---
-<PageWithSidebar
-	{...pageMeta}
-	header="About"
-	activeLink="about"
+<Layout
+	pageTitle="Wuruwuru"
+	pageUrl="https://wuruwuru.com"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
 >
-	<section class="section">
-		<h3 class="section__paragraph has-margin">
-			<b><i>wuruwuru</i></b> is an independent publishing studio. 
-		</h3>
-		<p class="section__paragraph">
-			We work with creatives and collaborators to produce and publish quality projects that promote our cultural experience. We are building a community that is documenting, preserving and shaping the narrative of Nigerian experiences.
-		</p>
-	</section>
-	<section class="section">
-		<h3 class="section__header">
-			Why <b><i>wuruwuru?</i></b>
-		</h3>
-		<p class="section__paragraph">
-			It’s called <b><i>wuruwuru</i></b> because it’s a trial and error approach to publishing. We make sure to be transparent about our processes because we don’t have a particular method for producing. That’s why we openly journal our learning experiences and the cost of production.
-		</p>
-	</section>
-	<section class="section">
-		<h3 class="section__header">
-			How is this valuable?
-		</h3>
-		<p class="section__paragraph">
-			It’s an opportunity to document the experience in the Nigerian Creative Industry. We also get to work with freelancers and participate in and support independent creation in Nigeria.
-		</p>
-	</section>
-	<section class="section">
-		<h3 class="projects__header">
-			We currently have four projects:
-		</h3>
-		<div class="projects__grid">
-			<ProjectCard href="/cover-bank" text="Cover Bank"/>
-			<ProjectCard href="/jguide" text="The J Guide"/>
-			<ProjectCard href="/feel-good" text="Feel Good"/>
-			<ProjectCard href="/hanky-panky" text="Hanky Panky"/>
-		</div>
-	</section>
-
-
-</PageWithSidebar>
+	<main>
+		<PageHeader {...header}/>
+		<section class="l-section">
+			<div class="l-container l-grid">
+				<div class="c-section__left l-grid__column--5">
+					<h4 class="c-section-title">Stories</h4>
+					<ul class="c-team">
+						{team.map(({name, role, description, id }) => (
+							<li class="c-team__member">
+								<div class="image"><ProfileCard title={name} description={role} imageLink={teamImages[id]} isLarge/></div>
+								<p>{ description }</p>
+							</li>
+						))}
+					</ul>
+				</div>
+				<aside class="c-section__right l-grid__column-start--7 l-grid__column--3">
+					<h4 class="c-section-title">Experiments</h4>
+					<ol class="experiment-list">
+						{experiments.map(({ question, answer }) => (
+							<li class={answer && answer.length >= 1 ? 'active' : 'inactive'}>
+								<a href={answer && answer.length >= 1 ? answer : '#'} target="_blank" rel="noopener noreferrer">{question}</a>
+							</li>
+						))}
+					</ol>
+				</aside>
+			</div>
+		</section>
+	</main>
+</Layout>
 
 <style lang="scss">
-	.section{
-		padding-top: 40px;
-	}
+	@import "../styles/mixins.scss";
 
-	@media (max-width: 600px){
-		.section:first-of-type{
-			padding-top: 20px;
+	.c-team,
+	.experiment-list {
+		padding: var(--spacer-base) 0;
+	}
+	.c-team__member {
+		display: flex;
+    flex-flow: row nowrap;
+    gap: 48px;
+		& + & {
+			margin-top: var(--spacer-base);
+			margin-block-start: var(--spacer-base);
+		}
+		.image {
+			padding-top: 16px;
+			flex: 1 0 320px;
+		}
+
+		p {
+			line-height: 1.3;
 		}
 	}
-
-	.section__header{
-		font-size: 24px;
-		line-height: 28px;
-		margin: 0 0 18px;
-		color: #000000;
-		font-weight: normal;
-	}
-
-	@media (max-width: 600px){
-		.section__header{
-			margin-bottom: 20px;
-			font-size: 22px;
-			line-height: 26px;
+	.c-section__right {
+		@include screen('small') {
+			display: none;
 		}
 	}
-
-	.section__paragraph{
-		font-size: 24px;
-		line-height: 28px;
-		font-weight: normal;
-		color: #000000;
-		max-width: 66%;
-		margin: 0;
-	}
-	
-	.section__paragraph.has-margin{
-		margin-bottom: 18px;
-	}
-
-	@media (max-width: 600px){
-		.section__paragraph{
-			max-width: unset;
-			font-size: 18px;
-			line-height: 21px;
+	.c-section__left {
+		@include screen('small') {
+			grid-column: 1 / -1;
 		}
 	}
-
-	.projects__header{
-		font-size: 20px;
-		line-height: 23px;
-		font-weight: 400;
-		color: #000000;
-		margin: 0 0 40px;
-	}
-
-	@media (max-width: 600px){
-		.projects__header{
-			font-size: 18px;
-			line-height: 21px;
+	.experiment-list {
+		font-family: var(--font-sans);
+		font-size: 1.8rem;
+		line-height: 1.2;
+		list-style-type: decimal;
+		list-style-position: inside;
+		.inactive a,
+		li.inactive {
+			color: var(--color-dark-gray);
+			cursor: not-allowed;
+			&:hover {
+				animation: none;
+			}
 		}
-	}
-
-	.projects__grid{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 40px;
-		width: 72%;
-		margin-bottom: 100px;
-	}
-
-	@media (max-width: 1000px){
-		.projects__grid{
-			grid-template-columns: 1fr;
-			row-gap: 20px;
+		a {
+			font-style: normal;
 		}
+		> * + * {
+		margin-top: calc(var(--spacer-base) / 2 );
+	}
 	}
 
-	@media (max-width: 600px){
-		.projects__grid{
-			width: 100%;
-			margin-bottom: 80px;
-		}
-	}
 </style>

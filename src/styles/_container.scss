@@ -1,0 +1,25 @@
+
+.l-container {
+  max-width: var(--grid-container-width);
+  padding: 0 16px;
+  width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+
+  &--flex {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.c-section {
+  &-title {
+    padding: 16px 0;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
+    // margin-bottom: 48px;
+  }
+}
+

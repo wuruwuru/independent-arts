@@ -1,0 +1,111 @@
+---
+import logo from "@images/logo.png";
+import Form from "@components/SubscribeForm.astro";
+
+const currentYear = new Date().getFullYear();
+---
+<footer class="l-section">
+  <div class="l-container">
+    <hr />
+    <div class="main">
+      <div class="left">
+        <a href="/">
+          <img src={logo} width="60px" height="60px" alt="Logo">
+        </a>
+        <Form/>
+      </div>
+      <div class="right">
+        <div class="group">
+          <h6>Channels</h6>
+          <ul class="footer-links">
+            <li><a href="http://google.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="http://google.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="http://google.com" target="_blank" rel="noopener noreferrer">Vimeo</a></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h6>Studio</h6>
+          <ul class="footer-links">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Manifesto</a></li>
+            <li><a href="https://medium.com/wuruwuru" target="_blank" rel="noopener noreferrer">Journal</a></li>
+            <li><a href="https://wuruwuru.notion.site/Costs-07678076eb1342298550b1f713b37f7a" target="_blank" rel="noopener noreferrer">Costs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footnote">
+      <div>wuruwuru.com</div>
+      <div>Helterskelter Publishing House © {currentYear}</div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  @import "../styles/_mixins.scss";
+  .l-section {
+    padding: calc(var(--spacer-base) * 0.75) 0;
+    .l-container > * + * {
+      margin-top: calc(var(--spacer-base) * 1.25);
+    }
+  }
+
+  .main, .footnote {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    @include screen('small') {
+      display: block;
+    }
+  }
+
+  .left {
+    flex: 1 1 auto;
+    max-width: 480px;
+    > * + * {
+      margin-top: 18px;
+    }
+    a {
+      display: flex;
+      margin-bottom: 16px;
+    }
+    img {
+      max-height: 50px;
+      object-fit: contain;
+    }
+  }
+
+  .footnote {
+    font-size: 1.6rem;
+    font-family: var(--font-sans);
+    color: var(--color-dark-gray);
+  }
+
+  .right {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    gap: 12rem;
+    @include screen('small') {
+      text-align: left;
+    }
+    a {
+      font-style: normal;
+    }
+    .group h6 {
+      font-family: var(--font-sans-mono);
+      margin-block-end: 2.4rem;
+      font-weight: 400;
+      font-size: 1.8rem;
+      color: var(--color-dark-gray);
+      text-transform: uppercase;
+    }
+    .footer-links {
+      > * + * {
+        margin-top: .8rem;
+        line-height: 1.4;
+      }
+    }
+  }
+</style>
