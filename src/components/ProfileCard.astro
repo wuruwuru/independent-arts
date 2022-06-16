@@ -7,18 +7,27 @@ export interface Props {
 
 const {
   title = 'Album Covers',
-  description = 5000
+  description = 5000,
+  imageLink,
 } = Astro.props;
+
+// node check type of description
+const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
 ---
 
 <div class="profile">
-  <div class="avatar"></div>
+  <div class="avatar">
+    {imageLink && (
+      <img src={imageLink} alt="" />
+    )}
+  </div>
   <div class="text">
     <div class="inner">
       <div>{ title }</div>
-      <p class="-is-integer">{ description }</p>
+      <p class={descriptionClass}>{ description }</p>
     </div>
   </div>
+  
 </div>
 
 <style lang="scss">
