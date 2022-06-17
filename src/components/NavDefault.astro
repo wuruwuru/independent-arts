@@ -18,7 +18,7 @@ const links = [
 
 const path = Astro.canonicalURL.pathname;
 ---
-<nav>
+<nav class="l-container l-container--fluid">
   <ul id="menu">
     {links.map(({ name, route }) => (
       <li class={path === route ? 'is-active' : ''}><a href={route}>{name}</a></li>
@@ -47,15 +47,18 @@ const path = Astro.canonicalURL.pathname;
 </script>
 
 <style lang="scss">
+	@import "../styles/mixins.scss";
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 16px;
     position: sticky;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-block: 16px;
     top: 0;
     z-index: 10;
-    font-size:var(--font-size-base);
+    font-size: var(--font-size-base);
     font-family: var(--font-serif);
     & > ul > li {
       display: inline-block;
