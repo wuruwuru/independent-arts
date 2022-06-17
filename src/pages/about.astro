@@ -107,6 +107,10 @@ const teamImages = {
 		display: flex;
     flex-flow: row nowrap;
     gap: 48px;
+		@include screen('small') {
+			flex-direction: column;
+			gap: 28px;
+		}
 		& + & {
 			margin-top: var(--spacer-base);
 			margin-block-start: var(--spacer-base);
@@ -114,6 +118,9 @@ const teamImages = {
 		.image {
 			padding-top: 16px;
 			flex: 1 0 320px;
+			@include screen('small') {
+				flex-basis: auto;
+			}
 		}
 
 		p {
