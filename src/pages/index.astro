@@ -6,6 +6,7 @@ import ProjectCard from "@components/ProjectCard.astro";
 import ProfileCard from "@components/ProfileCard.astro";
 import NewsletterPreview from "@components/NewsletterPreview.astro";
 import JournalPreview from "@components/JournalPreview.astro";
+import projects from "@data/projects.json";
 
 
 
@@ -13,7 +14,6 @@ import JournalPreview from "@components/JournalPreview.astro";
 import hanky from "@images/projects/hanky.jpg";
 import j_guide from "@images/projects/j_guide.jpg";
 
-import projects from "@data/projects.json";
 
 
 const projectCovers = {
@@ -64,13 +64,6 @@ const projectCovers = {
 
 <style lang="scss">
 	@import "../styles/mixins.scss";
-
-	/* main {
-		--spacer-base: 64px;
-		@include screen('small') {
-			--spacer-base: 48px;
-		}
-	} */
 
 	.c-project-list,
 	.aside-list {

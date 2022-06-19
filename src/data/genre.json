@@ -1,0 +1,18 @@
+[
+  {
+    "id": "all",
+    "label": "All"
+  },
+  {
+    "id": "animation",
+    "label": "Animation"
+  },
+  {
+    "id": "music",
+    "label": "Music"
+  },
+  {
+    "id": "writing",
+    "label": "Writing"
+  }
+]

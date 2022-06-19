@@ -1,0 +1,30 @@
+[
+  {
+    "id": "all",
+    "label": "All"
+  },
+  {
+    "id": "animator",
+    "label": "Animator"
+  },
+  {
+    "id": "writer",
+    "label": "Writer"
+  },
+  {
+    "id": "graphic_designer",
+    "label": "Graphic Designer"
+  },
+  {
+    "id": "illustrator",
+    "label": "Illustrator"
+  },
+  {
+    "id": "director",
+    "label": "Director"
+  },
+  {
+    "id": "producer",
+    "label": "Producer"
+  }
+]

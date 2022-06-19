@@ -3,22 +3,28 @@ export interface Props {
   title: string;
   description: string | number;
   imageLink?: URL,
-  isLarge: boolean
+  size: 'small' | 'regular' | 'large'
 }
 
 const {
   title = 'Album Covers',
   description = 5000,
   imageLink,
-  isLarge = false
+  size = 72
 } = Astro.props;
+
+const avatarSizeClass = {
+  'small': '-is-small',
+  'regular': '-is-regular',
+  'large': '-is-large',
+}
 
 // node check type of description
 const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
-const avatarSizeClass = isLarge ? '-is-large' : '';
+
 ---
 
-<div class={`profile ${avatarSizeClass}`}>
+<div class={`profile ${avatarSizeClass[size]}`}>
   <div class="avatar">
     {imageLink && (
       <img src={imageLink} alt={`${title} image`} />
@@ -34,12 +40,19 @@ const avatarSizeClass = isLarge ? '-is-large' : '';
 
 <style lang="scss">
   .profile {
+    --card-size: 72px;
     display: grid;
     gap: 24px;
-    grid-template-columns: minmax(auto, 72px) 1fr;
+    grid-template-columns: minmax(auto, var(--card-size)) 1fr;
     align-items: center;
     &.-is-large {
-      grid-template-columns: minmax(auto, 92px) 1fr;
+      --card-size: 92px;
+    }
+    &.-is-small {
+      --card-size: 56px;
+      .text {
+        font-size: 1.8rem;
+      }
     }
     .avatar {
       background: whitesmoke;

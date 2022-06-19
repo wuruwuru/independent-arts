@@ -54,6 +54,9 @@ const {
 		min-width: 300px;
 		height: 100%;
 		aspect-ratio: 616 / 400;
+		@include screen('small') {
+			min-width: unset;
+		}
 		&.-default-cover{
 			background-color: #CD2D59;
 			background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);

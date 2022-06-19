@@ -1,0 +1,124 @@
+---
+//Components
+import Layout from "@layout/Default.astro";
+import PageHeader from "@components/PageHeader.astro";
+import Checkbox from "@components/FormInputCheckbox.astro";
+import ProfileCard from "@components/profileCard.astro";
+
+import projects from "@data/projects.json";
+import roles from "@data/roles.json";
+import genre from "@data/genre.json";
+import creators from "@data/creators.json";
+
+const getProjectsFilter = () => {
+  return projects.map(({ id, title }) => ({ id, label: title } ))
+}
+
+const fetchCreators = creators.map((creator) => {
+  const { roleId, projectIds, ...rest } = creator;
+  return {
+    ...rest,
+    role: roles.find(({ id }) => roleId === id),
+    projects: projectIds.filter(({ id }) => projectIds === id ),
+  }
+})
+ 
+
+const filters = [
+  {
+    title: 'Genre',
+    data: genre,
+  },
+  {
+    title: 'Roles',
+    data: roles,
+  },
+  {
+    title: 'Projects',
+    data: [
+      {
+        id: 'all',
+        label: 'All'
+      },
+      ...getProjectsFilter()
+    ],
+  },
+]
+
+---
+<Layout
+	pageTitle="Wuruwuru"
+	pageUrl="https://wuruwuru.com/creators"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
+>
+	<main>
+		<PageHeader/>
+		<section class="l-section">
+			<div class="l-container l-grid">
+				<div class="c-section__left l-grid__column--6">
+					<h4 class="c-section-title">Creators</h4>
+					<ul class="c-creator-list">
+            {fetchCreators.map(({name, bio, role, socialLink}) => (
+              <li class="c-creator-list__item">
+                <div class="profile"><ProfileCard title={name} description={role.label} size="small" /></div>
+                <div class="bio">{bio}</div>
+                <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
+              </li>
+            ))}
+          </ul>
+				</div>
+				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+          {filters.map(({ title, data }) => (
+            <h4 class="c-section-title">{title}</h4>
+            <ul class="aside-list">
+              {data.map((props, index) => {
+                const value = index === 0 ? true : false
+                return (
+                  <li><Checkbox {...props} value={value}/></li>
+                )
+              })}
+            </ul>
+          ))}
+				</aside>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style lang="scss">
+	@import "../styles/mixins.scss";
+
+	.c-creator-list,
+	.aside-list {
+		padding: var(--spacer-base) 0;
+	}
+	.c-creator-list__item {
+    display: grid;
+    grid-template-columns: 32% 1fr 14%;
+    gap: 24px;
+    .social {
+      justify-self: flex-end;
+      word-break: break-all;
+    }
+
+		& + & {
+			margin-top: var(--spacer-base);
+			margin-block-start: var(--spacer-base);
+		}
+	}
+	.c-section__right {
+		@include screen('small') {
+			display: none;
+		}
+	}
+	.c-section__left {
+		@include screen('small') {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.aside-list	> * + * {
+		margin-top: calc(var(--spacer-base) / 6 );
+	}
+
+</style>
