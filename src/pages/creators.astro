@@ -84,7 +84,27 @@ const filters = [
 		</section>
 	</main>
 </Layout>
+<script define:vars={{ filterOptions: filters }}>
+  window.runThisTown = filterOptions;
+</script>
+<script>
+  import { createMachine, assign } from '@xstate/fsm';
 
+  const creatorMachine = createMachine({
+    context: {
+      count: 0,
+    },
+    on: {
+      INC: {
+        actions: assign({
+          count: (context) => context.count + 1
+        })
+      }
+    }
+  })
+
+  // console.log(creatorMachine)
+</script>
 <style lang="scss">
 	@import "../styles/mixins.scss";
 
