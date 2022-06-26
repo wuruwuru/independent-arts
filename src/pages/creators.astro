@@ -67,14 +67,14 @@ const filters = [
             ))}
           </ul>
 				</div>
-				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2" id="filterWrapper">
           {filters.map(({ title, data }) => (
             <h4 class="c-section-title">{title}</h4>
-            <ul class="aside-list">
+            <ul class="aside-list" data-filterGroup={title.toLowerCase()}>
               {data.map((props, index) => {
                 const value = index === 0 ? true : false
                 return (
-                  <li><Checkbox {...props} value={value}/></li>
+                  <li><Checkbox onClick="console.log('hello')" {...props} value={value} client:load/></li>
                 )
               })}
             </ul>
@@ -84,27 +84,6 @@ const filters = [
 		</section>
 	</main>
 </Layout>
-<script define:vars={{ filterOptions: filters }}>
-  window.runThisTown = filterOptions;
-</script>
-<script>
-  import { createMachine, assign } from '@xstate/fsm';
-
-  const creatorMachine = createMachine({
-    context: {
-      count: 0,
-    },
-    on: {
-      INC: {
-        actions: assign({
-          count: (context) => context.count + 1
-        })
-      }
-    }
-  })
-
-  // console.log(creatorMachine)
-</script>
 <style lang="scss">
 	@import "../styles/mixins.scss";
 
@@ -142,3 +121,61 @@ const filters = [
 	}
 
 </style>
+<script define:vars={{ filters }}>
+  window.creatorFilterOptions = filters.reduce((acc, current) => {
+    const { title, ...rest } = current;
+    const _rest = rest.map
+    return {
+      ...acc,
+      [title.toLowerCase()]: {
+        ...rest
+      }
+    }
+  }, {});
+</script>
+<script>
+  
+  import { createMachine } from '@xstate/fsm';
+
+  const filterWrapper = document.getElementById('filterWrapper');
+  filterWrapper.addEventListener('click', function(event) {
+    console.log(event.target)
+  })
+  
+  const fetchData = () => {
+    console.log('heyy, fetching data')
+  }
+  const machine = createMachine({
+    id: 'creatorFilter',
+    initial: 'idle',
+    context: {
+      filterConfig: window.creatorFilterOptions
+    },
+    states: {
+      idle: {
+        on: {
+          CLICK: 'loading',
+        }
+      },
+      loading: {
+        entry: fetchData,
+        on: {
+          FILTERCHECK_PASSED: 'success',
+          FILTERCHECK_FAILED: 'error',
+        }
+      },
+      error: {
+        on: {
+          UPDATE_FILTERS: 'loading'
+        }
+      },
+      success: {
+        on: {
+          CLICK: 'loading'
+        }
+      },
+    },
+  })
+
+  console.log(machine)
+</script>

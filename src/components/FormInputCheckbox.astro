@@ -17,7 +17,6 @@ const {
   <div class="indicator"></div>
   {label}
 </label>
-
 <style lang="scss">
   label {
     font-family: var(--font-sans-mono);
@@ -47,6 +46,7 @@ const {
       width: 100%;
       margin-inline-end: 8px;
       position: relative;
+      pointer-events: none;
       &::after {
         content: 'X';
         position: absolute;
