@@ -9,5 +9,16 @@
       "text": "Facebook",
       "url": "https://www.facebook.com/TomiOdusanya"
     }
+  },
+  {
+    "id": 2,
+    "name": "Tomi Odusanya",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "illustrator",
+    "projectIds": ["j-guide"], 
+    "socialLink": {
+      "text": "Facebook",
+      "url": "https://www.facebook.com/TomiOdusanya"
+    }
   }
 ]
