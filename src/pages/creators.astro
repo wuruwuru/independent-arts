@@ -122,60 +122,157 @@ const filters = [
 
 </style>
 <script define:vars={{ filters }}>
-  window.creatorFilterOptions = filters.reduce((acc, current) => {
-    const { title, ...rest } = current;
-    const _rest = rest.map
-    return {
-      ...acc,
-      [title.toLowerCase()]: {
-        ...rest
-      }
-    }
-  }, {});
+  // window.creatorFilterOptions = filters.reduce((acc, current) => {
+  //   const { title, ...rest } = current;
+  //   const _rest = rest.map
+  //   return {
+  //     ...acc,
+  //     [title.toLowerCase()]: {
+  //       ...rest
+  //     }
+  //   }
+  // }, {});
+  window.creatorFilterOptions = {
+    genre: [
+      {id: "all", label: "All", active: true},
+      {id: "animation", label: "Animation", active: false},
+      {id: "music", label: "Music", active: false},
+      {id: "writing", label: "Writing", active: false}
+    ],
+    roles: [
+      {id: "all", label: "All", active: true},
+      {id: "animator", label: "Animator", active: false},
+      {id: "writer", label: "Writer", active: false},
+      {id: "graphic_designer", label: "Graphic Designer", active: false},
+      {id: "illustrator", label: "Illustrator", active: false},
+      {id: "director", label: "Director", active: false},
+      {id: "producer", label: "Producer", active: false},
+    ],
+    projects: [
+      {id: "all", label: "All", active: true},
+      {id: "j-guide", label: "J Guide", active: false},
+      {id: "hanky", label: "Hanky Panky", active: false},
+      {id: "feel-good", label: "Feel Good", active: false}
+    ]
+  };
 </script>
 <script>
   
-  import { createMachine } from '@xstate/fsm';
-
-  const filterWrapper = document.getElementById('filterWrapper');
-  filterWrapper.addEventListener('click', function(event) {
-    console.log(event.target)
-  })
-  
-  const fetchData = () => {
-    console.log('heyy, fetching data')
+  import { createMachine, interpret } from '@xstate/fsm';
+  const filterConfig = {
+    genre: [
+      {id: "all", label: "All", active: true},
+      {id: "animation", label: "Animation", active: false},
+      {id: "music", label: "Music", active: false},
+      {id: "writing", label: "Writing", active: false}
+    ],
+    roles: [
+      {id: "all", label: "All", active: true},
+      {id: "animator", label: "Animator", active: false},
+      {id: "writer", label: "Writer", active: false},
+      {id: "graphic_designer", label: "Graphic Designer", active: false},
+      {id: "illustrator", label: "Illustrator", active: false},
+      {id: "director", label: "Director", active: false},
+      {id: "producer", label: "Producer", active: false},
+    ],
+    projects: [
+      {id: "all", label: "All", active: true},
+      {id: "j-guide", label: "J Guide", active: false},
+      {id: "hanky", label: "Hanky Panky", active: false},
+      {id: "feel-good", label: "Feel Good", active: false}
+    ]
   }
+  // const filterWrapper = document.getElementById('filterWrapper');
+  // filterWrapper.addEventListener('click', function(event) {
+  //   console.log(event.target)
+  // })
+
+
+  const idle = {
+    on: {
+      CLICK: 'loading',
+    }
+  }
+  const loading = {
+    entry: ['checkData'],
+    on: {
+      FILTERCHECK_PASSED: 'success',
+      FILTERCHECK_FAILED: 'error',
+    }
+  }
+  const error = {
+    on: {
+      UPDATE_FILTERS: 'loading'
+    }
+  }
+  const success = {
+    on: {
+      CLICK: 'loading'
+    }
+  }
+  
+  const states = { idle, loading, error, success };
+  const options = {
+    actions: {
+      checkData: (context, event) => {
+        // Steps
+        // Get property clicked;
+        // Validate correctness
+        // Copy and toggle value
+            // If id == all
+              // length is 0 or 1, FILTERCHECK_PASSED
+              // length > 1 // FILTERCHECK_FAILED
+            // if id !== all
+              // length = 1, FILTERCHECK_PASSED
+              // length > 1
+                // if all is selected as well FILTERCHECK_FAILED
+                // else FILTERCHECK_PASSED
+
+        const { filterParent, filterId } = event;
+        const { filterConfig } = context;
+
+        const testSample = filterConfig[filterParent];
+        testSample[filterId].active = !testSample[filterId].active;
+
+        const activeFilters = testSample.map(element => element.active);
+        if (activeFilters.length === 0 || 1) {
+          console.log('test passed', filterId)
+        } else {
+          const allIsActive = activeFilters.indexOf(element => element.id === 'all')
+          if(allIsActive) {
+            console.log('test failed', filterId)
+          } else {
+            console.log('test passed', filterId)
+          }
+        }
+        
+
+        // if (current && current.len)
+        // console.log(current)
+        // console.log('heyy, fetching data');
+      }
+    }
+  }
+
   const machine = createMachine({
     id: 'creatorFilter',
     initial: 'idle',
     context: {
-      filterConfig: window.creatorFilterOptions
+      filterConfig
     },
-    states: {
-      idle: {
-        on: {
-          CLICK: 'loading',
-        }
-      },
-      loading: {
-        entry: fetchData,
-        on: {
-          FILTERCHECK_PASSED: 'success',
-          FILTERCHECK_FAILED: 'error',
-        }
-      },
-      error: {
-        on: {
-          UPDATE_FILTERS: 'loading'
-        }
-      },
-      success: {
-        on: {
-          CLICK: 'loading'
-        }
-      },
-    },
-  })
+    states,
+  }, options)
 
-  console.log(machine)
+  const toggleService = interpret(machine).start();
+
+  toggleService.subscribe((state) => {
+    console.log(state.value, 'subscribe function');
+  });
+  
+  toggleService.send({
+    type: 'CLICK',
+    filterParent: 'roles',
+    filterId: 'all',
+    currentValue: true
+  });
 </script>
