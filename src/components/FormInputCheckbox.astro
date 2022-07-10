@@ -7,12 +7,12 @@ export interface Props {
 
 const {
   id = Math.random(),
-  label = 'Animation',
-  value = Math.random() > 0.4 ? false : true
+  label = 'Placeholder',
+  value = false,
 } = Astro.props;
-
 ---
-<label class="label" for={id}>
+
+<label class="label">
   <input type="checkbox" checked={value} name={id} id={id} />
   <div class="indicator"></div>
   {label}
@@ -28,6 +28,7 @@ const {
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
+    pointer-events: visibleFill;
 
     input {
       visibility: hidden;
@@ -35,18 +36,23 @@ const {
       position: absolute;
       height: 0;
       width: 0;
-      &:checked + .indicator::after {
+
+      &:checked+.indicator::after {
         opacity: .8;
       }
     }
+
     .indicator {
       max-width: 2.4rem;
       max-height: 2.4rem;
       border: 1px solid var(--color-black);
-      width: 100%;
+      // width: 100%;
       margin-inline-end: 8px;
       position: relative;
       pointer-events: none;
+      flex-shrink: 0;
+      flex-basis: 100%;
+
       &::after {
         content: 'X';
         position: absolute;
