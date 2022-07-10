@@ -1,6 +1,6 @@
 [
   {
-    "id": "j-guide",
+    "id": "j_guide",
     "title": "J Guide",
     "category": "Comic",
     "shortDescription": "An Instagram comic about weed.",
@@ -70,6 +70,7 @@
     ]
   },
   {
+    "id": "feel_good",
     "title": "Feel Good",
     "category": "Dataset",
     "shortDescription": "A collection of joyful queer stories from ten of the best writers of our time.",

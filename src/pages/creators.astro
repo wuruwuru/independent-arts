@@ -11,7 +11,7 @@ import genre from "@data/genre.json";
 import creators from "@data/creators.json";
 
 const getProjectsFilter = () => {
-  return projects.map(({ id, title }) => ({ id, label: title } ))
+  return projects.map(({ id, title }) => ({ id, label: title }))
 }
 
 const fetchCreators = creators.map((creator) => {
@@ -19,10 +19,16 @@ const fetchCreators = creators.map((creator) => {
   return {
     ...rest,
     role: roles.find(({ id }) => roleId === id),
-    projects: projectIds.filter(({ id }) => projectIds === id ),
+    projects: projectIds.map(projectID => {
+
+      const { id, category } = projects.find(({ id }) => id === projectID)
+      return {
+        id,
+        genre: category.toLowerCase()
+      };
+    }),
   }
 })
- 
 
 const filters = [
   {
@@ -46,80 +52,89 @@ const filters = [
 ]
 
 ---
-<Layout
-	pageTitle="Wuruwuru"
-	pageUrl="https://wuruwuru.com/creators"
-	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
->
-	<main>
-		<PageHeader/>
-		<section class="l-section">
-			<div class="l-container l-grid">
-				<div class="c-section__left l-grid__column--6">
-					<h4 class="c-section-title">Creators</h4>
-					<ul class="c-creator-list">
-            {fetchCreators.map(({name, bio, role, socialLink}) => (
-              <li class="c-creator-list__item">
-                <div class="profile"><ProfileCard title={name} description={role.label} size="small" /></div>
-                <div class="bio">{bio}</div>
-                <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
-              </li>
-            ))}
+
+<Layout pageTitle="Wuruwuru" pageUrl="https://wuruwuru.com/creators"
+  pageImage="https://wuruwuru.com/assets/images/thumbnail.png">
+  <main>
+    <PageHeader />
+    <section class="l-section">
+      <div class="l-container l-grid">
+        <div class="c-section__left l-grid__column--6">
+          <h4 class="c-section-title">Creators</h4>
+          <ul class="c-creator-list" id="creators">
+            {fetchCreators.map(({name, bio, role, socialLink, projects}) => {
+
+            const projectSpread = projects.map(({ id })=> id);
+            const genreSpread = projects.map(({ genre })=> genre);
+
+            return (<li class="c-creator-list__item" data-role={role.id.toLowerCase()} data-projects={projectSpread}
+              data-genre={genreSpread}>
+              <div class="profile">
+                <ProfileCard title={name} description={role.label} size="small" />
+              </div>
+              <div class="bio">{bio}</div>
+              <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
+            </li>)}
+            )}
           </ul>
-				</div>
-				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2" id="filterWrapper">
+        </div>
+
+        <aside class="c-section__right l-grid__column-start--8 l-grid__column--2" id="filterWrapper">
           {filters.map(({ title, data }) => (
-            <h4 class="c-section-title">{title}</h4>
-            <ul class="aside-list" data-filterGroup={title.toLowerCase()}>
-              {data.map((props, index) => {
-                const value = index === 0 ? true : false
-                return (
-                  <li><Checkbox onClick="console.log('hello')" {...props} value={value} client:load/></li>
-                )
-              })}
-            </ul>
+          <h4 class="c-section-title">{title}</h4>
+          <ul class="aside-list" data-filterGroup={title.toLowerCase()}>
+            {data.map((props, index) => {
+            const value = index === 0 ? true : false
+            return (<li>
+              <Checkbox {...props} value={value} index={title.toLowerCase()} client:load />
+            </li>)
+            })}
+          </ul>
           ))}
-				</aside>
-			</div>
-		</section>
-	</main>
+        </aside>
+      </div>
+    </section>
+  </main>
 </Layout>
 <style lang="scss">
-	@import "../styles/mixins.scss";
+  @import "../styles/mixins.scss";
 
-	.c-creator-list,
-	.aside-list {
-		padding: var(--spacer-base) 0;
-	}
-	.c-creator-list__item {
+  .c-creator-list,
+  .aside-list {
+    padding: var(--spacer-base) 0;
+  }
+
+  .c-creator-list__item {
     display: grid;
     grid-template-columns: 32% 1fr 14%;
     gap: 24px;
+
     .social {
       justify-self: flex-end;
       word-break: break-all;
     }
 
-		& + & {
-			margin-top: var(--spacer-base);
-			margin-block-start: var(--spacer-base);
-		}
-	}
-	.c-section__right {
-		@include screen('small') {
-			display: none;
-		}
-	}
-	.c-section__left {
-		@include screen('small') {
-			grid-column: 1 / -1;
-		}
-	}
+    &+& {
+      margin-top: var(--spacer-base);
+      margin-block-start: var(--spacer-base);
+    }
+  }
 
-	.aside-list	> * + * {
-		margin-top: calc(var(--spacer-base) / 6 );
-	}
+  .c-section__right {
+    @include screen('small') {
+      display: none;
+    }
+  }
 
+  .c-section__left {
+    @include screen('small') {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .aside-list>*+* {
+    margin-top: calc(var(--spacer-base) / 6);
+  }
 </style>
 <script define:vars={{ filters }}>
   // window.creatorFilterOptions = filters.reduce((acc, current) => {
@@ -133,146 +148,147 @@ const filters = [
   //   }
   // }, {});
   window.creatorFilterOptions = {
-    genre: [
-      {id: "all", label: "All", active: true},
-      {id: "animation", label: "Animation", active: false},
-      {id: "music", label: "Music", active: false},
-      {id: "writing", label: "Writing", active: false}
-    ],
-    roles: [
-      {id: "all", label: "All", active: true},
-      {id: "animator", label: "Animator", active: false},
-      {id: "writer", label: "Writer", active: false},
-      {id: "graphic_designer", label: "Graphic Designer", active: false},
-      {id: "illustrator", label: "Illustrator", active: false},
-      {id: "director", label: "Director", active: false},
-      {id: "producer", label: "Producer", active: false},
-    ],
-    projects: [
-      {id: "all", label: "All", active: true},
-      {id: "j-guide", label: "J Guide", active: false},
-      {id: "hanky", label: "Hanky Panky", active: false},
-      {id: "feel-good", label: "Feel Good", active: false}
-    ]
+    genre: {
+      all: { label: "All", active: true },
+      animation: { label: "Animation", active: false },
+      music: { label: "Music", active: false },
+      writing: { label: "Writing", active: false }
+    },
+    roles: {
+      all: { label: "All", active: false },
+      animator: { label: "Animator", active: false },
+      writer: { label: "Writer", active: false },
+      graphic_designer: { label: "Graphic Designer", active: false },
+      illustrator: { label: "Illustrator", active: false },
+      director: { label: "Director", active: false },
+      producer: { label: "Producer", active: false },
+    },
+    projects: {
+      all: { label: "All", active: true },
+      j_guide: { label: "J Guide", active: false },
+      hanky: { label: "Hanky Panky", active: false },
+      feel_good: { label: "Feel Good", active: false }
+    }
   };
 </script>
 <script>
-  
-  import { createMachine, interpret } from '@xstate/fsm';
-  const filterConfig = {
-    genre: [
-      {id: "all", label: "All", active: true},
-      {id: "animation", label: "Animation", active: false},
-      {id: "music", label: "Music", active: false},
-      {id: "writing", label: "Writing", active: false}
-    ],
-    roles: [
-      {id: "all", label: "All", active: true},
-      {id: "animator", label: "Animator", active: false},
-      {id: "writer", label: "Writer", active: false},
-      {id: "graphic_designer", label: "Graphic Designer", active: false},
-      {id: "illustrator", label: "Illustrator", active: false},
-      {id: "director", label: "Director", active: false},
-      {id: "producer", label: "Producer", active: false},
-    ],
-    projects: [
-      {id: "all", label: "All", active: true},
-      {id: "j-guide", label: "J Guide", active: false},
-      {id: "hanky", label: "Hanky Panky", active: false},
-      {id: "feel-good", label: "Feel Good", active: false}
-    ]
+  import { assign, createMachine, interpret } from '@xstate/fsm';
+
+  // Helpers
+  const updateFilterUI = (parent, value, key = 'all') => {
+    const filterGroup = document.querySelector(`[data-filtergroup='${parent}']`);
+    filterGroup.querySelector(`li input[name='${key}']`).checked = value;
   }
-  // const filterWrapper = document.getElementById('filterWrapper');
-  // filterWrapper.addEventListener('click', function(event) {
-  //   console.log(event.target)
-  // })
+
+  const purifyJSON = (data, filterId, parent) => {
+    if (filterId === 'all') {
+      for (const key of Object.keys(data)) {
+        if (key !== 'all') {
+          data[key]['active'] = false;
+          updateFilterUI(parent, false, key)
+        }
+      }
+      return data;
+    }
+    data['all']['active'] = false;
+    updateFilterUI(parent, false)
+    return data;
+  }
 
 
-  const idle = {
-    on: {
-      CLICK: 'loading',
-    }
+  // Helpers
+  const updateUI = (data) => {
+    const categories = Object.keys(data);
+    const creators = document.getElementById('creators');
+
+    categories.forEach(category => {
+      const parent = category;
+      const targetNodeList = creators.querySelectorAll(`[data-${parent}]`);
+      const filterGroup = data[parent];
+
+      const enableAllElements = filterGroup['all']['active'];
+      if (enableAllElements) {
+        targetNodeList.forEach(element => element.style.display = null);
+        return;
+      }
+
+      const filterGroups = Object.keys(filterGroup);
+      filterGroups.forEach(groupName => {
+        const isActive = filterGroup[groupName].active;
+        if (isActive) {
+          targetNodeList.forEach(node => {
+            const attributes = node.getAttribute(`data-${parent}`)
+            console.log('attributes', attributes)
+            if (attributes.includes(groupName)) {
+              node.style.display = null;
+              return;
+            }
+
+            node.style.display = 'none';
+            return
+          })
+        }
+      })
+
+    })
+
   }
-  const loading = {
-    entry: ['checkData'],
-    on: {
-      FILTERCHECK_PASSED: 'success',
-      FILTERCHECK_FAILED: 'error',
-    }
-  }
-  const error = {
-    on: {
-      UPDATE_FILTERS: 'loading'
-    }
-  }
-  const success = {
-    on: {
-      CLICK: 'loading'
-    }
-  }
-  
-  const states = { idle, loading, error, success };
+
+
   const options = {
     actions: {
-      checkData: (context, event) => {
-        // Steps
-        // Get property clicked;
-        // Validate correctness
-        // Copy and toggle value
-            // If id == all
-              // length is 0 or 1, FILTERCHECK_PASSED
-              // length > 1 // FILTERCHECK_FAILED
-            // if id !== all
-              // length = 1, FILTERCHECK_PASSED
-              // length > 1
-                // if all is selected as well FILTERCHECK_FAILED
-                // else FILTERCHECK_PASSED
+      handleContext: assign({
+        filterState: (context, event) => {
+          const { filterState } = context;
+          const { filterParent, filterId } = event;
 
-        const { filterParent, filterId } = event;
-        const { filterConfig } = context;
-
-        const testSample = filterConfig[filterParent];
-        testSample[filterId].active = !testSample[filterId].active;
-
-        const activeFilters = testSample.map(element => element.active);
-        if (activeFilters.length === 0 || 1) {
-          console.log('test passed', filterId)
-        } else {
-          const allIsActive = activeFilters.indexOf(element => element.id === 'all')
-          if(allIsActive) {
-            console.log('test failed', filterId)
-          } else {
-            console.log('test passed', filterId)
+          const filteredGroup = {
+            ...filterState[filterParent],
+            [filterId]: {
+              ...filterState[filterParent][filterId],
+              active: !filterState[filterParent][filterId]['active']
+            }
+          }
+          const purifiedJSON = purifyJSON(filteredGroup, filterId, filterParent);
+          return {
+            ...filterState,
+            [filterParent]: {
+              ...purifiedJSON
+            }
           }
         }
-        
-
-        // if (current && current.len)
-        // console.log(current)
-        // console.log('heyy, fetching data');
-      }
+      }),
     }
   }
 
+
+  // State Machine
   const machine = createMachine({
     id: 'creatorFilter',
     initial: 'idle',
-    context: {
-      filterConfig
+    context: { filterState: window.creatorFilterOptions },
+    states: {
+      idle: {
+        on: { CLICK: 'selected' }
+      },
+      selected: {
+        entry: ['handleContext'],
+        on: { CLICK: 'selected' }
+      }
     },
-    states,
   }, options)
 
   const toggleService = interpret(machine).start();
+  toggleService.subscribe((state) => updateUI(state.context.filterState));
 
-  toggleService.subscribe((state) => {
-    console.log(state.value, 'subscribe function');
-  });
-  
-  toggleService.send({
-    type: 'CLICK',
-    filterParent: 'roles',
-    filterId: 'all',
-    currentValue: true
-  });
+  // Trigger machine event
+  document.querySelector('#filterWrapper')
+    .addEventListener('change', ({ target }) => {
+      const filterParent = target.closest('[data-filtergroup]').getAttribute('data-filtergroup');
+      toggleService.send({
+        type: 'CLICK',
+        filterParent,
+        'filterId': target.name,
+      });
+    }, false)
 </script>
