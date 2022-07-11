@@ -14,5 +14,9 @@
   {
     "id": "writing",
     "label": "Writing"
+  },
+  {
+    "id": "comic",
+    "label": "Comic"
   }
 ]

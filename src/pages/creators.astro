@@ -20,12 +20,8 @@ const fetchCreators = creators.map((creator) => {
     ...rest,
     role: roles.find(({ id }) => roleId === id),
     projects: projectIds.map(projectID => {
-
       const { id, category } = projects.find(({ id }) => id === projectID)
-      return {
-        id,
-        genre: category.toLowerCase()
-      };
+      return { id, genre: category.toLowerCase() };
     }),
   }
 })
@@ -62,35 +58,38 @@ const filters = [
         <div class="c-section__left l-grid__column--6">
           <h4 class="c-section-title">Creators</h4>
           <ul class="c-creator-list" id="creators">
-            {fetchCreators.map(({name, bio, role, socialLink, projects}) => {
+            {fetchCreators.map(({name, bio, role, socialLink, projects}, index) => {
 
             const projectSpread = projects.map(({ id })=> id);
             const genreSpread = projects.map(({ genre })=> genre);
-
-            return (<li class="c-creator-list__item" data-role={role.id.toLowerCase()} data-projects={projectSpread}
-              data-genre={genreSpread}>
+            return (<li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
+              data-projects={projectSpread} data-genre={genreSpread}>
               <div class="profile">
                 <ProfileCard title={name} description={role.label} size="small" />
               </div>
               <div class="bio">{bio}</div>
-              <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
+              <a class="social" href={ socialLink.url }>{ genreSpread + ' ' + projectSpread }</a>
             </li>)}
             )}
           </ul>
         </div>
 
         <aside class="c-section__right l-grid__column-start--8 l-grid__column--2" id="filterWrapper">
-          {filters.map(({ title, data }) => (
-          <h4 class="c-section-title">{title}</h4>
-          <ul class="aside-list" data-filterGroup={title.toLowerCase()}>
-            {data.map((props, index) => {
-            const value = index === 0 ? true : false
-            return (<li>
-              <Checkbox {...props} value={value} index={title.toLowerCase()} client:load />
-            </li>)
-            })}
-          </ul>
-          ))}
+          <form>
+            {filters.map(({ title, data }) => (
+            <fieldset class="aside-list" data-filterGroup={title.toLowerCase()}>
+              <legend>
+                <h4 class="c-section-title">{title}</h4>
+              </legend>
+              {data.map((props, index) => {
+              const value = index === 0 ? true : false
+              return (<div>
+                <Checkbox {...props} value={value} index={title.toLowerCase()} client:load />
+              </div>)
+              })}
+            </fieldset>
+            ))}
+          </form>
         </aside>
       </div>
     </section>
@@ -98,6 +97,18 @@ const filters = [
 </Layout>
 <style lang="scss">
   @import "../styles/mixins.scss";
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    legend {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
 
   .c-creator-list,
   .aside-list {
@@ -137,25 +148,16 @@ const filters = [
   }
 </style>
 <script define:vars={{ filters }}>
-  // window.creatorFilterOptions = filters.reduce((acc, current) => {
-  //   const { title, ...rest } = current;
-  //   const _rest = rest.map
-  //   return {
-  //     ...acc,
-  //     [title.toLowerCase()]: {
-  //       ...rest
-  //     }
-  //   }
-  // }, {});
   window.creatorFilterOptions = {
     genre: {
       all: { label: "All", active: true },
       animation: { label: "Animation", active: false },
       music: { label: "Music", active: false },
-      writing: { label: "Writing", active: false }
+      writing: { label: "Writing", active: false },
+      comic: { label: "Comic", active: false },
     },
     roles: {
-      all: { label: "All", active: false },
+      all: { label: "All", active: true },
       animator: { label: "Animator", active: false },
       writer: { label: "Writer", active: false },
       graphic_designer: { label: "Graphic Designer", active: false },
@@ -173,14 +175,21 @@ const filters = [
 </script>
 <script>
   import { assign, createMachine, interpret } from '@xstate/fsm';
+  import Isotope from 'isotope-layout';
+
+  // Use Isotope to control filtered items
+  const creatorIsotope = new Isotope(document.getElementById('creators'), {
+    itemSelector: '.c-creator-list__item',
+  });
 
   // Helpers
   const updateFilterUI = (parent, value, key = 'all') => {
     const filterGroup = document.querySelector(`[data-filtergroup='${parent}']`);
-    filterGroup.querySelector(`li input[name='${key}']`).checked = value;
+    filterGroup.querySelector(`div input[name='${key}']`).checked = value;
   }
 
-  const purifyJSON = (data, filterId, parent) => {
+  // Helpers
+  const updateJSONOnClick = (data, filterId, parent) => {
     if (filterId === 'all') {
       for (const key of Object.keys(data)) {
         if (key !== 'all') {
@@ -195,43 +204,43 @@ const filters = [
     return data;
   }
 
-
-  // Helpers
   const updateUI = (data) => {
-    const categories = Object.keys(data);
-    const creators = document.getElementById('creators');
 
-    categories.forEach(category => {
-      const parent = category;
-      const targetNodeList = creators.querySelectorAll(`[data-${parent}]`);
-      const filterGroup = data[parent];
+    const testParam = Object.keys(data).reduce((acc, element) => {
+      const targetObj = data[element];
+      const targetKeys = Object.keys(targetObj);
+      const gege = [];
 
-      const enableAllElements = filterGroup['all']['active'];
-      if (enableAllElements) {
-        targetNodeList.forEach(element => element.style.display = null);
-        return;
+      targetKeys.forEach(key => {
+        if (targetObj[key]['active']) gege.push(key)
+      });
+
+
+      return {
+        ...acc,
+        [element]: gege
+      }
+    }, {})
+
+
+    const letsGetThis = (element) => {
+      const answer = [];
+      for (const key of Object.keys(testParam)) {
+        const attributeText = element.getAttribute(`data-${key}`);
+        if (testParam[key].includes(attributeText) || testParam[key].includes('all')) {
+          answer.push(true)
+        } else {
+          answer.push(false)
+        }
       }
 
-      const filterGroups = Object.keys(filterGroup);
-      filterGroups.forEach(groupName => {
-        const isActive = filterGroup[groupName].active;
-        if (isActive) {
-          targetNodeList.forEach(node => {
-            const attributes = node.getAttribute(`data-${parent}`)
-            console.log('attributes', attributes)
-            if (attributes.includes(groupName)) {
-              node.style.display = null;
-              return;
-            }
+      const checkTrue = answer.every(element => element)
+      return checkTrue
+    }
 
-            node.style.display = 'none';
-            return
-          })
-        }
-      })
-
+    creatorIsotope.arrange({
+      filter: (element) => letsGetThis(element)
     })
-
   }
 
 
@@ -249,13 +258,16 @@ const filters = [
               active: !filterState[filterParent][filterId]['active']
             }
           }
-          const purifiedJSON = purifyJSON(filteredGroup, filterId, filterParent);
+          const purifiedJSON = updateJSONOnClick(filteredGroup, filterId, filterParent);
           return {
             ...filterState,
             [filterParent]: {
               ...purifiedJSON
             }
           }
+        },
+        recentUpdate: (_, event) => {
+          return event.filterParent
         }
       }),
     }
@@ -266,20 +278,30 @@ const filters = [
   const machine = createMachine({
     id: 'creatorFilter',
     initial: 'idle',
-    context: { filterState: window.creatorFilterOptions },
+    context: {
+      filterState: window.creatorFilterOptions,
+      recentUpdate: null
+    },
     states: {
       idle: {
         on: { CLICK: 'selected' }
       },
       selected: {
-        entry: ['handleContext'],
+        entry: ['handleContext',],
         on: { CLICK: 'selected' }
       }
     },
   }, options)
 
-  const toggleService = interpret(machine).start();
-  toggleService.subscribe((state) => updateUI(state.context.filterState));
+  const toggleService = interpret(machine).start()
+  toggleService.subscribe((state) => {
+    if (state && state.changed) {
+      const { filterState, recentUpdate } = state.context;
+
+      updateUI(filterState, recentUpdate)
+    }
+  })
+
 
   // Trigger machine event
   document.querySelector('#filterWrapper')
@@ -292,3 +314,14 @@ const filters = [
       });
     }, false)
 </script>
+
+
+
+
+<!-- <li data-index="0" data-roles="illustrator" data-projects="j_guide" data-genre="comic"></li>
+
+<li data-index="1" data-roles="illustrator" data-projects="feel_good" data-genre="comic"></li>
+
+<li data-index="0" data-roles="writer" data-projects="hanky" data-genre="animation"></li>
+
+<li data-index="1" data-roles="writer" data-projects="hanky" data-genre="animation"></li> -->

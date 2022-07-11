@@ -19,6 +19,7 @@
     "sass": "^1.53.0"
   },
   "dependencies": {
-    "@xstate/fsm": "^2.0.0"
+    "@xstate/fsm": "^2.0.0",
+    "isotope-layout": "^3.0.6"
   }
 }
