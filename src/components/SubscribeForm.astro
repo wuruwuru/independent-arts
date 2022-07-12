@@ -1,32 +1,36 @@
 ---
 
 ---
+
 <form class="form">
 	<p class="form__label">Keep in touch</p>
 	<label class="form__input-wrapper" for="email">
-		<input placeholder="your@email.com" class="form__input"/>
+		<input placeholder="your@email.com" class="form__input" />
 		<button class="form__button">Subscribe</button>
 	</label>
 </form>
 
 <style lang="scss">
 	@import "../styles/_mixins.scss";
+
 	.form {
 		display: flex;
 		flex-direction: column;
 		row-gap: 16px;
 
 		&__label {
-			font-size:var(--font-size-base);
+			font-size: var(--font-size-base);
 			margin: 0;
 		}
+
 		&__input-wrapper {
 			$border-color: var(--color-black);
 			$padding-inline: 14px;
-			$padding-block: 16px; 
+			$padding-block: 16px;
 			display: flex;
 			align-items: center;
 			background: #ffffff;
+
 			.form__input {
 				flex-grow: 1;
 				font-size: 1.6rem;
@@ -41,16 +45,21 @@
 				border-radius: 0;
 				border-right: none;
 				border-inline-end: none;
-				&::placeholder{
+				margin-right: 0;
+				margin-inline-end: 0;
+
+				&::placeholder {
 					color: var(--color-dark-gray);
 				}
+
 				&:focus,
-				&:focus + .form__button {
+				&:focus+.form__button {
 					/* border-top-width: 2px; */
 					border-bottom-width: 2px;
 					/* border-bottom-color: rgba($color: #12100E, $alpha: 0.7); */
 				}
 			}
+
 			.form__button {
 				padding: $padding-block $padding-inline $padding-block calc($padding-inline / 2);
 				font-size: 1.6rem;
@@ -62,9 +71,9 @@
 				color: var(--color-black);
 				border-inline-start: none;
 				border-radius: 0;
+				margin-left: 0;
+				margin-inline-start: 0;
 			}
 		}
-}
-
-
+	}
 </style>
