@@ -4,6 +4,7 @@ import Form from "@components/SubscribeForm.astro";
 
 const currentYear = new Date().getFullYear();
 ---
+
 <footer class="l-section">
   <div class="l-container">
     <hr />
@@ -12,7 +13,7 @@ const currentYear = new Date().getFullYear();
         <a href="/">
           <img src={logo} width="60px" height="60px" alt="Logo">
         </a>
-        <Form/>
+        <Form client:visible />
       </div>
       <div class="right">
         <div class="group">
@@ -28,7 +29,8 @@ const currentYear = new Date().getFullYear();
           <ul class="footer-links">
             <li><a href="#" target="_blank" rel="noopener noreferrer">Manifesto</a></li>
             <li><a href="https://medium.com/wuruwuru" target="_blank" rel="noopener noreferrer">Journal</a></li>
-            <li><a href="https://wuruwuru.notion.site/Costs-07678076eb1342298550b1f713b37f7a" target="_blank" rel="noopener noreferrer">Costs</a></li>
+            <li><a href="https://wuruwuru.notion.site/Costs-07678076eb1342298550b1f713b37f7a" target="_blank"
+                rel="noopener noreferrer">Costs</a></li>
           </ul>
         </div>
       </div>
@@ -42,18 +44,22 @@ const currentYear = new Date().getFullYear();
 
 <style lang="scss">
   @import "../styles/_mixins.scss";
+
   .l-section {
     padding: calc(var(--spacer-base) * 0.75) 0;
-    .l-container > * + * {
+
+    .l-container>*+* {
       margin-top: calc(var(--spacer-base) * 1.25);
     }
   }
 
-  .main, .footnote {
+  .main,
+  .footnote {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+
     @include screen('small') {
       display: block;
     }
@@ -62,13 +68,16 @@ const currentYear = new Date().getFullYear();
   .left {
     flex: 1 1 auto;
     max-width: 480px;
-    > * + * {
+
+    >*+* {
       margin-top: 18px;
     }
+
     a {
       display: inline-block;
       margin-bottom: 16px;
     }
+
     img {
       max-height: 50px;
       object-fit: contain;
@@ -87,12 +96,15 @@ const currentYear = new Date().getFullYear();
     justify-content: flex-end;
     text-align: right;
     gap: 12rem;
+
     @include screen('small') {
       text-align: left;
     }
+
     a {
       font-style: normal;
     }
+
     .group h6 {
       font-family: var(--font-sans-mono);
       margin-block-end: 2.4rem;
@@ -101,8 +113,9 @@ const currentYear = new Date().getFullYear();
       color: var(--color-dark-gray);
       text-transform: uppercase;
     }
+
     .footer-links {
-      > * + * {
+      >*+* {
         margin-top: .8rem;
         line-height: 1.4;
       }

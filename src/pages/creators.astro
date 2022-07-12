@@ -59,7 +59,6 @@ const filters = [
           <h4 class="c-section-title">Creators</h4>
           <ul class="c-creator-list" id="creators">
             {fetchCreators.map(({name, bio, role, socialLink, projects}, index) => {
-
             const projectSpread = projects.map(({ id })=> id);
             const genreSpread = projects.map(({ genre })=> genre);
             return (<li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
@@ -68,14 +67,28 @@ const filters = [
                 <ProfileCard title={name} description={role.label} size="small" />
               </div>
               <div class="bio">{bio}</div>
-              <a class="social" href={ socialLink.url }>{ genreSpread + ' ' + projectSpread }</a>
+              <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
             </li>)}
             )}
           </ul>
         </div>
 
-        <aside class="c-section__right l-grid__column-start--8 l-grid__column--2" id="filterWrapper">
-          <form>
+        <aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+          <form id="filterWrapper">
+            <!-- Select for mobile view -->
+            <select title="filter creators" multiple>
+              {filters.map(({ title, data }) => (
+              <optgroup label={title} data-filtergroup={title.toLowerCase()}>
+                {data.map(({ id, label }, index) => {
+                const value = index === 0 ? true : false
+                return(
+                <option value={id.toLowerCase()} selected={ value }>{label}</option>)
+                })}
+              </optgroup>
+              ))}
+            </select>
+
+
             {filters.map(({ title, data }) => (
             <fieldset class="aside-list" data-filterGroup={title.toLowerCase()}>
               <legend>
@@ -83,8 +96,8 @@ const filters = [
               </legend>
               {data.map((props, index) => {
               const value = index === 0 ? true : false
-              return (<div>
-                <Checkbox {...props} value={value} index={title.toLowerCase()} client:load />
+              return (<div class="item">
+                <Checkbox {...props} value={value} client:load />
               </div>)
               })}
             </fieldset>
@@ -98,16 +111,9 @@ const filters = [
 <style lang="scss">
   @import "../styles/mixins.scss";
 
-  fieldset {
-    padding: 0;
-    margin: 0;
-    border: none;
-
-    legend {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
+  .l-container,
+  .l-grid {
+    position: relative;
   }
 
   .c-creator-list,
@@ -119,22 +125,44 @@ const filters = [
     display: grid;
     grid-template-columns: 32% 1fr 14%;
     gap: 24px;
+    margin-bottom: var(--spacer-base);
+    margin-block-end: var(--spacer-base);
+
+    &:last-of-type {
+      margin-bottom: 0;
+      margin-block-end: 0;
+    }
 
     .social {
       justify-self: flex-end;
       word-break: break-all;
     }
-
-    &+& {
-      margin-top: var(--spacer-base);
-      margin-block-start: var(--spacer-base);
-    }
   }
 
   .c-section__right {
-    @include screen('small') {
-      display: none;
+    fieldset {
+      border: none;
+
+      @include screen('small') {
+        display: none;
+      }
+
+      legend {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
     }
+
+    select {
+      display: none;
+
+      @include screen('small') {
+        display: unset;
+        // opacity: 0;
+      }
+    }
+
   }
 
   .c-section__left {
@@ -143,7 +171,7 @@ const filters = [
     }
   }
 
-  .aside-list>*+* {
+  .aside-list>.item+* {
     margin-top: calc(var(--spacer-base) / 6);
   }
 </style>
@@ -182,48 +210,53 @@ const filters = [
     itemSelector: '.c-creator-list__item',
   });
 
+
   // Helpers
-  const updateFilterUI = (parent, value, key = 'all') => {
-    const filterGroup = document.querySelector(`[data-filtergroup='${parent}']`);
+  const updateCheckboxUI = (parent, value, key = 'all') => {
+    const filterGroup = document.querySelector(`fieldset[data-filtergroup='${parent}']`);
     filterGroup.querySelector(`div input[name='${key}']`).checked = value;
+  }
+
+  const updateSelectUI = (parent, value, key = 'all') => {
+    const filterGroup = document.querySelector(`select [data-filtergroup='${parent}']`);
+    filterGroup.querySelector(`option[value='${key}']`).selected = value;
   }
 
   // Helpers
   const updateJSONOnClick = (data, filterId, parent) => {
+    // Turn off all filters is user selects all
     if (filterId === 'all') {
       for (const key of Object.keys(data)) {
         if (key !== 'all') {
           data[key]['active'] = false;
-          updateFilterUI(parent, false, key)
         }
       }
       return data;
     }
+
     data['all']['active'] = false;
-    updateFilterUI(parent, false)
+
     return data;
   }
 
   const updateUI = (data) => {
-
     const testParam = Object.keys(data).reduce((acc, element) => {
       const targetObj = data[element];
       const targetKeys = Object.keys(targetObj);
-      const gege = [];
+      const answers = [];
 
       targetKeys.forEach(key => {
-        if (targetObj[key]['active']) gege.push(key)
+        if (targetObj[key]['active']) answers.push(key)
       });
-
 
       return {
         ...acc,
-        [element]: gege
+        [element]: answers
       }
     }, {})
 
 
-    const letsGetThis = (element) => {
+    const filterQuery = (element) => {
       const answer = [];
       for (const key of Object.keys(testParam)) {
         const attributeText = element.getAttribute(`data-${key}`);
@@ -239,7 +272,7 @@ const filters = [
     }
 
     creatorIsotope.arrange({
-      filter: (element) => letsGetThis(element)
+      filter: filterQuery
     })
   }
 
@@ -255,19 +288,24 @@ const filters = [
             ...filterState[filterParent],
             [filterId]: {
               ...filterState[filterParent][filterId],
-              active: !filterState[filterParent][filterId]['active']
+              active: !filterState[filterParent][filterId]['active'] // update changed json
             }
           }
+
           const purifiedJSON = updateJSONOnClick(filteredGroup, filterId, filterParent);
+
+          for (const key in purifiedJSON) {
+            // updateUI
+            const { active } = purifiedJSON[key];
+            updateCheckboxUI(filterParent, active, key)
+            updateSelectUI(filterParent, active, key)
+          }
           return {
             ...filterState,
             [filterParent]: {
               ...purifiedJSON
             }
           }
-        },
-        recentUpdate: (_, event) => {
-          return event.filterParent
         }
       }),
     }
@@ -280,7 +318,6 @@ const filters = [
     initial: 'idle',
     context: {
       filterState: window.creatorFilterOptions,
-      recentUpdate: null
     },
     states: {
       idle: {
@@ -296,32 +333,40 @@ const filters = [
   const toggleService = interpret(machine).start()
   toggleService.subscribe((state) => {
     if (state && state.changed) {
-      const { filterState, recentUpdate } = state.context;
-
-      updateUI(filterState, recentUpdate)
+      const { filterState } = state.context;
+      updateUI(filterState)
     }
   })
 
 
+
   // Trigger machine event
+  const getFilterParam = (fieldType, element) => {
+    switch (fieldType) {
+      case 'multi-select':
+        return {
+          filterParent: element.options[element.selectedIndex].parentNode.getAttribute('data-filtergroup'),
+          filterId: element.value
+        }
+
+      default:
+        return {
+          filterParent: element.closest('[data-filtergroup]').getAttribute('data-filtergroup'),
+          filterId: element.getAttribute('name')
+        }
+    }
+  }
+
+  document.querySelector('#filterWrapper select')
+    .addEventListener('input', (event) => {
+      const { filterParent, filterId } = getFilterParam('multi-select', event.target);
+      toggleService.send({ type: 'CLICK', filterParent, filterId })
+    })
+
   document.querySelector('#filterWrapper')
-    .addEventListener('change', ({ target }) => {
-      const filterParent = target.closest('[data-filtergroup]').getAttribute('data-filtergroup');
-      toggleService.send({
-        type: 'CLICK',
-        filterParent,
-        'filterId': target.name,
-      });
+    .addEventListener('input', (event) => {
+      if (event.target.nodeName == 'SELECT') return;
+      const { filterId, filterParent } = getFilterParam('input', event.target);
+      toggleService.send({ type: 'CLICK', filterParent, filterId });
     }, false)
 </script>
-
-
-
-
-<!-- <li data-index="0" data-roles="illustrator" data-projects="j_guide" data-genre="comic"></li>
-
-<li data-index="1" data-roles="illustrator" data-projects="feel_good" data-genre="comic"></li>
-
-<li data-index="0" data-roles="writer" data-projects="hanky" data-genre="animation"></li>
-
-<li data-index="1" data-roles="writer" data-projects="hanky" data-genre="animation"></li> -->

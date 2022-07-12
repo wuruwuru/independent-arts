@@ -4,7 +4,7 @@
     "name": "Tomi Odusanya",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
     "roleId": "illustrator",
-    "projectIds": ["j_guide", "hanky"], 
+    "projectIds": ["j_guide"], 
     "socialLink": {
       "text": "Facebook",
       "url": "https://www.facebook.com/TomiOdusanya"
@@ -12,21 +12,32 @@
   },
   {
     "id": 2,
-    "name": "Tomi Odusanya",
+    "name": "James Odusanya",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
     "roleId": "illustrator",
-    "projectIds": ["j_guide"], 
+    "projectIds": ["feel_good"], 
     "socialLink": {
       "text": "Facebook",
       "url": "https://www.facebook.com/TomiOdusanya"
     }
   },
   {
-    "id": 2,
-    "name": "Tomi Odusanya",
+    "id": 3,
+    "name": "Femi Odusanya",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
     "roleId": "writer",
-    "projectIds": ["j_guide"], 
+    "projectIds": ["hanky"], 
+    "socialLink": {
+      "text": "Facebook",
+      "url": "https://www.facebook.com/TomiOdusanya"
+    }
+  },
+  {
+    "id": 4,
+    "name": "John Ola",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["hanky"], 
     "socialLink": {
       "text": "Facebook",
       "url": "https://www.facebook.com/TomiOdusanya"
