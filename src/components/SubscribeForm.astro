@@ -1,0 +1,105 @@
+<form class="form" id="subscribe-form">
+	<p class="form__label">Keep in touch</p>
+	<label class="form__input-wrapper" for="email">
+		<input placeholder="your@email.com" class="form__input" />
+		<button class="form__button">Subscribe</button>
+	</label>
+	<small>Thanks for subscribing</small>
+</form>
+
+<style lang="scss">
+	@import "../styles/_mixins.scss";
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		row-gap: 16px;
+
+		&__label {
+			font-size: var(--font-size-base);
+			margin: 0;
+		}
+
+		&__input-wrapper {
+			$border-color: var(--color-black);
+			$padding-inline: 14px;
+			$padding-block: 16px;
+			display: flex;
+			align-items: center;
+			background: #ffffff;
+
+			.form__input {
+				flex-grow: 1;
+				font-size: 1.6rem;
+				line-height: 20px;
+				padding: $padding-block calc($padding-inline / 2) $padding-block $padding-inline;
+				color: var(--color-black);
+				background: transparent;
+				border: none;
+				outline: none;
+				border-color: $border-color;
+				border: 1px solid;
+				border-radius: 0;
+				border-right: none;
+				border-inline-end: none;
+				margin-right: 0;
+				margin-inline-end: 0;
+
+				&::placeholder {
+					color: var(--color-dark-gray);
+				}
+
+				&:focus,
+				&:focus+.form__button {
+					/* border-top-width: 2px; */
+					border-bottom-width: 2px;
+					/* border-bottom-color: rgba($color: #12100E, $alpha: 0.7); */
+				}
+			}
+
+			.form__button {
+				padding: $padding-block $padding-inline $padding-block calc($padding-inline / 2);
+				font-size: 1.6rem;
+				line-height: 20px;
+				font-weight: normal;
+				background: transparent;
+				border-color: $border-color;
+				border: 1px solid;
+				color: var(--color-black);
+				border-inline-start: none;
+				border-radius: 0;
+				margin-left: 0;
+				margin-inline-start: 0;
+			}
+		}
+	}
+</style>
+<script type="module">
+	const form = document.querySelector('#subscribe-form');
+	const buttonIsLoading = () => {
+		const button = form.querySelector('.form__button');
+		button.innerText = 'loading';
+	}
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		// fetch('/api/mailchimp', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({
+		// 		email: 'tomi@paystack.com'
+		// 	})
+		// })
+		// 	.then(response => {
+		// 		// console.log(response.json());
+		// 		return response.json();
+		// 	})
+		// 	.then(data => {
+		// 		console.log(data)
+		// 	})
+		// // console.log(body);
+		// // const ishe = await body;
+		// // console.log('api response is', ishe);
+		// const input = form.querySelector('input');
+		// const value = input.value;
+		// console.log(value);
+	});
+</script>

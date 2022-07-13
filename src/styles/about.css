@@ -1,3 +1,7 @@
+body{
+  cursor: url('../../assets/images/cursors/black.svg'), auto;
+}
+
 main {
     margin-top: calc(30vh - 100px);
     padding: 30px;

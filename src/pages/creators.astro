@@ -1,0 +1,372 @@
+---
+//Components
+import Layout from "@layout/Default.astro";
+import PageHeader from "@components/PageHeader.astro";
+import Checkbox from "@components/FormInputCheckbox.astro";
+import ProfileCard from "@components/profileCard.astro";
+
+import projects from "@data/projects.json";
+import roles from "@data/roles.json";
+import genre from "@data/genre.json";
+import creators from "@data/creators.json";
+
+const getProjectsFilter = () => {
+  return projects.map(({ id, title }) => ({ id, label: title }))
+}
+
+const fetchCreators = creators.map((creator) => {
+  const { roleId, projectIds, ...rest } = creator;
+  return {
+    ...rest,
+    role: roles.find(({ id }) => roleId === id),
+    projects: projectIds.map(projectID => {
+      const { id, category } = projects.find(({ id }) => id === projectID)
+      return { id, genre: category.toLowerCase() };
+    }),
+  }
+})
+
+const filters = [
+  {
+    title: 'Genre',
+    data: genre,
+  },
+  {
+    title: 'Roles',
+    data: roles,
+  },
+  {
+    title: 'Projects',
+    data: [
+      {
+        id: 'all',
+        label: 'All'
+      },
+      ...getProjectsFilter()
+    ],
+  },
+]
+
+---
+
+<Layout pageTitle="Wuruwuru" pageUrl="https://wuruwuru.com/creators"
+  pageImage="https://wuruwuru.com/assets/images/thumbnail.png">
+  <main>
+    <PageHeader />
+    <section class="l-section">
+      <div class="l-container l-grid">
+        <div class="c-section__left l-grid__column--6">
+          <h4 class="c-section-title">Creators</h4>
+          <ul class="c-creator-list" id="creators">
+            {fetchCreators.map(({name, bio, role, socialLink, projects}, index) => {
+            const projectSpread = projects.map(({ id })=> id);
+            const genreSpread = projects.map(({ genre })=> genre);
+            return (<li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
+              data-projects={projectSpread} data-genre={genreSpread}>
+              <div class="profile">
+                <ProfileCard title={name} description={role.label} size="small" />
+              </div>
+              <div class="bio">{bio}</div>
+              <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
+            </li>)}
+            )}
+          </ul>
+        </div>
+
+        <aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+          <form id="filterWrapper">
+            <!-- Select for mobile view -->
+            <select title="filter creators" multiple>
+              {filters.map(({ title, data }) => (
+              <optgroup label={title} data-filtergroup={title.toLowerCase()}>
+                {data.map(({ id, label }, index) => {
+                const value = index === 0 ? true : false
+                return(
+                <option value={id.toLowerCase()} selected={ value }>{label}</option>)
+                })}
+              </optgroup>
+              ))}
+            </select>
+
+
+            {filters.map(({ title, data }) => (
+            <fieldset class="aside-list" data-filterGroup={title.toLowerCase()}>
+              <legend>
+                <h4 class="c-section-title">{title}</h4>
+              </legend>
+              {data.map((props, index) => {
+              const value = index === 0 ? true : false
+              return (<div class="item">
+                <Checkbox {...props} value={value} client:load />
+              </div>)
+              })}
+            </fieldset>
+            ))}
+          </form>
+        </aside>
+      </div>
+    </section>
+  </main>
+</Layout>
+<style lang="scss">
+  @import "../styles/mixins.scss";
+
+  .l-container,
+  .l-grid {
+    position: relative;
+  }
+
+  .c-creator-list,
+  .aside-list {
+    padding: var(--spacer-base) 0;
+  }
+
+  .c-creator-list__item {
+    display: grid;
+    grid-template-columns: 32% 1fr 14%;
+    gap: 24px;
+    margin-bottom: var(--spacer-base);
+    margin-block-end: var(--spacer-base);
+
+    &:last-of-type {
+      margin-bottom: 0;
+      margin-block-end: 0;
+    }
+
+    .social {
+      justify-self: flex-end;
+      word-break: break-all;
+    }
+  }
+
+  .c-section__right {
+    fieldset {
+      border: none;
+
+      @include screen('small') {
+        display: none;
+      }
+
+      legend {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    select {
+      display: none;
+
+      @include screen('small') {
+        display: unset;
+        // opacity: 0;
+      }
+    }
+
+  }
+
+  .c-section__left {
+    @include screen('small') {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .aside-list>.item+* {
+    margin-top: calc(var(--spacer-base) / 6);
+  }
+</style>
+<script define:vars={{ filters }}>
+  window.creatorFilterOptions = {
+    genre: {
+      all: { label: "All", active: true },
+      animation: { label: "Animation", active: false },
+      music: { label: "Music", active: false },
+      writing: { label: "Writing", active: false },
+      comic: { label: "Comic", active: false },
+    },
+    roles: {
+      all: { label: "All", active: true },
+      animator: { label: "Animator", active: false },
+      writer: { label: "Writer", active: false },
+      graphic_designer: { label: "Graphic Designer", active: false },
+      illustrator: { label: "Illustrator", active: false },
+      director: { label: "Director", active: false },
+      producer: { label: "Producer", active: false },
+    },
+    projects: {
+      all: { label: "All", active: true },
+      j_guide: { label: "J Guide", active: false },
+      hanky: { label: "Hanky Panky", active: false },
+      feel_good: { label: "Feel Good", active: false }
+    }
+  };
+</script>
+<script>
+  import { assign, createMachine, interpret } from '@xstate/fsm';
+  import Isotope from 'isotope-layout';
+
+  // Use Isotope to control filtered items
+  const creatorIsotope = new Isotope(document.getElementById('creators'), {
+    itemSelector: '.c-creator-list__item',
+  });
+
+
+  // Helpers
+  const updateCheckboxUI = (parent, value, key = 'all') => {
+    const filterGroup = document.querySelector(`fieldset[data-filtergroup='${parent}']`);
+    filterGroup.querySelector(`div input[name='${key}']`).checked = value;
+  }
+
+  const updateSelectUI = (parent, value, key = 'all') => {
+    const filterGroup = document.querySelector(`select [data-filtergroup='${parent}']`);
+    filterGroup.querySelector(`option[value='${key}']`).selected = value;
+  }
+
+  // Helpers
+  const updateJSONOnClick = (data, filterId, parent) => {
+    // Turn off all filters is user selects all
+    if (filterId === 'all') {
+      for (const key of Object.keys(data)) {
+        if (key !== 'all') {
+          data[key]['active'] = false;
+        }
+      }
+      return data;
+    }
+
+    data['all']['active'] = false;
+
+    return data;
+  }
+
+  const updateUI = (data) => {
+    const testParam = Object.keys(data).reduce((acc, element) => {
+      const targetObj = data[element];
+      const targetKeys = Object.keys(targetObj);
+      const answers = [];
+
+      targetKeys.forEach(key => {
+        if (targetObj[key]['active']) answers.push(key)
+      });
+
+      return {
+        ...acc,
+        [element]: answers
+      }
+    }, {})
+
+
+    const filterQuery = (element) => {
+      const answer = [];
+      for (const key of Object.keys(testParam)) {
+        const attributeText = element.getAttribute(`data-${key}`);
+        if (testParam[key].includes(attributeText) || testParam[key].includes('all')) {
+          answer.push(true)
+        } else {
+          answer.push(false)
+        }
+      }
+
+      const checkTrue = answer.every(element => element)
+      return checkTrue
+    }
+
+    creatorIsotope.arrange({
+      filter: filterQuery
+    })
+  }
+
+
+  const options = {
+    actions: {
+      handleContext: assign({
+        filterState: (context, event) => {
+          const { filterState } = context;
+          const { filterParent, filterId } = event;
+
+          const filteredGroup = {
+            ...filterState[filterParent],
+            [filterId]: {
+              ...filterState[filterParent][filterId],
+              active: !filterState[filterParent][filterId]['active'] // update changed json
+            }
+          }
+
+          const purifiedJSON = updateJSONOnClick(filteredGroup, filterId, filterParent);
+
+          for (const key in purifiedJSON) {
+            // updateUI
+            const { active } = purifiedJSON[key];
+            updateCheckboxUI(filterParent, active, key)
+            updateSelectUI(filterParent, active, key)
+          }
+          return {
+            ...filterState,
+            [filterParent]: {
+              ...purifiedJSON
+            }
+          }
+        }
+      }),
+    }
+  }
+
+
+  // State Machine
+  const machine = createMachine({
+    id: 'creatorFilter',
+    initial: 'idle',
+    context: {
+      filterState: window.creatorFilterOptions,
+    },
+    states: {
+      idle: {
+        on: { CLICK: 'selected' }
+      },
+      selected: {
+        entry: ['handleContext',],
+        on: { CLICK: 'selected' }
+      }
+    },
+  }, options)
+
+  const toggleService = interpret(machine).start()
+  toggleService.subscribe((state) => {
+    if (state && state.changed) {
+      const { filterState } = state.context;
+      updateUI(filterState)
+    }
+  })
+
+
+
+  // Trigger machine event
+  const getFilterParam = (fieldType, element) => {
+    switch (fieldType) {
+      case 'multi-select':
+        return {
+          filterParent: element.options[element.selectedIndex].parentNode.getAttribute('data-filtergroup'),
+          filterId: element.value
+        }
+
+      default:
+        return {
+          filterParent: element.closest('[data-filtergroup]').getAttribute('data-filtergroup'),
+          filterId: element.getAttribute('name')
+        }
+    }
+  }
+
+  document.querySelector('#filterWrapper select')
+    .addEventListener('input', (event) => {
+      const { filterParent, filterId } = getFilterParam('multi-select', event.target);
+      toggleService.send({ type: 'CLICK', filterParent, filterId })
+    })
+
+  document.querySelector('#filterWrapper')
+    .addEventListener('input', (event) => {
+      if (event.target.nodeName == 'SELECT') return;
+      const { filterId, filterParent } = getFilterParam('input', event.target);
+      toggleService.send({ type: 'CLICK', filterParent, filterId });
+    }, false)
+</script>

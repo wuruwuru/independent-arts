@@ -1,11 +1,13 @@
 [
   {
+    "id": "j_guide",
     "title": "J Guide",
     "category": "Comic",
-    "description": "An Instagram comic about weed.",
+    "shortDescription": "An Instagram comic about weed.",
+    "description": "An instruction manual for rolling your first joint.",
     "subtitle": { 
-      "href": "/jguide",
-      "text": "wuruwuru.com/jguide"
+      "href": "https://instagram.com/thejguide",
+      "text": "instagram/thejguide"
     },
     "contributors": [
       {
@@ -33,27 +35,14 @@
     ]
   },
   {
-    "title": "Cover Bank",
-    "category": "Dataset",
-    "description": "1000+ Nigerian album covers from 1960 to date organized by artist, year, genre and designer.",
-    "subtitle": {
-      "href": "/covers",
-      "text": "wuruwuru.com/covers"
-    },
-    "contributors": [
-      {
-        "name": "Eseosa",
-        "role": "Curator",
-        "contactUrl": "https://www.instagram.com/ese.illustrates/"
-      }
-    ]
-  },
-  {
+    "id": "hanky",
     "title":  "Hanky Panky",
-    "category":  "September 2021",
-    "description":  "On a nice afternoon drive, Osas receives a call from Aunty Yuwa about raunchy Instagram videos.",
+    "category":  "Animation",
+    "shortDescription":  "On a nice afternoon drive, Osas receives a call from Aunty Yuwa about raunchy Instagram videos.",
+    "description":  "A short film inspired by a real phone call between a Nigerian aunty and her niece.",
     "subtitle": {
-      "text": "Animation"
+      "text": "hankypankyfilm.com",
+      "href": "/hanky-panky"
     },
     "contributors": [
       {
@@ -77,6 +66,24 @@
         "name":  "Kolade",
         "role":  "Sound Designer",
         "contactUrl": "https://www.vsonicarts.com"
+      }
+    ]
+  },
+  {
+    "id": "feel_good",
+    "title": "Feel Good",
+    "category": "Comic",
+    "shortDescription": "A collection of joyful queer stories from ten of the best writers of our time.",
+    "description": "A collection of joyful queer stories from ten of the best writers of our time.",
+    "subtitle": {
+      "href": "/cover-bank",
+      "text": "afeelgoodbook.com"
+    },
+    "contributors": [
+      {
+        "name": "Eseosa",
+        "role": "Curator",
+        "contactUrl": "https://www.instagram.com/ese.illustrates/"
       }
     ]
   }

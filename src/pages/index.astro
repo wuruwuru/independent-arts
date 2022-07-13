@@ -1,64 +1,96 @@
 ---
-//Layout
-import Layout from "@layout/Default.astro"
+//Components
+import Layout from "@layout/Default.astro";
+import PageHeader from "@components/PageHeader.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import ProfileCard from "@components/ProfileCard.astro";
+import NewsletterPreview from "@components/NewsletterPreview.astro";
+import JournalPreview from "@components/JournalPreview.astro";
+import projects from "@data/projects.json";
 
-//Styling
-import "@styles/index.css"
 
-//Scripts
-import Dots from "@components/DotsCursor.astro";
-import HomeProjectList from "@components/HomeProjectList.astro";
 
 //Data
-import projects from "@data/projects.json"
+import hanky from "@images/projects/hanky.jpg";
+import j_guide from "@images/projects/j_guide.jpg";
+
+
+
+const projectCovers = {
+	hanky,
+	'j-guide': j_guide
+}
+
 ---
 <Layout
-	bodyClassName="checkered"
 	pageTitle="Wuruwuru"
 	pageUrl="https://wuruwuru.com"
 	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
 >
-		<header>
-			<h1 class="wordmark" id="wordmark">Wuruwuru</h1>
-		</header>
-		<main>
-			<div class="list" id="list">
-				<section class="list__items">
-					{
-						projects.map(project => (
-							<HomeProjectList
-								title={project.title}
-								category={project.category}
-								subtitle={project.subtitle}
-								description={project.description}
-								contributors={project.contributors}
-							/>
-						))
-					}
-				</section>
+	<main>
+		<PageHeader/>
+		<section class="l-section">
+			<div class="l-container l-grid">
+				<div class="c-section__left l-grid__column--6">
+					<h4 class="c-section-title">Stories</h4>
+					<ul class="c-project-list">
+						{projects.map((proj) => (
+							<li class="c-project-list__item"><ProjectCard imageLink={proj?.id && proj?.id.length > 0 ? projectCovers[proj.id] : null } {...proj}/></li>
+						))}
+					</ul>
+				</div>
+				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+					<h4 class="c-section-title">Data</h4>
+					<ul class="aside-list">
+						<li><ProfileCard/></li>
+						<li><ProfileCard/></li>
+						<li><ProfileCard/></li>
+					</ul>
+					<h4 class="c-section-title">Newsletter</h4>
+					<ul class="aside-list">
+						<li><NewsletterPreview/></li>
+					</ul>
+					<h4 class="c-section-title">Journal</h4>
+					<ul class="aside-list aside-list--md">
+						<li><JournalPreview/></li>
+						<li><JournalPreview/></li>
+						<li><JournalPreview/></li>
+					</ul>
+				</aside>
 			</div>
-		</main>
-
-		<script>
-			var list = window.document.getElementById('list');
-			window.addEventListener('scroll', function() {
-				var fromTop = list.offsetTop - window.scrollY;
-				var isFixed = list.classList.contains('list--fixed-background');
-				if ((fromTop <= 0) && !isFixed) {
-					list.classList.add('list--fixed-background');
-				} else if ((fromTop > 0) && isFixed) {
-					list.classList.remove('list--fixed-background');
-				}
-			});
-		</script>
-		<Dots client:idle/>
+		</section>
+	</main>
 </Layout>
 
-<style>
-.wordmark-text {
-  font-size: 0.8em;
-  font-family: 'Soehne Schmal', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
+<style lang="scss">
+	@import "../styles/mixins.scss";
+
+	.c-project-list,
+	.aside-list {
+		padding: var(--spacer-base) 0;
+	}
+	.c-project-list__item {
+		& + & {
+			margin-top: var(--spacer-base);
+			margin-block-start: var(--spacer-base);
+		}
+	}
+	.c-section__right {
+		@include screen('small') {
+			display: none;
+		}
+	}
+	.c-section__left {
+		@include screen('small') {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.aside-list	> * + * {
+		margin-top: calc(var(--spacer-base) / 4 );
+	}
+	.aside-list--md	> * + * {
+		margin-top: calc(var(--spacer-base) / 2);
+	}
+
 </style>

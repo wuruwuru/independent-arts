@@ -1,0 +1,29 @@
+
+.l-container {
+  max-width: var(--grid-container-width);
+  padding: 0 24px;
+  width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  @include screen('med-small') {
+    padding: 0 20px;
+  }
+  @include screen('small') {
+    padding: 0 16px;
+  }
+
+  &--fluid {
+    max-width: unset;
+  }
+}
+
+.c-section {
+  &-title {
+    padding: 16px 0;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+}
+

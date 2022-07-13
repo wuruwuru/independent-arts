@@ -1,0 +1,104 @@
+---
+export interface Props {
+    title: string,
+    description: string,
+		subtitle: {
+			href: string,
+			text: string
+		},
+		imageLink: URL
+}
+
+const { 
+	title = 'Feel Good', 
+	description = 'A collection of joyful queer stories from ten of the best writers of our time.', 
+	subtitle,
+	imageLink = null
+ } = Astro.props
+ 
+---
+<div class="project">
+	<div class={`project-cover ${imageLink === null ? '-default-cover' : ''}`}>
+		{imageLink && (
+      <img src={imageLink} alt={`${title} cover image`} />
+    )}
+	</div>
+	<div class="project-text">
+		<div class="body">
+			<h2>{title}</h2>
+			<p>{ description }</p>
+		</div>
+		<div class="footer">
+			<a href={ subtitle?.href || '#' } target="_blank">{ subtitle.text }</a>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	@import "../styles/mixins.scss";
+.project {
+	display: grid;
+	gap: 24px;
+	text-decoration: none;
+	grid-template-columns: 1fr minmax(auto, 320px);
+	@include screen('small') {
+		grid-template-columns: 1fr;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+
+	&-cover {
+	
+		width: 100%;
+		min-width: 300px;
+		height: 100%;
+		aspect-ratio: 616 / 400;
+		@include screen('small') {
+			min-width: unset;
+		}
+		&.-default-cover{
+			background-color: #CD2D59;
+			background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);
+		}
+	}
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 32px;
+		h5 {
+			font-size: 3.2rem;
+			font-weight: normal;
+		}
+		p {
+			font-size:var(--font-size-base);
+		}
+		
+		.footer {
+			font-style: italic;
+			padding-block-end: 28px;
+			margin-block-end: 0;
+			position: relative;
+			&::after {
+				--divider-height: 16px;
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: var(--divider-height);
+				background: linear-gradient(90deg, var(--color-light-gray) 50%, transparent 50%, transparent 100%), 
+										linear-gradient(90deg, transparent 50%, var(--color-light-gray) 50%,  var(--color-light-gray) 100%);
+				background-position: 0 0, 0 calc(var(--divider-height) / 2);
+				background-size: var(--divider-height) 50%;
+				background-repeat: repeat no-repeat;
+			}
+			p {
+				position: relative;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+</style>

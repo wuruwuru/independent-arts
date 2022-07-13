@@ -1,0 +1,76 @@
+---
+export interface Props {
+  title: string;
+  description: string | number;
+  imageLink?: URL,
+  size: 'small' | 'regular' | 'large'
+}
+
+const {
+  title = 'Album Covers',
+  description = 5000,
+  imageLink,
+  size = 72
+} = Astro.props;
+
+const avatarSizeClass = {
+  'small': '-is-small',
+  'regular': '-is-regular',
+  'large': '-is-large',
+}
+
+// node check type of description
+const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
+
+---
+
+<div class={`profile ${avatarSizeClass[size]}`}>
+  <div class="avatar">
+    {imageLink && (
+      <img src={imageLink} alt={`${title} image`} />
+    )}
+  </div>
+  <div class="text">
+    <div class="inner">
+      <div>{ title }</div>
+      <p class={descriptionClass}>{ description }</p>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .profile {
+    --card-size: 72px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(auto, var(--card-size)) 1fr;
+    align-items: center;
+    &.-is-large {
+      --card-size: 92px;
+    }
+    &.-is-small {
+      --card-size: 56px;
+      .text {
+        font-size: 1.8rem;
+      }
+    }
+    .avatar {
+      background: whitesmoke;
+      aspect-ratio: 1;
+      display: flex;
+    }
+    .text .inner {
+      display: flex;
+      flex-direction: column;
+        > p {
+        margin-block-start: 4px;
+        margin-block-end: 4px;
+        color: var(--color-dark-gray);
+        font-family: var(--font-sans);
+        &.-is-integer {
+          font-family: var(--font-sans-mono);
+        }
+      }
+    }
+  }
+</style>

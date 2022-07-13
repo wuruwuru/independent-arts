@@ -1,3 +1,9 @@
 import { defineConfig } from 'astro/config';
-// https://astro.build/config
-export default defineConfig({});
+import netlify from '@astrojs/netlify/functions';
+import sitemap from "@astrojs/sitemap";
+
+export default defineConfig({
+  site: 'https://wuruwuru.com',
+  adapter: netlify(),
+  integrations: [sitemap()]
+});
