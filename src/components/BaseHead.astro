@@ -37,7 +37,7 @@ const {
 	<meta property="twitter:image" content={pageImage}>
 
 	<!-- Add analytics script -->
-	<Analytics />
-
+	{import.meta.env.PROD && (
+	<Analytics />)}
 	<slot />
 </head>

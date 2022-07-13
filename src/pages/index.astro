@@ -22,39 +22,48 @@ const projectCovers = {
 }
 
 ---
-<Layout
-	pageTitle="Wuruwuru"
-	pageUrl="https://wuruwuru.com"
-	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
->
+
+<Layout pageTitle="Wuruwuru" pageUrl="https://wuruwuru.com"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png">
 	<main>
-		<PageHeader/>
+		<PageHeader />
 		<section class="l-section">
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--6">
 					<h4 class="c-section-title">Stories</h4>
 					<ul class="c-project-list">
 						{projects.map((proj) => (
-							<li class="c-project-list__item"><ProjectCard imageLink={proj?.id && proj?.id.length > 0 ? projectCovers[proj.id] : null } {...proj}/></li>
+						<li class="c-project-list__item">
+							<ProjectCard imageLink={proj?.id && proj?.id.length> 0 ? projectCovers[proj.id] : null }
+								{...proj}/>
+						</li>
 						))}
 					</ul>
 				</div>
 				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
 					<h4 class="c-section-title">Data</h4>
 					<ul class="aside-list">
-						<li><ProfileCard/></li>
-						<li><ProfileCard/></li>
-						<li><ProfileCard/></li>
+						<li>
+							<ProfileCard title="Covers" description={200} size="regular" />
+						</li>
 					</ul>
 					<h4 class="c-section-title">Newsletter</h4>
 					<ul class="aside-list">
-						<li><NewsletterPreview/></li>
+						<li>
+							<NewsletterPreview />
+						</li>
 					</ul>
 					<h4 class="c-section-title">Journal</h4>
 					<ul class="aside-list aside-list--md">
-						<li><JournalPreview/></li>
-						<li><JournalPreview/></li>
-						<li><JournalPreview/></li>
+						<li>
+							<JournalPreview />
+						</li>
+						<li>
+							<JournalPreview />
+						</li>
+						<li>
+							<JournalPreview />
+						</li>
 					</ul>
 				</aside>
 			</div>
@@ -69,28 +78,31 @@ const projectCovers = {
 	.aside-list {
 		padding: var(--spacer-base) 0;
 	}
+
 	.c-project-list__item {
-		& + & {
+		&+& {
 			margin-top: var(--spacer-base);
 			margin-block-start: var(--spacer-base);
 		}
 	}
+
 	.c-section__right {
 		@include screen('small') {
 			display: none;
 		}
 	}
+
 	.c-section__left {
 		@include screen('small') {
 			grid-column: 1 / -1;
 		}
 	}
 
-	.aside-list	> * + * {
-		margin-top: calc(var(--spacer-base) / 4 );
-	}
-	.aside-list--md	> * + * {
-		margin-top: calc(var(--spacer-base) / 2);
+	.aside-list>*+* {
+		margin-top: calc(var(--spacer-base) / 4);
 	}
 
+	.aside-list--md>*+* {
+		margin-top: calc(var(--spacer-base) / 2);
+	}
 </style>
