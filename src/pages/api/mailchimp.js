@@ -1,8 +1,10 @@
 import mailchimp from '@mailchimp/mailchimp_marketing';
+import crypto from 'crypto'
 
 const apiKey = import.meta.env.MAILCHIMP_API_KEY;
 const server = import.meta.env.MAILCHIMP_SERVER;
-const audienceID = "8fb942fda2";
+const audienceID = import.meta.env.MAILCHIMP_AUDIENCE_ID;
+
 
 mailchimp.setConfig({ 
     apiKey, 
@@ -10,19 +12,23 @@ mailchimp.setConfig({
  });
 
 export async function post({ request }) {
-    // const _response = await mailchimp.ping.get();
-    const { email } = await request.json();
+	const { email } = await request.json();
+	const emailHash = crypto.createHash('md5').update(email).digest('hex');
 
-    const response = await mailchimp.lists.addListMember("8fb942fda2", { 
-        email_address: email,
-     });
+	const { id, email_address, tags } = await mailchimp.lists.setListMember(audienceID, emailHash, { 
+			email_address: email,
+			status_if_new: 'subscribed',
+			marketing_permissions: {
+					enabled: true,
+			}
+	});
 
-    console.log(response, 'response is here');
+	const data = { id, email_address, tags }
 
-    return new Response(JSON.stringify({ ok: true, response }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-  }
+	return new Response(JSON.stringify({ ok: true, data }), {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/json',
+		}
+	});
+}
