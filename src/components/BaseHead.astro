@@ -2,20 +2,21 @@
 import resetStyles from "@styles/main.scss";
 
 const {
-		pageTitle,
-		seoTitle = pageTitle, // This prop is used for when the title tag title is different from what is displayed for SEO titles
-		pageUrl,
-		pageImage = "https://wuruwuru.com/assets/images/thumbnail.png",
-		pageDescription = "A collection of publishing experiments",
-	} = Astro.props;
+	pageTitle,
+	seoTitle = pageTitle, // This prop is used for when the title tag title is different from what is displayed for SEO titles
+	pageUrl,
+	pageImage = "https://wuruwuru.com/assets/images/thumbnail.png",
+	pageDescription = "A collection of publishing experiments",
+} = Astro.props;
 
 ---
+
 <head>
 	<title>{pageTitle}</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="title" content={seoTitle}>
 
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
 	<meta name="description" content={pageDescription}>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -34,5 +35,8 @@ const {
 	<meta property="twitter:description" content={pageDescription}>
 	<meta property="twitter:image" content={pageImage}>
 
-	<slot/>
+	<script
+		id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c6a3836006168216b854c63bf/f0d8da47f6ab43ea250ee58e3.js");</script>
+
+	<slot />
 </head>
