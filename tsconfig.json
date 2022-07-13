@@ -21,6 +21,5 @@
     "isolatedModules": true,
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"]
-  },
-  "exclude": ["node_modules"]
+  }
 }
