@@ -12,7 +12,7 @@ const {
   </div>
   <ul class="body">
     {posts.map(({ href, noAndTitle }) => (
-    <li><a href={href} target="_blank" rel="noopener noreferrer"></a>{noAndTitle}</li>
+    <li><a href={href} target="_blank" rel="noopener noreferrer">{noAndTitle}</a></li>
     ))}
   </ul>
 </div>
@@ -29,7 +29,18 @@ const {
     }
   }
 
-  .body>*+* {
-    margin-top: 16px;
+  .body {
+    a {
+      font-style: normal;
+
+      &:hover {
+        // font-style: italic;
+        text-decoration: underline;
+      }
+    }
+
+    &>*+* {
+      margin-top: 16px;
+    }
   }
 </style>
