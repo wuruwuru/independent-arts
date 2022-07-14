@@ -1,21 +1,8 @@
 ---
 
 const {
-  month = 'March',
-  posts = [
-    {
-      issueNumber: 40,
-      href: 'https://google.com',
-      title: 'Cherry 🍒 Sprint',
-      noAndTitle: '40: Cherry 🍒 Sprint'
-    },
-    {
-      issueNumber: 39,
-      href: 'https://google.com',
-      title: 'Email Deliverability',
-      noAndTitle: '39: Email Deliverability'
-    }
-  ]
+  month,
+  posts
 } = Astro.props;
 ---
 
@@ -25,7 +12,7 @@ const {
   </div>
   <ul class="body">
     {posts.map(({ href, noAndTitle }) => (
-      <li><a href={href} target="_blank" rel="noopener noreferrer"></a>{noAndTitle}</li>
+    <li><a href={href} target="_blank" rel="noopener noreferrer"></a>{noAndTitle}</li>
     ))}
   </ul>
 </div>
@@ -42,8 +29,7 @@ const {
     }
   }
 
-  .body > * + * {
+  .body>*+* {
     margin-top: 16px;
   }
-
 </style>

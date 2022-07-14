@@ -1,5 +1,6 @@
 ---
 import resetStyles from "@styles/main.scss";
+import Analytics from "./Analytics.astro";
 
 const {
 	pageTitle,
@@ -35,8 +36,8 @@ const {
 	<meta property="twitter:description" content={pageDescription}>
 	<meta property="twitter:image" content={pageImage}>
 
-	<script
-		id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c6a3836006168216b854c63bf/f0d8da47f6ab43ea250ee58e3.js");</script>
-
+	<!-- Add analytics script -->
+	{import.meta.env.PROD && (
+	<Analytics />)}
 	<slot />
 </head>

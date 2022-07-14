@@ -13,18 +13,19 @@ export interface Props {
 }
 
 const {
-		pageTitle,
-		hideNav = false
-	} = Astro.props;
+	pageTitle,
+	hideNav = false
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<BaseHead { ...Astro.props }></BaseHead>
+<html lang="en" dir="ltr">
+<BaseHead { ...Astro.props }></BaseHead>
 
-	<body>
-		<NavDefault />
-		<slot/>
-    <Footer/>
-	</body>
+<body>
+	<NavDefault />
+	<slot />
+	<Footer />
+</body>
+
 </html>

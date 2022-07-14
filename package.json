@@ -12,7 +12,6 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/netlify": "^0.4.10",
     "@astrojs/sitemap": "^0.2.6",
     "astro": "^1.0.0-beta.53",
     "autoprefixer": "^10.4.7",
@@ -24,6 +23,8 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.75",
     "@xstate/fsm": "^2.0.0",
+    "axios": "^0.27.2",
+    "crypto": "^1.0.1",
     "isotope-layout": "^3.0.6"
   }
 }

@@ -3,7 +3,7 @@
 import Layout from "@layout/Default.astro";
 import PageHeader from "@components/PageHeader.astro";
 import Checkbox from "@components/FormInputCheckbox.astro";
-import ProfileCard from "@components/profileCard.astro";
+import ProfileCard from "@components/ProfileCard.astro";
 
 import projects from "@data/projects.json";
 import roles from "@data/roles.json";
@@ -47,12 +47,18 @@ const filters = [
   },
 ]
 
+
+const header = {
+  title: 'is a artist collective.',
+  description: 'We bring excellent directors and talented creators together to produce big ideas and create locally relevant documentation for other artists.'
+}
+
 ---
 
 <Layout pageTitle="Wuruwuru" pageUrl="https://wuruwuru.com/creators"
   pageImage="https://wuruwuru.com/assets/images/thumbnail.png">
   <main>
-    <PageHeader />
+    <PageHeader {...header} />
     <section class="l-section">
       <div class="l-container l-grid">
         <div class="c-section__left l-grid__column--6">

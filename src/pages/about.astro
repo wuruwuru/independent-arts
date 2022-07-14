@@ -10,83 +10,50 @@ import nneoma from "@images/team/nneoma.png"
 import williams from "@images/team/williams.png"
 import agnes from "@images/team/agnes.png"
 import tomiwa from "@images/team/tomiwa.png"
-
-const experiments = [
-	{
-		question: 'Can we establish scrum on the team?',
-		answer: 'https://google.com',
-	},
-	{
-		question: 'Can we manage teams of directors and creators remotely to make a Really Cool book, animated short film, comics, etc?',
-		answer: 'https://google.com',
-	},
-	{
-		question: 'Can we document the process of making these stories for other independent publishers?',
-		answer: 'https://google.com',
-	},
-	{
-		question: 'Can we use social media to build a global audience for these Really Cool stories?',
-		answer: null,
-	},
-	{
-		question: 'Can we create spaces for the team, directors and creators to meet and share with each other?',
-		answer: null,
-	},
-	{
-		question: 'Can we run a successful Kickstarter campaign for an animated series?',
-		answer: null,
-	},
-	{
-		question: 'Can we design a meaningful membership program to run the studio?',
-		answer: null,
-	},
-	{
-		question: 'Can we help other people raise money for their Really Cool ideas?',
-		answer: null,
-	}
-]
+import experiments from "@data/manifestoLinks.json";
 
 const header = {
-	title: 'is a non-profit studio.',
-	description: 'Right now, we’re making publishing experiments. Long term, we’re trying to become a community-funded, community-run support system for independent publishers.'
+	title: "is a non-profit studio.",
+	description: "Right now, we’re making publishing experiments. Long term, we’re trying to become a community-funded, community-run support system for independent publishers."
 }
 
 const teamImages = {
-    "opemipo": opemipo,
-    "nneoma": nneoma,
-    "williams": williams,
-    "agnes": agnes,
-    "tomiwa": tomiwa,
+	"opemipo": opemipo,
+	"nneoma": nneoma,
+	"williams": williams,
+	"agnes": agnes,
+	"tomiwa": tomiwa,
 }
 
 ---
-<Layout
-	pageTitle="Wuruwuru"
-	pageUrl="https://wuruwuru.com"
-	pageImage="https://wuruwuru.com/assets/images/thumbnail.png"
->
+
+<Layout pageTitle="Wuruwuru" pageUrl="https://wuruwuru.com"
+	pageImage="https://wuruwuru.com/assets/images/thumbnail.png">
 	<main>
-		<PageHeader {...header}/>
+		<PageHeader {...header} />
 		<section class="l-section">
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--5">
 					<h4 class="c-section-title">Stories</h4>
 					<ul class="c-team">
 						{team.map(({name, role, description, id }) => (
-							<li class="c-team__member">
-								<div class="image"><ProfileCard title={name} description={role} imageLink={teamImages[id]} size="large"/></div>
-								<p>{ description }</p>
-							</li>
+						<li class="c-team__member">
+							<div class="image">
+								<ProfileCard title={name} description={role} imageLink={teamImages[id]} size="large" />
+							</div>
+							<p>{ description }</p>
+						</li>
 						))}
 					</ul>
 				</div>
 				<aside class="c-section__right l-grid__column-start--7 l-grid__column--3">
-					<h4 class="c-section-title">Experiments</h4>
+					<h4 class="c-section-title">Manifesto</h4>
 					<ol class="experiment-list">
 						{experiments.map(({ question, answer }) => (
-							<li class={answer && answer.length >= 1 ? 'active' : 'inactive'}>
-								<a href={answer && answer.length >= 1 ? answer : '#'} target="_blank" rel="noopener noreferrer">{question}</a>
-							</li>
+						<li class={answer && answer.length>= 1 ? 'active' : 'inactive'}>
+							<a href={answer && answer.length>= 1 ? answer : '#'} target="_blank" rel="noopener
+								noreferrer">{question}</a>
+						</li>
 						))}
 					</ol>
 				</aside>
@@ -102,21 +69,26 @@ const teamImages = {
 	.experiment-list {
 		padding: var(--spacer-base) 0;
 	}
+
 	.c-team__member {
 		display: flex;
-    flex-flow: row nowrap;
-    gap: 48px;
+		flex-flow: row nowrap;
+		gap: 48px;
+
 		@include screen('small') {
 			flex-direction: column;
 			gap: 16px;
 		}
-		& + & {
+
+		&+& {
 			margin-top: var(--spacer-base);
 			margin-block-start: var(--spacer-base);
 		}
+
 		.image {
 			padding-top: 16px;
 			flex: 1 0 320px;
+
 			@include screen('small') {
 				flex-basis: auto;
 			}
@@ -126,36 +98,42 @@ const teamImages = {
 			line-height: 1.3;
 		}
 	}
+
 	.c-section__right {
 		@include screen('small') {
 			display: none;
 		}
 	}
+
 	.c-section__left {
 		@include screen('small') {
 			grid-column: 1 / -1;
 		}
 	}
+
 	.experiment-list {
 		font-family: var(--font-sans);
 		font-size: 1.8rem;
 		line-height: 1.2;
 		list-style-type: decimal;
 		list-style-position: inside;
+
 		.inactive a,
 		li.inactive {
 			color: var(--color-dark-gray);
 			cursor: not-allowed;
+
 			&:hover {
 				animation: none;
 			}
 		}
+
 		a {
 			font-style: normal;
 		}
-		> * + * {
-		margin-top: calc(var(--spacer-base) / 2 );
-	}
-	}
 
+		>*+* {
+			margin-top: calc(var(--spacer-base) / 2);
+		}
+	}
 </style>
