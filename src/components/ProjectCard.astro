@@ -20,13 +20,17 @@ const {
 
 <div class="project">
 	<div class={`project-cover ${imageLink===null ? '-default-cover' : '' }`}>
-		{imageLink && (
-		<img src={imageLink} alt={`${title} cover image`} />
-		)}
+		<a href={subtitle?.href} target="_blank" rel="noopener noreferrer">
+			{imageLink && (
+			<img src={imageLink} alt={`${title} cover image`} />
+			)}
+		</a>
 	</div>
 	<div class="project-text">
 		<div class="body">
-			<h2>{title}</h2>
+			<h2>{subtitle?.href ?
+				(<a href={subtitle?.href} target="_blank" rel="noopener noreferrer">{title}</a>) :
+				({title})}<span class="icon">↗️</span></h2>
 			<p>{ description }</p>
 		</div>
 		<div class="footer">
@@ -48,8 +52,14 @@ const {
 			grid-template-columns: 1fr;
 		}
 
+		// &:hover {
+		// 	text-decoration: none;
+		// }
+
 		&:hover {
-			text-decoration: none;
+			.project-cover img {
+				transform: scale(1);
+			}
 		}
 
 		&-cover {
@@ -58,6 +68,27 @@ const {
 			min-width: 300px;
 			height: 100%;
 			aspect-ratio: 616 / 400;
+			overflow: hidden;
+			display: flex;
+
+			>a {
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				>img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			img {
+				transform: scale(1.08);
+				transition: .5s ease;
+			}
+
+
 
 			@include screen('small') {
 				min-width: unset;
@@ -76,6 +107,20 @@ const {
 			justify-content: space-between;
 			gap: 32px;
 
+			h2,
+			h5 {
+				display: inline-flex;
+
+				.icon {
+					display: none;
+					font-size: inherit;
+				}
+
+				a {
+					font-style: normal;
+				}
+			}
+
 			h5 {
 				font-size: 3.2rem;
 				font-weight: normal;
@@ -91,6 +136,12 @@ const {
 				margin-block-end: 0;
 				position: relative;
 
+				&:hover {
+					&::after {
+						animation: animatedBackground .35s linear infinite both;
+					}
+				}
+
 				&::after {
 					--divider-height: 16px;
 					content: '';
@@ -104,6 +155,15 @@ const {
 					background-position: 0 0, 0 calc(var(--divider-height) / 2);
 					background-size: var(--divider-height) 50%;
 					background-repeat: repeat no-repeat;
+					// animation: none;
+					transition: background-size .35s linear;
+
+					@keyframes animatedBackground {
+
+						to {
+							background-position: 32px 0, 32px calc(var(--divider-height) / 2);
+						}
+					}
 				}
 
 				p {
