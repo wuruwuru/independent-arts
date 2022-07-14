@@ -7,18 +7,19 @@ import vimeo from "@images/icons/vimeo.svg"
 
 const { className = '' } = Astro.props
 ---
+
 <div class={`links ${className}`}>
     <a href="https://twitter.com/wuruwurumag" target="_blank">
-        <img src={twitter} alt="Wuruwuru Twitter"/>
+        <img src={twitter} alt="wuruwuru Twitter" />
     </a>
-    <img src={instagram} alt="Wuruwuru Instagram"/>
+    <img src={instagram} alt="wuruwuru Instagram" />
     <a href="https://medium.com/wuruwuru" target="_blank">
-        <img src={medium} alt="Wuruwuru medium"/>
+        <img src={medium} alt="wuruwuru medium" />
     </a>
-    <img src={vimeo} alt="Wuruwuru Videos"/>
+    <img src={vimeo} alt="wuruwuru Videos" />
 </div>
 <style>
-    .links{
+    .links {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 20px;
