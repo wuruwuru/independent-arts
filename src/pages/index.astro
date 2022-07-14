@@ -6,21 +6,20 @@ import ProjectCard from "@components/ProjectCard.astro";
 import ProfileCard from "@components/ProfileCard.astro";
 import NewsletterPreview from "@components/NewsletterPreview.astro";
 import JournalPreview from "@components/JournalPreview.astro";
+
+// Data
 import projects from "@data/projects.json";
+import journals from "@data/journal.json";
+import newsletters from "@data/newsletter.json";
 
-
-
-//Data
+// Images
 import hanky from "@images/projects/hanky.jpg";
 import j_guide from "@images/projects/j_guide.jpg";
-
-
 
 const projectCovers = {
 	hanky,
 	'j-guide': j_guide
 }
-
 ---
 
 <Layout pageTitle="Wuruwuru" pageUrl="https://wuruwuru.com"
@@ -42,28 +41,28 @@ const projectCovers = {
 				</div>
 				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
 					<h4 class="c-section-title">Data</h4>
-					<ul class="aside-list">
+					<ul class="aside-list data">
 						<li>
-							<ProfileCard title="Covers" description={200} size="regular" />
+							<a href="/covers">
+								<ProfileCard title="Covers" description={200} size="regular" />
+							</a>
 						</li>
 					</ul>
 					<h4 class="c-section-title">Newsletter</h4>
 					<ul class="aside-list">
+						{newsletters.map((letter) => (
 						<li>
-							<NewsletterPreview />
+							<NewsletterPreview {...letter} />
 						</li>
+						))}
 					</ul>
 					<h4 class="c-section-title">Journal</h4>
 					<ul class="aside-list aside-list--md">
+						{journals.map((journal) => (
 						<li>
-							<JournalPreview />
+							<JournalPreview {...journal} />
 						</li>
-						<li>
-							<JournalPreview />
-						</li>
-						<li>
-							<JournalPreview />
-						</li>
+						))}
 					</ul>
 				</aside>
 			</div>
@@ -73,6 +72,23 @@ const projectCovers = {
 
 <style lang="scss">
 	@import "../styles/mixins.scss";
+
+	.c-section-title {
+		position: sticky;
+		top: 32px;
+		background-color: white;
+
+		@include screen('small') {
+			top: 0;
+			position: static;
+		}
+	}
+
+	.data {
+		a {
+			font-style: normal;
+		}
+	}
 
 	.c-project-list,
 	.aside-list {
@@ -86,13 +102,14 @@ const projectCovers = {
 		}
 	}
 
-	.c-section__right {
-		@include screen('small') {
-			display: none;
-		}
-	}
+	// .c-section__right {
+	// 	@include screen('small') {
+	// 		display: none;
+	// 	}
+	// }
 
-	.c-section__left {
+	.c-section__left,
+	.c-section__right {
 		@include screen('small') {
 			grid-column: 1 / -1;
 		}
@@ -100,9 +117,24 @@ const projectCovers = {
 
 	.aside-list>*+* {
 		margin-top: calc(var(--spacer-base) / 4);
+
+		@include screen('small') {
+			margin-top: calc(var(--spacer-base) / 8);
+		}
 	}
 
 	.aside-list--md>*+* {
 		margin-top: calc(var(--spacer-base) / 2);
+
+		@include screen('small') {
+			margin-top: calc(var(--spacer-base) / 4);
+		}
+	}
+
+	.l-container .l-grid {
+		@include screen('small') {
+			grid-template-columns: 1fr;
+
+		}
 	}
 </style>
