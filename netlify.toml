@@ -1,9 +1,9 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  environment = { NODE_VERSION = "16.16.0", MAILCHIMP_API_KEY = "b6d60ee40179fa375736fed219be223e-us10", MAILCHIMP_SERVER = "us10", MAILCHIMP_AUDIENCE_ID = "8fb942fda2", }
+  environment = { NODE_VERSION = "16.16.0" }
 
 [context.dev]
   command = "npm run build"
   publish = "dist"
-  environment = { NODE_VERSION = "16.16.0", MAILCHIMP_API_KEY = "b6d60ee40179fa375736fed219be223e-us10", MAILCHIMP_SERVER = "us10", MAILCHIMP_AUDIENCE_ID = "8fb942fda2", }
+  environment = { NODE_VERSION = "16.16.0" }
