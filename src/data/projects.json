@@ -1,40 +1,5 @@
 [
   {
-    "id": "j_guide",
-    "title": "J Guide",
-    "category": "Comic",
-    "shortDescription": "An Instagram comic about weed.",
-    "description": "An instruction manual for rolling your first joint.",
-    "subtitle": { 
-      "href": "https://instagram.com/thejguide",
-      "text": "instagram/thejguide"
-    },
-    "contributors": [
-      {
-        "name": "Jubril",
-        "role": "Story"
-      },
-      {
-        "name": "Tomiwa",
-        "role": "Story"
-      },
-      {
-        "name": "Khadijah",
-        "role": "Story"
-      },
-      {
-        "name": "Vanny",
-        "role": "Illustrator",
-        "contactUrl": "https://www.artstation.com/dannyvanny"
-      },
-      {
-        "name": "Bolu",
-        "role": "Illustrator",
-        "contactUrl": "https://www.artstation.com/bolusowoolu"
-      }
-    ]
-  },
-  {
     "id": "hanky",
     "title":  "Hanky Panky",
     "category":  "Animation",
@@ -84,6 +49,41 @@
         "name": "Eseosa",
         "role": "Curator",
         "contactUrl": "https://www.instagram.com/ese.illustrates/"
+      }
+    ]
+  },
+  {
+    "id": "j_guide",
+    "title": "J Guide",
+    "category": "Comic",
+    "shortDescription": "An Instagram comic about weed.",
+    "description": "An instruction manual for rolling your first joint.",
+    "subtitle": { 
+      "href": "https://instagram.com/thejguide",
+      "text": "instagram/thejguide"
+    },
+    "contributors": [
+      {
+        "name": "Jubril",
+        "role": "Story"
+      },
+      {
+        "name": "Tomiwa",
+        "role": "Story"
+      },
+      {
+        "name": "Khadijah",
+        "role": "Story"
+      },
+      {
+        "name": "Vanny",
+        "role": "Illustrator",
+        "contactUrl": "https://www.artstation.com/dannyvanny"
+      },
+      {
+        "name": "Bolu",
+        "role": "Illustrator",
+        "contactUrl": "https://www.artstation.com/bolusowoolu"
       }
     ]
   }

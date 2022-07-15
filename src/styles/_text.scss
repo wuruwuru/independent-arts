@@ -4,15 +4,16 @@ a {
   text-decoration: none;
 }
 a:hover {
-  animation: underline-flash .5s infinite;
-  @keyframes underline-flash {
-    0%, 100% {
-      text-decoration: none;
-    }
-    80% {
-      text-decoration: underline;
-    }
-  }
+  text-decoration: underline;
+  // animation: underline-flash .5s infinite;
+  // @keyframes underline-flash {
+  //   0%, 100% {
+  //     text-decoration: none;
+  //   }
+  //   80% {
+  //     text-decoration: underline;
+  //   }
+  // }
 }
 
 

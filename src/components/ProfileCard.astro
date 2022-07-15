@@ -20,14 +20,14 @@ const avatarSizeClass = {
 }
 
 // node check type of description
-const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
+const descriptionClass = typeof (description) == 'number' ? '-is-integer' : '';
 
 ---
 
 <div class={`profile ${avatarSizeClass[size]}`}>
   <div class="avatar">
     {imageLink && (
-      <img src={imageLink} alt={`${title} image`} />
+    <img src={imageLink} alt={`${title} image`} />
     )}
   </div>
   <div class="text">
@@ -45,28 +45,35 @@ const descriptionClass = typeof(description) == 'number' ? '-is-integer' : '';
     gap: 24px;
     grid-template-columns: minmax(auto, var(--card-size)) 1fr;
     align-items: center;
+
     &.-is-large {
       --card-size: 92px;
     }
+
     &.-is-small {
       --card-size: 56px;
+
       .text {
         font-size: 1.8rem;
       }
     }
+
     .avatar {
       background: whitesmoke;
       aspect-ratio: 1;
       display: flex;
     }
+
     .text .inner {
       display: flex;
       flex-direction: column;
-        > p {
+
+      >p {
         margin-block-start: 4px;
         margin-block-end: 4px;
         color: var(--color-dark-gray);
         font-family: var(--font-sans);
+
         &.-is-integer {
           font-family: var(--font-sans-mono);
         }

@@ -16,9 +16,10 @@ import newsletters from "@data/newsletter.json";
 import hanky from "@images/projects/hanky.jpg";
 import j_guide from "@images/projects/j_guide.jpg";
 
+
 const projectCovers = {
 	hanky,
-	'j-guide': j_guide
+	'j_guide': j_guide
 }
 ---
 
@@ -43,7 +44,7 @@ const projectCovers = {
 					<h4 class="c-section-title">Data</h4>
 					<ul class="aside-list data">
 						<li>
-							<a href="/covers">
+							<a href="/covers" class="cover-text">
 								<ProfileCard title="Covers" description={200} size="regular" imageLink={new
 									URL("https://source.unsplash.com/random/200x200")} />
 							</a>
@@ -51,11 +52,9 @@ const projectCovers = {
 					</ul>
 					<h4 class="c-section-title">Newsletter</h4>
 					<ul class="aside-list">
-						{newsletters.map((letter) => (
-						<li>
+						{newsletters.map((letter) => (<li>
 							<NewsletterPreview {...letter} />
-						</li>
-						))}
+						</li>))}
 					</ul>
 					<h4 class="c-section-title">Journal</h4>
 					<ul class="aside-list aside-list--md">
@@ -86,8 +85,12 @@ const projectCovers = {
 	}
 
 	.data {
-		a {
+		a.cover-text {
 			font-style: normal;
+
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 
