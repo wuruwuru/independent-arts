@@ -2,10 +2,18 @@
 import resetStyles from "@styles/main.scss";
 import Analytics from "./Analytics.astro";
 
+export interface Props {
+	pageTitle?: string,
+	pageDescription?: string,
+	seoTitle?: string,
+	pageUrl?: URL,
+	pageImage?: URL,
+}
+
 const {
 	pageTitle,
 	seoTitle = pageTitle, // This prop is used for when the title tag title is different from what is displayed for SEO titles
-	pageUrl,
+	pageUrl = Astro.canonicalURL.pathname,
 	pageImage = "https://wuruwuru.com/assets/images/thumbnail.png",
 	pageDescription = "A collection of publishing experiments",
 } = Astro.props;

@@ -57,12 +57,10 @@ const projectCovers = {
 						</li>))}
 					</ul>
 					<h4 class="c-section-title">Journal</h4>
-					<ul class="aside-list aside-list--md">
-						{journals.map((journal) => (
-						<li>
+					<ul class="aside-list">
+						{journals.map((journal) => (<li>
 							<JournalPreview {...journal} />
-						</li>
-						))}
+						</li>))}
 					</ul>
 				</aside>
 			</div>
@@ -74,8 +72,6 @@ const projectCovers = {
 	@import "../styles/mixins.scss";
 
 	.c-section-title {
-		position: sticky;
-		top: 0;
 		background-color: var(--color-white);
 
 		@include screen('small') {

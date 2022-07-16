@@ -3,7 +3,7 @@ import logo from "@images/logo.png";
 
 const links = [
   {
-    name: 'Projects',
+    name: 'Home',
     route: '/'
   },
   {
@@ -18,10 +18,11 @@ const links = [
 
 const path = Astro.canonicalURL.pathname;
 ---
+
 <nav class="l-container l-container--fluid">
   <ul id="menu">
     {links.map(({ name, route }) => (
-      <li class={path === route ? 'is-active' : ''}><a href={route}>{name}</a></li>
+    <li class={path===route ? 'is-active' : '' }><a href={route}>{name}</a></li>
     ))}
   </ul>
   <div class="logo">
@@ -35,19 +36,20 @@ const path = Astro.canonicalURL.pathname;
   let isVisible = true;
   const menu = document.getElementById('menu');
   const offset = 100;
-  window.addEventListener('scroll', function() {
-      if (isVisible & (window.scrollY > offset)) {
-          menu.style.opacity = 0;
-          isVisible = false;
-      } else if (window.scrollY < offset) {
-          menu.style.opacity = 1;
-          isVisible = true;
-      }
+  window.addEventListener('scroll', function () {
+    if (isVisible & (window.scrollY > offset)) {
+      menu.style.opacity = 0;
+      isVisible = false;
+    } else if (window.scrollY < offset) {
+      menu.style.opacity = 1;
+      isVisible = true;
+    }
   });
 </script>
 
 <style lang="scss">
-	@import "../styles/mixins.scss";
+  @import "../styles/mixins.scss";
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -60,22 +62,27 @@ const path = Astro.canonicalURL.pathname;
     z-index: 10;
     font-size: var(--font-size-base);
     font-family: var(--font-serif);
-    & > ul > li {
+
+    &>ul>li {
       display: inline-block;
       padding: 0 5px;
       color: var(--color-dark-gray);
+
       &.is-active {
         color: var(--color-black);
       }
+
       a {
         color: inherit;
         font-style: normal;
       }
+
       &:first-of-type {
         padding-left: 0;
         padding-inline-start: 0;
       }
     }
+
     /* & > div {
       width: 60px;
       text-align: center;
@@ -86,15 +93,16 @@ const path = Astro.canonicalURL.pathname;
 
     .logo {
       max-width: 5rem;
+
       a {
         display: flex;
         justify-content: flex-end;
       }
+
       img {
         max-width: 100%;
         height: auto;
       }
     }
   }
-
 </style>
