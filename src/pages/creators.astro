@@ -67,7 +67,8 @@ const header = {
             {fetchCreators.map(({name, bio, role, socialLink, projects}, index) => {
             const projectSpread = projects.map(({ id })=> id);
             const genreSpread = projects.map(({ genre })=> genre);
-            return (<li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
+            return (
+            <li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
               data-projects={projectSpread} data-genre={genreSpread}>
               <div class="profile">
                 <ProfileCard title={name} description={role.label} size="small" />
@@ -129,6 +130,11 @@ const header = {
   .c-creator-list,
   .aside-list {
     padding: var(--spacer-base) 0;
+
+    @include screen('small') {
+      padding: calc(var(--spacer-base) / 2) 0;
+      grid-template-columns: 1fr;
+    }
   }
 
   .c-creator-list__item {
@@ -146,6 +152,26 @@ const header = {
     .social {
       justify-self: flex-end;
       word-break: break-all;
+    }
+
+    @include screen('small') {
+      grid-template-columns: 1fr;
+      width: 100%;
+      padding: calc(var(--spacer-base) / 4);
+      box-shadow: 0px 0px 1px 0px hsla(210, 7%, 28%, 0.32);
+      background-color: var(--color-white);
+
+      margin-bottom: calc(var(--spacer-base) / 4);
+      margin-block-end: calc(var(--spacer-base) / 4);
+
+
+      .bio {
+        display: none;
+      }
+
+      .social {
+        display: none;
+      }
     }
   }
 
