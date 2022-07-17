@@ -7,18 +7,3 @@
   command = "npm run build"
   publish = "dist"
   environment = { NODE_VERSION = "16.16.0" }
-
-
-[[redirects]]
-  from = "/covers"
-  to = "https://google.com"
-  status = "302"
-
-[[redirects]]
-  from = "/jquide"
-  to = "https://instagram.com/thejguide"
-  status = "302"
-
-[[redirects]]
-  from = "/cover-contest/apply"
-  to = "https://airtable.com/shrlZAwd5KCgTpssT"
