@@ -29,6 +29,11 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
 img {
   max-width: 100%;
 }
