@@ -23,17 +23,37 @@ const imageGrid = [
 	image_7,
 	image_8,
 	image_9,
-	image_10,
+	image_10
 ];
 
 const faqs = [
 	{
 		question: "What idea can I submit?",
-		answer: "Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears are day blind smile alone had."
+		answer: `Cultivated who resolution connection motionless did occasional. Journey promise if it colonel. Can all mirth
+abode nor hills added. Them men does for body pure. Far end not horses remain sister. Mr parish is to he answer roused
+piqued afford sussex. It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible
+blessing sensible set but margaret interest. Off tears are day blind smile alone had.`
 	},
 	{
 		question: "How can I submit?",
 		answer: "The Cover Bank is a database of album covers from 1950 - 2022."
+	},
+];
+
+
+const howToApply = [
+	{
+		answer: "Come up with a pitch for an essay or a website that helps promote the Cover Bank."
+	},
+	{
+		answer: `Explain in detail how you plan to execute your pitch. You should be able to complete and publish your idea in
+two weeks.`
+	},
+	{
+		answer: "When you’re done, click here to submit your pitch. The final submission date for pitches is Sunday, July 31st."
+	},
+	{
+		answer: "The winners will be announced on our Twitter account (@wuruwurumag) on Friday, August 5th."
 	},
 ];
 
@@ -47,36 +67,23 @@ const faqs = [
 				<div class="c-section__left l-grid__column--5">
 					<div class="page-group page-group--header">
 						<ul class="photo-grid">
-							{imageGrid.map((image, index) => (<li><img src={image} data-index={index} alt=""></li>)
-							)}
+							{imageGrid.map((image, index) => (
+							<li><img src={image} data-index={index} alt=""></li>
+							))}
 						</ul>
-						<p>
-							The research team at wuruwuru has put together a database of 5000+ Nigerian album covers
-							from 1950 - 2022,
-							and we're looking for opportunities to promote this database for more people to see and use
-							it.
-						</p>
-						<p>
-							The Cover Bank Contest is a $2,000 grant to create an essay or interactive website based on
+						<p>The research team at wuruwuru has put together a database of 5000+ Nigerian album covers from
+							1950 -
+							2022, and we're looking for opportunities to promote this database for more people to see
+							and use it.</p>
+						<p>The Cover Bank Contest is a $2,000 grant to create an essay or interactive website based on
 							the database
 							to promote it to an audience. We'll give four people $500 each and support them to bring
-							their winning
-							ideas to life.
-						</p>
+							their winning ideas to life.</p>
 					</div>
-					<div>
+					<div class="page-group">
 						<h4 class="c-section-title">How to apply</h4>
 						<ol class="aside-list data">
-							<li>Come up with a pitch for an essay or a website that helps promote the Cover Bank.</li>
-							<li>Explain in detail how you plan to execute your pitch. You should be able to complete and
-								publish your
-								idea in two weeks.</li>
-							<li>When you’re done, click here to submit your pitch. The final submission date for pitches
-								is Sunday,
-								July
-								31st.</li>
-							<li>The winners will be announced on our Twitter account (@wuruwurumag) on Friday, August
-								5th.</li>
+							{howToApply.map(({ answer }, index) => (<li data-index={index}>{answer}</li>))}
 						</ol>
 					</div>
 				</div>
@@ -101,20 +108,26 @@ const faqs = [
 <style lang="scss">
 	@import "../styles/mixins.scss";
 
+	.c-section__left,
+	.c-section__right {
+		@include screen('small') {
+			grid-column: 1 / -1;
+		}
+	}
+
 	.photo-grid {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-gap: 1rem;
-		margin-bottom: 2rem;
+		margin-bottom: 3.6rem;
 
 		@include screen('small') {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
 		@include screen('small') {
-			&:nth-child(5) {
-				background-color: red;
-				border: 2px solid red;
+			li:nth-child(n+7) {
+				display: none;
 			}
 		}
 
@@ -207,7 +220,7 @@ const faqs = [
 		// font-family: var(--font-sans);
 		line-height: 1.4;
 		padding-left: 0;
-		padding: var(--spacer-base) 0;
+		padding: calc(var(--spacer-base) / 2) 0;
 
 		>*+* {
 			margin-top: calc(var(--spacer-base) / 2);
