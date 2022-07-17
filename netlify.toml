@@ -18,3 +18,8 @@
   from = "/jquide"
   to = "https://instagram.com/thejguide"
   status = 200
+
+[[redirects]]
+  from = "/cover-contest/apply"
+  to = "https://airtable.com/shrlZAwd5KCgTpssT"
+  status = 200
