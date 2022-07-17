@@ -2,7 +2,6 @@
 // Components
 import BaseHead from '@components/BaseHead.astro';
 import NavDefault from '@components/NavDefault.astro';
-import DotsCursor from '@components/DotsCursor.astro';
 import Footer from '@components/FooterDefault.astro';
 
 export interface Props {
@@ -27,7 +26,6 @@ const {
 	<NavDefault />
 	<slot />
 	<Footer />
-	<DotsCursor client:idle />
 </body>
 
 </html>
