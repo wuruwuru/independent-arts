@@ -212,30 +212,27 @@ const header = {
   }
 </style>
 <script define:vars={{ filters }}>
-  window.creatorFilterOptions = {
-    genre: {
-      all: { label: "All", active: true },
-      animation: { label: "Animation", active: false },
-      music: { label: "Music", active: false },
-      writing: { label: "Writing", active: false },
-      comic: { label: "Comic", active: false },
-    },
-    roles: {
-      all: { label: "All", active: true },
-      animator: { label: "Animator", active: false },
-      writer: { label: "Writer", active: false },
-      graphic_designer: { label: "Graphic Designer", active: false },
-      illustrator: { label: "Illustrator", active: false },
-      director: { label: "Director", active: false },
-      producer: { label: "Producer", active: false },
-    },
-    projects: {
-      all: { label: "All", active: true },
-      j_guide: { label: "J Guide", active: false },
-      hanky: { label: "Hanky Panky", active: false },
-      feel_good: { label: "Feel Good", active: false }
+  window.creatorFilterOptions = filters.reduce((acc, filter, index) => {
+    const { title, data } = filter;
+    const filterGroup = title.toLowerCase();
+    const filterGroupData = data.reduce((acc, { id, label }, index) => {
+      const active = index === 0 ? true : false
+      return {
+        ...acc,
+        [id.toLowerCase()]: {
+          label,
+          active,
+        }
+      }
+    }, {})
+
+    return {
+      ...acc,
+      [filterGroup]: {
+        ...filterGroupData
+      },
     }
-  };
+  }, {});
 </script>
 <script>
   import { assign, createMachine, interpret } from '@xstate/fsm';
@@ -258,7 +255,6 @@ const header = {
     filterGroup.querySelector(`option[value='${key}']`).selected = value;
   }
 
-  // Helpers
   const updateJSONOnClick = (data, filterId, parent) => {
     // Turn off all filters is user selects all
     if (filterId === 'all') {
