@@ -64,14 +64,14 @@ const header = {
         <div class="c-section__left l-grid__column--6">
           <h4 class="c-section-title">Creators</h4>
           <ul class="c-creator-list" id="creators">
-            {fetchCreators.map(({name, bio, role, socialLink, projects}, index) => {
+            {fetchCreators.map(({name, bio, role, socialLink, projects, avatar}, index) => {
             const projectSpread = projects.map(({ id })=> id);
             const genreSpread = projects.map(({ genre })=> genre);
             return (
             <li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
               data-projects={projectSpread} data-genre={genreSpread}>
               <div class="profile">
-                <ProfileCard title={name} description={role.label} size="small" />
+                <ProfileCard title={name} imageLink={avatar} description={role.label} size="small" />
               </div>
               <div class="bio">{bio}</div>
               <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
