@@ -1,46 +1,170 @@
 [
   {
     "id": 1,
-    "name": "Tomi Odusanya",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "illustrator",
-    "projectIds": ["j_guide"], 
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg",
+    "name": "Opemipo Aikomo",
+    "bio": "Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
+    "roleId": "designer",
+    "projectIds": ["j_guide", "hanky", "feel_good"], 
     "socialLink": {
-      "text": "Facebook",
-      "url": "https://www.facebook.com/TomiOdusanya"
+      "text": "Website",
+      "url": "https://opemipo.com"
     }
   },
   {
     "id": 2,
-    "name": "James Odusanya",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "illustrator",
-    "projectIds": ["feel_good"], 
+    "name": "LMBSKN",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "A multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
+    "roleId": "sound_producer",
+    "projectIds": ["hanky"], 
     "socialLink": {
-      "text": "Facebook",
-      "url": "https://www.facebook.com/TomiOdusanya"
+      "text": "Twitter",
+      "url": "https://twitter.com/LMBSKN"
     }
   },
   {
     "id": 3,
-    "name": "Femi Odusanya",
+    "name": "Daniel Orubo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["hanky"], 
+    "roleId": "editor",
+    "projectIds": ["feel_good","hanky"], 
     "socialLink": {
-      "text": "Facebook",
-      "url": "https://www.facebook.com/TomiOdusanya"
+      "text": "Twitter",
+      "url": "https://twitter.com/NerdEfiko"
     }
   },
   {
     "id": 4,
-    "name": "John Ola",
+    "name": "Ani Kayode Somtochukwu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
     "roleId": "writer",
+    "projectIds": ["feel_good"], 
+    "socialLink": {
+      "text": "Linktree",
+      "url": "https://linktr.ee/Kayode_ani"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Ope Adedeji",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["feel_good"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/OpeAdedeji_"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Niyi Okeowo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "designer",
+    "projectIds": ["feel_good"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://niyiokeowo.com/"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Ire Aderinokun",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "engineer",
+    "projectIds": ["feel_good"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://ireaderinokun.com/"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Daniel Vanny",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "illustrator",
+    "projectIds": ["j_guide"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/Avantasiart"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Bolu Sowoolu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "illustrator",
+    "projectIds": ["j_guide"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://www.artstation.com/bolusowoolu"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Olutimehin Kukoyi",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["feel_good"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://olukukoyi.com/"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Mariam Sule-Izuagbe",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["feel_good"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://mariamsule.disha.page/"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Saratu Dan-Habu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["hanky","feel_good"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://unovamemes.tumblr.com/"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Oshuwa Imoyo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "voice_actor",
     "projectIds": ["hanky"], 
     "socialLink": {
-      "text": "Facebook",
-      "url": "https://www.facebook.com/TomiOdusanya"
+      "text": "Tumblr",
+      "url": "https://gotmemeslol-blog.tumblr.com/"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["j_guide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
     }
   }
 ]

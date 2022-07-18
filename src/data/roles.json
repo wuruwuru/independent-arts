@@ -8,23 +8,39 @@
     "label": "Animator"
   },
   {
+    "id": "editor",
+    "label": "Editor"
+  },
+  {
     "id": "writer",
     "label": "Writer"
   },
   {
-    "id": "graphic_designer",
-    "label": "Graphic Designer"
+    "id": "designer",
+    "label": "Designer"
+  },
+  {
+    "id": "engineer",
+    "label": "Engineer"
   },
   {
     "id": "illustrator",
     "label": "Illustrator"
   },
   {
-    "id": "director",
-    "label": "Director"
+    "id": "lawyer",
+    "label": "Lawyer"
   },
   {
-    "id": "producer",
-    "label": "Producer"
+    "id": "sound_producer",
+    "label": "Sound Producer"
+  },
+  {
+    "id": "voice_actor",
+    "label": "Voice Actor"
+  },
+  {
+    "id": "storyteller",
+    "label": "Storyteller"
   }
 ]
