@@ -25,6 +25,16 @@ const teamImages = {
 	"tomiwa": tomiwa,
 }
 
+const teamMemberData = team.reduce((acc, teamMember, index) => {
+	return {
+		...acc,
+		[teamMember.id]: {
+			...teamMember,
+			image: teamImages[teamMember.id],
+		}
+	}
+}, {})
+
 ---
 
 <Layout pageTitle="wuruwuru" pageUrl="https://wuruwuru.com"
@@ -34,10 +44,10 @@ const teamImages = {
 		<section class="l-section">
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--5">
-					<h4 class="c-section-title">Stories</h4>
-					<ul class="c-team">
+					<h4 class="c-section-title">Team</h4>
+					<ul class="c-team" id="teamList">
 						{team.map(({name, role, description, id }) => (
-						<li class="c-team__member">
+						<li class="c-team__member" data-member={id}>
 							<div class="image">
 								<ProfileCard title={name} description={role} imageLink={teamImages[id]} size="large" />
 							</div>
@@ -59,11 +69,125 @@ const teamImages = {
 				</aside>
 			</div>
 		</section>
+		<dialog id="modal" class="c-modal c-modal--team">
+			<div class="l-container">
+				<div class="c-modal__content">
+					<button class="c-modal__close">
+						<svg class="c-modal__close-icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18">
+							<path stroke="#000" stroke-width="2" d="m2.012 1.515 15.556 15.556M1.598 17.071 17.154 1.514" />
+						</svg>
+					</button>
+					<div class="c-modal__body">
+						<template id="userTemplate">
+							<ProfileCard title="{full_name}" description="{role}" imageLink={teamImages.nneoma} size="regular" />
+							<p data-bio>placeholder bio</p>
+							<div class="footer" data-footer>
+								<a href="https://google.com" target="_blank">placeholder_url</a>
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
+		</dialog>
 	</main>
 </Layout>
 
 <style lang="scss">
 	@import "../styles/mixins.scss";
+
+	.c-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: var(--z-index--10);
+		background: var(--color-white);
+		border: 0;
+		padding: 0;
+		margin: 0;
+
+		&::backdrop {
+			margin: 0;
+			padding: 0;
+			background-color: #fff;
+		}
+
+		& dialog:-internal-modal-dialog {
+			margin: 0;
+			padding: 0;
+			background: var(--color-white);
+		}
+
+		&__content {
+			margin-top: var(--spacer-base);
+			position: relative;
+		}
+
+		&__close {
+			position: absolute;
+			width: 100%;
+			height: 28px;
+			max-width: 28px;
+			display: grid;
+			place-items: center;
+			top: -32px;
+			right: 0;
+			background-color: transparent;
+			border: 0;
+		}
+
+		&__body {
+			margin-block-start: calc(var(--spacer-base) * 2);
+
+			p {
+				--margin: calc(var(--spacer-base) / 2);
+				margin-block-start: var(--margin);
+				margin-top: var(--margin);
+			}
+
+			.footer {
+				font-style: italic;
+				padding-block-end: 28px;
+				margin-block-end: 0;
+				position: relative;
+				margin-block-start: calc(var(--spacer-base) / 1.5);
+
+				&:hover {
+					&::after {
+						animation: animatedBackground .35s linear infinite both;
+					}
+				}
+
+				&::after {
+					--divider-height: 16px;
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: var(--divider-height);
+					background: linear-gradient(90deg, var(--color-light-gray) 50%, transparent 50%, transparent 100%),
+						linear-gradient(90deg, transparent 50%, var(--color-light-gray) 50%, var(--color-light-gray) 100%);
+					background-position: 0 0, 0 calc(var(--divider-height) / 2);
+					background-size: var(--divider-height) 50%;
+					background-repeat: repeat no-repeat;
+					transition: background-size .35s linear;
+
+					@keyframes animatedBackground {
+						to {
+							background-position: 32px 0, 32px calc(var(--divider-height) / 2);
+						}
+					}
+				}
+
+				p {
+					position: relative;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 
 	.c-team,
 	.experiment-list {
@@ -154,3 +278,50 @@ const teamImages = {
 		}
 	}
 </style>
+
+<script define:vars={{ teamMemberData }}>
+	const modal = document.getElementById('modal');
+	const modalTemplate = document.getElementById('userTemplate');
+	const modalBody = document.querySelector('#modal .c-modal__body');
+
+	const openModal = (member) => {
+		const clonedTemplate = modalTemplate.content.cloneNode(true);
+		const avatar = clonedTemplate.querySelector('img');
+		const name = clonedTemplate.querySelector('[data-name]');
+		const description = clonedTemplate.querySelector('[data-description]');
+		const bio = clonedTemplate.querySelector('[data-bio]');
+		const link = clonedTemplate.querySelector('a');
+
+		// Update the modal with the member data
+		avatar.src = member.image;
+		name.textContent = member.name;
+		description.textContent = member.role;
+		bio.textContent = member.description;
+		link.href = member.link;
+		link.textContent = member.linkText;
+
+		// Empty the modal body and append the new content
+		modal.show();
+		document.querySelector('body').style.overflow = 'hidden';
+		while (modalBody.hasChildNodes()) {
+			modalBody.removeChild(modalBody.firstChild);
+		}
+		modalBody.appendChild(clonedTemplate)
+		// Close the modal when the user clicks the close button
+		modal.querySelector('.c-modal__close').addEventListener('click', () => {
+			modal.close();
+			document.querySelector('body').style.overflow = null;
+		});
+	}
+
+	// Open the modal when the user clicks a team member
+	const teamList = document.getElementById('teamList');
+	const listenForModalClick = () => {
+		const isMobileDevice = window.innerWidth < 500 ? 1 : 0;
+		teamList.addEventListener('click', (e) => {
+			isMobileDevice && !!e.target.closest('li') && openModal(teamMemberData[e.target.closest('li').dataset.member]);
+		});
+	}
+	listenForModalClick();
+	window.addEventListener('resize', listenForModalClick);
+</script>
