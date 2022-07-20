@@ -15,6 +15,8 @@ const {
 </div>
 
 <style lang="scss">
+  @import "../styles/mixins.scss";
+
   .preview {
     .head h5 {
       color: var(--color-dark-gray);
@@ -37,7 +39,11 @@ const {
     }
 
     &>*+* {
-      margin-top: 16px;
+      margin-top: calc(var(--spacer-base) / 4);
+
+      @include screen('small') {
+        margin-top: calc(var(--spacer-base) / 8);
+      }
     }
   }
 </style>
