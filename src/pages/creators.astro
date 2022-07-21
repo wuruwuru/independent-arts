@@ -47,7 +47,6 @@ const filters = [
   },
 ]
 
-
 const header = {
   title: 'is a artist collective.',
   description: 'We bring excellent directors and talented creators together to produce big ideas and create locally relevant documentation for other artists.'
@@ -62,7 +61,8 @@ const header = {
     <section class="l-section">
       <div class="l-container l-grid">
         <div class="c-section__left l-grid__column--6">
-          <h4 class="c-section-title">Creators</h4>
+          <h4 class="c-section-title c-section-title--spaced">Creators<span class="mobile-filter-button"><button
+                class="filter-trigger" id="filterTrigger">Filter</button></span></h4>
           <ul class="c-creator-list" id="creators">
             {fetchCreators.map(({name, bio, role, socialLink, projects, avatar}, index) => {
             const projectSpread = projects.map(({ id })=> id);
@@ -81,20 +81,8 @@ const header = {
         </div>
 
         <aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
-          <form id="filterWrapper">
+          <form id="filterWrapperDesktop">
             <!-- Select for mobile view -->
-            <select title="filter creators" multiple>
-              {filters.map(({ title, data }) => (
-              <optgroup label={title} data-filtergroup={title.toLowerCase()}>
-                {data.map(({ id, label }, index) => {
-                const value = index === 0 ? true : false
-                return(
-                <option value={id.toLowerCase()} selected={ value }>{label}</option>)
-                })}
-              </optgroup>
-              ))}
-            </select>
-
             {filters.map(({ title, data }) => (
             <fieldset class="aside-list" data-filterGroup={title.toLowerCase()}>
               <legend>
@@ -112,10 +100,105 @@ const header = {
         </aside>
       </div>
     </section>
+    <dialog class="c-filter-dialog" id="filterDialog">
+      <form>
+        <div class="l-container">
+          <h3>Filters</h3>
+          <div class="c-section__filters">
+            {filters.map(({ title, data }) => (
+            <fieldset class="aside-list" data-filterGroup={title.toLowerCase()}>
+              <legend>
+                <h4 class="c-section-title">{title}</h4>
+              </legend>
+              {data.map((props, index) => {
+              const value = index === 0 ? true : false
+              return (<div class="item">
+                <Checkbox {...props} value={value} client:load />
+              </div>)
+              })}
+            </fieldset>
+            ))}
+          </div>
+        </div>
+        <div class="c-button-wrap">
+          <button type="submit" class="c-button" id="filterDialogSubmit">Filter</button>
+        </div>
+      </form>
+    </dialog>
   </main>
 </Layout>
 <style lang="scss">
   @import "../styles/mixins.scss";
+
+  .c-section-title {
+    &--spaced {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+
+  .c-filter-dialog {
+    position: fixed;
+    width: 100%;
+    border: 0;
+    top: 5vh;
+    height: 95vh;
+    background: var(--color-white);
+    left: 0;
+    overflow-y: scroll;
+    z-index: var(--z-index--10);
+    padding: calc(var(--spacer-base) / 2) 0;
+    padding-top: 0;
+    padding-block-start: 0;
+
+    .c-button {
+      width: 100%;
+      background: var(--color-white);
+      padding: 12px;
+      border: 1px solid var(--color-black);
+      color: var(--color-black);
+
+      &-wrap {
+        position: sticky;
+        bottom: 0;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    &::backdrop {
+      background: red;
+    }
+
+    h3 {
+      background-color: var(--color-white);
+      padding: 12px 0 calc(var(--spacer-base) / 2);
+
+      z-index: var(--z-index--10);
+    }
+
+    /* autoprefixer: ignore next */
+    &:-internal-modal-dialog {
+      max-width: calc((100% - 6px) - 2em);
+      max-height: calc((100% - 6px) - 2em);
+      max-width: 100%;
+    }
+
+  }
+
+  .mobile-filter-button {
+    display: none;
+
+    @include screen("small") {
+      display: block;
+    }
+  }
 
   .c-section-title,
   .aside-list legend {
@@ -175,19 +258,19 @@ const header = {
     }
   }
 
+  fieldset {
+    border: none;
+
+    legend {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
   .c-section__right {
-    fieldset {
-      border: none;
-
-      @include screen('small') {
-        display: none;
-      }
-
-      legend {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-      }
+    @include screen('small') {
+      display: none;
     }
 
     select {
@@ -195,10 +278,9 @@ const header = {
 
       @include screen('small') {
         display: unset;
-        // opacity: 0;
+        display: none;
       }
     }
-
   }
 
   .c-section__left {
@@ -246,8 +328,10 @@ const header = {
 
   // Helpers
   const updateCheckboxUI = (parent, value, key = 'all') => {
-    const filterGroup = document.querySelector(`fieldset[data-filtergroup='${parent}']`);
-    filterGroup.querySelector(`div input[name='${key}']`).checked = value;
+    const filterGroup = document.querySelectorAll(`fieldset[data-filtergroup='${parent}']`);
+    filterGroup.forEach(group => {
+      group.querySelector(`div input[name='${key}']`).checked = value;
+    });
   }
 
   const updateSelectUI = (parent, value, key = 'all') => {
@@ -330,7 +414,7 @@ const header = {
             // updateUI
             const { active } = purifiedJSON[key];
             updateCheckboxUI(filterParent, active, key)
-            updateSelectUI(filterParent, active, key)
+            // updateSelectUI(filterParent, active, key)
           }
           return {
             ...filterState,
@@ -389,16 +473,37 @@ const header = {
     }
   }
 
-  document.querySelector('#filterWrapper select')
-    .addEventListener('input', (event) => {
-      const { filterParent, filterId } = getFilterParam('multi-select', event.target);
-      toggleService.send({ type: 'CLICK', filterParent, filterId })
-    })
+  const toggleDialog = (display = 'hide') => {
+    const dialogElement = document.querySelector('#filterDialog');
+    dialogElement.scrollTop = 0;
 
-  document.querySelector('#filterWrapper')
+    if (display === 'show') {
+      dialogElement.show();
+      document.body.style.overflow = 'hidden'
+      return;
+    }
+
+    dialogElement.close();
+    document.body.style.overflow = null
+
+  }
+
+  // Event Listeners
+  document.querySelector('#filterWrapperDesktop')
     .addEventListener('input', (event) => {
       if (event.target.nodeName == 'SELECT') return;
       const { filterId, filterParent } = getFilterParam('input', event.target);
       toggleService.send({ type: 'CLICK', filterParent, filterId });
     }, false)
+
+  document.querySelector('#filterDialog')
+    .addEventListener('input', (event) => {
+      console.log('clicked')
+      if (event.target.nodeName == 'SELECT') return;
+      const { filterId, filterParent } = getFilterParam('input', event.target);
+      toggleService.send({ type: 'CLICK', filterParent, filterId });
+    }, false)
+
+  document.querySelector('#filterTrigger').addEventListener('click', () => toggleDialog('show'))
+  document.querySelector('#filterDialogSubmit').addEventListener('click', () => toggleDialog('hide'))
 </script>
