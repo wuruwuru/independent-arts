@@ -26,6 +26,7 @@ const fetchCreators = creators.map((creator) => {
   }
 })
 
+
 const filters = [
   {
     title: 'Genre',
@@ -64,11 +65,11 @@ const header = {
           <h4 class="c-section-title c-section-title--spaced">Creators<span class="mobile-filter-button"><button
                 class="filter-trigger" id="filterTrigger">Filter</button></span></h4>
           <ul class="c-creator-list" id="creators">
-            {fetchCreators.map(({name, bio, role, socialLink, projects, avatar}, index) => {
+            {fetchCreators.map(({name, bio, role, socialLink, projects, avatar, id}, index) => {
             const projectSpread = projects.map(({ id })=> id);
             const genreSpread = projects.map(({ genre })=> genre);
             return (
-            <li class="c-creator-list__item active" data-index={index} data-roles={role.id.toLowerCase()}
+            <li class="c-creator-list__item active" data-index={id} data-name={name} data-roles={role.id.toLowerCase()}
               data-projects={projectSpread} data-genre={genreSpread}>
               <div class="profile">
                 <ProfileCard title={name} imageLink={avatar} description={role.label} size="small" />
@@ -125,8 +126,130 @@ const header = {
         </div>
       </form>
     </dialog>
+    <dialog id="creatorInfoModal" class="c-modal c-modal--creator">
+      <div class="l-container">
+        <div class="c-modal__content">
+          <button class="c-modal__close">
+            <svg class="c-modal__close-icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18">
+              <path stroke="#000" stroke-width="2" d="m2.012 1.515 15.556 15.556M1.598 17.071 17.154 1.514" />
+            </svg>
+          </button>
+          <div class="c-modal__body">
+            <template id="userTemplate">
+              <ProfileCard title="{full_name}" description="{role}" size="regular" imageLink={new
+                URL("https://google.com")} />
+              <p data-bio>placeholder bio</p>
+              <div class="footer" data-footer>
+                <a href="https://google.com" target="_blank">placeholder_url</a>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </dialog>
   </main>
 </Layout>
+
+<!-- Creator Modal  -->
+<style lang="scss">
+  @import "../styles/mixins.scss";
+
+  .c-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: var(--z-index--10);
+    background: var(--color-white);
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    &::backdrop {
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    & dialog:-internal-modal-dialog {
+      margin: 0;
+      padding: 0;
+      background: var(--color-white);
+    }
+
+    &__content {
+      margin-top: var(--spacer-base);
+      position: relative;
+    }
+
+    &__close {
+      position: absolute;
+      width: 100%;
+      height: 28px;
+      max-width: 28px;
+      display: grid;
+      place-items: center;
+      top: -32px;
+      right: 0;
+      background-color: transparent;
+      border: 0;
+    }
+
+    &__body {
+      margin-block-start: calc(var(--spacer-base) * 2);
+
+      p {
+        --margin: calc(var(--spacer-base) / 2);
+        margin-block-start: var(--margin);
+        margin-top: var(--margin);
+      }
+
+      .footer {
+        font-style: italic;
+        padding-block-end: 28px;
+        margin-block-end: 0;
+        position: relative;
+        margin-block-start: calc(var(--spacer-base) / 1.5);
+
+        &:hover {
+          &::after {
+            animation: animatedBackground .35s linear infinite both;
+          }
+        }
+
+        &::after {
+          --divider-height: 16px;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: var(--divider-height);
+          background: linear-gradient(90deg, var(--color-light-gray) 50%, transparent 50%, transparent 100%),
+            linear-gradient(90deg, transparent 50%, var(--color-light-gray) 50%, var(--color-light-gray) 100%);
+          background-position: 0 0, 0 calc(var(--divider-height) / 2);
+          background-size: var(--divider-height) 50%;
+          background-repeat: repeat no-repeat;
+          transition: background-size .35s linear;
+
+          @keyframes animatedBackground {
+            to {
+              background-position: 32px 0, 32px calc(var(--divider-height) / 2);
+            }
+          }
+        }
+
+        p {
+          position: relative;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+</style>
+
+<!-- Creator Filter -->
 <style lang="scss">
   @import "../styles/mixins.scss";
 
@@ -143,6 +266,7 @@ const header = {
     }
   }
 
+  // Mobile creators filter
   .c-filter-dialog {
     position: fixed;
     width: 100%;
@@ -173,7 +297,7 @@ const header = {
     }
 
     &::backdrop {
-      background: red;
+      background: var(--color-white);
     }
 
     h3 {
@@ -199,6 +323,12 @@ const header = {
       display: block;
     }
   }
+</style>
+
+<!-- Creator page -->
+<style lang="scss">
+  @import "../styles/mixins.scss";
+
 
   .c-section-title,
   .aside-list legend {
@@ -293,8 +423,12 @@ const header = {
     margin-top: calc(var(--spacer-base) / 6);
   }
 </style>
-<script define:vars={{ filters }}>
-  window.creatorFilterOptions = filters.reduce((acc, filter, index) => {
+<script define:vars={{ filters, fetchCreators }}>
+  window.filterConfig = filters;
+  window.creators = fetchCreators;
+</script>
+<script>
+  window.creatorFilterOptions = window.filterConfig.reduce((acc, filter, index) => {
     const { title, data } = filter;
     const filterGroup = title.toLowerCase();
     const filterGroupData = data.reduce((acc, { id, label }, index) => {
@@ -506,4 +640,55 @@ const header = {
 
   document.querySelector('#filterTrigger').addEventListener('click', () => toggleDialog('show'))
   document.querySelector('#filterDialogSubmit').addEventListener('click', () => toggleDialog('hide'))
+</script>
+<script>
+  const modal = document.querySelector('#creatorInfoModal');
+  const modalTemplate = modal.querySelector('#userTemplate');
+  const modalBody = modal.querySelector('.c-modal__body');
+
+  const openModal = (creator) => {
+    const clonedTemplate = modalTemplate.content.cloneNode(true);
+    const avatar = clonedTemplate.querySelector('img');
+    const name = clonedTemplate.querySelector('[data-name]');
+    const description = clonedTemplate.querySelector('[data-description]');
+    const bio = clonedTemplate.querySelector('[data-bio]');
+    const link = clonedTemplate.querySelector('a');
+
+    // Update the modal with the creator data
+    avatar.src = creator.avatar;
+    name.textContent = creator.name;
+    description.textContent = creator?.role?.label;
+    bio.textContent = creator.bio;
+    link.href = creator.socialLink.url;
+    link.textContent = creator.socialLink.text;
+
+    // Empty the modal body and append the new content
+    modal.show();
+    document.querySelector('body').style.overflow = 'hidden';
+    while (modalBody.hasChildNodes()) {
+      modalBody.removeChild(modalBody.firstChild);
+    }
+    modalBody.appendChild(clonedTemplate)
+    // Close the modal when the user clicks the close button
+    modal.querySelector('.c-modal__close').addEventListener('click', () => {
+      modal.close();
+      document.querySelector('body').style.overflow = null;
+    });
+  }
+
+
+  const creatorList = document.getElementById('creators');
+  const listenForModalClick = () => {
+    const isMobileDevice = window.innerWidth < 500 ? 1 : 0;
+    creatorList.addEventListener('click', (e) => {
+      const isValid = isMobileDevice && !!e.target.closest('li');
+      if (!isValid) return;
+      const creatorName = e.target.closest('li').dataset.name;
+      const creatorId = e.target.closest('li').dataset.index;
+      const creatorInfo = window.creators.find(({ name, id }) => (name === creatorName && id == creatorId))
+      openModal(creatorInfo);
+    });
+  }
+  listenForModalClick();
+  window.addEventListener('resize', listenForModalClick);
 </script>
