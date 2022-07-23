@@ -162,6 +162,38 @@ const seo = {
 		color: var(--color-dark-grey);
 		margin-bottom: 1.6rem;
 		opacity: 0.6;
+		position: relative;
+		cursor: pointer;
+
+		&:hover::after {
+			display: unset;
+			animation: underline-flash .3s 5 alternate;
+		}
+
+		&::after {
+			content: "#";
+			display: block;
+			transform: translateX(calc(-100% - .3rem));
+			font-size: inherit;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: red;
+			opacity: 0;
+
+			@keyframes underline-flash {
+
+				0%,
+				100% {
+					opacity: 0;
+				}
+
+				80% {
+					opacity: 1;
+				}
+			}
+
+		}
 	}
 
 	header {
