@@ -1,11 +1,11 @@
 ---
 import Layout from "@layout/Default.astro";
+import TwitterIframe from "@components/TwitterIframe.astro";
 
 const seo = {
 	pageTitle: "wuruwuru Mag | Manifesto",
 	pageImage: "https://wuruwuru.com/assets/images/thumbnail.png"
 }
-
 
 ---
 
@@ -46,9 +46,17 @@ const seo = {
 				<li id="direct-teams-remotely">
 					<h2>How do we best direct teams of creators remotely?</h2>
 					<div class="c-manifesto__list-body">
-						<iframe style="border:none;" width="550" height="560"
-							data-tweet-url="https://twitter.com/fathermerry/status/1466114765902725129"
-							src="data:text/html;charset=utf-8,%3Cblockquote%20class%3D%22twitter-tweet%22%3E%3Cp%20lang%3D%22en%22%20dir%3D%22ltr%22%3EHi%21%20I%26%2339%3Bm%20looking%20to%20hire%20an%20editor%20for%20%3Ca%20href%3D%22https%3A//twitter.com/wuruwurumag%3Fref_src%3Dtwsrc%255Etfw%22%3E@wuruwurumag%3C/a%3E.%20Everything%20you%20need%20to%20know%20is%20in%20this%20thread.%20%3Ca%20href%3D%22https%3A//t.co/XSu9k373eo%22%3Epic.twitter.com/XSu9k373eo%3C/a%3E%3C/p%3E%26mdash%3B%20Opemipo%20%28@fathermerry%29%20%3Ca%20href%3D%22https%3A//twitter.com/fathermerry/status/1466114765902725129%3Fref_src%3Dtwsrc%255Etfw%22%3EDecember%201%2C%202021%3C/a%3E%3C/blockquote%3E%0A%3Cscript%20async%20src%3D%22https%3A//platform.twitter.com/widgets.js%22%20charset%3D%22utf-8%22%3E%3C/script%3E%0A"></iframe>
+						<TwitterIframe client:visible>
+							<blockquote class="twitter-tweet" data-dnt="true">
+								<p lang="en" dir="ltr">Hi! I&#39;m looking to hire an editor for <a
+										href="https://twitter.com/wuruwurumag?ref_src=twsrc%5Etfw">@wuruwurumag</a>. Everything you need to
+									know
+									is in this thread. <a href="https://t.co/XSu9k373eo">pic.twitter.com/XSu9k373eo</a></p>&mdash; Opemipo
+								(@fathermerry) <a
+									href="https://twitter.com/fathermerry/status/1466114765902725129?ref_src=twsrc%5Etfw">December
+									1, 2021</a>
+							</blockquote>
+						</TwitterIframe>
 						<p>
 							In the first year, wuruwuru was a one-man operation. I had help from two interns, but they still had a lot
 							to learn. Most creators were also unfamiliar with remote work, so it was a struggle to get commitment,
