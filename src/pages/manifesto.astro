@@ -2,7 +2,7 @@
 import Layout from "@layout/Default.astro";
 
 const seo = {
-	pageTitle: "wuruwuru Mag | Manifesto",
+	pageTitle: "wuruwuru | Manifesto",
 	pageImage: "https://wuruwuru.com/assets/images/thumbnail.png"
 }
 
@@ -10,8 +10,7 @@ const seo = {
 
 <Layout {...seo}>
 	<main class="l-container l-grid">
-		<header class="l-grid__column--6">
-			<h1>Manifesto</h1>
+		<header class="l-grid__column--4">
 			<p>wuruwuru is an exploration into the world of independent creation in Nigeria. The experiment started in
 				Nov
 				2020 and the first phase will end in Feb 2023.</p>
@@ -28,7 +27,7 @@ const seo = {
 
 			<p>We’re looking to answer these questions:</p>
 		</header>
-		<section class="c-manifesto__list-wrap l-grid__column--6">
+		<section class="c-manifesto__list-wrap l-grid__column--4">
 			<ol class="c-manifesto__list ">
 				<li id="cool-things-things-in-nigeria">
 					<h2>How do we make really cool things in Nigeria?</h2>
@@ -191,36 +190,6 @@ const seo = {
 		position: relative;
 		cursor: pointer;
 		display: inline;
-
-		&:hover::after {
-			display: unset;
-			animation: underline-flash .3s 5 alternate;
-		}
-
-		&::after {
-			content: "#";
-			display: block;
-			transform: translateX(calc(-100% - .3rem));
-			font-size: inherit;
-			position: absolute;
-			top: 0;
-			left: 0;
-			color: red;
-			opacity: 0;
-
-			@keyframes underline-flash {
-
-				0%,
-				100% {
-					opacity: 0;
-				}
-
-				80% {
-					opacity: 1;
-				}
-			}
-
-		}
 	}
 
 	header {
