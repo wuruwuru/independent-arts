@@ -1,9 +1,8 @@
 ---
 //Components
 import Layout from "@layout/Default.astro";
-import PageHeader from "@components/PageHeader.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import ProfileCard from "@components/ProfileCard.astro";
+import DatabaseCard from "@components/DatabaseCard.astro";
 import NewsletterPreview from "@components/NewsletterPreview.astro";
 import JournalPreview from "@components/JournalPreview.astro";
 
@@ -42,10 +41,8 @@ const projectCovers = {
 					<h4 class="c-section-title">Data</h4>
 					<ul class="aside-list data">
 						<li>
-							<a href="/covers" class="cover-text">
-								<ProfileCard title="Covers" description={200} size="regular" imageLink={new
-									URL("https://source.unsplash.com/random/200x200")} />
-							</a>
+							<DatabaseCard title="Covers" description={200} size="regular" imageLink={new
+								URL("https://source.unsplash.com/random/200x200")} />
 						</li>
 					</ul>
 					<h4 class="c-section-title">Newsletter</h4>

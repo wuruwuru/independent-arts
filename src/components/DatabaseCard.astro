@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title: string;
+  description: string | number;
+  imageLink?: URL,
+  url?: URL,
+}
+
+const {
+  title = 'Album Covers',
+  description = 5000,
+  imageLink,
+  url = "https://google.com",
+} = Astro.props;
+
+---
+
+<div class="database">
+  <div class="avatar">
+    {imageLink && (
+    <img src={imageLink} alt={`${title} image`} />
+    )}
+  </div>
+  <div class="text">
+    <div class="inner">
+      <h3 data-name>
+        <a href={url} target="_blank" rel="noopener noreferrer" class="c-link c-link--out">{ title }</a>
+      </h3>
+      <p data-description>{ description }</p>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  a {
+    font-style: normal;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 2.4rem;
+  }
+
+  .database {
+    --card-size: 72px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(auto, var(--card-size)) 1fr;
+    align-items: center;
+
+    &:hover {}
+
+
+    .avatar {
+      background: whitesmoke;
+      aspect-ratio: 1;
+      display: flex;
+    }
+
+    .text .inner {
+      display: flex;
+      flex-direction: column;
+
+      >p {
+        margin-block-start: 2px;
+        margin-block-end: 4px;
+        // color: var(--color-dark-gray);
+        // font-family: var(--font-sans);
+        font-style: italic;
+      }
+    }
+  }
+</style>
