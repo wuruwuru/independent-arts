@@ -122,7 +122,7 @@ const header = {
           </div>
         </div>
         <div class="c-button-wrap">
-          <button type="submit" class="c-button" id="filterDialogSubmit">Filter</button>
+          <button type="submit" class="c-button" id="filterDialogSubmit">Apply Filter</button>
         </div>
       </form>
     </dialog>
@@ -138,9 +138,9 @@ const header = {
             <template id="userTemplate">
               <ProfileCard title="{full_name}" description="{role}" size="regular" imageLink={new
                 URL("https://google.com")} />
-              <p data-bio>placeholder bio</p>
+              <p data-bio></p>
               <div class="footer" data-footer>
-                <a href="https://google.com" target="_blank">placeholder_url</a>
+                <a href="https://google.com" target="_blank"></a>
               </div>
             </template>
           </div>
@@ -272,7 +272,9 @@ const header = {
     width: 100%;
     border: 0;
     top: 5vh;
-    height: 95vh;
+    height: 100%;
+    height: -webkit-fill-available;
+    max-height: 95vh;
     background: var(--color-white);
     left: 0;
     overflow-y: scroll;
@@ -280,6 +282,10 @@ const header = {
     padding: calc(var(--spacer-base) / 2) 0;
     padding-top: 0;
     padding-block-start: 0;
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+
 
     .c-button {
       width: 100%;
