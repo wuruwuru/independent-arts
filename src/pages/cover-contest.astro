@@ -50,12 +50,13 @@ const howToApply = [
 two weeks.`
 	},
 	{
-		answer: "When you’re done, click here to submit your pitch. The final submission date for pitches is Sunday, July 31st."
+		answer: `When you’re done, <a target="_blank" href="/apply">click here</a> to submit your pitch. The final submission date for pitches is Sunday, July 31st.`
 	},
 	{
-		answer: "The winners will be announced on our Twitter account (@wuruwurumag) on Friday, August 5th."
+		answer: `The winners will be announced on our Twitter account (<a target="_blank" href="https://twitter.com/wuruwurumag?s=21&t=VFC8KnAvUZmvuxU1jg7B2Q">@wuruwurumag</a>) on Friday, August 5th.`
 	},
 ];
+
 
 ---
 
@@ -83,7 +84,7 @@ two weeks.`
 					<div class="page-group">
 						<h4 class="c-section-title">How to apply</h4>
 						<ol class="aside-list data">
-							{howToApply.map(({ answer }, index) => (<li data-index={index}>{answer}</li>))}
+							{howToApply.map(({ answer }, index) => (<li data-index={index} set:html={answer}></li>))}
 						</ol>
 					</div>
 				</div>
