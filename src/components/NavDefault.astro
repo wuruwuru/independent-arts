@@ -37,11 +37,11 @@ const path = Astro.canonicalURL.pathname;
   const menu = document.getElementById('menu');
   const offset = 100;
   window.addEventListener('scroll', function () {
-    if (isVisible & (window.scrollY > offset)) {
-      menu.style.opacity = 0;
+    if (isVisible && (window.scrollY > offset)) {
+      menu.style.opacity = '0';
       isVisible = false;
     } else if (window.scrollY < offset) {
-      menu.style.opacity = 1;
+      menu.style.opacity = '1';
       isVisible = true;
     }
   });
@@ -83,10 +83,6 @@ const path = Astro.canonicalURL.pathname;
       }
     }
 
-    /* & > div {
-      width: 60px;
-      text-align: center;
-    } */
     & a {
       text-decoration: none;
     }
