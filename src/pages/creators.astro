@@ -74,8 +74,10 @@ const header = {
               <div class="profile">
                 <ProfileCard title={name} imageLink={avatar} description={role.label} size="small" />
               </div>
-              <div class="bio">{bio}</div>
-              <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
+              <div class="bio">
+                {bio}
+                <a class="social" href={ socialLink.url }>{ socialLink.text }</a>
+              </div>
             </li>)}
             )}
           </ul>
@@ -358,7 +360,7 @@ const header = {
 
   .c-creator-list__item {
     display: grid;
-    grid-template-columns: 32% 1fr 14%;
+    grid-template-columns: 32% 1fr;
     gap: 24px;
     margin-bottom: var(--spacer-base);
     margin-block-end: var(--spacer-base);
@@ -369,8 +371,9 @@ const header = {
     }
 
     .social {
-      justify-self: flex-end;
       word-break: break-all;
+      display: block;
+      margin-top: calc(var(--spacer-base) / 4.5);
     }
 
     @include screen('small') {
