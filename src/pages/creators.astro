@@ -429,11 +429,16 @@ const header = {
     margin-top: calc(var(--spacer-base) / 6);
   }
 </style>
+<!-- define gloabl variables -->
 <script define:vars={{ filters, fetchCreators }}>
   window.filterConfig = filters;
   window.creators = fetchCreators;
 </script>
+<!-- Handle filter logic -->
 <script>
+  import { assign, createMachine, interpret } from '@xstate/fsm';
+  import Isotope from 'isotope-layout';
+
   window.creatorFilterOptions = window.filterConfig.reduce((acc, filter, index) => {
     const { title, data } = filter;
     const filterGroup = title.toLowerCase();
@@ -455,10 +460,6 @@ const header = {
       },
     }
   }, {});
-</script>
-<script>
-  import { assign, createMachine, interpret } from '@xstate/fsm';
-  import Isotope from 'isotope-layout';
 
   // Use Isotope to control filtered items
   const creatorIsotope = new Isotope(document.getElementById('creators'), {
@@ -549,7 +550,6 @@ const header = {
           }
 
           const purifiedJSON = updateJSONOnClick(filteredGroup, filterId, filterParent);
-
           for (const key in purifiedJSON) {
             // updateUI
             const { active } = purifiedJSON[key];
@@ -566,7 +566,6 @@ const header = {
       }),
     }
   }
-
 
   // State Machine
   const machine = createMachine({
