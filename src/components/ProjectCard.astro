@@ -34,7 +34,7 @@ const {
 			<p>{ description }</p>
 		</div>
 		<div class="footer">
-			<a href={ subtitle?.href || '#' } target="_blank">{ subtitle.text }</a>
+			<a href={ subtitle?.href || '#' } class="c-link c-link--out" target="_blank">{ subtitle.text }</a>
 		</div>
 	</div>
 </div>
@@ -52,12 +52,22 @@ const {
 			grid-template-columns: 1fr;
 		}
 
-		// &:hover {
-		// 	text-decoration: none;
-		// }
+		&:hover {
+			.project-cover::before {
+				--origin: 1px;
+				content: "";
+				z-index: 1;
+				border: 2px solid var(--color-black);
+				position: absolute;
+				left: var(--origin);
+				top: var(--origin);
+				bottom: var(--origin);
+				right: var(--origin);
+			}
+		}
 
 		&-cover {
-
+			position: relative;
 			width: 100%;
 			min-width: 300px;
 			height: 100%;

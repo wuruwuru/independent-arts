@@ -26,10 +26,9 @@ const projectCovers = {
 <Layout pageTitle="wuruwuru" pageUrl="https://wuruwuru.com"
 	pageImage="https://wuruwuru.com/assets/images/thumbnail.png">
 	<main>
-		<section class="l-section">
+		<section class="l-section l-section--padded">
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--6">
-					<h4 class="c-section-title">Stories</h4>
 					<ul class="c-project-list">
 						{projects.map((proj) => (
 						<li class="c-project-list__item">
@@ -70,6 +69,10 @@ const projectCovers = {
 <style lang="scss">
 	@import "../styles/mixins.scss";
 
+	.l-section--padded {
+		margin-top: var(--spacer-base);
+	}
+
 	.c-section-title {
 		background-color: var(--color-white);
 
@@ -89,9 +92,15 @@ const projectCovers = {
 		}
 	}
 
+
 	.c-project-list,
 	.aside-list {
 		padding: var(--spacer-base) 0;
+	}
+
+	.c-project-list {
+		padding-block-start: 0;
+		padding-top: 0;
 	}
 
 	.c-project-list__item {

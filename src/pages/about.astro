@@ -43,20 +43,26 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 		<PageHeader {...header} />
 		<section class="l-section">
 			<div class="l-container l-grid">
-				<div class="c-section__left l-grid__column--5">
+				<div class="c-section__left l-grid__column--6">
 					<h4 class="c-section-title">Team</h4>
 					<ul class="c-team" id="teamList">
-						{team.map(({name, role, description, id }) => (
+						{team.map(({name, role, description, id , link, linkText}) => (
 						<li class="c-team__member" data-member={id}>
 							<div class="image">
-								<ProfileCard title={name} description={role} imageLink={teamImages[id]} size="large" />
+								<ProfileCard title={name} description={role} imageLink={teamImages[id]}
+									size="regular" />
 							</div>
-							<p>{ description }</p>
+							<div>
+								<p>{ description }</p>
+								<div class="footer">
+									<a class="c-link c-link--out" href={link}>{linkText}</a>
+								</div>
+							</div>
 						</li>
 						))}
 					</ul>
 				</div>
-				<aside class="c-section__right l-grid__column-start--7 l-grid__column--3">
+				<aside class="c-section__right l-grid__column-start--8 l-grid__column--3">
 					<h4 class="c-section-title">Manifesto</h4>
 					<ol class="experiment-list">
 						{experiments.map(({ question, answer }) => (
@@ -73,13 +79,16 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 			<div class="l-container">
 				<div class="c-modal__content">
 					<button class="c-modal__close">
-						<svg class="c-modal__close-icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18">
-							<path stroke="#000" stroke-width="2" d="m2.012 1.515 15.556 15.556M1.598 17.071 17.154 1.514" />
+						<svg class="c-modal__close-icon" fill="none" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 19 18">
+							<path stroke="#000" stroke-width="2"
+								d="m2.012 1.515 15.556 15.556M1.598 17.071 17.154 1.514" />
 						</svg>
 					</button>
 					<div class="c-modal__body">
 						<template id="userTemplate">
-							<ProfileCard title="{full_name}" description="{role}" imageLink={teamImages.nneoma} size="regular" />
+							<ProfileCard title="{full_name}" description="{role}" imageLink={teamImages.nneoma}
+								size="regular" />
 							<p data-bio>placeholder bio</p>
 							<div class="footer" data-footer>
 								<a href="https://google.com" target="_blank">placeholder_url</a>

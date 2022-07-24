@@ -8,8 +8,8 @@ const {
 
 <div class="snippet">
   <div class="head">
-    <h3>{title}</h3>
-    <a href={links.url} target="_blank" referrerpolicy="origin">{links.title}</a>
+    <h3><a href={links.url} class="c-link c-link--out" target="_blank" referrerpolicy="origin">{title}</a></h3>
+    <p>{links.title}</p>
   </div>
   <div class="body">
     <p>{description}</p>
@@ -17,5 +17,14 @@ const {
 </div>
 
 <style lang="scss">
-  .snippet {}
+  .head {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+  }
 </style>
