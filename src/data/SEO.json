@@ -1,0 +1,45 @@
+[
+	{
+		"type": "default",
+		"route": "/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Homepage",
+			"pageDescription": "A collection of publishing experiments",
+			"defaultSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png",
+			"twitterSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png"
+		}
+	},
+	{
+		"route": "/about/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | About",
+			"pageDescription": "A collection of publishing experiments"
+		}
+	},
+	{
+		"route": "/creators/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Creators",
+			"pageDescription": "A collection of publishing experiments"
+		}
+	},
+	{
+		"route": "/manifesto/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Manifesto",
+			"pageDescription": "A collection of publishing experiments"
+		}
+	},
+	{
+		"route": "/cover-contest/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Cover Contest",
+			"pageDescription": "A collection of publishing experiments"
+		}
+	}
+]

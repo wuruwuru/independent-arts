@@ -4,18 +4,7 @@ import BaseHead from '@components/BaseHead.astro';
 import NavDefault from '@components/NavDefault.astro';
 import Footer from '@components/FooterDefault.astro';
 
-export interface Props {
-	pageTitle: string,
-	pageUrl: string,
-	pageImage: string,
-	seoTitle?: string,
-	pageDescription?: string,
-}
 
-const {
-	pageTitle,
-	hideNav = false
-} = Astro.props;
 ---
 
 <!DOCTYPE html>

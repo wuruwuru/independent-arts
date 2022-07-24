@@ -1,48 +1,42 @@
 ---
 import resetStyles from "@styles/main.scss";
 import Analytics from "./Analytics.astro";
+import SEO from "@data/SEO.json";
 
-export interface Props {
-	pageTitle?: string,
-	pageDescription?: string,
-	seoTitle?: string,
-	pageUrl?: URL,
-	pageImage?: URL,
+
+const defaultSEO = SEO.find(({ type = null }) => type && type === 'default');
+const pageSEO = SEO.find(({ route }) => route === Astro.canonicalURL.pathname);
+
+const SEOProps = {
+	...defaultSEO.data,
+	...pageSEO.data,
+	pageUrl: Astro.canonicalURL.href,
 }
-
-const {
-	pageTitle,
-	seoTitle = pageTitle, // This prop is used for when the title tag title is different from what is displayed for SEO titles
-	pageUrl = Astro.canonicalURL.pathname,
-	pageImage = "https://wuruwuru.com/assets/images/thumbnail.png",
-	pageDescription = "A collection of publishing experiments",
-} = Astro.props;
-
 ---
 
 <head>
-	<title>{pageTitle}</title>
+	<title>{SEOProps.pageTitle}</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<meta name="title" content={seoTitle}>
+	<meta name="title" content={SEOProps.seoTitle}>
 
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-	<meta name="description" content={pageDescription}>
+	<meta name="description" content={SEOProps.pageDescription}>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
-	<meta property="og:url" content={pageUrl}>
-	<meta property="og:title" content={seoTitle}>
-	<meta property="og:description" content={pageDescription}>
-	<meta property="og:image" content={pageImage}>
+	<meta property="og:url" content={SEOProps.pageUrl}>
+	<meta property="og:title" content={SEOProps.seoTitle}>
+	<meta property="og:description" content={SEOProps.pageDescription}>
+	<meta property="og:image" content={SEOProps.defaultSEOImage}>
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content={pageUrl}>
-	<meta property="twitter:title" content={seoTitle}>
-	<meta property="twitter:description" content={pageDescription}>
-	<meta property="twitter:image" content={pageImage}>
+	<meta property="twitter:url" content={SEOProps.pageUrl}>
+	<meta property="twitter:title" content={SEOProps.seoTitle}>
+	<meta property="twitter:description" content={SEOProps.pageDescription}>
+	<meta property="twitter:image" content={SEOProps?.twitterSEOImage ?? SEOProps.defaultSEOImage}>
 
 	<!-- Add analytics script -->
 	{import.meta.env.PROD && (
