@@ -3,7 +3,6 @@ import resetStyles from "@styles/main.scss";
 import Analytics from "./Analytics.astro";
 import SEO from "@data/SEO.json";
 
-
 const defaultSEO = SEO.find(({ type = null }) => type && type === 'default');
 const pageSEO = SEO.find(({ route }) => route === Astro.canonicalURL.pathname);
 
