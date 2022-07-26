@@ -1,138 +1,16 @@
 ---
 //Components
 import Layout from "@layout/Default.astro";
-import ProjectCard from "@components/ProjectCard.astro";
-import DatabaseCard from "@components/DatabaseCard.astro";
-import NewsletterPreview from "@components/NewsletterPreview.astro";
-import JournalPreview from "@components/JournalPreview.astro";
+import PageHeader from "@components/PageHeader.astro";
 
-// Data
-import projects from "@data/projects.json";
-import journals from "@data/journal.json";
-import newsletters from "@data/newsletter.json";
-
-// Images
-import hanky from "@images/projects/hanky.jpg";
-import j_guide from "@images/projects/j_guide.jpg";
-
-
-const projectCovers = {
-	hanky,
-	'j_guide': j_guide
-}
 ---
 
 <Layout>
-	<main>
-		<section class="l-section l-section--padded">
-			<div class="l-container l-grid">
-				<div class="c-section__left l-grid__column--6">
-					<ul class="c-project-list">
-						{projects.map((proj) => (
-						<li class="c-project-list__item">
-							<ProjectCard imageLink={proj?.id && proj?.id.length> 0 ? projectCovers[proj.id] : null }
-								{...proj}/>
-						</li>
-						))}
-					</ul>
-				</div>
-				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
-					<h4 class="c-section-title">Data</h4>
-					<ul class="aside-list data">
-						<li>
-							<DatabaseCard title="Covers" description={200} size="regular" imageLink={new
-								URL("https://source.unsplash.com/random/200x200")} />
-						</li>
-					</ul>
-					<h4 class="c-section-title">Newsletter</h4>
-					<ul class="aside-list">
-						{newsletters.map((letter) => (<li>
-							<NewsletterPreview {...letter} />
-						</li>))}
-					</ul>
-					<h4 class="c-section-title">Journal</h4>
-					<ul class="aside-list">
-						{journals.map((journal) => (<li>
-							<JournalPreview {...journal} />
-						</li>))}
-					</ul>
-				</aside>
-			</div>
-		</section>
-	</main>
+    <main>
+        <PageHeader />
+    </main>
 </Layout>
 
 <style lang="scss">
-	@import "../styles/mixins.scss";
-
-	.l-section--padded {
-		margin-top: var(--spacer-base);
-	}
-
-	.c-section-title {
-		background-color: var(--color-white);
-
-		@include screen('small') {
-			top: 0;
-			position: static;
-		}
-	}
-
-	.data {
-		a.cover-text {
-			font-style: normal;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}
-
-
-	.c-project-list,
-	.aside-list {
-		padding: var(--spacer-base) 0;
-	}
-
-	.c-project-list {
-		padding-block-start: 0;
-		padding-top: 0;
-	}
-
-	.c-project-list__item {
-		&+& {
-			margin-top: var(--spacer-base);
-			margin-block-start: var(--spacer-base);
-		}
-	}
-
-	.c-section__left,
-	.c-section__right {
-		@include screen('small') {
-			grid-column: 1 / -1;
-		}
-	}
-
-	.aside-list>*+* {
-		margin-top: calc(var(--spacer-base) / 4);
-
-		@include screen('small') {
-			margin-top: calc(var(--spacer-base) / 8);
-		}
-	}
-
-	.aside-list--md>*+* {
-		margin-top: calc(var(--spacer-base) / 2);
-
-		@include screen('small') {
-			margin-top: calc(var(--spacer-base) / 4);
-		}
-	}
-
-	.l-container .l-grid {
-		@include screen('small') {
-			grid-template-columns: 1fr;
-
-		}
-	}
+    @import "../styles/mixins.scss";
 </style>
