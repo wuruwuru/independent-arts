@@ -13,6 +13,7 @@ const {
 	title = 'Feel Good',
 	description = 'A collection of joyful queer stories from ten of the best writers of our time.',
 	subtitle,
+	projectLink,
 	imageLink = null
 } = Astro.props
 
@@ -28,9 +29,7 @@ const {
 	</div>
 	<div class="project-text">
 		<div class="body">
-			<h2>{subtitle?.href ?
-				(<a href={subtitle?.href} target="_blank" rel="noopener noreferrer">{title}</a>) :
-				({title})}<span class="icon">↗️</span></h2>
+			<h2><a href={projectLink}>{title}</a></h2>
 			<p>{ description }</p>
 		</div>
 		<div class="footer">

@@ -9,30 +9,7 @@
       "text": "hankypankyfilm.com",
       "href": "https://hankypankyfilm.com"
     },
-    "contributors": [
-      {
-        "name": "Yanmo",
-        "role": "Story"
-      },
-      {
-        "name":  "Daniel",
-        "role":  "Editor"
-      },
-      {
-        "name":  "Chuks",
-        "role":  "Animator",
-        "contactUrl": "https://chukx007.artstation.com"
-      },
-      {
-        "name":  "Oshuwa",
-        "role":  "Voice Actor"
-      },
-      {
-        "name":  "Kolade",
-        "role":  "Sound Designer",
-        "contactUrl": "https://www.vsonicarts.com"
-      }
-    ]
+    "projectLink": "projects/hanky-panky"
   },
   {
     "id": "feel_good",
@@ -44,13 +21,7 @@
       "href": "https://afeelgoodbook.com",
       "text": "afeelgoodbook.com"
     },
-    "contributors": [
-      {
-        "name": "Eseosa",
-        "role": "Curator",
-        "contactUrl": "https://www.instagram.com/ese.illustrates/"
-      }
-    ]
+    "projectLink": "projects/feel-good"
   },
   {
     "id": "j_guide",
@@ -62,29 +33,6 @@
       "href": "https://instagram.com/thejguide",
       "text": "instagram/thejguide"
     },
-    "contributors": [
-      {
-        "name": "Jubril",
-        "role": "Story"
-      },
-      {
-        "name": "Tomiwa",
-        "role": "Story"
-      },
-      {
-        "name": "Khadijah",
-        "role": "Story"
-      },
-      {
-        "name": "Vanny",
-        "role": "Illustrator",
-        "contactUrl": "https://www.artstation.com/dannyvanny"
-      },
-      {
-        "name": "Bolu",
-        "role": "Illustrator",
-        "contactUrl": "https://www.artstation.com/bolusowoolu"
-      }
-    ]
+    "projectLink": "projects/j-guide"
   }
 ]

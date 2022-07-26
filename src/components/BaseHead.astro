@@ -8,7 +8,7 @@ const pageSEO = SEO.find(({ route }) => route === Astro.canonicalURL.pathname);
 
 const SEOProps = {
 	...defaultSEO.data,
-	...pageSEO.data,
+	...pageSEO?.data,
 	pageUrl: Astro.canonicalURL.href,
 }
 ---
