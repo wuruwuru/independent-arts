@@ -33,13 +33,5 @@
 			"seoTitle": "wuruwuru | Manifesto",
 			"pageDescription": "A collection of publishing experiments"
 		}
-	},
-	{
-		"route": "/cover-contest/",
-		"data": {
-			"pageTitle": "wuruwuru",
-			"seoTitle": "wuruwuru | Cover Contest",
-			"pageDescription": "A collection of publishing experiments"
-		}
 	}
 ]
