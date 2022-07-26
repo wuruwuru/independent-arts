@@ -33,5 +33,21 @@
 			"seoTitle": "wuruwuru | Manifesto",
 			"pageDescription": "A collection of publishing experiments"
 		}
+	},
+	{
+		"route": "/covers/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Covers",
+			"pageDescription": "A database of Nigerian album covers"
+		}
+	},
+	{
+		"route": "/cover-contest/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Cover Contest",
+			"pageDescription": "Apply to the wururuwuru Cover Contest"
+		}
 	}
 ]
