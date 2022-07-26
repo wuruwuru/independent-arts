@@ -1,17 +1,5 @@
 [
   {
-    "id": 1,
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/ea34404282b2ffdb27fae0ab9e4176f1/00bc0feb",
-    "name": "Opemipo Aikomo",
-    "bio": "Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
-    "roleId": "designer",
-    "projectIds": ["j_guide", "hanky", "feel_good"], 
-    "socialLink": {
-      "text": "Website",
-      "url": "https://opemipo.com"
-    }
-  },
-  {
     "id": 2,
     "name": "LMBSKN",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",

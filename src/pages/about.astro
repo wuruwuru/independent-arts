@@ -65,8 +65,7 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 					<ol class="experiment-list">
 						{experiments.map(({ question, answer }) => (
 						<li class={answer && answer.length>= 1 ? 'active' : 'inactive'}>
-							<a href={answer && answer.length>= 1 ? answer : '#'} target="_blank" rel="noopener
-								noreferrer">{question}</a>
+							<a href={answer && answer.length>= 1 ? answer : '#'}>{question}</a>
 						</li>
 						))}
 					</ol>
@@ -77,13 +76,16 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 			<div class="l-container">
 				<div class="c-modal__content">
 					<button class="c-modal__close">
-						<svg class="c-modal__close-icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18">
-							<path stroke="#000" stroke-width="2" d="m2.012 1.515 15.556 15.556M1.598 17.071 17.154 1.514" />
+						<svg class="c-modal__close-icon" fill="none" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 19 18">
+							<path stroke="#000" stroke-width="2"
+								d="m2.012 1.515 15.556 15.556M1.598 17.071 17.154 1.514" />
 						</svg>
 					</button>
 					<div class="c-modal__body">
 						<template id="userTemplate">
-							<ProfileCard title="{full_name}" description="{role}" imageLink={teamImages.nneoma} size="regular" />
+							<ProfileCard title="{full_name}" description="{role}" imageLink={teamImages.nneoma}
+								size="regular" />
 							<p data-bio>placeholder bio</p>
 							<div class="footer" data-footer>
 								<a href="https://google.com" target="_blank">placeholder_url</a>
