@@ -1,0 +1,40 @@
+---
+
+import projects from "@data/projects.json";
+
+---
+
+<section>
+  <ul>
+    {projects.map((p) => (
+    <li>
+      <img src={`/assets/images/projects/${p.id}.png`} alt={`Cover image for ${p.title}`} />
+    </li>
+    ))}
+  </ul>
+</section>
+
+
+<style lang="scss">
+	section {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  ul {
+    display: inline-flex;
+  }
+
+  li {
+    width: 600px;
+    display: inline-block;
+    margin-right: 24px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+</style>

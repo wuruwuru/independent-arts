@@ -7,22 +7,11 @@
     "description":  "A contemporary take on a classic board game."
   },
   {
-    "id": "feelgood",
-    "title": "Feel Good",
-    "status": "design",
-    "category": "Book, Website",
-    "description": "An anthology of joyful queer stories from Nigeria.",
-    "url": {
-      "text": "afeelgoodbook.com",
-      "href": "https://afeelgoodbook.com"
-    }
-  },
-  {
     "id": "hankypanky",
     "title":  "Hanky Panky",
     "status": "production",
     "category":  "Animation",
-    "description":  "An animated short film about a phone call from a Nigerian aunty.",
+    "description":  "Animated short film about a phone call from a Nigerian aunty.",
     "url": {
       "text": "hankypankyfilm.com",
       "href": "https://hankypankyfilm.com"
@@ -37,6 +26,17 @@
     "url": {
       "text": "wuruwuru.com/covers",
       "href": "https://wuruwuru.com/covers"
+    }
+  },
+  {
+    "id": "feelgood",
+    "title": "Feel Good",
+    "status": "design",
+    "category": "Book, Website",
+    "description": "An anthology of joyful queer stories from Nigeria.",
+    "url": {
+      "text": "afeelgoodbook.com",
+      "href": "https://afeelgoodbook.com"
     }
   },
   {
