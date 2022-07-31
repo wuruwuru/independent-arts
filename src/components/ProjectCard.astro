@@ -2,6 +2,7 @@
 export interface Props {
 	id: string,
 	title: string,
+	status: string,
 	description: string,
 	url: {
 		href: string,
@@ -12,6 +13,7 @@ export interface Props {
 const {
 	id,
 	title,
+	status,
 	description,
 	url,
 } = Astro.props
@@ -20,11 +22,21 @@ const {
 
 <div class="project">
 	<div class="project-cover">
-			<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
+			{url ? (
+			<a href={ url?.href || '#' } target="_blank">
+				<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
+			</a>
+			) : (
+				<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
+			)}
 	</div>
 	<div class="project-text">
 		<div class="body">
 			<h2>{title}</h2>
+			<div class="project-status">
+				<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
+				<span class="project-status-text">{status}</span>
+			</div>
 		</div>
 		<div class="footer">
 			<p>{ description }</p>
@@ -57,7 +69,7 @@ const {
 			overflow: hidden;
 			display: flex;
 
-			>a {
+			> a {
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -158,6 +170,30 @@ const {
 				&::after {
 					animation: animatedBackground .35s linear infinite both;
 				}
+			}
+		}
+
+		&-status {
+			margin-top: 5px;
+
+			&-dot {
+				width: 8px;
+				height: 8px;
+				border-radius: 4px;
+				margin-right: 2px;
+				display: inline-block;
+				&.default {
+					background: #FB9F1A;
+				}
+				&.success {
+					background: #5AB379;
+				}
+			}
+
+			&-text {
+				font-family: var(--font-sans-mono);
+				text-transform: uppercase;
+				font-size: 1.5rem;
 			}
 		}
 	}
