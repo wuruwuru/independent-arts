@@ -1,38 +1,49 @@
 [
   {
-    "id": "hanky",
+    "id": "ludo",
+    "status"
+    "title":  "LUDO",
+    "category":  "Game",
+    "description":  "Contemporary take on a classic board game."
+  },
+  {
+    "id": "hankypanky",
     "title":  "Hanky Panky",
     "category":  "Animation",
-    "shortDescription":  "On a nice afternoon drive, Osas receives a call from Aunty Yuwa about raunchy Instagram videos.",
-    "description":  "A short film inspired by a real phone call between a Nigerian aunty and her niece.",
-    "subtitle": {
+    "description":  "Animated short film about a phone call from a Nigerian aunty.",
+    "url": {
       "text": "hankypankyfilm.com",
       "href": "https://hankypankyfilm.com"
-    },
-    "projectLink": "projects/hanky-panky"
+    }
   },
   {
-    "id": "feel_good",
-    "title": "Feel Good",
-    "category": "Comic",
-    "shortDescription": "A collection of joyful queer stories from ten of the best writers of our time.",
-    "description": "A collection of joyful queer stories from ten of the best writers of our time.",
-    "subtitle": {
-      "href": "https://afeelgoodbook.com",
-      "text": "afeelgoodbook.com"
-    },
-    "projectLink": "projects/feel-good"
+    "id": "coverbank",
+    "title":  "Cover Bank",
+    "category":  "Database",
+    "description":  "Retrospective of Nigerian album covers from 1950 - 2022.",
+    "url": {
+      "text": "wuruwuru.com/covers",
+      "href": "https://wuruwuru.com/covers"
+    }
   },
   {
-    "id": "j_guide",
+    "id": "jguide",
     "title": "J Guide",
     "category": "Comic",
-    "shortDescription": "An Instagram comic about weed.",
-    "description": "An instruction manual for rolling your first joint.",
-    "subtitle": { 
-      "href": "https://instagram.com/thejguide",
-      "text": "instagram/thejguide"
-    },
-    "projectLink": "projects/j-guide"
+    "description": "Instruction manual for learning (or teaching someone) to roll.",
+    "url": {
+      "text": "instagram/@thejguide",
+      "href": "https://instagram.com/thejguide"
+    }
+  },
+  {
+    "id": "feelgood",
+    "title": "Feel Good",
+    "category": "Book, Website",
+    "description": "Anthology of joyful queer stories published online and in print.",
+    "url": {
+      "text": "afeelgoodbook.com",
+      "href": "https://instagram.com/afeelgoodbook.com"
+    }
   }
 ]

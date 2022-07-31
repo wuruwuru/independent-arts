@@ -1,39 +1,36 @@
 ---
 export interface Props {
+	id: string,
 	title: string,
 	description: string,
-	subtitle: {
+	url: {
 		href: string,
 		text: string
-	},
-	imageLink: URL
+	}
 }
 
 const {
-	title = 'Feel Good',
-	description = 'A collection of joyful queer stories from ten of the best writers of our time.',
-	subtitle,
-	projectLink,
-	imageLink = null
+	id,
+	title,
+	description,
+	url,
 } = Astro.props
 
 ---
 
 <div class="project">
-	<div class={`project-cover ${imageLink===null ? '-default-cover' : '' }`}>
-		<a href={subtitle?.href} target="_blank" rel="noopener noreferrer">
-			{imageLink && (
-			<img src={imageLink} alt={`${title} cover image`} />
-			)}
-		</a>
+	<div class="project-cover">
+			<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
 	</div>
 	<div class="project-text">
 		<div class="body">
-			<h2><a href={projectLink}>{title}</a></h2>
-			<p>{ description }</p>
+			<h2>{title}</h2>
 		</div>
 		<div class="footer">
-			<a href={ subtitle?.href || '#' } class="c-link c-link--out" target="_blank">{ subtitle.text }</a>
+			<p>{ description }</p>
+			{url && (
+			<a href={ url?.href || '#' } class="c-link c-link--out" target="_blank">{ url.text }</a>
+			)}
 		</div>
 	</div>
 </div>
@@ -49,20 +46,6 @@ const {
 
 		@include screen('small') {
 			grid-template-columns: 1fr;
-		}
-
-		&:hover {
-			.project-cover::before {
-				--origin: -0.5px;
-				content: "";
-				z-index: var(--z-index--1);
-				border: 3px solid var(--color-black);
-				position: absolute;
-				left: var(--origin);
-				top: var(--origin);
-				bottom: var(--origin);
-				right: var(--origin);
-			}
 		}
 
 		&-cover {
@@ -91,16 +74,9 @@ const {
 				transition: 1.6s cubic-bezier(.16, 1, .3, 1);
 			}
 
-
-
 			@include screen('small') {
 				min-width: unset;
 				max-width: 100%;
-			}
-
-			&.-default-cover {
-				background-color: #CD2D59;
-				background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);
 			}
 		}
 
@@ -124,6 +100,10 @@ const {
 				}
 			}
 
+			h2 {
+				font-family: var(--font-sans);
+			}
+
 			h5 {
 				font-size: 3.2rem;
 				font-weight: normal;
@@ -134,16 +114,9 @@ const {
 			}
 
 			.footer {
-				font-style: italic;
 				padding-block-end: 28px;
 				margin-block-end: 0;
 				position: relative;
-
-				&:hover {
-					&::after {
-						animation: animatedBackground .35s linear infinite both;
-					}
-				}
 
 				&::after {
 					--divider-height: 16px;
@@ -171,7 +144,19 @@ const {
 
 				p {
 					position: relative;
-					margin-bottom: 0;
+					margin-bottom: 10px;
+				}
+
+				a {
+					font-style: italic;
+				}
+			}
+		}
+
+		&:hover {
+			.footer {
+				&::after {
+					animation: animatedBackground .35s linear infinite both;
 				}
 			}
 		}

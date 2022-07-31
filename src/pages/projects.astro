@@ -11,15 +11,6 @@ import projects from "@data/projects.json";
 import journals from "@data/journal.json";
 import newsletters from "@data/newsletter.json";
 
-// Images
-import hanky from "@images/projects/hanky.jpg";
-import j_guide from "@images/projects/j_guide.jpg";
-
-
-const projectCovers = {
-	hanky,
-	'j_guide': j_guide
-}
 ---
 
 <Layout>
@@ -28,10 +19,9 @@ const projectCovers = {
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--6">
 					<ul class="c-project-list">
-						{projects.map((proj) => (
+						{projects.map((p) => (
 						<li class="c-project-list__item">
-							<ProjectCard imageLink={proj?.id && proj?.id.length> 0 ? projectCovers[proj.id] : null }
-								{...proj}/>
+							<ProjectCard {...p} />
 						</li>
 						))}
 					</ul>
