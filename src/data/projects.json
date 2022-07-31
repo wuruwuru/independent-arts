@@ -4,14 +4,14 @@
     "title":  "LUDO",
     "status": "design",
     "category":  "Game",
-    "description":  "Contemporary take on a classic board game."
+    "description":  "A contemporary take on a classic board game."
   },
   {
     "id": "feelgood",
     "title": "Feel Good",
     "status": "design",
     "category": "Book, Website",
-    "description": "Anthology of joyful queer stories with love from Lagos.",
+    "description": "An anthology of joyful queer stories from Nigeria.",
     "url": {
       "text": "afeelgoodbook.com",
       "href": "https://afeelgoodbook.com"
@@ -22,7 +22,7 @@
     "title":  "Hanky Panky",
     "status": "production",
     "category":  "Animation",
-    "description":  "Animated short film about a phone call from a Nigerian aunty.",
+    "description":  "An animated short film about a phone call from a Nigerian aunty.",
     "url": {
       "text": "hankypankyfilm.com",
       "href": "https://hankypankyfilm.com"
@@ -31,9 +31,9 @@
   {
     "id": "coverbank",
     "title":  "Cover Bank",
-    "status": "published",
+    "status": "production",
     "category":  "Database",
-    "description":  "Retrospective of Nigerian album covers from 1950 - 2022.",
+    "description":  "A retrospective of Nigerian album covers from 1950 - 2022.",
     "url": {
       "text": "wuruwuru.com/covers",
       "href": "https://wuruwuru.com/covers"
@@ -44,7 +44,7 @@
     "title": "J Guide",
     "status": "published",
     "category": "Comic",
-    "description": "Instruction manual for learning (or teaching someone) to roll.",
+    "description": "An instruction manual for teaching someone to roll a joint.",
     "url": {
       "text": "instagram/@thejguide",
       "href": "https://instagram.com/thejguide"

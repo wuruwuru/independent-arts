@@ -1,32 +1,30 @@
 ---
 export interface Props {
+  id: string,
   title: string;
-  description: string | number;
-  imageLink?: URL,
-  url?: URL,
+  count: string | number;
+  url: string,
 }
 
 const {
-  title = 'Album Covers',
-  description = 5000,
-  imageLink,
-  url = "https://google.com",
+  id,
+  title,
+  count,
+  url
 } = Astro.props;
 
 ---
 
 <div class="database">
   <div class="avatar">
-    {imageLink && (
-    <img src={imageLink} alt={`${title} image`} />
-    )}
+    <img src={`/assets/images/databases/${id}/1.png`} alt={`Cover for ${title}`} />
   </div>
   <div class="text">
     <div class="inner">
-      <h3 data-name>
+      <div class="text-name">
         <a href={url} target="_blank" rel="noopener noreferrer" class="c-link c-link--out">{ title }</a>
       </h3>
-      <p data-description>{ description }</p>
+      <div class="text-count">{ count }</div>
     </div>
   </div>
 </div>
@@ -36,11 +34,6 @@ const {
     font-style: normal;
   }
 
-  h3 {
-    margin: 0;
-    font-family: var(--font-sans);
-  }
-
   .database {
     --card-size: 72px;
     display: grid;
@@ -48,25 +41,27 @@ const {
     grid-template-columns: minmax(auto, var(--card-size)) 1fr;
     align-items: center;
 
-    &:hover {}
-
-
     .avatar {
       background: whitesmoke;
       aspect-ratio: 1;
       display: flex;
     }
 
-    .text .inner {
+    .text {
       display: flex;
       flex-direction: column;
 
-      >p {
-        margin-block-start: 2px;
-        margin-block-end: 4px;
-        // color: var(--color-dark-gray);
-        // font-family: var(--font-sans);
-        font-style: italic;
+      &-name {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-weight: normal;
+        font-size: 2rem;
+      }
+
+      &-count {
+        font-family: var(--font-sans-mono);
+        margin: 0;
+        font-size: 1.5rem;
       }
     }
   }
