@@ -27,7 +27,7 @@ const {
 				<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
 			</a>
 			) : (
-				<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
+				<img class="pulse" src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
 			)}
 	</div>
 	<div class="project-text">
@@ -72,7 +72,6 @@ const {
 			min-width: 300px;
 			height: 100%;
 			aspect-ratio: 616 / 400;
-			overflow: hidden;
 			display: flex;
 
 			> a {
@@ -88,8 +87,23 @@ const {
 			}
 
 			img {
-				transform: scale(1.04);
-				transition: 1.6s cubic-bezier(.16, 1, .3, 1);
+    		transition: all .5s ease;
+
+				&:hover {
+					transform: scale(1.03);
+				}
+
+				&.pulse {
+					transform: scale(1);
+					&:hover {
+						animation: scaleOnce .5s linear;
+					}
+				}
+
+				@keyframes scaleOnce {
+					0%, 100% { transform: scale(1); }
+					50% { transform: scale(1.015); }
+				}
 			}
 
 			@include screen('small') {

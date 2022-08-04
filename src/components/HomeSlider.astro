@@ -25,7 +25,7 @@ import projects from "@data/projects.json";
     width: 100%;
     display: flex;
     overflow: hidden;
-    animation: fadeIn linear 3s;
+    animation: fadeIn linear 0.3s;
   }
 
   ul {
@@ -40,8 +40,16 @@ import projects from "@data/projects.json";
     transition: all .2s ease;
   }
 
+  img {
+    transition: all .5s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
   @keyframes fadeIn {
-    0%, 30% { opacity: 0; }
+    0% { opacity: 0; }
     100% { opacity: 1; }
   }
 
