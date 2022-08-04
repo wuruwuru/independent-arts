@@ -16,7 +16,7 @@ const links = [
   }
 ];
 
-const path = Astro.url.pathname;
+const path = Astro.canonicalURL.pathname;
 ---
 
 <nav class="c-nav l-container l-container--fluid">
@@ -50,7 +50,7 @@ const path = Astro.url.pathname;
 <style lang="scss">
   @import "../styles/mixins.scss";
 
-  .c-nav {
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
