@@ -18,5 +18,21 @@
   {
     "id": "comic",
     "label": "Comic"
+  },
+  {
+    "id": "game",
+    "label": "Game"
+  },
+  {
+    "id": "database",
+    "label": "Database"
+  },
+  {
+    "id": "book",
+    "label": "Book"
+  }, 
+  {
+    "id": "website",
+    "label": "Website"
   }
 ]
