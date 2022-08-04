@@ -24,8 +24,8 @@
     "label": "Engineer"
   },
   {
-    "id": "illustrator",
-    "label": "Illustrator"
+    "id": "artist",
+    "label": "Artist"
   },
   {
     "id": "lawyer",
@@ -42,5 +42,17 @@
   {
     "id": "storyteller",
     "label": "Storyteller"
+  },
+  {
+    "id": "producer",
+    "label": "Producer"
+  }, 
+  {
+    "id": "sound_designer",
+    "label": "Sound Designer"
+  },
+  {
+    "id": "photographer",
+    "label": "Photographer"
   }
 ]
