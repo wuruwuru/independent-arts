@@ -71,7 +71,7 @@ const filters = [
                 <ProfileCard title={name} imageLink={avatar} description={role.label} size="small" />
               </div>
               <div class="bio">
-                {bio}
+                <p>{bio}</p>
                 <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a>
               </div>
             </li>)}
@@ -369,12 +369,15 @@ const filters = [
     .social {
       word-break: break-all;
       display: block;
-      font-weight: 500;
-      // margin-top: calc(var(--spacer-base) / 3.2);
     }
 
     .bio {
       line-height: 1.3;
+
+      >p {
+        margin-top: 0;
+        margin-block-start: 0;
+      }
     }
 
     @include screen('small') {
