@@ -10,21 +10,25 @@ import roles from "@data/roles.json";
 import genre from "@data/genre.json";
 import creators from "@data/creators.json";
 
-const getProjectsFilter = () => {
-  return projects.map(({ id, title }) => ({ id, label: title }))
+const fetchProjects = () => {
+  return projects.map(({ id, title, category }) => ({
+    id,
+    title,
+    label: title,
+    genre: category.toLowerCase()
+  }));
 }
 
-const fetchCreators = creators.map((creator) => {
-  const { roleId, projectIds, ...rest } = creator;
-  return {
-    ...rest,
-    role: roles.find(({ id }) => roleId === id),
-    projects: projectIds.map(projectID => {
-      const { id, category } = projects.find(({ id }) => id === projectID)
-      return { id, genre: category.toLowerCase() };
-    }),
-  }
-})
+const fetchCreators = () => {
+  return creators.map((creator) => {
+    const { roleId, projectIds, ...rest } = creator;
+    return {
+      ...rest,
+      role: roles.find(({ id }) => roleId === id),
+      projects: fetchProjects().filter(({ id }) => (projectIds.includes(id))),
+    }
+  })
+}
 
 
 const filters = [
@@ -43,7 +47,7 @@ const filters = [
         id: 'all',
         label: 'All'
       },
-      ...getProjectsFilter()
+      ...fetchProjects()
     ],
   },
 ]
@@ -61,11 +65,11 @@ const filters = [
           <h4 class="c-section-title c-section-title--spaced">Creators<span class="mobile-filter-button"><button
                 class="filter-trigger" id="filterTrigger">Filter</button></span></h4>
           <ul class="c-creator-list" id="creators">
-            {fetchCreators.map(({name, bio, role, socialLink, projects, avatar, id}, index) => {
+            {fetchCreators().map(({name, bio, role, socialLink, projects, avatar, id}, index) => {
             const projectSpread = projects.map(({ id })=> id);
             const genreSpread = projects.map(({ genre })=> genre);
             return (
-            <li class="c-creator-list__item active" data-index={id} data-name={name} data-roles={role.id.toLowerCase()}
+            <li class="c-creator-list__item active" data-index={id} data-name={name} data-roles={role}
               data-projects={projectSpread} data-genre={genreSpread}>
               <div class="profile">
                 <ProfileCard title={name} imageLink={avatar} description={role.label} size="small" />
