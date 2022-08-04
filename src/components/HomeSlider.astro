@@ -11,6 +11,11 @@ import projects from "@data/projects.json";
       <img src={`/assets/images/projects/${p.id}.png`} alt={`Cover image for ${p.title}`} />
     </li>
     ))}
+    {projects.map((p) => (
+    <li>
+      <img src={`/assets/images/projects/${p.id}.png`} alt={`Cover image for ${p.title}`} />
+    </li>
+    ))}
   </ul>
 </section>
 
@@ -18,20 +23,31 @@ import projects from "@data/projects.json";
 <style lang="scss">
 	section {
     width: 100%;
-    overflow: scroll;
+    display: flex;
+    overflow: hidden;
+    animation: fadeIn linear 3s;
   }
 
   ul {
-    display: inline-flex;
+    display: flex;
+    animation: marquee 10s linear infinite running;
   }
 
   li {
     width: 600px;
-    display: inline-block;
-    margin-right: 24px;
-    &:last-child {
-      margin-right: 0;
-    }
+    display: inline-flex;
+    padding: 12px;
+    transition: all .2s ease;
+  }
+
+  @keyframes fadeIn {
+    0%, 30% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 
   img {
