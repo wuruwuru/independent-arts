@@ -72,7 +72,7 @@ const filters = [
               </div>
               <div class="bio">
                 {bio}
-                <a class="social c-link c-link--out" target="_blank" href={ socialLink.url }>{ socialLink.text }</a>
+                <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a>
               </div>
             </li>)}
             )}
@@ -369,7 +369,8 @@ const filters = [
     .social {
       word-break: break-all;
       display: block;
-      margin-top: calc(var(--spacer-base) / 3.2);
+      font-weight: 500;
+      // margin-top: calc(var(--spacer-base) / 3.2);
     }
 
     .bio {
