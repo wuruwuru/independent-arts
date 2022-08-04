@@ -2,7 +2,7 @@
 import BaseHead from '@components/BaseHead.astro';
 
 export interface Props {
-	url?: string;
+  url?: string;
 }
 
 const {
@@ -13,9 +13,10 @@ const {
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<BaseHead />
+<BaseHead>
+  <meta http-equiv="refresh" content={`1; URL=${url}`} />
+</BaseHead>
 
-<meta http-equiv="refresh" content={`1; URL=${url}`} />
 
 <body>
 </body>
