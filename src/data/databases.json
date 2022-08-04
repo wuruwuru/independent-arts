@@ -1,0 +1,20 @@
+[
+    {
+        "id": "covers",
+        "title": "Album Covers",
+        "count": "5000",
+        "url": "https://wuruwuru.com/covers"
+    },
+    {
+      "id": "streetwear",
+      "title": "Streetwear",
+      "count": "470",
+      "url": "https://wuruwuru.com/streetwear"
+  },
+  {
+    "id": "comics",
+    "title": "Comic Books",
+    "count": "470",
+    "url": "https://wuruwuru.com/comics"
+}
+]

@@ -2,15 +2,30 @@
 //Components
 import Layout from "@layout/Default.astro";
 import PageHeader from "@components/PageHeader.astro";
+import HomeSlider from "@components/HomeSlider.astro";
 
 ---
 
 <Layout>
     <main>
-        <PageHeader />
+        <PageHeader>
+            <h1>
+                <span class="wrwr">wuruwuru</span> is a publishing experiment. Our first collection includes an Instagram comic, a database, an animated short film, a web series, a board game, and a book.
+            </h1>
+        </PageHeader>
+        <HomeSlider />
     </main>
 </Layout>
 
 <style lang="scss">
     @import "../styles/mixins.scss";
+
+    main {
+        animation: fadeIn linear 0.3s;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
 </style>

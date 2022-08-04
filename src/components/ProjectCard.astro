@@ -1,39 +1,54 @@
 ---
 export interface Props {
+	id: string,
 	title: string,
+	status: string,
 	description: string,
-	subtitle: {
+	url: {
 		href: string,
 		text: string
-	},
-	imageLink: URL
+	}
 }
 
 const {
-	title = 'Feel Good',
-	description = 'A collection of joyful queer stories from ten of the best writers of our time.',
-	subtitle,
-	projectLink,
-	imageLink = null
+	id,
+	title,
+	status,
+	description,
+	url,
 } = Astro.props
 
 ---
 
 <div class="project">
-	<div class={`project-cover ${imageLink===null ? '-default-cover' : '' }`}>
-		<a href={subtitle?.href} target="_blank" rel="noopener noreferrer">
-			{imageLink && (
-			<img src={imageLink} alt={`${title} cover image`} />
+	<div class="project-cover">
+			{url ? (
+			<a href={ url?.href } target="_blank">
+				<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
+			</a>
+			) : (
+				<img class="pulse" src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
 			)}
-		</a>
 	</div>
 	<div class="project-text">
 		<div class="body">
-			<h2><a href={projectLink}>{title}</a></h2>
+			<h2>
+			{url ? (
+				<a href={ url.href } target="_blank">{title}</a>
+			) : (
+				<span>{title}</span>
+			)}
+			</h2>
 			<p>{ description }</p>
 		</div>
 		<div class="footer">
-			<a href={ subtitle?.href || '#' } class="c-link c-link--out" target="_blank">{ subtitle.text }</a>
+			<div class="project-status">
+				<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
+				<span class="project-status-text">{status}</span>
+			</div>
+			{url && (
+			<a href={ url?.href } class="c-link c-link--out" target="_blank">{ url.text }</a>
+			)}
 		</div>
 	</div>
 </div>
@@ -51,30 +66,15 @@ const {
 			grid-template-columns: 1fr;
 		}
 
-		&:hover {
-			.project-cover::before {
-				--origin: -0.5px;
-				content: "";
-				z-index: var(--z-index--1);
-				border: 3px solid var(--color-black);
-				position: absolute;
-				left: var(--origin);
-				top: var(--origin);
-				bottom: var(--origin);
-				right: var(--origin);
-			}
-		}
-
 		&-cover {
 			position: relative;
 			width: 100%;
 			min-width: 300px;
 			height: 100%;
 			aspect-ratio: 616 / 400;
-			overflow: hidden;
 			display: flex;
 
-			>a {
+			> a {
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -87,20 +87,28 @@ const {
 			}
 
 			img {
-				transform: scale(1.04);
-				transition: 1.6s cubic-bezier(.16, 1, .3, 1);
+    		transition: all .5s ease;
+
+				&:hover {
+					transform: scale(1.03);
+				}
+
+				&.pulse {
+					transform: scale(1);
+					&:hover {
+						animation: scaleOnce .5s linear;
+					}
+				}
+
+				@keyframes scaleOnce {
+					0%, 100% { transform: scale(1); }
+					50% { transform: scale(1.015); }
+				}
 			}
-
-
 
 			@include screen('small') {
 				min-width: unset;
 				max-width: 100%;
-			}
-
-			&.-default-cover {
-				background-color: #CD2D59;
-				background: linear-gradient(0, #CD2D59 0, #D4532F 50%, #CD2D59 100%);
 			}
 		}
 
@@ -124,6 +132,10 @@ const {
 				}
 			}
 
+			h2 {
+				font-family: var(--font-sans);
+			}
+
 			h5 {
 				font-size: 3.2rem;
 				font-weight: normal;
@@ -134,16 +146,9 @@ const {
 			}
 
 			.footer {
-				font-style: italic;
 				padding-block-end: 28px;
 				margin-block-end: 0;
 				position: relative;
-
-				&:hover {
-					&::after {
-						animation: animatedBackground .35s linear infinite both;
-					}
-				}
 
 				&::after {
 					--divider-height: 16px;
@@ -171,8 +176,44 @@ const {
 
 				p {
 					position: relative;
-					margin-bottom: 0;
+					margin-bottom: 10px;
 				}
+
+				a {
+					font-style: italic;
+				}
+			}
+		}
+
+		&:hover {
+			.footer {
+				&::after {
+					animation: animatedBackground .35s linear infinite both;
+				}
+			}
+		}
+
+		&-status {
+			margin-bottom: 5px;
+
+			&-dot {
+				width: 8px;
+				height: 8px;
+				border-radius: 4px;
+				margin-right: 2px;
+				display: inline-block;
+				&.default {
+					background: #FB9F1A;
+				}
+				&.success {
+					background: #5AB379;
+				}
+			}
+
+			&-text {
+				font-family: var(--font-sans-mono);
+				text-transform: uppercase;
+				font-size: 1.5rem;
 			}
 		}
 	}

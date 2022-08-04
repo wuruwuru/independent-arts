@@ -12,11 +12,6 @@ import agnes from "@images/team/agnes.png"
 import tomiwa from "@images/team/tomiwa.png"
 import experiments from "@data/manifestoLinks.json";
 
-const header = {
-	title: "is a non-profit studio.",
-	description: "Right now, we're making publishing experiments. Long term, we're trying to become a community-funded, community-run support system for independent publishers."
-}
-
 const teamImages = {
 	"opemipo": opemipo,
 	"nneoma": nneoma,
@@ -39,7 +34,9 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 
 <Layout>
 	<main>
-		<PageHeader {...header} />
+		<PageHeader>
+			<h1>Our goal with each project is to create a new story, build a community of practice, and create documentation for other independent creators.</h1>
+		</PageHeader>
 		<section class="l-section">
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--6">
@@ -62,13 +59,10 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 				</div>
 				<aside class="c-section__right l-grid__column-start--8 l-grid__column--3">
 					<h4 class="c-section-title">Manifesto</h4>
-					<ol class="experiment-list">
-						{experiments.map(({ question, answer }) => (
-						<li class={answer && answer.length>= 1 ? 'active' : 'inactive'}>
-							<a href={answer && answer.length>= 1 ? answer : '#'}>{question}</a>
-						</li>
-						))}
-					</ol>
+					<div class="c-team">
+						<p>The big idea is to create a support system for independent creators to produce capstone projects.</p>
+						<p><a href="/manifesto">Continue reading</a></p>
+					</div>
 				</aside>
 			</div>
 		</section>
@@ -192,6 +186,12 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 					margin-bottom: 0;
 				}
 			}
+		}
+	}
+
+	.c-team {
+		p:first-child {
+			margin-top: 0;
 		}
 	}
 

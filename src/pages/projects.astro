@@ -9,17 +9,9 @@ import JournalPreview from "@components/JournalPreview.astro";
 // Data
 import projects from "@data/projects.json";
 import journals from "@data/journal.json";
-import newsletters from "@data/newsletter.json";
+import newsletters from "@data/newsletters.json";
+import databases from "@data/databases.json";
 
-// Images
-import hanky from "@images/projects/hanky.jpg";
-import j_guide from "@images/projects/j_guide.jpg";
-
-
-const projectCovers = {
-	hanky,
-	'j_guide': j_guide
-}
 ---
 
 <Layout>
@@ -28,10 +20,9 @@ const projectCovers = {
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--6">
 					<ul class="c-project-list">
-						{projects.map((proj) => (
+						{projects.map((p) => (
 						<li class="c-project-list__item">
-							<ProjectCard imageLink={proj?.id && proj?.id.length> 0 ? projectCovers[proj.id] : null }
-								{...proj}/>
+							<ProjectCard {...p} />
 						</li>
 						))}
 					</ul>
@@ -39,10 +30,9 @@ const projectCovers = {
 				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
 					<h4 class="c-section-title">Data</h4>
 					<ul class="aside-list data">
-						<li>
-							<DatabaseCard title="Covers" description={200} size="regular" imageLink={new
-								URL("https://source.unsplash.com/random/200x200")} />
-						</li>
+						{databases.map((db) => (<li>
+							<DatabaseCard {...db} />
+						</li>))}
 					</ul>
 					<h4 class="c-section-title">Newsletter</h4>
 					<ul class="aside-list">

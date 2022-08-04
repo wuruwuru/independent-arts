@@ -2,20 +2,22 @@
     {
         "name": "Eris Ekanem",
         "role": "Assistant Producer",
-        "description": "Ekanem is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat using sign language.",
+        "description": "Ekanem is a writer and storyboard artist. She's learning French and training her cat with sign language.",
         "mobileDescription": [
-            "Ekanem is a writer and storyboard <br/> artist. When she's not building with<br/> friends at wuruwuru, she's learning<br/> french and training her cat using<br/> sign language."
+            "Ekanem is a writer and storyboard artist.",
+            "She's learning French and training her cat with sign language."
         ],
         "link": "https://twitter.com/eccentric_sky",
-        "linkText": "Website",
+        "linkText": "Twitter",
         "id": "agnes"
     },
     {
         "name": "Nneoma Kenure",
         "role": "Assistant Editor",
-        "description": "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She is partial to the first-person narrative and is editing her debut– a memoir. She’s an assistant editor on the Feel Good project.",
+        "description": "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She's currently editing her debut memoir.",
         "mobileDescription": [
-            "Nneoma is a culture critic and a <br/> feminist writer exploring how culture <br/> influences the stories we tell. <br/> She is partial to the first-person <br/> narrative and is editing her debut– a <br/> memoir. She’s an assistant editor on <br/> the Feel Good project."
+            "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell.",
+            "She's currently editing her debut memoir."
         ],
         "link": "https://twitter.com/nfkenure",
         "linkText": "Twitter",
@@ -24,11 +26,10 @@
     {
         "name": "Opemipo Aikomo",
         "role": "Director",
-        "description": "Opemipo is a multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
+        "description": "Ope started wuruwuru and directs the team. In his spare time, he leads the design team at Paystack.",
         "mobileDescription": [
-            "Opemipo is a multidisciplinary <br/> designer who loves stories.",
-            "He discovered the supreme <br/> powers of the internet in 2008 <br/> and quickly stumbled into a <br/> career; making graphic design, <br/> websites and apps for clients.",
-            "Many years later, he's still <br/> obsessed. Ope directs the <br/> team at wuruwuru. In his spare <br/> time, he also leads the design <br/> team at Paystack."
+            "Ope started wuruwuru and directs the team.",
+            "In his spare time, he leads the design team at Paystack."
         ],
         "link": "https://opemipo.com",
         "linkText": "Website",
@@ -37,11 +38,11 @@
     {
         "name": "Tomiwa Ajiboye",
         "role": "Assistant Producer",
-        "description": "Tomiwa is a product designer and music buff that creates experiences in the creative tech industry. He’s building Comicrunes; a comic reading platform that connects graphic novel creators to the readers. He enjoys taking it slow by relaxing at the park or living on the edge by driving really fast–no in-betweens.",
+        "description": "Tomiwa is a product designer and music buff. He's building Comicrunes, a platform for reading comics. He enjoys taking it slow or driving really fast. No in-betweens.",
         "mobileDescription": [
-            "Tomiwa is a product designer and music buff that creates experiences in the creative tech industry.",
-            "He’s building Comicrunes; a comic <br/> reading platform that connects <br/> graphic novel creators to the readers." ,
-            "He enjoys taking it slow by relaxing <br/> at the park or living on the edge by <br/> driving really fast–no in-betweens."
+            "Tomiwa is a product designer and music buff.",
+            "He's building Comicrunes, a platform for bringing comics to readers." ,
+            "He enjoys taking it slow or driving really fast. No in-betweens."
         ],
         "link": "https://twitter.com/D_zyn__gawd",
         "linkText": "Twitter",
@@ -50,9 +51,10 @@
     {
         "name": "Williams Ogah",
         "role": "Manager",
-        "description": "Will worked as a project manager for three years before finally transitioning into a product manager with wuruwuru. He is especially curious about how collaborators make successful projects, and how the right management process brings creative ideas to life. When he is not busy taking naps, Williams also runs Adroit Consulting which helps businesses and individuals execute projects more efficiently.",
+        "description": "Williams previously worked as a project manager and is curious about how creative ideas come to life. When he's not taking naps, he also runs a consulting business.",
         "mobileDescription": [
-            "Will worked as a project manager for <br/> three years before finally transitioning <br/> into a product manager with <br/> wuruwuru. He is especially curious <br/> about how collaborators make <br/> successful projects, and how the <br/> right management process brings <br/> creative ideas to life. When he is not <br/> busy taking naps, Williams also runs <br/> Adroit Consulting which helps <br/> businesses and individuals execute <br/> projects more efficiently."
+            "Williams previously worked as a project manager and is curious about how creative ideas come to life.",
+            "When he's not taking naps, he also runs a consulting business."
         ],
         "link": "https://twitter.com/wllxms",
         "linkText": "Twitter",

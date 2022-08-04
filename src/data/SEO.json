@@ -49,5 +49,21 @@
 			"seoTitle": "wuruwuru | Cover Contest",
 			"pageDescription": "Apply to the wururuwuru Cover Contest"
 		}
+	},
+	{
+		"route": "/streetwear/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Streetwear",
+			"pageDescription": "A database of African streetwear brands"
+		}
+	},
+	{
+		"route": "/comics/",
+		"data": {
+			"pageTitle": "wuruwuru",
+			"seoTitle": "wuruwuru | Comics",
+			"pageDescription": "A database of African comics"
+		}
 	}
 ]

@@ -1,0 +1,32 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+
+export interface Props {
+  url?: string;
+}
+
+const {
+  url
+} = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<BaseHead>
+  <meta http-equiv="refresh" content={`1; URL=${url}`} />
+</BaseHead>
+
+
+<body>
+</body>
+
+</html>
+
+<style lang="scss">
+  p {
+    margin: 24px;
+    text-align: center;
+    font-style: italic;
+  }
+</style>

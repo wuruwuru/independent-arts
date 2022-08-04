@@ -1,0 +1,59 @@
+---
+
+import projects from "@data/projects.json";
+
+---
+
+<section>
+  <ul>
+    {projects.map((p) => (
+    <li>
+      <img src={`/assets/images/projects/${p.id}.png`} alt={`Cover image for ${p.title}`} />
+    </li>
+    ))}
+    {projects.map((p) => (
+    <li>
+      <img src={`/assets/images/projects/${p.id}.png`} alt={`Cover image for ${p.title}`} />
+    </li>
+    ))}
+  </ul>
+</section>
+
+
+<style lang="scss">
+	section {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+  }
+
+  ul {
+    display: flex;
+    animation: marquee 10s linear infinite running;
+    animation-delay: 1.5s;
+  }
+
+  li {
+    width: 600px;
+    display: inline-flex;
+    padding: 12px;
+    transition: all .2s ease;
+  }
+
+  img {
+    transition: all .5s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  img {
+    width: 100%;
+  }
+</style>

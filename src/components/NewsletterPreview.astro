@@ -7,29 +7,28 @@ const {
 ---
 
 <div class="snippet">
-  <div class="head">
-    <h3><a href={links.url} class="c-link c-link--out" target="_blank" referrerpolicy="origin">{title}</a></h3>
-    <p>{links.title}</p>
-  </div>
-  <div class="body">
-    <p>{description}</p>
-  </div>
+  <h3>
+    <a href={links.url} class="c-link c-link--out" target="_blank" referrerpolicy="origin">
+      {title}
+    </a>
+  </h3>
+  <p>{description}</p>
 </div>
 
 <style lang="scss">
-  .head {
-    a {
-      font-style: normal;
-    }
+  h3 {
+    margin-bottom: 10px;
+    font-family: var(--font-sans);
+    font-size: 2rem;
+  }
 
-    h3 {
-      margin-bottom: 0;
-    }
-
-    p {
-      margin: 0;
-      font-style: italic;
-    }
-
+  a {
+    font-style: normal;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 2rem;
+    font-style: italic;
   }
 </style>
