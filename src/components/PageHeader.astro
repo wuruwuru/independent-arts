@@ -1,21 +1,9 @@
----
-export interface Props {
-	title?: string;
-	description?: string
-}
-
-const {
-	title = 'is a publishing studio.',
-	description = 'We work with friends and other independent creators to produce niche stories and experiments that promote modern African culture on the internet.'
-} = Astro.props;
----
 
 <header>
 	<div class="l-container">
-		<span>
-			<h1><span class="emphasize">wuruwuru</span> {title} </h1>
-			<p>{description}</p>
-		</span>
+		<div class="text">
+			<slot />
+		</div>
 	</div>
 </header>
 
@@ -25,26 +13,11 @@ const {
 
 	header {
 		padding: calc(var(--spacer-base) * 0.75) 0 calc(var(--spacer-base) * 1.125);
-		font-size: 2.4rem;
+		font-size: 1.2rem;
 		line-height: 1.2;
-
-		.l-container span {
-			display: inline-block;
-			max-width: 60ch;
-
-			@include screen('small') {
-				max-width: unset;
-			}
-
-			>* {
-				display: inline;
-				font: inherit;
-			}
-		}
-
-		h1 .emphasize {
-			font-weight: 500;
-			font-style: italic;
+		
+		.text {
+			max-width: 600px;
 		}
 	}
 </style>
