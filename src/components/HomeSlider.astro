@@ -25,12 +25,12 @@ import projects from "@data/projects.json";
     width: 100%;
     display: flex;
     overflow: hidden;
-    animation: fadeIn linear 0.3s;
   }
 
   ul {
     display: flex;
     animation: marquee 10s linear infinite running;
+    animation-delay: 1.5s;
   }
 
   li {
@@ -46,11 +46,6 @@ import projects from "@data/projects.json";
     &:hover {
       transform: scale(1.03);
     }
-  }
-
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
   }
 
   @keyframes marquee {
