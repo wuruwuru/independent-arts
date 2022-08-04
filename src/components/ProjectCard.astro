@@ -23,7 +23,7 @@ const {
 <div class="project">
 	<div class="project-cover">
 			{url ? (
-			<a href={ url?.href || '#' } target="_blank">
+			<a href={ url?.href } target="_blank">
 				<img src={`/assets/images/projects/${id}.png`} alt={`Cover image for ${title}`} />
 			</a>
 			) : (
@@ -32,7 +32,13 @@ const {
 	</div>
 	<div class="project-text">
 		<div class="body">
-			<h2>{title}</h2>
+			<h2>
+			{url ? (
+				<a href={ url.href } target="_blank">{title}</a>
+			) : (
+				<span>{title}</span>
+			)}
+			</h2>
 			<p>{ description }</p>
 		</div>
 		<div class="footer">
@@ -41,7 +47,7 @@ const {
 				<span class="project-status-text">{status}</span>
 			</div>
 			{url && (
-			<a href={ url?.href || '#' } class="c-link c-link--out" target="_blank">{ url.text }</a>
+			<a href={ url?.href } class="c-link c-link--out" target="_blank">{ url.text }</a>
 			)}
 		</div>
 	</div>
