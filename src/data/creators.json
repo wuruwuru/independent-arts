@@ -304,119 +304,119 @@
     "name": "Yanmo Omorogbe",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
     "bio": "Yanmo is a Co-Founder and Director of Growth at Bamboo. Before founding Bamboo, she was an Investment Associate at the African Infrastructure Investment Managers (AIIM)",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "roleId": "storyteller",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/yanmoomorogbe/"
     } 
   },
   {
     "id": 27,
-    "name": "Khadijah",
+    "name": "LMBSKN",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "LMBSKN is a sound producer.",
+    "roleId": "sound_producer",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Twitter",
+      "url": "https://twitter.com/lmbskn"
     } 
   },
   {
     "id": 28,
-    "name": "Khadijah",
+    "name": "Remy Baggins",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Remy is a is a Nigerian singer, songwriter, producer and sound engineer.",
+    "roleId": "sound_producer",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Twitter",
+      "url": "https://twitter.com/remybaggins"
     } 
   },
   {
     "id": 29,
-    "name": "Khadijah",
+    "name": "Chuks Emeibiam",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Chuks is the lead animator on the Hanky Panky Project.",
+    "roleId": "animator",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Website",
+      "url": "https://www.google.com/"
     } 
   },
   {
     "id": 30,
-    "name": "Khadijah",
+    "name": "Joshua Adeoye",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Joshua is a freelance animator, book illustrator and artist, currently working on 2 comic series and a secret project.",
+    "roleId": "animator",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Twitter",
+      "url": "https://twitter.com/joshua_adeoye_"
     } 
   },
   {
     "id": 31,
-    "name": "Khadijah",
+    "name": "Kolade Morakinyo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Kolade is the head of the sound department at Visus Sonic Arts.",
+    "roleId": "sound_designer",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Instagram",
+      "url": "https://www.instagram.com/vsonicarts/"
     } 
   },
   {
     "id": 32,
-    "name": "Khadijah",
+    "name": "Oshuwa Imoyo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Oshuwa is an actress, known for The Wait (2021) and The Smart Money Woman.",
+    "roleId": "voice_actor",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Instagram",
+      "url": "https://www.instagram.com/oshuwa_ti/"
     } 
   },
   {
     "id": 33,
-    "name": "Khadijah",
+    "name": "Ifebusola Shotunde",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Ifebusola is a photographer and graphic designer who focuses on documenting the people and places on his life's journey",
+    "roleId": "photographer",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Instagram",
+      "url": "https://www.instagram.com/ifebusola_s/"
     } 
   },
   {
     "id": 34,
-    "name": "Khadijah",
+    "name": "Jessica A.",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "bio": "Jessica is a scriptwriter",
     "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "Website",
+      "url": "https://www.google.com/"
     } 
   },
   {
     "id": 35,
-    "name": "Khadijah",
+    "name": "Tosin Amire",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["jguide"], 
+    "bio": "Tosin is an experienced audio post-production person (Film score Composition and sound designing) with a demonstrated history of working in the entertainment industry.",
+    "roleId": "sound_designer",
+    "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://livrariadaesquina-blog.tumblr.com/"
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/tosin-amire-2bab6694/"
     } 
   }
 ]
