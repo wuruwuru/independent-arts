@@ -5,7 +5,6 @@ import SEO from "@data/SEO.json";
 
 const defaultSEO = SEO.find(({ type = null }) => type && type === 'default');
 const pageSEO = SEO.find(({ route }) => route === Astro.url.pathname);
-
 const SEOProps = {
 	...defaultSEO.data,
 	...pageSEO?.data,
