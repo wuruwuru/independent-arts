@@ -1,21 +1,81 @@
 [
   {
-    "id": 2,
-    "name": "LMBSKN",
+    "id": 1,
+    "name": "Vanny",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "A multidisciplinary designer who loves stories. He discovered the supreme powers of the internet in 2008 and quickly stumbled into a career; making graphic design, websites and apps for clients. Ope directs the team at wuruwuru. In his spare time, he also leads the design team at Paystack.",
-    "roleId": "sound_producer",
-    "projectIds": ["hankypanky"], 
+    "bio": "Vanny is passionate about western Comicbooks but his art style is heavily inspired and driven by manga-style art with influences such as Sakamoto Shinichi, Ito Ogure and Tite Kubo. My artistic themes include Death, Aging, Lunacy, Curiosity and several dark-themed subjects",
+    "roleId": "artist",
+    "projectIds": ["jguide"], 
     "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/LMBSKN"
+      "text": "Website",
+      "url": "https://nonstop-astronomy-1aa.notion.site/My-friends-call-me-Vanny-d16c2713062240db816a9c7c81df055d"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Bolu Sowoolu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Bolu is a multidisciplinary artist passionate about evolving her art.",
+    "roleId": "artist",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Linktree",
+      "url": "https://linktr.ee/bolusowoolu"
     }
   },
   {
     "id": 3,
-    "name": "Daniel Orubo",
+    "name": "Khadijah",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "bio": "Khadijah works in advertising. She played a huge role in defining the stories for The J Guide.",
+    "roleId": "storyteller",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://www.google.com/"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Jubril Olambiwonnu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Jubril is an IOS Engineer and a super cool human. He contributed immensely to the pilot episode for The J Guide.",
+    "roleId": "engineer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/Jubril_O"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Eseosa Belo-Osagie",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eseosa is a digital illustrator and product designer at Check DC.",
+    "roleId": "designer",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "Behance",
+      "url": "https://www.behance.net/eseosabelo-os"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Wale Oloworekende",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "bio": "Wale is a freelance culture writer and critic operating from Lagos whose work explores the intersection of popular culture, music, film, sports culture, and youth lifestyle.",
+    "roleId": "writer",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://www.waleoloworekende.com/about"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Daniel Orubo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "bio": "Daniel is the head of content at Piggyvest and Backdrop",
     "roleId": "editor",
     "projectIds": ["feelgood","hankypanky"], 
     "socialLink": {
@@ -24,46 +84,10 @@
     }
   },
   {
-    "id": 4,
-    "name": "Ani Kayode",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["feelgood"], 
-    "socialLink": {
-      "text": "Linktree",
-      "url": "https://linktr.ee/Kayode_ani"
-    }
-  },
-  {
-    "id": 5,
-    "name": "Ope Adedeji",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "writer",
-    "projectIds": ["feelgood"], 
-    "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/OpeAdedeji_"
-    }
-  },
-  {
-    "id": 6,
-    "name": "Niyi Okeowo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "designer",
-    "projectIds": ["feelgood"], 
-    "socialLink": {
-      "text": "Website",
-      "url": "https://niyiokeowo.com/"
-    }
-  },
-  {
-    "id": 7,
+    "id": 8,
     "name": "Ire Aderinokun",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Ire is a front-end developer and user interface designer. She's the co-founder of Hellicarrier.",
     "roleId": "engineer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -72,34 +96,34 @@
     }
   },
   {
-    "id": 8,
-    "name": "Daniel Vanny",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "illustrator",
-    "projectIds": ["jguide"], 
-    "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/Avantasiart"
-    }
-  },
-  {
     "id": 9,
-    "name": "Bolu Sowoolu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "illustrator",
-    "projectIds": ["jguide"], 
+    "name": "Ani Kayode",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/e12ec5fac9a5a1a1da219dc31ce162fc/5c0e446a",
+    "bio": "Ani Kayode is an award-winning queer writer and liberation fighter marinated in anti-imperialist rage.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
     "socialLink": {
-      "text": "Website",
-      "url": "https://www.artstation.com/bolusowoolu"
+      "text": "Linktree",
+      "url": "https://linktr.ee/Kayode_ani"
     }
   },
   {
     "id": 10,
-    "name": "Olutimehin Kukoyi",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "name": "Edwin Okolo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/afcadebc779643e42a6bdd82201852f7/999040b6",
+    "bio": "Edwin is a result-oriented writer, editor and strategic thinker focused on using his knowledge, experience and skill sets to enrich the lives of my target audience.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://edwinokolocheque.com/"
+    }
+  },
+  {
+    "id": 11,
+    "name": "OluTimehin Kukoyi",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/56719ac42123e06230e674789881e7ac/139df99f",
+    "bio": "Timehin is a Nigerian writer, essayist and public intellectual. Her work concentrates on questions of gender, sexuality, urbanism and feminism.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -108,43 +132,187 @@
     }
   },
   {
-    "id": 11,
+    "id": 12,
+    "name": "Adeniyi Ademoroti",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/5b0739318d85fea5578a341a1dd7b851/5a38da33",
+    "bio": "Adeniyi is a writer and an editor at BellaNaija.com. His writing has been featured in Brittlepaper and Per Contra.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Instagram",
+      "url": "https://www.instagram.com/lsvvr/"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Olakunle Olugunro",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/bf54faf7125b287cca0a6295362cf2d6/c25752e9",
+    "bio": "Olakunle is a full-time happening babe writing his way into clarity, growth and empathy.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/KunleOlogunro"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Innocent Ilo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/f8bd11f080352d3c0636abd9f03a9d33/be6108a8",
+    "bio": "Innocent is a Nigerian writer based in Lagos. They are the regional winner for Africa of the 2020 Commonwealth Short Story Prize for their short story ‘When a Woman Renounces Motherhood’.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://iamilocent.me/"
+    } 
+  },
+  {
+    "id": 15,
     "name": "Mariam Sule-Izuagbe",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/2cfb60161b06bc40444a76b699b5a3aa/60a5ebd3",
+    "bio": "Mariam is a multifaceted professional whose work centers on intersectional feminism, underrepresented minorities within society as well as the delicate intricacies of interpersonal communication dynamics.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
       "text": "Website",
       "url": "https://mariamsule.disha.page/"
-    }
+    } 
   },
   {
-    "id": 12,
+    "id": 16,
+    "name": "Fareeda Abdulkareem",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/506db2e3f5b245ce0baccfb729e30cb8/e06abf9b",
+    "bio": "Fareeda is a freelance writer. One of the foremost critics in her country she was selected for the critic’s academy at the 2020 International Film Festival Rotterdam",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/fareedaabdulkareem/"
+    } 
+  },
+  {
+    "id": 17,
+    "name": "Ope Adedeji",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a6d72983c2155e4eb1ee19823ba7ad14/b33d6007",
+    "bio": "Ope is an experienced editor with a demonstrated history of working in online media and traditional publishing",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/OpeAdedeji_"
+    } 
+  },
+  {
+    "id": 18,
+    "name": "Kunle Popoola",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Kunle is a writer.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://www.google.com/"
+    } 
+  },
+  {
+    "id": 19,
+    "name": "Osione",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Osione is a brand designer. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities. He is really passionate about helping companies craft profitable identities.",
+    "roleId": "designer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://www.google.com/"
+    } 
+  },
+  {
+    "id": 20,
+    "name": "Niyi Okeowo",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Niyi is a multi-disciplinary designer. He is CDO at Garmspot, and he's currently building Astra, a network of cities in the metaverse where you can play nft games and buy digital fashion you can wear in real life.",
+    "roleId": "designer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://niyiokeowo.com/"
+    } 
+  },
+  {
+    "id": 21,
     "name": "Saratu Dan-Habu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Saratu is experienced in legal matters relating to emerging and disruptive technology and specializes in all aspects of intellectual property law and practice, especially as it relates to searches, filings, registration, protection and enforcement.",
+    "roleId": "lawyer",
+    "projectIds": ["feelgood","hankypanky"], 
+    "socialLink": {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/saratu-dan-habu-76a0a784/"
+    } 
+  },
+  {
+    "id": 22,
+    "name": "Hannatu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Hannatu is a legal practitioner.",
+    "roleId": "lawyer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://www.google.com/"
+    } 
+  },
+  {
+    "id": 23,
+    "name": "Yadichinma",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
     "roleId": "writer",
-    "projectIds": ["hankypanky","feelgood"], 
+    "projectIds": ["ludo"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://unovamemes.tumblr.com/"
-    }
+      "text": "Instagram",
+      "url": "https://www.instagram.com/yadichinma/"
+    } 
   },
   {
-    "id": 13,
-    "name": "Oshuwa Imoyo",
+    "id": 24,
+    "name": "Samson",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
-    "roleId": "voice_actor",
-    "projectIds": ["hankypanky"], 
+    "bio": "Samson is an assistant producer at Kugali.",
+    "roleId": "producer",
+    "projectIds": ["edeyhappen"], 
     "socialLink": {
-      "text": "Tumblr",
-      "url": "https://gotmemeslol-blog.tumblr.com/"
-    }
+      "text": "Website",
+      "url": "https://www.google.com/"
+    } 
   },
   {
-    "id": 14,
+    "id": 25,
+    "name": "Ivierawo Lesso",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Ivie is a self-taught illustrator and 2D animator.",
+    "roleId": "artist",
+    "projectIds": ["edeyhappen"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://ivie.disha.page/"
+    } 
+  },
+  {
+    "id": 26,
+    "name": "Yanmo Omorogbe",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Yanmo is a Co-Founder and Director of Growth at Bamboo. Before founding Bamboo, she was an Investment Associate at the African Infrastructure Investment Managers (AIIM)",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 27,
     "name": "Khadijah",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
     "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
@@ -153,6 +321,102 @@
     "socialLink": {
       "text": "Tumblr",
       "url": "https://livrariadaesquina-blog.tumblr.com/"
-    }
+    } 
+  },
+  {
+    "id": 28,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 29,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 30,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 31,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 32,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 33,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 34,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
+  },
+  {
+    "id": 35,
+    "name": "Khadijah",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "roleId": "writer",
+    "projectIds": ["jguide"], 
+    "socialLink": {
+      "text": "Tumblr",
+      "url": "https://livrariadaesquina-blog.tumblr.com/"
+    } 
   }
 ]
