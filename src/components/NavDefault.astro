@@ -19,7 +19,7 @@ const links = [
 const path = Astro.url.pathname;
 ---
 
-<nav class="l-container l-container--fluid">
+<nav class="c-nav l-container l-container--fluid">
   <ul id="menu">
     {links.map(({ name, route }) => (
     <li class={path===route ? 'is-active' : '' }><a href={route}>{name}</a></li>
@@ -50,7 +50,7 @@ const path = Astro.url.pathname;
 <style lang="scss">
   @import "../styles/mixins.scss";
 
-  nav {
+  .c-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
