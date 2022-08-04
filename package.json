@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^0.2.6",
-    "astro": "^1.0.0-rc.5",
+    "astro": "^1.0.0-rc.6",
     "autoprefixer": "^10.4.7",
     "editorconfig": "^0.15.3",
     "postcss": "^8.4.14",
