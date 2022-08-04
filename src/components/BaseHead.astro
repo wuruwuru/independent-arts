@@ -4,12 +4,12 @@ import Analytics from "./Analytics.astro";
 import SEO from "@data/SEO.json";
 
 const defaultSEO = SEO.find(({ type = null }) => type && type === 'default');
-const pageSEO = SEO.find(({ route }) => route === Astro.url.pathname);
+const pageSEO = SEO.find(({ route }) => route === Astro.canonicalURL.pathname);
 
 const SEOProps = {
 	...defaultSEO.data,
 	...pageSEO?.data,
-	pageUrl: Astro.url.href,
+	pageUrl: Astro.canonicalURL.href,
 }
 ---
 
