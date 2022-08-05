@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Vanny",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Vanny is passionate about western Comicbooks but his art style is heavily inspired and driven by manga-style art with influences such as Sakamoto Shinichi, Ito Ogure and Tite Kubo. My artistic themes include Death, Aging, Lunacy, Curiosity and several dark-themed subjects",
+    "bio": "Vanny is passionate about western comicbooks but his art style is heavily inspired and driven by manga-style art. His artistic themes include death, aging, lunacy and curiosity.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
     "socialLink": {
@@ -15,7 +15,7 @@
     "id": 2,
     "name": "Bolu Sowoolu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Bolu is a multidisciplinary artist passionate about evolving her art.",
+    "bio": "Bolu is a multidisciplinary artist and creator.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
     "socialLink": {
@@ -25,9 +25,9 @@
   },
   {
     "id": 3,
-    "name": "Khadijah",
+    "name": "Khadijah Ibrahim",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Khadijah works in advertising. She played a huge role in defining the stories for The J Guide.",
+    "bio": "Khadijah works in advertising and helped write The J Guide.",
     "roleId": "storyteller",
     "projectIds": ["jguide"], 
     "socialLink": {
@@ -39,7 +39,7 @@
     "id": 4,
     "name": "Jubril Olambiwonnu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Jubril is an IOS Engineer and a super cool human. He contributed immensely to the pilot episode for The J Guide.",
+    "bio": "Jubril is an IOS Engineer and helped write The J Guide.",
     "roleId": "engineer",
     "projectIds": ["jguide"], 
     "socialLink": {
@@ -63,7 +63,7 @@
     "id": 6,
     "name": "Wale Oloworekende",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
-    "bio": "Wale is a freelance culture writer and critic operating from Lagos whose work explores the intersection of popular culture, music, film, sports culture, and youth lifestyle.",
+    "bio": "Wale is a freelance writer and critic whose work explores the intersection of popular culture, music, film, sports, and lifestyle.",
     "roleId": "writer",
     "projectIds": ["coverbank"], 
     "socialLink": {
@@ -75,7 +75,7 @@
     "id": 7,
     "name": "Daniel Orubo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
-    "bio": "Daniel is the head of content at Piggyvest and Backdrop",
+    "bio": "Daniel is the head of content at Piggyvest and Backdrop.",
     "roleId": "editor",
     "projectIds": ["feelgood","hankypanky"], 
     "socialLink": {
@@ -84,22 +84,10 @@
     }
   },
   {
-    "id": 8,
-    "name": "Ire Aderinokun",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Ire is a front-end developer and user interface designer. She's the co-founder of Hellicarrier.",
-    "roleId": "engineer",
-    "projectIds": ["feelgood"], 
-    "socialLink": {
-      "text": "Website",
-      "url": "https://ireaderinokun.com/"
-    }
-  },
-  {
     "id": 9,
     "name": "Ani Kayode",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/e12ec5fac9a5a1a1da219dc31ce162fc/5c0e446a",
-    "bio": "Ani Kayode is an award-winning queer writer and liberation fighter marinated in anti-imperialist rage.",
+    "bio": "Ani Kayode is an award-winning writer and liberation fighter marinated in anti-imperialist rage.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -111,7 +99,7 @@
     "id": 10,
     "name": "Edwin Okolo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/afcadebc779643e42a6bdd82201852f7/999040b6",
-    "bio": "Edwin is a result-oriented writer, editor and strategic thinker focused on using his knowledge, experience and skill sets to enrich the lives of my target audience.",
+    "bio": "Edwin is a writer, editor and strategic thinker who also founded the boutique design label Studio Imo.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -159,7 +147,7 @@
     "id": 14,
     "name": "Innocent Ilo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/f8bd11f080352d3c0636abd9f03a9d33/be6108a8",
-    "bio": "Innocent is a Nigerian writer based in Lagos. They are the regional winner for Africa of the 2020 Commonwealth Short Story Prize for their short story ‘When a Woman Renounces Motherhood’.",
+    "bio": "Innocent is a Nigerian writer based in Lagos. They are the regional winner for Africa of the 2020 Commonwealth Short Story Prize for their short story 'When a Woman Renounces Motherhood'.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -171,7 +159,7 @@
     "id": 15,
     "name": "Mariam Sule-Izuagbe",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/2cfb60161b06bc40444a76b699b5a3aa/60a5ebd3",
-    "bio": "Mariam is a multifaceted professional whose work centers on intersectional feminism, underrepresented minorities within society as well as the delicate intricacies of interpersonal communication dynamics.",
+    "bio": "Mariam's work centers on intersectional feminism, underrepresented minorities and interpersonal communication dynamics.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -183,7 +171,7 @@
     "id": 16,
     "name": "Fareeda Abdulkareem",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/506db2e3f5b245ce0baccfb729e30cb8/e06abf9b",
-    "bio": "Fareeda is a freelance writer. One of the foremost critics in her country she was selected for the critic’s academy at the 2020 International Film Festival Rotterdam",
+    "bio": "Fareeda is a freelance writer. She was selected for the critic's academy at the 2020 International Film Festival Rotterdam.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -195,7 +183,7 @@
     "id": 17,
     "name": "Ope Adedeji",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/a6d72983c2155e4eb1ee19823ba7ad14/b33d6007",
-    "bio": "Ope is an experienced editor with a demonstrated history of working in online media and traditional publishing",
+    "bio": "Ope is an experienced editor and has worked in online media and traditional publishing.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -217,9 +205,9 @@
   },
   {
     "id": 19,
-    "name": "Osione",
+    "name": "Osione Itegboje",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Osione is a brand designer. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities. He is really passionate about helping companies craft profitable identities.",
+    "bio": "Osione is a multidisciplinary artist. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -231,7 +219,7 @@
     "id": 20,
     "name": "Niyi Okeowo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Niyi is a multi-disciplinary designer. He is CDO at Garmspot, and he's currently building Astra, a network of cities in the metaverse where you can play nft games and buy digital fashion you can wear in real life.",
+    "bio": "Niyi is the Chief Design Officer at Garmspot and is currently building Astra, a network of cities in the metaverse for playing NFT games and buying digital fashion to wear IRL.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -243,7 +231,7 @@
     "id": 21,
     "name": "Saratu Dan-Habu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Saratu is experienced in legal matters relating to emerging and disruptive technology and specializes in all aspects of intellectual property law and practice, especially as it relates to searches, filings, registration, protection and enforcement.",
+    "bio": "Saratu is curious about emerging and disruptive technology and specializes in all aspects of intellectual property law and practice.",
     "roleId": "lawyer",
     "projectIds": ["feelgood","hankypanky"], 
     "socialLink": {
@@ -253,21 +241,21 @@
   },
   {
     "id": 22,
-    "name": "Hannatu",
+    "name": "Hannatu Dan-Habu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Hannatu is a legal practitioner.",
+    "bio": "Hannatu runs Hawk & Dane, a technology and data advisory law firm.",
     "roleId": "lawyer",
     "projectIds": ["feelgood"], 
     "socialLink": {
       "text": "Website",
-      "url": "https://www.google.com/"
+      "url": "https://hawkanddane.com/"
     } 
   },
   {
     "id": 23,
-    "name": "Yadichinma",
+    "name": "Yadichinma Uloha-Kalu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Eris is a writer and storyboard artist. When she's not building with friends at wuruwuru, she's learning french and training her cat to understand sign language.",
+    "bio": "Yadi is a multidisciplinary artist.",
     "roleId": "writer",
     "projectIds": ["ludo"], 
     "socialLink": {
@@ -277,14 +265,14 @@
   },
   {
     "id": 24,
-    "name": "Samson",
+    "name": "Samson Oyedija",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
     "bio": "Samson is an assistant producer at Kugali.",
     "roleId": "producer",
     "projectIds": ["edeyhappen"], 
     "socialLink": {
-      "text": "Website",
-      "url": "https://www.google.com/"
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/samson-oyedija-436357a8/?trk=people_directory&originalSubdomain=ng"
     } 
   },
   {
@@ -303,7 +291,7 @@
     "id": 26,
     "name": "Yanmo Omorogbe",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Yanmo is a Co-Founder and Director of Growth at Bamboo. Before founding Bamboo, she was an Investment Associate at the African Infrastructure Investment Managers (AIIM)",
+    "bio": "Yanmo is a friend of the studio and cofounder at Bamboo.",
     "roleId": "storyteller",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -339,19 +327,19 @@
     "id": 29,
     "name": "Chuks Emeibiam",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Chuks is the lead animator on the Hanky Panky Project.",
+    "bio": "Chuks leads the animation team at Madbox Studios.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
     "socialLink": {
       "text": "Website",
-      "url": "https://www.google.com/"
+      "url": "https://madboxspace.com"
     } 
   },
   {
     "id": 30,
     "name": "Joshua Adeoye",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Joshua is a freelance animator, book illustrator and artist, currently working on 2 comic series and a secret project.",
+    "bio": "Joshua is a freelance animator, book illustrator and artist, currently working on two comic series.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -363,7 +351,7 @@
     "id": 31,
     "name": "Kolade Morakinyo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Kolade is the head of the sound department at Visus Sonic Arts.",
+    "bio": "Kolade leads the sound department at Visus Sonic Arts.",
     "roleId": "sound_designer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -375,7 +363,7 @@
     "id": 32,
     "name": "Oshuwa Imoyo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Oshuwa is an actress, known for The Wait (2021) and The Smart Money Woman.",
+    "bio": "Oshuwa is an actress, most popularly known for The Wait (2021) and The Smart Money Woman (2020).",
     "roleId": "voice_actor",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -387,7 +375,7 @@
     "id": 33,
     "name": "Ifebusola Shotunde",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Ifebusola is a photographer and graphic designer who focuses on documenting the people and places on his life's journey",
+    "bio": "Ifebusola is a photographer and graphic designer who focuses on documenting the people and places on his life's journey.",
     "roleId": "photographer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -399,19 +387,19 @@
     "id": 34,
     "name": "Jessica A.",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Jessica is a scriptwriter",
+    "bio": "Jessica has worked as a Story & Script Editor, Head Writer and Content Director. She's a producer on Big Brother Naija and currently writes Africa Magic's Primetime TV series, Venge.",
     "roleId": "writer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Website",
-      "url": "https://www.google.com/"
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jessicaabaga/?originalSubdomain=ng"
     } 
   },
   {
     "id": 35,
     "name": "Tosin Amire",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Tosin is an experienced audio post-production person (Film score Composition and sound designing) with a demonstrated history of working in the entertainment industry.",
+    "bio": "Tosin is an audio post-production artist experienced in the entertainment industry.",
     "roleId": "sound_designer",
     "projectIds": ["hankypanky"], 
     "socialLink": {

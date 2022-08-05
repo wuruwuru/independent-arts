@@ -7,8 +7,8 @@ export interface Props {
 }
 
 const {
-  title = 'Album Covers',
-  description = 5000,
+  title,
+  description,
   imageLink,
   size = 72
 } = Astro.props;
@@ -32,7 +32,7 @@ const descriptionClass = typeof (description) == 'number' ? '-is-integer' : '';
   </div>
   <div class="text">
     <div class="inner">
-      <div data-name>{ title }</div>
+      <p data-name>{ title }</p>
       <p data-description class={descriptionClass}>{ description }</p>
     </div>
   </div>
@@ -61,11 +61,8 @@ const descriptionClass = typeof (description) == 'number' ? '-is-integer' : '';
     .avatar {
       background: whitesmoke;
       aspect-ratio: 1;
-      display: flex;
-
-      img {
-        object-fit: cover;
-      }
+      border-radius: 50%;
+      overflow: hidden;
     }
 
     .text .inner {
@@ -75,11 +72,14 @@ const descriptionClass = typeof (description) == 'number' ? '-is-integer' : '';
       >p {
         margin-block-start: 4px;
         margin-block-end: 4px;
-        color: var(--color-dark-gray);
         font-family: var(--font-sans);
 
         &.-is-integer {
           font-family: var(--font-sans-mono);
+        }
+
+        &:nth-child(2) {
+          color: var(--color-dark-gray);
         }
       }
     }

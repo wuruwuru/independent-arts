@@ -20,8 +20,8 @@ const fetchCreators = creators.map((creator) => {
     ...rest,
     role: roles.find(({ id }) => roleId === id),
     projects: projectIds.map(projectID => {
-      const { id, category } = projects.find(({ id }) => id === projectID)
-      return { id, genre: category.toLowerCase() };
+      const { id, category, ...rest } = projects.find(({ id }) => id === projectID);
+      return { id, genre: category.toLowerCase(), ...rest };
     }),
   }
 })
@@ -72,7 +72,14 @@ const filters = [
               </div>
               <div class="bio">
                 <p>{bio}</p>
-                <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a>
+                <div>
+                  <div>Projects:
+                    {projects.map(({id, title}) => (
+                      <a href="#">{title}</a>
+                    ))}
+                  </div>
+                  <div>Learn more: <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a></div>
+                </div>
               </div>
             </li>)}
             )}
@@ -378,6 +385,19 @@ const filters = [
       >p {
         margin-top: 0;
         margin-block-start: 0;
+      }
+
+      > div {
+        color: var(--color-dark-gray);
+      }
+
+      a {
+        margin-right: 4px;
+        &:not(:last-child) {
+          &:after {
+            content: ',';
+          }
+        }
       }
     }
 
