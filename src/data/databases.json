@@ -2,7 +2,7 @@
     {
         "id": "covers",
         "title": "Album Covers",
-        "count": "5000",
+        "count": "5158",
         "url": "https://wuruwuru.com/covers"
     },
     {
@@ -14,7 +14,7 @@
   {
     "id": "comics",
     "title": "Comic Books",
-    "count": "470",
+    "count": "208",
     "url": "https://wuruwuru.com/comics"
-}
+  }
 ]
