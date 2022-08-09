@@ -73,6 +73,18 @@
   },
   {
     "id": 7,
+    "name": "Jessica Louis",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "bio": "Jessica is a visual story teller. She's an artist and illustrator who helped get Cover Bank to 5000 images.",
+    "roleId": "artist",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "Instagram",
+      "url": "https://www.instagram.com/jessicalouis.art/"
+    }
+  },
+  {
+    "id": 8,
     "name": "Daniel Orubo",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
     "bio": "Daniel is the head of content at Piggyvest and Backdrop.",
