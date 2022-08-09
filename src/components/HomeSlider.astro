@@ -21,7 +21,7 @@ import projects from "@data/projects.json";
 
 
 <style lang="scss">
-	section {
+  section {
     width: 100%;
     display: flex;
     overflow: hidden;
@@ -31,6 +31,9 @@ import projects from "@data/projects.json";
     display: flex;
     animation: marquee 10s linear infinite running;
     animation-delay: 1.5s;
+    @media all and (max-width: 800px) {
+	animation-duration: 30s;
+    }
   }
 
   li {
