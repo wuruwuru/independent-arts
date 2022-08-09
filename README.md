@@ -1,5 +1,5 @@
 # wuruwuru
-A collection of web projects and comics
+A collection of publishing experiments
 
 Built with [Astro](https://astro.build/), Javascript, HTML and CSS (SCSS)
 
