@@ -54,5 +54,9 @@
   {
     "id": "photographer",
     "label": "Photographer"
+  },
+  {
+    "id": "director",
+    "label": "Director"
   }
 ]
