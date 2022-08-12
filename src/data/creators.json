@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "Vanny",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Vanny is passionate about western comicbooks but his art style is heavily inspired and driven by manga-style art. His artistic themes include death, aging, lunacy and curiosity.",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/9d7bcf53ba525b6ed565bef6128a8012/a118498f",
+    "bio": "Vanny is Concept Artist/Illustrator & creative designer who is passionate about western comic books but his art style is heavily inspired and driven by manga-style art. He believes his art is Avantasia which is a never-ending revealing of untold stories.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
     "socialLink": {
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Bolu Sowoolu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
     "bio": "Bolu is a multidisciplinary artist and creator.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Khadijah Ibrahim",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
     "bio": "Khadijah works in advertising and helped write The J Guide.",
     "roleId": "storyteller",
     "projectIds": ["jguide"], 
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Jubril Olambiwonnu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/bed3980a550a5734a49b0d0401363ea8/4cf18e2b",
     "bio": "Jubril is an IOS Engineer and helped write The J Guide.",
     "roleId": "engineer",
     "projectIds": ["jguide"], 
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Eseosa Belo-Osagie",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/1321cc46af0ca6709a6578f0ed213df5/8e13fd49",
     "bio": "Eseosa is a digital illustrator and product designer at Check DC.",
     "roleId": "designer",
     "projectIds": ["coverbank"], 
@@ -62,19 +62,19 @@
   {
     "id": 6,
     "name": "Wale Oloworekende",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
     "bio": "Wale is a freelance writer and critic whose work explores the intersection of popular culture, music, film, sports, and lifestyle.",
-    "roleId": "writer",
+    "roleId": "storyteller",
     "projectIds": ["coverbank"], 
     "socialLink": {
-      "text": "Website",
-      "url": "https://www.waleoloworekende.com/about"
+      "text": "Twitter",
+      "url": "https://twitter.com/walenchism"
     }
   },
   {
     "id": 7,
     "name": "Jessica Louis",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
     "bio": "Jessica is a visual story teller. She's an artist and illustrator who helped get Cover Bank to 5000 images.",
     "roleId": "artist",
     "projectIds": ["coverbank"], 
@@ -86,9 +86,9 @@
   {
     "id": 8,
     "name": "Daniel Orubo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/29a9494395d4335e67fdced2da794977/cb191618",
-    "bio": "Daniel is the head of content at Piggyvest and Backdrop.",
-    "roleId": "editor",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/5bc393b577665d83870ad30e635c73ec/0aa82a94",
+    "bio": "Daniel is a writer, editor and director. He currently works as Head of Content at PiggyVest and Backdrop.",
+    "roleId": "director",
     "projectIds": ["feelgood","hankypanky"], 
     "socialLink": {
       "text": "Twitter",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Ani Kayode",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/e12ec5fac9a5a1a1da219dc31ce162fc/5c0e446a",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/e260b1d998bc0dba9f2f54ad5a222dc6/123f14ec",
     "bio": "Ani Kayode is an award-winning writer and liberation fighter marinated in anti-imperialist rage.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Edwin Okolo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/afcadebc779643e42a6bdd82201852f7/999040b6",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/2ef2a1379d33ba79eeef980b13d959a0/f02bdc90",
     "bio": "Edwin is a writer, editor and strategic thinker who also founded the boutique design label Studio Imo.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -121,9 +121,9 @@
   },
   {
     "id": 11,
-    "name": "OluTimehin Kukoyi",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/56719ac42123e06230e674789881e7ac/139df99f",
-    "bio": "Timehin is a Nigerian writer, essayist and public intellectual. Her work concentrates on questions of gender, sexuality, urbanism and feminism.",
+    "name": "Timehin",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/965605c07334383ebeec1d6481f30bd7/46f783cb",
+    "bio": "OluTimehin is a Nigerian storyteller working primarily in multi-format nonfiction and public advocacy.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -145,14 +145,14 @@
   },
   {
     "id": 13,
-    "name": "Olakunle Olugunro",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/bf54faf7125b287cca0a6295362cf2d6/c25752e9",
-    "bio": "Olakunle is a full-time happening babe writing his way into clarity, growth and empathy.",
+    "name": "Olakunle Ologunro",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/dc811b4e0aa42ba1f7b8c3b1a9e41c86/d31599bf",
+    "bio": "Olakunle Ologunro is a writer from Lagos, Nigeria. He is a finalist for the 2020 Adina Talve-Goodman Fellowship from One Story Magazine.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/KunleOlogunro"
+      "text": "Website",
+      "url": "https://kunleologunro.substack.com/"
     }
   },
   {
@@ -170,31 +170,31 @@
   {
     "id": 15,
     "name": "Mariam Sule-Izuagbe",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/2cfb60161b06bc40444a76b699b5a3aa/60a5ebd3",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/3e06ff1b50203de737d581bae2049c46/429e906e",
     "bio": "Mariam's work centers on intersectional feminism, underrepresented minorities and interpersonal communication dynamics.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
-      "text": "Website",
-      "url": "https://mariamsule.disha.page/"
+      "text": "Twitter",
+      "url": "https://twitter.com/ohiaofeh"
     } 
   },
   {
     "id": 16,
-    "name": "Fareeda Abdulkareem",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/506db2e3f5b245ce0baccfb729e30cb8/e06abf9b",
-    "bio": "Fareeda is a freelance writer. She was selected for the critic's academy at the 2020 International Film Festival Rotterdam.",
+    "name": "Alithnayn",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/cb51db421c8175e9880b7a492abb9c22/82c0ee14",
+    "bio": "Alithnayn is a dog and a cat person. She gets paid to tackle big socioeconomic issues and write. She has been published by Harvard, Quartz, Wasafiri, Ozy and more. She won a short story day africa prize for outstanding fiction in 2021. ",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
-      "text": "LinkedIn",
-      "url": "https://www.linkedin.com/in/fareedaabdulkareem/"
+      "text": "Twitter",
+      "url": "https://twitter.com/politicofareeda"
     } 
   },
   {
     "id": 17,
     "name": "Ope Adedeji",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a6d72983c2155e4eb1ee19823ba7ad14/b33d6007",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/fc3fca48f0d4aced8c28e71bb7acd0bd/17f4cb46",
     "bio": "Ope is an experienced editor and has worked in online media and traditional publishing.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -206,7 +206,7 @@
   {
     "id": 18,
     "name": "Kunle Popoola",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
     "bio": "Kunle is a writer.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -218,7 +218,7 @@
   {
     "id": 19,
     "name": "Osione Itegboje",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
     "bio": "Osione is a multidisciplinary artist. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
@@ -230,7 +230,7 @@
   {
     "id": 20,
     "name": "Niyi Okeowo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
     "bio": "Niyi is the Chief Design Officer at Garmspot and is currently building Astra, a network of cities in the metaverse for playing NFT games and buying digital fashion to wear IRL.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
@@ -242,7 +242,7 @@
   {
     "id": 21,
     "name": "Saratu Dan-Habu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
     "bio": "Saratu is curious about emerging and disruptive technology and specializes in all aspects of intellectual property law and practice.",
     "roleId": "lawyer",
     "projectIds": ["feelgood","hankypanky"], 
@@ -254,7 +254,7 @@
   {
     "id": 22,
     "name": "Hannatu Dan-Habu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
     "bio": "Hannatu runs Hawk & Dane, a technology and data advisory law firm.",
     "roleId": "lawyer",
     "projectIds": ["feelgood"], 
@@ -266,8 +266,8 @@
   {
     "id": 23,
     "name": "Yadichinma Uloha-Kalu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Yadi is a multidisciplinary artist.",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8d4155b5da8767c29dc89df10f0ccbd5/1ccf3310",
+    "bio": "Yadichinma Ukoha-Kalu is an independent artist, illustrator and art director based in Lagos, Nigeria. Her practice centers on explorations of line, form and boundary which she expresses through a variety of media including painting, drawing, sculpture and digital media. ",
     "roleId": "writer",
     "projectIds": ["ludo"], 
     "socialLink": {
@@ -278,19 +278,19 @@
   {
     "id": 24,
     "name": "Samson Oyedija",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Samson is an assistant producer at Kugali.",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/70a92be1507e5c44742614fb93c88d18/ca870cf3",
+    "bio": "Samson is a Production Assistant at Kugali, where he is helping tell African stories. He is also interested in helping build legacy products.",
     "roleId": "producer",
     "projectIds": ["edeyhappen"], 
     "socialLink": {
-      "text": "LinkedIn",
-      "url": "https://www.linkedin.com/in/samson-oyedija-436357a8/?trk=people_directory&originalSubdomain=ng"
+      "text": "Twitter",
+      "url": "https://twitter.com/Sam_tzu/"
     } 
   },
   {
     "id": 25,
     "name": "Ivierawo Lesso",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/1b35ec4f3698ee16a5a6cca51fbe7bf8/15fbf6e3",
     "bio": "Ivie is a self-taught illustrator and 2D animator.",
     "roleId": "artist",
     "projectIds": ["edeyhappen"], 
@@ -302,7 +302,7 @@
   {
     "id": 26,
     "name": "Yanmo Omorogbe",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/bb0230517e33a45713af94a2b5830399/2d92bd16",
     "bio": "Yanmo is a friend of the studio and cofounder at Bamboo.",
     "roleId": "storyteller",
     "projectIds": ["hankypanky"], 
@@ -314,7 +314,7 @@
   {
     "id": 27,
     "name": "LMBSKN",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/f6c407aaad00723a34c27b8694fe0f35/9e56134c",
     "bio": "LMBSKN is a sound producer.",
     "roleId": "sound_producer",
     "projectIds": ["hankypanky"], 
@@ -326,8 +326,8 @@
   {
     "id": 28,
     "name": "Remy Baggins",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Remy is a is a Nigerian singer, songwriter, producer and sound engineer.",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/911d10265bdc720c9dfcb1c8eacf8ed0/ef680e5d",
+    "bio": "Remy is a Nigerian singer, songwriter, producer and sound engineer.",
     "roleId": "sound_producer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -337,20 +337,20 @@
   },
   {
     "id": 29,
-    "name": "Chuks Emeibiam",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
-    "bio": "Chuks leads the animation team at Madbox Studios.",
+    "name": "Chukwudi Echezie Okoro",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/ea0226b894bad3079c160557f054edef/7bd95ed5",
+    "bio": "Chukwudi Okoro Is a 2D/3D generalist with over 8 years of experience in the advertising and digital communication field and has worked on brands and organizations like Confederation of African Football (CAF), Access Bank, BBC, The Independent National Electoral Commission (INEC), Raven, Malta Guinness, MADworld in collaboration with MotoGP, and more.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Website",
-      "url": "https://madboxspace.com"
+      "text": "Youtube",
+      "url": "https://youtu.be/I8Cb4in5npU"
     } 
   },
   {
     "id": 30,
     "name": "Joshua Adeoye",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/9a1990debdcc5364533e6f32a806114e/07c08d5c",
     "bio": "Joshua is a freelance animator, book illustrator and artist, currently working on two comic series.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
@@ -362,7 +362,7 @@
   {
     "id": 31,
     "name": "Kolade Morakinyo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/647cc5f2dcf991eba2baa8050bfa77d6/1c23d480",
     "bio": "Kolade leads the sound department at Visus Sonic Arts.",
     "roleId": "sound_designer",
     "projectIds": ["hankypanky"], 
@@ -374,7 +374,7 @@
   {
     "id": 32,
     "name": "Oshuwa Imoyo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/57433699db9f156b5297d684ba446501/7f3c6b23",
     "bio": "Oshuwa is an actress, most popularly known for The Wait (2021) and The Smart Money Woman (2020).",
     "roleId": "voice_actor",
     "projectIds": ["hankypanky"], 
@@ -386,7 +386,7 @@
   {
     "id": 33,
     "name": "Ifebusola Shotunde",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/298381df4ebd8f0f04f87f3186cae3aa/6e289acc",
     "bio": "Ifebusola is a photographer and graphic designer who focuses on documenting the people and places on his life's journey.",
     "roleId": "photographer",
     "projectIds": ["hankypanky"], 
@@ -417,6 +417,18 @@
     "socialLink": {
       "text": "LinkedIn",
       "url": "https://www.linkedin.com/in/tosin-amire-2bab6694/"
+    } 
+  },
+  {
+    "id": 36,
+    "name": "Obika Ifunanya Linda",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/0cd7ac0b3134da3c807c2f570b70e0ea/6145f9fe",
+    "bio": "Linda is a motion graphics designer.",
+    "roleId": "animator",
+    "projectIds": ["hankypanky"], 
+    "socialLink": {
+      "text": "Instagram",
+      "url": "https://www.instagram.com/lynn_motion/"
     } 
   }
 ]
