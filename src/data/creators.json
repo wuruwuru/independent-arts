@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Bolu Sowoolu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8c4cd87a1fc3327982bf38637f1ea056/56a101ba",
     "bio": "Bolu is a multidisciplinary artist and creator.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Khadijah Ibrahim",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/19165d915c6cb25e48e5c78a0498bbfb/b22aae7e",
     "bio": "Khadijah works in advertising and helped write The J Guide.",
     "roleId": "storyteller",
     "projectIds": ["jguide"], 
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Wale Oloworekende",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/ac682bd171affbb5d96045333223a4d5/ea13dd88",
     "bio": "Wale is a freelance writer and critic whose work explores the intersection of popular culture, music, film, sports, and lifestyle.",
     "roleId": "storyteller",
     "projectIds": ["coverbank"], 
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Jessica Louis",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/5a716c46c6f965c126f8a71a6fbb6011/327ff9a9",
     "bio": "Jessica is a visual story teller. She's an artist and illustrator who helped get Cover Bank to 5000 images.",
     "roleId": "artist",
     "projectIds": ["coverbank"], 
@@ -206,7 +206,7 @@
   {
     "id": 18,
     "name": "Kunle Popoola",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/19165d915c6cb25e48e5c78a0498bbfb/b22aae7e",
     "bio": "Kunle is a writer.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -218,7 +218,7 @@
   {
     "id": 19,
     "name": "Osione Itegboje",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/53afdb33ca5e31b8b4b43e015d4bd3cb/6335eee3",
     "bio": "Osione is a multidisciplinary artist. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
@@ -230,7 +230,7 @@
   {
     "id": 20,
     "name": "Niyi Okeowo",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8e68aa32de5753f2af33fbfd2aac2092/1a901f51",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/2b431b5d612b13f5422400543c5019ce/680c2f75",
     "bio": "Niyi is the Chief Design Officer at Garmspot and is currently building Astra, a network of cities in the metaverse for playing NFT games and buying digital fashion to wear IRL.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
@@ -242,7 +242,7 @@
   {
     "id": 21,
     "name": "Saratu Dan-Habu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/8cf35057fbd25e66dbdc452763e48072/2ea0f7a4",
     "bio": "Saratu is curious about emerging and disruptive technology and specializes in all aspects of intellectual property law and practice.",
     "roleId": "lawyer",
     "projectIds": ["feelgood","hankypanky"], 
@@ -254,7 +254,7 @@
   {
     "id": 22,
     "name": "Hannatu Dan-Habu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/a4c5d64b56e6523baa52c7064d6a274d/0844a200",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/063e82d27df434a58ac92cf894700891/bb581d67",
     "bio": "Hannatu runs Hawk & Dane, a technology and data advisory law firm.",
     "roleId": "lawyer",
     "projectIds": ["feelgood"], 
@@ -398,7 +398,7 @@
   {
     "id": 34,
     "name": "Jessica A.",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/910ceb5e8ddebc3c7038c836ca18c7e5/6defc019",
     "bio": "Jessica has worked as a Story & Script Editor, Head Writer and Content Director. She's a producer on Big Brother Naija and currently writes Africa Magic's Primetime TV series, Venge.",
     "roleId": "storyteller",
     "projectIds": ["hankypanky"], 
@@ -410,7 +410,7 @@
   {
     "id": 35,
     "name": "Tosin Amire",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/eccc200e82a0c0a50fd24fbe1dd631b3/37db283b",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/04e3f0025167bd8b9c7fb869bed1b926/aa120be6",
     "bio": "Tosin is an audio post-production artist experienced in the entertainment industry.",
     "roleId": "sound_designer",
     "projectIds": ["hankypanky"], 
@@ -429,6 +429,18 @@
     "socialLink": {
       "text": "Instagram",
       "url": "https://www.instagram.com/lynn_motion/"
+    } 
+  },
+  {
+    "id": 37,
+    "name": "Emmanuel Aminu",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/4f9fa2e4d2c154ff376c281391138122/c5e0651b",
+    "bio": "Emmanuel is a freelance data analyst, who loves telling stories with data. ",
+    "roleId": "data_analyst",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/emmanuel-aminu-875963190"
     } 
   }
 ]
