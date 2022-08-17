@@ -29,17 +29,6 @@
     }
   },
   {
-    "id": "jguide",
-    "title": "J Guide",
-    "status": "published",
-    "category": "Comic",
-    "description": "An instruction manual for learning to roll a joint.",
-    "url": {
-      "text": "instagram/@thejguide",
-      "href": "https://instagram.com/thejguide"
-    }
-  },
-  {
     "id": "edeyhappen",
     "title": "E Dey Happen",
     "status": "design",
@@ -55,6 +44,17 @@
     "url": {
       "text": "afeelgoodbook.com",
       "href": "https://afeelgoodbook.com"
+    }
+  },
+  {
+    "id": "jguide",
+    "title": "J Guide",
+    "status": "published",
+    "category": "Comic",
+    "description": "An instruction manual for learning to roll a joint.",
+    "url": {
+      "text": "instagram/@thejguide",
+      "href": "https://instagram.com/thejguide"
     }
   }
 ]
