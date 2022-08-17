@@ -18,17 +18,6 @@
     }
   },
   {
-    "id": "coverbank",
-    "title":  "Cover Bank",
-    "status": "production",
-    "category":  "Database",
-    "description":  "A retrospective of Nigerian album covers from 1950 - 2022.",
-    "url": {
-      "text": "wuruwuru.com/covers",
-      "href": "https://wuruwuru.com/covers"
-    }
-  },
-  {
     "id": "edeyhappen",
     "title": "E Dey Happen",
     "status": "design",
@@ -44,6 +33,17 @@
     "url": {
       "text": "afeelgoodbook.com",
       "href": "https://afeelgoodbook.com"
+    }
+  },
+  {
+    "id": "coverbank",
+    "title":  "Cover Bank",
+    "status": "production",
+    "category":  "Database",
+    "description":  "A retrospective of Nigerian album covers from 1950 - 2022.",
+    "url": {
+      "text": "wuruwuru.com/covers",
+      "href": "https://wuruwuru.com/covers"
     }
   },
   {
