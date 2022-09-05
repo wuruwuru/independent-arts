@@ -2,19 +2,31 @@
     {
         "id": "covers",
         "title": "Album Covers",
-        "count": "5158",
+        "count": "5000+",
         "url": "https://wuruwuru.com/covers"
     },
     {
       "id": "streetwear",
-      "title": "Streetwear",
-      "count": "470",
+      "title": "Streetwear Brands",
+      "count": "200+",
       "url": "https://wuruwuru.com/streetwear"
   },
   {
     "id": "comics",
     "title": "Comic Books",
-    "count": "208",
+    "count": "200+",
     "url": "https://wuruwuru.com/comics"
+  },
+  {
+    "id": "animation",
+    "title": "African Animation",
+    "count": "500+",
+    "url": "https://wuruwuru.com/animation"
+  },
+  {
+    "id": "publishers",
+    "title": "Internet Publishers",
+    "count": "900+",
+    "url": "https://wuruwuru.com/publishers"
   }
 ]
