@@ -1,7 +1,30 @@
 [
 	{
+		"month": "September",
+		"posts": [
+			{
+				"issueNumber": 46,
+				"href": "https://medium.com/wuruwuru/46-at-ease-61757995bccf",
+				"title": "At ease",
+				"noAndTitle": "46: At ease"
+			},
+			{
+				"issueNumber": 45,
+				"href": "https://medium.com/wuruwuru/45-cover-contest-kickoff-2799d880e2e3",
+				"title": "Cover Contest Kickoff",
+				"noAndTitle": "45: Cover Contest Kickoff"
+			}
+		]
+	},
+	{
 		"month": "August",
 		"posts": [
+			{
+				"issueNumber": 44,
+				"href": "https://medium.com/wuruwuru/44-cover-bank-contest-24707ceb54b3",
+				"title": "Cover Bank Contest",
+				"noAndTitle": "44: Cover Bank Contest"
+			},
 			{
 				"issueNumber": 43,
 				"href": "https://medium.com/wuruwuru/43-manifesto-v2-10ee7ef6e38",
