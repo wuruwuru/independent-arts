@@ -313,14 +313,14 @@
   },
   {
     "id": 27,
-    "name": "LMBSKN",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/f6c407aaad00723a34c27b8694fe0f35/9e56134c",
-    "bio": "LMBSKN is a sound producer.",
+    "name": "Osarumen Osamuyi",
+    "avatar": "https://v5.airtableusercontent.com/v1/8/8/1666828800000/nc1lrrAoputBnb555vBPiw/P53PV2s6SfriuF_QYclUv-8F99_l34vmi9Bez9OTSFR_heXTlv1mmEl8BaT4BGDRBCKE-ojKAOV4lVAYi56txg/POws61w3Oi9C23zfVz-qykVGwjwGFS5cnRClD91mBbo",
+    "bio": "Osarumen 'LMBSKN' Osamuyi is an experimental producer and synth programmer based in Lagos, Nigeria. He also works as a Strategic Partner Manager at Meta.",
     "roleId": "sound_producer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/lmbskn"
+      "text": "Website",
+      "url": "http://lmbskn.com/"
     } 
   },
   {
@@ -435,12 +435,36 @@
     "id": 37,
     "name": "Emmanuel Aminu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/4f9fa2e4d2c154ff376c281391138122/c5e0651b",
-    "bio": "Emmanuel is a freelance data analyst, who loves telling stories with data. ",
+    "bio": "Emmanuel is a freelance data analyst, who loves telling stories with data.",
     "roleId": "data_analyst",
     "projectIds": ["coverbank"], 
     "socialLink": {
       "text": "LinkedIn",
       "url": "https://www.linkedin.com/in/emmanuel-aminu-875963190"
     } 
+  },
+  {
+    "id": 38,
+    "name": "Fisayo Adefolaju",
+    "avatar": "https://v5.airtableusercontent.com/v1/8/8/1666828800000/mEIN_orMo9eXLHwr1TDDpQ/wDdUk_ELzQcLU0KeJ9TulFGLdeFyAdcvZEUjgFn_afOzyrJDxD3CMJpSYlcHatsloZN9T3PfJBYP3zxmYeh1Bg/SIIzHonH83EkyLfmWYtUUudh_7t-rdzih5ZfSQT9cgs",
+    "bio": "Fisayo Adefolaju, also known as 'TheOtherThrone', is a sound designer and film score composer experienced in audio post-production for film and TV. He is a member of the versatile team at Visus Sonic Arts and loves to create emotions using sound.",
+    "roleId": "sound_designer",
+    "projectIds": ["edeyhappen","hankypanky"], 
+    "socialLink": {
+      "text": "Instagram",
+      "url": "https://www.instagram.com/theotherthrone/"
+    } 
+  },
+  {
+    "id": 39,
+    "name": "Immaculata",
+    "avatar": "https://v5.airtableusercontent.com/v1/8/8/1666828800000/fCEBq-3PTcySU92GmNnxsA/eXiYKclaZwICTT7kcnuyuySyJFxTASLiZmtxuqfAmYBGmPlOHU77skXIAeZ2AQP0t62YcgEt6DU3IMRIxnRNMw/r_wSP0TZnRhYpaxQh6BLODknC-z1yommOumsLQRJzDE",
+    "bio": "Immaculata is a beautiful artist, writer and researcher. Check her website for more info.",
+    "roleId": "artist",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://immaculataabba.com/"
+    }  
   }
 ]
