@@ -466,5 +466,41 @@
       "text": "Website",
       "url": "https://immaculataabba.com/"
     }  
+  },
+  {
+    "id": 40,
+    "name": "Kemi Falodun",
+    "avatar": "https://v5.airtableusercontent.com/v1/9/9/1666828800000/lAqrn7f8T6k-hek13vPnoQ/OT6xZveMOFBMg7err7h6wSdUrvCTddizBh2LEnC0GVK5mKguNeNt50PI6mHZc5TOxdr-LDo9MpRVLyYOM5VDlw/TtqNHpsSdQq9I56FRAPmhImAJZktxCZbWpIGSI3In7g",
+    "bio": "Kemi Falodun is a writer and journalist interested in culture, mental health, social justice, and the intersection of dreamlife and wakeful consciousness. Her work has been published in Catapult, Al Jazeera, The Guardian UK, WePresent, Devex, and several other platforms.",
+    "roleId": "writer",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "Website",
+      "url": "https://kemifalodun.com/"
+    }  
+  },
+  {
+    "id": 41,
+    "name": "Kolade Emmanuel",
+    "avatar": "https://dl.airtable.com/.attachmentThumbnails/19165d915c6cb25e48e5c78a0498bbfb/b22aae7e",
+    "bio": "Kolamide is a comedian, host and voice actor that’s worked in the Nigerian entertainment industry for 6 years plus. He’s an easy going, hilarious dude. Loves eating food and making people laugh.",
+    "roleId": "voice_actor",
+    "projectIds": ["edeyhappen"], 
+    "socialLink": {
+      "text": "Instagram",
+      "url": "https://www.instagram.com/kolamide_/"
+    }  
+  },
+  {
+    "id": 42,
+    "name": "Idris Ayinde",
+    "avatar": "https://v5.airtableusercontent.com/v1/9/9/1666828800000/D5QK53MG6sCET1qWNUwzQA/FDjXk-tHpx3vJiwdE19ggWQhO67ivXhRSZeU1wXJFzqLXvR3z5qCmpDVzvb1HjaOH6mMBotKVml5mouFAMDjHg/3Zd3-0qf0__g-RqqFgNnpZtoyM0Btog2Y0GBJp2TRZI",
+    "bio": "Idris is a designer and product designer whose work aims to create positive experiences that impact the user and culture. He specializes in product design, user experience design, and brand design. ",
+    "roleId": "designer",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/idrisayinde/"
+    }  
   }
 ]

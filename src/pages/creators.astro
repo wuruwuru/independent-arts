@@ -58,7 +58,7 @@ const filters = [
     <section class="l-section">
       <div class="l-container l-grid">
         <div class="c-section__left l-grid__column--6">
-          <h4 class="c-section-title c-section-title--spaced">Creators: {creators.length}<span class="mobile-filter-button"><button
+          <h4 class="c-section-title c-section-title--spaced">Creators: <span id="creators-count">{fetchCreators.length}</span><span class="mobile-filter-button"><button
                 class="filter-trigger" id="filterTrigger">Filter</button></span></h4>
           <ul class="c-creator-list" id="creators">
             {fetchCreators.map(({name, bio, role, socialLink, projects, avatar, id}, index) => {
@@ -558,6 +558,7 @@ const filters = [
     creatorIsotope.arrange({
       filter: filterQuery
     })
+    document.querySelector('#creators-count').textContent = `${creatorIsotope.getFilteredItemElements().length} of ${creatorIsotope.getItemElements().length}`;
   }
 
 
