@@ -446,7 +446,7 @@
   {
     "id": 38,
     "name": "Fisayo Adefolaju",
-    "avatar": "https://v5.airtableusercontent.com/v1/8/8/1666828800000/mEIN_orMo9eXLHwr1TDDpQ/wDdUk_ELzQcLU0KeJ9TulFGLdeFyAdcvZEUjgFn_afOzyrJDxD3CMJpSYlcHatsloZN9T3PfJBYP3zxmYeh1Bg/SIIzHonH83EkyLfmWYtUUudh_7t-rdzih5ZfSQT9cgs",
+    "avatar": "https://v5.airtableusercontent.com/v1/10/10/1667858400000/IMf8mCeQbwndGAJy7DZDpg/2Ygm5rk62flsp8fZ66J2WKyQnARI_x8b-Eu5OneFVmukZib5Tha28SGVYoX_PFLOk0i9CCPmy38H_KY4TYMz6g/M26NyXSAi9W72G6X_Lg5Pv8l6rHuoqiV-8KqmEtReKs",
     "bio": "Fisayo Adefolaju, also known as 'TheOtherThrone', is a sound designer and film score composer experienced in audio post-production for film and TV. He is a member of the versatile team at Visus Sonic Arts and loves to create emotions using sound.",
     "roleId": "sound_designer",
     "projectIds": ["edeyhappen","hankypanky"], 
@@ -458,7 +458,7 @@
   {
     "id": 39,
     "name": "Immaculata",
-    "avatar": "https://v5.airtableusercontent.com/v1/8/8/1666828800000/fCEBq-3PTcySU92GmNnxsA/eXiYKclaZwICTT7kcnuyuySyJFxTASLiZmtxuqfAmYBGmPlOHU77skXIAeZ2AQP0t62YcgEt6DU3IMRIxnRNMw/r_wSP0TZnRhYpaxQh6BLODknC-z1yommOumsLQRJzDE",
+    "avatar": "https://v5.airtableusercontent.com/v1/10/10/1667858400000/2ON3OE8phiR-B1jUpiV1NQ/baIQ3yYHxy827_hvLkrmf55K26M281o7xk4K0mBw6eEFF-e5q0-ZFGG3KH6oBk8l-fd0qrKI9qtYPt4KoDjCig/e5wNuNkW3Yd6lR_uNMfIQm1DJMuuMgjGDcvLLFNuOxc",
     "bio": "Immaculata is a beautiful artist, writer and researcher. Check her website for more info.",
     "roleId": "artist",
     "projectIds": ["coverbank"], 
@@ -470,7 +470,7 @@
   {
     "id": 40,
     "name": "Kemi Falodun",
-    "avatar": "https://v5.airtableusercontent.com/v1/9/9/1666828800000/lAqrn7f8T6k-hek13vPnoQ/OT6xZveMOFBMg7err7h6wSdUrvCTddizBh2LEnC0GVK5mKguNeNt50PI6mHZc5TOxdr-LDo9MpRVLyYOM5VDlw/TtqNHpsSdQq9I56FRAPmhImAJZktxCZbWpIGSI3In7g",
+    "avatar": "https://v5.airtableusercontent.com/v1/10/10/1667858400000/_jORAVHP4jy6TfbaExHr2g/oS14kmaa04eFoR6e9vjH-rICYHnvRkI01mcmmkptjiaXvq4DEa4_8ldI4hHh0bTdNzsk9WNm5j5wvyDg-YPwVw/1I7_id5009XufByg69zsOyjvAO9Z0fAwrHgJ2btj5r4",
     "bio": "Kemi Falodun is a writer and journalist interested in culture, mental health, social justice, and the intersection of dreamlife and wakeful consciousness. Her work has been published in Catapult, Al Jazeera, The Guardian UK, WePresent, Devex, and several other platforms.",
     "roleId": "writer",
     "projectIds": ["coverbank"], 
@@ -494,13 +494,25 @@
   {
     "id": 42,
     "name": "Idris Ayinde",
-    "avatar": "https://v5.airtableusercontent.com/v1/9/9/1666828800000/D5QK53MG6sCET1qWNUwzQA/FDjXk-tHpx3vJiwdE19ggWQhO67ivXhRSZeU1wXJFzqLXvR3z5qCmpDVzvb1HjaOH6mMBotKVml5mouFAMDjHg/3Zd3-0qf0__g-RqqFgNnpZtoyM0Btog2Y0GBJp2TRZI",
-    "bio": "Idris is a designer and product designer whose work aims to create positive experiences that impact the user and culture. He specializes in product design, user experience design, and brand design. ",
+    "avatar": "https://v5.airtableusercontent.com/v1/10/10/1667858400000/ta10rcek_0wWczCqHF90cQ/ExTHtOXCIf5x4_pYwDhoKJ5gtRjMYWM7EYaf5-YgAsKmx1T5jyw9H9xIJYmddjHnZzOxt80HioDwwhZwXgI-YA/Ixf3mL87VuCCXqbqQ99hPk7DxGejkGqlsiE3mPQ4ZVM",
+    "bio": "Idris is a designer and product designer whose work aims to create positive experiences that impact the user and culture. He specializes in product design, user experience design, and brand design.",
     "roleId": "designer",
     "projectIds": ["coverbank"], 
     "socialLink": {
       "text": "LinkedIn",
       "url": "https://www.linkedin.com/in/idrisayinde/"
+    }  
+  },
+  {
+    "id": 43,
+    "name": "Chukwudi Ukonne ",
+    "avatar": "https://v5.airtableusercontent.com/v1/10/10/1667858400000/vbTHsxIRfZ9_wtRwjPc2iQ/mVsfsHYpDvCwTVkJ4_Ii4twxhb9pyt72m8m_dMKooqVHUH5zRyefV8aHANv70KFzFyIXx7-BvnpZI0NNGUP5Ew/Bvyxo_MhOOq9v8JtgqK1gj1DDFovrcjIAnl9scbJIZA",
+    "bio": "Chukwudi explores the intersection of history, culture and politics with his work ",
+    "roleId": "writer",
+    "projectIds": ["coverbank"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/c_ukonne"
     }  
   }
 ]
