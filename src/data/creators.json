@@ -24,30 +24,6 @@
     }
   },
   {
-    "id": 3,
-    "name": "Khadijah Ibrahim",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/19165d915c6cb25e48e5c78a0498bbfb/b22aae7e",
-    "bio": "Khadijah works in advertising and helped write The J Guide.",
-    "roleId": "storyteller",
-    "projectIds": ["jguide"], 
-    "socialLink": {
-      "text": "Website",
-      "url": "https://www.instagram.com/khadeejah/"
-    }
-  },
-  {
-    "id": 4,
-    "name": "Jubril Olambiwonnu",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/bed3980a550a5734a49b0d0401363ea8/4cf18e2b",
-    "bio": "Jubril is an IOS Engineer and helped write The J Guide.",
-    "roleId": "engineer",
-    "projectIds": ["jguide"], 
-    "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/Jubril_O"
-    }
-  },
-  {
     "id": 5,
     "name": "Eseosa Belo-Osagie",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/1321cc46af0ca6709a6578f0ed213df5/8e13fd49",
@@ -297,18 +273,6 @@
     "socialLink": {
       "text": "Website",
       "url": "https://ivie.disha.page/"
-    } 
-  },
-  {
-    "id": 26,
-    "name": "Yanmo Omorogbe",
-    "avatar": "https://dl.airtable.com/.attachmentThumbnails/bb0230517e33a45713af94a2b5830399/2d92bd16",
-    "bio": "Yanmo is a friend of the studio and cofounder at Bamboo.",
-    "roleId": "storyteller",
-    "projectIds": ["hankypanky"], 
-    "socialLink": {
-      "text": "LinkedIn",
-      "url": "https://www.linkedin.com/in/yanmoomorogbe/"
     } 
   },
   {
