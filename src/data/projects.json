@@ -53,5 +53,12 @@
       "text": "instagram/@thejguide",
       "href": "https://instagram.com/thejguide"
     }
+  },
+  {
+    "id": "feelgood",
+    "title": "Feel Good",
+    "status": "design",
+    "category": "Book, Website",
+    "description": "An anthology of joyful queer stories."
   }
 ]
