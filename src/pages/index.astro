@@ -2,7 +2,6 @@
 //Components
 import Layout from "@layout/Default.astro";
 import PageHeader from "@components/PageHeader.astro";
-import HomeSlider from "@components/HomeSlider.astro";
 
 ---
 
@@ -10,10 +9,30 @@ import HomeSlider from "@components/HomeSlider.astro";
     <main>
         <PageHeader>
             <h1>
-                <span class="wrwr">wuruwuru</span> is a publishing experiment to explore independent creation in Nigeria. We’re making a bunch of passion projects and documenting what we learn.
+                <span class="wrwr">wuruwuru</span> is a network for independent creators.
             </h1>
         </PageHeader>
-        <HomeSlider />
+        <section class="l-container">
+			<h4 class="c-section-title">Start Here</h4>
+            <ul class="l-grid">
+                <li class="l-grid__column--3">
+                    <img src="/assets/images/shapes/triangle.png" />
+                    <a href="/projects" class="button">Read manifesto</a>
+                </li>
+                <li class="l-grid__column--3">
+                    <img src="/assets/images/shapes/star.png" />
+                    <a href="/projects" class="button">Browse projects</a>
+                </li>
+                <li class="l-grid__column--3">
+                    <img src="/assets/images/shapes/circle.png" />
+                    <a href="/creators" class="button">Browse creators</a>
+                </li>
+                <li class="l-grid__column--3">
+                    <img src="/assets/images/shapes/square.png" />
+                    <a href="/projects" class="button">Read journal</a>
+                </li>
+            </ul>
+        </section>
     </main>
 </Layout>
 

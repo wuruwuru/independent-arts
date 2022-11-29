@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Vanny",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/9d7bcf53ba525b6ed565bef6128a8012/a118498f",
-    "bio": "Vanny is Concept Artist/Illustrator & creative designer who is passionate about western comic books but his art style is heavily inspired and driven by manga-style art. He believes his art is Avantasia which is a never-ending revealing of untold stories.",
+    "bio": "Vanny is a concept artist and creative designer. He's passionate about western comic books but inspired by manga. He believes his art is Avantasia, a never-ending revealing of untold stories.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
     "socialLink": {
@@ -27,7 +27,7 @@
     "id": 5,
     "name": "Eseosa Belo-Osagie",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/1321cc46af0ca6709a6578f0ed213df5/8e13fd49",
-    "bio": "Eseosa is a digital illustrator and product designer at Check DC.",
+    "bio": "Eseosa is a digital illustrator and product designer.",
     "roleId": "designer",
     "projectIds": ["coverbank"], 
     "socialLink": {
@@ -243,7 +243,7 @@
     "id": 23,
     "name": "Yadichinma Uloha-Kalu",
     "avatar": "https://dl.airtable.com/.attachmentThumbnails/8d4155b5da8767c29dc89df10f0ccbd5/1ccf3310",
-    "bio": "Yadichinma Ukoha-Kalu is an independent artist, illustrator and art director based in Lagos, Nigeria. Her practice centers on explorations of line, form and boundary which she expresses through a variety of media including painting, drawing, sculpture and digital media. ",
+    "bio": "Yadi is an independent artist, illustrator and art director based in Lagos, Nigeria. Her practice centers on explorations of line, form and boundary which she expresses through a variety of media including painting, drawing, sculpture and digital media. ",
     "roleId": "writer",
     "projectIds": ["ludo"], 
     "socialLink": {
@@ -471,7 +471,7 @@
     "id": 43,
     "name": "Chukwudi Ukonne ",
     "avatar": "https://v5.airtableusercontent.com/v1/10/10/1667858400000/vbTHsxIRfZ9_wtRwjPc2iQ/mVsfsHYpDvCwTVkJ4_Ii4twxhb9pyt72m8m_dMKooqVHUH5zRyefV8aHANv70KFzFyIXx7-BvnpZI0NNGUP5Ew/Bvyxo_MhOOq9v8JtgqK1gj1DDFovrcjIAnl9scbJIZA",
-    "bio": "Chukwudi explores the intersection of history, culture and politics with his work ",
+    "bio": "Chukwudi explores the intersection of history, culture and politics with his work.",
     "roleId": "writer",
     "projectIds": ["coverbank"], 
     "socialLink": {

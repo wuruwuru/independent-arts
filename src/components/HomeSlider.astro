@@ -8,12 +8,12 @@ import projects from "@data/projects.json";
   <ul>
     {projects.map((p) => (
     <li>
-      <img src={`/assets/images/projects/${p.id}.jpg`} alt={`Cover image for ${p.title}`} />
+      <img src={`/assets/images/projects/${p.id}.jpg`} alt={`Cover image for ${p.title}`} title={`${p.description}`} />
     </li>
     ))}
     {projects.map((p) => (
     <li>
-      <img src={`/assets/images/projects/${p.id}.jpg`} alt={`Cover image for ${p.title}`} />
+      <img src={`/assets/images/projects/${p.id}.jpg`} alt={`Cover image for ${p.title}`} title={`${p.description}`} />
     </li>
     ))}
   </ul>
@@ -29,30 +29,21 @@ import projects from "@data/projects.json";
 
   ul {
     display: flex;
-    animation: marquee 10s linear infinite running;
+    animation: marquee 30s linear infinite running;
     @media all and (max-width: 800px) {
-	animation-duration: 30s;
-    }
-  }
-
-  li {
-    width: 600px;
-    display: inline-flex;
-    padding: 12px;
-    transition: all .2s ease;
-  }
-
-  img {
-    transition: all .5s ease;
-
-    &:hover {
-      transform: scale(1.03);
+	    animation-duration: 30s;
     }
   }
 
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+
+  li {
+    width: 600px;
+    display: inline-flex;
+    padding: 12px;
   }
 
   img {

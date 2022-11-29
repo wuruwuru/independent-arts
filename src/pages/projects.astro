@@ -18,7 +18,7 @@ import databases from "@data/databases.json";
 	<main>
 		<section class="l-section l-section--padded">
 			<div class="l-container l-grid">
-				<div class="c-section__left l-grid__column--6">
+				<div class="c-section__left l-grid__column--8">
 					<ul class="c-project-list">
 						{projects.map((p) => (
 						<li class="c-project-list__item">
@@ -27,7 +27,7 @@ import databases from "@data/databases.json";
 						))}
 					</ul>
 				</div>
-				<aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+				<aside class="c-section__right l-grid__column-start--10 l-grid__column--3">
 					<h4 class="c-section-title">Data</h4>
 					<ul class="aside-list data">
 						{databases.map((db) => (<li>
@@ -38,12 +38,6 @@ import databases from "@data/databases.json";
 					<ul class="aside-list">
 						{newsletters.map((letter) => (<li>
 							<NewsletterPreview {...letter} />
-						</li>))}
-					</ul>
-					<h4 class="c-section-title">Journal</h4>
-					<ul class="aside-list">
-						{journals.map((journal) => (<li>
-							<JournalPreview {...journal} />
 						</li>))}
 					</ul>
 				</aside>
@@ -119,10 +113,9 @@ import databases from "@data/databases.json";
 		}
 	}
 
-	.l-container .l-grid {
+	.l-grid {
 		@include screen('small') {
 			grid-template-columns: 1fr;
-
 		}
 	}
 </style>

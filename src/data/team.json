@@ -1,44 +1,32 @@
 [
     {
-        "name": "Eris Ekanem",
-        "role": "Assistant Producer",
-        "description": "Ekanem is a writer and storyboard artist. She's learning French and training her cat with sign language.",
-        "mobileDescription": [
-            "Ekanem is a writer and storyboard artist.",
-            "She's learning French and training her cat with sign language."
-        ],
-        "link": "https://twitter.com/eccentric_sky",
-        "linkText": "Twitter",
-        "id": "agnes"
-    },
-    {
-        "name": "Nneoma Kenure",
-        "role": "Assistant Editor",
-        "description": "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell. She's currently editing her debut memoir.",
-        "mobileDescription": [
-            "Nneoma is a culture critic and a feminist writer exploring how culture influences the stories we tell.",
-            "She's currently editing her debut memoir."
-        ],
-        "link": "https://twitter.com/nfkenure",
-        "linkText": "Twitter",
-        "id": "nneoma"
-    },
-    {
         "name": "Opemipo Aikomo",
         "role": "Director",
-        "description": "Ope started wuruwuru and directs the circus. In his spare time, he also leads design at Paystack.",
+        "description": "Ope started wuruwuru and directs the circus. In his spare time, he also leads the design team at Paystack.",
         "mobileDescription": [
             "Ope started wuruwuru and directs the circus.",
-            "In his spare time, he also leads design at Paystack."
+            "In his spare time, he also leads the design team at Paystack."
         ],
         "link": "https://opemipo.com",
         "linkText": "Website",
         "id": "opemipo"
     },
     {
+        "name": "Williams Ogah",
+        "role": "Manager",
+        "description": "Williams is curious about how creative ideas come to life. He previously worked as a project manager, enjoys taking naps, and also runs a consulting business.",
+        "mobileDescription": [
+            "Williams previously worked as a project manager and is curious about how creative ideas come to life.",
+            "When he's not taking naps, he also runs a consulting business."
+        ],
+        "link": "https://twitter.com/wllxms",
+        "linkText": "Twitter",
+        "id": "williams"
+    },
+    {
         "name": "Tomiwa Ajiboye",
         "role": "Assistant Producer",
-        "description": "Tomiwa is a product designer and music buff. He's building Comicrunes, a platform for reading comics. He enjoys taking it slow or driving really fast. No in-betweens.",
+        "description": "Tomiwa is a product designer and music buff. He enjoys taking it slow or going really fast, no in-betweens. He's building Comicrunes - a platform for reading comics.",
         "mobileDescription": [
             "Tomiwa is a product designer and music buff.",
             "He's building Comicrunes, a platform for bringing comics to readers." ,
@@ -49,15 +37,15 @@
         "id": "tomiwa"
     },
     {
-        "name": "Williams Ogah",
-        "role": "Manager",
-        "description": "Williams previously worked as a project manager and is curious about how creative ideas come to life. When he's not taking naps, he also runs a consulting business.",
+        "name": "Eris Ekanem",
+        "role": "Assistant Producer",
+        "description": "Eris is a writer and storyboard artist. She's learning French and training her cat with sign language.",
         "mobileDescription": [
-            "Williams previously worked as a project manager and is curious about how creative ideas come to life.",
-            "When he's not taking naps, he also runs a consulting business."
+            "Ekanem is a writer and storyboard artist.",
+            "She's learning French and training her cat with sign language."
         ],
-        "link": "https://twitter.com/wllxms",
+        "link": "https://twitter.com/eccentric_sky",
         "linkText": "Twitter",
-        "id": "williams"
+        "id": "agnes"
     }
 ]

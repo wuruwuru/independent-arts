@@ -2,9 +2,10 @@
   {
     "id": "ludo",
     "title":  "LUDO",
+    "creator": "Yadichinma Ukoha-Kalu",
     "status": "production",
     "category":  "Game",
-    "description":  "A contemporary take on a classic board game.",
+    "description":  "A contemporary, handcrafted take on a classic board game.",
     "url": {
       "text": "ludobyyadi.com",
       "href": "https://ludobyyadi.com"
@@ -13,9 +14,10 @@
   {
     "id": "edeyhappen",
     "title": "E Dey Happen",
+    "creator": "Eris Ekanem",
     "status": "production",
     "category": "Series",
-    "description": "Animated web series about friendship and work.",
+    "description": "Animated web series about work, friendship and life after NYSC.",
     "url": {
       "text": "@edeyhappen",
       "href": "https://tiktok.com/@edeyhappen"
@@ -24,9 +26,10 @@
   {
     "id": "hankypanky",
     "title":  "Hanky Panky",
+    "creator": "Opemipo Aikomo",
     "status": "production",
     "category":  "Animation",
-    "description":  "Animated short film about a phone call from a Nigerian aunty.",
+    "description":  "Animated short film about a random phone call in traffic.",
     "url": {
       "text": "hankypankyfilm.com",
       "href": "https://hankypankyfilm.com"
@@ -34,7 +37,8 @@
   },
   {
     "id": "coverbank",
-    "title":  "Cover Bank",
+    "title":  "Album Cover Bank",
+    "creator": "Tomiwa Ajiboye",
     "status": "production",
     "category":  "Database",
     "description":  "A retrospective of Nigerian album covers from 1950 - 2022.",
@@ -46,9 +50,10 @@
   {
     "id": "jguide",
     "title": "J Guide",
+    "creator": "Opemipo Aikomo",
     "status": "published",
     "category": "Comic",
-    "description": "An instruction manual for learning to roll a joint.",
+    "description": "A comic about weed, plus an instruction manual for rolling a joint.",
     "url": {
       "text": "instagram/@thejguide",
       "href": "https://instagram.com/thejguide"
@@ -56,6 +61,7 @@
   },
   {
     "id": "feelgood",
+    "creator": "Daniel Orubo",
     "title": "Feel Good",
     "status": "design",
     "category": "Book, Website",

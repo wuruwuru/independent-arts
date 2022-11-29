@@ -53,11 +53,11 @@ const filters = [
 <Layout>
   <main>
     <PageHeader>
-      <h1><span class="wrwr">wuruwuru</span> brings independent writers, artists and designers together to make cool passion projects, build community and create documentation.</h1>
+      <h1><span class="wrwr">wuruwuru</span> brings talented writers, artists, designers and makers together to make cool things, build community and create documentation.</h1>
     </PageHeader>
     <section class="l-section">
       <div class="l-container l-grid">
-        <div class="c-section__left l-grid__column--6">
+        <div class="c-section__left l-grid__column--8">
           <h4 class="c-section-title c-section-title--spaced">
             <span>Creators:
              <span id="creators-count">{fetchCreators.length}</span>
@@ -84,7 +84,7 @@ const filters = [
                       <a href="#">{title}</a>
                     ))}
                   </div>
-                  <div>Learn more: <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a></div>
+                  <div>Connect: <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a></div>
                 </div>
               </div>
             </li>)}
@@ -92,7 +92,7 @@ const filters = [
           </ul>
         </div>
 
-        <aside class="c-section__right l-grid__column-start--8 l-grid__column--2">
+        <aside class="c-section__right l-grid__column-start--11 l-grid__column--2">
           <form id="filterWrapperDesktop">
             <!-- Select for mobile view -->
             {filters.map(({ title, data }) => (

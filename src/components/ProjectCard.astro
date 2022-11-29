@@ -13,6 +13,7 @@ export interface Props {
 const {
 	id,
 	title,
+	creator,
 	status,
 	description,
 	url,
@@ -39,15 +40,17 @@ const {
 				<span>{title}</span>
 			)}
 			</h2>
-			<p>{ description }</p>
+			<p class="creator">{ creator}</p>
 		</div>
 		<div class="footer">
-			<div class="project-status">
-				<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
-				<span class="project-status-text">{status}</span>
-			</div>
-			{url && (
+			<p>{ description }</p>
+			{url ? (
 			<a href={ url?.href } class="c-link c-link--out" target="_blank">{ url.text }</a>
+			) : (
+				<div class="project-status">
+					<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
+					<span class="project-status-text">{status}</span>
+				</div>
 			)}
 		</div>
 	</div>
@@ -122,6 +125,7 @@ const {
 
 			h2 {
 				font-family: var(--font-sans);
+				margin-bottom: 0;
 			}
 
 			h5 {
@@ -131,6 +135,12 @@ const {
 
 			p {
 				font-size: var(--font-size-base);
+			}
+
+			.creator {
+				margin-top: 8px;
+				font-family: var(--font-sans);
+				color: var(--color-dark-gray);
 			}
 
 			.footer {
