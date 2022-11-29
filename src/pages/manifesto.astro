@@ -38,6 +38,7 @@ import Layout from "@layout/Default.astro";
 	@import "../styles/mixins.scss";
 
 	.l-grid {
+		grid-template-columns: repeat(9, 1fr);
 		@include screen('small') {
 			grid-template-columns: 1fr;
 		}
