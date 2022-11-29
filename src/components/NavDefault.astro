@@ -7,8 +7,8 @@ const links = [
     route: '/projects/'
   },
   {
-    name: 'Creators',
-    route: '/creators/'
+    name: 'Network',
+    route: '/network/'
   },
   {
     name: 'About',
@@ -16,14 +16,14 @@ const links = [
   }
 ];
 
-const path = Astro.canonicalURL.pathname;
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <div class="l-container l-container--fluid">
   <nav class="c-nav">
     <ul id="menu">
       {links.map(({ name, route }) => (
-      <li class={path===route ? 'is-active' : '' }><a href={route}>{name}</a></li>
+      <li class={currentPath===route ? 'is-active' : '' }><a href={route}>{name}</a></li>
       ))}
     </ul>
     <div class="logo">
