@@ -2,7 +2,7 @@
   {
     "id": "ludo",
     "title":  "LUDO",
-    "status": "design",
+    "status": "production",
     "category":  "Game",
     "description":  "A contemporary take on a classic board game.",
     "url": {
@@ -13,19 +13,12 @@
   {
     "id": "edeyhappen",
     "title": "E Dey Happen",
-    "status": "design",
+    "status": "production",
     "category": "Series",
-    "description": "Animated web series about friendship and work."
-  },
-  {
-    "id": "feelgood",
-    "title": "Feel Good",
-    "status": "design",
-    "category": "Book, Website",
-    "description": "An anthology of joyful queer stories from Nigeria.",
+    "description": "Animated web series about friendship and work.",
     "url": {
-      "text": "afeelgoodbook.com",
-      "href": "https://afeelgoodbook.com"
+      "text": "@edeyhappen",
+      "href": "https://tiktok.com/@edeyhappen"
     }
   },
   {
