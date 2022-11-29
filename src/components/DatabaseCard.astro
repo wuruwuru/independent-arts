@@ -69,9 +69,11 @@ const {
 
     img {
       transition: all .5s ease;
-
-      &:hover {
-        transform: scale(1.03);
+      filter: grayscale(1);
+    }
+    &:hover {
+      img {
+        filter: none;
       }
     }
   }
