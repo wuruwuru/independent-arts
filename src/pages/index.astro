@@ -14,22 +14,26 @@ import PageHeader from "@components/PageHeader.astro";
         </PageHeader>
         <section class="l-container">
 			<h4 class="c-section-title">Start Here</h4>
-            <ul class="l-grid">
+            <ul class="c-section l-grid">
                 <li class="l-grid__column--3">
-                    <img src="/assets/images/shapes/triangle.png" />
-                    <a href="/projects" class="button">Read manifesto</a>
+                    <a href="/manifesto" class="button">
+                        <img src="/assets/images/shapes/triangle.png" /> Read manifesto
+                    </a>
                 </li>
                 <li class="l-grid__column--3">
-                    <img src="/assets/images/shapes/star.png" />
-                    <a href="/projects" class="button">Browse projects</a>
+                    <a href="/projects" class="button">
+                        <img src="/assets/images/shapes/star.png" /> Browse projects
+                    </a>
                 </li>
                 <li class="l-grid__column--3">
-                    <img src="/assets/images/shapes/circle.png" />
-                    <a href="/creators" class="button">Browse creators</a>
+                    <a href="/creators" class="button">
+                        <img src="/assets/images/shapes/circle.png" /> Browse creators
+                    </a>
                 </li>
                 <li class="l-grid__column--3">
-                    <img src="/assets/images/shapes/square.png" />
-                    <a href="/projects" class="button">Read journal</a>
+                    <a href="https://medium.com/wuruwuru" target="_blank" class="button">
+                        <img src="/assets/images/shapes/square.png" /> Read journal
+                    </a>
                 </li>
             </ul>
         </section>
@@ -46,5 +50,13 @@ import PageHeader from "@components/PageHeader.astro";
     @keyframes fadeIn {
         0% { opacity: 0; }
         100% { opacity: 1; }
+    }
+
+    h4.c-section-title {
+        margin-bottom: 20px;
+    }
+
+    li {
+        margin-bottom: 20px;
     }
 </style>

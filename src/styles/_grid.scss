@@ -4,6 +4,9 @@
   grid-template-columns: repeat(12, 1fr); 
   grid-template-rows: auto;
   gap: 0px $grid-gutter; 
+  @include screen('small') {
+    display: block;
+  }
   > * {
     grid-column: auto / span $grid-columns;
   }
