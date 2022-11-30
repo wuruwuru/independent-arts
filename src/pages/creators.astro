@@ -52,20 +52,9 @@ const filters = [
 
 <Layout>
   <main>
-    <PageHeader>
-      <h1><span class="wrwr">wuruwuru</span> brings talented writers, artists, designers and makers together to make cool things, build community and create documentation.</h1>
-    </PageHeader>
     <section class="l-section">
       <div class="l-container l-grid">
         <div class="c-section__left l-grid__column--8">
-          <h4 class="c-section-title c-section-title--spaced">
-            <span>Creators:
-             <span id="creators-count">{fetchCreators.length}</span>
-            </span>
-            <span class="mobile-filter-button">
-              <button class="filter-trigger" id="filterTrigger">Filter</button>
-            </span>
-          </h4>
           <ul class="c-creator-list" id="creators">
             {fetchCreators.map(({name, bio, role, socialLink, projects, avatar, id}, index) => {
             const projectSpread = projects.map(({ id })=> id);
@@ -90,6 +79,12 @@ const filters = [
             </li>)}
             )}
           </ul>
+          <h4>
+            <span id="creators-count">{fetchCreators.length}</span>
+            <span class="mobile-filter-button">
+              <button class="filter-trigger" id="filterTrigger">Filter</button>
+            </span>
+          </h4>
         </div>
 
         <aside class="c-section__right l-grid__column-start--11 l-grid__column--2">
@@ -370,7 +365,7 @@ const filters = [
   .c-creator-list__item {
     display: grid;
     grid-template-columns: 32% 1fr;
-    gap: 24px;
+    gap: 64px;
     margin-bottom: var(--spacer-base);
     margin-block-end: var(--spacer-base);
     width: 100%;
@@ -410,7 +405,6 @@ const filters = [
       grid-template-columns: 1fr;
       width: 100%;
       padding: calc(var(--spacer-base) / 4);
-      box-shadow: 0px 0px 1px 0px hsla(210, 7%, 28%, 0.32);
       background-color: var(--color-white);
 
       margin-bottom: calc(var(--spacer-base) / 4);
