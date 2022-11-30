@@ -44,9 +44,11 @@ const {
     align-items: center;
 
     .avatar {
-      background: whitesmoke;
       aspect-ratio: 1;
       display: flex;
+      border-radius: 50%;
+      overflow: hidden;
+      background: whitesmoke;
     }
 
     .text {
@@ -71,6 +73,7 @@ const {
       transition: all .5s ease;
       filter: grayscale(1);
     }
+
     &:hover {
       img {
         filter: none;
