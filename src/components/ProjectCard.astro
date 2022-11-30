@@ -22,37 +22,35 @@ const {
 ---
 
 <div class="project">
+	<div class="project-title">
+		<h2>
+		{url ? (
+			<a href={ url.href } target="_blank">{title}</a>
+		) : (
+			<span>{title}</span>
+		)}
+		</h2>
+		<h5 class="creator">{ creator}</h5>
+	</div>
 	<div class="project-cover">
-			{url ? (
-			<a href={ url?.href } target="_blank">
-				<img src={`/assets/images/projects/${id}.jpg`} alt={`Cover image for ${title}`} />
-			</a>
-			) : (
-				<img class="pulse" src={`/assets/images/projects/${id}.jpg`} alt={`Cover image for ${title}`} />
-			)}
+		{url ? (
+		<a href={ url?.href } target="_blank">
+			<img src={`/assets/images/projects/${id}.jpg`} alt={`Cover image for ${title}`} />
+		</a>
+		) : (
+			<img class="pulse" src={`/assets/images/projects/${id}.jpg`} alt={`Cover image for ${title}`} />
+		)}
 	</div>
 	<div class="project-text">
-		<div class="body">
-			<h2>
-			{url ? (
-				<a href={ url.href } target="_blank">{title}</a>
-			) : (
-				<span>{title}</span>
-			)}
-			</h2>
-			<p class="creator">{ creator}</p>
-		</div>
-		<div class="footer">
-			<p>{ description }</p>
-			{url ? (
-			<a href={ url?.href } class="c-link c-link--out" target="_blank">{ url.text }</a>
-			) : (
-				<div class="project-status">
-					<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
-					<span class="project-status-text">{status}</span>
-				</div>
-			)}
-		</div>
+		<p>{ description }</p>
+		{url ? (
+		<a href={ url?.href } class="c-link c-link--out" target="_blank">{ url.text }</a>
+		) : (
+			<div class="project-status">
+				<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
+				<span class="project-status-text">{status}</span>
+			</div>
+		)}
 	</div>
 </div>
 
@@ -61,7 +59,7 @@ const {
 
 	.project {
 		display: grid;
-		gap: 24px;
+		gap: 0;
 		text-decoration: none;
 		grid-template-columns: 1fr minmax(auto, 320px);
 
@@ -72,17 +70,14 @@ const {
 		&-cover {
 			position: relative;
 			width: 100%;
-			min-width: 300px;
-			height: 100%;
-			aspect-ratio: 616 / 400;
-			display: flex;
+			grid-row: span 2;
 
 			> a {
 				display: block;
 				width: 100%;
 				height: 100%;
 
-				>img {
+				> img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
@@ -97,88 +92,9 @@ const {
 			@include screen('small') {
 				min-width: unset;
 				max-width: 100%;
+				grid-row: default;
 				img {
 					filter: none;
-				}
-			}
-		}
-
-		&-text {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			gap: 32px;
-
-			h2,
-			h5 {
-				display: inline-flex;
-
-				.icon {
-					display: none;
-					font-size: inherit;
-				}
-
-				a {
-					font-style: normal;
-				}
-			}
-
-			h2 {
-				font-family: var(--font-sans);
-				margin-bottom: 0;
-			}
-
-			h5 {
-				font-size: 3.2rem;
-				font-weight: normal;
-			}
-
-			p {
-				font-size: var(--font-size-base);
-			}
-
-			.creator {
-				margin-top: 8px;
-				font-family: var(--font-sans);
-				color: var(--color-dark-gray);
-			}
-
-			.footer {
-				padding-block-end: 28px;
-				margin-block-end: 0;
-				position: relative;
-
-				&::after {
-					--divider-height: 16px;
-					content: '';
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					height: var(--divider-height);
-					background: linear-gradient(90deg, var(--color-light-gray) 50%, transparent 50%, transparent 100%),
-						linear-gradient(90deg, transparent 50%, var(--color-light-gray) 50%, var(--color-light-gray) 100%);
-					background-position: 0 0, 0 calc(var(--divider-height) / 2);
-					background-size: var(--divider-height) 50%;
-					background-repeat: repeat no-repeat;
-					// animation: none;
-					transition: background-size .35s linear;
-
-					@keyframes animatedBackground {
-
-						to {
-							background-position: 32px 0, 32px calc(var(--divider-height) / 2);
-						}
-					}
-				}
-
-				p {
-					position: relative;
-					margin-bottom: 10px;
-				}
-
-				a {
-					font-style: italic;
 				}
 			}
 		}
@@ -187,10 +103,32 @@ const {
 			img {
 				filter: none;
 			}
-			.footer {
-				&::after {
-// 					animation: animatedBackground .35s linear infinite both;
-				}
+		}
+
+		&-title {
+			@include screen('small') {
+				margin-bottom: 20px;
+			}
+
+			a {
+				font-style: normal;
+			}
+
+			h2, h5  {
+				margin: 5px;
+			}
+			
+			h5 {
+				font-family: var(--font-sans);
+				font-size: var(--font-size-base);
+				font-weight: normal;
+			}
+		}
+
+		&-text {
+			p {
+				font-size: var(--font-size-base);
+				margin-bottom: 5px;
 			}
 		}
 
