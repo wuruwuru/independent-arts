@@ -4,17 +4,20 @@ import Analytics from "./Analytics.astro";
 import SEO from "@data/SEO.json";
 
 const defaultSEO = SEO.find(({ type = null }) => type && type === 'default');
-const pageSEO = SEO.find(({ route }) => route === Astro.canonicalURL.pathname);
+const currentPath = new URL(Astro.request.url).pathname;
+const pageSEO = SEO.find(({ route }) => route === currentPath);
+const pageURL = new URL(Astro.request.url);
 
 const SEOProps = {
 	...defaultSEO.data,
 	...pageSEO?.data,
-	pageUrl: Astro.canonicalURL.href,
+	pageURL,
 }
+
 ---
 
 <head>
-	<title>{SEOProps.pageTitle}</title>
+	<title>{SEOProps.seoTitle}</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="title" content={SEOProps.seoTitle}>
@@ -25,14 +28,14 @@ const SEOProps = {
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
-	<meta property="og:url" content={SEOProps.pageUrl}>
+	<meta property="og:url" content={SEOProps.pageURL}>
 	<meta property="og:title" content={SEOProps.seoTitle}>
 	<meta property="og:description" content={SEOProps.pageDescription}>
 	<meta property="og:image" content={SEOProps.defaultSEOImage}>
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content={SEOProps.pageUrl}>
+	<meta property="twitter:url" content={SEOProps.pageURL}>
 	<meta property="twitter:title" content={SEOProps.seoTitle}>
 	<meta property="twitter:description" content={SEOProps.pageDescription}>
 	<meta property="twitter:image" content={SEOProps?.twitterSEOImage ?? SEOProps.defaultSEOImage}>

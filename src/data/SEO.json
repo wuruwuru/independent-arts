@@ -3,65 +3,73 @@
 		"type": "default",
 		"route": "/",
 		"data": {
-			"pageTitle": "wuruwuru",
-			"seoTitle": "wuruwuru | Homepage",
-			"pageDescription": "A collection of publishing experiments",
+			"pageTitle": "Home",
+			"seoTitle": "wuruwuru",
+			"pageDescription": "A playground for ideas",
 			"defaultSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png",
 			"twitterSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png"
 		}
 	},
 	{
-		"route": "/about/",
+		"route": "/projects",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Projects",
+			"seoTitle": "wuruwuru | Projects",
+			"pageDescription": "A playground for ideas"
+		}
+	},
+	{
+		"route": "/about",
+		"data": {
+			"pageTitle": "About",
 			"seoTitle": "wuruwuru | About",
-			"pageDescription": "A collection of publishing experiments"
+			"pageDescription": "A playground for ideas"
 		}
 	},
 	{
-		"route": "/creators/",
+		"route": "/creators",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Creators",
 			"seoTitle": "wuruwuru | Creators",
-			"pageDescription": "A collection of publishing experiments"
+			"pageDescription": "A playground for ideas"
 		}
 	},
 	{
-		"route": "/manifesto/",
+		"route": "/manifesto",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Manifesto",
 			"seoTitle": "wuruwuru | Manifesto",
-			"pageDescription": "A collection of publishing experiments"
+			"pageDescription": "A playground for ideas"
 		}
 	},
 	{
-		"route": "/covers/",
+		"route": "/covers",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Covers",
 			"seoTitle": "wuruwuru | Covers",
 			"pageDescription": "A database of Nigerian album covers"
 		}
 	},
 	{
-		"route": "/cover-contest/",
+		"route": "/cover-contest",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Cover Contest",
 			"seoTitle": "wuruwuru | Cover Contest",
 			"pageDescription": "Apply to the wururuwuru Cover Contest"
 		}
 	},
 	{
-		"route": "/streetwear/",
+		"route": "/streetwear",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Streetwear",
 			"seoTitle": "wuruwuru | Streetwear",
 			"pageDescription": "A database of African streetwear brands"
 		}
 	},
 	{
-		"route": "/comics/",
+		"route": "/comics",
 		"data": {
-			"pageTitle": "wuruwuru",
+			"pageTitle": "Comics",
 			"seoTitle": "wuruwuru | Comics",
 			"pageDescription": "A database of African comics"
 		}
