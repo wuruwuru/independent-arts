@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Adeniyi Ademoroti",
-    "avatar": "/avatars/adeniyi.png",
+    "avatar": "https://wuruwuru.com/avatars/adeniyi.png",
     "bio": "Adeniyi is a writer and an editor at BellaNaija.com. His writing has been featured in Brittlepaper and Per Contra.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Alithnayn",
-    "avatar": "/avatars/alithnayn.png",
+    "avatar": "https://wuruwuru.com/avatars/alithnayn.png",
     "bio": "Alithnayn is a dog and a cat person. She gets paid to tackle big socioeconomic issues and write. She has been published by Harvard, Quartz, Wasafiri, Ozy and more. She won a short story day africa prize for outstanding fiction in 2021. ",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Ani Kayode",
-    "avatar": "/avatars/ani.png",
+    "avatar": "https://wuruwuru.com/avatars/ani.png",
     "bio": "Ani Kayode is an award-winning writer and liberation fighter marinated in anti-imperialist rage.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Bolu Sowoolu",
-    "avatar": "/avatars/bolu.png",
+    "avatar": "https://wuruwuru.com/avatars/bolu.png",
     "bio": "Bolu is a multidisciplinary artist and creator.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Chukwudi Okoro",
-    "avatar": "/avatars/chukwudiE.png",
+    "avatar": "https://wuruwuru.com/avatars/chukwudiE.png",
     "bio": "Chukwudi Echezie Okoro Is a 2D/3D generalist with over 8 years of experience in the advertising and digital communication field and has worked on brands and organizations like Confederation of African Football (CAF), Access Bank, BBC, The Independent National Electoral Commission (INEC), Raven, Malta Guinness, MADworld in collaboration with MotoGP, and more.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Chukwudi Ukonne",
-    "avatar": "/avatars/chukwudiU.png",
+    "avatar": "https://wuruwuru.com/avatars/chukwudiU.png",
     "bio": "Chukwudi explores the intersection of history, culture and politics with his work.",
     "roleId": "writer",
     "projectIds": ["coverbank"], 
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Daniel Orubo",
-    "avatar": "/avatars/daniel.png",
+    "avatar": "https://wuruwuru.com/avatars/daniel.png",
     "bio": "Daniel is a writer, editor and director. He currently works as Head of Content at PiggyVest and Backdrop.",
     "roleId": "director",
     "projectIds": ["feelgood","hankypanky"], 
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Edwin Okolo",
-    "avatar": "/avatars/edwin.png",
+    "avatar": "https://wuruwuru.com/avatars/edwin.png",
     "bio": "Edwin is a writer, editor and strategic thinker who also founded the boutique design label Studio Imo.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Emmanuel Aminu",
-    "avatar": "/avatars/emmanuel.png",
+    "avatar": "https://wuruwuru.com/avatars/emmanuel.png",
     "bio": "Emmanuel is a freelance data analyst, who loves telling stories with data.",
     "roleId": "data_analyst",
     "projectIds": ["coverbank"], 
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Eris Ekanem",
-    "avatar": "/avatars/agnes.png",
+    "avatar": "https://wuruwuru.com/avatars/agnes.png",
     "bio": "Eris is a writer and storyboard artist. She's learning French and training her cat with sign language.",
     "roleId": "artist",
     "projectIds": ["edeyhappen","feelgood"], 
@@ -122,7 +122,7 @@
   {
     "id": 11,
     "name": "Eseosa Belo-Osagie",
-    "avatar": "/avatars/eseosa.png",
+    "avatar": "https://wuruwuru.com/avatars/eseosa.png",
     "bio": "Eseosa is a digital illustrator and product designer.",
     "roleId": "designer",
     "projectIds": ["coverbank"], 
@@ -134,7 +134,7 @@
   {
     "id": 12,
     "name": "Fisayo Adefolaju",
-    "avatar": "/avatars/fisayo.png",
+    "avatar": "https://wuruwuru.com/avatars/fisayo.png",
     "bio": "Fisayo Adefolaju, also known as 'TheOtherThrone', is a sound designer and film score composer experienced in audio post-production for film and TV. He is a member of the versatile team at Visus Sonic Arts and loves to create emotions using sound.",
     "roleId": "sound_designer",
     "projectIds": ["edeyhappen","hankypanky"], 
@@ -146,7 +146,7 @@
   {
     "id": 13,
     "name": "Hannatu Dan-Habu",
-    "avatar": "/avatars/hannatu.png",
+    "avatar": "https://wuruwuru.com/avatars/hannatu.png",
     "bio": "Hannatu runs Hawk & Dane, a technology and data advisory law firm.",
     "roleId": "lawyer",
     "projectIds": ["feelgood"], 
@@ -158,7 +158,7 @@
   {
     "id": 14,
     "name": "Ifebusola Shotunde",
-    "avatar": "/avatars/ifebusola.png",
+    "avatar": "https://wuruwuru.com/avatars/ifebusola.png",
     "bio": "Ifebusola is a photographer and graphic designer who focuses on documenting the people and places on his life's journey.",
     "roleId": "photographer",
     "projectIds": ["hankypanky"], 
@@ -170,7 +170,7 @@
   {
     "id": 15,
     "name": "Idris Ayinde",
-    "avatar": "/avatars/idris.png",
+    "avatar": "https://wuruwuru.com/avatars/idris.png",
     "bio": "Idris is a designer and product designer whose work aims to create positive experiences that impact the user and culture. He specializes in product design, user experience design, and brand design.",
     "roleId": "designer",
     "projectIds": ["coverbank"], 
@@ -182,7 +182,7 @@
   {
     "id": 16,
     "name": "Immaculata Abba",
-    "avatar": "/avatars/immaculata.png",
+    "avatar": "https://wuruwuru.com/avatars/immaculata.png",
     "bio": "Immaculata is a beautiful artist, writer and researcher. Check her website for more info.",
     "roleId": "artist",
     "projectIds": ["coverbank"], 
@@ -194,7 +194,7 @@
   {
     "id": 17,
     "name": "Innocent Ilo",
-    "avatar": "/avatars/innocent.png",
+    "avatar": "https://wuruwuru.com/avatars/innocent.png",
     "bio": "Innocent is a Nigerian writer based in Lagos. They are the regional winner for Africa of the 2020 Commonwealth Short Story Prize for their short story 'When a Woman Renounces Motherhood'.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -206,7 +206,7 @@
   {
     "id": 18,
     "name": "Ivierawo Lesso",
-    "avatar": "/avatars/ivierawo.png",
+    "avatar": "https://wuruwuru.com/avatars/ivierawo.png",
     "bio": "Ivie is a self-taught illustrator and 2D animator.",
     "roleId": "artist",
     "projectIds": ["edeyhappen"], 
@@ -218,7 +218,7 @@
   {
     "id": 19,
     "name": "Jessica A.",
-    "avatar": "/avatars/jessicaA.png",
+    "avatar": "https://wuruwuru.com/avatars/jessicaA.png",
     "bio": "Jessica has worked as a Story & Script Editor, Head Writer and Content Director. She's a producer on Big Brother Naija and currently writes Africa Magic's Primetime TV series, Venge.",
     "roleId": "storyteller",
     "projectIds": ["hankypanky"], 
@@ -230,7 +230,7 @@
   {
     "id": 20,
     "name": "Jessica Louis",
-    "avatar": "/avatars/jessicaL.png",
+    "avatar": "https://wuruwuru.com/avatars/jessicaL.png",
     "bio": "Jessica is a visual story teller. She's an artist and illustrator who helped get Cover Bank to 5000 images.",
     "roleId": "artist",
     "projectIds": ["coverbank"], 
@@ -242,7 +242,7 @@
   {
     "id": 21,
     "name": "Joshua Adeoye",
-    "avatar": "/avatars/joshua.png",
+    "avatar": "https://wuruwuru.com/avatars/joshua.png",
     "bio": "Joshua is a freelance animator, book illustrator and artist, currently working on two comic series.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
@@ -254,7 +254,7 @@
   {
     "id": 22,
     "name": "Kemi Falodun",
-    "avatar": "/avatars/kemi.png",
+    "avatar": "https://wuruwuru.com/avatars/kemi.png",
     "bio": "Kemi Falodun is a writer and journalist interested in culture, mental health, social justice, and the intersection of dreamlife and wakeful consciousness. Her work has been published in Catapult, Al Jazeera, The Guardian UK, WePresent, Devex, and several other platforms.",
     "roleId": "writer",
     "projectIds": ["coverbank"], 
@@ -266,7 +266,7 @@
   {
     "id": 23,
     "name": "Kolade Emmanuel",
-    "avatar": "/avatars/black.png",
+    "avatar": "https://wuruwuru.com/avatars/black.png",
     "bio": "Kolamide is a comedian, host and voice actor that’s worked in the Nigerian entertainment industry for 6 years plus. He’s an easy going, hilarious dude. Loves eating food and making people laugh.",
     "roleId": "voice_actor",
     "projectIds": ["edeyhappen"], 
@@ -278,7 +278,7 @@
   {
     "id": 24,
     "name": "Kolade Morakinyo",
-    "avatar": "/avatars/koladeM.png",
+    "avatar": "https://wuruwuru.com/avatars/koladeM.png",
     "bio": "Kolade leads the sound department at Visus Sonic Arts.",
     "roleId": "sound_designer",
     "projectIds": ["hankypanky"], 
@@ -291,7 +291,7 @@
   {
     "id": 25,
     "name": "Kunle Popoola",
-    "avatar": "/avatars/black.png",
+    "avatar": "https://wuruwuru.com/avatars/black.png",
     "bio": "Kunle is a writer.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -303,7 +303,7 @@
   {
     "id": 26,
     "name": "Mariam Sule-Izuagbe",
-    "avatar": "/avatars/mariam.png",
+    "avatar": "https://wuruwuru.com/avatars/mariam.png",
     "bio": "Mariam's work centers on intersectional feminism, underrepresented minorities and interpersonal communication dynamics.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -315,7 +315,7 @@
   {
     "id": 27,
     "name": "Niyi Okeowo",
-    "avatar": "/avatars/niyi.png",
+    "avatar": "https://wuruwuru.com/avatars/niyi.png",
     "bio": "Niyi is the Chief Design Officer at Garmspot and is currently building Astra, a network of cities in the metaverse for playing NFT games and buying digital fashion to wear IRL.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
@@ -327,7 +327,7 @@
   {
     "id": 28,
     "name": "Obika Ifunanya Linda",
-    "avatar": "/avatars/obika.png",
+    "avatar": "https://wuruwuru.com/avatars/obika.png",
     "bio": "Linda is a motion graphics designer.",
     "roleId": "animator",
     "projectIds": ["hankypanky"], 
@@ -339,7 +339,7 @@
   {
     "id": 29,
     "name": "Olakunle Ologunro",
-    "avatar": "/avatars/olakunle.png",
+    "avatar": "https://wuruwuru.com/avatars/olakunle.png",
     "bio": "Olakunle Ologunro is a writer from Lagos, Nigeria. He is a finalist for the 2020 Adina Talve-Goodman Fellowship from One Story Magazine.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -351,7 +351,7 @@
   {
     "id": 30,
     "name": "Ope Adedeji",
-    "avatar": "/avatars/ope.png",
+    "avatar": "https://wuruwuru.com/avatars/ope.png",
     "bio": "Ope is an experienced editor and has worked in online media and traditional publishing.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -363,7 +363,7 @@
   {
     "id": 31,
     "name": "Opemipo Aikomo",
-    "avatar": "/avatars/opemipo.png",
+    "avatar": "https://wuruwuru.com/avatars/opemipo.png",
     "bio": "Ope started wuruwuru and directs the circus. In his spare time, he also leads design at Paystack.",
     "roleId": "designer",
     "projectIds": ["feelgood","hankypanky","jguide","ludo","coverbank","edeyhappen"], 
@@ -375,7 +375,7 @@
   {
     "id": 32,
     "name": "Osarumen Osamuyi",
-    "avatar": "/avatars/osarumen.png",
+    "avatar": "https://wuruwuru.com/avatars/osarumen.png",
     "bio": "Osarumen 'LMBSKN' Osamuyi is an experimental producer and synth programmer based in Lagos, Nigeria. He also works as a Strategic Partner Manager at Meta.",
     "roleId": "sound_producer",
     "projectIds": ["hankypanky"], 
@@ -387,7 +387,7 @@
   {
     "id": 33,
     "name": "Oshuwa Imoyo",
-    "avatar": "/avatars/oshuwa.png",
+    "avatar": "https://wuruwuru.com/avatars/oshuwa.png",
     "bio": "Oshuwa is an actress, most popularly known for The Wait (2021) and The Smart Money Woman (2020).",
     "roleId": "voice_actor",
     "projectIds": ["hankypanky"], 
@@ -399,7 +399,7 @@
   {
     "id": 34,
     "name": "Osione Itegboje",
-    "avatar": "/avatars/osione.png",
+    "avatar": "https://wuruwuru.com/avatars/osione.png",
     "bio": "Osione is a multidisciplinary artist. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities.",
     "roleId": "designer",
     "projectIds": ["feelgood"], 
@@ -411,7 +411,7 @@
   {
     "id": 35,
     "name": "Remy Baggins",
-    "avatar": "/avatars/remy.png",
+    "avatar": "https://wuruwuru.com/avatars/remy.png",
     "bio": "Remy is a Nigerian singer, songwriter, producer and sound engineer.",
     "roleId": "sound_producer",
     "projectIds": ["hankypanky"], 
@@ -423,7 +423,7 @@
   {
     "id": 36,
     "name": "Samson Oyedija",
-    "avatar": "/avatars/samson.png",
+    "avatar": "https://wuruwuru.com/avatars/samson.png",
     "bio": "Samson is a Production Assistant at Kugali, where he is helping tell African stories. He is also interested in helping build legacy products.",
     "roleId": "producer",
     "projectIds": ["edeyhappen"], 
@@ -435,7 +435,7 @@
   {
     "id": 37,
     "name": "Saratu Dan-Habu",
-    "avatar": "/avatars/saratu.png",
+    "avatar": "https://wuruwuru.com/avatars/saratu.png",
     "bio": "Saratu is curious about emerging and disruptive technology and specializes in all aspects of intellectual property law and practice.",
     "roleId": "lawyer",
     "projectIds": ["feelgood","hankypanky"], 
@@ -447,7 +447,7 @@
   {
     "id": 38,
     "name": "Timehin",
-    "avatar": "/avatars/timehin.png",
+    "avatar": "https://wuruwuru.com/avatars/timehin.png",
     "bio": "OluTimehin is a Nigerian storyteller working primarily in multi-format nonfiction and public advocacy.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
@@ -459,7 +459,7 @@
   {
     "id": 39,
     "name": "Tomiwa Ajiboye",
-    "avatar": "/avatars/tomiwa.png",
+    "avatar": "https://wuruwuru.com/avatars/tomiwa.png",
     "bio": "Tomiwa is a product designer and music buff. He enjoys taking it slow or going really fast, no in-betweens. He's building Comicrunes - a platform for reading comics.",
     "roleId": "designer",
     "projectIds": ["jguide","coverbank"], 
@@ -471,7 +471,7 @@
   {
     "id": 40,
     "name": "Tosin Amire",
-    "avatar": "/avatars/tosin.png",
+    "avatar": "https://wuruwuru.com/avatars/tosin.png",
     "bio": "Tosin is an audio post-production artist experienced in the entertainment industry.",
     "roleId": "sound_designer",
     "projectIds": ["hankypanky"], 
@@ -483,7 +483,7 @@
   {
     "id": 41,
     "name": "Vanny",
-    "avatar": "/avatars/vanny.png",
+    "avatar": "https://wuruwuru.com/avatars/vanny.png",
     "bio": "Vanny is a concept artist and creative designer. He's passionate about western comic books but inspired by manga. He believes his art is Avantasia, a never-ending revealing of untold stories.",
     "roleId": "artist",
     "projectIds": ["jguide"], 
@@ -495,7 +495,7 @@
   {
     "id": 42,
     "name": "Wale Oloworekende",
-    "avatar": "/avatars/black.png",
+    "avatar": "https://wuruwuru.com/avatars/black.png",
     "bio": "Wale is a freelance writer and critic whose work explores the intersection of popular culture, music, film, sports, and lifestyle.",
     "roleId": "storyteller",
     "projectIds": ["coverbank"], 
@@ -507,7 +507,7 @@
   {
     "id": 43,
     "name": "Williams Ogah",
-    "avatar": "/avatars/williams.png",
+    "avatar": "https://wuruwuru.com/avatars/williams.png",
     "bio": "Williams is curious about how creative ideas come to life. He previously worked as a project manager, enjoys taking naps, and also runs a consulting business.",
     "roleId": "manager",
     "projectIds": ["feelgood","hankypanky","jguide","ludo","coverbank","edeyhappen"], 
@@ -519,7 +519,7 @@
   {
     "id": 44,
     "name": "Yadichinma Uloha-Kalu",
-    "avatar": "/avatars/yadi.gif",
+    "avatar": "https://wuruwuru.com/avatars/yadi.gif",
     "bio": "Yadi is an independent artist, illustrator and art director based in Lagos, Nigeria. Her practice centers on explorations of line, form and boundary which she expresses through a variety of media including painting, drawing, sculpture and digital media. ",
     "roleId": "writer",
     "projectIds": ["ludo"], 
