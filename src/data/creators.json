@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Adeniyi Ademoroti",
-    "avatar": "./src/assets/images/avatars/adeniyi.png",
+    "avatar": "./../assets/images/avatars/adeniyi.png",
     "bio": "Adeniyi is a writer and an editor at BellaNaija.com. His writing has been featured in Brittlepaper and Per Contra.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
