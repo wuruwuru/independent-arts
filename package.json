@@ -1,6 +1,6 @@
 {
   "name": "wuruwuru.com",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "clean": "rm -rf dist/*",
