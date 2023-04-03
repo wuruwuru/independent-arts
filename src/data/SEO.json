@@ -5,7 +5,7 @@
 		"data": {
 			"pageTitle": "Home",
 			"seoTitle": "wuruwuru",
-			"pageDescription": "wuruwuru is a maker collective with a production studio for niche passion projects.",
+			"pageDescription": "wuruwuru is a community studio from Lagos, Nigeria.",
 			"defaultSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png",
 			"twitterSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png"
 		}
@@ -29,9 +29,9 @@
 	{
 		"route": "/creators",
 		"data": {
-			"pageTitle": "Creators",
-			"seoTitle": "wuruwuru | Creators",
-			"pageDescription": "A playground for ideas"
+			"pageTitle": "People",
+			"seoTitle": "wuruwuru | People",
+			"pageDescription": "Directory of studio collaborators"
 		}
 	},
 	{
@@ -39,7 +39,7 @@
 		"data": {
 			"pageTitle": "Manifesto",
 			"seoTitle": "wuruwuru | Manifesto",
-			"pageDescription": "A playground for ideas"
+			"pageDescription": "Vision and roadmap for the studio"
 		}
 	},
 	{
