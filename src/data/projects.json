@@ -1,5 +1,13 @@
 [
   {
+    "id": "feelgood",
+    "creator": "Daniel Orubo",
+    "title": "Feel Good",
+    "status": "design",
+    "category": "Book, Website",
+    "description": "An anthology of joyful queer stories."
+  },
+  {
     "id": "ludo",
     "title":  "LUDO",
     "creator": "Yadichinma Ukoha-Kalu",
@@ -58,13 +66,5 @@
       "text": "instagram/@thejguide",
       "href": "https://instagram.com/thejguide"
     }
-  },
-  {
-    "id": "feelgood",
-    "creator": "Daniel Orubo",
-    "title": "Feel Good",
-    "status": "design",
-    "category": "Book, Website",
-    "description": "An anthology of joyful queer stories."
   }
 ]
