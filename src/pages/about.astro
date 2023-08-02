@@ -35,37 +35,20 @@ const teamMemberData = team.reduce((acc, teamMember, index) => {
 <Layout>
 	<main>
 		<PageHeader>
-			<h1><span class="wrwr">wuruwuru</span> is a maker collective. We help friends of the studio with people, strategy, direction and production for passion projects.</h1>
+			<h1><span class="wrwr">wuruwuru</span> is a community studio. We make passion projects with independent creators.</h1>
 		</PageHeader>
 		<section class="l-section">
 			<div class="l-container l-grid">
-				<div class="c-section__left l-grid__column--8">
-					<h4 class="c-section-title">Team</h4>
-					<ul class="c-team" id="teamList">
-						{team.map(({name, role, description, id , link, linkText}) => (
-						<li class="c-team__member" data-member={id}>
-							<div class="image">
-								<ProfileCard title={name} description={role} imageLink={teamImages[id]} size="small" />
-							</div>
-							<div>
-								<p>{ description }</p>
-								<div class="footer">
-									<a class="c-link c-link--out" href={link}>{linkText}</a>
-								</div>
-							</div>
-						</li>
-						))}
-					</ul>
+				<div class="c-section__left l-grid__column--6">
+					<p><span class="wrwr">wuruwuru</span> means "someway, somehow". It's a Nigerian word culled from the phrase "wuruwuru to the answer", which describes a problem solved without a clear process. It refers to the experience of making things in Nigeria with no institutional support.</p>
+					<p>I started the studio in November 2020 because I wanted to make a magazine, but then it veered into a handful of odd publishing experiments and collaborations. Now I describe it as a community studio.</p>
+					<p>The studio has no fixed structure. I set up a new team for each project and we work remotely using a combination of practices I’ve picked up from a decade of software development. Each project ends up becoming a small community of practice and we try to create useful documentation in the process.</p>
+					<p>My goal is to build a network that helps independent creators in Nigeria make passion projects. I  think they’re  intrinsically valuable for self expression and personal discovery, but many good ideas don’t get made because people don’t have the knowledge, money or support required.</p>
+					<p>In a way, this is my own little intervention.</p>
 				</div>
 				<aside class="c-section__right l-grid__column-start--10 l-grid__column--3">
-					<h4 class="c-section-title">Bumper</h4>
 					<div class="c-team">
 						<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/746436734?h=dda10a5de6&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-					</div>
-					<h4 class="c-section-title">Manifesto</h4>
-					<div class="c-team">
-						<p>The goal is to build a community-run support system for independent creators.</p>
-						<p><a href="/manifesto">Continue reading</a></p>
 					</div>
 				</aside>
 			</div>
