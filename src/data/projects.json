@@ -8,6 +8,18 @@
     "description": "An anthology of joyful queer stories."
   },
   {
+    "id": "coverbank",
+    "title":  "Album Cover Bank",
+    "creator": "Tomiwa Ajiboye",
+    "status": "production",
+    "category":  "Database",
+    "description":  "A retrospective of Nigerian album covers from 1950 to 2022.",
+    "url": {
+      "text": "wuruwuru.com/covers",
+      "href": "https://wuruwuru.com/covers"
+    }
+  },
+  {
     "id": "ludo",
     "title":  "LUDO",
     "creator": "Yadichinma Ukoha-Kalu",
@@ -41,18 +53,6 @@
     "url": {
       "text": "hankypankyfilm.com",
       "href": "https://hankypankyfilm.com"
-    }
-  },
-  {
-    "id": "coverbank",
-    "title":  "Album Cover Bank",
-    "creator": "Tomiwa Ajiboye",
-    "status": "production",
-    "category":  "Database",
-    "description":  "A retrospective of Nigerian album covers from 1950 to 2022.",
-    "url": {
-      "text": "wuruwuru.com/covers",
-      "href": "https://wuruwuru.com/covers"
     }
   },
   {
