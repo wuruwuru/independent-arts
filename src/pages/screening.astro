@@ -6,11 +6,60 @@ import Layout from "@layout/Default.astro";
 <Layout>
 	<main class="l-container l-grid">
 		<section class="l-grid__column--6">
-      <h3>Hanky Panky Screening</h3>
-      <p></p>
+      <img src={`/assets/images/projects/hankypanky.jpg`} alt={`Cover image for hankypanky`} />
+			<div style="margin-top: 30px">
+				<h3>Hanky Panky Screening</h3>
+				<ul class="runofshow">
+					<li>
+						<strong>7:00 PM</strong>
+						<span>Hanky Panky Documentary
+					</li>
+					<li>
+						<strong>7:30 PM</strong>
+						<span>Hanky Panky
+					</li>
+					<li>
+						<strong>7:40 PM</strong>
+						<span>Lagos: Interview with Ope & Chuks
+					</li>
+					<li>
+						<strong>8:15 PM</strong>
+						<span>Break
+					</li>
+					<li>
+						<strong>8:30 PM</strong>
+						<span>DAWTA (Jessica Ashman)
+					</li>
+					<li>
+						<strong>8:40 PM</strong>
+						<span>Pass the Meerkat (Deji Olaniyi-Maxwell)
+					</li>
+					<li>
+						<strong>8:55 PM</strong>
+						<span>London: Interview with Jessica & Deji
+					</li>
+					<li>
+						<strong>9:30 PM</strong>
+						<span>Hanky Panky Documentary
+					</li>
+					<li>
+						<strong>9:45 PM</strong>
+						<span>Hanky Panky
+					</li>
+				</ul>
+			</div>
     </section>
 	</main>
 </Layout>
 <style lang="scss">
 	@import "../styles/mixins.scss";
+	body {
+		background: black;
+		color: white !important;
+	}
+	.runofshow {
+		font-family: monospace;
+		text-transform: uppercase;
+		margin: 30px 0;
+	}
 </style>
