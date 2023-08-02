@@ -28,16 +28,10 @@ import databases from "@data/databases.json";
 					</ul>
 				</div>
 				<aside class="c-section__right l-grid__column-start--10 l-grid__column--3">
-					<h4 class="c-section-title">Data</h4>
+					<h4 class="c-section-title">Research</h4>
 					<ul class="aside-list data">
 						{databases.map((db) => (<li>
 							<DatabaseCard {...db} />
-						</li>))}
-					</ul>
-					<h4 class="c-section-title">Newsletter</h4>
-					<ul class="aside-list">
-						{newsletters.map((letter) => (<li>
-							<NewsletterPreview {...letter} />
 						</li>))}
 					</ul>
 				</aside>
