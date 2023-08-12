@@ -1,5 +1,5 @@
 # wuruwuru
-A collection of publishing experiments
+A community studio for passion projects
 
 Built with [Astro](https://astro.build/), Javascript, HTML and CSS (SCSS)
 
