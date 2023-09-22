@@ -353,7 +353,7 @@
     "name": "Opemipo Aikomo",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/opemipo.jpg?raw=true",
     "bio": "Ope started wuruwuru and directs the circus. In his spare time, he also heads the design team at Paystack.",
-    "roleId": "designer",
+    "roleId": "director",
     "projectIds": ["feelgood","hankypanky","jguide","ludo","coverbank","edeyhappen"], 
     "socialLink": {
       "text": "Website",
