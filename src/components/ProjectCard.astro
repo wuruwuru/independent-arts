@@ -85,24 +85,10 @@ const {
 				}
 			}
 
-			img {
-    		transition: all .5s ease;
-				filter: grayscale(1);
-			}
-
 			@include screen('small') {
 				min-width: unset;
 				max-width: 100%;
 				grid-row: default;
-				img {
-					filter: none;
-				}
-			}
-		}
-
-		&:hover {
-			img {
-				filter: none;
 			}
 		}
 
