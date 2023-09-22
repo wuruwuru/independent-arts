@@ -354,7 +354,7 @@
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/opemipo.jpg?raw=true",
     "bio": "Ope started wuruwuru and directs the circus. In his spare time, he also heads the design team at Paystack.",
     "roleId": "director",
-    "projectIds": ["feelgood","hankypanky","jguide","ludo","coverbank","edeyhappen"], 
+    "projectIds": ["jguide","hankypanky","edeyhappen","ludo","coverbank","feelgood","rosesroses"], 
     "socialLink": {
       "text": "Website",
       "url": "https://opemipo.com"
