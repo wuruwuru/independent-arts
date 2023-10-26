@@ -11,9 +11,13 @@
     "id": "feelgood",
     "creator": "Daniel Orubo",
     "title": "Feel Good",
-    "status": "design",
+    "status": "production",
     "category": "Book, Website",
-    "description": "An anthology of stories about queer joy."
+    "description": "An anthology of stories about queer joy.",
+    "url": {
+      "text": "afeelgoodbook.com",
+      "href": "https://afeelgoodbook.com"
+    }
   },
   {
     "id": "coverbank",
