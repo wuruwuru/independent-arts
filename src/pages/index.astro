@@ -13,11 +13,16 @@ import PageHeader from "@components/PageHeader.astro";
             </h1>
         </PageHeader>
         <section class="l-container">
-			<h4 class="c-section-title">LIVE</h4>
+			<h4 class="c-section-title">Pinned</h4>
             <ul class="c-section l-grid">
                 <li class="l-grid__column--3">
-                    <a href="https://afeelgoodbook.com" class="button">
-                        <img src={`/assets/images/projects/feelgood.jpg`} alt={`Cover image for Feel Good`} /> Feel Good
+                    <a href="https://afeelgoodbook.com" target="_blank" class="button">
+                        <img src={`/assets/images/projects/feelgood.jpg`} alt="Cover image for Feel Good" /> Feel Good
+                    </a>
+                </li>
+                <li class="l-grid__column--3">
+                    <a href="https://www.youtube.com/watch?v=ZcKZ_LJwurw" target="_blank" class="button">
+                        <img src={`/assets/images/projects/hankypanky.jpg`} alt="Cover image for Hanky Panky" /> Hanky Panky
                     </a>
                 </li>
                 <li class="l-grid__column--3">
@@ -28,11 +33,6 @@ import PageHeader from "@components/PageHeader.astro";
                 <li class="l-grid__column--3">
                     <a href="/creators" class="button">
                         <img src="/assets/images/shapes/circle.png" /> Manifesto
-                    </a>
-                </li>
-                <li class="l-grid__column--3">
-                    <a href="https://medium.com/wuruwuru" target="_blank" class="button">
-                        <img src="/assets/images/shapes/square.png" /> Journal
                     </a>
                 </li>
             </ul>
