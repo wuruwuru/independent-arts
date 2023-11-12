@@ -398,14 +398,14 @@
   },
   {
     "id": 34,
-    "name": "Princess Ebi",
+    "name": "Kanaal",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/princess.jpg?raw=true",
-    "bio": "Princess is a multidisciplinary producer and co-founder of Kanaal, a creative consultancy. She cares deeply about helping artists build sustainable businesses.",
+    "bio": "Kanaal is a multi-disciplinary creative lab for novel ideas run by Princess Ebi and Bomi Fagbemi.",
     "roleId": "producer",
     "projectIds": ["rosesroses"], 
     "socialLink": {
       "text": "Instagram",
-      "url": "https://instagram.com/adahadadream"
+      "url": "https://www.instagram.com/kanaal.studio/"
     } 
   },
   {
