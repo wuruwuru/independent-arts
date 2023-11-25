@@ -398,9 +398,9 @@
   },
   {
     "id": 34,
-    "name": "Kanaal",
+    "name": "Princess Ebi",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/princess.jpg?raw=true",
-    "bio": "Kanaal is a multi-disciplinary creative lab for novel ideas run by Princess Ebi and Bomi Fagbemi.",
+    "bio": "Princess Ebi is the co-founder of Kanaal, a multi-disciplinary creative lab for novel ideas. She's also building Blank, a body care brand.",
     "roleId": "collaborator",
     "projectIds": ["rosesroses"], 
     "socialLink": {
