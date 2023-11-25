@@ -389,7 +389,7 @@
     "name": "Osione Itegboje",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/osione.jpg?raw=true",
     "bio": "Osione is a multidisciplinary artist. He developed a technology called SLIDE to help businesses and personalities build stronger, bolder identities.",
-    "roleId": "designer",
+    "roleId": "collaborator",
     "projectIds": ["feelgood"], 
     "socialLink": {
       "text": "LinkedIn",
@@ -401,7 +401,7 @@
     "name": "Kanaal",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/princess.jpg?raw=true",
     "bio": "Kanaal is a multi-disciplinary creative lab for novel ideas run by Princess Ebi and Bomi Fagbemi.",
-    "roleId": "producer",
+    "roleId": "collaborator",
     "projectIds": ["rosesroses"], 
     "socialLink": {
       "text": "Instagram",
@@ -497,7 +497,7 @@
     "name": "Wale Oloworekende",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/black.jpg?raw=true",
     "bio": "Wale is a freelance writer and critic whose work explores the intersection of popular culture, music, film, sports, and lifestyle.",
-    "roleId": "storyteller",
+    "roleId": "writer",
     "projectIds": ["coverbank"], 
     "socialLink": {
       "text": "Twitter",
@@ -521,7 +521,7 @@
     "name": "Yadichinma Uloha-Kalu",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/yadi.gif?raw=true",
     "bio": "Yadi is an independent artist, illustrator and art director based in Lagos, Nigeria. Her practice centers on explorations of line, form and boundary which she expresses through a variety of media including painting, drawing, sculpture and digital media. ",
-    "roleId": "writer",
+    "roleId": "collaborator",
     "projectIds": ["ludo"], 
     "socialLink": {
       "text": "Instagram",
@@ -533,7 +533,7 @@
     "name": "Tushar Hathiramani",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/tushar.jpg?raw=true",
     "bio": "Tushar is the founder of 16/16, a Lagos-based creative space and boutique hotel and is also a co-founder of the hFACTOR Collective, a community-based initiative seeking to rehabilitate the Lagos Island community using creative methods of social engagement",
-    "roleId": "writer",
+    "roleId": "collaborator",
     "projectIds": ["ludo"], 
     "socialLink": {
       "text": "Instagram",
