@@ -71,7 +71,7 @@ const filters = [
                 <div>
                   <div>Projects:
                     {projects.map(({id, title}) => (
-                      <a href="#">{title}</a>
+                      <span>{title}</span>
                     ))}
                   </div>
                   <div>Connect: <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a></div>
@@ -392,7 +392,7 @@ const filters = [
         color: var(--color-dark-gray);
       }
 
-      a {
+      a, span {
         margin-right: 4px;
         &:not(:last-child) {
           &:after {
