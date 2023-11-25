@@ -220,7 +220,7 @@
     "name": "Jessica A.",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/jessicaA.jpg?raw=true",
     "bio": "Jessica has worked as a Story & Script Editor, Head Writer and Content Director. She's a producer on Big Brother Naija and currently writes Africa Magic's Primetime TV series, Venge.",
-    "roleId": "storyteller",
+    "roleId": "writer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
       "text": "LinkedIn",
@@ -534,10 +534,10 @@
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/tushar.jpg?raw=true",
     "bio": "Tushar is the founder of 16/16, a Lagos-based creative space and boutique hotel and is also a co-founder of the hFACTOR Collective, a community-based initiative seeking to rehabilitate the Lagos Island community using creative methods of social engagement",
     "roleId": "collaborator",
-    "projectIds": ["ludo"], 
+    "projectIds": ["friendsof16"], 
     "socialLink": {
       "text": "Instagram",
-      "url": "https://www.instagram.com/yadichinma/"
+      "url": "https://www.instagram.com/tusharhathi"
     } 
   }
 ]
