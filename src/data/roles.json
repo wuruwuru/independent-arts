@@ -40,10 +40,6 @@
     "label": "Voice Actor"
   },
   {
-    "id": "storyteller",
-    "label": "Storyteller"
-  },
-  {
     "id": "producer",
     "label": "Producer"
   }, 
@@ -66,5 +62,9 @@
   {
     "id": "manager",
     "label": "Manager"
-  } 
+  } ,
+  {
+    "id": "collaborator",
+    "label": "Collaborator"
+  }
 ]
