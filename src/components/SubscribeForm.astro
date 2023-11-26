@@ -2,9 +2,9 @@
 	<p class="form__label">Become a member</p>
 	<label class="form__input-wrapper" for="email">
 		<input placeholder="your@email.com" class="form__input" />
-		<button class="form__button">Subscribe</button>
+		<button class="form__button">Join</button>
 	</label>
-	<small class="form__success">Thanks for subscribing</small>
+	<small class="form__success">Thanks for joining!</small>
 </form>
 
 <style lang="scss">
@@ -102,7 +102,7 @@
 		buttonLoading(true);
 		const input = form.querySelector('input');
 		const messageDisplay = form.querySelector('.form__success');
-		let message = `Thanks for subscribing, we'll be in touch :)`;
+		let message = `Thanks for joining, we'll be in touch!`;
 		input.disabled = true;
 
 
@@ -113,7 +113,7 @@
 			.then(({ ok, data: { status, email } }) => {
 				const existingSubscriber = !!(ok && status === 'subscribed')
 				if (existingSubscriber) {
-					message = `You're already subscribed to wuruwuru`;
+					message = `You're already a member`;
 				}
 				return new Promise((resolve) => resolve());
 			}).catch((error) => {
