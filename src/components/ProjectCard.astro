@@ -47,7 +47,7 @@ const {
 		<a href={ url?.href } class="c-link c-link--out" target="_blank">{ url.text }</a>
 		) : (
 			<div class="project-status">
-				<span class={`project-status-dot ${status == 'published' ? 'success' : 'default' }`}></span>
+				<span class={`project-status-dot ${status == 'live' ? 'success' : 'default' }`}></span>
 				<span class="project-status-text">{status}</span>
 			</div>
 		)}

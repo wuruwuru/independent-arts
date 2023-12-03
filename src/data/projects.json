@@ -3,7 +3,7 @@
     "id": "friendsof16",
     "creator": "Tushar Hathiramani",
     "title": "Friends of 16",
-    "status": "design",
+    "status": "production",
     "category": "App",
     "description": "Digital experience for a 16/16 program."
   },
@@ -11,7 +11,7 @@
     "id": "rosesroses",
     "creator": "Princess Ebi",
     "title": "Roses Roses",
-    "status": "design",
+    "status": "production",
     "category": "Research",
     "description": "A research project on Nigerian flowers."
   },
@@ -19,7 +19,7 @@
     "id": "feelgood",
     "creator": "Daniel Orubo",
     "title": "Feel Good",
-    "status": "production",
+    "status": "live",
     "category": "Book, Website",
     "description": "An anthology of stories about queer joy.",
     "url": {
@@ -31,7 +31,7 @@
     "id": "coverbank",
     "title":  "Cover Bank",
     "creator": "Tomiwa Ajiboye",
-    "status": "production",
+    "status": "live",
     "category":  "Database",
     "description":  "A retrospective of Nigerian album covers.",
     "url": {
@@ -43,7 +43,7 @@
     "id": "ludo",
     "title":  "LUDO",
     "creator": "Yadichinma Ukoha-Kalu",
-    "status": "production",
+    "status": "live",
     "category":  "Game",
     "description":  "A contemporary take on a classic board game.",
     "url": {
@@ -55,7 +55,7 @@
     "id": "edeyhappen",
     "title": "E Dey Happen",
     "creator": "Eris Ekanem",
-    "status": "production",
+    "status": "live",
     "category": "Series",
     "description": "Animated show about work-life balance.",
     "url": {
@@ -67,7 +67,7 @@
     "id": "hankypanky",
     "title":  "Hanky Panky",
     "creator": "Opemipo Aikomo",
-    "status": "production",
+    "status": "live",
     "category":  "Animation",
     "description":  "Animated short about an interesting phone call.",
     "url": {
@@ -79,7 +79,7 @@
     "id": "jguide",
     "title": "J Guide",
     "creator": "Opemipo Aikomo",
-    "status": "published",
+    "status": "live",
     "category": "Comic",
     "description": "Instagram comic about learning to roll.",
     "url": {
