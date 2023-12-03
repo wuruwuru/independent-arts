@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Adeniyi Ademoroti",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/adeniyi.jpg?raw=true",
-    "bio": "Adeniyi is a writer and an editor at BellaNaija.com. His writing has been featured in Brittlepaper and Per Contra.",
+    "bio": "Niyi Ademoroti received his MFA from the Iowa Writers’ Workshop and is currently a fellow at the Fine Arts Works Center. In another life, he was the Features Editor at BellaNaija. His writing has also appeared in AGNI, Hobart and The Republic.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -13,9 +13,9 @@
   },
   {
     "id": 2,
-    "name": "Alithnayn",
+    "name": "Fareeda Abdulkareem",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/alithnayn.jpg?raw=true",
-    "bio": "Alithnayn is a dog and a cat person. She gets paid to tackle big socioeconomic issues and write. She has been published by Harvard, Quartz, Wasafiri, Ozy and more. She won a short story day africa prize for outstanding fiction in 2021. ",
+    "bio": "Fareeda is a former jack of all trades and a recovering overachiever. Her writing career has spanned fiction, memoir, critical analysis, academic analysis, interviews, speeches and more. And she has done this on behalf of organizations and publications like Foreign Affairs, Quartz, Brittle Paper, Wasafiri, The World Bank, Action Aid, Africa is a Country and many more.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -27,7 +27,7 @@
     "id": 3,
     "name": "Ani Kayode",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/ani.jpg?raw=true",
-    "bio": "Ani Kayode is an award-winning writer and liberation fighter marinated in anti-imperialist rage.",
+    "bio": "Ani Kayode Somtochukwu is a writer and queer liberation activist from Enugu. Their work, which interrogates themes of queer identity, resistance and liberation, has been shortlisted for multiple international prizes. They won the 2019 SOGIESC Rights Activist of the Year Award, and their debut novel, And Then He Sang a Lullaby, was awarded the 2021 James Currey Prize for African Literature.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -87,7 +87,7 @@
     "id": 8,
     "name": "Edwin Okolo",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/edwin.jpg?raw=true",
-    "bio": "Edwin is a writer, editor and strategic thinker who also founded the boutique design label Studio Imo.",
+    "bio": "Edwin Okolo is a writer, journalist and storyteller. He offers commentary on the intersections of gender identity, feminism, contemporary African culture and its influence on social values. He started his writing career as a bit of an intervention for a friend, starting the fantasy blog PassTheSaltBand. Since then he has edited and written stories for Stories.ng and TheNakeConvos. He was shortlisted for the Short Story Africa Day Prize in 2017 and 2021. He was also shortlisted for the Miles Morland Writing Fellowship in 2021.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -304,7 +304,7 @@
     "id": 26,
     "name": "Mariam Sule-Izuagbe",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/mariam.jpg?raw=true",
-    "bio": "Mariam's work centers on intersectional feminism, underrepresented minorities and interpersonal communication dynamics.",
+    "bio": "Mariam Sule is a writer and communications strategist. Her prose has appeared in USAToday, Aljazeera, Sahelien, and Autostraddle, amongst others. She enjoys long walks with greenery and holds to her love for a good book despite capitalism’s hold on her neck. Her work centers on intersectional feminism, underrepresented minorities and interpersonal communication dynamics.",
     "roleId": "writer",
     "projectIds": ["feelgood"], 
     "socialLink": {
@@ -352,7 +352,7 @@
     "id": 30,
     "name": "Opemipo Aikomo",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/opemipo.jpg?raw=true",
-    "bio": "Ope started wuruwuru and directs the circus. In his spare time, he also heads the design team at Paystack.",
+    "bio": "Ope started wuruwuru and directs the circus. In his spare time, he also leads the Design team at Paystack.",
     "roleId": "director",
     "projectIds": ["jguide","hankypanky","edeyhappen","ludo","coverbank","feelgood","rosesroses"], 
     "socialLink": {
@@ -364,7 +364,7 @@
     "id": 31,
     "name": "Osarumen Osamuyi",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/osarumen.jpg?raw=true",
-    "bio": "Osarumen 'LMBSKN' Osamuyi is an experimental producer and synth programmer based in Lagos, Nigeria. He also works as a Strategic Partner Manager at Meta.",
+    "bio": "Osarumen 'LMBSKN' Osamuyi is an experimental producer and synth programmer based in Lagos, Nigeria. He also worked as a Strategic Partner Manager at Meta.",
     "roleId": "sound_producer",
     "projectIds": ["hankypanky"], 
     "socialLink": {
@@ -508,9 +508,9 @@
     "id": 43,
     "name": "Williams Ogah",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/williams.jpg?raw=true",
-    "bio": "Williams is curious about how creative ideas come to life. He previously worked as a project manager, enjoys taking naps, and also runs a consulting business.",
+    "bio": "Williams is curious about how creative ideas come to life. He runs the studio with Ope.",
     "roleId": "manager",
-    "projectIds": ["feelgood","hankypanky","jguide","ludo","coverbank","edeyhappen"], 
+    "projectIds": ["feelgood","hankypanky","ludo","edeyhappen"], 
     "socialLink": {
       "text": "Twitter",
       "url": "https://twitter.com/wllxms"
