@@ -527,17 +527,5 @@
       "text": "Instagram",
       "url": "https://www.instagram.com/yadichinma/"
     } 
-  },
-  {
-    "id": 45,
-    "name": "Tushar Hathiramani",
-    "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/tushar.jpg?raw=true",
-    "bio": "Tushar is the founder of 16/16, a Lagos-based creative space and boutique hotel and is also a co-founder of the hFACTOR Collective, a community-based initiative seeking to rehabilitate the Lagos Island community using creative methods of social engagement",
-    "roleId": "collaborator",
-    "projectIds": ["friendsof16"], 
-    "socialLink": {
-      "text": "Instagram",
-      "url": "https://www.instagram.com/tusharhathi"
-    } 
   }
 ]
