@@ -1,13 +1,5 @@
 [
   {
-    "id": "rosesroses",
-    "creator": "Princess Ebi",
-    "title": "Roses Roses",
-    "status": "wip",
-    "category": "Research",
-    "description": "A research project on Nigerian flowers."
-  },
-  {
     "id": "feelgood",
     "creator": "Daniel Orubo",
     "title": "Feel Good",
@@ -64,7 +56,7 @@
     "description":  "Animated short about an interesting phone call.",
     "url": {
       "text": "hankypankyfilm.com",
-      "href": "https://hankypankyfilm.com"
+      "href": "https://www.youtube.com/watch?v=wVrJhlW4Uw4"
     }
   },
   {
