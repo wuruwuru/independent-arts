@@ -1,4 +1,11 @@
-[
+[{
+    "id": "rosesroses",
+    "creator": "Princess Ebi",
+    "title": "Roses Roses",
+    "status": "wip",
+    "category": "Research",
+    "description": "A research project on Nigerian flowers."
+  },
   {
     "id": "feelgood",
     "creator": "Daniel Orubo",
