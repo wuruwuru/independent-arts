@@ -64,17 +64,14 @@ const filters = [
             <li class="c-creator-list__item active" data-index={id} data-name={name} data-roles={role.id.toLowerCase()}
               data-projects={projectSpread} data-genre={genreSpread}>
               <div class="profile">
-                <ProfileCard title={name} imageLink={avatar} description={role.label} size="small" />
+                <ProfileCard name={name} imageURL={avatar} linkText={socialLink.text} linkUrl={socialLink.url} />
               </div>
               <div class="bio">
                 <p>{bio}</p>
                 <div>
-                  <div>Projects:
-                    {projects.map(({id, title}) => (
-                      <span>{title}</span>
-                    ))}
-                  </div>
-                  <div>Connect: <a class="c-link c-link--out social" target="_blank" href={ socialLink.url }>{ socialLink.text }</a></div>
+                  {projects.map(({id, title}) => (
+                    <span>{title}</span>
+                  ))}
                 </div>
               </div>
             </li>)}

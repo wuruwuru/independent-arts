@@ -12,18 +12,6 @@
     }
   },
   {
-    "id": 2,
-    "name": "Fareeda Abdulkareem",
-    "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/alithnayn.jpg?raw=true",
-    "bio": "Fareeda is a former jack of all trades and a recovering overachiever. Her writing career has spanned fiction, memoir, critical analysis, academic analysis, interviews, speeches and more. And she has done this on behalf of organizations and publications like Foreign Affairs, Quartz, Brittle Paper, Wasafiri, The World Bank, Action Aid, Africa is a Country and many more.",
-    "roleId": "writer",
-    "projectIds": ["feelgood"], 
-    "socialLink": {
-      "text": "Twitter",
-      "url": "https://twitter.com/politicofareeda"
-    } 
-  },
-  {
     "id": 3,
     "name": "Ani Kayode",
     "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/ani.jpg?raw=true",
@@ -130,6 +118,18 @@
       "text": "Behance",
       "url": "https://www.behance.net/eseosabelo-os"
     }
+  },
+  {
+    "id": 2,
+    "name": "Fareeda Abdulkareem",
+    "avatar": "https://github.com/wuruwuru/wuruwuru.com/blob/master/public/avatars/alithnayn.jpg?raw=true",
+    "bio": "Fareeda is a former jack of all trades and a recovering overachiever. Her writing career has spanned fiction, memoir, critical analysis, academic analysis, interviews, speeches and more. And she has done this on behalf of organizations and publications like Foreign Affairs, Quartz, Brittle Paper, Wasafiri, The World Bank, Action Aid, Africa is a Country and many more.",
+    "roleId": "writer",
+    "projectIds": ["feelgood"], 
+    "socialLink": {
+      "text": "Twitter",
+      "url": "https://twitter.com/politicofareeda"
+    } 
   },
   {
     "id": 12,

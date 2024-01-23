@@ -1,61 +1,39 @@
 ---
 export interface Props {
-  title: string;
-  description: string | number;
-  imageLink?: URL,
-  size: 'small' | 'regular' | 'large'
+  name: string,
+  imageURL?: URL,
+  linkText?: string,
+  linkURL?: URL,
 }
 
 const {
-  title,
-  description,
-  imageLink,
-  size = 72
+  name,
+  imageURL,
+  linkText,
+  linkURL
 } = Astro.props;
-
-const avatarSizeClass = {
-  'small': '-is-small',
-  'regular': '-is-regular',
-  'large': '-is-large',
-}
-
-// node check type of description
-const descriptionClass = typeof (description) == 'number' ? '-is-integer' : '';
 
 ---
 
-<div class={`profile ${avatarSizeClass[size]}`}>
+<div class="profile">
   <div class="avatar">
-    {imageLink && (
-    <img src={imageLink} alt={`${title} image`} />
+    {imageURL && (
+    <img src={imageURL} alt={`${name} image`} />
     )}
   </div>
   <div class="text">
-    <div class="inner">
-      <p data-name>{ title }</p>
-    </div>
+    <div><b>{ name }</b></div>
+    <div><a href={linkURL} target="_blank">{ linkText }</a></div>
   </div>
 </div>
 
 <style lang="scss">
   .profile {
-    --card-size: 72px;
+    --card-size: 56px;
     display: grid;
     gap: 24px;
     grid-template-columns: minmax(auto, var(--card-size)) 1fr;
     align-items: center;
-
-    &.-is-large {
-      --card-size: 92px;
-    }
-
-    &.-is-small {
-      --card-size: 56px;
-
-      .text {
-        font-size: 1.8rem;
-      }
-    }
 
     .avatar {
       background: whitesmoke;
@@ -64,21 +42,10 @@ const descriptionClass = typeof (description) == 'number' ? '-is-integer' : '';
       overflow: hidden;
     }
 
-    .text .inner {
-      display: flex;
-      flex-direction: column;
-
-      >p {
-        font-weight: 600;
-
-        &.-is-integer {
-          font-family: var(--font-sans-mono);
-        }
-
-        &:nth-child(2) {
-          color: var(--color-dark-gray);
-        }
-      }
+    a {
+      font-style: normal;
+      cursor: pointer;
     }
+
   }
 </style>
