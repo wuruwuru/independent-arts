@@ -1,7 +1,6 @@
 const axios = require('axios');
 
 const audiencefulKey = process.env.AUDIENCEFUL_KEY;
-const audiencefulServer = process.env.AUDIENCEFUL_SERVER;
 
 module.exports = async (req, res) => {
   let body = {}
@@ -21,7 +20,7 @@ module.exports = async (req, res) => {
     })
   }
 
-  const url = `https://${audiencefulServer}/people`;
+  const url = `https://audienceful.com/api/people`;
   const config = {
     method: 'post',
     url,
