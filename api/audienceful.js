@@ -20,28 +20,22 @@ module.exports = async (req, res) => {
     })
   }
 
-  const url = `https://app.audienceful.com/api/people`;
-  const config = {
-    method: 'post',
-    url,
-    data: {
-      email: body.email,
-      tags: "website"
-    },
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Api-Key': audiencefulKey,
-    }
+  const apiUrl = `https://app.audienceful.com/api/people`;
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-Api-Key': audiencefulKey,
+  }
+  const postData = {
+    email: body.email,
+    tags: "website"
   }
 
   try {
-    const response = await axios(config);
+    const response = await axios.post(apiUrl, postData, { headers });
     console.log(response.data);
     res.status(200).json({
       message: 'success',
-      data: {
-        email: body.email
-      }
+      data: response.data
     });
   } catch (error) {
     console.log(error);
