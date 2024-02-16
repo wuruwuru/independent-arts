@@ -2,9 +2,13 @@
     "id": "rosesroses",
     "creator": "Princess Ebi",
     "title": "Roses Roses",
-    "status": "wip",
+    "status": "live",
     "category": "Research",
-    "description": "A research project on Nigerian flowers."
+    "description": "A research project on Nigerian flowers.",
+    "url": {
+      "text": "instagram/@rosesthrowingroses",
+      "href": "https://www.instagram.com/rosesthrowingroses/"
+    }
   },
   {
     "id": "feelgood",
