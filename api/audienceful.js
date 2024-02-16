@@ -24,10 +24,10 @@ module.exports = async (req, res) => {
   const config = {
     method: 'post',
     url,
-    data: JSON.stringify({
+    data: {
       email: body.email,
       tags: "website"
-    }),
+    },
     headers: {
       'Content-Type': 'application/json',
       'X-Api-Key': audiencefulKey,
@@ -35,6 +35,7 @@ module.exports = async (req, res) => {
   }
 
   try {
+    console.log(config);
     const response = await axios(config);
     res.status(200).json({
       message: 'success',
