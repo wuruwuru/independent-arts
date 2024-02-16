@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
 
   try {
     const response = await axios.post(apiUrl, postData, { headers });
-    console.log(response.data);
+    console.log(response);
     res.status(200).json({
       message: 'success',
       data: response.data
