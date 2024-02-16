@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
     })
   }
 
-  const url = `https://audienceful.com/api/people`;
+  const url = `https://app.audienceful.com/api/people`;
   const config = {
     method: 'post',
     url,
@@ -36,7 +36,6 @@ module.exports = async (req, res) => {
 
   try {
     const response = await axios(config);
-
     res.status(200).json({
       message: 'success',
       data: response.data
