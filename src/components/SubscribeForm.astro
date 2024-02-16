@@ -85,17 +85,7 @@
 		button.innerText = status ? 'loading...' : 'Subscribe';
 	}
 
-	// const loadingDots = () => {
-	// 	const button = form.querySelector('.form__button');
-	// 	const dots = button.querySelectorAll('.loading-dots__dot');
-	// 	const dotCount = dots.length;
-	// 	const dotInterval = setInterval(() => {
-	// 		const dot = dots[Math.floor(Math.random() * dotCount)];
-	// 		dot.classList.toggle('loading-dots__dot--active');
-	// 	}, 100);
-	// 	return dotInterval;
-	// }
-	const API_ADDRESS = '/.netlify/functions/mailchimp';
+	const API_ADDRESS = '/api/audienceful';
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
@@ -109,26 +99,18 @@
 		fetch(API_ADDRESS, {
 			method: 'post',
 			body: JSON.stringify({ email: input.value }),
-		}).then((response) => response.json())
-			.then(({ ok, data: { status, email } }) => {
-				const existingSubscriber = !!(ok && status === 'subscribed')
-				if (existingSubscriber) {
-					message = `You're already a member`;
-				}
-				return new Promise((resolve) => resolve());
-			}).catch((error) => {
-				message = `Oops! Something went wrong 😔`;
-				console.error('error', error);
-			}).finally(() => {
-				setTimeout(() => {
-
-					input.value = '';
-					messageDisplay.innerText = message;
-					messageDisplay.style.display = 'block';
-					input.disabled = false;
-					buttonLoading(false);
-				}, 1000);
-			});
+		}).catch((error) => {
+			message = `Oops! Something went wrong 😔`;
+			console.error('error', error);
+		}).finally(() => {
+			setTimeout(() => {
+				input.value = '';
+				messageDisplay.innerText = message;
+				messageDisplay.style.display = 'block';
+				input.disabled = false;
+				buttonLoading(false);
+			}, 1000);
+		});
 	})
 
 </script>
