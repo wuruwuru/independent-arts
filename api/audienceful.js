@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
     })
   }
 
-  const apiUrl = `https://app.audienceful.com/api/people`;
+  const apiUrl = `https://app.audienceful.com/api/people/`;
   const headers = {
     'Content-Type': 'application/json',
     'X-Api-Key': audiencefulKey,
