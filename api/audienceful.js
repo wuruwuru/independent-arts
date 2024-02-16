@@ -35,11 +35,13 @@ module.exports = async (req, res) => {
   }
 
   try {
-    console.log(config);
     const response = await axios(config);
+    console.log(response.data);
     res.status(200).json({
       message: 'success',
-      data: response.data
+      data: {
+        email: body.email
+      }
     });
   } catch (error) {
     console.log(error);
