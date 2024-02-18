@@ -1,4 +1,11 @@
 [{
+    "id": "noro",
+    "creator": "Chuma Asuzu",
+    "title": "Nọrọ",
+    "status": "wip",
+    "category": "Product",
+    "description": "A stool that stays with you."
+  }, {
     "id": "rosesroses",
     "creator": "Princess Ebi",
     "title": "Roses Roses",
