@@ -1,36 +1,7 @@
 ---
-import Layout from "@layout/Default.astro";
+import Redirect from "@layout/Redirect.astro";
 
 ---
 
-<Layout>
-	<main class="l-container l-grid">
-		<section class="l-grid__column--4">
-			<h1>Nọrọ</h1>
-      <p>A stool that stays with you</p>
-		</section>
-	</main>
-</Layout>
-<style lang="scss">
-	@import "../styles/mixins.scss";
 
-	.l-grid {
-		grid-template-columns: repeat(9, 1fr);
-	}
-
-	section {
-		margin-top: 60px;
-	}
-
-	ol {
-		padding-left: 12px;
-	}
-
-	li {
-		margin-bottom: 10px;
-	}
-
-	.c-section-title {
-		margin-top: 60px;
-	}
-</style>
+<Redirect url="https://www.partsapart.net/noro" />
