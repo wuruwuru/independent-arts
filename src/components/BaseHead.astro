@@ -40,6 +40,11 @@ const SEOProps = {
 	<meta property="twitter:description" content={SEOProps.pageDescription}>
 	<meta property="twitter:image" content={SEOProps?.twitterSEOImage ?? SEOProps.defaultSEOImage}>
 
+	<!-- Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
 	<!-- Add analytics script -->
 	{import.meta.env.PROD && (
 	<Analytics />)}
