@@ -4,8 +4,8 @@
 		"route": "/",
 		"data": {
 			"pageTitle": "Home",
-			"seoTitle": "wuruwuru",
-			"pageDescription": "A studio for passion projects.",
+			"seoTitle": "Independent Arts",
+			"pageDescription": "A platform for creators.",
 			"defaultSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png",
 			"twitterSEOImage": "https://wuruwuru.com/assets/images/thumbnail.png"
 		}
@@ -14,7 +14,7 @@
 		"route": "/projects",
 		"data": {
 			"pageTitle": "Projects",
-			"seoTitle": "wuruwuru | Projects",
+			"seoTitle": "IA | Projects",
 			"pageDescription": "A playground for ideas"
 		}
 	},
@@ -22,15 +22,15 @@
 		"route": "/about",
 		"data": {
 			"pageTitle": "About",
-			"seoTitle": "wuruwuru | About",
-			"pageDescription": "A studio for passion projects"
+			"seoTitle": "IA | About",
+			"pageDescription": "A platform for creators"
 		}
 	},
 	{
 		"route": "/creators",
 		"data": {
 			"pageTitle": "People",
-			"seoTitle": "wuruwuru | People",
+			"seoTitle": "IA | People",
 			"pageDescription": "Directory of studio collaborators"
 		}
 	},
@@ -38,7 +38,7 @@
 		"route": "/manifesto",
 		"data": {
 			"pageTitle": "Manifesto",
-			"seoTitle": "wuruwuru | Manifesto",
+			"seoTitle": "IA | Manifesto",
 			"pageDescription": "Vision and roadmap for the studio"
 		}
 	},
@@ -46,7 +46,7 @@
 		"route": "/covers",
 		"data": {
 			"pageTitle": "Covers",
-			"seoTitle": "wuruwuru | Covers",
+			"seoTitle": "IA | Covers",
 			"pageDescription": "A database of Nigerian album covers"
 		}
 	},
@@ -54,7 +54,7 @@
 		"route": "/cover-contest",
 		"data": {
 			"pageTitle": "Cover Contest",
-			"seoTitle": "wuruwuru | Cover Contest",
+			"seoTitle": "IA | Cover Contest",
 			"pageDescription": "Apply to the wururuwuru Cover Contest"
 		}
 	},
@@ -62,7 +62,7 @@
 		"route": "/streetwear",
 		"data": {
 			"pageTitle": "Streetwear",
-			"seoTitle": "wuruwuru | Streetwear",
+			"seoTitle": "IA | Streetwear",
 			"pageDescription": "A database of African streetwear brands"
 		}
 	},
@@ -70,7 +70,7 @@
 		"route": "/comics",
 		"data": {
 			"pageTitle": "Comics",
-			"seoTitle": "wuruwuru | Comics",
+			"seoTitle": "IA | Comics",
 			"pageDescription": "A database of African comics"
 		}
 	}
