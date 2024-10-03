@@ -1,11 +1,17 @@
-[{
-    "id": "noro",
-    "creator": "Chuma Asuzu",
-    "title": "Nọrọ",
-    "status": "wip",
-    "category": "Product",
-    "description": "Nọrọ is the Igbo word for stay."
-  }, {
+[
+  {
+    "id": "edeyhappen",
+    "title": "E Dey Happen",
+    "creator": "Eris Ekanem",
+    "status": "live",
+    "category": "Series",
+    "description": "Animated show about adulting in Lagos.",
+    "url": {
+      "text": "tiktok/@edhseries",
+      "href": "https://www.tiktok.com/@edhseries"
+    }
+  },
+  {
     "id": "rosesroses",
     "creator": "Princess Ebi",
     "title": "Roses Roses",
@@ -51,42 +57,6 @@
     "url": {
       "text": "ludobyyadi.com",
       "href": "https://ludobyyadi.com"
-    }
-  },
-  {
-    "id": "edeyhappen",
-    "title": "E Dey Happen",
-    "creator": "Eris Ekanem",
-    "status": "live",
-    "category": "Series",
-    "description": "Animated show about adulting in Lagos.",
-    "url": {
-      "text": "youtube/@wuruwuru",
-      "href": "https://www.youtube.com/watch?v=LLyhQhYlxBA&list=PLvjrVqfXCGRffO4kx9OhMU72vlegMXipP"
-    }
-  },
-  {
-    "id": "hankypanky",
-    "title":  "Hanky Panky",
-    "creator": "Opemipo Aikomo",
-    "status": "live",
-    "category":  "Animation",
-    "description":  "Animated short about an interesting phone call.",
-    "url": {
-      "text": "hankypankyfilm.com",
-      "href": "https://www.youtube.com/watch?v=wVrJhlW4Uw4"
-    }
-  },
-  {
-    "id": "jguide",
-    "title": "J Guide",
-    "creator": "Opemipo Aikomo",
-    "status": "live",
-    "category": "Comic",
-    "description": "Instagram comic about learning to roll.",
-    "url": {
-      "text": "instagram/@thejguide",
-      "href": "https://instagram.com/thejguide"
     }
   }
 ]
