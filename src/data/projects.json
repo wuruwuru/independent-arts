@@ -1,8 +1,22 @@
-[{
+[
+  {
+    "id": "edeyhappen",
+    "title": "E Dey Happen",
+    "creator": "Eris Ekanem",
+    "status": "live",
+    "producer": "ia",
+    "category": "Series",
+    "description": "Animated show about adulting in Lagos.",
+    "url": {
+      "text": "youtube/@wuruwuru",
+      "href": "https://www.youtube.com/watch?v=LLyhQhYlxBA&list=PLvjrVqfXCGRffO4kx9OhMU72vlegMXipP"
+    }
+  }, {
     "id": "noro",
     "creator": "Chuma Asuzu",
     "title": "Nọrọ",
     "status": "wip",
+    "producer": "wr",
     "category": "Product",
     "description": "Nọrọ is the Igbo word for stay."
   }, {
@@ -10,6 +24,7 @@
     "creator": "Princess Ebi",
     "title": "Roses Roses",
     "status": "live",
+    "producer": "wr",
     "category": "Research",
     "description": "A research project on Nigerian flowers.",
     "url": {
@@ -22,6 +37,7 @@
     "creator": "Daniel Orubo",
     "title": "Feel Good",
     "status": "live",
+    "producer": "ia",
     "category": "Book, Website",
     "description": "An anthology of stories about queer joy.",
     "url": {
@@ -34,6 +50,7 @@
     "title":  "Cover Bank",
     "creator": "Tomiwa Ajiboye",
     "status": "live",
+    "producer": "ia",
     "category":  "Database",
     "description":  "A retrospective of Nigerian album covers.",
     "url": {
@@ -46,6 +63,7 @@
     "title":  "LUDO",
     "creator": "Yadichinma Ukoha-Kalu",
     "status": "live",
+    "producer": "ia",
     "category":  "Game",
     "description":  "A contemporary take on a classic board game.",
     "url": {
@@ -54,22 +72,11 @@
     }
   },
   {
-    "id": "edeyhappen",
-    "title": "E Dey Happen",
-    "creator": "Eris Ekanem",
-    "status": "live",
-    "category": "Series",
-    "description": "Animated show about adulting in Lagos.",
-    "url": {
-      "text": "youtube/@wuruwuru",
-      "href": "https://www.youtube.com/watch?v=LLyhQhYlxBA&list=PLvjrVqfXCGRffO4kx9OhMU72vlegMXipP"
-    }
-  },
-  {
     "id": "hankypanky",
     "title":  "Hanky Panky",
     "creator": "Opemipo Aikomo",
     "status": "live",
+    "producer": "wr",
     "category":  "Animation",
     "description":  "Animated short about an interesting phone call.",
     "url": {
@@ -82,6 +89,7 @@
     "title": "J Guide",
     "creator": "Opemipo Aikomo",
     "status": "live",
+    "producer": "w",
     "category": "Comic",
     "description": "Instagram comic about learning to roll.",
     "url": {
