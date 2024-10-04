@@ -16,13 +16,20 @@ const links = [{
 ];
 
 const currentPath = new URL(Astro.request.url).pathname;
+
+function isActive(route) {
+  if (route === '/') {
+    return currentPath === '/' || currentPath === '';
+  }
+  return currentPath.startsWith(route);
+}
 ---
 
 <div class="l-container l-container--fluid">
   <nav class="c-nav">
     <ul id="menu">
       {links.map(({ name, route }) => (
-      <li class={currentPath===route ? 'is-active' : '' }><a href={route}>{name}</a></li>
+      <li class={isActive(route) ? 'is-active' : '' }><a href={route}>{name}</a></li>
       ))}
     </ul>
     <div class="logo">

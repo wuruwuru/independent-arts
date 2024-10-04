@@ -4,7 +4,7 @@ import Analytics from "./Analytics.astro";
 import SEO from "@data/SEO.json";
 
 const defaultSEO = SEO.find(({ type = null }) => type && type === 'default');
-const currentPath = new URL(Astro.request.url).pathname;
+const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, '');
 const pageSEO = SEO.find(({ route }) => route === currentPath);
 const pageURL = new URL(Astro.request.url);
 
