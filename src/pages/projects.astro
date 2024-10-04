@@ -12,6 +12,8 @@ import journals from "@data/journal.json";
 import newsletters from "@data/newsletters.json";
 import databases from "@data/databases.json";
 
+const iaProjects = projects.filter((project) => project.producer === 'ia');
+
 ---
 
 <Layout>
@@ -20,7 +22,7 @@ import databases from "@data/databases.json";
 			<div class="l-container l-grid">
 				<div class="c-section__left l-grid__column--8">
 					<ul class="c-project-list">
-						{projects.map((p) => (
+						{iaProjects.map((p) => (
 						<li class="c-project-list__item">
 							<ProjectCard {...p} />
 						</li>
