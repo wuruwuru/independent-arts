@@ -52,13 +52,20 @@ const currentYear = new Date().getFullYear();
     gap: 30px;
 
     @include screen('small') {
-      display: block;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
     }
   }
 
   .left {
     flex: 1 1 auto;
+    width: 100%;
     max-width: 480px;
+
+    @include screen('small') {
+      max-width: none;
+    }
 
     >*+* {
       margin-top: 18px;
