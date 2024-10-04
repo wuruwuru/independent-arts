@@ -1,5 +1,5 @@
-# wuruwuru
-A community studio for passion projects
+# Independent Arts
+A network for creators
 
 Built with [Astro](https://astro.build/), Javascript, HTML and CSS (SCSS)
 
