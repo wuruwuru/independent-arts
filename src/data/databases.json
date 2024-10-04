@@ -3,24 +3,24 @@
         "id": "covers",
         "title": "Album Covers",
         "count": "5000+",
-        "url": "https://wuruwuru.com/covers"
+        "url": "https://independent-arts.org/covers"
     },
     {
       "id": "streetwear",
       "title": "Streetwear Brands",
       "count": "200+",
-      "url": "https://wuruwuru.com/streetwear"
+      "url": "https://independent-arts.org/streetwear"
   },
   {
     "id": "comics",
     "title": "Comic Books",
     "count": "200+",
-    "url": "https://wuruwuru.com/comics"
+    "url": "https://independent-arts.org/comics"
   },
   {
     "id": "animation",
     "title": "African Animation",
     "count": "500+",
-    "url": "https://wuruwuru.com/animation"
+    "url": "https://independent-arts.org/animation"
   }
 ]

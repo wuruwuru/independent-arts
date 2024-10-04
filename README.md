@@ -23,7 +23,7 @@ npm run build
 
 ```
   .
-    ├── public                  # Public files that will not be compiled by astro and are directly accessible from root of the website (e.g the assets folder is accessible from wuruwuru.com/assets)
+    ├── public                  # Public files that will not be compiled by astro and are directly accessible from root of the website (e.g the assets folder is accessible from independent-arts.org/assets)
     ├── src
         ├── assets
             ├── images          # Svg and Png images that can be imported into components or pages
