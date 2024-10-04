@@ -20,13 +20,14 @@
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
     "postcss-preset-env": "^7.7.2",
-    "sass": "^1.53.0"
+    "sass": "^1.79.4"
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.75",
     "@xstate/fsm": "^2.0.0",
     "axios": "^1.6.7",
     "crypto": "^1.0.1",
-    "isotope-layout": "^3.0.6"
+    "isotope-layout": "^3.0.6",
+    "sass": "^1.x.x"
   }
 }
