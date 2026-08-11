@@ -11,7 +11,13 @@ const newsCollection = defineCollection({
 
     try {
       const marble = new Marble({ apiKey: key });
-      const { result } = await marble.posts.list({ status: "all", limit: 100 });
+      // Public Marble keys can read published posts, but not drafts. Requesting
+      // all posts makes Marble return 403 and leaves the collection empty.
+      const { result } = await marble.posts.list({
+        status: "published",
+        format: "html",
+        limit: 100,
+      });
 
       // https://docs.astro.build/en/reference/content-loader-reference/#loader-types
       return result.posts.map((post) => ({
